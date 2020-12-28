@@ -1,0 +1,1 @@
+node ./bug.js I-5BHXUAXYCFRB "<subscription password>" "Deplo-Entod-1FI1E5BTIARO4-665482898.ca-central-1.elb.amazonaws.com" 80 0686949c-0348-411b-9b4b-32e469f2ed85 <path to config file> "<description>"

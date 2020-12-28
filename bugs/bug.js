@@ -40,8 +40,6 @@ if (process.argv[9] == 'false') {
   submit = false;
 }
 
-const URL = `http://${server}:${port}`
-
 const matching = (actual, expected) => {
   if (!_.isEqual(actual, expected)) {
     return false;
@@ -55,7 +53,8 @@ const submitBug = () => {
   console.log("********* Submitting bug *********")
   configFile = fs.readFileSync(config, 'UTF8')
   const body = { description, config: configFile };
-  fetch(`${URL}/bug`, {
+  //fetch('http://localhost:5000/bug', {
+  fetch(`http://thinktelligence.com/api/bug`, {
     method: "POST",
     body: JSON.stringify(body),
     headers: {
@@ -74,30 +73,30 @@ const submitBug = () => {
 }
 
 expected_results = config_bug.expected_results
+delete config_bug.expected_results
 expected_generated = config_bug.expected_generated
+delete config_bug.expected_generated
 
 client.process(new Config(config_bug), key, server, port)
   .then( (responses) => {
+    let hasError = false;
     if (!matching(responses.results, expected_results)) {
       console.log('JSON does not match');
       console.log('actual', JSON.stringify(responses.results))
       console.log('expected', JSON.stringify(expected_results))
-      if (submit) {
-        submitBug()
-      } else {
-        process.exit(-1)
-      }
+      hasError = true;
     }
     if (!matching(responses.generated, expected_generated)) {
       console.log('Generated does not match');
       console.log('actual', JSON.stringify(responses.generated))
       console.log('expected', JSON.stringify(expected_generated))
-      console.log('submit', submit)
-      if (submit) {
-        submitBug()
-      } else {
-        process.exit(-1)
-      }
+      hasError = true;
+    }
+
+    if (submit && hasError) {
+      submitBug()
+    } else {
+      process.exit(-1)
     }
   })
   .catch( (error) => { 
