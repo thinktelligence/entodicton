@@ -111,7 +111,6 @@ let config = {
   ],
   "version": '3',
   "floaters": ['isQuery'],
-  "utterances": ["joe earns 10 dollars every week sally earns 25 dollars per week sally worked 10 weeks joe worked 15 weeks joe earns what sally earns what"],
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
     "week": [{"id": "weekConcept", 'initial': { 'language': 'english' } }],

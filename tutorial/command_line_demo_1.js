@@ -40,7 +40,6 @@ let config = {
   priorities: [
   ],
   "version": '3',
-  "utterances": ["sally worked 10 weeks"],
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
     "week": [{"id": "weekConcept", 'initial': { 'language': 'english' } }],
