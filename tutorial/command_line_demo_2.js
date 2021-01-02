@@ -30,7 +30,7 @@ Logs
 const client = require('entodicton/client')
 const Config = require('entodicton/src/config')
 
-const config = {
+let config = {
   operators: [
     '(([personConcept]) [earn|earns] ((<count> ([dollarConcept])) [every] ([weekConcept])))',
     '(([personConcept]) [worked] (<count> ([weekConcept|weeks])))'
@@ -89,7 +89,8 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 const query = 'joe earns 10 dollars every week joe worked 2 weeks'
 console.log(`Running the input: ${query}`);
 config.utterances = [query]
-client.process(url, key, new Config(config))
+config = new Config(config)
+client.process(url, key, config)
   .then( (responses) => {
     if (responses.errors) {
       console.log('Errors')
