@@ -76,7 +76,6 @@ const config = {
 
 url = process.argv[2] || "http://184.67.27.82"
 key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
-port = process.argv[4] || '80'
 
 const query = 'sally worked 10 weeks'
 console.log(`Running the input: ${query}`);
