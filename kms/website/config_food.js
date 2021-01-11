@@ -22,6 +22,8 @@ module.exports =
   "hierarchy": [
   ],
   "priorities": [
+    [["fromW", 0], ["wantWhitespot", 0], ["aEnglish", 0]],
+    [["aEnglish", 0], ["wantWhitespot", 0], ["i", 0]],
     [["wantWhitespot", 0], ["aEnglish", 0], ["count", 0]],
     [["i", 0], ["wantMcDonalds", 0], ["aEnglish", 0], ["count", 0]],
     [["wantMcDonalds", 0], ["aEnglish", 0], ["fromM", 0]],
@@ -57,12 +59,12 @@ module.exports =
     "i want cheeseburger and fries from whitespot",
   ],
   "generators": [
-    [(context) => context.marker == 'wantWhitespot', (g, context) => `order for ${g(context.items)} from ${g(context.store)}`],
-    [(context) => context.marker == 'wantMcDonalds', (g, context) => `order for ${g(context.items)} from ${g(context.store)}`],
-    [(context) => context.marker == 'food' && context.number > 0, (g, context) => `${g(context.number)} ${g(context.name)}`],
-    [(context) => context.marker == 'food' && !('number' in context), (g, context) => `${g(context.name)}`],
-    [(context) => context.marker == 'whitespot', (g, context) => 'Whitespot'],
-    [(context) => context.marker == 'mcdonalds', (g, context) => 'McDonalds'],
+    [({context}) => context.marker == 'wantWhitespot', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
+    [({context}) => context.marker == 'wantMcDonalds', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
+    [({context}) => context.marker == 'food' && context.number > 0, ({g, context}) => `${g(context.number)} ${g(context.name)}`],
+    [({context}) => context.marker == 'food' && !('number' in context), ({g, context}) => `${g(context.name)}`],
+    [({context}) => context.marker == 'whitespot', ({g, context}) => 'Whitespot'],
+    [({context}) => context.marker == 'mcdonalds', ({g, context}) => 'McDonalds'],
   ],
   "semantics": [
   ],
