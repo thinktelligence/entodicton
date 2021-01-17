@@ -122,15 +122,15 @@ let config = {
   },
 
   generators: [
-    [ (context) => context.marker == 'earn', (g, context) => `${g(context.who)} earns ${g(context.amount)} ${g(context.units)} per ${context.period}` ],
-    [ (context) => context.marker == 'weekConcept' && context.duration == 1, (g, context) => `${context.duration} week` ],
-    [ (context) => context.marker == 'weekConcept' && context.duration > 1, (g, context) => `${context.duration} weeks` ],
-    [ (context) => context.marker == 'worked', (g, context) => `${g(context.who)} worked ${ g({ marker: context.units, duration: context.duration}) }` ],
-    [ (context) => context.marker == 'response', (g, context) => `${context.who} earned ${context.earnings} ${context.units}` ],
+    [ ({context}) => context.marker == 'earn', ({g, context}) => `${g(context.who)} earns ${g(context.amount)} ${g(context.units)} per ${context.period}` ],
+    [ ({context}) => context.marker == 'weekConcept' && context.duration == 1, ({g, context}) => `${context.duration} week` ],
+    [ ({context}) => context.marker == 'weekConcept' && context.duration > 1, ({g, context}) => `${context.duration} weeks` ],
+    [ ({context}) => context.marker == 'worked', ({g, context}) => `${g(context.who)} worked ${ g({ marker: context.units, duration: context.duration}) }` ],
+    [ ({context}) => context.marker == 'response', ({g, context}) => `${context.who} earned ${context.earnings} ${context.units}` ],
   ],
 
   semantics: [
-     [(global, context) => context.marker == 'earn' && context.isQuery, (global, context) => {
+     [({global, context}) => context.marker == 'earn' && context.isQuery, ({global, context}) => {
       context.marker = 'response';
       var employee_record = global.employees.find( (er) => er.name == context.who )
       let totalIncome = 0
@@ -143,13 +143,13 @@ let config = {
       delete context.period
       context.earnings = totalIncome
      }],
-    [(global, context) => context.marker == 'earn', (global, context) => {
+    [({global, context}) => context.marker == 'earn', ({global, context}) => {
       if (! global.employees ) {
         global.employees = []
       }
       global.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
      }],
-    [(global, context) => context.marker == 'worked', (global, context) => {
+    [({global, context}) => context.marker == 'worked', ({global, context}) => {
       if (! global.workingTime ) {
         global.workingTime = []
       }
