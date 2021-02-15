@@ -115,7 +115,7 @@ const chatLoop = async () => {
         break
       }
       // paraphrase of result
-      console.log(responses.generated[0][0]);
+      console.log('Computer response:', responses.generated[0][0]);
       console.log("\n")
       //console.log('generated', responses.generated);
       //console.log('results', JSON.stringify(responses.results, null, 2));
