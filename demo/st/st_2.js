@@ -84,8 +84,8 @@ let config = {
   ],
 };
 
-url = 'http://Deplo-Entod-1FYMS71PIEWAI-2094328980.ca-central-1.elb.amazonaws.com'
-key = 'd83579b0-ffda-444d-9942-ac8fa2856f5c'
+url = 'http://Deplo-Entod-17J794A370LM3-1965629916.ca-central-1.elb.amazonaws.com'
+key = 'f4a879cd-6ff7-4f14-91db-17a11ba77103'
 
 //const query = 'arm the photon torpedoes'
 //const query = 'show the weapons status'
@@ -105,9 +105,6 @@ client.process(url, key, config)
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
     }
-    console.log('mentions', objects.mentions);
-    console.log('spock', JSON.stringify(objects.characters.spock, null, 2));
-    console.log('spock.toDo', JSON.stringify(objects.characters.spock.toDo, null, 2));
     console.log(responses.trace);
     console.log(objects);
     console.log(responses.generated);
