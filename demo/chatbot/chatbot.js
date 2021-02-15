@@ -17,7 +17,8 @@ Bot: Solution 1
 
 let initConfig = {
   operators: [
-    "(([i]) [(<cannot> ([unlock]))] (<the> ([door])))",
+    "(([i]) [(<cannot> ([unlock1|unlock]))] (<the> ([door])))",
+    "((<the> ([door])) [(<wont> ([unlock2|unlock]))])",
     "([answer])",
   ],
   bridges: [
@@ -25,8 +26,12 @@ let initConfig = {
     { "id": "door", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "the", "level": 0, "bridge": "{ ...after, pullFromContext: true }" },
     { "id": "cannot", "level": 0, "bridge": "{ ...after, cannot: true }" },
-    { "id": "unlock", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "unlock", "level": 1, "bridge": "{ ...next(operator), what: after[0] }" },
+    { "id": "unlock1", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "unlock1", "level": 1, "bridge": "{ ...next(operator), what: after[0] }" },
+
+    { "id": "wont", "level": 0, "bridge": "{ ...after, cannot: true }" },
+    { "id": "unlock2", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "unlock2", "level": 1, "bridge": "{ ...next(operator), what: before[0], marker: operator('unlock1', 1) }" },
 
     { "id": "answer", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
@@ -35,6 +40,7 @@ let initConfig = {
   ],
   "version": '3',
   "words": {
+    "cant": [{"id": "cannot"}],
     "yes": [{"id": "answer", 'initial': { 'value': true } }],
     "yep": [{"id": "answer", 'initial': { 'value': true } }],
     "no": [{"id": "answer", 'initial': { 'value': false } }],
@@ -42,7 +48,7 @@ let initConfig = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'unlock' && context.cannot, ({g, context}) => `${g(context.what)} will not unlock` ],
+    [ ({context}) => context.marker == 'unlock1' && context.cannot, ({g, context}) => `${g(context.what)} will not unlock` ],
     [ ({context}) => context.marker == 'door', ({g, context}) => `the ${g(context.word)}` ],
     [ ({context}) => context.marker == 'question', ({g, context}) => `${context.text}` ],
     [ ({context}) => context.marker == 'solution', ({g, context}) => `${context.text}` ],
@@ -69,7 +75,7 @@ let initConfig = {
         global.question = null
       }
      }],
-    [({global, context}) => context.marker == 'unlock' && context.cannot, ({global, context}) => {
+    [({global, context}) => context.marker == 'unlock1' && context.cannot, ({global, context}) => {
       global.question = { marker: 'question', id: 'greenLight', text: 'is there a green light on the lock?'}
      }],
   ],
@@ -84,6 +90,8 @@ key = '6804954f-e56d-471f-bbb8-08e3c54d9321'
 
 // These are the simulated answers from the tenant
 tenantSays = [ "i cannot unlock the door", "yes", "no" ]
+//tenantSays = [ "i cant unlock the door", "yes", "no" ]
+//tenantSays = [ "the door wont unlock", "yes", "no" ]
 
 const objects = {
   question: {marker: "question", id: 'getProblem', text: "What is the problem"},
@@ -95,6 +103,18 @@ const objects = {
 }
 initConfig.objects = objects;
 config = new Config(initConfig)
+
+const debugOne = async () => {
+  try {
+    //config.set("utterances", ['the door wont unlock'])
+    config.set("utterances", ['i cannot unlock the door'])
+    responses = await client.process(url, key, config);
+    console.log('generated', responses.generated);
+    console.log('results', JSON.stringify(responses.results, null, 2));
+  } catch( e ) {
+    console.log('e', e);
+  }
+}
 
 counter = 0
 const chatLoop = async () => {
@@ -128,4 +148,5 @@ const chatLoop = async () => {
 
 (async () => {
   chatLoop()
+  //debugOne()
 })();
