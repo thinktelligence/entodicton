@@ -3,9 +3,10 @@ const Config = require('entodicton/src/config')
 
 let config = {
   operators: [
-    "(((<what>) [timeConcept|time]) [equal|is] ([it]))",
+    "((([what]) [timeConcept|time]) [equal|is] ([it]))",
     //"what time is it in Paris"
     //"what time is it in GMT"
+    // what is the time
   ],
   bridges: [
     { "id": "what", "level": 0, "bridge": "{ ...next(after), isQuery: true }" },
@@ -18,7 +19,7 @@ let config = {
   ],
   "version": '3',
   "words": {
-    "spock": [{"id": "crewMember", 'initial': { 'id': 'spock' } }],
+    //"spock": [{"id": "crewMember", 'initial': { 'id': 'spock' } }],
     /*
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
     "week": [{"id": "weekConcept", 'initial': { 'language': 'english' } }],
