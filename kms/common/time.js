@@ -9,8 +9,8 @@ let config = {
     // what is the time
   ],
   bridges: [
-    { "id": "what", "level": 0, "bridge": "{ ...next(after), isQuery: true }" },
-    { "id": "equal", "level": 0, "bridge": "{ ...next(operator), equals: [1] }" },
+    { "id": "what", "level": 0, "bridge": "{ ...next(operator), isQuery: true }" },
+    { "id": "equal", "level": 0, "bridge": "{ ...next(operator), equals: [before, after] }" },
     { "id": "it", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
     { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
@@ -96,5 +96,6 @@ client.process(url, key, config)
   })
   .catch( (error) => {
     console.log(`Error ${config.get('utterances')}`);
-    console.log(error)
+    console.log(error.error)
+    //console.log(error.trace)
   })
