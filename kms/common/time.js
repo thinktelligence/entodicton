@@ -10,8 +10,8 @@ const pad = (v, l) => {
 let config = {
   operators: [
     "((([what]) [timeConcept|time]) [equals|is] ([it]))",
-    "([use] ((<count> ([timeUnit])) [timeFormat|format]))"
-    //"(([what]) [equals] ([the] ([timeConcept])))",
+    "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
+    "(([what]) [equals] (<the> ([timeConcept])))",
     //"what is the time in 24 hour format"
     //"what time is it in Paris"
     //"what time is it in GMT"
@@ -22,7 +22,9 @@ let config = {
     { "id": "what", "level": 0, "bridge": "{ ...next(operator), isQuery: true }" },
     { "id": "equals", "level": 0, "bridge": "{ ...next(operator), equals: [before, after] }" },
     { "id": "it", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
-    { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
+
+    { "id": "the", "level": 0, "bridge": "{ ...next(after), pullFromContext: true }" },
 
     { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
     { "id": "count", "level": 0, "bridge": "{ ...after, count: operator[0].value }" },
@@ -96,7 +98,7 @@ key = 'f4a879cd-6ff7-4f14-91db-17a11ba77103'
 
 //config.utterances = ['what time is it']
 //config.utterances = ['use 24 hour format what time is it use 12 hour format what time is it']
-config.utterances = ['use 36 hour format']
+config.utterances = ['what is the time']
 console.log(`Running the input: ${config.utterances}`);
 config.objects = {
   format: 12  // or 24
@@ -130,7 +132,7 @@ knowledgeModule( {
   config,
   test: './time.test',
   debug: () => {
-    client.process(url, key, config, { writeTests: true, testsFn: './time.test' })
+    client.process(url, key, config, { writeTests: true, testsFn: './time.test', skipGenerators: true })
       .then( async (responses) => {
         if (responses.errors) {
           console.log('Errors')
@@ -143,7 +145,6 @@ knowledgeModule( {
         }
         console.log(responses.trace);
         console.log('objects', JSON.stringify(config.get("objects"), null, 2))
-        console.log(JSON.stringify(responses.results, null, 2));
         console.log(responses.generated);
       })
       .catch( (error) => {
