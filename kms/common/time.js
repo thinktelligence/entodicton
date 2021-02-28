@@ -9,7 +9,7 @@ const pad = (v, l) => {
 
 let config = {
   operators: [
-    "((([what]) [timeConcept|time]) [equals|is] ([it]))",
+    "((<what> ([timeConcept|time])) [equals|is] ([it]))",
     "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
     "(([what]) [equals] (<the> ([timeConcept])))",
     //"what is the time in 24 hour format"
@@ -22,7 +22,7 @@ let config = {
     { "id": "what", "level": 0, "bridge": "{ ...next(operator), isQuery: true }" },
     { "id": "equals", "level": 0, "bridge": "{ ...next(operator), equals: [before, after] }" },
     { "id": "it", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
-    { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
+    { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator) }" },
 
     { "id": "the", "level": 0, "bridge": "{ ...next(after), pullFromContext: true }" },
 
@@ -150,7 +150,7 @@ knowledgeModule( {
       .catch( (error) => {
         console.log(`Error ${config.get('utterances')}`);
         console.log(error.error)
-        console.log(error)
+        console.log(error.trace);
       })
   },
   module: () => {
