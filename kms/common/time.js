@@ -9,9 +9,10 @@ const pad = (v, l) => {
 
 let config = {
   operators: [
-    "((<what> ([timeConcept|time])) [equals|is] ([it]))",
+    "((<what> ([timeConcept|time])) [equals|is] ([timeConcept]))",
     "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
     "(([whatOne|what]) [equals] (<the> ([timeConcept])))",
+    "([anyConcept])",
     //"what is the time in 24 hour format"
     //"what time is it in Paris"
     //"what time is it in GMT"
@@ -21,7 +22,7 @@ let config = {
   bridges: [
     { "id": "what", "level": 0, "bridge": "{ ...next(operator), isQuery: true }" },
     { "id": "equals", "level": 0, "bridge": "{ ...next(operator), equals: [before, after] }" },
-    { "id": "it", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
+    { "id": "anyConcept", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
     { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator) }" },
 
     { "id": "whatOne", "level": 0, "bridge": "{ ...next(operator), isQuery: true }" },
@@ -31,6 +32,11 @@ let config = {
     { "id": "count", "level": 0, "bridge": "{ ...after, count: operator[0].value }" },
     { "id": "timeUnit", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "use", "level": 0, "bridge": "{ ...next(operator), format: after[0] }" },
+
+    {"id": "anyConcept", "level": 0, "bridge": "{ ...next(operator) }"},
+  ],
+  "hierarchy": [
+    ["timeConcept", "anyConcept"],
   ],
   floaters: ['isQuery'],
   debug: true,
@@ -42,6 +48,7 @@ let config = {
     " hours?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " minutes?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " seconds?": [{"id": "timeUnit", "initial": "{ units: 'seconds' }" }],
+    "it": [{"id": "anyConcept", "initial": {"language": "english", "pullFromContext": true}}],
     //"spock": [{"id": "crewMember", 'initial': { 'id': 'spock' } }],
     /*
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
@@ -144,7 +151,7 @@ knowledgeModule( {
           console.log('Logs')
           responses.logs.forEach( (log) => console.log(`    ${log}`) )
         }
-        //console.log(responses.trace);
+        console.log(responses.trace);
         console.log('objects', JSON.stringify(config.get("objects"), null, 2))
         console.log(responses.generated);
         console.log(responses.results);
