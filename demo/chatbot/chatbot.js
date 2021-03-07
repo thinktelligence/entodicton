@@ -56,15 +56,15 @@ let initConfig = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'answer', ({global, context}) => {
-      if (global.question.id == 'greenLight') {
+    [({objects, context}) => context.marker == 'answer', ({objects, context}) => {
+      if (objects.question.id == 'greenLight') {
         if (context.value) {
-          global.question = { marker: 'question', id: 'videoFeed', text: 'is there any video feed on the screen'}
+          objects.question = { marker: 'question', id: 'videoFeed', text: 'is there any video feed on the screen'}
         } else {
-          global.question = { marker: 'question', id: 'videoFeed', text: 'Call the landlord'}
+          objects.question = { marker: 'question', id: 'videoFeed', text: 'Call the landlord'}
         }
       }
-      else if (global.question.id == 'videoFeed') {
+      else if (objects.question.id == 'videoFeed') {
         if (context.value) {
           context.marker = 'solution'
           context.text = 'Do solution 2'
@@ -72,11 +72,11 @@ let initConfig = {
           context.marker = 'solution'
           context.text = 'Do solution 1'
         }
-        global.question = null
+        objects.question = null
       }
      }],
-    [({global, context}) => context.marker == 'unlock1' && context.cannot, ({global, context}) => {
-      global.question = { marker: 'question', id: 'greenLight', text: 'is there a green light on the lock?'}
+    [({objects, context}) => context.marker == 'unlock1' && context.cannot, ({objects, context}) => {
+      objects.question = { marker: 'question', id: 'greenLight', text: 'is there a green light on the lock?'}
      }],
   ],
 };

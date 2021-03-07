@@ -38,16 +38,16 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'listGuns', ({global, context}) => {
-      console.log('global', global)
-      context.guns = global.fallout.merchant.guns.filter( (gun) => gun.types.includes(context.gunType) )
+    [({objects, context}) => context.marker == 'listGuns', ({objects, context}) => {
+      console.log('objects', objects)
+      context.guns = objects.fallout.merchant.guns.filter( (gun) => gun.types.includes(context.gunType) )
       context.hasAnswer = true
      }],
   ],
 };
 
-url = "http://Deplo-Entod-1FYMS71PIEWAI-2094328980.ca-central-1.elb.amazonaws.com"
-key = "d83579b0-ffda-444d-9942-ac8fa2856f5c"
+url = process.argv[2] || "http://184.67.27.82"
+key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 const query = 'show me the shotguns'
 console.log(`Running the input: ${query}`);
@@ -60,7 +60,7 @@ client.process(url, key, config)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the global objects from running semantics:\n', config.objects)
+    console.log('This is the objects from running semantics:\n', config.objects)
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
