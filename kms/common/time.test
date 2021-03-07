@@ -62,27 +62,44 @@
   },
   "what time is it": {
     "generated": [
-      "{\"marker\":\"what\",\"word\":\"what\",\"isQuery\":true}",
-      "{\"marker\":\"equals\",\"word\":\"is\"}",
-      "{\"marker\":\"it\",\"word\":\"it\",\"pullFromContext\":true,\"types\":[\"it\"]}"
+      "the time is 2:39 pm"
     ],
     "result": [
       {
-        "marker": "what",
-        "word": "what",
-        "isQuery": true
-      },
-      {
         "marker": "equals",
-        "word": "is"
-      },
+        "word": "is",
+        "equals": [
+          {
+            "marker": "timeConcept",
+            "word": "time",
+            "types": [
+              "anyConcept"
+            ]
+          },
+          {
+            "language": "english",
+            "pullFromContext": true,
+            "marker": "timeConcept",
+            "word": "it",
+            "value": "2021-03-06T22:01:39.965Z",
+            "format": 12
+          }
+        ],
+        "isResponse": true
+      }
+    ]
+  },
+  "the time": {
+    "generated": [
+      "7:15 am"
+    ],
+    "result": [
       {
-        "marker": "it",
-        "word": "it",
+        "marker": "timeConcept",
+        "word": "time",
         "pullFromContext": true,
-        "types": [
-          "it"
-        ]
+        "value": "2021-03-05T15:57:15.640Z",
+        "format": 12
       }
     ]
   }
