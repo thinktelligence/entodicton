@@ -64,29 +64,29 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'crewMember', ({global, context}) => {
-      global.mentions.push(context.id)
+    [({objects, context}) => context.marker == 'crewMember', ({objects, context}) => {
+      objects.mentions.push(context.id)
      }],
-    [({global, context}) => context.marker == 'arm', ({global, context}) => {
-      if (global.mentions.length > 0) {
+    [({objects, context}) => context.marker == 'arm', ({objects, context}) => {
+      if (objects.mentions.length > 0) {
         // character does it
-        global.characters[global.mentions[0]].toDo.push(context)
+        objects.characters[objects.mentions[0]].toDo.push(context)
       } else {
         // computer does it right away
-        global.enterprise.torpedoes.armed = true
+        objects.enterprise.torpedoes.armed = true
       }
      }],
-    [({global, context}) => context.marker == 'showStatus' && context.area == 'weapons', ({global, context}) => {
+    [({objects, context}) => context.marker == 'showStatus' && context.area == 'weapons', ({objects, context}) => {
       context.hasAnswer = true
-      const ps = global.enterprise.phasers.armed ? 'armed' : 'not armed'
-      const ts = global.enterprise.torpedoes.armed ? 'armed' : 'not armed'
+      const ps = objects.enterprise.phasers.armed ? 'armed' : 'not armed'
+      const ts = objects.enterprise.torpedoes.armed ? 'armed' : 'not armed'
       context.status = `Phasers: ${ps} Torpedoes: ${ts}`
      }],
   ],
 };
 
-url = 'http://Deplo-Entod-17J794A370LM3-1965629916.ca-central-1.elb.amazonaws.com'
-key = 'f4a879cd-6ff7-4f14-91db-17a11ba77103'
+url = process.argv[2] || "http://184.67.27.82"
+key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 //const query = 'arm the photon torpedoes'
 //const query = 'show the weapons status'
@@ -111,6 +111,7 @@ context = {
   }
 }
 
+/*
 config.set('contexts', [context])
 console.log('config', config)
 console.log('before objects', JSON.stringify(objects, null, 2))
@@ -119,6 +120,10 @@ client.process(url, key, config).then( (responses) => {
   console.log('responses', responses.generated);
   console.log('after objects', JSON.stringify(objects, null, 2))
 })
+*/
+const question = config.get('utterances')[0]
+r = client.processContext(question, { semantics: config.get('semantics'), generators: config.get("generators"), objects: objects })
+console.log(r)
 
 /*
 client.process(url, key, config)
@@ -127,7 +132,7 @@ client.process(url, key, config)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the global objects from running semantics:\n', config.objects)
+    console.log('This is the objects from running semantics:\n', config.objects)
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
@@ -147,3 +152,4 @@ client.process(url, key, config)
     console.log(`Error ${config.utterances}`);
     console.log(error)
   })
+*/
