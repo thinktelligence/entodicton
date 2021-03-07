@@ -1,7 +1,7 @@
 /*
 This is what the output looks like
 
-This is the global objects from running semantics:
+This is the objects from running semantics:
  { employees:
    [ { name: 'joe',
        earnings_per_period: 10,
@@ -68,17 +68,17 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'earn', ({global, context}) => {
-      if (! global.employees ) {
-        global.employees = []
+    [({objects, context}) => context.marker == 'earn', ({objects, context}) => {
+      if (! objects.employees ) {
+        objects.employees = []
       }
-      global.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
+      objects.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
      }],
-    [({global, context}) => context.marker == 'worked', ({global, context}) => {
-      if (! global.workingTime ) {
-        global.workingTime = []
+    [({objects, context}) => context.marker == 'worked', ({objects, context}) => {
+      if (! objects.workingTime ) {
+        objects.workingTime = []
       }
-      global.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
+      objects.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
      }],
   ],
 };
@@ -96,7 +96,7 @@ client.process(url, key, config)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the global objects from running semantics:\n', config.objects)
+    console.log('This is the objects from running semantics:\n', config.objects)
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )

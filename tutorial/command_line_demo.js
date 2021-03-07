@@ -2,7 +2,7 @@
   This is what the output looks like
 
   Running the input: joe earns 10 dollars every week sally earns 25 dollars per week sally worked 10 weeks joe worked 15 weeks joe earns what sally earns what
-This is the global objects from running semantics:
+This is the objects from running semantics:
  { employees:
    [ { name: 'joe',
        earnings_per_period: 10,
@@ -130,11 +130,11 @@ let config = {
   ],
 
   semantics: [
-     [({global, context}) => context.marker == 'earn' && context.isQuery, ({global, context}) => {
+     [({objects, context}) => context.marker == 'earn' && context.isQuery, ({objects, context}) => {
       context.marker = 'response';
-      var employee_record = global.employees.find( (er) => er.name == context.who )
+      var employee_record = objects.employees.find( (er) => er.name == context.who )
       let totalIncome = 0
-      global.workingTime.forEach( (wt) => {
+      objects.workingTime.forEach( (wt) => {
         if (wt.name == context.who) {
           totalIncome += employee_record.earnings_per_period * wt.number_of_time_units
         }
@@ -143,17 +143,17 @@ let config = {
       delete context.period
       context.earnings = totalIncome
      }],
-    [({global, context}) => context.marker == 'earn', ({global, context}) => {
-      if (! global.employees ) {
-        global.employees = []
+    [({objects, context}) => context.marker == 'earn', ({objects, context}) => {
+      if (! objects.employees ) {
+        objects.employees = []
       }
-      global.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
+      objects.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
      }],
-    [({global, context}) => context.marker == 'worked', ({global, context}) => {
-      if (! global.workingTime ) {
-        global.workingTime = []
+    [({objects, context}) => context.marker == 'worked', ({objects, context}) => {
+      if (! objects.workingTime ) {
+        objects.workingTime = []
       }
-      global.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
+      objects.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
      }],
   ],
 };
@@ -171,7 +171,7 @@ client.process(url, key, config)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the global objects from running semantics:\n', config.objects)
+    console.log('This is the objects from running semantics:\n', config.objects)
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
