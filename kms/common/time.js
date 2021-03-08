@@ -10,10 +10,11 @@ const pad = (v, l) => {
 
 let config = {
   operators: [
-    "((<whatP|what> ([anyConcept])) [equals|is] ([anyConcept]))",
+    "(([anyConcept]) [equals|is] ([anyConcept]))",
     "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
-    //"(([whatOne|what]) [equals] (<the> ([timeConcept])))",
+    //"(([what0|what]) [equals] (<the> ([timeConcept])))",
     "(<the> ([timeConcept|time]))",
+    "(<whatP|what> ([anyConcept]))",
     //"what is the time in 24 hour format"
     //"what time is it in Paris"
     //"what time is it in GMT"
@@ -26,7 +27,6 @@ let config = {
     { "id": "anyConcept", "level": 0, "bridge": "{ ...next(operator), pullFromContext: true }" },
     { "id": "timeConcept", "level": 0, "bridge": "{ ...next(operator) }" },
 
-    //{ "id": "whatOne", "level": 0, "bridge": "{ ...next(operator), isQuery: true }" },
     { "id": "the", "level": 0, "bridge": "{ ...after, pullFromContext: true }" },
 
     { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
@@ -50,6 +50,7 @@ let config = {
     " minutes?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " seconds?": [{"id": "timeUnit", "initial": "{ units: 'seconds' }" }],
     "it": [{"id": "anyConcept", "initial": {"language": "english", "pullFromContext": true}}],
+    "what": [{"id": "anyConcept", "initial": {language: "english", isQuery: true, pullFromContext: true}}],
     //"spock": [{"id": "crewMember", 'initial': { 'id': 'spock' } }],
     /*
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
@@ -70,7 +71,7 @@ let config = {
             hh -= 12;
             ampm = 'pm'
           }
-          let ss = context.value.getSeconds()
+          let ss = context.value.getMinutes()
           ss = pad(ss, 2)
           return `${hh}:${ss} ${ampm}` 
         }],
@@ -82,45 +83,42 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'equals' && context.isQuery, async ({global, context, s}) => {
+    [({objects, context, config}) => context.marker == 'equals' && context.isQuery, async ({objects, context, response, s}) => {
       context.isResponse = true
       delete context.isQuery
       delete context.equals[0].isQuery
-      console.log('ssssssssssssssssssssssss', s)
-      // get the types
-      // share the types 
-      // run the semantics
       markers = context.equals.map( (c) => c.marker )
-      mostSpecific = 'timeConcept'  // have a helper function
+      const digraph = new Digraph(response.hierarchy)
+      mostSpecific = Array.from(digraph.minima(markers))[0];
       context.equals.map( (c) => c.marker = mostSpecific )
-      console.log('markers', markers);
       context.equals.forEach( (c) => {
         if (c.pullFromContext) {
-          console.log('runing c', c)
           Object.assign(c, s(c))
-          console.log('new c', c)
         }
       })
-      console.log('context out', context);
     }],
-    [({global, context}) => context.marker == 'timeConcept' && context.pullFromContext, async ({global, context}) => {
+
+    [({objects, context}) => context.marker == 'timeConcept' && context.pullFromContext, async ({objects, context}) => {
       console.log("xxxxxxxxxxxxx in it");
       context.value = new Date()
-      context.format = global.format
+      context.format = objects.format
       console.log('context outx xxxx', context)
     }],
-    [({global, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({global, context}) => {
-      global.format = context.format.count
+    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
+      objects.format = context.format.count
     }],
-    [({global, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), async ({global, context}) => {
+    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), async ({objects, context}) => {
       context.marker = 'response'
       context.text = 'The hour format is 12 hour or 24 hour'
     }],
   ],
 };
 
-url = 'http://Deplo-Entod-17J794A370LM3-1965629916.ca-central-1.elb.amazonaws.com'
-key = 'f4a879cd-6ff7-4f14-91db-17a11ba77103'
+//url = 'http://Deplo-Entod-KTIE4UI7CSI-1741854747.ca-central-1.elb.amazonaws.com'
+//key = 'f4a879cd-6ff7-4f14-91db-17a11ba77103'
+url = process.argv[2] || "http://184.67.27.82"
+key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
+
 
 config.utterances = ['what time is it']
 //config.utterances = ['the time']
