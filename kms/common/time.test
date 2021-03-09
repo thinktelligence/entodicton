@@ -1,68 +1,7 @@
 {
-  "use 36 hour format": {
-    "generated": [
-      "The hour format is 12 hour or 24 hour"
-    ],
-    "result": [
-      {
-        "marker": "response",
-        "word": "use",
-        "format": {
-          "units": "hour",
-          "marker": "timeFormat",
-          "word": "format",
-          "count": 36
-        },
-        "text": "The hour format is 12 hour or 24 hour"
-      }
-    ]
-  },
-  "use 24 hour format": {
-    "generated": [
-      "the time"
-    ],
-    "result": [
-      {
-        "marker": "use",
-        "word": "use",
-        "format": {
-          "units": "hour",
-          "marker": "timeFormat",
-          "word": "format",
-          "count": 24
-        }
-      }
-    ]
-  },
-  "what is the time": {
-    "generated": [
-      "{\"marker\":\"what\",\"word\":\"what\",\"types\":[\"what\"]} is 9:59 pm"
-    ],
-    "result": [
-      {
-        "marker": "equals",
-        "word": "is",
-        "equals": [
-          {
-            "marker": "what",
-            "word": "what",
-            "types": [
-              "what"
-            ]
-          },
-          {
-            "marker": "timeConcept",
-            "value": "2021-02-28T05:12:59.590Z",
-            "format": 12
-          }
-        ],
-        "isResponse": true
-      }
-    ]
-  },
   "what time is it": {
     "generated": [
-      "the time is 2:39 pm"
+      "the time is 8:07 am"
     ],
     "result": [
       {
@@ -81,7 +20,7 @@
             "pullFromContext": true,
             "marker": "timeConcept",
             "word": "it",
-            "value": "2021-03-06T22:01:39.965Z",
+            "value": "2021-03-08T16:07:34.122Z",
             "format": 12
           }
         ],
@@ -91,15 +30,98 @@
   },
   "the time": {
     "generated": [
-      "7:15 am"
+      "10:13 pm"
     ],
     "result": [
       {
         "marker": "timeConcept",
         "word": "time",
         "pullFromContext": true,
-        "value": "2021-03-05T15:57:15.640Z",
+        "value": "1995-12-26T06:13:00.000Z",
         "format": 12
+      }
+    ]
+  },
+  "what is the time": {
+    "generated": [
+      "the time is 10:13 pm"
+    ],
+    "result": [
+      {
+        "marker": "equals",
+        "word": "is",
+        "equals": [
+          {
+            "language": "english",
+            "pullFromContext": true,
+            "marker": "timeConcept",
+            "word": "what",
+            "format": 12
+          },
+          {
+            "marker": "timeConcept",
+            "word": "time",
+            "pullFromContext": true,
+            "types": [
+              "anyConcept"
+            ],
+            "value": "1995-12-26T06:13:00.000Z",
+            "format": 12
+          }
+        ],
+        "isResponse": true
+      }
+    ]
+  },
+  "use 24 hour format": {
+    "generated": [
+      "use 24 hour time"
+    ],
+    "result": [
+      {
+        "marker": "use",
+        "word": "use",
+        "format": {
+          "units": "hour",
+          "marker": "timeFormat",
+          "word": "format",
+          "count": 24
+        }
+      }
+    ]
+  },
+  "use 36 hour format": {
+    "generated": [
+      "The hour format is 12 hour or 24 hour"
+    ],
+    "result": [
+      {
+        "marker": "response",
+        "word": "use",
+        "format": {
+          "units": "hour",
+          "marker": "timeFormat",
+          "word": "format",
+          "count": 36
+        },
+        "text": "The hour format is 12 hour or 24 hour"
+      }
+    ]
+  },
+  "use 12 hour format": {
+    "generated": [
+      "use 12 hour time"
+    ],
+    "result": [
+      {
+        "marker": "use",
+        "word": "use",
+        "format": {
+          "units": "hour",
+          "marker": "timeFormat",
+          "word": "format",
+          "count": 12
+        }
       }
     ]
   }
