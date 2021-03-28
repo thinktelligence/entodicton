@@ -69,17 +69,17 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'earn', ({global, context}) => {
-      if (! global.employees ) {
-        global.employees = []
+    [({objects, context}) => context.marker == 'earn', ({objects, context}) => {
+      if (! objects.employees ) {
+        objects.employees = []
       }
-      global.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
+      objects.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
      }],
-    [({global, context}) => context.marker == 'worked', ({global, context}) => {
-      if (! global.workingTime ) {
-        global.workingTime = []
+    [({objects, context}) => context.marker == 'worked', ({objects, context}) => {
+      if (! objects.workingTime ) {
+        objects.workingTime = []
       }
-      global.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
+      objects.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
      }],
   ],
 };
