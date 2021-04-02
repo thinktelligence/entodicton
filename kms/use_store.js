@@ -1,4 +1,4 @@
-const client = require('entodicton/client')
+const client = require('entodicton')
 const { store } = require('ekms')
 
 const testData = {
