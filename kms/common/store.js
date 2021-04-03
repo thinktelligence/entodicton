@@ -96,7 +96,7 @@ config.initializer( (config) => {
 const isEntryPoint = () => {
     return require.main === module;
 }
-console.log('aaaaaaaaaaaisEntryPoint:', isEntryPoint())
+
 client.knowledgeModule( { 
   url,
   key,
