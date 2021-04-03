@@ -100,6 +100,8 @@ const isEntryPoint = () => {
 client.knowledgeModule( { 
   url,
   key,
+  name: 'store',
+  description: 'questions about products for sale in a store',
   config,
   isProcess: require.main === module,
   test: './store.test',
