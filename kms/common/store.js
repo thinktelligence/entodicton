@@ -31,10 +31,11 @@ const objects = {
 let config = {
   operators: [
     //"(([type]) [([(<less> ([than]))] ([amount]))])",
-    "([list] ([product|products]))"
+    "([list] (<the> (([product|products]))))"
   ],
   bridges: [
     { "id": "product", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "the", "level": 0, "bridge": "{ ...after, pullFromContext: true }" },
     { "id": "list", "level": 0, "bridge": "{ ...next(operator), what: after}" },
   ],
   hierarchy: [
@@ -107,8 +108,8 @@ client.knowledgeModule( {
   test: './store.test',
   setup: () => {
   },
-  process: () => {
-    return client.process(url, key, config, { writeTests: true, testsFn: './store.test', skipGenerators: true })
+  process: (promise) => {
+    return promise
       .then( async (responses) => {
         if (responses.errors) {
           console.log('Errors')
@@ -123,6 +124,7 @@ client.knowledgeModule( {
         console.log('objects', JSON.stringify(config.get("objects"), null, 2))
         console.log(responses.generated);
         console.log(JSON.stringify(responses.results, null, 2));
+//        return promise;
       })
       .catch( (error) => {
         console.log(`Error ${config.get('utterances')}`);
@@ -130,6 +132,7 @@ client.knowledgeModule( {
         console.log('error.context', error.context)
         console.log('error.logs', error.logs);
         console.log('error.trace', error.trace);
+//        return promise;
       })
   },
   module: () => {
