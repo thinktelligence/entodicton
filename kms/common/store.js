@@ -31,12 +31,20 @@ const objects = {
 let config = {
   operators: [
     //"(([type]) [([(<less> ([than]))] ([amount]))])",
-    "([list] (<the> (([product|products]))))"
+    "([list] (<the> (([product|products]))))",
+    //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
+    "(([product]) <(<that> ([cost] ([price])))>)",
   ],
   bridges: [
     { "id": "product", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "the", "level": 0, "bridge": "{ ...after, pullFromContext: true }" },
     { "id": "list", "level": 0, "bridge": "{ ...next(operator), what: after}" },
+
+    //{ "id": "that", "level": 0, "bridge": "{ ...next(operator), operator.passthrough: true }" },
+    { "id": "that", "level": 0, "bridge": "{ ...after, operator.passthrough: true }" },
+    { "id": "cost", "level": 0, "bridge": "{ ...next(operator), price: after[0] }" },
+    { "id": "cost", "level": 1, "bridge": "{ ...next(operator), what: before[0] }" },
+    { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
   hierarchy: [
   ],
@@ -128,6 +136,7 @@ client.knowledgeModule( {
       })
       .catch( (error) => {
         console.log(`Error ${config.get('utterances')}`);
+        console.log('error', error)
         console.log('error.error', error.error)
         console.log('error.context', error.context)
         console.log('error.logs', error.logs);
