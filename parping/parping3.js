@@ -48,9 +48,9 @@ let config = {
   generators: [
     [ ({context}) => context.marker == 'toBe' && !context.hasAnswer, ({g, context}) => `${g(context.subject)} are ${g(context.object)}` ],
     [ ({context}) => context.marker == 'toBe' && context.hasAnswer, ({gs, context}) => `the players are ${gs(context.players, ' ', ' and ')}` ],
-    [ ({global, context}) => context.id.startsWith('player') && global.sentiments[context.id] == 'like', ({g, context}) => `${g(context.name)} of eyes ${context.eyes}` ],
-    [ ({global, context}) => context.id.startsWith('player') && global.sentiments[context.id] == 'neutral', ({g, context}) => `${g(context.name)}` ],
-    [ ({global, context}) => context.id.startsWith('player') && global.sentiments[context.id] == 'hate', ({g, context}) => `the hated ${g(context.name)}` ],
+    [ ({objects, context}) => context.id.startsWith('player') && objects.sentiments[context.id] == 'like', ({g, context}) => `${g(context.name)} of eyes ${context.eyes}` ],
+    [ ({objects, context}) => context.id.startsWith('player') && objects.sentiments[context.id] == 'neutral', ({g, context}) => `${g(context.name)}` ],
+    [ ({objects, context}) => context.id.startsWith('player') && objects.sentiments[context.id] == 'hate', ({g, context}) => `the hated ${g(context.name)}` ],
     //[ ({context}) => context.id.startsWith('player'), ({g, context}) => `${g(context.name)}` ],
     [ ({context}) => context.marker == 'who', ({g, context}) => `${g(context.word)}` ],
     [ ({context}) => context.marker == 'playerConcept', ({g, context}) => `the ${g(context.word)}` ],
@@ -62,31 +62,32 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'like', ({global, context}) => {
-      global.sentiments[context.who[0].id] = 'like'
+    [({objects, context}) => context.marker == 'like', ({objects, context}) => {
+      objects.sentiments[context.who[0].id] = 'like'
     }],
-    [({global, context}) => context.marker == 'toBe', ({global, context}) => {
-      console.log('global', global)
-      context.players = global.players
+    [({objects, context}) => context.marker == 'toBe', ({objects, context}) => {
+
+      console.log('objects', objects)
+      context.players = objects.players
       context.hasAnswer = true;
     }],
-    [({global, context}) => context.marker == 'earn', ({global, context}) => {
-      if (! global.employees ) {
-        global.employees = []
+    [({objects, context}) => context.marker == 'earn', ({objects, context}) => {
+      if (! objects.employees ) {
+        objects.employees = []
       }
-      global.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
+      objects.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
      }],
-    [({global, context}) => context.marker == 'worked', ({global, context}) => {
-      if (! global.workingTime ) {
-        global.workingTime = []
+    [({objects, context}) => context.marker == 'worked', ({objects, context}) => {
+      if (! objects.workingTime ) {
+        objects.workingTime = []
       }
-      global.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
+      objects.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
      }],
   ],
 };
 
-url = "http://Deplo-Entod-1CT3OS32E5XW3-372444999.ca-central-1.elb.amazonaws.com"
-key = "0686949c-0348-411b-9b4b-32e469f2ed85"
+url = process.argv[2] || "http://184.67.27.82"
+key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 const query = 'who are the players i like bilbo who are the players i like aragon who are the players'
 console.log(`Running the input: ${query}`);
@@ -99,7 +100,7 @@ client.process(url, key, config)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the global objects from running semantics:\n', objects)
+    console.log('This is the objects from running semantics:\n', objects)
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )

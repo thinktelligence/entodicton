@@ -1,0 +1,74 @@
+# Entodicton Knowledge Modules
+
+This is a library of entodicton knowledge modules that can be reused. A description of the contents can be found <a href='https://thinktelligence.com/kms'>here</a>
+
+## Knowledge Modules
+
+- ***store KM*** - This one is the domain of products and prices.
+
+## Usage
+
+The basic usage is redefine the interface functions to point to your data. Then all of the queries that are supported can be performed against your data. Here is an example of how to do that
+
+The first step is to include the client and the knowledge module project called EKMS
+```
+const client = require('entodicton/client')
+const { store } = require('ekms')
+```
+
+`store` is the knowledge module that describe how to interpret utterances about the store domain. By default the km will work with test data. You can run it the same as any other Entodicton config. For example, this works against the shared server
+
+```
+url = "http://184.67.27.82"
+key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
+store.set("utterances", ['list products'])
+client.process(url, key, store).then( (response) => {
+    //console.log(JSON.stringify(response, null, 2))
+      console.log(response.generated[0])
+})
+```
+
+The result of running this would be
+
+```
+[ 'the products are pants1 and shirt1' ]
+```
+
+In order to customize the output to your domain you would need to redefine the interface to access your data
+
+```
+const testData = {
+  types: [ 'tanks', 'planes' ],
+  products: [
+    { marker: 'product', isInstance: true, type: 'tanks', name: 'Tamiya Tiger', cost: 9, id: 1 },
+    { marker: 'product', isInstance: true, type: 'planes', name: 'Meng P-47', cost: 15, id: 2 },
+  ]
+}
+
+const interface = {
+  getTypes: () => testData.types,
+  getAllProducts: () => testData.products,
+  getByTypeAndCost: ({type, cost, comparison}) => {
+    results = []
+    testData.forEach( (product) => {
+    if (product.type == type && comparison(product.cost)) {
+      results.append(product)
+    }
+    })
+    return results
+  },
+  productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
+};
+
+store.get('objects').interface = interface;
+```
+
+After doing this the results of running would be
+
+```
+[ 'the products are Tamiya Tiger and Meng P-47' ]
+```
+
+Sample code that runs this example can be found 
+<a href='https://github.com/thinktelligence/entodicton/blob/main/kms/use_store.js'>here</a>
+

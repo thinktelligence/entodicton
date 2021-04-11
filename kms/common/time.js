@@ -8,6 +8,10 @@ const pad = (v, l) => {
   return "0".repeat(n) + s
 }
 
+let getDate = () => {
+  return new Date()
+}
+
 let config = {
   operators: [
     "(([anyConcept]) [equals|is] ([anyConcept]))",
@@ -30,7 +34,7 @@ let config = {
     { "id": "the", "level": 0, "bridge": "{ ...after, pullFromContext: true }" },
 
     { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
-    { "id": "count", "level": 0, "bridge": "{ ...after, count: operator[0].value }" },
+    { "id": "count", "level": 0, "bridge": "{ ...after, count: operator.value }" },
     { "id": "timeUnit", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "use", "level": 0, "bridge": "{ ...next(operator), format: after[0] }" },
 
@@ -39,9 +43,14 @@ let config = {
   "hierarchy": [
     ["timeConcept", "anyConcept"],
   ],
+  associations: {
+    negative: [ [['anyConcept', 0], ['timeConcept', 0]] ],
+    positive: [ [['whatP', 0], ['timeConcept', 0]] ],
+  },
   floaters: ['isQuery'],
   debug: true,
   priorities: [
+    [['equals', 0], ['whatP', 0]]
   ],
   "version": '3',
   "words": {
@@ -78,7 +87,7 @@ let config = {
     [ ({context}) => context.marker == 'timeConcept' && context.value && context.format == 24, ({g, context}) => 
         `${context.value.getHours()}:${context.value.getMinutes()}` ],
     [ ({context}) => context.marker == 'timeConcept' && !context.value, ({g, context}) => `the time` ],
-    [ ({context}) => context.marker == 'use' && !context.value, ({g, context}) => `the time` ],
+    [ ({context}) => context.marker == 'use' && !context.value, ({g, context}) => `use ${context.format.count} hour time` ],
     [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
   ],
 
@@ -96,13 +105,12 @@ let config = {
           Object.assign(c, s(c))
         }
       })
+      delete context.equals[0].value
     }],
 
     [({objects, context}) => context.marker == 'timeConcept' && context.pullFromContext, async ({objects, context}) => {
-      console.log("xxxxxxxxxxxxx in it");
-      context.value = new Date()
+      context.value = getDate()
       context.format = objects.format
-      console.log('context outx xxxx', context)
     }],
     [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
       objects.format = context.format.count
@@ -116,14 +124,16 @@ let config = {
 
 //url = 'http://Deplo-Entod-KTIE4UI7CSI-1741854747.ca-central-1.elb.amazonaws.com'
 //key = 'f4a879cd-6ff7-4f14-91db-17a11ba77103'
-url = process.argv[2] || "http://184.67.27.82"
-key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
+url = "http://184.67.27.82"
+key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 
-config.utterances = ['what time is it']
+//config.utterances = ['what time is it']
+//config.utterances = ['what is the time']
 //config.utterances = ['the time']
 //config.utterances = ['use 24 hour format what time is it use 12 hour format what time is it']
-//config.utterances = ['what is the time']
+config.utterances = ['use 12 hour format']
+//config.utterances = ['use 36 hour format']
 console.log(`Running the input: ${config.utterances}`);
 config.objects = {
   format: 12  // or 24
@@ -132,6 +142,7 @@ config = new Config(config)
 
 const knowledgeModule = ({url, key, config, test, debug, module, stopAtFirstFailure = true} = {}) => {
   if ((typeof process) !== 'undefined') {
+    getDate = () => new Date("December 25, 1995 10:13 pm")
     const hasTestFlag = () => {
       return process.argv[process.argv.length-1] == 'test'
     }
@@ -178,7 +189,7 @@ knowledgeModule( {
         console.log('error.error', error.error)
         console.log('error.context', error.context)
         console.log('error.logs', error.logs);
-        //console.log('error.trace', error.trace);
+        console.log('error.trace', error.trace);
       })
   },
   module: () => {

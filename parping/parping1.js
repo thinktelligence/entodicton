@@ -46,23 +46,23 @@ let config = {
   ],
 
   semantics: [
-    [({global, context}) => context.marker == 'earn', ({global, context}) => {
-      if (! global.employees ) {
-        global.employees = []
+    [({objects, context}) => context.marker == 'earn', ({objects, context}) => {
+      if (! objects.employees ) {
+        objects.employees = []
       }
-      global.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
+      objects.employees.push({ name: context.who, earnings_per_period: context.amount, period: context.period, units: 'dollars' })
      }],
-    [({global, context}) => context.marker == 'worked', ({global, context}) => {
-      if (! global.workingTime ) {
-        global.workingTime = []
+    [({objects, context}) => context.marker == 'worked', ({objects, context}) => {
+      if (! objects.workingTime ) {
+        objects.workingTime = []
       }
-      global.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
+      objects.workingTime.push({ name: context.who, number_of_time_units: context.duration, time_units: context.units })
      }],
   ],
 };
 
-url = "http://Deplo-Entod-1CT3OS32E5XW3-372444999.ca-central-1.elb.amazonaws.com"
-key = "0686949c-0348-411b-9b4b-32e469f2ed85"
+url = process.argv[2] || "http://184.67.27.82"
+key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 const query = 'who are the players'
 console.log(`Running the input: ${query}`);
