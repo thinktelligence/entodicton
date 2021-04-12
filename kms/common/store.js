@@ -41,9 +41,10 @@ let config = {
     { "id": "list", "level": 0, "bridge": "{ ...next(operator), what: after}" },
 
     //{ "id": "that", "level": 0, "bridge": "{ ...next(operator), operator.passthrough: true }" },
-    { "id": "that", "level": 0, "bridge": "{ ...after, operator.passthrough: true }" },
+    //{ "id": "that", "level": 0, "bridge": "{ ...after, operator.passthrough: true }" },
+    { "id": "that", "level": 0, "bridge": "{ ...after, hasThat: true }" },
     { "id": "cost", "level": 0, "bridge": "{ ...next(operator), price: after[0] }" },
-    { "id": "cost", "level": 1, "bridge": "{ ...next(operator), what: before[0] }" },
+    { "id": "cost", "level": 1, "bridge": "{ ...squish(operator), ...before[0] }" },
     { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
   hierarchy: [
