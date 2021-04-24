@@ -1,6 +1,7 @@
 const client = require('entodicton/client')
 const Config = require('entodicton/src/config')
 const Digraph = require('entodicton/src/digraph')
+const numbersKM = require('./numbers.js')
 
 const testData = {
   types: [ 'pants', 'shorts' ],
@@ -21,8 +22,16 @@ const objects = {
         'pounds': 'pound',
         'pound': 'pound',
         'euros': 'euro', 
-        'euro': 'euro'
+        'euro': 'euro',
       } 
+    },
+
+    getUnitWords: () => {
+      return [
+        { units: 'dollar', one: 'dollar', many: 'dollars' },
+        { units: 'pound', one: 'pound', many: 'pounds' },
+        { units: 'euro', one: 'euro', many: 'euros' },
+      ]
     }
   }
 };
@@ -32,7 +41,6 @@ let config = {
     "(([number]) [currency])",
   ],
   bridges: [
-    { "id": "number", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "currency", "level": 0, "bridge": "{ ...next(operator), amount: before[0] }" },
   ],
   hierarchy: [
@@ -45,13 +53,16 @@ let config = {
   ],
   "version": '3',
   "words": {
-    " ([0-9]+)": [{"id": "number", "initial": "{ value: int(group[0]) }" }],
   },
 
   generators: [
-    [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
-    [ ({context}) => context.marker == 'list' && !context.isResponse, ({g, context}) => `list ${g(context.what)}` ],
-    [ ({context}) => context.marker == 'list' && context.isResponse, ({g, gs, context}) => `${g(context.what)} are ${gs(context.listing, ' ', ' and ')}` ],
+    [ ({context}) => context.marker == 'currency' && !context.isAbstract, ({context, g}) => {
+      word = Object.assign({}, context.amount)
+      word.isAbstract = true
+      word.marker = 'currency'
+      word.units = context.units
+      return `${g(context.amount)} ${g(word)}`
+    } ],
   ],
 
   semantics: [
@@ -69,25 +80,31 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //url = "http://localhost:3000"
 //key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
-// ['list products']
-//config.utterances = ['shirts less than 10 dollars']
-// shirts less than 10 dollars
-// shirts not more than 10 dollars
-// pants that are exactly $10
-
 config.objects = objects;
 config = new Config(config)
+config.add(numbersKM)
+
 config.initializer( (config) => {
   const objects = config.get('objects')
+
   units = objects.interface.getUnits()
   for (word in units) {
     words = config.get('words')
-    def = {"id": "currency", "initial": "{ units: '" + units[word] + "' }" }
+    def = {"id": "currency", "initial": { units: units[word] }}
     if (words[word]) {
       words[word].append(def)
     } else {
       words[word] = [def]
     }
+  }
+
+  unitWords = objects.interface.getUnitWords();
+  for (let words of unitWords) {
+      generators = config.get('generators')
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
+      generators.push(generator)
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
+      generators.push(generator)
   }
 })
 
@@ -98,11 +115,11 @@ const isEntryPoint = () => {
 client.knowledgeModule( { 
   url,
   key,
-  name: 'store',
+  name: 'currency',
   description: 'Ways of specifying currency amount',
   config,
   isProcess: require.main === module,
-  test: './store.test',
+  test: './currency.test',
   setup: () => {
   },
   process: (promise) => {
@@ -121,7 +138,6 @@ client.knowledgeModule( {
         console.log('objects', JSON.stringify(config.get("objects"), null, 2))
         console.log(responses.generated);
         console.log(JSON.stringify(responses.results, null, 2));
-//        return promise;
       })
       .catch( (error) => {
         console.log(`Error ${config.get('utterances')}`);
