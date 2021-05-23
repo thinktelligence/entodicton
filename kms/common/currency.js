@@ -68,8 +68,6 @@ let config = {
 
   semantics: [
     [({objects, context}) => context.marker == 'list', async ({objects, context}) => {
-      console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-      console.log(objects.interface.currency.getAllProducts())
       context.listing = objects.interface.currency.getAllProducts()
       context.isResponse = true
     }],
