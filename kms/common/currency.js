@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton= require('entodicton')
 const Digraph = require('entodicton/src/digraph')
 const numbersKM = require('./numbers.js')
 
@@ -14,24 +13,26 @@ const testData = {
 const objects = {
   // Interface methods use to customize the interpretation
   interface: {
-    // map currency word to the unit that will be put in the context
-    getUnits: () => {
-      return {
-        'dollars': 'dollar', 
-        'dollar': 'dollar',
-        'pounds': 'pound',
-        'pound': 'pound',
-        'euros': 'euro', 
-        'euro': 'euro',
-      } 
-    },
+    currency: {
+      // map currency word to the unit that will be put in the context
+      getUnits: () => {
+        return {
+          'dollars': 'dollar', 
+          'dollar': 'dollar',
+          'pounds': 'pound',
+          'pound': 'pound',
+          'euros': 'euro', 
+          'euro': 'euro',
+        } 
+      },
 
-    getUnitWords: () => {
-      return [
-        { units: 'dollar', one: 'dollar', many: 'dollars' },
-        { units: 'pound', one: 'pound', many: 'pounds' },
-        { units: 'euro', one: 'euro', many: 'euros' },
-      ]
+      getUnitWords: () => {
+        return [
+          { units: 'dollar', one: 'dollar', many: 'dollars' },
+          { units: 'pound', one: 'pound', many: 'pounds' },
+          { units: 'euro', one: 'euro', many: 'euros' },
+        ]
+      }
     }
   }
 };
@@ -68,8 +69,8 @@ let config = {
   semantics: [
     [({objects, context}) => context.marker == 'list', async ({objects, context}) => {
       console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-      console.log(objects.interface.getAllProducts())
-      context.listing = objects.interface.getAllProducts()
+      console.log(objects.interface.currency.getAllProducts())
+      context.listing = objects.interface.currency.getAllProducts()
       context.isResponse = true
     }],
   ],
@@ -81,24 +82,22 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 config.objects = objects;
-config = new Config(config)
+config = new entodicton.Config(config)
 config.add(numbersKM)
 
-config.initializer( (config) => {
-  const objects = config.get('objects')
-
-  units = objects.interface.getUnits()
+config.initializer( ({objects}) => {
+  units = objects.interface.currency.getUnits()
   for (word in units) {
     words = config.get('words')
     def = {"id": "currency", "initial": { units: units[word] }}
     if (words[word]) {
-      words[word].append(def)
+      words[word].push(def)
     } else {
       words[word] = [def]
     }
   }
 
-  unitWords = objects.interface.getUnitWords();
+  unitWords = objects.interface.currency.getUnitWords();
   for (let words of unitWords) {
       generators = config.get('generators')
       generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
@@ -112,7 +111,7 @@ const isEntryPoint = () => {
     return require.main === module;
 }
 
-client.knowledgeModule( { 
+entodicton.knowledgeModule( { 
   url,
   key,
   name: 'currency',
@@ -146,11 +145,9 @@ client.knowledgeModule( {
         console.log('error.context', error.context)
         console.log('error.logs', error.logs);
         console.log('error.trace', error.trace);
-//        return promise;
       })
   },
   module: () => {
-    console.log('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy in the module')
     module.exports = config
   }
 })

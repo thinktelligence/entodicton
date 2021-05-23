@@ -1,6 +1,5 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
-const Digraph = require('entodicton/src/digraph')
+const entodicton = require('entodicton')
+const currencyKM = require('./currency.js')
 
 const testData = {
   types: [ 'pants', 'shorts' ],
@@ -19,7 +18,7 @@ const objects = {
       results = []
       testData.forEach( (product) => {
         if (product.type == type && comparison(product.cost)) {
-          results.append(product)
+          results.push(product)
         }
       })
       return results
@@ -42,9 +41,9 @@ let config = {
 
     //{ "id": "that", "level": 0, "bridge": "{ ...next(operator), operator.passthrough: true }" },
     //{ "id": "that", "level": 0, "bridge": "{ ...after, operator.passthrough: true }" },
-    { "id": "that", "level": 0, "bridge": "{ ...after, hasThat: true }" },
+    { "id": "that", "level": 0, "bridge": "{ ...*, constraint: context }" },
     { "id": "cost", "level": 0, "bridge": "{ ...next(operator), price: after[0] }" },
-    { "id": "cost", "level": 1, "bridge": "{ ...squish(operator), ...before[0] }" },
+    { "id": "cost", "level": 1, "bridge": "{ ...squish(operator), thing*: before[0] }" },
     { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
   hierarchy: [
@@ -54,6 +53,7 @@ let config = {
   floaters: ['isQuery'],
   debug: true,
   priorities: [
+    [['list', 0], ['cost', 1]]
   ],
   "version": '3',
   "words": {
@@ -88,14 +88,13 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 // pants that are exactly $10
 
 config.objects = objects;
-config = new Config(config)
-config.initializer( (config) => {
-  const objects = config.get('objects')
+config = new entodicton.Config(config)
+config.initializer( ({objects}) => {
   objects.interface.getTypes().forEach( (type) => {
     words = config.get('words')
     def = {"id": "product", "initial": "{ value: '" + type + "' }" }
     if (words[type]) {
-      words[type].append(def)
+      words[type].push(def)
     } else {
       words[type] = [def]
     }
@@ -107,7 +106,7 @@ const isEntryPoint = () => {
     return require.main === module;
 }
 
-client.knowledgeModule( { 
+entodicton.knowledgeModule( { 
   url,
   key,
   name: 'store',

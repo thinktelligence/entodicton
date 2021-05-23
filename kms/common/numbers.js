@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton = require('entodicton')
 
 let config = {
   operators: [
@@ -28,10 +27,9 @@ url = "http://184.67.27.82"
 key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //url = "http://localhost:3000"
 //key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
+config = new entodicton.Config(config)
 
-config = new Config(config)
-
-client.knowledgeModule( { 
+entodicton.knowledgeModule( { 
   url,
   key,
   name: 'numbers',
