@@ -32,6 +32,25 @@ const objects = {
           { units: 'pound', one: 'pound', many: 'pounds' },
           { units: 'euro', one: 'euro', many: 'euros' },
         ]
+      },
+
+      conversion: {
+        "dollar": {
+          "euro": 0.82,
+          "pound": 0.71,
+        },
+        "euro": {
+          "dollar": 1.22,
+          "pound": 0.82,
+        },
+        "pound": {
+          "dollar": 1.42,
+          "euro": 1.16,
+        },
+      },
+
+      convertTo: (amount, fromUnits, toUnits) => {
+        return convertions[fromUnits] * amount
       }
     }
   }
@@ -39,10 +58,13 @@ const objects = {
 
 let config = {
   operators: [
-    "(([number]) [currency])",
+    "(([number]) [currencyAmount])",
+    //"(([currencyAmount/1]) [in] ([currencyType]))",
   ],
   bridges: [
-    { "id": "currency", "level": 0, "bridge": "{ ...next(operator), amount: before[0] }" },
+    { "id": "currencyAmount", "level": 0, "bridge": "{ ...next(operator), amount: before }" },
+    //{ "id": "currencyType", "level": 0, "bridge": "{ ...next(operator) }" },
+    //{ "id": "in", "level": 0, "bridge": "{ ...next(operator), from: before[0], to: after[0] }" },
   ],
   hierarchy: [
   ],
@@ -57,10 +79,10 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'currency' && !context.isAbstract, ({context, g}) => {
+    [ ({context}) => context.marker == 'currencyAmount' && !context.isAbstract, ({context, g}) => {
       word = Object.assign({}, context.amount)
       word.isAbstract = true
-      word.marker = 'currency'
+      word.marker = 'currencyAmount'
       word.units = context.units
       return `${g(context.amount)} ${g(word)}`
     } ],
@@ -87,7 +109,7 @@ config.initializer( ({objects}) => {
   units = objects.interface.currency.getUnits()
   for (word in units) {
     words = config.get('words')
-    def = {"id": "currency", "initial": { units: units[word] }}
+    def = {"id": "currencyAmount", "initial": { units: units[word] }}
     if (words[word]) {
       words[word].push(def)
     } else {
@@ -98,9 +120,9 @@ config.initializer( ({objects}) => {
   unitWords = objects.interface.currency.getUnitWords();
   for (let words of unitWords) {
       generators = config.get('generators')
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
+      generator = [({context}) => context.marker == 'currencyAmount' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
       generators.push(generator)
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
+      generator = [({context}) => context.marker == 'currencyAmount' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
       generators.push(generator)
   }
 })
