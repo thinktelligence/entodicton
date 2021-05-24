@@ -9,23 +9,20 @@ const testData = {
   ]
 }
 
-const objects = {
-  // Interface methods use to customize the interpretation
-  interface: {
-    getTypes: () => testData.types,
-    getAllProducts: () => testData.products,
-    getByTypeAndCost: ({type, cost, comparison}) => {
-      results = []
-      testData.forEach( (product) => {
-        if (product.type == type && comparison(product.cost)) {
-          results.push(product)
-        }
-      })
-      return results
-    },
-    productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
-  }
-};
+const interfaceDef = {
+  getTypes: () => testData.types,
+  getAllProducts: () => testData.products,
+  getByTypeAndCost: ({type, cost, comparison}) => {
+    results = []
+    testData.forEach( (product) => {
+      if (product.type == type && comparison(product.cost)) {
+        results.push(product)
+      }
+    })
+    return results
+  },
+  productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
+}
 
 let config = {
   operators: [
@@ -67,8 +64,8 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'list', async ({objects, context}) => {
-      context.listing = objects.interface.getAllProducts()
+    [({objects, context}) => context.marker == 'list', async ({objects, context, interface}) => {
+      context.listing = interface.getAllProducts()
       context.isResponse = true
     }],
   ],
@@ -85,10 +82,10 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 // shirts not more than 10 dollars
 // pants that are exactly $10
 
-config.objects = objects;
 config = new entodicton.Config(config)
-config.initializer( ({objects}) => {
-  objects.interface.getTypes().forEach( (type) => {
+config.interface = interfaceDef
+config.initializer( ({objects, interface}) => {
+  interface.getTypes().forEach( (type) => {
     words = config.get('words')
     def = {"id": "product", "initial": "{ value: '" + type + "' }" }
     if (words[type]) {
@@ -97,7 +94,7 @@ config.initializer( ({objects}) => {
       words[type] = [def]
     }
   })
-  config.get('generators').push( objects.interface.productGenerator )
+  config.get('generators').push( interface.productGenerator )
 })
 
 const isEntryPoint = () => {
