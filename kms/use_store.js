@@ -1,4 +1,4 @@
-const client = require('entodicton')
+const { Config } = require('entodicton')
 const { store } = require('ekms')
 
 const testData = {
@@ -27,8 +27,8 @@ const interface = {
 store.get('objects').interface = interface;
 url = "http://184.67.27.82"
 key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-store.set("utterances", ['list products'])
-client.process(url, key, store).then( (response) => {
+store.server(url, key)
+store.process('list the products').then( (response) => {
   //console.log(JSON.stringify(response, null, 2))
   console.log(response.generated[0])
 })
