@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton = require('entodicton')
 
 /*
 Tenant: I can't unlock the door
@@ -102,7 +101,8 @@ const objects = {
   answers: []
 }
 initConfig.objects = objects;
-config = new Config(initConfig)
+config = new entodicton.Config(initConfig)
+config.server(url, key)
 
 const debugOne = async () => {
   try {
@@ -121,14 +121,16 @@ const chatLoop = async () => {
   while (config.get('objects').question != null) {
     // convert the question to a user readable string
     const question = config.get('objects').question;
-    r = client.processContext(question, { semantics: initConfig.semantics, generators: initConfig.generators, objects: objects })
+    //r = config.processContext(question, { semantics: initConfig.semantics, generators: initConfig.generators, objects: objects })
+    const r = config.processContext(question);
     console.log('Loop number', counter)
     console.log('Question:', r.generated)
-    config.set("utterances", [tenantSays[counter++]])
-    console.log(`Simulated response from user: ${config.get('utterances')}`);
+    //config.set("utterances", [tenantSays[counter++]])
+    const query = [tenantSays[counter++]]
+    console.log(`Simulated response from user: ${query}`);
 
     try {
-      responses = await client.process(url, key, config);
+      responses = await config.process(query);
       if (responses.errors) {
         console.log('Errors')
         responses.errors.forEach( (error) => console.log(`    ${error}`) )

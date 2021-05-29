@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton = require('entodicton')
 
 const armem = {
   "marker": "arm",
@@ -92,7 +91,7 @@ let config = {
         // character does it
         const contexts = objects.characters[objects.mentions[0]].toDo
         const doing = contexts.map( (c) => {
-          const result = client.processContext(c, { generators: config.get("generators"), objects });
+          const result = entodicton.processContext(c, { generators: config.get("generators"), objects });
           return result.generated
         })
         console.log('doing', JSON.stringify(doing, null, 2));
@@ -130,10 +129,11 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //const query = 'show the weapons status'
 //config.utterances = ['show the weapons status arm the photon torpedoes show the weapons status']
 //config.utterances = ['spock arm the photon torpedoes']
-config.utterances = ['spock what are you doing']
+const query = 'spock what are you doing'
 console.log(`Running the input: ${config.utterances}`);
 config.objects = objects;
-config = new Config(config)
+config = new entodicton.Config(config)
+config.server(url, key)
 
 const context = {
   "marker": "arm",
@@ -150,7 +150,7 @@ const context = {
   }
 }
 
-client.process(url, key, config)
+config.process(query)
   .then( async (responses) => {
     if (responses.errors) {
       console.log('Errors')

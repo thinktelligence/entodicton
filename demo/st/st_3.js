@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton = require('entodicton')
 
 objects = {
   enterprise: {
@@ -94,7 +93,7 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 config.utterances = ['spock arm the photon torpedoes']
 console.log(`Running the input: ${config.utterances}`);
 config.objects = objects;
-config = new Config(config)
+config = new entodicton.Config(config)
 
 context = {
   "marker": "arm",
@@ -122,7 +121,7 @@ client.process(url, key, config).then( (responses) => {
 })
 */
 const question = config.get('utterances')[0]
-r = client.processContext(question, { semantics: config.get('semantics'), generators: config.get("generators"), objects: objects })
+r = entodicton.processContext(question, { semantics: config.get('semantics'), generators: config.get("generators"), objects: objects })
 console.log(r)
 
 /*
