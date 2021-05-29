@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton = require('entodicton')
 
 let objects = {
   players: [
@@ -91,7 +90,7 @@ const query = 'who are the players'
 console.log(`Running the input: ${query}`);
 config.utterances = [query]
 config.objects = {}
-config = new Config(config)
+config = new entodicton.Config(config)
 const sub_id = 'I-5BHXUAXYCFRB'
 const sub_pwd = '94e681d0-3fbf-11eb-86ab-0110b6eaa7fb'
-client.submitBug(sub_id, sub_pwd, url, key, config)
+entodicton.submitBug(sub_id, sub_pwd, url, key, config)

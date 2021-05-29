@@ -1,5 +1,4 @@
-const client = require('entodicton/client')
-const Config = require('entodicton/src/config')
+const entodicton = require('entodicton')
 
 let objects = {
   players: [
@@ -73,10 +72,10 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 const query = 'who are the players'
 console.log(`Running the input: ${query}`);
-config.utterances = [query]
 config.objects = objects;
-config = new Config(config)
-client.process(url, key, config)
+config = new entodicton.Config(config)
+config.server(url, key)
+config.process(query)
   .then( (responses) => {
     if (responses.errors) {
       console.log('Errors')
