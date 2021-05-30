@@ -58,11 +58,11 @@ const objects = {
 
 let config = {
   operators: [
-    "(([number]) [currencyAmount])",
+    "(([number]) [currency])",
     //"(([currencyAmount/1]) [in] ([currencyType]))",
   ],
   bridges: [
-    { "id": "currencyAmount", "level": 0, "bridge": "{ ...next(operator), amount: before }" },
+    { "id": "currency", "level": 0, "bridge": "{ ...next(operator), amount: before[0] }" },
     //{ "id": "currencyType", "level": 0, "bridge": "{ ...next(operator) }" },
     //{ "id": "in", "level": 0, "bridge": "{ ...next(operator), from: before[0], to: after[0] }" },
   ],
@@ -79,10 +79,10 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'currencyAmount' && !context.isAbstract, ({context, g}) => {
+    [ ({context}) => context.marker == 'currency' && !context.isAbstract, ({context, g}) => {
       word = Object.assign({}, context.amount)
       word.isAbstract = true
-      word.marker = 'currencyAmount'
+      word.marker = 'currency'
       word.units = context.units
       return `${g(context.amount)} ${g(word)}`
     } ],
@@ -109,7 +109,7 @@ config.initializer( ({objects}) => {
   units = objects.interface.currency.getUnits()
   for (word in units) {
     words = config.get('words')
-    def = {"id": "currencyAmount", "initial": { units: units[word] }}
+    def = {"id": "currency", "initial": { units: units[word] }}
     if (words[word]) {
       words[word].push(def)
     } else {
@@ -120,9 +120,9 @@ config.initializer( ({objects}) => {
   unitWords = objects.interface.currency.getUnitWords();
   for (let words of unitWords) {
       generators = config.get('generators')
-      generator = [({context}) => context.marker == 'currencyAmount' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
       generators.push(generator)
-      generator = [({context}) => context.marker == 'currencyAmount' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
       generators.push(generator)
   }
 })
