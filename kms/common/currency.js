@@ -59,7 +59,7 @@ const objects = {
 let config = {
   operators: [
     "(([number]) [currency])",
-    //"(([currencyAmount/1]) [in] ([currencyType]))",
+    "((currency/1) [in] (currency/0))",
   ],
   bridges: [
     { "id": "currency", "level": 0, "bridge": "{ ...next(operator), amount: before[0] }" },
