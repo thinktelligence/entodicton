@@ -130,7 +130,7 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //config.utterances = ['show the weapons status arm the photon torpedoes show the weapons status']
 //config.utterances = ['spock arm the photon torpedoes']
 const query = 'spock what are you doing'
-console.log(`Running the input: ${config.utterances}`);
+console.log(`Running the input: ${query}`);
 config.objects = objects;
 config = new entodicton.Config(config)
 config.server(url, key)

@@ -90,5 +90,6 @@ config.process(query)
   })
   .catch( (error) => {
     console.log(`Error ${config.utterances}`);
-    console.log(error)
+    console.log(error.trace)
+    console.log(error.error)
   })
