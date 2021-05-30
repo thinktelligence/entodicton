@@ -120,8 +120,7 @@ client.process(url, key, config).then( (responses) => {
   console.log('after objects', JSON.stringify(objects, null, 2))
 })
 */
-const question = config.get('utterances')[0]
-r = entodicton.processContext(question, { semantics: config.get('semantics'), generators: config.get("generators"), objects: objects })
+r = entodicton.processContext(context, { semantics: config.get('semantics'), generators: config.get("generators"), objects: objects })
 console.log(r)
 
 /*
