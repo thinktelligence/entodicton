@@ -10,51 +10,36 @@ const testData = {
   ]
 }
 
-const objects = {
-  // Interface methods use to customize the interpretation
-  interface: {
-    currency: {
-      // map currency word to the unit that will be put in the context
-      getUnits: () => {
-        return {
-          'dollars': 'dollar', 
-          'dollar': 'dollar',
-          'pounds': 'pound',
-          'pound': 'pound',
-          'euros': 'euro', 
-          'euro': 'euro',
-        } 
-      },
+const interface = {
+  // map currency word to the unit that will be put in the context
+  getUnits: () => {
+    return {
+      'dollars': 'dollar', 
+      'dollar': 'dollar',
+      'pounds': 'pound',
+      'pound': 'pound',
+      'euros': 'euro', 
+      'euro': 'euro',
+    } 
+  },
 
-      getUnitWords: () => {
-        return [
-          { units: 'dollar', one: 'dollar', many: 'dollars' },
-          { units: 'pound', one: 'pound', many: 'pounds' },
-          { units: 'euro', one: 'euro', many: 'euros' },
-        ]
-      },
+  getUnitWords: () => {
+    return [
+      { units: 'dollar', one: 'dollar', many: 'dollars' },
+      { units: 'pound', one: 'pound', many: 'pounds' },
+      { units: 'euro', one: 'euro', many: 'euros' },
+    ]
+  },
 
-      conversion: {
-        "dollar": {
-          "euro": 0.82,
-          "pound": 0.71,
-        },
-        "euro": {
-          "dollar": 1.22,
-          "pound": 0.82,
-        },
-        "pound": {
-          "dollar": 1.42,
-          "euro": 1.16,
-        },
-      },
-
-      convertTo: (amount, fromUnits, toUnits) => {
-        return convertions[fromUnits] * amount
-      }
+  convertTo: (amount, fromUnits, toUnits) => {
+    const conversion = {
+    "dollar": { "euro": 0.82, "pound": 0.71, },
+    "euro": { "dollar": 1.22, "pound": 0.82, },
+    "pound": { "dollar": 1.42, "euro": 1.16, },
     }
+    return conversion[fromUnits][toUnits] * amount
   }
-};
+}
 
 let config = {
   operators: [
@@ -84,13 +69,27 @@ let config = {
       word.isAbstract = true
       word.marker = 'currency'
       word.units = context.units
-      return `${g(context.amount)} ${g(word)}`
+      word.value = context.amount.value
+      debugger;
+      // generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
+      return `${g(context.amount.value)} ${g(word)}`
     } ],
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'list', async ({objects, context}) => {
-      context.listing = objects.interface.currency.getAllProducts()
+    [({objects, context}) => context.marker == 'list', async ({interface, context}) => {
+      context.listing = interface.getAllProducts()
+      context.isResponse = true
+    }],
+
+    [({objects, context}) => context.marker == 'in', async ({objects, interface, context}) => {
+      const from = context.from
+      const to = context.to
+      const value = interface.convertTo(from.amount.value, from.units, to.units)
+      context.marker = 'currency'
+      context.isAbstract = false
+      context.amount = { value }
+      context.units = to.units
       context.isResponse = true
     }],
   ],
@@ -101,12 +100,12 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //url = "http://localhost:3000"
 //key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
-config.objects = objects;
+//config.objects = objects;
 config = new entodicton.Config(config)
 config.add(numbersKM)
-
-config.initializer( ({objects}) => {
-  units = objects.interface.currency.getUnits()
+config.interface = interface
+config.initializer( ({objects, interface}) => {
+  units = interface.getUnits()
   for (word in units) {
     words = config.get('words')
     def = {"id": "currency", "initial": { units: units[word] }}
@@ -117,12 +116,12 @@ config.initializer( ({objects}) => {
     }
   }
 
-  unitWords = objects.interface.currency.getUnitWords();
+  unitWords = interface.getUnitWords();
   for (let words of unitWords) {
       generators = config.get('generators')
       generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
       generators.push(generator)
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && !isNaN(context.value) && (context.value != 1) && context.isAbstract, ({context, g}) => words.many ]
       generators.push(generator)
   }
 })
