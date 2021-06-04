@@ -10,7 +10,7 @@ const testData = {
   ]
 }
 
-const interface = {
+const api = {
   // map currency word to the unit that will be put in the context
   getUnits: () => {
     return {
@@ -70,22 +70,21 @@ let config = {
       word.marker = 'currency'
       word.units = context.units
       word.value = context.amount.value
-      debugger;
       // generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
       return `${g(context.amount.value)} ${g(word)}`
     } ],
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'list', async ({interface, context}) => {
-      context.listing = interface.getAllProducts()
+    [({objects, context}) => context.marker == 'list', async ({api, context}) => {
+      context.listing = api.getAllProducts()
       context.isResponse = true
     }],
 
-    [({objects, context}) => context.marker == 'in', async ({objects, interface, context}) => {
+    [({objects, context}) => context.marker == 'in', async ({objects, api, context}) => {
       const from = context.from
       const to = context.to
-      const value = interface.convertTo(from.amount.value, from.units, to.units)
+      const value = api.convertTo(from.amount.value, from.units, to.units)
       context.marker = 'currency'
       context.isAbstract = false
       context.amount = { value }
@@ -103,9 +102,9 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //config.objects = objects;
 config = new entodicton.Config(config)
 config.add(numbersKM)
-config.interface = interface
-config.initializer( ({objects, interface}) => {
-  units = interface.getUnits()
+config.api = api
+config.initializer( ({config, objects, api}) => {
+  units = api.getUnits()
   for (word in units) {
     words = config.get('words')
     def = {"id": "currency", "initial": { units: units[word] }}
@@ -116,7 +115,7 @@ config.initializer( ({objects, interface}) => {
     }
   }
 
-  unitWords = interface.getUnitWords();
+  unitWords = api.getUnitWords();
   for (let words of unitWords) {
       generators = config.get('generators')
       generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]

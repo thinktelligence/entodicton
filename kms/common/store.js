@@ -9,7 +9,7 @@ const testData = {
   ]
 }
 
-const interfaceDef = {
+const api = {
   getTypes: () => testData.types,
   getAllProducts: () => testData.products,
   getByTypeAndCost: ({type, cost, comparison}) => {
@@ -64,8 +64,8 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'list', async ({objects, context, interface}) => {
-      context.listing = interface.getAllProducts()
+    [({objects, context}) => context.marker == 'list', async ({objects, context, api}) => {
+      context.listing = api.getAllProducts()
       context.isResponse = true
     }],
   ],
@@ -82,10 +82,11 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 // shirts not more than 10 dollars
 // pants that are exactly $10
 
-config = new entodicton.Config(config)
-config.interface = interfaceDef
-config.initializer( ({objects, interface}) => {
-  interface.getTypes().forEach( (type) => {
+config = new entodicton.Config(config).add(currencyKM)
+console.dir(config.config)
+config.api = api
+config.initializer( ({objects, api}) => {
+  api.getTypes().forEach( (type) => {
     words = config.get('words')
     def = {"id": "product", "initial": "{ value: '" + type + "' }" }
     if (words[type]) {
@@ -94,7 +95,7 @@ config.initializer( ({objects, interface}) => {
       words[type] = [def]
     }
   })
-  config.get('generators').push( interface.productGenerator )
+  config.get('generators').push( api.productGenerator )
 })
 
 const isEntryPoint = () => {
