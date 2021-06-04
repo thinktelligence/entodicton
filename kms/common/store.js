@@ -27,6 +27,7 @@ const api = {
 let config = {
   operators: [
     //"(([type]) [([(<less> ([than]))] ([amount]))])",
+    "(([show] ([listingType|])) <([for] (<the> ([listings])))>)",
     "([list] (<the> (([product|products]))))",
     //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
     "(([product]) <(<that> ([cost] ([price])))>)",
@@ -42,6 +43,12 @@ let config = {
     { "id": "cost", "level": 0, "bridge": "{ ...next(operator), price: after[0] }" },
     { "id": "cost", "level": 1, "bridge": "{ ...squish(operator), thing*: before[0] }" },
     { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
+
+    { "id": "show", "level": 0, "bridge": "{ ...next(operator), type: after[0] }" },
+    { "id": "the", "level": 0, "bridge": "{ ...next(after[0]), instance: true }" },
+    { "id": "for", "level": 0, "bridge": "{ ...next(operator), listable: after[0]}" },
+    { "id": "for", "level": 1, "bridge": "{ ...next(before[0]), listable: operator.after[0]}" },
+    { "id": "tableType", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
   hierarchy: [
   ],
@@ -54,6 +61,8 @@ let config = {
   ],
   "version": '3',
   "words": {
+    "tables": [{"id": "listingType", "initial": "{ marker: tableType, value: 'tables' }" }],
+    "sentences": [{"id": "listingType", "initial": "{ marker: tableType, value: 'sentences' }" }],
     //" ([0-9]+)": [{"id": "amount", "initial": "{ value: int(group[0]) }" }],
   },
 
