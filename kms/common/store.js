@@ -2,12 +2,13 @@ const entodicton = require('entodicton')
 const currencyKM = require('./currency.js')
 const helpKM = require('./help.js')
 const { table } = require('table')
+const _ = require('lodash')
 
 const testData = {
   types: [ 'pants', 'shorts' ],
   products: [
-    { marker: 'product', isInstance: true, type: 'pants', name: 'pants1', cost: 9, id: 1 },
-    { marker: 'product', isInstance: true, type: 'shirt', name: 'shirt1', cost: 15, id: 2 },
+    { marker: 'product', isInstance: true, type: 'pants', name: 'pants1', price: 9, id: 1 },
+    { marker: 'product', isInstance: true, type: 'shirt', name: 'shirt1', price: 15, id: 2 },
   ]
 }
 
@@ -34,6 +35,12 @@ let config = {
     //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
+    "([show] (<the> ([price])))",
+    // move price before name
+    // move price to the far right
+    // show the price in euros
+    // show the cost <-> price
+    // show price as column 3
   ],
   bridges: [
     { "id": "product", "level": 0, "bridge": "{ ...next(operator) }" },
@@ -57,6 +64,9 @@ let config = {
     { "id": "listingType", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "with", "level": 0, "bridge": "{ ...next(operator), type: after[0].value }" },
     { "id": "answer", "level": 0, "bridge": "{ ...next(operator), type: after[0].type }" },
+
+    { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "show", "level": 0, "bridge": "{ ...next(operator), properties: after[0] }" },
   ],
   hierarchy: [
   ],
@@ -75,6 +85,10 @@ let config = {
   },
 
   generators: [
+    [ 
+      ({context, objects}) => context.marker == 'show',
+      ({objects, gs}) => `the properties being shown are ${gs(objects.listing.columns)}` 
+    ],
     [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
     [ ({context}) => context.marker == 'list' && !context.isResponse, ({g, context}) => `list ${g(context.what)}` ],
     [ 
@@ -105,14 +119,27 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'list', async ({objects, context, api}) => {
-      context.listing = api.getAllProducts()
-      context.isResponse = true
-    }],
-    [({context}) => context.marker == 'answer', async ({objects, context, api}) => {
-      objects.listing = objects.listing || {}
-      objects.listing.type = context.type
-    }],
+    [ 
+      ({context, objects}) => context.marker == 'show',
+      ({objects, context}) => {
+        objects.listing.columns.push(context.properties.marker)
+        objects.listing.columns = _.uniq(objects.listing.columns)
+      }
+    ],
+    [
+      ({objects, context}) => context.marker == 'list', 
+      async ({objects, context, api}) => {
+        context.listing = api.getAllProducts()
+        context.isResponse = true
+      }
+    ],
+    [
+      ({context}) => context.marker == 'answer', 
+      async ({objects, context, api}) => {
+        objects.listing = objects.listing || {}
+        objects.listing.type = context.type
+      }
+    ],
   ],
 };
 

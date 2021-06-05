@@ -157,5 +157,59 @@
         "isResponse": true
       }
     ]
+  },
+  "show the price list the products": {
+    "generated": [
+      "the properties being shown are name price",
+      "╔════════╤═══════╗\n║ name   │ price ║\n╟────────┼───────╢\n║ pants1 │ 9     ║\n╟────────┼───────╢\n║ shirt1 │ 15    ║\n╚════════╧═══════╝\n",
+      "the products"
+    ],
+    "result": [
+      {
+        "marker": "show",
+        "word": "show",
+        "properties": {
+          "marker": "price",
+          "word": "price",
+          "types": [
+            "price"
+          ],
+          "pullFromContext": true
+        }
+      },
+      {
+        "marker": "list",
+        "word": "list",
+        "what": [
+          {
+            "marker": "the",
+            "word": "the"
+          }
+        ],
+        "listing": [
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "pants",
+            "name": "pants1",
+            "price": 9,
+            "id": 1
+          },
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "shirt",
+            "name": "shirt1",
+            "price": 15,
+            "id": 2
+          }
+        ],
+        "isResponse": true
+      },
+      {
+        "marker": "product",
+        "word": "products"
+      }
+    ]
   }
 }
