@@ -71,5 +71,91 @@
         "isResponse": true
       }
     ]
+  },
+  "answer with tables list the products": {
+    "generated": [
+      "answering with tables",
+      "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+    ],
+    "result": [
+      {
+        "marker": "answer",
+        "word": "answer",
+        "type": "tables"
+      },
+      {
+        "marker": "list",
+        "word": "list",
+        "what": [
+          {
+            "marker": "product",
+            "word": "products",
+            "pullFromContext": true
+          }
+        ],
+        "listing": [
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "pants",
+            "name": "pants1",
+            "cost": 9,
+            "id": 1
+          },
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "shirt",
+            "name": "shirt1",
+            "cost": 15,
+            "id": 2
+          }
+        ],
+        "isResponse": true
+      }
+    ]
+  },
+  "answer with sentences list the products": {
+    "generated": [
+      "answering with sentences",
+      "the products are pants1 and shirt1"
+    ],
+    "result": [
+      {
+        "marker": "answer",
+        "word": "answer",
+        "type": "sentences"
+      },
+      {
+        "marker": "list",
+        "word": "list",
+        "what": [
+          {
+            "marker": "product",
+            "word": "products",
+            "pullFromContext": true
+          }
+        ],
+        "listing": [
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "pants",
+            "name": "pants1",
+            "cost": 9,
+            "id": 1
+          },
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "shirt",
+            "name": "shirt1",
+            "cost": 15,
+            "id": 2
+          }
+        ],
+        "isResponse": true
+      }
+    ]
   }
 }
