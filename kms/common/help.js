@@ -1,5 +1,17 @@
 const entodicton = require('entodicton')
 
+const getHelp = (config, indent=2) => {
+  indent = ' '.repeat(indent)
+  let help = ''
+  help += `${indent}Name: ${config.name}\n`
+  help += `${indent}Description: ${config.description}\n`
+  help += `${indent}Sample sentences\n`
+  for (query of Object.keys(config.tests)) {
+    help += `${indent}  ${query}\n`
+  }
+  return help
+}
+
 let config = {
   operators: [
     "([help])",
@@ -14,12 +26,19 @@ let config = {
 
   generators: [
     [ ({context, config}) => context.marker == 'help', ({context, config}) => {
-        let help = `Knowledge Module: ${config.name}\n`
-        help += `  Description: ${config.description}\n`
-        help += '  Sample sentences\n'
-        for (query of Object.keys(config.tests)) {
-          help += `    ${query}\n`
+        let help = `Main Knowledge Module\n\n`
+        help += getHelp(config, 2)
+
+        if (config.configs.length > 1) {
+          help += '\n\n'
+          help += 'Included Knowledge Modules\n'
+          for (km of config.configs) {
+            if (km._config instanceof entodicton.Config) {
+              help += '\n' + getHelp(km._config, 4)
+            }
+          }
         }
+
         return help
       }
     ],
