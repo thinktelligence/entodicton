@@ -218,7 +218,6 @@ entodicton.knowledgeModule( {
       })
   },
   module: () => {
-    console.log('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy in the module')
     module.exports = config
   }
 })
