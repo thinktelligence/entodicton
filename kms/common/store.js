@@ -31,7 +31,7 @@ let config = {
   operators: [
     //"(([type]) [([(<less> ([than]))] ([amount]))])",
     //"(([show] ([listingType|])) <([for] (<the> ([listings])))>)",
-    "([list] (<the> (([product|products]))))",
+    "([list] (<the> ([product|products])))",
     //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
