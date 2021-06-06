@@ -103,11 +103,11 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 config = new entodicton.Config(config)
 config.add(numbersKM)
 config.api = api
-config.initializer( ({config, objects, api}) => {
+config.initializer( ({config, objects, api, uuid}) => {
   units = api.getUnits()
   for (word in units) {
     words = config.get('words')
-    def = {"id": "currency", "initial": { units: units[word] }}
+    def = {"id": "currency", "initial": { units: units[word] }, uuid}
     if (words[word]) {
       words[word].push(def)
     } else {
@@ -118,9 +118,9 @@ config.initializer( ({config, objects, api}) => {
   unitWords = api.getUnitWords();
   for (let words of unitWords) {
       generators = config.get('generators')
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one ]
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one, uuid ]
       generators.push(generator)
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && !isNaN(context.value) && (context.value != 1) && context.isAbstract, ({context, g}) => words.many ]
+      generator = [({context}) => context.marker == 'currency' && context.units == words.units && !isNaN(context.value) && (context.value != 1) && context.isAbstract, ({context, g}) => words.many, uuid ]
       generators.push(generator)
   }
 })

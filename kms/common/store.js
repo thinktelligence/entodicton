@@ -24,7 +24,7 @@ const api = {
     })
     return results
   },
-  productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
+  productGenerator: (uuid) => [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`, uuid]
 }
 
 let config = {
@@ -155,10 +155,10 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 // pants that are exactly $10
 config = new entodicton.Config(config).add(currencyKM).add(helpKM)
 config.api = api
-config.initializer( ({objects, api}) => {
+config.initializer( ({objects, api, uuid}) => {
   api.getTypes().forEach( (type) => {
     words = config.get('words')
-    def = {"id": "product", "initial": "{ value: '" + type + "' }" }
+    def = {"id": "product", "initial": "{ value: '" + type + "' }", uuid }
     if (words[type]) {
       words[type].push(def)
     } else {
@@ -169,7 +169,7 @@ config.initializer( ({objects, api}) => {
       columns: ['name'],
     }
   })
-  config.get('generators').push( api.productGenerator )
+  config.get('generators').push( api.productGenerator(uuid) )
 })
 
 const isEntryPoint = () => {
