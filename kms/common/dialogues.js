@@ -63,6 +63,7 @@ let config = {
       },
     ],
 
+    // query 
     [ 
       ({context}) => context.marker == 'is' && context.query,
       ({context, s}) => {
@@ -76,7 +77,6 @@ let config = {
           concept = two;
           value = one;
         }
-debugger;
         value = JSON.parse(JSON.stringify(value))
         value.evaluate = true;
         const instance = s(value) 
@@ -88,6 +88,21 @@ debugger;
           instance,
           concept,
         }
+      }
+    ],
+
+    // statement
+    [ 
+      ({context}) => context.marker == 'is' && context.query,
+      ({context, s}) => {
+        const one = context.one;
+        const two = context.two;
+        one.same = two;
+        s(one)
+        one.same = undefined
+        two.same = one
+        s(two)
+        two.same = undefined
       }
     ],
   ],

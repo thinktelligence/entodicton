@@ -1,17 +1,37 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 
+const data = {
+  me: {
+    name: 'molnius',
+    age: 23,
+    eyes: 'hazel',
+  },
+  other: {
+  }
+}
+
 api = {
+  // who in [me, other]
+  get: (who, property) => {
+    return data[who][property]
+  },
+  
+  set: (who, property, value) => {
+    data[who][property] = value
+  },
 }
 
 let config = {
   operators: [
     "(<your> ([name]))",
+    "(<my> ([name]))",
     //"my name is blah",
   ],
   bridges: [
     { "id": "name", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "your", "level": 0, "bridge": "{ ...after, subject: 'your' }" },
+    { "id": "my", "level": 0, "bridge": "{ ...after, subject: 'my' }" },
   ],
   debug: false,
   version: '3',
@@ -39,11 +59,19 @@ let config = {
   ],
 
   semantics: [
+    // same
+    [ 
+      ({context}) => context.marker == 'name' && context.same && context.subject == 'my', 
+      ({context, objects}) => {
+        objects.other.name = context.same
+      }
+    ],
+  
+    // evaluate
     [ 
       ({context}) => context.marker == 'name' && context.evaluate && context.subject == 'your', 
-      ({context, objects}) => {
-        debugger; // here
-        context.value = objects.me.name
+      ({context, api}) => {
+        context.value = api.get('me', context.marker)
       }
     ],
   ],
@@ -56,13 +84,6 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 config = new entodicton.Config(config)
 config.add(dialogues)
 config.api = api
-config.initializer( ({objects, api, uuid}) => {
-  objects.me = {
-      name: 'molnius',
-      age: 23,
-      eyes: 'hazel',
-    }
-  })
 
 entodicton.knowledgeModule( { 
   url,
