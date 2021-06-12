@@ -20,20 +20,20 @@
     ],
     "result": [
       {
-        "query": true,
-        "marker": "is",
-        "word": "is",
         "one": {
           "marker": "what",
-          "word": "what",
           "query": true,
+          "word": "what",
           "types": [
             "what"
           ]
         },
+        "word": "is",
+        "query": true,
+        "marker": "is",
         "two": {
-          "marker": "name",
           "word": "name",
+          "marker": "name",
           "types": [
             "name"
           ],
@@ -42,8 +42,8 @@
         "response": {
           "isResponse": true,
           "instance": {
-            "marker": "name",
             "word": "name",
+            "marker": "name",
             "types": [
               "name"
             ],
@@ -52,12 +52,156 @@
             "value": "molnius"
           },
           "concept": {
-            "marker": "name",
             "word": "name",
+            "marker": "name",
             "types": [
               "name"
             ],
             "subject": "your",
+            "evaluate": true,
+            "response": true
+          }
+        }
+      }
+    ]
+  },
+  "my name is greg what is my name": {
+    "generated": [
+      "my name is greg",
+      "your name is greg"
+    ],
+    "result": [
+      {
+        "one": {
+          "word": "name",
+          "marker": "name",
+          "types": [
+            "name"
+          ],
+          "subject": "my"
+        },
+        "word": "is",
+        "two": {
+          "marker": "greg",
+          "unknown": true,
+          "types": []
+        },
+        "marker": "is"
+      },
+      {
+        "one": {
+          "marker": "what",
+          "query": true,
+          "word": "what",
+          "types": [
+            "what"
+          ]
+        },
+        "word": "is",
+        "query": true,
+        "marker": "is",
+        "two": {
+          "word": "name",
+          "marker": "name",
+          "types": [
+            "name"
+          ],
+          "subject": "my"
+        },
+        "response": {
+          "isResponse": true,
+          "instance": {
+            "word": "name",
+            "marker": "name",
+            "types": [
+              "name"
+            ],
+            "subject": "my",
+            "evaluate": true,
+            "value": "greg"
+          },
+          "concept": {
+            "word": "name",
+            "marker": "name",
+            "types": [
+              "name"
+            ],
+            "subject": "my",
+            "evaluate": true,
+            "response": true
+          }
+        }
+      }
+    ]
+  },
+  "my name is greg": {
+    "generated": [
+      "my name is greg"
+    ],
+    "result": [
+      {
+        "one": {
+          "word": "name",
+          "marker": "name",
+          "types": [
+            "name"
+          ],
+          "subject": "my"
+        },
+        "word": "is",
+        "two": {
+          "marker": "greg",
+          "unknown": true,
+          "types": []
+        },
+        "marker": "is"
+      }
+    ]
+  },
+  "what is my name": {
+    "generated": [
+      "your name is unknown"
+    ],
+    "result": [
+      {
+        "one": {
+          "marker": "what",
+          "query": true,
+          "word": "what",
+          "types": [
+            "what"
+          ]
+        },
+        "word": "is",
+        "query": true,
+        "marker": "is",
+        "two": {
+          "word": "name",
+          "marker": "name",
+          "types": [
+            "name"
+          ],
+          "subject": "my"
+        },
+        "response": {
+          "isResponse": true,
+          "instance": {
+            "word": "name",
+            "marker": "name",
+            "types": [
+              "name"
+            ],
+            "subject": "my",
+            "evaluate": true,
+            "value": "unknown"
+          },
+          "concept": {
+            "word": "name",
+            "marker": "name",
+            "types": [
+              "name"
+            ],
+            "subject": "my",
             "evaluate": true,
             "response": true
           }

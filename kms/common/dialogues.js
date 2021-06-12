@@ -17,8 +17,9 @@ const api = {
 
 let config = {
   operators: [
-    "(([what]) [is] ([queryable|]))",
+    "(([queryable]) [is] ([queryable|]))",
     "([it])",
+    "([what])",
   ],
   bridges: [
     { id: "what", level: 0, bridge: "{ ...next(operator), query: true }" },
@@ -30,11 +31,16 @@ let config = {
   ],
   floaters: ['query'],
   hierarchy: [
-    ['it', 'queryable']
+    ['it', 'queryable'],
+    ['what', 'queryable'],
   ],
   debug: false,
   version: '3',
   generators: [
+    [ 
+      ({context}) => context.unknown, 
+      ({context}) => context.marker
+    ],
     [ 
       ({context}) => context.marker == 'it' && !context.isQuery, 
       ({context}) => `it` 
@@ -53,6 +59,12 @@ let config = {
         return `${g(concept)} is ${g(instance)}` 
       }
     ],
+    [ 
+      ({context}) => context.marker == 'is' && !context.response,
+      ({context, g}) => {
+        return `${g(context.one)} is ${g(context.two)}`
+      }
+    ]
   ],
 
   semantics: [
@@ -93,10 +105,11 @@ let config = {
 
     // statement
     [ 
-      ({context}) => context.marker == 'is' && context.query,
+      ({context}) => context.marker == 'is' && !context.query,
       ({context, s}) => {
         const one = context.one;
         const two = context.two;
+        debugger;
         one.same = two;
         s(one)
         one.same = undefined
@@ -124,11 +137,11 @@ config.initializer( ({objects, api, uuid}) => {
 entodicton.knowledgeModule( { 
   url,
   key,
-  name: 'questions',
-  description: 'framework for questions',
+  name: 'dialogues',
+  description: 'framework for dialogues',
   config,
   isProcess: require.main === module,
-  test: './questions.test',
+  test: './dialogues.test',
   setup: () => {
   },
   process: (promise) => {

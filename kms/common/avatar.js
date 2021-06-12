@@ -8,6 +8,7 @@ const data = {
     eyes: 'hazel',
   },
   other: {
+    name: 'unknown'
   }
 }
 
@@ -43,6 +44,10 @@ let config = {
     */
   },
 
+  priorities: [
+    [['is', 0], ['my', 0]]
+  ],
+
   hierarchy: [
     ['name', 'queryable']
   ],
@@ -51,6 +56,10 @@ let config = {
     [ 
       ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'your', 
       ({context}) => `my ${context.word}` 
+    ],
+    [ 
+      ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'my', 
+      ({context}) => `your ${context.word}` 
     ],
     [ 
       ({context}) => context.marker == 'name' && !context.isQuery && context.subject, 
@@ -63,7 +72,8 @@ let config = {
     [ 
       ({context}) => context.marker == 'name' && context.same && context.subject == 'my', 
       ({context, objects}) => {
-        objects.other.name = context.same
+        // TODO - call g(context.same) here
+        api.set('other', 'name', context.same.marker)
       }
     ],
   
@@ -74,13 +84,20 @@ let config = {
         context.value = api.get('me', context.marker)
       }
     ],
+
+    [ 
+      ({context}) => context.marker == 'name' && context.evaluate && context.subject == 'my', 
+      ({context, api}) => {
+        context.value = api.get('other', context.marker)
+      }
+    ],
   ],
 };
 
 url = "http://184.67.27.82"
 key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-//url = "http://localhost:3000"
-//key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
+url = "http://localhost:3000"
+key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 config = new entodicton.Config(config)
 config.add(dialogues)
 config.api = api
@@ -108,6 +125,7 @@ entodicton.knowledgeModule( {
           responses.logs.forEach( (log) => console.log(`    ${log}`) )
         }
         console.log(responses.trace);
+        console.log('data from api', data)
         console.log('objects', JSON.stringify(config.get("objects"), null, 2))
         console.log(JSON.stringify(responses.results, null, 2));
         console.log(responses.generated);
