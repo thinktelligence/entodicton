@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import pdb
 import json
@@ -27,8 +29,11 @@ start_dir = os.path.dirname(os.path.abspath(__file__))
 for directory, name in tests:
   os.chdir('{}/../kms/{}'.format(start_dir, directory))
   cmd = 'node {}.js -t'.format(name)
-  json, err = command(cmd)
-  if len(json['failures']) > 0:
+  pdb.set_trace()
+  results, err = command(cmd)
+  if len(results['failures']) > 0:
+    print('{} status: -1, message: "KM {} failed" {}'.format('{', name, '}'))
     exit(-1)
 
+print('{ status: 0 }')
 exit(0)

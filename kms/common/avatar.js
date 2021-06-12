@@ -105,7 +105,7 @@ config.api = api
 entodicton.knowledgeModule( { 
   url,
   key,
-  name: 'avavar',
+  name: 'avatar',
   description: 'avatar for dialogues',
   config,
   isProcess: require.main === module,
