@@ -1,43 +1,7 @@
 {
   "list products": {
     "generated": [
-      "the products are pants1 and shirt1"
-    ],
-    "result": [
-      {
-        "marker": "list",
-        "word": "list",
-        "what": [
-          {
-            "marker": "product",
-            "word": "products"
-          }
-        ],
-        "listing": [
-          {
-            "marker": "product",
-            "isInstance": true,
-            "type": "pants",
-            "name": "pants1",
-            "cost": 9,
-            "id": 1
-          },
-          {
-            "marker": "product",
-            "isInstance": true,
-            "type": "shirt",
-            "name": "shirt1",
-            "cost": 15,
-            "id": 2
-          }
-        ],
-        "isResponse": true
-      }
-    ]
-  },
-  "list the products": {
-    "generated": [
-      "the products are pants1 and shirt1"
+      "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
     ],
     "result": [
       {
@@ -47,6 +11,48 @@
           {
             "marker": "product",
             "word": "products",
+            "types": [
+              "product"
+            ]
+          }
+        ],
+        "listing": [
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "pants",
+            "name": "pants1",
+            "price": 9,
+            "id": 1
+          },
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "shirt",
+            "name": "shirt1",
+            "price": 15,
+            "id": 2
+          }
+        ],
+        "isResponse": true
+      }
+    ]
+  },
+  "list the products": {
+    "generated": [
+      "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+    ],
+    "result": [
+      {
+        "marker": "list",
+        "word": "list",
+        "what": [
+          {
+            "marker": "product",
+            "word": "products",
+            "types": [
+              "product"
+            ],
             "pullFromContext": true
           }
         ],
@@ -56,7 +62,7 @@
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
-            "cost": 9,
+            "price": 9,
             "id": 1
           },
           {
@@ -64,7 +70,7 @@
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
-            "cost": 15,
+            "price": 15,
             "id": 2
           }
         ],
@@ -90,6 +96,9 @@
           {
             "marker": "product",
             "word": "products",
+            "types": [
+              "product"
+            ],
             "pullFromContext": true
           }
         ],
@@ -99,7 +108,7 @@
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
-            "cost": 9,
+            "price": 9,
             "id": 1
           },
           {
@@ -107,7 +116,7 @@
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
-            "cost": 15,
+            "price": 15,
             "id": 2
           }
         ],
@@ -133,57 +142,10 @@
           {
             "marker": "product",
             "word": "products",
+            "types": [
+              "product"
+            ],
             "pullFromContext": true
-          }
-        ],
-        "listing": [
-          {
-            "marker": "product",
-            "isInstance": true,
-            "type": "pants",
-            "name": "pants1",
-            "cost": 9,
-            "id": 1
-          },
-          {
-            "marker": "product",
-            "isInstance": true,
-            "type": "shirt",
-            "name": "shirt1",
-            "cost": 15,
-            "id": 2
-          }
-        ],
-        "isResponse": true
-      }
-    ]
-  },
-  "show the price list the products": {
-    "generated": [
-      "the properties being shown are name price",
-      "╔════════╤═══════╗\n║ name   │ price ║\n╟────────┼───────╢\n║ pants1 │ 9     ║\n╟────────┼───────╢\n║ shirt1 │ 15    ║\n╚════════╧═══════╝\n",
-      "the products"
-    ],
-    "result": [
-      {
-        "marker": "show",
-        "word": "show",
-        "properties": {
-          "marker": "price",
-          "word": "price",
-          "types": [
-            "price"
-          ],
-          "pullFromContext": true
-        }
-      },
-      {
-        "marker": "list",
-        "word": "list",
-        "what": [
-          {
-            "marker": "the",
-            "word": "the"
           }
         ],
         "listing": [
@@ -205,10 +167,59 @@
           }
         ],
         "isResponse": true
+      }
+    ]
+  },
+  "show the price list the products": {
+    "generated": [
+      "the properties being shown are name price",
+      "╔════════╤═══════╗\n║ name   │ price ║\n╟────────┼───────╢\n║ pants1 │ 9     ║\n╟────────┼───────╢\n║ shirt1 │ 15    ║\n╚════════╧═══════╝\n"
+    ],
+    "result": [
+      {
+        "marker": "show",
+        "word": "show",
+        "properties": {
+          "marker": "price",
+          "word": "price",
+          "types": [
+            "price"
+          ],
+          "pullFromContext": true
+        }
       },
       {
-        "marker": "product",
-        "word": "products"
+        "marker": "list",
+        "word": "list",
+        "what": [
+          {
+            "marker": "product",
+            "word": "products",
+            "types": [
+              "product"
+            ],
+            "pullFromContext": true
+          }
+        ],
+        "listing": [
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "pants",
+            "name": "pants1",
+            "price": 9,
+            "id": 1
+          },
+          {
+            "marker": "product",
+            "isInstance": true,
+            "type": "shirt",
+            "name": "shirt1",
+            "price": 15,
+            "id": 2
+          }
+        ],
+        "isResponse": true
       }
     ]
   }
