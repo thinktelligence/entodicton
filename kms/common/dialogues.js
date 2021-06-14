@@ -20,11 +20,14 @@ let config = {
     "(([queryable]) [is] ([queryable|]))",
     "([it])",
     "([what])",
+    "(<the> arg)",
   ],
   bridges: [
     { id: "what", level: 0, bridge: "{ ...next(operator), query: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
+
+    { id: "the", level: 0, bridge: "{ ...next(operator), pullFromContext: true }" },
 
     // TODO make this hierarchy thing work
     { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true }" },

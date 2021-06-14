@@ -1,21 +1,16 @@
 const entodicton = require('entodicton')
-const dialogues = require('./dialogues')
 
 let config = {
   operators: [
-    "((<let> ([variable|])) [assignment|] (value))",
-    "(<the> ([variable]))",
+    "([t](_)([t]))",
     //"(((((console)[.](log))['(']) ([arg]) [')'])"
   ],
   bridges: [
-    { "id": "let", "level": 0, "bridge": "{ ...after[0], scope: 'let' }" },
-    { "id": "variable", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "assignment", "level": 0, "bridge": "{ ...next(operator), variable: before[0], value: after[0] }" },
+    { "id": "t", "level": 0, "bridge": "{ ...after[0] }" },
   ],
   debug: false,
   version: '3',
   words: {
-    "=": [{"id": "assignment", "initial": "{ value: 1 }" }],
     /*
     " ([0-9]+)": [{"id": "number", "initial": "{ value: int(group[0]) }" }],
     "one": [{"id": "number", "initial": "{ value: 1 }" }],
@@ -31,6 +26,7 @@ let config = {
     [
       ({context}) => context.marker == 'assignment',
       ({context, objects}) => {
+        console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', JSON.stringify(objects, null, 2))
         objects.variables[context.variable.marker] = context.value.marker
       }
     ]
@@ -42,20 +38,15 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //url = "http://localhost:3000"
 //key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 config = new entodicton.Config(config)
-config.add(dialogues)
-
-config.initializer( ({objects, api, uuid}) => {
-  objects.variables = {}
-})
 
 entodicton.knowledgeModule( { 
   url,
   key,
-  name: 'javascript',
-  description: 'javascript interpreter -> lol',
+  name: 'punctuation',
+  description: 'punctuation',
   config,
   isProcess: require.main === module,
-  test: './javascript.test',
+  test: './punctuation.test',
   setup: () => {
   },
   process: (promise) => {
