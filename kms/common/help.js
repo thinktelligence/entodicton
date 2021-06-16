@@ -45,15 +45,9 @@ let config = {
   ],
 };
 
-url = "http://184.67.27.82"
-key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-//url = "http://localhost:3000"
-//key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 config = new entodicton.Config(config)
 
 entodicton.knowledgeModule( { 
-  url,
-  key,
   name: 'help',
   description: 'Help the user with the current knowledge modules',
   config,

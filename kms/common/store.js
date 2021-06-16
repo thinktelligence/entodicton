@@ -143,11 +143,6 @@ let config = {
   ],
 };
 
-url = "http://184.67.27.82"
-key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-//url = "http://localhost:3000"
-//key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-
 // ['list products']
 //config.utterances = ['shirts less than 10 dollars']
 // shirts less than 10 dollars
@@ -172,13 +167,7 @@ config.initializer( ({objects, api, uuid}) => {
   config.get('generators').push( api.productGenerator(uuid) )
 })
 
-const isEntryPoint = () => {
-    return require.main === module;
-}
-
 entodicton.knowledgeModule( { 
-  url,
-  key,
   name: 'store',
   description: 'questions about products for sale in a store',
   config,
