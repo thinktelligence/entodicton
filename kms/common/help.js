@@ -69,13 +69,13 @@ entodicton.knowledgeModule( {
         }
         console.log(responses.trace);
         console.log('objects', JSON.stringify(config.get("objects"), null, 2))
-        for (response of responses.generated[0]) {
+        console.log('op_choices', JSON.stringify(responses.op_choices, null, 2))
+        for (response of responses.generated) {
           console.log(response);
         }
         console.log(JSON.stringify(responses.results, null, 2));
       })
       .catch( (error) => {
-        console.log(`Error ${config.get('utterances')}`);
         console.log('error', error)
         console.log('error.error', error.error)
         console.log('error.context', error.context)
