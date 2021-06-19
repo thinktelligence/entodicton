@@ -6,7 +6,7 @@ import json
 import shlex
 import subprocess
 
-package_json_path = '{}/../kms/package.json'.format(os.path.dirname(os.path.abspath(__file__)))
+package_json_path = '{}/../package.json'.format(os.path.dirname(os.path.abspath(__file__)))
 tests = []
 with open(package_json_path) as f:
   package = json.load(f)
@@ -28,8 +28,8 @@ def command(cmd):
 start_dir = os.path.dirname(os.path.abspath(__file__))
 for directory, name in tests:
   print(name)
-  os.chdir('{}/../kms/{}'.format(start_dir, directory))
-  cmd = 'node {}.js -t'.format(name)
+  os.chdir('{}/../{}'.format(start_dir, directory))
+  cmd = 'node {}.js -t -g'.format(name)
   results, err = command(cmd)
   if len(results['failures']) > 0:
     print('{} status: -1, message: "KM {} failed" {}'.format('{', name, '}'))
