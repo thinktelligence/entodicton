@@ -8,7 +8,7 @@ const testData = {
   ]
 }
 
-const interface = {
+const api = {
   getTypes: () => testData.types,
   getAllProducts: () => testData.products,
   getByTypeAndCost: ({type, cost, comparison}) => {
@@ -20,14 +20,18 @@ const interface = {
     })
     return results
   },
-  productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
+  // after a module loaded the generators must have the module uuid. 
+  productGenerator: (uuid) => [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`, uuid]
 };
 
-store.interface = interface
 
 url = "http://184.67.27.82"
 key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
+//url = 'http://localhost:3000'
+//key = '6804954f-e56d-471f-bbb8-08e3c54d9321'
+
 store.server(url, key)
+store.api = api
 store.process('list the products').then( (response) => {
   //console.log(JSON.stringify(response, null, 2))
   console.log(response.generated[0])
