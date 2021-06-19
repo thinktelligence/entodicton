@@ -167,46 +167,10 @@ config.initializer( ({objects, api, uuid}) => {
   config.get('generators').push( api.productGenerator(uuid) )
 })
 
-entodicton.knowledgeModule( { 
+entodicton.knowledgeModule({
+  module,
   name: 'store',
   description: 'questions about products for sale in a store',
   config,
-  isProcess: require.main === module,
   test: './store.test',
-  setup: () => {
-  },
-  process: (promise) => {
-    return promise
-      .then( async (responses) => {
-        if (responses.errors) {
-          console.log('Errors')
-          responses.errors.forEach( (error) => console.log(`    ${error}`) )
-        }
-        console.log('This is the global objects from running semantics:\n', config.objects)
-        if (responses.logs) {
-          console.log('Logs')
-          responses.logs.forEach( (log) => console.log(`    ${log}`) )
-        }
-        console.log(responses.trace);
-        console.log('objects', JSON.stringify(config.get("objects"), null, 2))
-        console.log(JSON.stringify(responses.results, null, 2));
-        console.log('Responses ------------------------\n')
-        for (let response of responses.generated[0]) {
-          console.log(response)
-        }
-//        return promise;
-      })
-      .catch( (error) => {
-        console.log(`Error ${config.get('utterances')}`);
-        console.log('error', error)
-        console.log('error.error', error.error)
-        console.log('error.context', error.context)
-        console.log('error.logs', error.logs);
-        console.log('error.trace', error.trace);
-//        return promise;
-      })
-  },
-  module: () => {
-    module.exports = config
-  }
 })

@@ -15,6 +15,8 @@ const getHelp = (config, indent=2) => {
 let config = {
   operators: [
     "([help])",
+    // sentence with the word blah
+    // sentences with concept blah
   ],
   bridges: [
     { "id": "help", "level": 0, "bridge": "{ ...next(operator) }" },
@@ -46,44 +48,11 @@ let config = {
 };
 
 config = new entodicton.Config(config)
-
-entodicton.knowledgeModule( { 
+config.server('http://Deplo-Entod-17F6HL7NB1AL5-515954428.ca-central-1.elb.amazonaws.com', 'f4a879cd-6ff7-4f14-91db-17a11ba77103')
+entodicton.knowledgeModule({
+  module,
   name: 'help',
   description: 'Help the user with the current knowledge modules',
   config,
-  isProcess: require.main === module,
   test: './help.test',
-  setup: () => {
-  },
-  process: (promise) => {
-    return promise
-      .then( async (responses) => {
-        if (responses.errors) {
-          console.log('Errors')
-          responses.errors.forEach( (error) => console.log(`    ${error}`) )
-        }
-        console.log('This is the global objects from running semantics:\n', config.objects)
-        if (responses.logs) {
-          console.log('Logs')
-          responses.logs.forEach( (log) => console.log(`    ${log}`) )
-        }
-        console.log(responses.trace);
-        console.log('objects', JSON.stringify(config.get("objects"), null, 2))
-        console.log('op_choices', JSON.stringify(responses.op_choices, null, 2))
-        for (response of responses.generated) {
-          console.log(response);
-        }
-        console.log(JSON.stringify(responses.results, null, 2));
-      })
-      .catch( (error) => {
-        console.log('error', error)
-        console.log('error.error', error.error)
-        console.log('error.context', error.context)
-        console.log('error.logs', error.logs);
-        console.log('error.trace', error.trace);
-      })
-  },
-  module: () => {
-    module.exports = config
-  }
 })

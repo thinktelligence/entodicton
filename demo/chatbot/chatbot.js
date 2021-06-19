@@ -86,6 +86,8 @@ let initConfig = {
 
 url = 'http://184.67.27.82'
 key = '6804954f-e56d-471f-bbb8-08e3c54d9321'
+//url = 'http://localhost:3000'
+//key = '6804954f-e56d-471f-bbb8-08e3c54d9321'
 
 // These are the simulated answers from the tenant
 tenantSays = [ "i cannot unlock the door", "yes", "no" ]
@@ -108,7 +110,7 @@ const debugOne = async () => {
   try {
     //config.set("utterances", ['the door wont unlock'])
     config.set("utterances", ['i cannot unlock the door'])
-    responses = await client.process(url, key, config);
+    responses = await config.process(url, key, config);
     console.log('generated', responses.generated);
     console.log('results', JSON.stringify(responses.results, null, 2));
   } catch( e ) {
@@ -126,7 +128,7 @@ const chatLoop = async () => {
     console.log('Loop number', counter)
     console.log('Question:', r.generated)
     //config.set("utterances", [tenantSays[counter++]])
-    const query = [tenantSays[counter++]]
+    const query = tenantSays[counter++]
     console.log(`Simulated response from user: ${query}`);
 
     try {
@@ -137,7 +139,7 @@ const chatLoop = async () => {
         break
       }
       // paraphrase of result
-      console.log('Computer response:', responses.generated[0][0]);
+      console.log('Computer response:', responses.generated[0]);
       console.log("\n")
       //console.log('generated', responses.generated);
       //console.log('results', JSON.stringify(responses.results, null, 2));

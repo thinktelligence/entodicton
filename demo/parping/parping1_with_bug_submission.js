@@ -85,6 +85,8 @@ let config = {
 
 url = "http://Deplo-Entod-1CT3OS32E5XW3-372444999.ca-central-1.elb.amazonaws.com"
 key = "0686949c-0348-411b-9b4b-32e469f2ed85"
+//url = 'http://localhost:3000'
+//key = '6804954f-e56d-471f-bbb8-08e3c54d9321'
 
 const query = 'who are the players'
 console.log(`Running the input: ${query}`);
@@ -93,4 +95,4 @@ config.objects = {}
 config = new entodicton.Config(config)
 const sub_id = 'I-5BHXUAXYCFRB'
 const sub_pwd = '94e681d0-3fbf-11eb-86ab-0110b6eaa7fb'
-entodicton.submitBug(sub_id, sub_pwd, url, key, config)
+entodicton.submitBug(sub_id, sub_pwd, config)

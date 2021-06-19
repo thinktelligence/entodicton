@@ -45,40 +45,9 @@ config.initializer( ({objects, api, uuid}) => {
 })
 
 entodicton.knowledgeModule( { 
+  module,
   name: 'javascript',
-  description: 'javascript interpreter -> lol',
+  description: 'javascript interpreter',
   config,
-  isProcess: require.main === module,
   test: './javascript.test',
-  setup: () => {
-  },
-  process: (promise) => {
-    return promise
-      .then( async (responses) => {
-        if (responses.errors) {
-          console.log('Errors')
-          responses.errors.forEach( (error) => console.log(`    ${error}`) )
-        }
-        console.log('This is the global objects from running semantics:\n', config.objects)
-        if (responses.logs) {
-          console.log('Logs')
-          responses.logs.forEach( (log) => console.log(`    ${log}`) )
-        }
-        console.log(responses.trace);
-        console.log('objects', JSON.stringify(config.get("objects"), null, 2))
-        console.log(responses.generated);
-        console.log(JSON.stringify(responses.results, null, 2));
-      })
-      .catch( (error) => {
-        console.log(`Error ${config.get('utterances')}`);
-        console.log('error', error)
-        console.log('error.error', error.error)
-        console.log('error.context', error.context)
-        console.log('error.logs', error.logs);
-        console.log('error.trace', error.trace);
-      })
-  },
-  module: () => {
-    module.exports = config
-  }
 })
