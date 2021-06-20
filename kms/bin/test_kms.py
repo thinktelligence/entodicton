@@ -29,7 +29,7 @@ start_dir = os.path.dirname(os.path.abspath(__file__))
 for directory, name in tests:
   print(name)
   os.chdir('{}/../{}'.format(start_dir, directory))
-  cmd = 'node {}.js -t -g'.format(name)
+  cmd = 'node {}.js -t -n 10'.format(name)
   results, err = command(cmd)
   if len(results['failures']) > 0:
     print('{} status: -1, message: "KM {} failed" {}'.format('{', name, '}'))

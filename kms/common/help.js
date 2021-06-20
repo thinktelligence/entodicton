@@ -48,7 +48,6 @@ let config = {
 };
 
 config = new entodicton.Config(config)
-config.server('http://Deplo-Entod-17F6HL7NB1AL5-515954428.ca-central-1.elb.amazonaws.com', 'f4a879cd-6ff7-4f14-91db-17a11ba77103')
 entodicton.knowledgeModule({
   module,
   name: 'help',

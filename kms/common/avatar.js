@@ -1,7 +1,7 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 
-const data = {
+let data = {
   me: {
     name: 'molnius',
     age: 23,
@@ -103,5 +103,18 @@ entodicton.knowledgeModule( {
   name: 'avatar',
   description: 'avatar for dialogues',
   config,
+  // reset the API data before each test.
+  beforeTest: () => {
+    data = {
+      me: {
+        name: 'molnius',
+        age: 23,
+        eyes: 'hazel',
+      },
+      other: {
+        name: 'unknown'
+      }
+    }
+  },
   test: './avatar.test',
 })

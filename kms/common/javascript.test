@@ -1,24 +1,24 @@
 {
   "let c = 23": {
     "generated": [
-      "{\"word\":\"=\",\"variable\":{\"types\":[\"variable\"],\"unknown\":true,\"marker\":\"c\",\"scope\":\"let\"},\"value\":{\"marker\":\"23\",\"unknown\":true},\"marker\":\"assignment\"}"
+      "{\"marker\":\"assignment\",\"value\":{\"marker\":\"23\",\"unknown\":true},\"variable\":{\"marker\":\"c\",\"scope\":\"let\",\"types\":[\"variable\"],\"unknown\":true},\"word\":\"=\"}"
     ],
     "result": [
       {
-        "word": "=",
-        "variable": {
-          "types": [
-            "variable"
-          ],
-          "unknown": true,
-          "marker": "c",
-          "scope": "let"
-        },
+        "marker": "assignment",
         "value": {
           "marker": "23",
           "unknown": true
         },
-        "marker": "assignment"
+        "variable": {
+          "marker": "c",
+          "scope": "let",
+          "types": [
+            "variable"
+          ],
+          "unknown": true
+        },
+        "word": "="
       }
     ],
     "objects": {
@@ -39,6 +39,39 @@
       "variables": {
         "c": "23"
       }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "let",
+            0
+          ],
+          [
+            [
+              "assignment",
+              0
+            ],
+            [
+              "let",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "assignment",
+            0
+          ],
+          [
+            [
+              "assignment",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   }
 }

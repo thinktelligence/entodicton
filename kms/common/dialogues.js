@@ -112,7 +112,6 @@ let config = {
       ({context, s}) => {
         const one = context.one;
         const two = context.two;
-        debugger;
         one.same = two;
         s(one)
         one.same = undefined
