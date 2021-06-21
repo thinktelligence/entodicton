@@ -117,7 +117,7 @@ config.set('contexts', [context])
 console.log('config', config)
 console.log('before objects', JSON.stringify(objects, null, 2))
 client.process(url, key, config).then( (responses) => {
-  console.log('responses', JSON.stringify(responses.results, null, 2));
+  console.log('responses', JSON.stringify(responses.contexts, null, 2));
   console.log('responses', responses.generated);
   console.log('after objects', JSON.stringify(objects, null, 2))
 })
@@ -143,7 +143,7 @@ client.process(url, key, config)
     console.log(responses.trace);
     console.log(objects);
     console.log(responses.generated);
-    console.log(JSON.stringify(responses.results, null, 2));
+    console.log(JSON.stringify(responses.contexts, null, 2));
     config.set('contexts', objects.characters.spock.todo)
     r2 = await client.process(config)
     console.log('r2', r2)

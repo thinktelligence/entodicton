@@ -168,8 +168,8 @@ config.process(query)
     console.log('spock.toDo', JSON.stringify(objects.characters.spock.toDo, null, 2));
     console.log(responses.trace);
     console.log(JSON.stringify(objects, null, 2));
+    console.log(JSON.stringify(responses.contexts, null, 2));
     console.log(responses.generated);
-    console.log(JSON.stringify(responses.results, null, 2));
   })
   .catch( (error) => {
     console.log(`Error ${config.utterances}`);

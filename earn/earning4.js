@@ -183,7 +183,7 @@ config.process(query)
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
     }
     console.log(responses.trace)
-    console.log(responses.results);
+    console.log(responses.contexts);
     console.log(responses.generated);
   })
   .catch( (error) => {

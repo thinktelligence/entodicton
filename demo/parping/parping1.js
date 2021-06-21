@@ -83,7 +83,7 @@ config.process(query)
     }
     console.log(responses.trace);
     console.log('generated', responses.generated);
-    console.log('results', JSON.stringify(responses.results, null, 2));
+    console.log('contexts', JSON.stringify(responses.contexts, null, 2));
   })
   .catch( (error) => {
     console.log(`Error ${query}`);

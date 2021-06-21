@@ -21,7 +21,7 @@ let objects = {
 
 let config = {
   expected_generated: [ [ 'who are the players23' ] ],
-  expected_results: [
+  expected_contexts: [
     [
       {
         "marker": "toBe",

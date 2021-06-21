@@ -112,7 +112,7 @@ const debugOne = async () => {
     config.set("utterances", ['i cannot unlock the door'])
     responses = await config.process(url, key, config);
     console.log('generated', responses.generated);
-    console.log('results', JSON.stringify(responses.results, null, 2));
+    console.log('contexts', JSON.stringify(responses.contexts, null, 2));
   } catch( e ) {
     console.log('e', e);
   }
@@ -142,7 +142,7 @@ const chatLoop = async () => {
       console.log('Computer response:', responses.generated[0]);
       console.log("\n")
       //console.log('generated', responses.generated);
-      //console.log('results', JSON.stringify(responses.results, null, 2));
+      //console.log('contexts', JSON.stringify(responses.contexts, null, 2));
     } catch( e ) {
       console.log("error", e)
       break
