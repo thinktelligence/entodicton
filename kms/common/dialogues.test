@@ -5,6 +5,7 @@
     ],
     "result": [
       {
+        "marker": "is",
         "one": {
           "marker": "what",
           "query": true,
@@ -13,11 +14,10 @@
           ],
           "word": "what"
         },
-        "marker": "is",
         "query": true,
         "two": {
-          "pullFromContext": true,
           "marker": "it",
+          "pullFromContext": true,
           "types": [
             "it"
           ],
@@ -27,8 +27,8 @@
         "response": {
           "isResponse": true,
           "instance": {
-            "pullFromContext": true,
             "marker": "it",
+            "pullFromContext": true,
             "types": [
               "it"
             ],
@@ -37,8 +37,8 @@
             "value": "contextThatItRefersTo"
           },
           "concept": {
-            "pullFromContext": true,
             "marker": "it",
+            "pullFromContext": true,
             "types": [
               "it"
             ],
@@ -50,10 +50,68 @@
       }
     ],
     "objects": {
-      "namespaced": {},
-        "dialog": {
-          "current": [ "contextThatItRefersTo" ]
+      "namespaced": {
+        "0": {
+          "dialog": {
+            "current": [
+              "contextThatItRefersTo"
+            ]
+          }
         }
+      }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "it",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   }
 }
