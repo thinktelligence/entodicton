@@ -6,16 +6,16 @@
     "result": [
       {
         "marker": "list",
-        "word": "list",
         "what": [
           {
             "marker": "product",
-            "word": "products",
             "types": [
               "product"
-            ]
+            ],
+            "word": "products"
           }
         ],
+        "word": "list",
         "listing": [
           {
             "marker": "product",
@@ -39,14 +39,51 @@
     ],
     "objects": {
       "namespaced": {
-        "": {}
-      },
-      "listing": {
-        "type": "tables",
-        "columns": [
-          "name"
-        ]
+        "0": {
+          "listing": {
+            "type": "tables",
+            "columns": [
+              "name"
+            ]
+          }
+        },
+        "1": {},
+        "2": {},
+        "3": {}
       }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "product",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "product",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "list",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   },
   "list the products": {
@@ -56,17 +93,17 @@
     "result": [
       {
         "marker": "list",
-        "word": "list",
         "what": [
           {
             "marker": "product",
-            "word": "products",
+            "pullFromContext": true,
             "types": [
               "product"
             ],
-            "pullFromContext": true
+            "word": "products"
           }
         ],
+        "word": "list",
         "listing": [
           {
             "marker": "product",
@@ -90,14 +127,71 @@
     ],
     "objects": {
       "namespaced": {
-        "": {}
-      },
-      "listing": {
-        "type": "tables",
-        "columns": [
-          "name"
-        ]
+        "0": {
+          "listing": {
+            "type": "tables",
+            "columns": [
+              "name"
+            ]
+          }
+        },
+        "1": {},
+        "2": {},
+        "3": {}
       }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "product",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "list",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   },
   "answer with tables list the products": {
@@ -108,22 +202,22 @@
     "result": [
       {
         "marker": "answer",
-        "word": "answer",
-        "type": "tables"
+        "type": "tables",
+        "word": "answer"
       },
       {
         "marker": "list",
-        "word": "list",
         "what": [
           {
             "marker": "product",
-            "word": "products",
+            "pullFromContext": true,
             "types": [
               "product"
             ],
-            "pullFromContext": true
+            "word": "products"
           }
         ],
+        "word": "list",
         "listing": [
           {
             "marker": "product",
@@ -147,14 +241,155 @@
     ],
     "objects": {
       "namespaced": {
-        "": {}
-      },
-      "listing": {
-        "type": "tables",
-        "columns": [
-          "name"
-        ]
+        "0": {
+          "listing": {
+            "type": "tables",
+            "columns": [
+              "name"
+            ]
+          }
+        },
+        "1": {},
+        "2": {},
+        "3": {}
       }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "product",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "listingType",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "listingType",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "listingType",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "with",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "list",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "answer",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   },
   "answer with sentences list the products": {
@@ -165,22 +400,22 @@
     "result": [
       {
         "marker": "answer",
-        "word": "answer",
-        "type": "sentences"
+        "type": "sentences",
+        "word": "answer"
       },
       {
         "marker": "list",
-        "word": "list",
         "what": [
           {
             "marker": "product",
-            "word": "products",
+            "pullFromContext": true,
             "types": [
               "product"
             ],
-            "pullFromContext": true
+            "word": "products"
           }
         ],
+        "word": "list",
         "listing": [
           {
             "marker": "product",
@@ -204,14 +439,155 @@
     ],
     "objects": {
       "namespaced": {
-        "": {}
-      },
-      "listing": {
-        "type": "sentences",
-        "columns": [
-          "name"
-        ]
+        "0": {
+          "listing": {
+            "type": "sentences",
+            "columns": [
+              "name"
+            ]
+          }
+        },
+        "1": {},
+        "2": {},
+        "3": {}
       }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "product",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "listingType",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "listingType",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "listingType",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "with",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "list",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "answer",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   },
   "show the price list the products": {
@@ -222,29 +598,29 @@
     "result": [
       {
         "marker": "show",
-        "word": "show",
         "properties": {
           "marker": "price",
-          "word": "price",
+          "pullFromContext": true,
           "types": [
             "price"
           ],
-          "pullFromContext": true
-        }
+          "word": "price"
+        },
+        "word": "show"
       },
       {
         "marker": "list",
-        "word": "list",
         "what": [
           {
             "marker": "product",
-            "word": "products",
+            "pullFromContext": true,
             "types": [
               "product"
             ],
-            "pullFromContext": true
+            "word": "products"
           }
         ],
+        "word": "list",
         "listing": [
           {
             "marker": "product",
@@ -268,15 +644,144 @@
     ],
     "objects": {
       "namespaced": {
-        "": {}
-      },
-      "listing": {
-        "type": "tables",
-        "columns": [
-          "name",
-          "price"
-        ]
+        "0": {
+          "listing": {
+            "type": "tables",
+            "columns": [
+              "name",
+              "price"
+            ]
+          }
+        },
+        "1": {},
+        "2": {},
+        "3": {}
       }
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "price",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "product",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "show",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "list",
+            0
+          ],
+          [
+            [
+              "list",
+              0
+            ]
+          ]
+        ]
+      ]
     }
   }
 }
