@@ -126,9 +126,9 @@ let config = {
 config = new entodicton.Config(config)
 config.api = api
 
-config.initializer( ({objects, api, uuid}) => {
+config.initializer( ({objects}) => {
   objects.dialog = {
-      current: ['contextThatItRefersTo']
+    current: []
   }
 })
 
@@ -137,6 +137,11 @@ entodicton.knowledgeModule( {
   name: 'dialogues',
   description: 'framework for dialogues',
   config,
+  beforeTest: ({objects}) => {
+    objects.dialog = {
+      current: ['contextThatItRefersTo']
+    }
+  },
   test: './dialogues.test',
   /*
   module: () => {
