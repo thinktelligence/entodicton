@@ -14,8 +14,8 @@ let getDate = () => {
 let config = {
   operators: [
     "([time])",
+    "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
     //"(([anyConcept]) [equals|is] ([anyConcept]))",
-    //"([use] ((<count> ([timeUnit])) [timeFormat|format]))",
     //"(([what0|what]) [equals] (<the> ([timeConcept])))",
     //"(<whatP|what> ([anyConcept]))",
     //"what is the time in 24 hour format"
@@ -26,19 +26,22 @@ let config = {
   ],
   bridges: [
     { "id": "time", "level": 0, "bridge": "{ ...next(operator) }" },
+
+    { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
+    { "id": "count", "level": 0, "bridge": "{ ...after, count: operator.value }" },
+    { "id": "timeUnit", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "use", "level": 0, "bridge": "{ ...next(operator), format: after[0] }" },
   ],
   hierarchy: [
     ['time', 'queryable'],
   ],
   "version": '3',
-  /*
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
     " hours?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " minutes?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " seconds?": [{"id": "timeUnit", "initial": "{ units: 'seconds' }" }],
   },
-  */
 
   generators: [
     [ ({context}) => context.marker == 'time' && context.response, ({g, context}) => `the time` ],
@@ -58,24 +61,13 @@ let config = {
     [ ({context}) => context.marker == 'time' && context.value && context.format == 24, ({g, context}) => 
         `${context.value.getHours()}:${context.value.getMinutes()}` 
     ],
+    [ 
+      ({context}) => context.marker == 'use' && !context.value, 
+      ({g, context}) => `use ${context.format.count} hour time` 
+    ],
+    [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
     /*
     [ ({context}) => context.marker == 'equals' && context.equals, ({g, context}) => `${g(context.equals[0])} is ${g(context.equals[1])}` ],
-    [ ({context}) => context.marker == 'timeConcept' && context.value && context.format == 12, ({g, context}) => {
-          let hh = context.value.getHours();
-          let ampm = 'am'
-          if (hh > 12) {
-            hh -= 12;
-            ampm = 'pm'
-          }
-          let ss = context.value.getMinutes()
-          ss = pad(ss, 2)
-          return `${hh}:${ss} ${ampm}` 
-        }],
-    [ ({context}) => context.marker == 'timeConcept' && context.value && context.format == 24, ({g, context}) => 
-        `${context.value.getHours()}:${context.value.getMinutes()}` ],
-    [ ({context}) => context.marker == 'timeConcept' && !context.value, ({g, context}) => `the time` ],
-    [ ({context}) => context.marker == 'use' && !context.value, ({g, context}) => `use ${context.format.count} hour time` ],
-    [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
     */
   ],
 
@@ -100,11 +92,11 @@ let config = {
       })
       delete context.equals[0].value
     }],
-
     [({objects, context}) => context.marker == 'timeConcept' && context.pullFromContext, async ({objects, context}) => {
       context.value = getDate()
       context.format = objects.format
     }],
+    */
     [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
       objects.format = context.format.count
     }],
@@ -112,7 +104,6 @@ let config = {
       context.marker = 'response'
       context.text = 'The hour format is 12 hour or 24 hour'
     }],
-    */
   ],
 };
 
