@@ -15,7 +15,7 @@ const armem = {
   }
 }
 
-objects = {
+initObjects = {
   enterprise: {
     torpedoes: {
       quantity: 10,
@@ -133,8 +133,10 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //config.utterances = ['spock arm the photon torpedoes']
 const query = 'spock what are you doing'
 console.log(`Running the input: ${query}`);
-config.objects = objects;
 config = new entodicton.Config(config)
+config.initializer( ({objects}) => {
+  Object.assign(objects, initObjects);
+})
 config.server(url, key)
 
 const context = {
@@ -158,16 +160,16 @@ config.process(query)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the objects from running semantics:\n', config.objects)
+    console.log('This is the objects from running semantics:\n', config.objects())
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
     }
-    console.log('mentions', objects.mentions);
-    console.log('spock', JSON.stringify(objects.characters.spock, null, 2));
-    console.log('spock.toDo', JSON.stringify(objects.characters.spock.toDo, null, 2));
+    console.log('mentions', config.objects().mentions);
+    console.log('spock', JSON.stringify(config.objects().characters.spock, null, 2));
+    console.log('spock.toDo', JSON.stringify(config.objects().characters.spock.toDo, null, 2));
     console.log(responses.trace);
-    console.log(JSON.stringify(objects, null, 2));
+    //console.log(JSON.stringify(objects, null, 2));
     console.log(JSON.stringify(responses.contexts, null, 2));
     console.log(responses.generated);
   })

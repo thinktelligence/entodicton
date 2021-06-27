@@ -1,6 +1,6 @@
 const entodicton = require('entodicton')
 
-objects = {
+initObjects = {
   enterprise: {
     torpedoes: {
       quantity: 10,
@@ -94,8 +94,10 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //config.utterances = ['show the weapons status arm the photon torpedoes show the weapons status']
 config.utterances = ['spock arm the photon torpedoes']
 console.log(`Running the input: ${config.utterances}`);
-config.objects = objects;
 config = new entodicton.Config(config)
+config.initializer( ({objects}) => {
+  Object.assign(objects, initObjects)
+})
 
 context = {
   "marker": "arm",
@@ -122,7 +124,7 @@ client.process(url, key, config).then( (responses) => {
   console.log('after objects', JSON.stringify(objects, null, 2))
 })
 */
-r = entodicton.processContext(context, { semantics: config.get('semantics'), generators: config.get("generators"), objects: objects })
+r = entodicton.processContext(context, { semantics: config.get('semantics'), generators: config.get("generators"), objects: initObjects })
 console.log(r)
 
 /*

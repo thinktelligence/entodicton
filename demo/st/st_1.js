@@ -40,6 +40,7 @@ let config = {
   ],
   debug: true,
   priorities: [
+    [['arm', 0], ['photon', 0], ['showStatus', 0], ['the', 0], ['weaponArea', 0]]
   ],
   "version": '3',
   "words": {
@@ -91,6 +92,7 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //const query = 'arm the photon torpedoes'
 //const query = 'show the weapons status'
 const query = 'show the weapons status arm the photon torpedoes show the weapons status'
+//const query = 'show the weapons status arm the photon torpedoes'
 console.log(`Running the input: ${query}`);
 config = new entodicton.Config(config)
 config.initializer( ({objects}) => {
