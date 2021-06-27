@@ -45,7 +45,8 @@ let config = {
   },
 
   priorities: [
-    [['is', 0], ['my', 0]]
+    [['is', 0], ['my', 0]],
+    [['is', 0], ['your', 0]],
   ],
 
   hierarchy: [
