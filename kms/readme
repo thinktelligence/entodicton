@@ -8,7 +8,7 @@ The list of knowledge modules can be found <a href='https://thinktelligence.com/
 
 ## Usage
 
-The basic usage is redefine the interface functions to point to your data. Then all of the queries that are supported can be performed against your data. Here is an example of how to do that
+The basic usage is redefine the api functions to point to your data. Then all of the queries that are supported can be performed against your data. Here is an example of how to do that
 
 The first step is to include the client and the knowledge module project called EKMS
 ```
@@ -35,7 +35,7 @@ dev@devlaptop:~/code/thinktelligence/kms$ node use_store.js
 
 ```
 
-In order to customize the output to your domain you would need to redefine the interface to access your data
+In order to customize the output to your domain you would need to redefine the api to access your data
 
 ```
 const testData = {
@@ -46,7 +46,7 @@ const testData = {
   ]
 }
 
-const interface = {
+const api = {
   getTypes: () => testData.types,
   getAllProducts: () => testData.products,
   getByTypeAndCost: ({type, cost, comparison}) => {
@@ -61,7 +61,7 @@ const interface = {
   productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
 };
 
-store.interface = interface
+store.api = api
 
 url = "http://184.67.27.82"
 key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
