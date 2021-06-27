@@ -4,9 +4,10 @@ const api = {
   //
   // duck typing: for operators you want to use here
   //
-  //   1. Use hierarchy to make them an instance of queryable
-  //   2. For semantics, if evaluate == true then set value to the value of the operator
-  //   3. Generators will get contexts with 'response: true' set. Used for converting 'your' to 'my'
+  //   1. Use hierarchy to make them an instance of queryable. For example add hierarchy entry [<myClassId>, 'queryable']
+  //   2. For semantics, if evaluate == true then set value to the 'value' property of the operator to the value.
+  //   3. Generators will get contexts with 'response: true' set. Used for converting 'your' to 'my' to phrases like 'your car' or 'the car'.
+  //   4. Generators will get contexts with 'instance: true' and value set. For converting values like a date to a string.
   //
 
   // used with context sensitive words like 'it', 'that' etc. for example if you have a sentence "create a tank"
@@ -27,7 +28,7 @@ let config = {
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
 
-    { id: "the", level: 0, bridge: "{ ...next(operator), pullFromContext: true }" },
+    { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
 
     // TODO make this hierarchy thing work
     { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true }" },
@@ -45,8 +46,12 @@ let config = {
       ({context}) => context.marker
     ],
     [ 
-      ({context}) => context.marker == 'it' && !context.isQuery, 
+      ({context}) => context.marker == 'it' && !context.isQuery && !context.instance, 
       ({context}) => `it` 
+    ],
+    [ 
+      ({context}) => context.marker == 'it' && !context.isQuery && context.instance, 
+      ({context}) => context.value
     ],
     [ 
       ({context}) => context.marker == 'name' && !context.isQuery && context.subject, 
@@ -55,11 +60,12 @@ let config = {
     [ 
       ({context}) => context.marker == 'is' && context.response,
       ({context, g}) => {
+        debugger;
         const response = context.response;
         const concept = response.concept;
         concept.response = true
-        const instance = response.instance.value
-        return `${g(concept)} is ${g(instance)}` 
+        const instance = g(response.instance)
+        return `${g(concept)} is ${instance}` 
       }
     ],
     [ 
@@ -95,6 +101,8 @@ let config = {
         value = JSON.parse(JSON.stringify(value))
         value.evaluate = true;
         const instance = s(value) 
+        delete instance.evaluate
+        instance.instance = true;
         concept = JSON.parse(JSON.stringify(value)) 
         concept.isQuery = undefined
 

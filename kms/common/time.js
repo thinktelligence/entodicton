@@ -27,6 +27,9 @@ let config = {
   bridges: [
     { "id": "time", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
+  hierarchy: [
+    ['time', 'queryable'],
+  ],
   "version": '3',
   /*
   "words": {
@@ -38,6 +41,24 @@ let config = {
   */
 
   generators: [
+    [ ({context}) => context.marker == 'time' && context.response, ({g, context}) => `the time` ],
+    //[ ({context}) => context.marker == 'time' && context.value, ({g, context}) => `the time => ${context.value}` ],
+    [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
+          let hh = context.value.getHours();
+          let ampm = 'am'
+          if (hh > 12) {
+            hh -= 12;
+            ampm = 'pm'
+          }
+          let ss = context.value.getMinutes()
+          ss = pad(ss, 2)
+          return `${hh}:${ss} ${ampm}` 
+        }
+    ],
+    [ ({context}) => context.marker == 'time' && context.value && context.format == 24, ({g, context}) => 
+        `${context.value.getHours()}:${context.value.getMinutes()}` 
+    ],
+    /*
     [ ({context}) => context.marker == 'equals' && context.equals, ({g, context}) => `${g(context.equals[0])} is ${g(context.equals[1])}` ],
     [ ({context}) => context.marker == 'timeConcept' && context.value && context.format == 12, ({g, context}) => {
           let hh = context.value.getHours();
@@ -55,9 +76,15 @@ let config = {
     [ ({context}) => context.marker == 'timeConcept' && !context.value, ({g, context}) => `the time` ],
     [ ({context}) => context.marker == 'use' && !context.value, ({g, context}) => `use ${context.format.count} hour time` ],
     [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
+    */
   ],
 
   semantics: [
+    [({objects, context}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
+      context.value = getDate()
+      context.format = objects.format
+    }],
+    /*
     [({objects, context, config}) => context.marker == 'equals' && context.isQuery, async ({objects, context, response, s}) => {
       context.isResponse = true
       delete context.isQuery
@@ -85,6 +112,7 @@ let config = {
       context.marker = 'response'
       context.text = 'The hour format is 12 hour or 24 hour'
     }],
+    */
   ],
 };
 
@@ -96,10 +124,13 @@ let config = {
 //config.utterances = ['use 36 hour format']
 config = new Config(config)
 config.add(dialogues)
-config.initializer( ({objects}) => {
-  objects = {
+config.initializer( ({objects, isModule}) => {
+  Object.assign(objects, {
     format: 12  // or 24
-  };
+  });
+  if (!isModule) {
+    getDate = () => new Date("December 25, 1995 10:13 pm")
+  }
 })
 
 knowledgeModule({
@@ -107,9 +138,5 @@ knowledgeModule({
   name: 'time',
   description: 'Time related concepts',
   config,
-  beforeTest: () => {
-    getDate = () => new Date("December 25, 1995 10:13 pm")
-  },
   test: './time.test',
 })
-

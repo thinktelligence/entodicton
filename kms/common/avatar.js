@@ -55,6 +55,14 @@ let config = {
 
   generators: [
     [ 
+      ({context}) => context.marker == 'name' && !context.isQuery && context.value, 
+      ({context}) => context.value
+    ],
+    [ 
+      ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'your', 
+      ({context}) => `my ${context.word}` 
+    ],
+    [ 
       ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'your', 
       ({context}) => `my ${context.word}` 
     ],
