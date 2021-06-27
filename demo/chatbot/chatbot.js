@@ -94,6 +94,7 @@ tenantSays = [ "i cannot unlock the door", "yes", "no" ]
 //tenantSays = [ "i cant unlock the door", "yes", "no" ]
 //tenantSays = [ "the door wont unlock", "yes", "no" ]
 
+/*
 const objects = {
   question: {marker: "question", id: 'getProblem', text: "What is the problem"},
   nextQuestion: {
@@ -103,7 +104,19 @@ const objects = {
   answers: []
 }
 initConfig.objects = objects;
+*/
 config = new entodicton.Config(initConfig)
+config.initializer( ({objects}) => {
+  Object.assign(objects, {
+    question: {marker: "question", id: 'getProblem', text: "What is the problem"},
+    nextQuestion: {
+      'unlockAnswer': {marker: "question", id: 'lightOn', text: "Is there a green light on the lock?"},
+      'greenLightOnAnswer': {marker: "question", id: 'videoFeedOn', text: "Is there any video feed on the screen?"},
+    },
+    answers: []
+  })
+})
+debugger;
 config.server(url, key)
 
 const debugOne = async () => {
@@ -120,9 +133,10 @@ const debugOne = async () => {
 
 counter = 0
 const chatLoop = async () => {
-  while (config.get('objects').question != null) {
+  debugger;
+  while (config.objects().question != null) {
     // convert the question to a user readable string
-    const question = config.get('objects').question;
+    const question = config.objects().question;
     //r = config.processContext(question, { semantics: initConfig.semantics, generators: initConfig.generators, objects: objects })
     const r = config.processContext(question);
     console.log('Loop number', counter)

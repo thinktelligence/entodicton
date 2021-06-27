@@ -1,6 +1,6 @@
 const entodicton = require('entodicton')
 
-let objects = {
+let initObjects = {
   players: [
     {
       id: 'player1',
@@ -91,7 +91,6 @@ key = "0686949c-0348-411b-9b4b-32e469f2ed85"
 const query = 'who are the players'
 console.log(`Running the input: ${query}`);
 config.utterances = [query]
-config.objects = {}
 config = new entodicton.Config(config)
 const sub_id = 'I-5BHXUAXYCFRB'
 const sub_pwd = '94e681d0-3fbf-11eb-86ab-0110b6eaa7fb'

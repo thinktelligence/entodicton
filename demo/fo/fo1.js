@@ -1,6 +1,6 @@
 const entodicton = require('entodicton')
 
-const objects = {
+const initObjects = {
   "fallout": {
     "merchant": {
       "guns": [
@@ -52,8 +52,12 @@ key = process.argv[3] || "6804954f-e56d-471f-bbb8-08e3c54d9321"
 
 const query = 'show me the shotguns'
 console.log(`Running the input: ${query}`);
-config.objects = objects
+//config.objects = objects
+
 config = new entodicton.Config(config)
+config.initializer( ({objects}) => {
+  Object.assign(objects, initObjects)
+})
 config.server(url, key)
 config.process(query)
   .then( (responses) => {
@@ -61,7 +65,7 @@ config.process(query)
       console.log('Errors')
       responses.errors.forEach( (error) => console.log(`    ${error}`) )
     }
-    console.log('This is the objects from running semantics:\n', config.objects)
+    console.log('This is the objects from running semantics:\n', config.objects())
     if (responses.logs) {
       console.log('Logs')
       responses.logs.forEach( (log) => console.log(`    ${log}`) )
