@@ -2,14 +2,6 @@ const entodicton= require('entodicton')
 const Digraph = require('entodicton/src/digraph')
 const numbersKM = require('./numbers.js')
 
-const testData = {
-  types: [ 'pants', 'shorts' ],
-  products: [
-    { marker: 'product', isInstance: true, type: 'pants', name: 'pants1', cost: 9, id: 1 },
-    { marker: 'product', isInstance: true, type: 'shirt', name: 'shirt1', cost: 15, id: 2 },
-  ]
-}
-
 const api = {
   // map currency word to the unit that will be put in the context
   getUnits: () => {
