@@ -34,6 +34,9 @@ let config = {
     { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true }" },
   ],
   floaters: ['query'],
+  priorities: [
+    [["is",0],["the",0]]
+  ],
   hierarchy: [
     ['it', 'queryable'],
     ['what', 'queryable'],

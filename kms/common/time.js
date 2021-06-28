@@ -1,4 +1,4 @@
-const { Config, Digraph, knowledgeModule } = require('entodicton')
+const { Config, knowledgeModule } = require('entodicton')
 const dialogues = require('./dialogues')
 
 const pad = (v, l) => {
