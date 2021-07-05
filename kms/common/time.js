@@ -35,6 +35,9 @@ let config = {
   hierarchy: [
     ['time', 'queryable'],
   ],
+  priorities: [
+    [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]]
+  ],
   "version": '3',
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
