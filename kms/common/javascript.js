@@ -24,7 +24,8 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'number', ({context}) => `${context.value}` ],
+    [ ({context}) => context.marker == 'assignment' && context.paraphrase, ({context}) => `let ${context.variable.marker} = ${context.value.marker}` ],
+    [ ({context}) => context.marker == 'assignment' && context.response, ({context}) => `${context.variable.marker} == ${context.value.marker}` ],
   ],
 
   semantics: [
@@ -32,6 +33,7 @@ let config = {
       ({context}) => context.marker == 'assignment',
       ({context, objects}) => {
         objects.variables[context.variable.marker] = context.value.marker
+        context.response = true
       }
     ]
   ],
