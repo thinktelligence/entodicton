@@ -49,6 +49,10 @@ let config = {
       ({context}) => context.marker
     ],
     [ 
+      ({context}) => context.marker == 'what' && (context.response || context.paraphrase), 
+      ({context}) => `what` 
+    ],
+    [ 
       ({context}) => context.marker == 'it' && !context.isQuery && !context.instance, 
       ({context}) => `it` 
     ],
@@ -61,9 +65,16 @@ let config = {
       ({context}) => `${context.subject} ${context.word}` 
     ],
     [ 
+      ({context}) => context.marker == 'is' && context.paraphrase,
+      ({context, g}) => {
+        context.one.response = true
+        context.two.response = true
+        return `${g(context.one)} is ${g(context.two)}` 
+      }
+    ],
+    [ 
       ({context}) => context.marker == 'is' && context.response,
       ({context, g}) => {
-        debugger;
         const response = context.response;
         const concept = response.concept;
         concept.response = true

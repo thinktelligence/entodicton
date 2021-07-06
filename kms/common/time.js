@@ -47,7 +47,8 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'time' && context.response, ({g, context}) => `the time` ],
+    [ ({context}) => context.marker == 'time' && context.response && !context.value, ({g, context}) => `the time` ],
+    [ ({context}) => context.marker == 'time' && context.paraphrase, () => `the time` ],
     //[ ({context}) => context.marker == 'time' && context.value, ({g, context}) => `the time => ${context.value}` ],
     [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
           let hh = context.value.getHours();
