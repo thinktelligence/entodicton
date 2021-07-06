@@ -19,7 +19,7 @@ let config = {
     // sentences with concept blah
   ],
   bridges: [
-    { "id": "help", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "help", "level": 0, "bridge": "{ ...next(operator), response: true }" },
   ],
   debug: false,
   version: '3',
@@ -27,7 +27,9 @@ let config = {
   },
 
   generators: [
-    [ ({context, config}) => context.marker == 'help', ({context, config}) => {
+    [({context, config}) => context.marker == 'help' && context.paraphrase, () => `help`],
+    [ 
+      ({context, config}) => context.marker == 'help' && context.response, ({context, config}) => {
         let help = `Main Knowledge Module\n\n`
         help += getHelp(config, 2)
 
