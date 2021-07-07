@@ -37,6 +37,7 @@ let config = {
   operators: [
     "(([number]) [currency])",
     "((currency/1) [in] (currency/0))",
+    // 20 dollars in euros and yen
   ],
   bridges: [
     { "id": "currency", "level": 0, "bridge": "{ ...next(operator), amount: before[0] }" },
