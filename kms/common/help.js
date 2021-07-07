@@ -15,6 +15,7 @@ const getHelp = (config, indent=2) => {
 let config = {
   operators: [
     "([help])",
+    // help with <km>
     // sentence with the word blah
     // sentences with concept blah
   ],
