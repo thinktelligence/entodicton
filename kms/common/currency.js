@@ -69,11 +69,6 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'list', async ({api, context}) => {
-      context.listing = api.getAllProducts()
-      context.isResponse = true
-    }],
-
     [({objects, context}) => context.marker == 'in', async ({objects, api, context}) => {
       const from = context.from
       const to = context.to
