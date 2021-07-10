@@ -24,7 +24,7 @@
         "word": "list",
         "listing": [
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
@@ -32,7 +32,7 @@
             "id": 1
           },
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
@@ -45,14 +45,7 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {
-          "listing": {
-            "type": "tables",
-            "columns": [
-              "name"
-            ]
-          }
-        },
+        "0": {},
         "1": {},
         "2": {},
         "3": {}
@@ -118,7 +111,7 @@
         "word": "list",
         "listing": [
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
@@ -126,7 +119,7 @@
             "id": 1
           },
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
@@ -139,14 +132,7 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {
-          "listing": {
-            "type": "tables",
-            "columns": [
-              "name"
-            ]
-          }
-        },
+        "0": {},
         "1": {},
         "2": {},
         "3": {}
@@ -240,7 +226,7 @@
         "word": "list",
         "listing": [
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
@@ -248,7 +234,7 @@
             "id": 1
           },
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
@@ -261,14 +247,7 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {
-          "listing": {
-            "type": "tables",
-            "columns": [
-              "name"
-            ]
-          }
-        },
+        "0": {},
         "1": {},
         "2": {},
         "3": {}
@@ -279,7 +258,7 @@
       "priorities": [
         [
           [
-            "listingType",
+            "product",
             0
           ],
           [
@@ -311,7 +290,7 @@
         ],
         [
           [
-            "product",
+            "listingType",
             0
           ],
           [
@@ -324,7 +303,7 @@
               0
             ],
             [
-              "product",
+              "listingType",
               0
             ],
             [
@@ -446,7 +425,7 @@
         "word": "list",
         "listing": [
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
@@ -454,7 +433,7 @@
             "id": 1
           },
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
@@ -467,14 +446,7 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {
-          "listing": {
-            "type": "sentences",
-            "columns": [
-              "name"
-            ]
-          }
-        },
+        "0": {},
         "1": {},
         "2": {},
         "3": {}
@@ -485,7 +457,7 @@
       "priorities": [
         [
           [
-            "listingType",
+            "product",
             0
           ],
           [
@@ -517,7 +489,7 @@
         ],
         [
           [
-            "product",
+            "listingType",
             0
           ],
           [
@@ -530,7 +502,7 @@
               0
             ],
             [
-              "product",
+              "listingType",
               0
             ],
             [
@@ -659,7 +631,7 @@
         "word": "list",
         "listing": [
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "pants",
             "name": "pants1",
@@ -667,7 +639,7 @@
             "id": 1
           },
           {
-            "marker": "product",
+            "marker": "clothes",
             "isInstance": true,
             "type": "shirt",
             "name": "shirt1",
@@ -680,15 +652,7 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {
-          "listing": {
-            "type": "tables",
-            "columns": [
-              "name",
-              "price"
-            ]
-          }
-        },
+        "0": {},
         "1": {},
         "2": {},
         "3": {}
@@ -971,20 +935,20 @@
     ],
     "contexts": [
       {
+        "api": "models",
+        "marker": "list",
         "what": [
           {
+            "api": "models",
+            "marker": "product",
+            "pullFromContext": true,
             "types": [
               "product"
             ],
-            "api": "models",
-            "marker": "product",
             "value": "models",
-            "pullFromContext": true,
             "word": "models"
           }
         ],
-        "api": "models",
-        "marker": "list",
         "word": "list",
         "listing": [
           {
@@ -1032,7 +996,7 @@
             ]
           ],
           [
-            0.99,
+            1,
             [
               [
                 "the",
@@ -1091,6 +1055,237 @@
           [
             [
               "list",
+              0
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "answer with sentences list the models": {
+    "generated": [
+      "answering with sentences",
+      "the models are tiger and spitfire"
+    ],
+    "paraphrases": [
+      "answering with sentences",
+      "list the models"
+    ],
+    "responses": [
+      "",
+      "the models are tiger and spitfire"
+    ],
+    "contexts": [
+      {
+        "marker": "answer",
+        "type": "sentences",
+        "word": "answer"
+      },
+      {
+        "api": "models",
+        "marker": "list",
+        "what": [
+          {
+            "api": "models",
+            "marker": "product",
+            "pullFromContext": true,
+            "types": [
+              "product"
+            ],
+            "value": "models",
+            "word": "models"
+          }
+        ],
+        "word": "list",
+        "listing": [
+          {
+            "marker": "models",
+            "isInstance": true,
+            "type": "tanks",
+            "name": "tiger",
+            "price": 9,
+            "id": 1
+          },
+          {
+            "marker": "models",
+            "isInstance": true,
+            "type": "planes",
+            "name": "spitfire",
+            "price": 15,
+            "id": 2
+          }
+        ],
+        "response": true
+      }
+    ],
+    "objects": {
+      "namespaced": {
+        "0": {},
+        "1": {},
+        "2": {},
+        "3": {}
+      }
+    },
+    "metadata": {
+      "associations": [
+        [
+          [
+            0,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "reportObject",
+                0
+              ]
+            ]
+          ],
+          [
+            1,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "product",
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "priorities": [
+        [
+          [
+            "product",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "listingType",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "listingType",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "listingType",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "with",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "list",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "answer",
+            0
+          ],
+          [
+            [
+              "answer",
               0
             ]
           ]

@@ -100,7 +100,10 @@ let config = {
     [ ({context}) => context.marker == 'list' && !context.response, ({g, context}) => `list ${g(context.what)}` ],
     [ 
       ({context, api}) => api.listing.type == 'sentences' && context.marker == 'list' && context.response, 
-      ({g, gs, context}) => `${g(context.what)} are ${gs(context.listing, ' ', ' and ')}` 
+      ({g, gs, context}) => {
+        gs(context.listing) 
+        return `${g(context.what)} are ${gs(context.listing, ' ', ' and ')}` 
+      }
     ],
     [ 
       ({context, api}) => api.listing.type == 'tables' && context.marker == 'list' && context.response, 
@@ -143,7 +146,11 @@ let config = {
     [
       ({context}) => context.marker == 'list', 
       ({context, api, config}) => {
-        context.listing = config._api.apis[context.api].getAllProducts()
+        if (context.api) {
+          context.listing = config._api.apis[context.api].getAllProducts()
+        } else {
+          context.listing = config._api.apis[config._api.current].getAllProducts()
+        }
         context.response = true
       },
     ],
@@ -179,17 +186,22 @@ const api2 = {
     })
     return results
   },
-  productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
+  productGenerator: [
+    ({context}) => {
+      return context.marker == 'models' && context.isInstance
+    },
+    ({g, context}) => `${context.name}`
+  ]
 }
 
-const addApi = (config, api) => {
+const initializeApi = (config, api) => {
   const type = api.getName();
   config.addWord(type, {"id": "product", "initial": "{ value: '" + type + `', api: '${type}'}` })
   api.listing = { 
     type: 'tables',
     columns: ['name'],
   }
-  config.addGenerator( api.productGenerator )
+  config.addGenerator( ...api.productGenerator )
 }
 
 const multiApi = {
@@ -204,7 +216,13 @@ const multiApi = {
     const close = '}'
     config.addWord(name, {"id": "reportObject", "initial": `${open} value: '${name}' ${close}` })
     multiApi.current = name
-    addApi(config, api)
+    initializeApi(config, api)
+  },
+
+  initialize: ({config, api:multiApi}) => {
+    for (apiName in multiApi.apis) {
+      initializeApi(config, multiApi.apis[apiName])
+    }
   },
 
   set objects(value) {
@@ -237,9 +255,8 @@ config.combiner( (dest, source) => {
 config = new entodicton.Config(config).add(currencyKM).add(helpKM)
 config.api = multiApi
 // mode this to non-module init only
-config.api = api
 config.api = api2
-debugger;
+config.api = api
 entodicton.knowledgeModule({
   module,
   name: 'reports',
