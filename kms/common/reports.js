@@ -45,6 +45,8 @@ let config = {
     // move price to the far right
     // show the price in euros
     // show the cost <-> price
+    // move column 2 to column 3
+    // the price columns two to the left / to the far rigth
     // show price as column 3
     // call this report report1
   ],
