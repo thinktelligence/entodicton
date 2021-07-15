@@ -46,7 +46,7 @@ let config = {
   generators: [
     [ 
       ({context}) => context.unknown, 
-      ({context}) => context.marker
+      ({context}) => JSON.stringify(context.marker)
     ],
     [ 
       ({context}) => context.marker == 'what' && (context.response || context.paraphrase), 

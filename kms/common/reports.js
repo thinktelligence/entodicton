@@ -204,58 +204,13 @@ const initializeApi = (config, api) => {
     columns: ['name'],
   }
   config.addGenerator( ...api.productGenerator )
-}
+  const open = '{'
+  const close = '}'
+  config.addWord(type, {"id": "reportObject", "initial": `${open} value: '${type}' ${close}` })
+ }
 
-const multiApi = {
-  multiApi: true,
-
-  // multi functions
-  add: (config, multiApi, api) => {
-    const name = api.getName()
-    multiApi.apis[name] = api
-    api.objects = config.get('objects')
-    const open = '{'
-    const close = '}'
-    config.addWord(name, {"id": "reportObject", "initial": `${open} value: '${name}' ${close}` })
-    multiApi.current = name
-    initializeApi(config, api)
-  },
-
-  initialize: ({config, api:multiApi}) => {
-    for (apiName in multiApi.apis) {
-      initializeApi(config, multiApi.apis[apiName])
-    }
-  },
-
-  set objects(value) {
-    for (key in Object.keys(this.apis)) {
-      this.apis[key].objects = value 
-    }
-  },
-
-  apis: {
-    //"product1": apiInstance(testData1),
-    //"product2": apiInstance(testData2),
-  },
-  //current: 
-
-  // api functions
-  api: (multiApi) => multiApi.apis[multiApi.current]
-}
-
-/*
-config.combiner( (dest, source) => {
-  dest.api.apis[config.api.getName()] = source._api
-  dest.addWord(config.api.getName(), {"id": "reportObject", "initial": "{ value: 'api1' }" })
-})
-*/
-// ['list products']
-//config.utterances = ['shirts less than 10 dollars']
-// shirts less than 10 dollars
-// shirts not more than 10 dollars
-// pants that are exactly $10
 config = new entodicton.Config(config).add(currencyKM).add(helpKM)
-config.api = multiApi
+config.multiApi = initializeApi
 // mode this to non-module init only
 config.api = api2
 config.api = api
