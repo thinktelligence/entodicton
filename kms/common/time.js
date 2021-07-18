@@ -34,6 +34,7 @@ let config = {
   ],
   hierarchy: [
     ['time', 'queryable'],
+    ['time', 'theAble']
   ],
   priorities: [
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]]
