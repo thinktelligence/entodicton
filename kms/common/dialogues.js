@@ -45,6 +45,48 @@ let config = {
   debug: false,
   version: '3',
   generators: [
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.value,
+      ({context}) => context.value
+    ],
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'my',
+      ({context}) => `your ${context.word}`
+    ],
+    [ 
+      ({context}) => context.marker == 'it' && context.response && !context.value, 
+      ({g, context}) => `it`
+    ],
+    [ 
+      ({context, hierarchy}) => ['it', 'what'].includes(context.marker) && context.paraphrase, 
+      ({g, context}) => `${context.marker}`
+    ],
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'your',
+      ({context}) => `my ${context.word}`
+    ],
+    [ 
+      ({context, hierarchy}) => ['my', 'your'].includes(context.subject) && hierarchy.isA(context.marker, 'queryable') && context.paraphrase, 
+      ({g, context}) => `${context.subject} ${context.marker}`
+    ],
+    [ 
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.paraphrase, 
+      ({g, context}) => `the ${context.marker}`
+    ],
+    [ 
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.response && !context.value, 
+      ({g, context}) => `the ${context.marker}`
+    ],
+    /*
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'your',
+      ({context}) => `my ${context.word}`
+    ],
+    */
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.subject,
+      ({context}) => `${context.subject} ${context.word}`
+    ],
     [ 
       ({context}) => context.unknown, 
       ({context}) => {
@@ -94,7 +136,8 @@ let config = {
       ({context, g}) => {
         return `${g(context.one)} is ${g(context.two)}`
       }
-    ]
+    ],
+
   ],
 
   semantics: [

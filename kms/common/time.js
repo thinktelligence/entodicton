@@ -37,7 +37,8 @@ let config = {
     ['time', 'theAble']
   ],
   priorities: [
-    [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]]
+    [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
+    [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]]
   ],
   "version": '3',
   "words": {
@@ -48,8 +49,8 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'time' && context.response && !context.value, ({g, context}) => `the time` ],
-    [ ({context}) => context.marker == 'time' && context.paraphrase, () => `the time` ],
+//    [ ({context}) => context.marker == 'time' && context.response && !context.value, ({g, context}) => `the time` ],
+    //[ ({context}) => context.marker == 'time' && context.paraphrase, () => `the time` ],
     //[ ({context}) => context.marker == 'time' && context.value, ({g, context}) => `the time => ${context.value}` ],
     [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
           let hh = context.value.getHours();

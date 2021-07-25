@@ -53,29 +53,6 @@ let config = {
     ['name', 'queryable']
   ],
 
-  generators: [
-    [ 
-      ({context}) => context.marker == 'name' && !context.isQuery && context.value, 
-      ({context}) => context.value
-    ],
-    [ 
-      ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'your', 
-      ({context}) => `my ${context.word}` 
-    ],
-    [ 
-      ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'your', 
-      ({context}) => `my ${context.word}` 
-    ],
-    [ 
-      ({context}) => context.marker == 'name' && !context.isQuery && context.response && context.subject == 'my', 
-      ({context}) => `your ${context.word}` 
-    ],
-    [ 
-      ({context}) => context.marker == 'name' && !context.isQuery && context.subject, 
-      ({context}) => `${context.subject} ${context.word}` 
-    ],
-  ],
-
   semantics: [
     // same
     [ 
