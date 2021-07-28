@@ -25,7 +25,7 @@ let config = {
     //"arm them, what, the phasers"
   ],
   bridges: [
-    { id: "what", level: 0, bridge: "{ ...next(operator), query: true }" },
+    { id: "what", level: 0, bridge: "{ ...next(operator), query: true, determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
 
@@ -53,10 +53,6 @@ let config = {
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'my',
       ({context}) => `your ${context.word}`
-    ],
-    [ 
-      ({context}) => context.marker == 'it' && context.response && !context.value, 
-      ({g, context}) => `it`
     ],
     [ 
       ({context, hierarchy}) => ['it', 'what'].includes(context.marker) && context.paraphrase, 
