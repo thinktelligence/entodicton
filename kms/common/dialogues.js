@@ -22,6 +22,7 @@ let config = {
     "([it])",
     "([what])",
     "(<the> ([theAble|]))",
+    //"arm them, what, the phasers"
   ],
   bridges: [
     { id: "what", level: 0, bridge: "{ ...next(operator), query: true }" },
@@ -32,7 +33,7 @@ let config = {
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
-    { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true }" },
+    { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true, determined: true }" },
   ],
   floaters: ['query'],
   priorities: [
@@ -70,12 +71,12 @@ let config = {
       ({g, context}) => `${context.subject} ${context.marker}`
     ],
     [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.paraphrase, 
-      ({g, context}) => `the ${context.marker}`
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.paraphrase && !context.determined, 
+      ({g, context}) => `23the ${context.marker}`
     ],
     [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.response && !context.value, 
-      ({g, context}) => `the ${context.marker}`
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.response && !context.value && !context.determined, 
+      ({g, context}) => `24the ${context.marker}`
     ],
     /*
     [
@@ -138,6 +139,16 @@ let config = {
       }
     ],
 
+    // defaults
+    [
+      ({context}) => context.paraphrase,
+      ({context}) => `${context.word}` 
+    ],
+
+    [
+      ({context}) => context.response,
+      ({context}) => `the ${context.word}` 
+    ]
   ],
 
   semantics: [

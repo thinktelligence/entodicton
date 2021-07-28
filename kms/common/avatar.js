@@ -28,6 +28,7 @@ let config = {
     "(<your> ([name]))",
     "(<my> ([name]))",
     //"my name is blah",
+    // what did you just say
   ],
   bridges: [
     { "id": "name", "level": 0, "bridge": "{ ...next(operator) }" },
