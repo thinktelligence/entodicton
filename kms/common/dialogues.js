@@ -68,11 +68,11 @@ let config = {
     ],
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.paraphrase && !context.determined, 
-      ({g, context}) => `23the ${context.marker}`
+      ({g, context}) => `the ${context.marker}`
     ],
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.response && !context.value && !context.determined, 
-      ({g, context}) => `24the ${context.marker}`
+      ({g, context}) => `the ${context.marker}`
     ],
     /*
     [

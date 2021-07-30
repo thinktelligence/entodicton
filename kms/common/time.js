@@ -15,6 +15,7 @@ let config = {
   operators: [
     "([time])",
     "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
+    "(([hourUnits|]) [ampm|])"
     //"(([anyConcept]) [equals|is] ([anyConcept]))",
     //"(([what0|what]) [equals] (<the> ([timeConcept])))",
     //"(<whatP|what> ([anyConcept]))",
@@ -27,6 +28,9 @@ let config = {
   bridges: [
     { "id": "time", "level": 0, "bridge": "{ ...next(operator) }" },
 
+    { "id": "hourUnits", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "ampm", "level": 0, "bridge": "{ ...next(operator), hour: before[0] }" },
+
     { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
     { "id": "count", "level": 0, "bridge": "{ ...after, count: operator.value }" },
     { "id": "timeUnit", "level": 0, "bridge": "{ ...next(operator) }" },
@@ -38,17 +42,26 @@ let config = {
   ],
   priorities: [
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
-    [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]]
+    [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]],
   ],
   "version": '3',
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
+    " (1[0-2]|[1-9])": [{"id": "hourUnits", "initial": "{ hour: int(group[0]) }" }],
+    "am": [{"id": "ampm", "initial": "{ ampm: 'am', determined: true }" }],
+    "pm": [{"id": "ampm", "initial": "{ ampm: 'pm', determined: true }" }],
+    //" (1[0-2]|[1-9]) ?pm": [{"id": "count", "initial": "{ hour: int(group[0]), part: 'pm' }" }],
+    //" (1[0-2]|[1-9]) ?am": [{"id": "count", "initial": "{ hour: int(group[0]), part: 'am' }" }],
     " hours?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " minutes?": [{"id": "timeUnit", "initial": "{ units: 'hour' }" }],
     " seconds?": [{"id": "timeUnit", "initial": "{ units: 'seconds' }" }],
   },
 
   generators: [
+    [ 
+      ({context}) => context.marker == 'ampm' && context.paraphrase, 
+      ({g, context}) => `${context.hour.hour} ${context.ampm}` 
+    ],
 //    [ ({context}) => context.marker == 'time' && context.response && !context.value, ({g, context}) => `the time` ],
     //[ ({context}) => context.marker == 'time' && context.paraphrase, () => `the time` ],
     //[ ({context}) => context.marker == 'time' && context.value, ({g, context}) => `the time => ${context.value}` ],
