@@ -46,7 +46,7 @@ let config = {
   priorities: [
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
     [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]],
-    [['ampm', 0], ['hourUnits', 0], ['is', 0], ['tell', 0], ['time', 0], ['when', 0], ['the', 0] ]
+    [['info', 0], ['is', 0], ['tell', 0], ['the', 0]],
   ],
   "version": '3',
   "words": {
@@ -66,9 +66,6 @@ let config = {
       ({context}) => context.marker == 'ampm' && context.paraphrase, 
       ({g, context}) => `${context.hour.hour} ${context.ampm}` 
     ],
-//    [ ({context}) => context.marker == 'time' && context.response && !context.value, ({g, context}) => `the time` ],
-    //[ ({context}) => context.marker == 'time' && context.paraphrase, () => `the time` ],
-    //[ ({context}) => context.marker == 'time' && context.value, ({g, context}) => `the time => ${context.value}` ],
     [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
           let hh = context.value.getHours();
           let ampm = 'am'
@@ -89,9 +86,6 @@ let config = {
       ({g, context}) => `use ${context.format.count} hour time` 
     ],
     [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
-    /*
-    [ ({context}) => context.marker == 'equals' && context.equals, ({g, context}) => `${g(context.equals[0])} is ${g(context.equals[1])}` ],
-    */
   ],
 
   semantics: [

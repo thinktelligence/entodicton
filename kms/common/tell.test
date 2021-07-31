@@ -1,10 +1,10 @@
 {
   "tell me when event": {
     "generated": [
-      "tell [object Object] [object Object]"
+      "tell me when [object Object]"
     ],
     "paraphrases": [
-      "tell [object Object] [object Object]"
+      "tell me when event"
     ],
     "responses": [
       ""
@@ -16,8 +16,15 @@
           "types": [
             "event"
           ],
-          "when": true,
           "word": "event"
+        },
+        "info": {
+          "info": "when",
+          "marker": "info",
+          "types": [
+            "info"
+          ],
+          "word": "when"
         },
         "marker": "tell",
         "target": {
@@ -34,12 +41,36 @@
     "objects": {
       "namespaced": {
         "0": {},
-        "1": {}
+        "1": {
+          "dialog": {
+            "current": []
+          }
+        }
       }
     },
     "metadata": {
       "associations": [],
       "priorities": [
+        [
+          [
+            "info",
+            0
+          ],
+          [
+            [
+              "event",
+              0
+            ],
+            [
+              "info",
+              0
+            ],
+            [
+              "tell",
+              0
+            ]
+          ]
+        ],
         [
           [
             "event",
@@ -52,26 +83,6 @@
             ],
             [
               "tell",
-              0
-            ],
-            [
-              "when",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "when",
-            0
-          ],
-          [
-            [
-              "tell",
-              0
-            ],
-            [
-              "when",
               0
             ]
           ]

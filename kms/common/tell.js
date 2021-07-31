@@ -18,31 +18,39 @@ const dialogues = require('./dialogues')
 api = { 
   // tell the requested user
   tell: (config, user, what) => {
+    what.happened = true
     what = config.processContext(what).paraphrases
-    console.log(`Tell the user ${JSON.stringify(user)} that ${JSON.stringify(what)} happened`)
+    console.log(`Tell the user ${JSON.stringify(user)} that ${what}`)
   },
 }
 
 let config = {
   operators: [
-    "([tell] ([person]) (<when> ([event])))"
+    "([tell] ([person]) ([info|]) ([event]))"
     //"what are the events"
     //"check every 5 minutes"
   ],
   bridges: [
     { id: 'event', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'when', level: 0, bridge: '{ ...after, when: true }' },
+    { id: 'info', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'tell', level: 0, bridge: '{ ...next(operator), target: after[0], event: after[1] }' },
+    { id: 'tell', level: 0, bridge: '{ ...next(operator), target: after[0], info: after[1], event: after[2] }' },
   ],
+  words: {
+    "when": [{ id: 'info', level: 0, initial: "{ info: 'when' }" }],
+  },
   generators: [
     [
       ({context}) => context.marker == 'tell',
-      ({context, g}) => `tell ${g(context.target)} ${g(context.event)}`
+      ({context, g}) => `tell ${g(context.target)} ${g(context.info.info)} ${g(context.event)}`
+    ],
+    [
+      ({context}) => context.marker == 'info',
+      ({context, g}) => context.info
     ],
     [
       ({context}) => context.marker == 'event' && context.paraphrase,
-      ({context, g}) => `tell ${g(context.target)} ${g(context.event)}`
+      ({context, g}) => 'event'
     ],
   ],
   semantics: [
@@ -60,19 +68,22 @@ let config = {
         }
       }
     ],
-    // TODO move this to test initialize
-    [
-      ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'event'),
-      ({context}) => {
-        context.event = Promise.resolve( { marker: 'event' } )
-      }
-    ],
   ],
 };
 
 config = new entodicton.Config(config)
 config.api = api
 config.add(dialogues)
+config.initializer( ({config, isModule}) => {
+    if (!isModule) {
+      config.addSemantic(
+        ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'event'),
+        ({context}) => {
+          context.event = Promise.resolve( { marker: 'event' } )
+        }
+      )
+    }
+  })
 
 entodicton.knowledgeModule( { 
   module,
