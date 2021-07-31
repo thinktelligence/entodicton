@@ -1,5 +1,5 @@
 const { Config, knowledgeModule } = require('entodicton')
-const dialogues = require('./dialogues')
+const tell = require('./tell')
 
 const pad = (v, l) => {
   const s = String(v)
@@ -38,11 +38,15 @@ let config = {
   ],
   hierarchy: [
     ['time', 'queryable'],
-    ['time', 'theAble']
+    ['ampm', 'queryable'],
+    ['time', 'theAble'],
+    ['is', 'event'],
   ],
+  // TODO : fix the nn data generator to get this from the hierarchy
   priorities: [
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
     [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]],
+    [['ampm', 0], ['hourUnits', 0], ['is', 0], ['tell', 0], ['time', 0], ['when', 0], ['the', 0] ]
   ],
   "version": '3',
   "words": {
@@ -91,6 +95,15 @@ let config = {
   ],
 
   semantics: [
+    // hook up the time to 
+    [
+      ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
+      ({context}) => {
+        debugger;
+        context.event = Promise.resolve( context )
+      }
+    ],
+
     [({objects, context}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
       context.value = getDate()
       context.format = objects.format
@@ -133,7 +146,7 @@ let config = {
 //config.utterances = ['use 12 hour format']
 //config.utterances = ['use 36 hour format']
 config = new Config(config)
-config.add(dialogues)
+config.add(tell)
 config.initializer( ({objects, isModule}) => {
   Object.assign(objects, {
     format: 12  // or 24

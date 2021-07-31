@@ -1,20 +1,26 @@
 const entodicton = require('entodicton')
-const { dialogues } = require('./dialogues')
+const dialogues = require('./dialogues')
+
+/*
+  Usage:
+
+  1. add [<yourOperator>, 'event'] to hierarchy
+  2. implement this semantic that returns a promise that fires when the event happends and returns a context that will be send to the user
+    [
+      ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'event'),
+      ({context}) => {
+        context.event = Promise.resolve( { marker: 'event' } )
+      }
+    ],
+  3. setup the api to do what you want
+*/
 
 api = { 
   // tell the requested user
-  tell: (user, what) => {
+  tell: (config, user, what) => {
+    what = config.processContext(what).paraphrases
     console.log(`Tell the user ${JSON.stringify(user)} that ${JSON.stringify(what)} happened`)
   },
-  // passed the function to call to check all events
-  poll: (poll) => {
-    setTimeout( () => poll(), 5000 )
-  },
-
-  // list of events being monitored
-  requests: [
-    // { user, what }
-  ]
 }
 
 let config = {
@@ -47,7 +53,7 @@ let config = {
         const event = result.context.event
         if (event) {
           event.then( (result) => {
-            api.tell(context.target, result)
+            api.tell(config, context.target, result)
           })
         } else {
           // say config is missing if debug other result

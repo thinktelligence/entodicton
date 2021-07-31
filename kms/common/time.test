@@ -64,7 +64,8 @@
         "0": {
           "format": 12
         },
-        "1": {
+        "1": {},
+        "2": {
           "dialog": {
             "current": []
           }
@@ -230,7 +231,8 @@
         "0": {
           "format": 12
         },
-        "1": {
+        "1": {},
+        "2": {
           "dialog": {
             "current": []
           }
@@ -241,24 +243,7 @@
       "associations": [
         [
           [
-            0.8,
-            [
-              [
-                "use",
-                0
-              ],
-              [
-                "count",
-                0
-              ],
-              [
-                "timeUnit",
-                0
-              ]
-            ]
-          ],
-          [
-            0.03,
+            0,
             [
               [
                 "use",
@@ -273,13 +258,30 @@
                 0
               ]
             ]
+          ],
+          [
+            0.51,
+            [
+              [
+                "use",
+                0
+              ],
+              [
+                "count",
+                0
+              ],
+              [
+                "timeUnit",
+                0
+              ]
+            ]
           ]
         ]
       ],
       "priorities": [
         [
           [
-            "timeUnit",
+            "count",
             0
           ],
           [
@@ -319,14 +321,10 @@
         ],
         [
           [
-            "count",
+            "timeUnit",
             0
           ],
           [
-            [
-              "count",
-              0
-            ],
             [
               "is",
               0
@@ -341,6 +339,10 @@
             ],
             [
               "timeFormat",
+              0
+            ],
+            [
+              "timeUnit",
               0
             ],
             [
@@ -569,7 +571,8 @@
         "0": {
           "format": 24
         },
-        "1": {
+        "1": {},
+        "2": {
           "dialog": {
             "current": []
           }
@@ -580,24 +583,7 @@
       "associations": [
         [
           [
-            0.8,
-            [
-              [
-                "use",
-                0
-              ],
-              [
-                "count",
-                0
-              ],
-              [
-                "timeUnit",
-                0
-              ]
-            ]
-          ],
-          [
-            0.03,
+            0,
             [
               [
                 "use",
@@ -612,13 +598,30 @@
                 0
               ]
             ]
+          ],
+          [
+            0.51,
+            [
+              [
+                "use",
+                0
+              ],
+              [
+                "count",
+                0
+              ],
+              [
+                "timeUnit",
+                0
+              ]
+            ]
           ]
         ]
       ],
       "priorities": [
         [
           [
-            "timeUnit",
+            "count",
             0
           ],
           [
@@ -658,14 +661,10 @@
         ],
         [
           [
-            "count",
+            "timeUnit",
             0
           ],
           [
-            [
-              "count",
-              0
-            ],
             [
               "is",
               0
@@ -680,6 +679,10 @@
             ],
             [
               "timeFormat",
+              0
+            ],
+            [
+              "timeUnit",
               0
             ],
             [
@@ -858,7 +861,8 @@
         "0": {
           "format": 12
         },
-        "1": {
+        "1": {},
+        "2": {
           "dialog": {
             "current": []
           }
@@ -869,14 +873,14 @@
       "associations": [
         [
           [
-            0.8,
+            0,
             [
               [
                 "use",
                 0
               ],
               [
-                "count",
+                "hourUnits",
                 0
               ],
               [
@@ -886,14 +890,14 @@
             ]
           ],
           [
-            0.03,
+            0.51,
             [
               [
                 "use",
                 0
               ],
               [
-                "hourUnits",
+                "count",
                 0
               ],
               [
@@ -1024,7 +1028,8 @@
         "0": {
           "format": 12
         },
-        "1": {
+        "1": {},
+        "2": {
           "dialog": {
             "current": []
           }
@@ -1035,7 +1040,7 @@
       "associations": [
         [
           [
-            0.05,
+            0,
             [
               [
                 "count",
@@ -1048,7 +1053,7 @@
             ]
           ],
           [
-            0.68,
+            0.98,
             [
               [
                 "hourUnits",
@@ -1087,6 +1092,241 @@
           [
             [
               "ampm",
+              0
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "tell me when the time is 2 pm": {
+    "generated": [
+      "tell me the time is the pm"
+    ],
+    "paraphrases": [
+      "tell me the time is 2 pm"
+    ],
+    "responses": [
+      ""
+    ],
+    "contexts": [
+      {
+        "event": {
+          "marker": "is",
+          "one": {
+            "marker": "time",
+            "pullFromContext": true,
+            "types": [
+              "time"
+            ],
+            "word": "time",
+            "response": true
+          },
+          "two": {
+            "ampm": "pm",
+            "determined": true,
+            "hour": {
+              "hour": 2,
+              "marker": "hourUnits",
+              "types": [
+                "hourUnits"
+              ],
+              "word": "2"
+            },
+            "marker": "ampm",
+            "types": [
+              "ampm"
+            ],
+            "word": "pm",
+            "response": true
+          },
+          "types": [
+            "is"
+          ],
+          "when": true,
+          "word": "is"
+        },
+        "marker": "tell",
+        "target": {
+          "marker": "me",
+          "types": [
+            "person"
+          ],
+          "unknown": true,
+          "word": "me"
+        },
+        "word": "tell"
+      }
+    ],
+    "objects": {
+      "namespaced": {
+        "0": {
+          "format": 12
+        },
+        "1": {},
+        "2": {
+          "dialog": {
+            "current": []
+          }
+        }
+      }
+    },
+    "metadata": {
+      "associations": [
+        [
+          [
+            0.02,
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "count",
+                0
+              ],
+              [
+                "ampm",
+                0
+              ]
+            ]
+          ],
+          [
+            0.41,
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "hourUnits",
+                0
+              ],
+              [
+                "ampm",
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "priorities": [
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "ampm",
+              0
+            ],
+            [
+              "hourUnits",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "tell",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "time",
+              0
+            ],
+            [
+              "when",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "ampm",
+            0
+          ],
+          [
+            [
+              "ampm",
+              0
+            ],
+            [
+              "hourUnits",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "tell",
+              0
+            ],
+            [
+              "time",
+              0
+            ],
+            [
+              "when",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "tell",
+              0
+            ],
+            [
+              "time",
+              0
+            ],
+            [
+              "when",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "when",
+            0
+          ],
+          [
+            [
+              "tell",
+              0
+            ],
+            [
+              "when",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "tell",
+            0
+          ],
+          [
+            [
+              "tell",
               0
             ]
           ]
