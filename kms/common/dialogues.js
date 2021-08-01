@@ -15,7 +15,7 @@ const api = {
   mentioned: (concept) => {
   }
 }
-
+// TODO implement what / what did you say ...
 let config = {
   operators: [
     "(([queryable]) [is] ([queryable|]))",

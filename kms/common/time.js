@@ -1,5 +1,6 @@
 const { Config, knowledgeModule } = require('entodicton')
 const tell = require('./tell')
+const helpers = require('./helpers')
 
 const pad = (v, l) => {
   const s = String(v)
@@ -9,6 +10,25 @@ const pad = (v, l) => {
 
 let getDate = () => {
   return new Date()
+}
+
+const api = {
+  // gets the contexts for doing the happening
+  semantics: 
+      ({context}) => {
+        let hour;
+        if (context.one.marker == 'ampm') {
+          hour = context.one.hour.hour
+        } else {
+          hour = context.two.hour.hour
+        }
+        //const ms = helpers.millisecondsUntilHourOfDay(hour)
+        const ms = 1
+        const promise =  new Promise((resolve) => {
+          setTimeout( () => resolve(context), ms);
+        }).then( () => context )
+        context.event = promise
+      }
 }
 
 let config = {
@@ -88,40 +108,20 @@ let config = {
   ],
 
   semantics: [
-    // hook up the time to 
+    /*
     [
       ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
       ({context}) => {
-        debugger;
+        const date = getDate()
+        debugger; // target
         context.event = Promise.resolve( context )
       }
     ],
-
+    */ 
     [({objects, context}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
       context.value = getDate()
       context.format = objects.format
     }],
-    /*
-    [({objects, context, config}) => context.marker == 'equals' && context.isQuery, async ({objects, context, response, s}) => {
-      context.isResponse = true
-      delete context.isQuery
-      delete context.equals[0].isQuery
-      markers = context.equals.map( (c) => c.marker )
-      const digraph = new Digraph(response.hierarchy)
-      mostSpecific = Array.from(digraph.minima(markers))[0];
-      context.equals.map( (c) => c.marker = mostSpecific )
-      context.equals.forEach( (c) => {
-        if (c.pullFromContext) {
-          Object.assign(c, s(c))
-        }
-      })
-      delete context.equals[0].value
-    }],
-    [({objects, context}) => context.marker == 'timeConcept' && context.pullFromContext, async ({objects, context}) => {
-      context.value = getDate()
-      context.format = objects.format
-    }],
-    */
     [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
       objects.format = context.format.count
     }],
@@ -134,12 +134,23 @@ let config = {
 
 config = new Config(config)
 config.add(tell)
-config.initializer( ({objects, isModule}) => {
+config.api = api
+config.initializer( ({config, objects, isModule}) => {
   Object.assign(objects, {
     format: 12  // or 24
   });
-  if (!isModule) {
-    getDate = () => new Date("December 25, 1995 10:13 am")
+  if (isModule) {
+    config.addSemantic(
+        ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
+        api.semantics
+    )
+  } else {
+    config.addSemantic(
+        ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
+        ({context}) => {
+          const date = getDate()
+          context.event = Promise.resolve( context )
+        })
   }
 })
 
@@ -149,4 +160,10 @@ knowledgeModule({
   description: 'Time related concepts',
   config,
   test: './time.test',
+  beforeQuery: ({query, isModule}) => {
+    if (isModule) {
+      return
+    }
+    getDate = () => new Date("December 25, 1995 10:13 am")
+  }
 })
