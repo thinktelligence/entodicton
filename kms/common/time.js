@@ -48,7 +48,6 @@ let config = {
     [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]],
     [['info', 0], ['is', 0], ['tell', 0], ['the', 0]],
   ],
-  "version": '3',
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],
     " (1[0-2]|[1-9])": [{"id": "hourUnits", "initial": "{ hour: int(group[0]) }" }],
@@ -133,12 +132,6 @@ let config = {
   ],
 };
 
-//config.utterances = ['what time is it']
-//config.utterances = ['what is the time']
-//config.utterances = ['the time']
-//config.utterances = ['use 24 hour format what time is it use 12 hour format what time is it']
-//config.utterances = ['use 12 hour format']
-//config.utterances = ['use 36 hour format']
 config = new Config(config)
 config.add(tell)
 config.initializer( ({objects, isModule}) => {
@@ -146,7 +139,7 @@ config.initializer( ({objects, isModule}) => {
     format: 12  // or 24
   });
   if (!isModule) {
-    getDate = () => new Date("December 25, 1995 10:13 pm")
+    getDate = () => new Date("December 25, 1995 10:13 am")
   }
 })
 

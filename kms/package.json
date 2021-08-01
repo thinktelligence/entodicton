@@ -2,6 +2,7 @@
   "name": "ekms",
   "scripts": {
     "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
     "test:watch": "npm run test -- --watch"
   },
   "main": "main.js",
@@ -29,6 +30,7 @@
   ],
   "files": [
     "main.js",
+    "helpers.js",
     "common/avatar.js",
     "common/avatar.test",
     "common/characters.js",
