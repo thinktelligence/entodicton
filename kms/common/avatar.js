@@ -78,6 +78,15 @@ let config = {
         context.value = api.get('other', context.marker)
       }
     ],
+
+    [ 
+      ({context}) => context.marker == 'what' && context.topLevel,
+      ({context, config}) => {
+        const processed = config.get('objects').processed
+        context.value = processed[0].responses.join(' ')
+        context.response = 1
+      }
+    ],
   ],
 };
 

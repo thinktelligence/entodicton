@@ -22,6 +22,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "clothes",
@@ -49,7 +50,48 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "list",
+            "what": [
+              {
+                "marker": "product",
+                "types": [
+                  "product"
+                ],
+                "word": "products"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "pants",
+                "name": "pants1",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "shirt",
+                "name": "shirt1",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the products",
+          "responses": [
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
@@ -109,6 +151,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "clothes",
@@ -136,7 +179,49 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "list",
+            "what": [
+              {
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "word": "products"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "pants",
+                "name": "pants1",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "shirt",
+                "name": "shirt1",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the products",
+          "responses": [
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
@@ -209,7 +294,8 @@
       {
         "marker": "answer",
         "type": "tables",
-        "word": "answer"
+        "word": "answer",
+        "topLevel": true
       },
       {
         "marker": "list",
@@ -224,6 +310,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "clothes",
@@ -251,14 +338,70 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "list",
+            "what": [
+              {
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "word": "products"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "pants",
+                "name": "pants1",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "shirt",
+                "name": "shirt1",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the products",
+          "responses": [
+            "",
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "marker": "answer",
+            "type": "tables",
+            "word": "answer",
+            "topLevel": true
+          },
+          "paraphrases": "answering with tables",
+          "responses": [
+            "",
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
       "priorities": [
         [
           [
-            "product",
+            "listingType",
             0
           ],
           [
@@ -290,7 +433,7 @@
         ],
         [
           [
-            "listingType",
+            "product",
             0
           ],
           [
@@ -303,7 +446,31 @@
               0
             ],
             [
-              "listingType",
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "with",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
               0
             ],
             [
@@ -332,30 +499,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "with",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "with",
-            0
-          ],
-          [
-            [
-              "answer",
-              0
-            ],
-            [
-              "list",
-              0
-            ],
-            [
-              "with",
               0
             ]
           ]
@@ -408,7 +551,8 @@
       {
         "marker": "answer",
         "type": "sentences",
-        "word": "answer"
+        "word": "answer",
+        "topLevel": true
       },
       {
         "marker": "list",
@@ -423,6 +567,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "clothes",
@@ -450,14 +595,70 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "list",
+            "what": [
+              {
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "word": "products"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "pants",
+                "name": "pants1",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "shirt",
+                "name": "shirt1",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the products",
+          "responses": [
+            "",
+            "the products are pants1 and shirt1"
+          ]
+        },
+        {
+          "context": {
+            "marker": "answer",
+            "type": "sentences",
+            "word": "answer",
+            "topLevel": true
+          },
+          "paraphrases": "answering with sentences",
+          "responses": [
+            "",
+            "the products are pants1 and shirt1"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
       "priorities": [
         [
           [
-            "product",
+            "listingType",
             0
           ],
           [
@@ -489,7 +690,7 @@
         ],
         [
           [
-            "listingType",
+            "product",
             0
           ],
           [
@@ -502,7 +703,31 @@
               0
             ],
             [
-              "listingType",
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "with",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "with",
+            0
+          ],
+          [
+            [
+              "answer",
+              0
+            ],
+            [
+              "list",
               0
             ],
             [
@@ -531,30 +756,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "with",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "with",
-            0
-          ],
-          [
-            [
-              "answer",
-              0
-            ],
-            [
-              "list",
-              0
-            ],
-            [
-              "with",
               0
             ]
           ]
@@ -614,7 +815,8 @@
           ],
           "word": "price"
         },
-        "word": "show"
+        "word": "show",
+        "topLevel": true
       },
       {
         "marker": "list",
@@ -629,6 +831,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "clothes",
@@ -656,7 +859,70 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "list",
+            "what": [
+              {
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "word": "products"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "pants",
+                "name": "pants1",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "shirt",
+                "name": "shirt1",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the products",
+          "responses": [
+            "",
+            "╔════════╤═══════╗\n║ name   │ price ║\n╟────────┼───────╢\n║ pants1 │ 9     ║\n╟────────┼───────╢\n║ shirt1 │ 15    ║\n╚════════╧═══════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "marker": "show",
+            "properties": {
+              "marker": "price",
+              "pullFromContext": true,
+              "types": [
+                "price"
+              ],
+              "word": "price"
+            },
+            "word": "show",
+            "topLevel": true
+          },
+          "paraphrases": "the properties being shown are name price",
+          "responses": [
+            "",
+            "╔════════╤═══════╗\n║ name   │ price ║\n╟────────┼───────╢\n║ pants1 │ 9     ║\n╟────────┼───────╢\n║ shirt1 │ 15    ║\n╚════════╧═══════╝\n"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
@@ -796,21 +1062,22 @@
     ],
     "contexts": [
       {
+        "api": "clothes",
+        "marker": "list",
         "what": [
           {
+            "api": "clothes",
+            "marker": "product",
+            "pullFromContext": true,
             "types": [
               "product"
             ],
-            "api": "clothes",
-            "marker": "product",
             "value": "clothes",
-            "pullFromContext": true,
             "word": "clothes"
           }
         ],
-        "api": "clothes",
-        "marker": "list",
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "clothes",
@@ -838,7 +1105,52 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "api": "clothes",
+            "marker": "list",
+            "what": [
+              {
+                "api": "clothes",
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "value": "clothes",
+                "word": "clothes"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "pants",
+                "name": "pants1",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "clothes",
+                "isInstance": true,
+                "type": "shirt",
+                "name": "shirt1",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the clothes",
+          "responses": [
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
@@ -857,7 +1169,7 @@
             ]
           ],
           [
-            0.99,
+            0.97,
             [
               [
                 "the",
@@ -950,6 +1262,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "models",
@@ -977,7 +1290,52 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "api": "models",
+            "marker": "list",
+            "what": [
+              {
+                "api": "models",
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "value": "models",
+                "word": "models"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "models",
+                "isInstance": true,
+                "type": "tanks",
+                "name": "tiger",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "models",
+                "isInstance": true,
+                "type": "planes",
+                "name": "spitfire",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the models",
+          "responses": [
+            "╔══════════╗\n║ name     ║\n╟──────────╢\n║ tiger    ║\n╟──────────╢\n║ spitfire ║\n╚══════════╝\n"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
@@ -996,7 +1354,7 @@
             ]
           ],
           [
-            1,
+            0.97,
             [
               [
                 "the",
@@ -1079,7 +1437,8 @@
       {
         "marker": "answer",
         "type": "sentences",
-        "word": "answer"
+        "word": "answer",
+        "topLevel": true
       },
       {
         "api": "models",
@@ -1097,6 +1456,7 @@
           }
         ],
         "word": "list",
+        "topLevel": true,
         "listing": [
           {
             "marker": "models",
@@ -1124,7 +1484,66 @@
         "1": {},
         "2": {},
         "3": {}
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "api": "models",
+            "marker": "list",
+            "what": [
+              {
+                "api": "models",
+                "marker": "product",
+                "pullFromContext": true,
+                "types": [
+                  "product"
+                ],
+                "value": "models",
+                "word": "models"
+              }
+            ],
+            "word": "list",
+            "topLevel": true,
+            "listing": [
+              {
+                "marker": "models",
+                "isInstance": true,
+                "type": "tanks",
+                "name": "tiger",
+                "price": 9,
+                "id": 1
+              },
+              {
+                "marker": "models",
+                "isInstance": true,
+                "type": "planes",
+                "name": "spitfire",
+                "price": 15,
+                "id": 2
+              }
+            ],
+            "response": true
+          },
+          "paraphrases": "list the models",
+          "responses": [
+            "",
+            "the models are tiger and spitfire"
+          ]
+        },
+        {
+          "context": {
+            "marker": "answer",
+            "type": "sentences",
+            "word": "answer",
+            "topLevel": true
+          },
+          "paraphrases": "answering with sentences",
+          "responses": [
+            "",
+            "the models are tiger and spitfire"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
@@ -1143,7 +1562,7 @@
             ]
           ],
           [
-            1,
+            0.97,
             [
               [
                 "the",
@@ -1160,7 +1579,7 @@
       "priorities": [
         [
           [
-            "product",
+            "listingType",
             0
           ],
           [
@@ -1192,7 +1611,7 @@
         ],
         [
           [
-            "listingType",
+            "product",
             0
           ],
           [
@@ -1205,7 +1624,7 @@
               0
             ],
             [
-              "listingType",
+              "product",
               0
             ],
             [

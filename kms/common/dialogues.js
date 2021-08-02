@@ -47,7 +47,7 @@ let config = {
   version: '3',
   generators: [
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.value,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       ({context}) => context.value
     ],
     [

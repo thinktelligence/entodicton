@@ -34,6 +34,7 @@
           "response": true
         },
         "word": "is",
+        "topLevel": true,
         "response": {
           "isResponse": true,
           "instance": {
@@ -70,7 +71,66 @@
             ]
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "types": [
+                "what"
+              ],
+              "word": "what",
+              "response": true
+            },
+            "query": true,
+            "two": {
+              "determined": true,
+              "marker": "it",
+              "pullFromContext": true,
+              "types": [
+                "it"
+              ],
+              "word": "it",
+              "response": true
+            },
+            "word": "is",
+            "topLevel": true,
+            "response": {
+              "isResponse": true,
+              "instance": {
+                "determined": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "types": [
+                  "it"
+                ],
+                "word": "it",
+                "value": "contextThatItRefersTo",
+                "instance": true
+              },
+              "concept": {
+                "determined": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "types": [
+                  "it"
+                ],
+                "word": "it",
+                "evaluate": true,
+                "response": true
+              }
+            }
+          },
+          "paraphrases": "what is it",
+          "responses": [
+            "it is contextThatItRefersTo"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],

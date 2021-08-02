@@ -33,6 +33,7 @@
           "response": true
         },
         "word": "is",
+        "topLevel": true,
         "response": {
           "isResponse": true,
           "instance": {
@@ -70,7 +71,64 @@
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "types": [
+                "what"
+              ],
+              "word": "what",
+              "response": true
+            },
+            "query": true,
+            "two": {
+              "marker": "time",
+              "pullFromContext": true,
+              "types": [
+                "time"
+              ],
+              "word": "time",
+              "response": true
+            },
+            "word": "is",
+            "topLevel": true,
+            "response": {
+              "isResponse": true,
+              "instance": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "value": "1995-12-25T18:13:00.000Z",
+                "format": 12,
+                "instance": true
+              },
+              "concept": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "evaluate": true,
+                "response": true
+              }
+            }
+          },
+          "paraphrases": "what is the time",
+          "responses": [
+            "the time is 10:13 am"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
@@ -175,7 +233,8 @@
           "word": "format"
         },
         "marker": "use",
-        "word": "use"
+        "word": "use",
+        "topLevel": true
       },
       {
         "marker": "is",
@@ -200,6 +259,7 @@
           "response": true
         },
         "word": "is",
+        "topLevel": true,
         "response": {
           "isResponse": true,
           "instance": {
@@ -237,20 +297,99 @@
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "types": [
+                "what"
+              ],
+              "word": "what",
+              "response": true
+            },
+            "query": true,
+            "two": {
+              "marker": "time",
+              "pullFromContext": true,
+              "types": [
+                "time"
+              ],
+              "word": "time",
+              "response": true
+            },
+            "word": "is",
+            "topLevel": true,
+            "response": {
+              "isResponse": true,
+              "instance": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "value": "1995-12-25T18:13:00.000Z",
+                "format": 12,
+                "instance": true
+              },
+              "concept": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "evaluate": true,
+                "response": true
+              }
+            }
+          },
+          "paraphrases": "what is the time",
+          "responses": [
+            "",
+            "the time is 10:13 am"
+          ]
+        },
+        {
+          "context": {
+            "format": {
+              "count": 12,
+              "marker": "timeFormat",
+              "types": [
+                "timeFormat"
+              ],
+              "units": "hour",
+              "word": "format"
+            },
+            "marker": "use",
+            "word": "use",
+            "topLevel": true
+          },
+          "paraphrases": "use 12 hour time",
+          "responses": [
+            "",
+            "the time is 10:13 am"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
         [
           [
-            0,
+            0.75,
             [
               [
                 "use",
                 0
               ],
               [
-                "hourUnits",
+                "count",
                 0
               ],
               [
@@ -260,14 +399,14 @@
             ]
           ],
           [
-            0.57,
+            0.01,
             [
               [
                 "use",
                 0
               ],
               [
-                "count",
+                "hourUnits",
                 0
               ],
               [
@@ -515,7 +654,8 @@
           "word": "format"
         },
         "marker": "use",
-        "word": "use"
+        "word": "use",
+        "topLevel": true
       },
       {
         "marker": "is",
@@ -540,6 +680,7 @@
           "response": true
         },
         "word": "is",
+        "topLevel": true,
         "response": {
           "isResponse": true,
           "instance": {
@@ -577,20 +718,99 @@
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "types": [
+                "what"
+              ],
+              "word": "what",
+              "response": true
+            },
+            "query": true,
+            "two": {
+              "marker": "time",
+              "pullFromContext": true,
+              "types": [
+                "time"
+              ],
+              "word": "time",
+              "response": true
+            },
+            "word": "is",
+            "topLevel": true,
+            "response": {
+              "isResponse": true,
+              "instance": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "value": "1995-12-25T18:13:00.000Z",
+                "format": 24,
+                "instance": true
+              },
+              "concept": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "evaluate": true,
+                "response": true
+              }
+            }
+          },
+          "paraphrases": "what is the time",
+          "responses": [
+            "",
+            "the time is 10:13"
+          ]
+        },
+        {
+          "context": {
+            "format": {
+              "count": 24,
+              "marker": "timeFormat",
+              "types": [
+                "timeFormat"
+              ],
+              "units": "hour",
+              "word": "format"
+            },
+            "marker": "use",
+            "word": "use",
+            "topLevel": true
+          },
+          "paraphrases": "use 24 hour time",
+          "responses": [
+            "",
+            "the time is 10:13"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
         [
           [
-            0,
+            0.75,
             [
               [
                 "use",
                 0
               ],
               [
-                "hourUnits",
+                "count",
                 0
               ],
               [
@@ -600,14 +820,14 @@
             ]
           ],
           [
-            0.57,
+            0.01,
             [
               [
                 "use",
                 0
               ],
               [
-                "count",
+                "hourUnits",
                 0
               ],
               [
@@ -853,6 +1073,7 @@
         },
         "marker": "response",
         "word": "use",
+        "topLevel": true,
         "text": "The hour format is 12 hour or 24 hour"
       }
     ],
@@ -867,20 +1088,43 @@
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "format": {
+              "count": 36,
+              "marker": "timeFormat",
+              "types": [
+                "timeFormat"
+              ],
+              "units": "hour",
+              "word": "format"
+            },
+            "marker": "response",
+            "word": "use",
+            "topLevel": true,
+            "text": "The hour format is 12 hour or 24 hour"
+          },
+          "paraphrases": "The hour format is 12 hour or 24 hour",
+          "responses": [
+            ""
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
         [
           [
-            0,
+            0.75,
             [
               [
                 "use",
                 0
               ],
               [
-                "hourUnits",
+                "count",
                 0
               ],
               [
@@ -890,14 +1134,14 @@
             ]
           ],
           [
-            0.51,
+            0.01,
             [
               [
                 "use",
                 0
               ],
               [
-                "count",
+                "hourUnits",
                 0
               ],
               [
@@ -998,7 +1242,8 @@
           "word": "2"
         },
         "marker": "ampm",
-        "word": "pm"
+        "word": "pm",
+        "topLevel": true
       }
     ],
     "paraphrases": [
@@ -1020,7 +1265,8 @@
           "word": "2"
         },
         "marker": "ampm",
-        "word": "pm"
+        "word": "pm",
+        "topLevel": true
       }
     ],
     "objects": {
@@ -1034,16 +1280,39 @@
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "ampm": "pm",
+            "determined": true,
+            "hour": {
+              "hour": 2,
+              "marker": "hourUnits",
+              "types": [
+                "hourUnits"
+              ],
+              "word": "2"
+            },
+            "marker": "ampm",
+            "word": "pm",
+            "topLevel": true
+          },
+          "paraphrases": "2 pm",
+          "responses": [
+            ""
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
         [
           [
-            0,
+            0.99,
             [
               [
-                "count",
+                "hourUnits",
                 0
               ],
               [
@@ -1053,10 +1322,10 @@
             ]
           ],
           [
-            0.98,
+            0,
             [
               [
-                "hourUnits",
+                "count",
                 0
               ],
               [
@@ -1162,7 +1431,8 @@
           "unknown": true,
           "word": "me"
         },
-        "word": "tell"
+        "word": "tell",
+        "topLevel": true
       }
     ],
     "objects": {
@@ -1176,70 +1446,77 @@
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "event": {
+              "marker": "is",
+              "one": {
+                "marker": "time",
+                "pullFromContext": true,
+                "types": [
+                  "time"
+                ],
+                "word": "time",
+                "response": true
+              },
+              "two": {
+                "ampm": "pm",
+                "determined": true,
+                "hour": {
+                  "hour": 2,
+                  "marker": "hourUnits",
+                  "types": [
+                    "hourUnits"
+                  ],
+                  "word": "2"
+                },
+                "marker": "ampm",
+                "types": [
+                  "ampm"
+                ],
+                "word": "pm",
+                "response": true
+              },
+              "types": [
+                "is"
+              ],
+              "word": "is"
+            },
+            "info": {
+              "info": "when",
+              "marker": "info",
+              "types": [
+                "info"
+              ],
+              "word": "when"
+            },
+            "marker": "tell",
+            "target": {
+              "marker": "me",
+              "types": [
+                "person"
+              ],
+              "unknown": true,
+              "word": "me"
+            },
+            "word": "tell",
+            "topLevel": true
+          },
+          "paraphrases": "tell me when the time is 2 pm",
+          "responses": [
+            ""
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [
         [
           [
-            0.01,
+            0.5,
             [
-              [
-                "the",
-                0
-              ],
-              [
-                "time",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "hourUnits",
-                0
-              ],
-              [
-                "ampm",
-                0
-              ]
-            ]
-          ],
-          [
-            0,
-            [
-              [
-                "the",
-                0
-              ],
-              [
-                "time",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "count",
-                0
-              ],
-              [
-                "ampm",
-                0
-              ]
-            ]
-          ]
-        ],
-        [
-          [
-            0.01,
-            [
-              [
-                "time",
-                0
-              ],
               [
                 "is",
                 0
@@ -1256,106 +1533,6 @@
           ],
           [
             0.01,
-            [
-              [
-                "time",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "count",
-                0
-              ],
-              [
-                "ampm",
-                0
-              ]
-            ]
-          ]
-        ],
-        [
-          [
-            0,
-            [
-              [
-                "info",
-                0
-              ],
-              [
-                "the",
-                0
-              ],
-              [
-                "time",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "count",
-                0
-              ],
-              [
-                "ampm",
-                0
-              ]
-            ]
-          ],
-          [
-            0,
-            [
-              [
-                "info",
-                0
-              ],
-              [
-                "the",
-                0
-              ],
-              [
-                "time",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "hourUnits",
-                0
-              ],
-              [
-                "ampm",
-                0
-              ]
-            ]
-          ]
-        ],
-        [
-          [
-            0.11,
-            [
-              [
-                "is",
-                0
-              ],
-              [
-                "hourUnits",
-                0
-              ],
-              [
-                "ampm",
-                0
-              ]
-            ]
-          ],
-          [
-            0.11,
             [
               [
                 "is",
@@ -1412,7 +1589,7 @@
         ],
         [
           [
-            "hourUnits",
+            "ampm",
             0
           ],
           [
@@ -1444,14 +1621,10 @@
         ],
         [
           [
-            "ampm",
+            "the",
             0
           ],
           [
-            [
-              "ampm",
-              0
-            ],
             [
               "info",
               0
@@ -1486,30 +1659,6 @@
             ],
             [
               "tell",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "the",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "tell",
-              0
-            ],
-            [
-              "the",
               0
             ]
           ]
