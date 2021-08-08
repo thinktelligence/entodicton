@@ -4,15 +4,24 @@ const dialogues = require('./dialogues')
 /*
   Usage:
 
-  1. add [<yourOperator>, 'event'] to hierarchy
-  2. implement this semantic that returns a promise that fires when the event happends and returns a context that will be send to the user
+  1. implement this semantic that returns a promise that fires when the event happends and returns a context that will be send to the user
     [
-      ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'event'),
+      ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args([<list of types>], [<list of properties>]),
       ({context}) => {
         context.event = Promise.resolve( { marker: 'event' } )
       }
     ],
-  3. setup the api to do what you want
+
+  See time.js for example of use of args. args checks the list of properties for properties with the specified types. If all are found then a list of the properties ordered by the types if presented. For example,
+
+    {
+      marker: 'is'
+      one: { marker: 'ampm' },
+      two: { marker: 'time' },
+    }
+
+    args(['ampm', 'time'], ['one', 'two']) returns ['one', two']
+    args(['time', 'ampm'], ['one', 'two']) returns ['two', one']
 */
 
 api = { 

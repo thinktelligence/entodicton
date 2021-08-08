@@ -142,7 +142,7 @@ config.initializer( ({config, objects, isModule}) => {
     format: 12  // or 24
   });
   config.addSemantic(
-      ({context, hierarchy}) => context.happening && context.marker == 'is',
+      ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args(['ampm', 'time'], ['one', 'two']),
       api.semantics
   )
 })
