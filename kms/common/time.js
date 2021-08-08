@@ -8,22 +8,17 @@ const pad = (v, l) => {
   return "0".repeat(n) + s
 }
 
-let getDate = () => {
-  return new Date()
-}
-
 const api = {
   // gets the contexts for doing the happening
   semantics: 
-      ({context}) => {
-        let hour;
-        if (context.one.marker == 'ampm') {
-          hour = context.one.hour.hour
-        } else {
-          hour = context.two.hour.hour
+      ({context, isModule, args}) => {
+        const values = args(['ampm', 'time'], ['one', 'two'])
+        const ampm = context[values[0]]
+        let hour = ampm.hour.hour
+        if (ampm.ampm == 'pm') {
+          hour += 12;
         }
-        //const ms = helpers.millisecondsUntilHourOfDay(hour)
-        const ms = 1
+        const ms = helpers.millisecondsUntilHourOfDay(hour)
         const promise =  new Promise((resolve) => {
           setTimeout( () => resolve(context), ms);
         }).then( () => context )
@@ -107,8 +102,15 @@ let config = {
           return `${hh}:${ss} ${ampm}` 
         }
     ],
-    [ ({context}) => context.marker == 'time' && context.value && context.format == 24, ({g, context}) => 
-        `${context.value.getHours()}:${context.value.getMinutes()}` 
+    [ ({context}) => context.marker == 'time' && context.value && context.format == 24, ({g, context}) => {
+      const pad = (num, size) => {
+        num = num.toString();
+        while (num.length < size) num = "0" + num;
+        return num;
+      }
+
+        return `${context.value.getHours()}:${pad(context.value.getMinutes(), 2)}` 
+      }
     ],
     [ 
       ({context}) => context.marker == 'use' && !context.value, 
@@ -118,18 +120,8 @@ let config = {
   ],
 
   semantics: [
-    /*
-    [
-      ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
-      ({context}) => {
-        const date = getDate()
-        debugger; // target
-        context.event = Promise.resolve( context )
-      }
-    ],
-    */ 
     [({objects, context}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
-      context.value = getDate()
+      context.value = new Date()
       context.format = objects.format
     }],
     [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
@@ -149,19 +141,10 @@ config.initializer( ({config, objects, isModule}) => {
   Object.assign(objects, {
     format: 12  // or 24
   });
-  if (isModule) {
-    config.addSemantic(
-        ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
-        api.semantics
-    )
-  } else {
-    config.addSemantic(
-        ({context, hierarchy}) => context.happening && hierarchy.isA(context.marker, 'is'),
-        ({context}) => {
-          const date = getDate()
-          context.event = Promise.resolve( context )
-        })
-  }
+  config.addSemantic(
+      ({context, hierarchy}) => context.happening && context.marker == 'is',
+      api.semantics
+  )
 })
 
 knowledgeModule({
@@ -171,9 +154,17 @@ knowledgeModule({
   config,
   test: './time.test',
   beforeQuery: ({query, isModule}) => {
-    if (isModule) {
-      return
-    }
-    getDate = () => new Date("December 25, 1995 10:13 am")
+    const date = new Date("December 25, 1995 1:59:58 pm" )
+    const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )
+    Date = function(init) { 
+      return bunchOCopies.pop()
+    };
+  },
+  beforeTests: () => {
+    const date = new Date("December 25, 1995 1:59:58 pm" )
+    const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )
+    Date = function(init) { 
+      return bunchOCopies.pop()
+    };
   }
 })

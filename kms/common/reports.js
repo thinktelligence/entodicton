@@ -91,6 +91,9 @@ let config = {
     //" ([0-9]+)": [{"id": "amount", "initial": "{ value: int(group[0]) }" }],
   },
 
+  priorities: [
+    [['answer', 0], ['list', 0], ['the', 0], ['with', 0]]
+  ],
   generators: [
     [ 
       ({context, objects}) => context.marker == 'show',
