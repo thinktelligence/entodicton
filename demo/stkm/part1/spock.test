@@ -13,6 +13,7 @@
       {
         "marker": "is",
         "one": {
+          "determined": true,
           "marker": "what",
           "query": true,
           "types": [
@@ -32,6 +33,7 @@
           "response": true
         },
         "word": "is",
+        "topLevel": true,
         "response": {
           "isResponse": true,
           "instance": {
@@ -68,12 +70,69 @@
         "2": {
           "format": 12
         },
-        "3": {
+        "3": {},
+        "4": {
           "dialog": {
             "current": []
           }
         }
-      }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "types": [
+                "what"
+              ],
+              "word": "what",
+              "response": true
+            },
+            "query": true,
+            "two": {
+              "marker": "name",
+              "subject": "your",
+              "types": [
+                "name"
+              ],
+              "word": "name",
+              "response": true
+            },
+            "word": "is",
+            "topLevel": true,
+            "response": {
+              "isResponse": true,
+              "instance": {
+                "marker": "name",
+                "subject": "your",
+                "types": [
+                  "name"
+                ],
+                "word": "name",
+                "value": "spock",
+                "instance": true
+              },
+              "concept": {
+                "marker": "name",
+                "subject": "your",
+                "types": [
+                  "name"
+                ],
+                "word": "name",
+                "evaluate": true,
+                "response": true
+              }
+            }
+          },
+          "paraphrases": "what is your name",
+          "responses": [
+            "my name is spock"
+          ]
+        }
+      ]
     },
     "metadata": {
       "associations": [],
