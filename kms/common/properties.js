@@ -35,7 +35,7 @@ let config = {
   ],
   generators: [
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value && !context.evaluate,
       ({context, g}) => {
         const property = Object.assign({}, context, { object: undefined })
         return `${g(property)} of ${g({ ...context.object, determined: false })}`
