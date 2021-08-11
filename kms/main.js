@@ -16,6 +16,8 @@ module.exports = {
   help,
   javascript,
   numbers,
+  properties,
   reports,
+  tell,
   time,
 }
