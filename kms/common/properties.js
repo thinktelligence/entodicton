@@ -1,20 +1,22 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 
-const api = {
-  //
-  // duck typing: for operators you want to use here
-  //
-  //   1. Use hierarchy to make them an instance of queryable. For example add hierarchy entry [<myClassId>, 'queryable']
-  //   2. For semantics, if evaluate == true then set value to the 'value' property of the operator to the value.
-  //   3. Generators will get contexts with 'response: true' set. Used for converting 'your' to 'my' to phrases like 'your car' or 'the car'.
-  //   4. Generators will get contexts with 'instance: true' and value set. For converting values like a date to a string.
-  //
+//
+// duck typing: 
+//
+//   1. Make your properties instances of 'property' add ['myProperty', 'property'] to the hierarchy
+//   2. Make your objects an instance of 'object' add ['myObject', 'object'] to the hierarchy
+//   3. Add semantics for getting the value
+//        [
+//          ({objects, context, args, hierarchy}) => 
+//                hierarchy.isA(context.marker, 'property') && 
+//                args(['object'], ['myObjectType']) && context.evaluate, 
+//          async ({objects, context}) => {
+//          context.value = "value" // set the value here somehow
+//          }
+//        ],
+//
 
-  // used with context sensitive words like 'it', 'that' etc. for example if you have a sentence "create a tank"
-  // then call mentioned with the tank created. Then if one asks 'what is it' the 'it' will be found to be the tank.
-}
-// TODO implement what / what did you say ...
 let config = {
   operators: [
     "(([property]) <([propertyOf|of] ([object]))>)",
@@ -43,7 +45,7 @@ let config = {
     ]
   ],
   semantics: [
-    [({objects, context}) => context.marker == 'property' && context.evaluate, async ({objects, context}) => {
+    [({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args(['object'], ['object']) && context.evaluate, async ({objects, context}) => {
       context.value = "value"
     }],
   ]
@@ -51,12 +53,11 @@ let config = {
 
 config = new entodicton.Config(config)
 config.add(dialogues)
-config.api = api
 
 entodicton.knowledgeModule( { 
   module,
   name: 'properties',
-  description: 'properties for dialogues',
+  description: 'properties of objects',
   config,
   test: './properties.test',
 })
