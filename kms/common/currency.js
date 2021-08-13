@@ -99,11 +99,14 @@ config.initializer( ({config, objects, api, uuid}) => {
 
   unitWords = api.getUnitWords();
   for (let words of unitWords) {
-      generators = config.get('generators')
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, ({context, g}) => words.one, uuid ]
-      generators.push(generator)
-      generator = [({context}) => context.marker == 'currency' && context.units == words.units && !isNaN(context.value) && (context.value != 1) && context.isAbstract, ({context, g}) => words.many, uuid ]
-      generators.push(generator)
+      config.addGenerator(
+        ({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, 
+        ({context, g}) => words.one, uuid
+      );
+      config.addGenerator(
+        ({context}) => context.marker == 'currency' && context.units == words.units && !isNaN(context.value) && (context.value != 1) && context.isAbstract, 
+        ({context, g}) => words.many, uuid
+      )
   }
 })
 

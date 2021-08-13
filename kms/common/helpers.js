@@ -1,7 +1,6 @@
 
 // X pm today or tomorrow
 const millisecondsUntilHourOfDay = (hour) => {
-  debugger;
   const now = new Date()
   const target = new Date(now)
 
