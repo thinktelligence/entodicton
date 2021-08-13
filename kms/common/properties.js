@@ -18,6 +18,7 @@ const dialogues = require('./dialogues')
 //
 
 let config = {
+  name: 'properties',
   operators: [
     "(([property]) <([propertyOf|of] ([object]))>)",
   ],
@@ -56,7 +57,6 @@ config.add(dialogues)
 
 entodicton.knowledgeModule( { 
   module,
-  name: 'properties',
   description: 'properties of objects',
   config,
   test: './properties.test',
