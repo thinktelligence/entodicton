@@ -26,6 +26,7 @@ let config = {
     ['property', 'queryable'],
     ['object', 'queryable'],
     ['property', 'theAble'],
+    ['object', 'theAble'],
   ],
   bridges: [
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
@@ -35,6 +36,7 @@ let config = {
   ],
   priorities: [
     [['is', 0], ['propertyOf', 1]],
+    [['propertyOf', 0], ['the', 0]],
   ],
   generators: [
     [
