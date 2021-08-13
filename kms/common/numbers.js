@@ -1,6 +1,7 @@
 const entodicton = require('entodicton')
 
 let config = {
+  name: 'numbers',
   operators: [
     "([number])",
   ],
@@ -22,13 +23,10 @@ let config = {
   semantics: [
   ],
 };
-
 config = new entodicton.Config(config)
-
 entodicton.knowledgeModule( { 
   module,
   config,
-  name: 'numbers',
   description: 'talking about numbers',
   test: './numbers.test',
 })

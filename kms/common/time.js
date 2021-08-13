@@ -27,6 +27,7 @@ const api = {
 }
 
 let config = {
+  name: 'time',
   operators: [
     "([time])",
     "([use] ((<count> ([timeUnit])) [timeFormat|format]))",
@@ -149,7 +150,6 @@ config.initializer( ({config, objects, isModule}) => {
 
 knowledgeModule({
   module,
-  name: 'time',
   description: 'Time related concepts',
   config,
   test: './time.test',

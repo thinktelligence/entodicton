@@ -2,6 +2,7 @@ const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 
 let config = {
+  name: 'javascript',
   operators: [
     "((<let> ([variable|])) [assignment|] (value))",
     "(<the> ([variable]))",
@@ -48,7 +49,6 @@ config.initializer( ({objects, api, uuid}) => {
 
 entodicton.knowledgeModule( { 
   module,
-  name: 'javascript',
   description: 'javascript interpreter',
   config,
   test: './javascript.test',

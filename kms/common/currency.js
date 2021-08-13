@@ -34,6 +34,7 @@ const api = {
 }
 
 let config = {
+  name: 'currency',
   operators: [
     "(([number]) [currency])",
     "((currency/1) [in] (currency/0))",
@@ -112,7 +113,6 @@ config.initializer( ({config, objects, api, uuid}) => {
 
 entodicton.knowledgeModule({ 
   module,
-  name: 'currency',
   description: 'Ways of specifying currency amount',
   config,
   test: './currency.test',

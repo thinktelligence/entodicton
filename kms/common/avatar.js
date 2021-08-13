@@ -24,6 +24,7 @@ api = {
 }
 
 let config = {
+  name: 'avatar',
   operators: [
     "(<your> ([name]))",
     "(<my> ([name]))",
@@ -96,7 +97,6 @@ config.api = api
 
 entodicton.knowledgeModule( { 
   module,
-  name: 'avatar',
   description: 'avatar for dialogues',
   config,
   // reset the API data before each test.

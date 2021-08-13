@@ -29,6 +29,7 @@ const api = {
 */
 
 let config = {
+  name: 'characters',
   operators: [
     "([([character])] (any))"
   ],
@@ -97,7 +98,6 @@ config.api = api2
 config.api = api
 entodicton.knowledgeModule({
   module,
-  name: 'characters',
   description: 'this module is for creating a team of characters that can respond to commands',
   demo: "https://youtu.be/eA25GZ0ZAHo",
   config,

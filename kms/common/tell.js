@@ -34,6 +34,7 @@ api = {
 }
 
 let config = {
+  name: 'tell',
   operators: [
     "([tell] ([person]) ([info|]) ([event]))"
     //"what are the events"
@@ -96,7 +97,6 @@ config.initializer( ({config, isModule}) => {
 
 entodicton.knowledgeModule( { 
   module,
-  name: 'tell',
   description: 'telling entities things',
   config,
   test: './tell.test',

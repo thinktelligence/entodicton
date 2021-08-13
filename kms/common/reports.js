@@ -30,6 +30,7 @@ const api = {
 }
 
 let config = {
+  name: 'reports',
   operators: [
     //"(([type]) [([(<less> ([than]))] ([amount]))])",
     //"(([show] ([listingType|])) <([for] (<the> ([listings])))>)",
@@ -219,7 +220,6 @@ config.api = api2
 config.api = api
 entodicton.knowledgeModule({
   module,
-  name: 'reports',
   description: 'this module is for getting info about a concept with properties',
   config,
   test: './reports.test',

@@ -13,6 +13,7 @@ const getHelp = (config, indent=2) => {
 }
 
 let config = {
+  name: 'help',
   operators: [
     "([help])",
     // help with <km>
@@ -53,7 +54,6 @@ let config = {
 config = new entodicton.Config(config)
 entodicton.knowledgeModule({
   module,
-  name: 'help',
   description: 'Help the user with the current knowledge modules',
   config,
   test: './help.test',

@@ -17,6 +17,7 @@ const api = {
 }
 // TODO implement what / what did you say ...
 let config = {
+  name: 'dialogues',
   operators: [
     "(([queryable]) [is] ([queryable|]))",
     "([it])",
@@ -219,7 +220,6 @@ config.initializer( ({objects, isModule}) => {
 
 entodicton.knowledgeModule( { 
   module,
-  name: 'dialogues',
   description: 'framework for dialogues',
   config,
   test: './dialogues.test',
