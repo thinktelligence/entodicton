@@ -6,7 +6,7 @@ const dialogues = require('./dialogues')
 
   1. implement this semantic that returns a promise that fires when the event happends and returns a context that will be send to the user
     [
-      ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args([<list of types>], [<list of properties>]),
+      ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args({ types: [<list of types>], properties: [<list of properties>}]),
       ({context}) => {
         context.event = Promise.resolve( { marker: 'event' } )
       }
@@ -20,8 +20,8 @@ const dialogues = require('./dialogues')
       two: { marker: 'time' },
     }
 
-    args(['ampm', 'time'], ['one', 'two']) returns ['one', two']
-    args(['time', 'ampm'], ['one', 'two']) returns ['two', one']
+    args({ types: ['ampm', 'time'], properties: ['one', 'two']}) returns ['one', two']
+    args({ types: ['time', 'ampm'], properties: ['one', 'two']}) returns ['two', one']
 */
 
 api = { 

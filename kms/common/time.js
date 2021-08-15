@@ -12,7 +12,7 @@ const api = {
   // gets the contexts for doing the happening
   semantics: 
       ({context, isModule, args}) => {
-        const values = args(['ampm', 'time'], ['one', 'two'])
+        const values = args({ types: ['ampm', 'time'], properties: ['one', 'two']  })
         const ampm = context[values[0]]
         let hour = ampm.hour.hour
         if (ampm.ampm == 'pm') {
@@ -143,7 +143,7 @@ config.initializer( ({config, objects, isModule}) => {
     format: 12  // or 24
   });
   config.addSemantic(
-      ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args(['ampm', 'time'], ['one', 'two']),
+      ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args({ types: ['ampm', 'time'], properties: ['one', 'two'] }),
       api.semantics
   )
 })

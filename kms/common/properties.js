@@ -10,7 +10,7 @@ const dialogues = require('./dialogues')
 //        [
 //          ({objects, context, args, hierarchy}) => 
 //                hierarchy.isA(context.marker, 'property') && 
-//                args(['object'], ['myObjectType']) && context.evaluate, 
+//                args({ types: ['myObjectType'], properties: ['object'] }) && context.evaluate, 
 //          async ({objects, context}) => {
 //          context.value = "value" // set the value here somehow
 //          }
@@ -48,7 +48,7 @@ let config = {
     ]
   ],
   semantics: [
-    [({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args(['object'], ['object']) && context.evaluate, async ({objects, context}) => {
+    [({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, async ({objects, context}) => {
       context.value = "value"
     }],
   ]
