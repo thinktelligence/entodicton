@@ -25,6 +25,7 @@ api = {
 }
 
 let config = {
+  name: 'spock',
 }
 
 config = new entodicton.Config(config)

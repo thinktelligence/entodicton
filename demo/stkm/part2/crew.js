@@ -2,6 +2,7 @@ const entodicton = require('entodicton')
 const { dialogues } = require('ekms')
 
 let config = {
+  name: 'crew',
   operators: [
     "([arm] (<the> ([weapon|phasers])))"
   ],

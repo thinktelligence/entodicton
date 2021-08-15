@@ -25,6 +25,7 @@ api = {
 }
 
 config = {
+  name: 'sulu',
   semantics: [
     [
       ({context}) => context.marker == 'arm',

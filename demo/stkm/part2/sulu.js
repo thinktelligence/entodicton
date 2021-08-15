@@ -26,6 +26,7 @@ api = {
 }
 
 config = {
+  name: 'sulu',
   semantics: [
     [
       ({context}) => context.marker == 'arm',
@@ -51,7 +52,6 @@ config.add(avatar)
 
 entodicton.knowledgeModule( { 
   module,
-  name: 'sulu',
   description: 'sulu',
   config,
   test: './sulu.test',
