@@ -56,7 +56,6 @@ let config = {
     ['time', 'queryable'],
     ['ampm', 'queryable'],
     ['time', 'theAble'],
-    ['is', 'event'],
   ],
   // TODO : fix the nn data generator to get this from the hierarchy
   priorities: [
