@@ -1370,7 +1370,7 @@
   },
   "tell me when the time is 2 pm": {
     "generated": [
-      "tell me when the time is the pm"
+      "tell [object Object] when the time is the pm"
     ],
     "paraphrases": [
       "tell me when the time is 2 pm"
@@ -1380,58 +1380,58 @@
     ],
     "contexts": [
       {
+        "marker": "tell",
+        "word": "tell",
         "event": {
           "marker": "is",
-          "one": {
-            "marker": "time",
-            "pullFromContext": true,
-            "types": [
-              "time"
-            ],
-            "word": "time",
-            "response": true
-          },
           "two": {
-            "ampm": "pm",
-            "determined": true,
-            "hour": {
-              "hour": 2,
-              "marker": "hourUnits",
-              "types": [
-                "hourUnits"
-              ],
-              "word": "2"
-            },
             "marker": "ampm",
+            "word": "pm",
             "types": [
               "ampm"
             ],
-            "word": "pm",
+            "ampm": "pm",
+            "determined": true,
+            "hour": {
+              "marker": "hourUnits",
+              "word": "2",
+              "types": [
+                "hourUnits"
+              ],
+              "hour": 2
+            },
             "response": true
           },
+          "word": "is",
           "types": [
             "is"
           ],
-          "word": "is"
+          "one": {
+            "marker": "time",
+            "pullFromContext": true,
+            "word": "time",
+            "types": [
+              "time"
+            ],
+            "response": true
+          }
         },
         "info": {
-          "info": "when",
           "marker": "info",
+          "word": "when",
           "types": [
             "info"
           ],
-          "word": "when"
+          "info": "when"
         },
-        "marker": "tell",
         "target": {
-          "marker": "me",
+          "marker": "person",
+          "word": "me",
           "types": [
             "person"
           ],
-          "unknown": true,
-          "word": "me"
+          "target": "me"
         },
-        "word": "tell",
         "topLevel": true
       }
     ],
@@ -1450,58 +1450,58 @@
       "processed": [
         {
           "context": {
+            "marker": "tell",
+            "word": "tell",
             "event": {
               "marker": "is",
-              "one": {
-                "marker": "time",
-                "pullFromContext": true,
-                "types": [
-                  "time"
-                ],
-                "word": "time",
-                "response": true
-              },
               "two": {
-                "ampm": "pm",
-                "determined": true,
-                "hour": {
-                  "hour": 2,
-                  "marker": "hourUnits",
-                  "types": [
-                    "hourUnits"
-                  ],
-                  "word": "2"
-                },
                 "marker": "ampm",
+                "word": "pm",
                 "types": [
                   "ampm"
                 ],
-                "word": "pm",
+                "ampm": "pm",
+                "determined": true,
+                "hour": {
+                  "marker": "hourUnits",
+                  "word": "2",
+                  "types": [
+                    "hourUnits"
+                  ],
+                  "hour": 2
+                },
                 "response": true
               },
+              "word": "is",
               "types": [
                 "is"
               ],
-              "word": "is"
+              "one": {
+                "marker": "time",
+                "pullFromContext": true,
+                "word": "time",
+                "types": [
+                  "time"
+                ],
+                "response": true
+              }
             },
             "info": {
-              "info": "when",
               "marker": "info",
+              "word": "when",
               "types": [
                 "info"
               ],
-              "word": "when"
+              "info": "when"
             },
-            "marker": "tell",
             "target": {
-              "marker": "me",
+              "marker": "person",
+              "word": "me",
               "types": [
                 "person"
               ],
-              "unknown": true,
-              "word": "me"
+              "target": "me"
             },
-            "word": "tell",
             "topLevel": true
           },
           "paraphrases": "tell me when the time is 2 pm",
@@ -1515,7 +1515,7 @@
       "associations": [
         [
           [
-            0.5,
+            0.74,
             [
               [
                 "is",
@@ -1532,7 +1532,7 @@
             ]
           ],
           [
-            0.01,
+            0.12,
             [
               [
                 "is",
@@ -1553,7 +1553,7 @@
       "priorities": [
         [
           [
-            "time",
+            "the",
             0
           ],
           [
@@ -1571,6 +1571,10 @@
             ],
             [
               "is",
+              0
+            ],
+            [
+              "person",
               0
             ],
             [
@@ -1610,18 +1614,22 @@
               0
             ],
             [
+              "person",
+              0
+            ],
+            [
               "tell",
               0
             ],
             [
-              "the",
+              "time",
               0
             ]
           ]
         ],
         [
           [
-            "the",
+            "is",
             0
           ],
           [
@@ -1634,11 +1642,35 @@
               0
             ],
             [
+              "person",
+              0
+            ],
+            [
               "tell",
               0
             ],
             [
-              "the",
+              "time",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "person",
+            0
+          ],
+          [
+            [
+              "info",
+              0
+            ],
+            [
+              "person",
+              0
+            ],
+            [
+              "tell",
               0
             ]
           ]
@@ -1651,26 +1683,6 @@
           [
             [
               "info",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "tell",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            [
-              "is",
               0
             ],
             [

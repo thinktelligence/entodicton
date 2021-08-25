@@ -62,7 +62,8 @@ let config = {
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
     [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]],
     [['info', 0], ['is', 0], ['tell', 0], ['the', 0]],
-    [['tell', 0], ['hourUnits', 0], ['info', 0], ['is', 0], ['ampm', 0]]
+    [['tell', 0], ['hourUnits', 0], ['info', 0], ['is', 0], ['ampm', 0]],
+    [['info', 0], ['is', 0], ['the', 0], ['tell', 0], ['person', 0]]
   ],
   associations: {
     negative: [
