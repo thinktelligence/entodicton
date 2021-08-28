@@ -23,14 +23,22 @@ let config = {
     "([it])",
     "([what])",
     "(<the> ([theAble|]))",
+    "(<a> ([theAble|]))",
     //"arm them, what, the phasers"
+    //greg is a first name
+
+    "(([theAble|]) [list|and] ([theAble|]))",
   ],
   bridges: [
+    {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
+    {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+
     { id: "what", level: 0, bridge: "{ ...next(operator), query: true, determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
 
     { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
+    { id: "a", level: 0, bridge: "{ ...after[0], unspecified: true }" },
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
@@ -38,7 +46,8 @@ let config = {
   ],
   floaters: ['query'],
   priorities: [
-    [["is",0],["the",0]]
+    [["is",0],["the",0]],
+    [["is",0],["a",0]],
   ],
   hierarchy: [
     ['it', 'queryable'],
@@ -68,11 +77,15 @@ let config = {
       ({g, context}) => `${context.subject} ${context.marker}`
     ],
     [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.paraphrase && !context.determined, 
-      ({g, context}) => `the ${context.marker}`
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && context.unspecified && !context.determined, 
+      ({g, context}) => `a ${context.word}`
     ],
     [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && context.response && !context.value && !context.determined, 
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && !context.determined, 
+      ({g, context}) => `the ${context.word}`
+    ],
+    [ 
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.response && !context.value && !context.determined, 
       ({g, context}) => `the ${context.marker}`
     ],
     /*

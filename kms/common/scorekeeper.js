@@ -1,31 +1,22 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 
-let data = {
-  me: {
-    name: 'molnius',
-    age: 23,
-    eyes: 'hazel',
-  },
-  other: {
-    name: 'unknown'
-  }
+const game = {
+  players: [],
+  score: null
 }
 
+
 api = {
-  // who in [me, other]
-  get: (who, property) => {
-    return data[who][property]
-  },
-  
-  set: (who, property, value) => {
-    data[who][property] = value
-  },
+  _motivations: []
 }
 
 let config = {
-  name: 'avatar',
+  name: 'scorekeeper',
   operators: [
+    "([start] (<a> ([game])))",
+    "((<the> ([player|player,players])) [enumeration|are,is] ([person|person,people]))",
+  /*
   "start a new game" // -> creates motivations to ask for players and winning scope
   "the players are x y and x'
   "the winning score is 10000'
@@ -33,14 +24,15 @@ let config = {
   'kia got 20 points'
   'who is winning'
   'what are the scores'
+  */
   ],
   bridges: [
-    { "id": "name", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "your", "level": 0, "bridge": "{ ...after, subject: 'your' }" },
-    { "id": "my", "level": 0, "bridge": "{ ...after, subject: 'my' }" },
+    { id: 'start', level: 0, bridge: '{ ...next(operator), arg: after[0] }' },
+    { id: 'game', level: 0, bridge: '{ ...next(operator) }' },
+    { id: 'player', level: 0, bridge: '{ ...next(operator) }' },
+    { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
+    { id: 'enumeration', level: 0, bridge: '{ ...next(operator), concept: before[0], items: after[0] }' },
   ],
-  debug: false,
-  version: '3',
   words: {
     /*
     " ([0-9]+)": [{"id": "number", "initial": "{ value: int(group[0]) }" }],
@@ -50,70 +42,35 @@ let config = {
   },
 
   priorities: [
-    [['is', 0], ['my', 0]],
-    [['is', 0], ['your', 0]],
   ],
 
   hierarchy: [
-    ['name', 'queryable']
+    ['game', 'theAble'],
+    ['player', 'theAble'],
+    ['person', 'theAble'],
+  ],
+
+  generators: [
+    {
+      match: ({context}) => context.marker == 'enumeration' && context.paraphrase,
+      apply: ({context, g}) => `${g(context.concept)} are ${g(context.items)}`
+    },
+    {
+      match: ({context}) => context.marker == 'start' && context.paraphrase,
+      apply: ({context, g}) => `start ${g(context.arg)}`
+    },
   ],
 
   semantics: [
-    // same
-    [ 
-      ({context}) => context.marker == 'name' && context.same && context.subject == 'my', 
-      ({context, objects}) => {
-        // TODO - call g(context.same) here
-        api.set('other', 'name', context.same.marker)
-      }
-    ],
-  
-    // evaluate
-    [ 
-      ({context}) => context.marker == 'name' && context.evaluate && context.subject == 'your', 
-      ({context, api}) => {
-        context.value = api.get('me', context.marker)
-      }
-    ],
-
-    [ 
-      ({context}) => context.marker == 'name' && context.evaluate && context.subject == 'my', 
-      ({context, api}) => {
-        context.value = api.get('other', context.marker)
-      }
-    ],
-
-    [ 
-      ({context}) => context.marker == 'what' && context.topLevel,
-      ({context, config}) => {
-        const processed = config.get('objects').processed
-        context.value = processed[0].responses.join(' ')
-        context.response = 1
-      }
-    ],
   ],
 };
 
 config = new entodicton.Config(config)
 config.add(dialogues)
-config.api = api
 
 entodicton.knowledgeModule( { 
   module,
-  description: 'avatar for dialogues',
+  description: 'scorekeeper for card or dice games',
   config,
-  // reset the API data before each test.
-  beforeTest: () => {
-    data = {
-      me: {
-        name: 'molnius',
-        age: 23,
-        eyes: 'hazel',
-      },
-      other: {
-        name: 'unknown'
-      }
-    }
-  },
-  test: './avatar.test',
+  test: './scorekeeper.test',
 })
