@@ -25,7 +25,10 @@ let config = {
     [['propertyOf', 0], ['the', 0], ['status', 0]],
     [['info', 0], ['is', 0], ['propertyOf', 0], ['tell', 0], ['the', 0]],
     [['info', 0], ['is', 0], ['tell', 0], ['propertyOf', 0]],
-    [['is', 0], ['person', 0], ['tell', 0], ['status', 0], ['propertyOf', 1]]
+    [['is', 0], ['person', 0], ['tell', 0], ['status', 0], ['propertyOf', 1]],
+    [['info', 0], ['is', 0], ['person', 0], ['propertyOf', 0], ['the', 0], ['tell', 0], ['status', 0]],
+    [['is', 0], ['tell', 0], ['propertyOf', 0], ['person', 0]],
+    [['info', 0], ['is', 0], ['tell', 0], ['propertyOf', 1]]
   ],
   generators: [
     [
