@@ -61,7 +61,7 @@ let config = {
       ({context}) => context.marker == 'name' && context.same && context.subject == 'my', 
       ({context, objects}) => {
         // TODO - call g(context.same) here
-        api.set('other', 'name', context.same.marker)
+        api.set('other', 'name', context.same.value)
       }
     ],
   

@@ -99,12 +99,12 @@ let config = {
       ({context}) => `${context.subject} ${context.word}`
     ],
     [ 
-      ({context}) => context.unknown, 
+      ({context}) => context.marker == 'unknown', 
       ({context}) => {
         if (typeof context.marker === 'string') {
-          return context.marker
+          return context.value
         } else {
-          JSON.stringify(context.marker)
+          JSON.stringify(context.value)
         }
       }
     ],
