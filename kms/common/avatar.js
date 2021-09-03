@@ -1,6 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
-
+ 
 let data = {
   me: {
     name: 'molnius',
@@ -28,6 +28,7 @@ let config = {
   operators: [
     "(<your> ([name]))",
     "(<my> ([name]))",
+    // oh we have the same names -> noticing things as part of motiviation
     //"my name is blah",
     // what did you just say
   ],
