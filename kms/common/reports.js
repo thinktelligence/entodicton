@@ -69,7 +69,6 @@ let config = {
     { "id": "with", "level": 0, "bridge": "{ ...next(operator), type: after[0].value }" },
     { "id": "answer", "level": 0, "bridge": "{ ...next(operator), type: after[0].type }" },
 
-    { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "show", "level": 0, "bridge": "{ ...next(operator), properties: after[0] }" },
   ],
   hierarchy: [
