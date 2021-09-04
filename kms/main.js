@@ -12,7 +12,7 @@ const tell = require('./common/tell');
 const time = require('./common/time');
 
 module.exports = { 
-  entodicton.Config,
+  Config: entodicton.Config,
   avatar,
   characters,
   currency,
