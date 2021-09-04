@@ -34,7 +34,7 @@ let config = {
   operators: [
     //"(([type]) [([(<less> ([than]))] ([amount]))])",
     //"(([show] ([listingType|])) <([for] (<the> ([listings])))>)",
-    "([list] (<the> ([product|products])))",
+    "([listAction|list] (<the> ([product|products])))",
     //"what can you report on",
     //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
     "([reportAction|report] ([on] ([reportObject|])))",
@@ -53,8 +53,7 @@ let config = {
   ],
   bridges: [
     { "id": "product", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "the", "level": 0, "bridge": "{ ...after, pullFromContext: true }" },
-    { "id": "list", "level": 0, "bridge": "{ ...next(operator), what: after}" },
+    { "id": "listAction", "level": 0, "bridge": "{ ...next(operator), what: after}" },
 
     { "id": "reportObject", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "on", "level": 0, "bridge": "{ ...next(operator), report: after[0] }" },
@@ -80,7 +79,7 @@ let config = {
   floaters: ["api", "isQuery"],
   debug: true,
   priorities: [
-    [['list', 0], ['cost', 1]]
+    [['listAction', 0], ['cost', 1]]
   ],
   "version": '3',
   "words": {
@@ -92,7 +91,7 @@ let config = {
   },
 
   priorities: [
-    [['answer', 0], ['list', 0], ['the', 0], ['with', 0]]
+    [['answer', 0], ['listAction', 0], ['the', 0], ['with', 0]]
   ],
   generators: [
     [ 
@@ -102,16 +101,16 @@ let config = {
     [ ({context}) => context.marker == 'reportAction' && context.response, ({context, g}) => `reporting on ${context.report.word}` ],
     [ ({context}) => context.marker == 'reportAction' && context.paraphrase, ({context, g}) => `report on ${context.report.word}` ],
     [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
-    [ ({context}) => context.marker == 'list' && !context.response, ({g, context}) => `list ${g(context.what)}` ],
+    [ ({context}) => context.marker == 'listAction' && !context.response, ({g, context}) => `list ${g(context.what)}` ],
     [ 
-      ({context, api}) => api.listing.type == 'sentences' && context.marker == 'list' && context.response, 
+      ({context, api}) => api.listing.type == 'sentences' && context.marker == 'listAction' && context.response, 
       ({g, gs, context}) => {
         gs(context.listing) 
         return `${g(context.what)} are ${gs(context.listing, ' ', ' and ')}` 
       }
     ],
     [ 
-      ({context, api}) => api.listing.type == 'tables' && context.marker == 'list' && context.response, 
+      ({context, api}) => api.listing.type == 'tables' && context.marker == 'listAction' && context.response, 
       ({g, gs, objects, context}) => {
         let report = '';
         const products = context.listing
@@ -149,7 +148,7 @@ let config = {
       }
     ],
     [
-      ({context}) => context.marker == 'list', 
+      ({context}) => context.marker == 'listAction', 
       ({context, api, config}) => {
         if (context.api) {
           context.listing = config._api.apis[context.api].getAllProducts()

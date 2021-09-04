@@ -1,4 +1,5 @@
 const entodicton = require('entodicton')
+const dialogues = require('./dialogues')
 
 const getHelp = (config, indent=2) => {
   indent = ' '.repeat(indent)
@@ -52,6 +53,7 @@ let config = {
 };
 
 config = new entodicton.Config(config)
+config.add(dialogues)
 entodicton.knowledgeModule({
   module,
   description: 'Help the user with the current knowledge modules',
