@@ -5,9 +5,9 @@ const help_tests = require('./help.test.json')
 const getHelp = (config, indent=2) => {
   indent = ' '.repeat(indent)
   let help = ''
-  help += `${indent}Name: ${config.name}\n`
-  help += `${indent}Description: ${config.description}\n`
-  help += `${indent}Sample sentences\n`
+  help += `${indent}NAME: ${config.name}\n`
+  help += `${indent}DESCRIPTION: ${config.description}\n`
+  help += `${indent}SAMPLE SENTENCES\n`
   for (query of Object.keys(config.tests)) {
     help += `${indent}  ${query}\n`
   }
@@ -34,12 +34,12 @@ let config = {
     [({context, config}) => context.marker == 'help' && context.paraphrase, () => `help`],
     [ 
       ({context, config}) => context.marker == 'help' && context.response, ({context, config}) => {
-        let help = `Main Knowledge Module\n\n`
+        let help = `MAIN KNOWLEDGE MODULE\n\n`
         help += getHelp(config, 2)
 
         if (config.configs.length > 1) {
           help += '\n\n'
-          help += 'Included Knowledge Modules\n'
+          help += 'INCLUDED KNOWLEDGE MODULES\n'
           for (km of config.configs) {
             if (km._config instanceof entodicton.Config) {
               help += '\n' + getHelp(km._config, 4)
