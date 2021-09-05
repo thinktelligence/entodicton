@@ -76,5 +76,5 @@ entodicton.knowledgeModule({
   name: 'meta',
   description: 'Ways of defining new language elements',
   config,
-  test: './meta.test',
+  test: './meta.test.json',
 })

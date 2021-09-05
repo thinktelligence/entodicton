@@ -103,5 +103,5 @@ entodicton.knowledgeModule( {
   module,
   description: 'telling entities things',
   config,
-  test: './tell.test',
+  test: './tell.test.json',
 })

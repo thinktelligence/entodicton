@@ -101,5 +101,5 @@ entodicton.knowledgeModule({
   description: 'this module is for creating a team of characters that can respond to commands',
   demo: "https://youtu.be/eA25GZ0ZAHo",
   config,
-  test: './characters.test',
+  test: './characters.test.json',
 })

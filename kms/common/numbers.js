@@ -28,5 +28,5 @@ entodicton.knowledgeModule( {
   module,
   config,
   description: 'talking about numbers',
-  test: './numbers.test',
+  test: './numbers.test.json',
 })

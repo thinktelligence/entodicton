@@ -72,5 +72,5 @@ entodicton.knowledgeModule( {
   module,
   description: 'scorekeeper for card or dice games',
   config,
-  test: './scorekeeper.test',
+  test: './scorekeeper.test.json',
 })

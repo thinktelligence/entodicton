@@ -61,5 +61,5 @@ entodicton.knowledgeModule( {
   module,
   description: 'properties of objects',
   config,
-  test: './properties.test',
+  test: './properties.test.json',
 })

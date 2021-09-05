@@ -235,7 +235,7 @@ entodicton.knowledgeModule( {
   module,
   description: 'framework for dialogues',
   config,
-  test: './dialogues.test',
+  test: './dialogues.test.json',
   /*
   module: () => {
     config.initializer( ({objects, api, uuid}) => {

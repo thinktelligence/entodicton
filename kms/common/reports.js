@@ -220,5 +220,5 @@ entodicton.knowledgeModule({
   module,
   description: 'this module is for getting info about a concept with properties',
   config,
-  test: './reports.test',
+  test: './reports.test.json',
 })

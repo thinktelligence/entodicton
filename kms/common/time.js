@@ -60,6 +60,7 @@ let config = {
   // TODO : fix the nn data generator to get this from the hierarchy
   priorities: [
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
+    [['the', 0], ['hourUnits', 0], ['info', 0], ['is', 0], ['person', 0], ['tell', 0], ['ampm', 0]],
     [['is', 0], ['the', 0], ['use', 0], ['timeFormat', 0]],
     [['info', 0], ['is', 0], ['tell', 0], ['the', 0]],
     [['tell', 0], ['hourUnits', 0], ['info', 0], ['is', 0], ['ampm', 0]],
@@ -152,7 +153,7 @@ knowledgeModule({
   module,
   description: 'Time related concepts',
   config,
-  test: './time.test',
+  test: './time.test.json',
   beforeQuery: ({query, isModule}) => {
     const date = new Date("December 25, 1995 1:59:58 pm" )
     const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )

@@ -58,5 +58,5 @@ entodicton.knowledgeModule({
   module,
   description: 'Help the user with the current knowledge modules',
   config,
-  test: './help.test',
+  test: './help.test.json',
 })

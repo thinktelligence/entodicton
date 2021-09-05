@@ -113,5 +113,8 @@ entodicton.knowledgeModule( {
       }
     }
   },
-  test: './avatar.test',
+  test: {
+    name: './avatar.test.json',
+    contents: require('./avatar.test.json')
+  }
 })

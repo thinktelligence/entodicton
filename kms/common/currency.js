@@ -115,5 +115,5 @@ entodicton.knowledgeModule({
   module,
   description: 'Ways of specifying currency amount',
   config,
-  test: './currency.test',
+  test: './currency.test.json',
 })
