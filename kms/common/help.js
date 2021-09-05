@@ -6,8 +6,8 @@ const getHelp = (config, indent=2) => {
   indent = ' '.repeat(indent)
   let help = ''
   help += `${indent}NAME: ${config.name}\n`
-  help += `${indent}DESCRIPTION: ${config.description}\n`
-  help += `${indent}SAMPLE SENTENCES\n`
+  help += `${indent}DESCRIPTION: ${config.description}\n\n`
+  help += `${indent}SAMPLE SENTENCES\n\n`
   for (query of Object.keys(config.tests)) {
     help += `${indent}  ${query}\n`
   }
