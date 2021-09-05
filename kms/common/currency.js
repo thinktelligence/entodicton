@@ -1,6 +1,7 @@
 const entodicton= require('entodicton')
 const Digraph = require('entodicton/src/digraph')
 const numbersKM = require('./numbers.js')
+const currency_tests = require('./numbers.test.json')
 
 const api = {
   // map currency word to the unit that will be put in the context
@@ -115,5 +116,8 @@ entodicton.knowledgeModule({
   module,
   description: 'Ways of specifying currency amount',
   config,
-  test: './currency.test.json',
+  test: {
+    name: './currency.test.json',
+    contents: currency_tests
+  },
 })

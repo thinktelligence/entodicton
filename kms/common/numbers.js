@@ -1,4 +1,5 @@
 const entodicton = require('entodicton')
+const numbers_tests = require('./numbers.test.json')
 
 let config = {
   name: 'numbers',
@@ -28,5 +29,8 @@ entodicton.knowledgeModule( {
   module,
   config,
   description: 'talking about numbers',
-  test: './numbers.test.json',
+  test: {
+    name: './numbers.test.json',
+    contents: numbers_tests
+  },
 })

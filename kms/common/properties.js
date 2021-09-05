@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const properties_tests = require('./properties.test.json')
 
 //
 // duck typing: 
@@ -61,5 +62,8 @@ entodicton.knowledgeModule( {
   module,
   description: 'properties of objects',
   config,
-  test: './properties.test.json',
+  test: {
+    name: './properties.test.json',
+    contents: properties_tests
+  },
 })

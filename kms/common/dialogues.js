@@ -1,4 +1,5 @@
 const entodicton = require('entodicton')
+const dialogues_tests = require('./dialogues.test.json')
 
 const api = {
   //
@@ -235,7 +236,10 @@ entodicton.knowledgeModule( {
   module,
   description: 'framework for dialogues',
   config,
-  test: './dialogues.test.json',
+  test: {
+    name: './dialogues.test.json',
+    contents: dialogues_tests
+  },
   /*
   module: () => {
     config.initializer( ({objects, api, uuid}) => {

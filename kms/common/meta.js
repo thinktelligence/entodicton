@@ -1,5 +1,6 @@
 const entodicton= require('entodicton')
 const dialogue = require('./dialogues')
+const meta_tests = require('./meta.test.json')
 
 let config = {
   operators: [
@@ -76,5 +77,8 @@ entodicton.knowledgeModule({
   name: 'meta',
   description: 'Ways of defining new language elements',
   config,
-  test: './meta.test.json',
+  test: {
+    name: './meta.test.json',
+    contents: meta_tests
+  },
 })

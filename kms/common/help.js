@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const help_tests = require('./help.test.json')
 
 const getHelp = (config, indent=2) => {
   indent = ' '.repeat(indent)
@@ -58,5 +59,8 @@ entodicton.knowledgeModule({
   module,
   description: 'Help the user with the current knowledge modules',
   config,
-  test: './help.test.json',
+  test: {
+    name: './help.test.json',
+    contents: help_tests
+  },
 })

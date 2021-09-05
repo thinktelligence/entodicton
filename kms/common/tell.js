@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const tell_tests = require('./tell.test.json')
 
 /*
   Usage:
@@ -103,5 +104,8 @@ entodicton.knowledgeModule( {
   module,
   description: 'telling entities things',
   config,
-  test: './tell.test.json',
+  test: {
+    name: './tell.test.json',
+    contents: tell_tests
+  },
 })

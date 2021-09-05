@@ -4,6 +4,7 @@ const helpKM = require('./help.js')
 const timeKM = require('./time.js')
 const { table } = require('table')
 const _ = require('lodash')
+const characters_tests = require('./characters.test.json')
 
 const api = {
   getName: () => "sally",
@@ -101,5 +102,8 @@ entodicton.knowledgeModule({
   description: 'this module is for creating a team of characters that can respond to commands',
   demo: "https://youtu.be/eA25GZ0ZAHo",
   config,
-  test: './characters.test.json',
+  test: {
+    name: './characters.test.json',
+    contents: characters_tests
+  },
 })

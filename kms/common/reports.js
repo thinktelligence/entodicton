@@ -3,6 +3,7 @@ const currencyKM = require('./currency.js')
 const helpKM = require('./help.js')
 const { table } = require('table')
 const _ = require('lodash')
+const reports_tests = require('./reports.test.json')
 
 const testData = {
   name: 'clothes',
@@ -220,5 +221,8 @@ entodicton.knowledgeModule({
   module,
   description: 'this module is for getting info about a concept with properties',
   config,
-  test: './reports.test.json',
+  test: {
+    name: './reports.test.json',
+    contents: reports_tests
+  },
 })

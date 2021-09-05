@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const scorekeeper_tests = require('./scorekeeper.test.json')
 
 const game = {
   players: [],
@@ -72,5 +73,8 @@ entodicton.knowledgeModule( {
   module,
   description: 'scorekeeper for card or dice games',
   config,
-  test: './scorekeeper.test.json',
+  test: {
+    name: './scorekeeper.test.json',
+    contents: scorekeeper_tests
+  },
 })
