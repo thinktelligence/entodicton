@@ -38,12 +38,18 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {},
+        "0": {
+          "players": [],
+          "scores": {},
+          "winningScore": 20,
+          "allPlayersAreKnown": false
+        },
         "1": {
           "dialog": {
             "current": []
           }
-        }
+        },
+        "2": {}
       },
       "processed": [
         {
@@ -125,7 +131,11 @@
     "generated": [
       {
         "concept": {
+          "determiner": "the",
           "marker": "player",
+          "modifiers": [
+            "determiner"
+          ],
           "pullFromContext": true,
           "types": [
             "player"
@@ -133,11 +143,11 @@
           "word": "players"
         },
         "items": {
-          "marker": "greg",
+          "marker": "unknown",
           "types": [
             "person"
           ],
-          "unknown": true,
+          "value": "greg",
           "word": "greg"
         },
         "marker": "enumeration",
@@ -154,7 +164,11 @@
     "contexts": [
       {
         "concept": {
+          "determiner": "the",
           "marker": "player",
+          "modifiers": [
+            "determiner"
+          ],
           "pullFromContext": true,
           "types": [
             "player"
@@ -162,11 +176,11 @@
           "word": "players"
         },
         "items": {
-          "marker": "greg",
+          "marker": "unknown",
           "types": [
             "person"
           ],
-          "unknown": true,
+          "value": "greg",
           "word": "greg"
         },
         "marker": "enumeration",
@@ -176,18 +190,28 @@
     ],
     "objects": {
       "namespaced": {
-        "0": {},
+        "0": {
+          "players": [],
+          "scores": {},
+          "winningScore": 20,
+          "allPlayersAreKnown": false
+        },
         "1": {
           "dialog": {
             "current": []
           }
-        }
+        },
+        "2": {}
       },
       "processed": [
         {
           "context": {
             "concept": {
+              "determiner": "the",
               "marker": "player",
+              "modifiers": [
+                "determiner"
+              ],
               "pullFromContext": true,
               "types": [
                 "player"
@@ -195,11 +219,11 @@
               "word": "players"
             },
             "items": {
-              "marker": "greg",
+              "marker": "unknown",
               "types": [
                 "person"
               ],
-              "unknown": true,
+              "value": "greg",
               "word": "greg"
             },
             "marker": "enumeration",
@@ -214,7 +238,42 @@
       ]
     },
     "metadata": {
-      "associations": [],
+      "associations": [
+        [
+          [
+            0,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "player",
+                0
+              ],
+              [
+                "enumeration",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "player",
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
       "priorities": [
         [
           [
@@ -260,6 +319,789 @@
           [
             [
               "enumeration",
+              0
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "kia got 30 points": {
+    "generated": [
+      "kia won with 30 points"
+    ],
+    "paraphrases": [
+      "kia got 30 points"
+    ],
+    "responses": [
+      "kia won with 30 points"
+    ],
+    "contexts": [
+      {
+        "marker": "scored",
+        "player": {
+          "marker": "unknown",
+          "types": [
+            "player"
+          ],
+          "value": "kia",
+          "word": "kia"
+        },
+        "points": {
+          "amount": {
+            "marker": "number",
+            "types": [
+              "number"
+            ],
+            "value": 30,
+            "word": "30"
+          },
+          "marker": "point",
+          "modifiers": [
+            "amount"
+          ],
+          "types": [
+            "point"
+          ],
+          "word": "points"
+        },
+        "word": "got",
+        "topLevel": true,
+        "verbatim": "kia won with 30 points",
+        "response": true
+      }
+    ],
+    "objects": {
+      "namespaced": {
+        "0": {
+          "players": [
+            "kia"
+          ],
+          "scores": {
+            "kia": 30
+          },
+          "winningScore": 20,
+          "allPlayersAreKnown": false
+        },
+        "1": {
+          "dialog": {
+            "current": []
+          }
+        },
+        "2": {}
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "scored",
+            "player": {
+              "marker": "unknown",
+              "types": [
+                "player"
+              ],
+              "value": "kia",
+              "word": "kia"
+            },
+            "points": {
+              "amount": {
+                "marker": "number",
+                "types": [
+                  "number"
+                ],
+                "value": 30,
+                "word": "30"
+              },
+              "marker": "point",
+              "modifiers": [
+                "amount"
+              ],
+              "types": [
+                "point"
+              ],
+              "word": "points"
+            },
+            "word": "got",
+            "topLevel": true,
+            "verbatim": "kia won with 30 points",
+            "response": true
+          },
+          "paraphrases": "kia got 30 points",
+          "responses": [
+            "kia won with 30 points"
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "number",
+            0
+          ],
+          [
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "scored",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "point",
+            0
+          ],
+          [
+            [
+              "point",
+              0
+            ],
+            [
+              "scored",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "scored",
+            0
+          ],
+          [
+            [
+              "scored",
+              0
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "the winning score is 37 points": {
+    "generated": [
+      "[object Object] is [object Object]"
+    ],
+    "paraphrases": [
+      "the winning score is 37 points"
+    ],
+    "responses": [
+      ""
+    ],
+    "contexts": [
+      {
+        "marker": "is",
+        "one": {
+          "determiner": "the",
+          "marker": "score",
+          "modifiers": [
+            "determiner",
+            "winning"
+          ],
+          "pullFromContext": true,
+          "types": [
+            "score"
+          ],
+          "winning": "winning",
+          "word": "score",
+          "response": true
+        },
+        "two": {
+          "amount": {
+            "marker": "number",
+            "types": [
+              "number"
+            ],
+            "value": 37,
+            "word": "37"
+          },
+          "marker": "point",
+          "modifiers": [
+            "amount"
+          ],
+          "types": [
+            "point"
+          ],
+          "word": "points",
+          "response": true
+        },
+        "word": "is",
+        "topLevel": true
+      }
+    ],
+    "objects": {
+      "namespaced": {
+        "0": {
+          "players": [],
+          "scores": {},
+          "winningScore": 37,
+          "allPlayersAreKnown": false
+        },
+        "1": {
+          "dialog": {
+            "current": []
+          }
+        },
+        "2": {}
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determiner": "the",
+              "marker": "score",
+              "modifiers": [
+                "determiner",
+                "winning"
+              ],
+              "pullFromContext": true,
+              "types": [
+                "score"
+              ],
+              "winning": "winning",
+              "word": "score",
+              "response": true
+            },
+            "two": {
+              "amount": {
+                "marker": "number",
+                "types": [
+                  "number"
+                ],
+                "value": 37,
+                "word": "37"
+              },
+              "marker": "point",
+              "modifiers": [
+                "amount"
+              ],
+              "types": [
+                "point"
+              ],
+              "word": "points",
+              "response": true
+            },
+            "word": "is",
+            "topLevel": true
+          },
+          "paraphrases": "the winning score is 37 points",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "associations": [
+        [
+          [
+            0,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "winning",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0.3,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "winning",
+                0
+              ],
+              [
+                "score",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "number",
+                0
+              ]
+            ]
+          ],
+          [
+            0.24,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "winning",
+                0
+              ],
+              [
+                "score",
+                0
+              ],
+              [
+                "enumeration",
+                0
+              ],
+              [
+                "number",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0.57,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "winning",
+                0
+              ],
+              [
+                "score",
+                0
+              ],
+              [
+                "is",
+                0
+              ]
+            ]
+          ],
+          [
+            0.66,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "winning",
+                0
+              ],
+              [
+                "score",
+                0
+              ],
+              [
+                "enumeration",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0.24,
+            [
+              [
+                "score",
+                0
+              ],
+              [
+                "enumeration",
+                0
+              ],
+              [
+                "number",
+                0
+              ]
+            ]
+          ],
+          [
+            0.73,
+            [
+              [
+                "score",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "number",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "score",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0.96,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "score",
+                0
+              ],
+              [
+                "enumeration",
+                0
+              ]
+            ]
+          ],
+          [
+            0.57,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "score",
+                0
+              ],
+              [
+                "is",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0.99,
+            [
+              [
+                "score",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "point",
+                0
+              ]
+            ]
+          ],
+          [
+            0.52,
+            [
+              [
+                "score",
+                0
+              ],
+              [
+                "enumeration",
+                0
+              ],
+              [
+                "point",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0,
+            [
+              [
+                "the",
+                0
+              ],
+              [
+                "winning",
+                0
+              ],
+              [
+                "score",
+                0
+              ]
+            ]
+          ]
+        ]
+      ],
+      "priorities": [
+        [
+          [
+            "winning",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "winning",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "number",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "score",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "point",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "20 points": {
+    "generated": [
+      {
+        "amount": {
+          "marker": "number",
+          "types": [
+            "number"
+          ],
+          "value": 20,
+          "word": "20"
+        },
+        "marker": "point",
+        "modifiers": [
+          "amount"
+        ],
+        "word": "points",
+        "topLevel": true
+      }
+    ],
+    "paraphrases": [
+      "20 points"
+    ],
+    "responses": [
+      ""
+    ],
+    "contexts": [
+      {
+        "amount": {
+          "marker": "number",
+          "types": [
+            "number"
+          ],
+          "value": 20,
+          "word": "20"
+        },
+        "marker": "point",
+        "modifiers": [
+          "amount"
+        ],
+        "word": "points",
+        "topLevel": true
+      }
+    ],
+    "objects": {
+      "namespaced": {
+        "0": {
+          "players": [],
+          "scores": {},
+          "winningScore": 20,
+          "allPlayersAreKnown": false
+        },
+        "1": {
+          "dialog": {
+            "current": []
+          }
+        },
+        "2": {}
+      },
+      "processed": [
+        {
+          "context": {
+            "amount": {
+              "marker": "number",
+              "types": [
+                "number"
+              ],
+              "value": 20,
+              "word": "20"
+            },
+            "marker": "point",
+            "modifiers": [
+              "amount"
+            ],
+            "word": "points",
+            "topLevel": true
+          },
+          "paraphrases": "20 points",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "associations": [],
+      "priorities": [
+        [
+          [
+            "number",
+            0
+          ],
+          [
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "point",
+            0
+          ],
+          [
+            [
+              "point",
               0
             ]
           ]

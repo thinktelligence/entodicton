@@ -150,7 +150,11 @@
         },
         "query": true,
         "two": {
+          "determiner": "the",
           "marker": "property",
+          "modifiers": [
+            "determiner"
+          ],
           "object": {
             "marker": "object",
             "types": [
@@ -170,7 +174,11 @@
         "response": {
           "isResponse": true,
           "instance": {
+            "determiner": "the",
             "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
             "object": {
               "marker": "object",
               "types": [
@@ -187,7 +195,11 @@
             "instance": true
           },
           "concept": {
+            "determiner": "the",
             "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
             "object": {
               "marker": "object",
               "types": [
@@ -231,7 +243,11 @@
             },
             "query": true,
             "two": {
+              "determiner": "the",
               "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
               "object": {
                 "marker": "object",
                 "types": [
@@ -251,7 +267,11 @@
             "response": {
               "isResponse": true,
               "instance": {
+                "determiner": "the",
                 "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
                 "object": {
                   "marker": "object",
                   "types": [
@@ -268,7 +288,11 @@
                 "instance": true
               },
               "concept": {
+                "determiner": "the",
                 "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
                 "object": {
                   "marker": "object",
                   "types": [
@@ -358,7 +382,7 @@
         ],
         [
           [
-            "what",
+            "the",
             0
           ],
           [
@@ -382,6 +406,26 @@
         ],
         [
           [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
             "propertyOf",
             0
           ],
@@ -392,30 +436,6 @@
             ],
             [
               "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "the",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -463,7 +483,11 @@
     ],
     "contexts": [
       {
+        "determiner": "the",
         "marker": "property",
+        "modifiers": [
+          "determiner"
+        ],
         "object": {
           "marker": "object",
           "types": [
@@ -491,7 +515,11 @@
       "processed": [
         {
           "context": {
+            "determiner": "the",
             "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
             "object": {
               "marker": "object",
               "types": [
@@ -562,7 +590,7 @@
         ],
         [
           [
-            "propertyOf",
+            "the",
             0
           ],
           [
@@ -578,16 +606,12 @@
         ],
         [
           [
-            "the",
+            "propertyOf",
             0
           ],
           [
             [
               "propertyOf",
-              1
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -613,26 +637,220 @@
     ],
     "paraphrases": [
       "the property of the object"
+    ],
+    "responses": [
+      ""
+    ],
+    "contexts": [
+      {
+        "determiner": "the",
+        "modifiers": [
+          "determiner"
+        ],
+        "word": "property",
+        "types": [
+          "property"
+        ],
+        "object": {
+          "determiner": "the",
+          "modifiers": [
+            "determiner"
+          ],
+          "word": "object",
+          "types": [
+            "object"
+          ],
+          "pullFromContext": true,
+          "marker": "object"
+        },
+        "pullFromContext": true,
+        "marker": "property",
+        "topLevel": true
+      }
+    ],
+    "objects": {
+      "namespaced": {
+        "0": {},
+        "1": {
+          "dialog": {
+            "current": []
+          }
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "determiner": "the",
+            "modifiers": [
+              "determiner"
+            ],
+            "word": "property",
+            "types": [
+              "property"
+            ],
+            "object": {
+              "determiner": "the",
+              "modifiers": [
+                "determiner"
+              ],
+              "word": "object",
+              "types": [
+                "object"
+              ],
+              "pullFromContext": true,
+              "marker": "object"
+            },
+            "pullFromContext": true,
+            "marker": "property",
+            "topLevel": true
+          },
+          "paraphrases": "the property of the object",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "metadata": {
+      "priorities": [
+        [
+          [
+            "object",
+            0
+          ],
+          [
+            [
+              "object",
+              0
+            ],
+            [
+              "property",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "property",
+            0
+          ],
+          [
+            [
+              "property",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "propertyOf",
+            1
+          ],
+          [
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        ]
+      ],
+      "associations": []
+    }
+  },
+  "the property": {
+    "generated": [
+      {
+        "determiner": "the",
+        "modifiers": [
+          "determiner"
+        ],
+        "word": "property",
+        "types": [
+          "property"
+        ],
+        "pullFromContext": true,
+        "marker": "property",
+        "topLevel": true
+      }
+    ],
+    "paraphrases": [
+      "the property"
     ],
     "responses": [
       ""
     ],
     "contexts": [
       {
-        "marker": "property",
-        "object": {
-          "marker": "object",
-          "pullFromContext": true,
-          "types": [
-            "object"
-          ],
-          "word": "object"
-        },
-        "pullFromContext": true,
+        "determiner": "the",
+        "modifiers": [
+          "determiner"
+        ],
+        "word": "property",
         "types": [
           "property"
         ],
-        "word": "property",
+        "pullFromContext": true,
+        "marker": "property",
         "topLevel": true
       }
     ],
@@ -648,23 +866,19 @@
       "processed": [
         {
           "context": {
-            "marker": "property",
-            "object": {
-              "marker": "object",
-              "pullFromContext": true,
-              "types": [
-                "object"
-              ],
-              "word": "object"
-            },
-            "pullFromContext": true,
+            "determiner": "the",
+            "modifiers": [
+              "determiner"
+            ],
+            "word": "property",
             "types": [
               "property"
             ],
-            "word": "property",
+            "pullFromContext": true,
+            "marker": "property",
             "topLevel": true
           },
-          "paraphrases": "the property of the object",
+          "paraphrases": "the property",
           "responses": [
             ""
           ]
@@ -672,32 +886,7 @@
       ]
     },
     "metadata": {
-      "associations": [],
       "priorities": [
-        [
-          [
-            "object",
-            0
-          ],
-          [
-            [
-              "object",
-              0
-            ],
-            [
-              "property",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        ],
         [
           [
             "property",
@@ -709,10 +898,6 @@
               0
             ],
             [
-              "propertyOf",
-              0
-            ],
-            [
               "the",
               0
             ]
@@ -725,56 +910,13 @@
           ],
           [
             [
-              "propertyOf",
-              0
-            ],
-            [
               "the",
               0
-            ]
-          ]
-        ],
-        [
-          [
-            "the",
-            0
-          ],
-          [
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            [
-              "propertyOf",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            1
-          ],
-          [
-            [
-              "propertyOf",
-              1
             ]
           ]
         ]
-      ]
+      ],
+      "associations": []
     }
   }
 }

@@ -23,7 +23,7 @@ let config = {
     "(([queryable]) [is] ([queryable|]))",
     "([it])",
     "([what])",
-    "(<the> ([theAble|]))",
+    "(<the|> ([theAble|]))",
     "(<a> ([theAble|]))",
     //"arm them, what, the phasers"
     //greg is a first name
@@ -38,13 +38,18 @@ let config = {
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
 
-    { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
+    // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
+    { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
     { id: "a", level: 0, bridge: "{ ...after[0], unspecified: true }" },
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
     { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true, determined: true }" },
   ],
+  words: {
+    "the": [{"id": "the", "initial": "{ modifiers: [] }" }],
+  },
+
   floaters: ['query'],
   priorities: [
     [["is",0],["the",0]],
@@ -57,6 +62,21 @@ let config = {
   debug: false,
   version: '3',
   generators: [
+    /*
+     * modifiers = <list of properties>
+     */
+    [
+      ({context}) => context.paraphrase && context.modifiers,
+      ({context, g}) => {
+        const text = []
+        for (modifier of context.modifiers) {
+          text.push(g(context[modifier]))
+        }
+        text.push(context.word)
+        return text.join(' ')
+      }
+    ],
+
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       ({context}) => context.value
@@ -157,9 +177,14 @@ let config = {
     ],
 
     [
+      ({context}) => context.response && context.verbatim,
+      ({context}) => context.verbatim
+    ],
+
+    [
       ({context}) => context.response,
       ({context}) => `the ${context.word}` 
-    ]
+    ],
   ],
 
   semantics: [

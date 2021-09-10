@@ -8,6 +8,7 @@ const javascript = require('./common/javascript');
 const numbers = require('./common/numbers');
 const properties = require('./common/properties');
 const reports = require('./common/reports');
+const scorekeeper = require('./common/scorekeeper');
 const tell = require('./common/tell');
 const time = require('./common/time');
 
@@ -22,6 +23,7 @@ module.exports = {
   numbers,
   properties,
   reports,
+  scorekeeper,
   tell,
   time,
 }
