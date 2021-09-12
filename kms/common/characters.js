@@ -92,7 +92,7 @@ const initializeApi = (config, api) => {
   config.addWord(name, {"id": "character", "initial": "{ value: '" + name + `', api: '${name}'}` })
 }
 
-config = new entodicton.Config(config).add(helpKM)
+config = new entodicton.Config(config)
 config.multiApi = initializeApi
 // mode this to non-module init only
 config.api = api2
