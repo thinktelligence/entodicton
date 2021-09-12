@@ -1,4 +1,4 @@
-const { store } = require('ekms')
+const { reports } = require('ekms')
 
 const testData = {
   types: [ 'tanks', 'planes' ],
@@ -30,9 +30,9 @@ key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //url = 'http://localhost:3000'
 //key = '6804954f-e56d-471f-bbb8-08e3c54d9321'
 
-store.server(url, key)
-store.api = api
-store.process('list the products').then( (response) => {
+reports.server(url, key)
+reports.api = api
+reports.process('list the products').then( (response) => {
   //console.log(JSON.stringify(response, null, 2))
   console.log(response.generated[0])
 })

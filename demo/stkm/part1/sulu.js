@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const { avatar } = require('ekms')
+const sulu_tests = require('./sulu.test.json')
 
 let data = {
   me: {
@@ -31,5 +32,8 @@ entodicton.knowledgeModule( {
   name: 'sulu',
   description: 'sulu',
   config,
-  test: './sulu.test',
+  test: {
+    name: './sulu.test.json',
+    contents: sulu_tests
+  },
 })

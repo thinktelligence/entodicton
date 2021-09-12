@@ -2,6 +2,7 @@ const entodicton = require('entodicton')
 const { characters } = require('ekms')
 const suluKM = require('./sulu')
 const spockKM = require('./spock')
+const game_tests = require('./game.test.json')
 
 const spockAPI = {
   getName: () => "spock",
@@ -27,5 +28,8 @@ entodicton.knowledgeModule( {
   name: 'game',
   description: 'game',
   config,
-  test: './game.test',
+  test: {
+    name: './game.test.json',
+    contents: game_tests
+  }
 })
