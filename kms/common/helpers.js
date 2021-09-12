@@ -19,6 +19,11 @@ const millisecondsUntilHourOfDay = (hour) => {
   return diff;
 }
 
+const indent = (string, indent) => {
+  return string.replace(/^/gm, ' '.repeat(indent));
+}
+
 module.exports = {
-  millisecondsUntilHourOfDay
+  millisecondsUntilHourOfDay,
+  indent,
 }

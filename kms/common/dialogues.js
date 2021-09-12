@@ -1,12 +1,13 @@
 const entodicton = require('entodicton')
 const dialogues_tests = require('./dialogues.test.json')
+const { indent } = require('./helpers')
 
 const api = {
   //
   // duck typing: for operators you want to use here
   //
   //   1. Use hierarchy to make them an instance of queryable. For example add hierarchy entry [<myClassId>, 'queryable']
-  //   2. For semantics, if evaluate == true then set value to the 'value' property of the operator to the value.
+  //   2. For semantics, if evaluate == true then set the 'value' property of the operator to the value.
   //   3. Generators will get contexts with 'response: true' set. Used for converting 'your' to 'my' to phrases like 'your car' or 'the car'.
   //   4. Generators will get contexts with 'instance: true' and value set. For converting values like a date to a string.
   //
@@ -79,10 +80,12 @@ let config = {
 
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
-      ({context}) => context.value
+      ({context, g}) => {
+        return g(context.value)
+      }
     ],
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'my',
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.isSelf && context.subject == 'my',
       ({context}) => `your ${context.word}`
     ],
     [ 
@@ -90,7 +93,7 @@ let config = {
       ({g, context}) => `${context.marker}`
     ],
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'your',
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.isSelf && context.subject == 'your',
       ({context}) => `my ${context.word}`
     ],
     [ 
@@ -158,7 +161,8 @@ let config = {
       ({context, g}) => {
         const response = context.response;
         const concept = response.concept;
-        concept.response = true
+        concept.paraphrase = true
+        concept.isSelf = true
         const instance = g(response.instance)
         return `${g(concept)} is ${instance}` 
       }
@@ -198,7 +202,7 @@ let config = {
     // query 
     [ 
       ({context}) => context.marker == 'is' && context.query,
-      ({context, s}) => {
+      ({context, s, log}) => {
         const one = context.one;
         const two = context.two;
         let concept, value;
@@ -212,6 +216,14 @@ let config = {
         value = JSON.parse(JSON.stringify(value))
         value.evaluate = true;
         const instance = s(value) 
+        if (!instance.value) {
+          const description = 'WARNING from Dialogues KM: For semantics, implement an evaluations handler, set "value" property of the operator to the value.'
+          const match = `({context}) => context.marker == '${value.marker}' && context.evaluate && <other conditions as you like>`
+          const apply = `({context}) => <do stuff...>; context.value = <value>`
+          const input = indent(JSON.stringify(value, null, 2), 2)
+          const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
+          log(indent(message, 4))
+        }
         delete instance.evaluate
         instance.instance = true;
         concept = JSON.parse(JSON.stringify(value)) 

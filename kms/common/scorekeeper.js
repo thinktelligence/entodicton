@@ -103,6 +103,28 @@ let config = {
       }
     },
     {
+      match: ({context}) => context.marker == 'score' && context.evaluate && context.winning,
+      apply: ({context, objects}) => {
+        //context.value = { marker: 'point', value: objects.winningScore }
+        // i got the value by running -q '20 points'
+        context.value = {
+            "amount": {
+              "marker": "number",
+              "types": [
+                "number"
+              ],
+              "value": objects.winningScore,
+              "word": "20"
+            },
+            "marker": "point",
+            "modifiers": [
+              "amount"
+            ],
+            "word": "points",
+          }
+      }
+    },
+    {
       match: ({context}) => context.marker == 'scored',
       apply: ({context, objects}) => {
         const player = context.player.value;
