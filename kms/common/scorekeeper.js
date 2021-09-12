@@ -76,6 +76,7 @@ let config = {
     ['person', 'theAble'],
     ['score', 'theAble'],
     ['score', 'queryable'],
+    ['point', 'queryable'],
   ],
 
   generators: [

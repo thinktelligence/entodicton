@@ -67,6 +67,7 @@ let config = {
      * modifiers = <list of properties>
      */
     [
+      //({context}) => context.paraphrase && context.modifiers,
       ({context}) => context.paraphrase && context.modifiers,
       ({context, g}) => {
         const text = []
@@ -81,6 +82,7 @@ let config = {
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       ({context, g}) => {
+        context.value.paraphrase = true;
         return g(context.value)
       }
     ],
