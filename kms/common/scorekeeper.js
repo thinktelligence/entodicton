@@ -17,7 +17,7 @@ let config = {
   name: 'scorekeeper',
   operators: [
     "([start] (<a> ([game])))",
-    "((<the> ([player|player,players])) [enumeration|are,is] ([person|person,people]))",
+    "([person|person,people])",
     "(([player]) [scored|got] ([score|score,scores]))",
     "(([number]) [point|point,points])",
     "(<winning|> ([score|]))",
@@ -40,7 +40,6 @@ let config = {
     { id: 'player', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'scored', level: 0, bridge: '{ ...next(operator), player: before[0], points: after[0] }' },
-    { id: 'enumeration', level: 0, bridge: '{ ...next(operator), one: before[0], two: after[0] }' },
 
     // append will default undefineds to empty list
     //{ id: "point", level: 0, bridge: "{ ...next(operator), amount: before[0], modifiers: append(operator.modifiers, ['amount']) }" },
@@ -56,8 +55,6 @@ let config = {
   },
   associations: {
     negative: [
-      [['score', 0], ['enumeration', 0], ['point', 0]],
-      [['score', 0], ['enumeration', 0], ['number', 0], ['point', 0]],
     ],
     positive: [
       [['score', 0], ['is', 0], ['point', 0]],
@@ -71,7 +68,6 @@ let config = {
   ],
 
   hierarchy: [
-    ['enumeration', 'is'],
     ['point', 'score'],
     ['game', 'theAble'],
     ['player', 'theAble'],

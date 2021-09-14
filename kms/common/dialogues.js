@@ -21,7 +21,7 @@ const api = {
 let config = {
   name: 'dialogues',
   operators: [
-    "(([queryable]) [is] ([queryable|]))",
+    "(([queryable]) [is|is,are] ([queryable|]))",
     "([it])",
     "([what])",
     "(<the|> ([theAble|]))",
