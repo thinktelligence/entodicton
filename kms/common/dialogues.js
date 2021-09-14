@@ -49,6 +49,7 @@ let config = {
   ],
   words: {
     "the": [{"id": "the", "initial": "{ modifiers: [] }" }],
+    "who": [{"id": "what", "initial": "{ modifiers: [] }" }],
   },
 
   floaters: ['query'],
@@ -151,26 +152,26 @@ let config = {
       ({context}) => `${context.subject} ${context.word}` 
     ],
     [ 
-      ({context}) => context.marker == 'is' && context.paraphrase,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.paraphrase,
       ({context, g}) => {
         context.one.response = true
         context.two.response = true
-        return `${g(context.one)} is ${g(context.two)}` 
+        return `${g(context.one)} ${context.word} ${g(context.two)}` 
       }
     ],
     [ 
-      ({context}) => context.marker == 'is' && context.response,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response,
       ({context, g}) => {
         const response = context.response;
         const concept = response.concept;
         concept.paraphrase = true
         concept.isSelf = true
         const instance = g(response.instance)
-        return `${g(concept)} is ${instance}` 
+        return `${g(concept)} ${context.word} ${instance}` 
       }
     ],
     [ 
-      ({context}) => context.marker == 'is' && !context.response,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
       ({context, g}) => {
         return `${g(context.one)} is ${g(context.two)}`
       }
@@ -203,7 +204,7 @@ let config = {
 
     // query 
     [ 
-      ({context}) => context.marker == 'is' && context.query,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
       ({context, s, log}) => {
         const one = context.one;
         const two = context.two;

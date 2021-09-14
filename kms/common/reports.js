@@ -80,7 +80,8 @@ let config = {
   floaters: ["api", "isQuery"],
   debug: true,
   priorities: [
-    [['listAction', 0], ['cost', 1]]
+    [['listAction', 0], ['cost', 1]],
+    [['answer', 0], ['listAction', 0], ['the', 0]],
   ],
   "version": '3',
   "words": {
