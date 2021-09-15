@@ -3,6 +3,7 @@ const dialogues = require('./dialogues')
 const numbers = require('./numbers')
 const scorekeeper_tests = require('./scorekeeper.test.json')
 
+/*
 const game = {
   players: [],
   score: null
@@ -12,10 +13,12 @@ const game = {
 api = {
   _motivations: []
 }
+*/
 
 let config = {
   name: 'scorekeeper',
   operators: [
+    "([next])",
     "([start] (<a> ([game])))",
     "([person|person,people])",
     "(([player]) [scored|got] ([score|score,scores]))",
@@ -33,6 +36,7 @@ let config = {
   ],
   bridges: [
     { id: 'start', level: 0, bridge: '{ ...next(operator), arg: after[0] }' },
+    { id: 'next', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'game', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'winning', level: 0, bridge: '{ ...after, winning: "winning", modifiers: append(["winning"], operator.modifiers)}' },
     //{ id: 'winning', level: 0, bridge: '{ ...after, winning23: "winning24"}' },
@@ -76,9 +80,21 @@ let config = {
     ['score', 'theAble'],
     ['score', 'queryable'],
     ['point', 'queryable'],
+    ['next', 'queryable'],
   ],
 
   generators: [
+    {
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response && context.two && context.two.marker == 'next',
+      apply: ({context, g}) => {
+                const response = context.response;
+                const concept = response.concept;
+                concept.paraphrase = true
+                concept.isSelf = true
+                const instance = g(response.instance)
+                return instance
+             }
+    },
     {
       match: ({context}) => context.marker == 'scored' && context.paraphrase,
       apply: ({context, g}) => `${g(context.player)} got ${g(context.points)}`
@@ -97,6 +113,16 @@ let config = {
   ],
 
   semantics: [
+    {
+      match: ({context}) => context.marker == 'next' && context.evaluate,
+      apply: ({context, objects}) => {
+        if (objects.nextPlayer) {
+          context.value = objects.players[objects.nextPlayer]
+        } else {
+          context.value = 'no one'
+        }
+      }
+    },
     {
       match: ({context}) => context.marker == 'player' && context.evaluate && context.pullFromContext,
       apply: ({context, objects}) => {
@@ -156,11 +182,13 @@ let config = {
         const points = context.points.amount.value;
         // add names to the known words
         if (objects.allPlayersAreKnown) {
-          if (player != objects.players[objects.next]) {
+          if (player != objects.players[objects.nextPlayer]) {
             // some error about playing in the wrong order
+            context.verbatim = `The next player is ${objects.players[object.nextPlayer]} not ${player}`
+            context.response = true;
           } else {
             objects.scores[player] += points
-            objects.next = (objects.next + 1) % objects.players.length
+            objects.nextPlayer = (objects.nextPlayer + 1) % objects.players.length
           }
         }
         else if (objects.players.includes(context.player.value)) {
@@ -168,7 +196,7 @@ let config = {
             if (objects.allPlayersAreKnown && objects.players[0] != context.player.value) {
               // some error about not playing order
             } else {
-              objects.next = 1 % objects.players.length;
+              objects.nextPlayer = 1 % objects.players.length;
               objects.scores[player] += points;
             }
         } else {
