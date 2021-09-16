@@ -1,6 +1,7 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const numbers = require('./numbers')
+const people = require('./people')
 const scorekeeper_tests = require('./scorekeeper.test.json')
 
 /*
@@ -19,8 +20,10 @@ let config = {
   name: 'scorekeeper',
   operators: [
     "([next])",
+    //"([start] (<a> (<new> ([game]))))",
     "([start] (<a> ([game])))",
-    "([person|person,people])",
+    "(<new> ([game]))",
+    //"([person|person,people])",
     "(([player]) [scored|got] ([score|score,scores]))",
     "(([number]) [point|point,points])",
     "(<winning|> ([score|]))",
@@ -38,11 +41,12 @@ let config = {
     { id: 'start', level: 0, bridge: '{ ...next(operator), arg: after[0] }' },
     { id: 'next', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'game', level: 0, bridge: '{ ...next(operator) }' },
+    { id: 'new', level: 0, bridge: '{ ...after, new: "new", modifiers: append(["new"], operator.modifiers)}' },
     { id: 'winning', level: 0, bridge: '{ ...after, winning: "winning", modifiers: append(["winning"], operator.modifiers)}' },
     //{ id: 'winning', level: 0, bridge: '{ ...after, winning23: "winning24"}' },
     { id: 'score', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'player', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
+    //{ id: 'person', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'scored', level: 0, bridge: '{ ...next(operator), player: before[0], points: after[0] }' },
 
     // append will default undefineds to empty list
@@ -215,6 +219,7 @@ let config = {
 config = new entodicton.Config(config)
 config.add(dialogues)
 config.add(numbers)
+config.add(people)
 config.initializer( ({objects}) => {
   objects.players = []
   objects.nextPlayer = undefined;
