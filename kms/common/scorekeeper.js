@@ -21,7 +21,7 @@ let config = {
   operators: [
     "([next])",
     //"([start] (<a> (<new> ([game]))))",
-    "([start] (<a> ([game])))",
+    "([start] (<a> (<new> ([game]))))",
     "(<new> ([game]))",
     //"([person|person,people])",
     "(([player]) [scored|got] ([score|score,scores]))",
@@ -71,6 +71,7 @@ let config = {
   },
 
   priorities: [
+    [['a', 0], ['start', 0], ['new', 0]],
     [['is', 0], ['the', 0], ['winning', 0]],
     [['is', 0], ['score', 0], ['the', 0], ['what', 0]],
   ],

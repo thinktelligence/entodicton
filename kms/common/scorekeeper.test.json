@@ -3,7 +3,11 @@
     "generated": [
       {
         "arg": {
+          "determiner": "a",
           "marker": "game",
+          "modifiers": [
+            "determiner"
+          ],
           "types": [
             "game"
           ],
@@ -24,7 +28,11 @@
     "contexts": [
       {
         "arg": {
+          "determiner": "a",
           "marker": "game",
+          "modifiers": [
+            "determiner"
+          ],
           "types": [
             "game"
           ],
@@ -56,7 +64,11 @@
         {
           "context": {
             "arg": {
+              "determiner": "a",
               "marker": "game",
+              "modifiers": [
+                "determiner"
+              ],
               "types": [
                 "game"
               ],
@@ -3963,209 +3975,62 @@
       ]
     }
   },
-  "greg got 10 points greg got 5 points who is next": {
+  "start a new game": {
     "generated": [
       {
-        "marker": "scored",
-        "player": {
-          "marker": "unknown",
-          "types": [
-            "player"
-          ],
-          "value": "greg",
-          "word": "greg"
-        },
-        "points": {
-          "amount": {
-            "marker": "number",
-            "types": [
-              "number"
-            ],
-            "value": 10,
-            "word": "10"
-          },
-          "marker": "point",
+        "arg": {
+          "determiner": "a",
+          "marker": "game",
           "modifiers": [
-            "amount"
+            "determiner",
+            "new"
           ],
+          "new": "new",
           "types": [
-            "point"
+            "game"
           ],
-          "word": "points"
+          "unspecified": true,
+          "word": "game"
         },
-        "word": "got",
+        "marker": "start",
+        "word": "start",
         "topLevel": true
-      },
-      {
-        "marker": "scored",
-        "player": {
-          "marker": "unknown",
-          "types": [
-            "player"
-          ],
-          "value": "greg",
-          "word": "greg"
-        },
-        "points": {
-          "amount": {
-            "marker": "number",
-            "types": [
-              "number"
-            ],
-            "value": 5,
-            "word": "5"
-          },
-          "marker": "point",
-          "modifiers": [
-            "amount"
-          ],
-          "types": [
-            "point"
-          ],
-          "word": "points"
-        },
-        "word": "got",
-        "topLevel": true
-      },
-      [
-        "no one"
-      ]
+      }
     ],
     "paraphrases": [
-      "greg got 10 points",
-      "greg got 5 points",
-      "who is next"
+      "start a new game"
     ],
     "responses": [
-      "",
-      "",
-      [
-        "no one"
-      ]
+      ""
     ],
     "contexts": [
       {
-        "marker": "scored",
-        "player": {
-          "marker": "unknown",
-          "types": [
-            "player"
-          ],
-          "value": "greg",
-          "word": "greg"
-        },
-        "points": {
-          "amount": {
-            "marker": "number",
-            "types": [
-              "number"
-            ],
-            "value": 10,
-            "word": "10"
-          },
-          "marker": "point",
+        "arg": {
+          "determiner": "a",
+          "marker": "game",
           "modifiers": [
-            "amount"
+            "determiner",
+            "new"
           ],
+          "new": "new",
           "types": [
-            "point"
+            "game"
           ],
-          "word": "points"
+          "unspecified": true,
+          "word": "game"
         },
-        "word": "got",
+        "marker": "start",
+        "word": "start",
         "topLevel": true
-      },
-      {
-        "marker": "scored",
-        "player": {
-          "marker": "unknown",
-          "types": [
-            "player"
-          ],
-          "value": "greg",
-          "word": "greg"
-        },
-        "points": {
-          "amount": {
-            "marker": "number",
-            "types": [
-              "number"
-            ],
-            "value": 5,
-            "word": "5"
-          },
-          "marker": "point",
-          "modifiers": [
-            "amount"
-          ],
-          "types": [
-            "point"
-          ],
-          "word": "points"
-        },
-        "word": "got",
-        "topLevel": true
-      },
-      {
-        "marker": "is",
-        "one": {
-          "determined": true,
-          "marker": "what",
-          "modifiers": [],
-          "query": true,
-          "types": [
-            "what"
-          ],
-          "word": "who",
-          "response": true
-        },
-        "query": true,
-        "two": {
-          "marker": "next",
-          "types": [
-            "next"
-          ],
-          "word": "next",
-          "response": true
-        },
-        "word": "is",
-        "topLevel": true,
-        "response": {
-          "isResponse": true,
-          "instance": {
-            "marker": "next",
-            "types": [
-              "next"
-            ],
-            "word": "next",
-            "value": "no one",
-            "instance": true
-          },
-          "concept": {
-            "marker": "next",
-            "types": [
-              "next"
-            ],
-            "word": "next",
-            "evaluate": true,
-            "paraphrase": true,
-            "isSelf": true
-          }
-        }
       }
     ],
     "objects": {
       "namespaced": {
         "0": {
-          "players": [
-            "greg"
-          ],
-          "nextPlayer": 0,
-          "scores": {
-            "greg": 15
-          },
+          "players": [],
+          "scores": {},
           "winningScore": 20,
-          "allPlayersAreKnown": true
+          "allPlayersAreKnown": false
         },
         "1": {
           "dialog": {
@@ -4178,141 +4043,27 @@
       "processed": [
         {
           "context": {
-            "marker": "is",
-            "one": {
-              "determined": true,
-              "marker": "what",
-              "modifiers": [],
-              "query": true,
-              "types": [
-                "what"
-              ],
-              "word": "who",
-              "response": true
-            },
-            "query": true,
-            "two": {
-              "marker": "next",
-              "types": [
-                "next"
-              ],
-              "word": "next",
-              "response": true
-            },
-            "word": "is",
-            "topLevel": true,
-            "response": {
-              "isResponse": true,
-              "instance": {
-                "marker": "next",
-                "types": [
-                  "next"
-                ],
-                "word": "next",
-                "value": "no one",
-                "instance": true
-              },
-              "concept": {
-                "marker": "next",
-                "types": [
-                  "next"
-                ],
-                "word": "next",
-                "evaluate": true,
-                "paraphrase": true,
-                "isSelf": true
-              }
-            }
-          },
-          "paraphrases": "who is next",
-          "responses": [
-            "",
-            "",
-            [
-              "no one"
-            ]
-          ]
-        },
-        {
-          "context": {
-            "marker": "scored",
-            "player": {
-              "marker": "unknown",
-              "types": [
-                "player"
-              ],
-              "value": "greg",
-              "word": "greg"
-            },
-            "points": {
-              "amount": {
-                "marker": "number",
-                "types": [
-                  "number"
-                ],
-                "value": 5,
-                "word": "5"
-              },
-              "marker": "point",
+            "arg": {
+              "determiner": "a",
+              "marker": "game",
               "modifiers": [
-                "amount"
+                "determiner",
+                "new"
               ],
+              "new": "new",
               "types": [
-                "point"
+                "game"
               ],
-              "word": "points"
+              "unspecified": true,
+              "word": "game"
             },
-            "word": "got",
+            "marker": "start",
+            "word": "start",
             "topLevel": true
           },
-          "paraphrases": "greg got 5 points",
+          "paraphrases": "start a new game",
           "responses": [
-            "",
-            "",
-            [
-              "no one"
-            ]
-          ]
-        },
-        {
-          "context": {
-            "marker": "scored",
-            "player": {
-              "marker": "unknown",
-              "types": [
-                "player"
-              ],
-              "value": "greg",
-              "word": "greg"
-            },
-            "points": {
-              "amount": {
-                "marker": "number",
-                "types": [
-                  "number"
-                ],
-                "value": 10,
-                "word": "10"
-              },
-              "marker": "point",
-              "modifiers": [
-                "amount"
-              ],
-              "types": [
-                "point"
-              ],
-              "word": "points"
-            },
-            "word": "got",
-            "topLevel": true
-          },
-          "paraphrases": "greg got 10 points",
-          "responses": [
-            "",
-            "",
-            [
-              "no one"
-            ]
+            ""
           ]
         }
       ]
@@ -4322,148 +4073,72 @@
       "priorities": [
         [
           [
-            "what",
+            "game",
             0
           ],
           [
             [
-              "is",
+              "a",
               0
             ],
             [
-              "next",
+              "game",
               0
             ],
             [
-              "number",
+              "new",
               0
             ],
             [
-              "point",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "what",
+              "start",
               0
             ]
           ]
         ],
         [
           [
-            "point",
+            "new",
             0
           ],
           [
             [
-              "is",
+              "a",
               0
             ],
             [
-              "next",
+              "new",
               0
             ],
             [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
+              "start",
               0
             ]
           ]
         ],
         [
           [
-            "point",
+            "a",
             0
           ],
           [
             [
-              "is",
+              "a",
               0
             ],
             [
-              "next",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
+              "start",
               0
             ]
           ]
         ],
         [
           [
-            "next",
+            "start",
             0
           ],
           [
             [
-              "is",
-              0
-            ],
-            [
-              "next",
-              0
-            ],
-            [
-              "scored",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "scored",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "scored",
-            0
-          ],
-          [
-            [
-              "scored",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "scored",
-            0
-          ],
-          [
-            [
-              "scored",
+              "start",
               0
             ]
           ]
