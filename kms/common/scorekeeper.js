@@ -1,7 +1,8 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const numbers = require('./numbers')
-const people = require('./people')
+//const people = require('./people')
+const properties = require('./properties')
 const scorekeeper_tests = require('./scorekeeper.test.json')
 
 /*
@@ -20,6 +21,7 @@ let config = {
   name: 'scorekeeper',
   operators: [
     "([next])",
+    "([turn])",
     //"([start] (<a> (<new> ([game]))))",
     "([start] (<a> (<new> ([game]))))",
     "(<new> ([game]))",
@@ -41,6 +43,7 @@ let config = {
     { id: 'start', level: 0, bridge: '{ ...next(operator), arg: after[0] }' },
     { id: 'next', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'game', level: 0, bridge: '{ ...next(operator) }' },
+    { id: 'turn', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'new', level: 0, bridge: '{ ...after, new: "new", modifiers: append(["new"], operator.modifiers)}' },
     { id: 'winning', level: 0, bridge: '{ ...after, winning: "winning", modifiers: append(["winning"], operator.modifiers)}' },
     //{ id: 'winning', level: 0, bridge: '{ ...after, winning23: "winning24"}' },
@@ -71,6 +74,7 @@ let config = {
   },
 
   priorities: [
+    [['is', 0], ['whose', 0], ['turn', 0]],
     [['a', 0], ['start', 0], ['new', 0]],
     [['is', 0], ['the', 0], ['winning', 0]],
     [['is', 0], ['score', 0], ['the', 0], ['what', 0]],
@@ -81,11 +85,12 @@ let config = {
     ['game', 'theAble'],
     ['player', 'theAble'],
     ['player', 'what'],
-    ['person', 'theAble'],
+    //['person', 'theAble'],
     ['score', 'theAble'],
     ['score', 'queryable'],
     ['point', 'queryable'],
     ['next', 'queryable'],
+    ['turn', 'property'],
   ],
 
   generators: [
@@ -220,7 +225,7 @@ let config = {
 config = new entodicton.Config(config)
 config.add(dialogues)
 config.add(numbers)
-config.add(people)
+config.add(properties)
 config.initializer( ({objects}) => {
   objects.players = []
   objects.nextPlayer = undefined;

@@ -22,18 +22,22 @@ let config = {
   name: 'properties',
   operators: [
     "(([property]) <([propertyOf|of] ([object]))>)",
+    "(<whose> ([property]))",
   ],
   hierarchy: [
     ['property', 'queryable'],
     ['object', 'queryable'],
     ['property', 'theAble'],
     ['object', 'theAble'],
+    ['whose', 'object'],
   ],
   bridges: [
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0] }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object }" },
+    { id: "whose", level: 0, bridge: '{ ...after[0], whose: "whose", modifiers: append(["whose"], after[0].modifiers)}'
+     },
   ],
   priorities: [
     [['is', 0], ['propertyOf', 1]],
