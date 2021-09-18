@@ -15,6 +15,7 @@ const api = {
   // used with context sensitive words like 'it', 'that' etc. for example if you have a sentence "create a tank"
   // then call mentioned with the tank created. Then if one asks 'what is it' the 'it' will be found to be the tank.
   mentioned: (concept) => {
+    this.mentioned.push(concept)
   }
 }
 // TODO implement what / what did you say ...
@@ -199,7 +200,7 @@ let config = {
     [ 
       ({context}) => context.marker == 'it' && context.pullFromContext,
       ({context, s, objects}) => {
-        context.value = objects.dialog.current[0]
+        context.value = objects.mentioned[0]
       },
     ],
 
@@ -263,13 +264,9 @@ config.api = api
 
 config.initializer( ({objects, isModule}) => {
   if (isModule) {
-    objects.dialog = {
-      current: []
-    }
+    objects.mentioned = []
   } else {
-    objects.dialog = {
-      current: ['contextThatItRefersTo']
-    }
+    objects.mentioned = ['contextThatItRefersTo']
   }
 })
 
