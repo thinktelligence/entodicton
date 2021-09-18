@@ -36,7 +36,7 @@ let config = {
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0] }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object }" },
-    { id: "whose", level: 0, bridge: '{ ...after[0], whose: "whose", modifiers: append(["whose"], after[0].modifiers)}'
+    { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}'
      },
   ],
   priorities: [

@@ -2,7 +2,7 @@ const entodicton = require('entodicton')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent } = require('./helpers')
 
-const api = {
+class API {
   //
   // duck typing: for operators you want to use here
   //
@@ -14,10 +14,37 @@ const api = {
 
   // used with context sensitive words like 'it', 'that' etc. for example if you have a sentence "create a tank"
   // then call mentioned with the tank created. Then if one asks 'what is it' the 'it' will be found to be the tank.
-  mentioned: (concept) => {
-    this.mentioned.push(concept)
+
+  mentioned(concept) {
+    this.objects.mentioned.push(concept)
+  }
+
+  mentions() {
+    return this.objects.mentioned
   }
 }
+const api = new API()
+
+const warningNotEvaluated = (log, context, value) => {
+  const description = 'WARNING from Dialogues KM: For semantics, implement an evaluations handler, set "value" property of the operator to the value.'
+  const match = `({context}) => context.marker == '${value.marker}' && context.evaluate && <other conditions as you like>`
+  const apply = `({context}) => <do stuff...>; context.value = <value>`
+  const input = indent(JSON.stringify(value, null, 2), 2)
+  const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
+  log(indent(message, 4))
+}
+
+const evaluate = (value, context, log, s) => {
+  value.evaluate = true;
+  const instance = s(value) 
+  if (!instance.value) {
+    warningNotEvaluated(log, context, value);
+  }
+  delete instance.evaluate
+  instance.instance = true;
+  return instance
+}
+
 // TODO implement what / what did you say ...
 let config = {
   name: 'dialogues',
@@ -199,15 +226,17 @@ let config = {
   semantics: [
     [ 
       ({context}) => context.marker == 'it' && context.pullFromContext,
-      ({context, s, objects}) => {
-        context.value = objects.mentioned[0]
+      ({context, s, api, log}) => {
+        debugger;
+        context.value = api.mentions()[0]
+        const instance = evaluate(context.value, context, log, s)
       },
     ],
 
     // query 
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
-      ({context, s, log}) => {
+      ({context, s, log, km, objects}) => {
         const one = context.one;
         const two = context.two;
         let concept, value;
@@ -218,19 +247,9 @@ let config = {
           concept = two;
           value = one;
         }
+        km('dialogues').api.mentioned(concept)
         value = JSON.parse(JSON.stringify(value))
-        value.evaluate = true;
-        const instance = s(value) 
-        if (!instance.value) {
-          const description = 'WARNING from Dialogues KM: For semantics, implement an evaluations handler, set "value" property of the operator to the value.'
-          const match = `({context}) => context.marker == '${value.marker}' && context.evaluate && <other conditions as you like>`
-          const apply = `({context}) => <do stuff...>; context.value = <value>`
-          const input = indent(JSON.stringify(value, null, 2), 2)
-          const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
-          log(indent(message, 4))
-        }
-        delete instance.evaluate
-        instance.instance = true;
+        const instance = evaluate(value, context, log, s)
         concept = JSON.parse(JSON.stringify(value)) 
         concept.isQuery = undefined
 
@@ -263,10 +282,9 @@ config = new entodicton.Config(config)
 config.api = api
 
 config.initializer( ({objects, isModule}) => {
+  objects.mentioned = []
   if (isModule) {
-    objects.mentioned = []
   } else {
-    objects.mentioned = ['contextThatItRefersTo']
   }
 })
 
