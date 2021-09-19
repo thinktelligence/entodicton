@@ -230,6 +230,9 @@ let config = {
         debugger;
         context.value = api.mentions()[0]
         const instance = evaluate(context.value, context, log, s)
+        if (instance.value) {
+          context.value = instance.value
+        }
       },
     ],
 

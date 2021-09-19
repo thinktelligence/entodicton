@@ -56,6 +56,10 @@ let config = {
     [({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, async ({objects, context}) => {
       context.value = "value"
     }],
+    {
+      match: ({context}) => context.marker == 'property' && context.evaluate,
+      apply: ({context}) => context.value = "object's property"
+    }
   ]
 };
 

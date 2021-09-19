@@ -75,14 +75,8 @@ let config = {
   ],
   associations: {
   },
-  priorities: [
-  ],
   floaters: ["api", "isQuery"],
   debug: true,
-  priorities: [
-    [['listAction', 0], ['cost', 1]],
-    [['answer', 0], ['listAction', 0], ['the', 0]],
-  ],
   "version": '3',
   "words": {
     "tables": [{"id": "listingType", "initial": "{ value: 'tables' }" }],
@@ -93,6 +87,8 @@ let config = {
   },
 
   priorities: [
+    [['listAction', 0], ['cost', 1]],
+    [['answer', 0], ['listAction', 0], ['the', 0]],
     [['answer', 0], ['listAction', 0], ['the', 0], ['with', 0]]
   ],
   generators: [
