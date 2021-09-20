@@ -79,6 +79,7 @@ let config = {
     [['is', 0], ['the', 0], ['winning', 0]],
     [['is', 0], ['score', 0], ['the', 0], ['what', 0]],
     [['is', 0], ['number', 0], ['the', 0], ['score', 0], ['scored', 0], ['point', 0]],
+    [['is', 0], ['it', 0], ['number', 0], ['point', 0], ['scored', 0], ['whose', 0], ['turn', 0]],
   ],
 
   hierarchy: [

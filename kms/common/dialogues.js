@@ -227,7 +227,6 @@ let config = {
     [ 
       ({context}) => context.marker == 'it' && context.pullFromContext,
       ({context, s, api, log}) => {
-        debugger;
         context.value = api.mentions()[0]
         const instance = evaluate(context.value, context, log, s)
         if (instance.value) {
