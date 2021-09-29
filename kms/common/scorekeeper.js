@@ -81,6 +81,7 @@ let config = {
     [['is', 0], ['score', 0], ['the', 0], ['what', 0]],
     [['is', 0], ['number', 0], ['the', 0], ['score', 0], ['scored', 0], ['point', 0]],
     [['is', 0], ['it', 0], ['number', 0], ['point', 0], ['scored', 0], ['whose', 0], ['turn', 0]],
+    [['a', 0], ['is', 0], ['the', 0], ['score', 0], ['scored', 0], ['start', 0], ['new', 0]],
   ],
 
   hierarchy: [
@@ -129,6 +130,7 @@ let config = {
     {
       match: ({context}) => context.marker == 'start' && context.topLevel, 
       apply: ({context, objects, config}) => {
+        objects.scores = {}
         if (objects.winningScore) {
           context.value = `${objects.players[objects.nextPlayer]}'s turn`
           context.verbatim = `New game the winning score is ${objects.winningScore}`
