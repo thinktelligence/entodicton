@@ -141,7 +141,7 @@ let config = {
       ({g, context}) => `the ${context.word}`
     ],
     [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.response && !context.value && !context.determined, 
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.response && !context.value && !context.determined && !context.verbatim, 
       ({g, context}) => `the ${context.marker}`
     ],
     /*

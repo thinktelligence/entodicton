@@ -158,6 +158,7 @@ knowledgeModule({
     name: './time.test.json',
     contents: time_tests
   },
+  /*
   beforeQuery: ({query, isModule}) => {
     const date = new Date("December 25, 1995 1:59:58 pm" )
     const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )
@@ -165,6 +166,7 @@ knowledgeModule({
       return bunchOCopies.pop()
     };
   },
+  */
   beforeTests: () => {
     const date = new Date("December 25, 1995 1:59:58 pm" )
     const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )

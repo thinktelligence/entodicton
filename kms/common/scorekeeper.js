@@ -3,6 +3,7 @@ const dialogues = require('./dialogues')
 const numbers = require('./numbers')
 //const people = require('./people')
 const properties = require('./properties')
+const motivations = require('./motivations')
 const scorekeeper_tests = require('./scorekeeper.test.json')
 
 /*
@@ -126,6 +127,27 @@ let config = {
 
   semantics: [
     {
+      match: ({context}) => context.marker == 'start' && context.topLevel, 
+      apply: ({context, objects, config}) => {
+        if (objects.winningScore) {
+          context.value = `${objects.players[objects.nextPlayer]}'s turn`
+          context.verbatim = `New game the winning score is ${objects.winningScore}`
+          context.response = true;
+        } else {
+          context.verbatim = 'what is the winning score?'
+          context.response = true;
+          config.addMotivation({
+            match: ({context}) => context.marker == 'point',
+            apply: ({context, objects}) => { 
+              objects.winningScore = context.amount.value
+              context.verbatim = `The winning score is ${objects.winningScore}`
+              context.response = true;
+            }
+          })
+        }
+      }
+    },
+    {
       match: ({context}) => context.marker == 'turn' && context.evaluate && context.whose,
       apply: ({context, objects}) => {
         if (objects.nextPlayer) {
@@ -237,17 +259,29 @@ let config = {
 config = new entodicton.Config(config)
 config.add(dialogues)
 config.add(numbers)
+config.add(motivations)
 config.add(properties)
-config.initializer( ({objects}) => {
+config.initializer( ({objects, isModule}) => {
   objects.players = []
   objects.nextPlayer = undefined;
   objects.scores = {};
-  objects.winningScore = 20
+  if (isModule) {
+    objects.winningScore = null
+  } else {
+    objects.winningScore = 20
+  }
   objects.allPlayersAreKnown = false;
 })
 
 entodicton.knowledgeModule( { 
   module,
+  beforeQuery: ({ query, objects }) => {
+    if (query == 'start a new game 100 points') {
+      objects.winningScore = null
+    } else {
+      objects.winningScore = 20
+    }
+  },
   description: 'scorekeeper for card or dice games',
   config,
   test: {
