@@ -79,6 +79,7 @@ let config = {
     [['a', 0], ['start', 0], ['new', 0]],
     [['start', 0], ['number', 0], ['point', 0], ['a', 0]],
     [['a', 0], ['what', 0], ['is', 0], ['new', 0], ['next', 0], ['number', 0], ['point', 0], ['scored', 0], ['start', 0], ['game', 0]],
+    [['a', 0], ['is', 0], ['what', 0], ['next', 0], ['number', 0], ['point', 0], ['scored', 0], ['start', 0], ['new', 0]],
     [['a', 0], ['start', 0], ['number', 0], ['point', 0], ['new', 0]],
     [['is', 0], ['the', 0], ['winning', 0]],
     [['is', 0], ['score', 0], ['the', 0], ['what', 0]],
@@ -281,21 +282,32 @@ config.initializer( ({objects, isModule}) => {
   objects.players = []
   objects.nextPlayer = undefined;
   objects.scores = {};
-  if (isModule) {
-    objects.winningScore = null
-  } else {
-    objects.winningScore = 20
-  }
+  objects.winningScore = null
   objects.allPlayersAreKnown = false;
 })
+
+startWithDefault20 = [
+  "greg got 1 point hana got 2 points greg got 1 point start a new game who is next",
+  "greg got 1 point hana got 2 points greg got 1 point start a new game",
+  "start a new game greg got 10 points start a new game greg got 10 points what are the scores",
+  "greg got 100 points start a new game what are the scores",
+  "greg got 10 points sara got 3 points greg got 2 points whose turn is it",
+  "greg got 10 points alice got 3 points greg got 5 points who is next",
+  "greg got 10 points greg got 5 points who is next",
+  "greg got 10 points who is next",
+  "greg got 10 points what are the scores",
+  "greg got 10 points what is the score",
+  "what is the winning score",
+  "greg got 20 points",
+]
 
 entodicton.knowledgeModule( { 
   module,
   beforeQuery: ({ query, objects }) => {
-    if (query == 'start a new game 100 points') {
-      objects.winningScore = null
-    } else {
+    if (startWithDefault20.includes(query)) {
       objects.winningScore = 20
+    } else {
+      objects.winningScore = null
     }
   },
   description: 'scorekeeper for card or dice games',
