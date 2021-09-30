@@ -131,6 +131,9 @@ let config = {
       match: ({context}) => context.marker == 'start' && context.topLevel, 
       apply: ({context, objects, config}) => {
         objects.scores = {}
+        for (let player of objects.players) {
+          objects.scores[player] = 0;
+        }
         if (objects.winningScore) {
           context.value = `${objects.players[objects.nextPlayer]}'s turn`
           context.verbatim = `New game the winning score is ${objects.winningScore}`
@@ -213,7 +216,14 @@ let config = {
       match: ({context}) => context.marker == 'score' && context.evaluate,
       apply: ({context, objects}) => {
         const players = Object.keys(objects.scores);
-        if (players.length == 0) {
+        let allScoresAreZero = true
+        for (let player of players) {
+          if (objects.scores[player] != 0) {
+            allScoresAreZero = false
+            break;
+          }
+        }
+        if (allScoresAreZero) {
           context.value = 'nothing for everyone'
         } else {
           const scores = players.map( (player) => `${player} has ${objects.scores[player]} points` )
@@ -230,7 +240,7 @@ let config = {
         if (objects.allPlayersAreKnown) {
           if (player != objects.players[objects.nextPlayer]) {
             // some error about playing in the wrong order
-            context.verbatim = `The next player is ${objects.players[object.nextPlayer]} not ${player}`
+            context.verbatim = `The next player is ${objects.players[objects.nextPlayer]} not ${player}`
             context.response = true;
           } else {
             objects.scores[player] += points
