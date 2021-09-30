@@ -27,7 +27,7 @@ let config = {
     "([start] (<a> (<new> ([game]))))",
     "(<new> ([game]))",
     //"([person|person,people])",
-    "(([player]) [scored|got] ([score|score,scores]))",
+    "(([player|player,players]) [scored|got] ([score|score,scores]))",
     "(([number]) [point|point,points])",
     "(<winning|> ([score|]))",
   /*
@@ -77,6 +77,9 @@ let config = {
   priorities: [
     [['is', 0], ['whose', 0], ['turn', 0]],
     [['a', 0], ['start', 0], ['new', 0]],
+    [['start', 0], ['number', 0], ['point', 0], ['a', 0]],
+    [['a', 0], ['what', 0], ['is', 0], ['new', 0], ['next', 0], ['number', 0], ['point', 0], ['scored', 0], ['start', 0], ['game', 0]],
+    [['a', 0], ['start', 0], ['number', 0], ['point', 0], ['new', 0]],
     [['is', 0], ['the', 0], ['winning', 0]],
     [['is', 0], ['score', 0], ['the', 0], ['what', 0]],
     [['is', 0], ['number', 0], ['the', 0], ['score', 0], ['scored', 0], ['point', 0]],
@@ -131,6 +134,7 @@ let config = {
       match: ({context}) => context.marker == 'start' && context.topLevel, 
       apply: ({context, objects, config}) => {
         objects.scores = {}
+        objects.nextPlayer = 0
         for (let player of objects.players) {
           objects.scores[player] = 0;
         }
@@ -165,7 +169,7 @@ let config = {
     {
       match: ({context}) => context.marker == 'next' && context.evaluate,
       apply: ({context, objects}) => {
-        if (objects.nextPlayer) {
+        if (objects.nextPlayer || objects.nextPlayer === 0) {
           context.value = objects.players[objects.nextPlayer]
         } else {
           context.value = 'no one'
