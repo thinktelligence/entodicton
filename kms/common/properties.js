@@ -40,6 +40,7 @@ let config = {
      },
   ],
   priorities: [
+    [['is', 0], ['what', 0], ['propertyOf', 0], ['the', 0], ['property', 0]],
     [['is', 0], ['propertyOf', 1]],
     [['propertyOf', 0], ['the', 0]],
     [['the', 0], ['propertyOf', 0], ['property', 0]],

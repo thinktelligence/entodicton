@@ -1,4 +1,5 @@
 const entodicton = require('entodicton')
+const dialogues = require('./dialogues')
 const people_tests = require('./people.test.json')
 
 let config = {
@@ -9,9 +10,13 @@ let config = {
   bridges: [
     { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
   ],
+  hierarchy: [
+    ['person', 'unknown'],
+  ]
 };
 
 config = new entodicton.Config(config)
+config.add(dialogues)
 
 entodicton.knowledgeModule( { 
   module,

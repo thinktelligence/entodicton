@@ -54,6 +54,7 @@ let config = {
     "([what])",
     "(<the|> ([theAble|]))",
     "(<a> ([theAble|]))",
+    "([unknown])",
     //"arm them, what, the phasers"
     //greg is a first name
 
@@ -63,6 +64,7 @@ let config = {
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
+    { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
     { id: "what", level: 0, bridge: "{ ...next(operator), query: true, determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
@@ -87,6 +89,7 @@ let config = {
     [["is",0],["a",0]],
   ],
   hierarchy: [
+    ['unknown', 'queryable'],
     ['it', 'queryable'],
     ['what', 'queryable'],
   ],
