@@ -310,67 +310,71 @@
     "contexts": [
       {
         "marker": "is",
+        "word": "is",
         "one": {
           "marker": "name",
-          "subject": "my",
+          "word": "name",
           "types": [
             "name"
           ],
-          "word": "name",
+          "subject": "my",
           "response": true
         },
         "two": {
           "marker": "unknown",
-          "value": "greg",
           "word": "greg",
+          "value": "greg",
+          "unknown": true,
+          "types": [
+            "unknown"
+          ],
           "response": true
         },
-        "word": "is",
         "topLevel": true
       },
       {
+        "query": true,
         "marker": "is",
+        "word": "is",
         "one": {
-          "determined": true,
           "marker": "what",
+          "word": "what",
           "query": true,
+          "determined": true,
           "types": [
             "what"
           ],
-          "word": "what",
           "response": true
         },
-        "query": true,
         "two": {
           "marker": "name",
-          "subject": "my",
+          "word": "name",
           "types": [
             "name"
           ],
-          "word": "name",
+          "subject": "my",
           "response": true
         },
-        "word": "is",
         "topLevel": true,
         "response": {
           "isResponse": true,
           "instance": {
             "marker": "name",
-            "subject": "my",
+            "word": "name",
             "types": [
               "name"
             ],
-            "word": "name",
+            "subject": "my",
             "value": "greg",
             "instance": true
           },
           "concept": {
             "marker": "name",
-            "subject": "my",
+            "word": "name",
             "types": [
               "name"
             ],
-            "word": "name",
+            "subject": "my",
             "evaluate": true,
             "paraphrase": true,
             "isSelf": true
@@ -384,13 +388,13 @@
         "1": {
           "mentioned": [
             {
-              "determined": true,
               "marker": "what",
+              "word": "what",
               "query": true,
+              "determined": true,
               "types": [
                 "what"
               ],
-              "word": "what",
               "response": true
             }
           ]
@@ -399,48 +403,48 @@
       "processed": [
         {
           "context": {
+            "query": true,
             "marker": "is",
+            "word": "is",
             "one": {
-              "determined": true,
               "marker": "what",
+              "word": "what",
               "query": true,
+              "determined": true,
               "types": [
                 "what"
               ],
-              "word": "what",
               "response": true
             },
-            "query": true,
             "two": {
               "marker": "name",
-              "subject": "my",
+              "word": "name",
               "types": [
                 "name"
               ],
-              "word": "name",
+              "subject": "my",
               "response": true
             },
-            "word": "is",
             "topLevel": true,
             "response": {
               "isResponse": true,
               "instance": {
                 "marker": "name",
-                "subject": "my",
+                "word": "name",
                 "types": [
                   "name"
                 ],
-                "word": "name",
+                "subject": "my",
                 "value": "greg",
                 "instance": true
               },
               "concept": {
                 "marker": "name",
-                "subject": "my",
+                "word": "name",
                 "types": [
                   "name"
                 ],
-                "word": "name",
+                "subject": "my",
                 "evaluate": true,
                 "paraphrase": true,
                 "isSelf": true
@@ -456,22 +460,26 @@
         {
           "context": {
             "marker": "is",
+            "word": "is",
             "one": {
               "marker": "name",
-              "subject": "my",
+              "word": "name",
               "types": [
                 "name"
               ],
-              "word": "name",
+              "subject": "my",
               "response": true
             },
             "two": {
               "marker": "unknown",
-              "value": "greg",
               "word": "greg",
+              "value": "greg",
+              "unknown": true,
+              "types": [
+                "unknown"
+              ],
               "response": true
             },
-            "word": "is",
             "topLevel": true
           },
           "paraphrases": "my name is greg",
@@ -483,7 +491,6 @@
       ]
     },
     "metadata": {
-      "associations": [],
       "priorities": [
         [
           [
@@ -501,6 +508,10 @@
             ],
             [
               "name",
+              0
+            ],
+            [
+              "unknown",
               0
             ],
             [
@@ -525,6 +536,10 @@
             ],
             [
               "name",
+              0
+            ],
+            [
+              "unknown",
               0
             ],
             [
@@ -548,7 +563,31 @@
               0
             ],
             [
+              "unknown",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "my",
+              0
+            ],
+            [
+              "unknown",
               0
             ]
           ]
@@ -609,7 +648,8 @@
             ]
           ]
         ]
-      ]
+      ],
+      "associations": []
     }
   },
   "my name is greg": {
@@ -625,22 +665,26 @@
     "contexts": [
       {
         "marker": "is",
+        "word": "is",
         "one": {
           "marker": "name",
-          "subject": "my",
+          "word": "name",
           "types": [
             "name"
           ],
-          "word": "name",
+          "subject": "my",
           "response": true
         },
         "two": {
           "marker": "unknown",
-          "value": "greg",
           "word": "greg",
+          "value": "greg",
+          "unknown": true,
+          "types": [
+            "unknown"
+          ],
           "response": true
         },
-        "word": "is",
         "topLevel": true
       }
     ],
@@ -655,22 +699,26 @@
         {
           "context": {
             "marker": "is",
+            "word": "is",
             "one": {
               "marker": "name",
-              "subject": "my",
+              "word": "name",
               "types": [
                 "name"
               ],
-              "word": "name",
+              "subject": "my",
               "response": true
             },
             "two": {
               "marker": "unknown",
-              "value": "greg",
               "word": "greg",
+              "value": "greg",
+              "unknown": true,
+              "types": [
+                "unknown"
+              ],
               "response": true
             },
-            "word": "is",
             "topLevel": true
           },
           "paraphrases": "my name is greg",
@@ -681,7 +729,6 @@
       ]
     },
     "metadata": {
-      "associations": [],
       "priorities": [
         [
           [
@@ -700,6 +747,30 @@
             [
               "name",
               0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "my",
+              0
+            ],
+            [
+              "unknown",
+              0
             ]
           ]
         ],
@@ -731,7 +802,8 @@
             ]
           ]
         ]
-      ]
+      ],
+      "associations": []
     }
   },
   "what is my name": {

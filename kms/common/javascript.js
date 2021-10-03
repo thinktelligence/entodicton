@@ -24,6 +24,10 @@ let config = {
     */
   },
 
+  hierarchy: [
+    ['variable', 'unknown']
+  ],
+
   generators: [
     [ ({context}) => context.marker == 'assignment' && context.paraphrase, ({context, g}) => `let ${g(context.variable)} = ${g(context.value)}` ],
     [ ({context}) => context.marker == 'assignment' && context.response, ({context, g}) => {
