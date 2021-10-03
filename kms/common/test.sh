@@ -1,13 +1,13 @@
-node avatar -tv -g
-node characters -tv -g
-node currency -tv -g
-node dialogues -tv -g
-node help -tv -g
-node javascript -tv -g
-node numbers -tv -g
-node properties -tv -g
-node reports -tv -g
-node people -tv -g
-node scorekeeper -tv -g
-node tell -tv -g
-node time -tv -g
+node avatar -tv
+node characters -tv
+node currency -tv
+node dialogues -tv
+node help -tv
+node javascript -tv
+node numbers -tv
+node properties -tv
+node reports -tv
+node people -tv
+node scorekeeper -tv
+node tell -tv
+node time -tv
