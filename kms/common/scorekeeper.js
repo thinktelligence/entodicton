@@ -133,6 +133,18 @@ let config = {
 
   semantics: [
     {
+      match: ({context}) => context.marker == 'player' && context.same,
+      apply: ({context, objects}) => {
+        objects.players = context.same.value.map( (props) => props.value )
+        for (let player of objects.players) {
+          objects.scores[player] = 0
+        }
+        objects.nextPlayer = 0;
+        objects.allPlayersAreKnown = true;
+        context.sameWasProcessed = true
+      }
+    },
+    {
       match: ({context}) => context.marker == 'start' && context.topLevel, 
       apply: ({context, objects, config}) => {
         objects.scores = {}

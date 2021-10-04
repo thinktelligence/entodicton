@@ -34,6 +34,15 @@ const warningNotEvaluated = (log, context, value) => {
   log(indent(message, 4))
 }
 
+const warningSameNotEvaluated = (log, context, one) => {
+  const description = 'WARNING from Dialogues KM: For the "X is Y" type phrase implement a same handler.'
+  const match = `({context}) => context.marker == '${context.one.marker}' && context.same && <other conditions as you like>`
+  const apply = '({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true'
+  const input = indent(JSON.stringify(one, null, 2), 2)
+  const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
+  log(indent(message, 4))
+}
+
 const evaluate = (value, context, log, s) => {
   value.evaluate = true;
   const instance = s(value) 
@@ -109,6 +118,14 @@ let config = {
         }
         text.push(context.word)
         return text.join(' ')
+      }
+    ],
+
+    [
+      ({context, hierarchy}) => context.marker == 'list' && context.paraphrase,
+      ({context, gs}) => {
+        debugger;
+        return gs(context.value, ' ', ' and ')
       }
     ],
 
@@ -269,19 +286,26 @@ let config = {
     // statement
     [ 
       ({context}) => context.marker == 'is' && !context.query,
-      ({context, s}) => {
+      ({context, s, log}) => {
         const one = context.one;
         const two = context.two;
         one.same = two;
         s(one)
+        if (!one.sameWasProcessed) {
+          warningSameNotEvaluated(log, context, one)
+        }
         one.same = undefined
         two.same = one
         s(two)
+        if (!two.sameWasProcessed) {
+          warningSameNotEvaluated(log, context, two)
+        }
         two.same = undefined
       }
     ],
   ],
 };
+
 
 config = new entodicton.Config(config)
 config.api = api
