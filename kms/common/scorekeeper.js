@@ -3,7 +3,6 @@ const dialogues = require('./dialogues')
 const numbers = require('./numbers')
 //const people = require('./people')
 const properties = require('./properties')
-const motivations = require('./motivations')
 const scorekeeper_tests = require('./scorekeeper.test.json')
 
 /*
@@ -87,6 +86,7 @@ let config = {
     [['is', 0], ['it', 0], ['number', 0], ['point', 0], ['scored', 0], ['whose', 0], ['turn', 0]],
     [['a', 0], ['is', 0], ['the', 0], ['score', 0], ['scored', 0], ['start', 0], ['new', 0]],
     [['is', 0], ['next', 0], ['number', 0], ['point', 0], ['scored', 0], ['start', 0], ['unknown', 0], ['what', 0]],
+    [['is', 0], ['whose', 0], ['number', 0], ['point', 0], ['scored', 0], ['it', 0]],
   ],
 
   hierarchy: [
@@ -289,7 +289,6 @@ let config = {
 config = new entodicton.Config(config)
 config.add(dialogues)
 config.add(numbers)
-config.add(motivations)
 config.add(properties)
 config.initializer( ({objects, isModule}) => {
   objects.players = []
