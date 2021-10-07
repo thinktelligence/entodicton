@@ -228,12 +228,12 @@ let config = {
 
     // defaults
     [
-      ({context}) => context.paraphrase,
+      ({context}) => context.paraphrase && context.word,
       ({context}) => `${context.word}` 
     ],
 
     [
-      ({context}) => context.response && context.verbatim,
+      ({context}) => context.verbatim,
       ({context}) => context.verbatim
     ],
 
@@ -241,6 +241,11 @@ let config = {
       ({context}) => context.response,
       ({context}) => `the ${context.word}` 
     ],
+
+    [
+      () => true,
+      ({context}) => JSON.stringify(context)
+    ]
   ],
 
   semantics: [

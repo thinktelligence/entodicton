@@ -154,18 +154,49 @@ let config = {
         }
         if (objects.winningScore) {
           context.value = `${objects.players[objects.nextPlayer]}'s turn`
-          context.verbatim = `New game the winning score is ${objects.winningScore}`
+          context.verbatim = `New game the winning score is ${objects.winningScore}. The players are ${objects.players}`
           context.response = true;
         } else {
-          context.verbatim = 'what is the winning score?'
-          context.response = true;
           config.addMotivation({
-            match: ({context}) => context.marker == 'point',
-            apply: ({context, objects}) => { 
-              objects.winningScore = context.amount.value
-              context.verbatim = `The winning score is ${objects.winningScore}`
-              context.response = true;
-            }
+              match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
+              apply: ({context, objects, config}) => {
+                if (!objects.winningScore) {
+                  // ask about points setup points motivation
+                  context.motivationKeep = true
+                  context.verbatim = 'what is the winning score?'
+                  context.response = true;
+                  delete context.controlRemove;
+                  config.addMotivation({
+                    match: ({context}) => context.marker == 'point',
+                    apply: ({context, objects}) => { 
+                      objects.winningScore = context.amount.value
+                      context.verbatim = `The winning score is ${objects.winningScore}`
+                      context.response = true;
+                    }
+                  })
+                }
+              }
+            })
+          config.addMotivation({
+              match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
+              apply: ({context, objects, config}) => {
+                if (objects.players.length == 0) {
+                  // ask about players setup points motivation
+                  context.motivationKeep = true
+                  context.verbatim = 'who are the players?'
+                  context.response = true;
+                  delete context.controlRemove;
+                  config.addMotivation({
+                    match: ({context}) => context.marker == 'list',
+                    apply: ({context, gs, objects}) => { 
+                      objects.players = context.value.map( (player) => player.value )
+                      objects.allPlayersAreKnown = true;
+                      context.verbatim = `The players are ${gs(objects.players, ' ', ' and ')}`
+                      context.response = true;
+                    }
+                  })
+                }
+              }
           })
         }
       }
