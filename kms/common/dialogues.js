@@ -124,7 +124,6 @@ let config = {
     [
       ({context, hierarchy}) => context.marker == 'list' && context.paraphrase,
       ({context, gs}) => {
-        debugger;
         return gs(context.value, ' ', ' and ')
       }
     ],

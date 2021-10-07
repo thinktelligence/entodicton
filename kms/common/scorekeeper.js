@@ -292,6 +292,9 @@ let config = {
             context.verbatim = `The next player is ${objects.players[objects.nextPlayer]} not ${player}`
             context.response = true;
           } else {
+            if (!objects.scores[player]) {
+              objects.scores[player] = 0
+            }
             objects.scores[player] += points
             objects.nextPlayer = (objects.nextPlayer + 1) % objects.players.length
           }
