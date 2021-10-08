@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const properties = require('./properties')
 const avatar_tests = require('./avatar.test.json')
  
 let data = {
@@ -35,18 +36,7 @@ let config = {
   ],
   bridges: [
     { "id": "name", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "your", "level": 0, "bridge": "{ ...after, subject: 'your' }" },
-    { "id": "my", "level": 0, "bridge": "{ ...after, subject: 'my' }" },
   ],
-  debug: false,
-  version: '3',
-  words: {
-    /*
-    " ([0-9]+)": [{"id": "number", "initial": "{ value: int(group[0]) }" }],
-    "one": [{"id": "number", "initial": "{ value: 1 }" }],
-    "ten": [{"id": "number", "initial": "{ value: 10 }" }],
-    */
-  },
 
   priorities: [
     [['is', 0], ['my', 0]],
@@ -54,7 +44,8 @@ let config = {
   ],
 
   hierarchy: [
-    ['name', 'queryable']
+    ['name', 'queryable'],
+    ['name', 'property'],
   ],
 
   semantics: [
@@ -66,7 +57,6 @@ let config = {
         api.set('other', 'name', context.same.value)
       }
     ],
-  
     // evaluate
     [ 
       ({context}) => context.marker == 'name' && context.evaluate && context.subject == 'your', 
@@ -95,6 +85,7 @@ let config = {
 
 config = new entodicton.Config(config)
 config.add(dialogues)
+config.add(properties)
 config.api = api
 
 entodicton.knowledgeModule( { 

@@ -12,7 +12,7 @@ const properties_tests = require('./properties.test.json')
 //          ({objects, context, args, hierarchy}) => 
 //                hierarchy.isA(context.marker, 'property') && 
 //                args({ types: ['myObjectType'], properties: ['object'] }) && context.evaluate, 
-//          async ({objects, context}) => {
+//          ({objects, context}) => {
 //          context.value = "value" // set the value here somehow
 //          }
 //        ],
@@ -23,6 +23,8 @@ let config = {
   operators: [
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
+    "(<my> ([property]))",
+    "(<your> ([property]))",
   ],
   hierarchy: [
     ['property', 'queryable'],
@@ -36,10 +38,14 @@ let config = {
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0] }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object }" },
-    { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}'
-     },
+    { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}' },
+    { id: "your", level: 0, bridge: "{ ...after, subject: 'your' }" },
+    { id: "my", level: 0, bridge: "{ ...after, subject: 'my' }" },
+
   ],
   priorities: [
+    [['is', 0], ['my', 0]],
+    [['is', 0], ['your', 0]],
     [['is', 0], ['what', 0], ['propertyOf', 0], ['the', 0], ['property', 0]],
     [['is', 0], ['propertyOf', 1]],
     [['propertyOf', 0], ['the', 0]],
