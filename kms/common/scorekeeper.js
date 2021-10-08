@@ -17,6 +17,18 @@ api = {
 }
 */
 
+const setPlayers = (objects, config, players) => {
+  for (let player of players) {
+    config.addWord(player, { "id": "player", "initial": `{ value: ${player} }` })
+  }
+  objects.players = players;
+}
+
+const addPlayer = (objects, config, player) => {
+  config.addWord(player, { "id": "player", "initial": `{ value: ${player} }` })
+  objects.players.push(player);
+}
+
 let config = {
   name: 'scorekeeper',
   operators: [
@@ -135,8 +147,10 @@ let config = {
   semantics: [
     {
       match: ({context}) => context.marker == 'player' && context.same,
-      apply: ({context, objects}) => {
-        objects.players = context.same.value.map( (props) => props.value )
+      apply: ({context, objects, config}) => {
+        //objects.players = context.same.value.map( (props) => props.value )
+        const players = context.same.value.map( (props) => props.value )
+        setPlayers(objects, config, players)
         for (let player of objects.players) {
           objects.scores[player] = 0
         }
@@ -159,6 +173,24 @@ let config = {
           context.response = true;
         } else {
           config.addMotivation({
+            match: ({context}) => context.marker == 'point',
+            apply: ({context, objects}) => { 
+              objects.winningScore = context.amount.value
+              context.verbatim = `The winning score is ${objects.winningScore}`
+              context.response = true;
+            }
+          })
+          config.addMotivation({
+            match: ({context}) => context.marker == 'list',
+            apply: ({context, gs, objects, config}) => { 
+              const players = context.value.map( (player) => player.value )
+              setPlayers(objects, config, players)
+              objects.allPlayersAreKnown = true;
+              context.verbatim = `The players are ${gs(objects.players, ' ', ' and ')}`
+              context.response = true;
+            }
+          })
+          config.addMotivation({
               match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
               apply: ({context, objects, config}) => {
                 if (!objects.winningScore) {
@@ -167,35 +199,14 @@ let config = {
                   context.verbatim = 'what is the winning score?'
                   context.response = true;
                   delete context.controlRemove;
-                  config.addMotivation({
-                    match: ({context}) => context.marker == 'point',
-                    apply: ({context, objects}) => { 
-                      objects.winningScore = context.amount.value
-                      context.verbatim = `The winning score is ${objects.winningScore}`
-                      context.response = true;
-                    }
-                  })
-                }
-              }
-            })
-          config.addMotivation({
-              match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
-              apply: ({context, objects, config}) => {
-                if (objects.players.length == 0) {
+                  context.controlKeepMotivation = true;
+                } else if (objects.players.length == 0) {
                   // ask about players setup points motivation
                   context.motivationKeep = true
                   context.verbatim = 'who are the players?'
                   context.response = true;
                   delete context.controlRemove;
-                  config.addMotivation({
-                    match: ({context}) => context.marker == 'list',
-                    apply: ({context, gs, objects}) => { 
-                      objects.players = context.value.map( (player) => player.value )
-                      objects.allPlayersAreKnown = true;
-                      context.verbatim = `The players are ${gs(objects.players, ' ', ' and ')}`
-                      context.response = true;
-                    }
-                  })
+                  context.controlKeepMotivation = true;
                 }
               }
           })
@@ -309,7 +320,8 @@ let config = {
               objects.scores[player] += points;
             }
         } else {
-          objects.players.push(player)
+          //objects.players.push(player)
+          addPlayer(objects, config, player)
           objects.scores[player] = points;
         }
         if (objects.scores[player] >= objects.winningScore) {
