@@ -204,7 +204,7 @@ let config = {
     {
       match: ({context}) => context.marker == 'turn' && context.evaluate && context.whose,
       apply: ({context, objects}) => {
-        if (objects.nextPlayer) {
+        if (Number.isInteger(objects.nextPlayer)) {
           context.value = `${objects.players[objects.nextPlayer]}'s turn`
         } else {
           context.value = "no one's turn"
@@ -214,7 +214,7 @@ let config = {
     {
       match: ({context}) => context.marker == 'next' && context.evaluate,
       apply: ({context, objects}) => {
-        if (objects.nextPlayer || objects.nextPlayer === 0) {
+        if (Number.isInteger(objects.nextPlayer)) {
           context.value = objects.players[objects.nextPlayer]
         } else {
           context.value = 'no one'
