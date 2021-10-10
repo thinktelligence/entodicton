@@ -30,6 +30,7 @@ let config = {
     ['property', 'queryable'],
     ['object', 'queryable'],
     ['property', 'theAble'],
+    ['property', 'unknown'],
     ['object', 'theAble'],
     ['whose', 'object'],
   ],
