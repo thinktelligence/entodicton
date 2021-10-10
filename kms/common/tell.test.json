@@ -1,87 +1,39 @@
 {
   "tell me when event": {
-    "generated": [
-      "tell {\"target\":\"me\",\"marker\":\"person\",\"word\":\"me\",\"types\":[\"person\"]} when {\"marker\":\"event\",\"word\":\"event\"}"
-    ],
-    "paraphrases": [
-      "tell me when event"
-    ],
-    "responses": [
-      ""
-    ],
     "contexts": [
       {
-        "marker": "tell",
-        "word": "tell",
-        "target": {
-          "target": "me",
-          "marker": "person",
-          "word": "me",
-          "types": [
-            "person"
-          ]
-        },
-        "info": {
-          "info": "when",
-          "marker": "info",
-          "word": "when",
-          "types": [
-            "info"
-          ]
-        },
         "event": {
           "marker": "event",
           "word": "event"
         },
-        "topLevel": true
+        "info": {
+          "info": "when",
+          "marker": "info",
+          "types": [
+            "info"
+          ],
+          "word": "when"
+        },
+        "marker": "tell",
+        "target": {
+          "marker": "person",
+          "target": "me",
+          "types": [
+            "person"
+          ],
+          "word": "me"
+        },
+        "topLevel": true,
+        "word": "tell"
       }
     ],
-    "objects": {
-      "namespaced": {
-        "0": {},
-        "1": {
-          "mentioned": []
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "marker": "tell",
-            "word": "tell",
-            "target": {
-              "target": "me",
-              "marker": "person",
-              "word": "me",
-              "types": [
-                "person"
-              ]
-            },
-            "info": {
-              "info": "when",
-              "marker": "info",
-              "word": "when",
-              "types": [
-                "info"
-              ]
-            },
-            "event": {
-              "marker": "event",
-              "word": "event"
-            },
-            "topLevel": true
-          },
-          "paraphrases": "tell me when event",
-          "responses": [
-            ""
-          ]
-        }
-      ]
-    },
     "metadata": {
+      "associations": [
+      ],
       "priorities": [
         [
           [
-            "event",
+            "person",
             0
           ],
           [
@@ -105,16 +57,16 @@
         ],
         [
           [
-            "info",
+            "event",
             0
           ],
           [
             [
-              "info",
+              "event",
               0
             ],
             [
-              "person",
+              "info",
               0
             ],
             [
@@ -125,12 +77,12 @@
         ],
         [
           [
-            "person",
+            "info",
             0
           ],
           [
             [
-              "person",
+              "info",
               0
             ],
             [
@@ -151,8 +103,56 @@
             ]
           ]
         ]
-      ],
-      "associations": []
-    }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+          "mentioned": [
+          ]
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "event": {
+              "marker": "event",
+              "word": "event"
+            },
+            "info": {
+              "info": "when",
+              "marker": "info",
+              "types": [
+                "info"
+              ],
+              "word": "when"
+            },
+            "marker": "tell",
+            "target": {
+              "marker": "person",
+              "target": "me",
+              "types": [
+                "person"
+              ],
+              "word": "me"
+            },
+            "topLevel": true,
+            "word": "tell"
+          },
+          "paraphrases": "tell me when event",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "tell me when event"
+    ],
+    "responses": [
+      ""
+    ]
   }
 }

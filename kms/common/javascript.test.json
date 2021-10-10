@@ -1,81 +1,32 @@
 {
   "let c = 23": {
-    "generated": [
-      "c == 23"
-    ],
-    "paraphrases": [
-      "let c = 23"
-    ],
-    "responses": [
-      "c == 23"
-    ],
     "contexts": [
       {
+        "marker": "assignment",
+        "response": true,
+        "topLevel": true,
         "value": {
           "marker": "unknown",
-          "word": "23",
+          "unknown": true,
           "value": "23",
-          "unknown": true
+          "word": "23"
         },
-        "marker": "assignment",
-        "word": "=",
         "variable": {
           "marker": "variable",
-          "word": "c",
-          "value": "c",
-          "unknown": true,
+          "scope": "let",
           "types": [
             "variable"
           ],
-          "scope": "let"
+          "unknown": true,
+          "value": "c",
+          "word": "c"
         },
-        "topLevel": true,
-        "response": true
+        "word": "="
       }
     ],
-    "objects": {
-      "namespaced": {
-        "0": {
-          "variables": {
-            "c": "23"
-          }
-        },
-        "1": {
-          "mentioned": []
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "value": {
-              "marker": "unknown",
-              "word": "23",
-              "value": "23",
-              "unknown": true
-            },
-            "marker": "assignment",
-            "word": "=",
-            "variable": {
-              "marker": "variable",
-              "word": "c",
-              "value": "c",
-              "unknown": true,
-              "types": [
-                "variable"
-              ],
-              "scope": "let"
-            },
-            "topLevel": true,
-            "response": true
-          },
-          "paraphrases": "let c = 23",
-          "responses": [
-            "c == 23"
-          ]
-        }
-      ]
-    },
     "metadata": {
+      "associations": [
+      ],
       "priorities": [
         [
           [
@@ -145,8 +96,56 @@
             ]
           ]
         ]
-      ],
-      "associations": []
-    }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "variables": {
+            "c": "23"
+          }
+        },
+        "1": {
+          "mentioned": [
+          ]
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "assignment",
+            "response": true,
+            "topLevel": true,
+            "value": {
+              "marker": "unknown",
+              "unknown": true,
+              "value": "23",
+              "word": "23"
+            },
+            "variable": {
+              "marker": "variable",
+              "scope": "let",
+              "types": [
+                "variable"
+              ],
+              "unknown": true,
+              "value": "c",
+              "word": "c"
+            },
+            "word": "="
+          },
+          "paraphrases": "let c = 23",
+          "responses": [
+            "c == 23"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "let c = 23"
+    ],
+    "responses": [
+      "c == 23"
+    ]
   }
 }
