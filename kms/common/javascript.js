@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const javascript_tests = require('./javascript.test.json')
 
 let config = {
   name: 'javascript',
@@ -58,5 +59,8 @@ entodicton.knowledgeModule( {
   module,
   description: 'javascript interpreter',
   config,
-  test: './javascript.test',
+  test: {
+    name: './javascript.test.json',
+    contents: javascript_tests,
+  },
 })

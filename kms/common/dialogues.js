@@ -155,6 +155,7 @@ let config = {
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && context.unspecified && !context.determined, 
       ({g, context}) => `a ${context.word}`
     ],
+    /*
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && !context.determined, 
       ({g, context}) => `the ${context.word}`
@@ -163,6 +164,7 @@ let config = {
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.response && !context.value && !context.determined && !context.verbatim, 
       ({g, context}) => `the ${context.marker}`
     ],
+    */
     /*
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'your',

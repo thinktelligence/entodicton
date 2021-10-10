@@ -1,8 +1,8 @@
 
 // X pm today or tomorrow
-const millisecondsUntilHourOfDay = (hour) => {
-  const now = new Date()
-  const target = new Date(now)
+const millisecondsUntilHourOfDay = (newDate, hour) => {
+  const now = newDate()
+  const target = newDate(now)
 
   const addHours = (date, h) => {
     date.setTime(date.getTime() + (h*60*60*1000));
