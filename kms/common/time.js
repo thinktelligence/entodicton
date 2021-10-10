@@ -12,19 +12,21 @@ const pad = (v, l) => {
 const api = {
   // gets the contexts for doing the happening
   semantics: 
-      ({context, isModule, args}) => {
+      ({context, isModule, args, api}) => {
         const values = args({ types: ['ampm', 'time'], properties: ['one', 'two']  })
         const ampm = context[values[0]]
         let hour = ampm.hour.hour
         if (ampm.ampm == 'pm') {
           hour += 12;
         }
-        const ms = helpers.millisecondsUntilHourOfDay(hour)
+        debugger; // target
+        const ms = helpers.millisecondsUntilHourOfDay(api.newDate, hour)
         const promise =  new Promise((resolve) => {
           setTimeout( () => resolve(context), ms);
         }).then( () => context )
         context.event = promise
-      }
+      },
+  newDate: () => new Date()
 }
 
 let config = {
@@ -95,6 +97,8 @@ let config = {
       ({g, context}) => `${context.hour.hour} ${context.ampm}` 
     ],
     [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
+      console.log('-------------------', context.value)
+      debugger;
           let hh = context.value.getHours();
           let ampm = 'am'
           if (hh > 12) {
@@ -124,8 +128,9 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
-      context.value = new Date()
+    [({objects, context, api}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
+      debugger;
+      context.value = api.newDate()
       context.format = objects.format
     }],
     [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
@@ -141,7 +146,10 @@ let config = {
 config = new Config(config)
 config.add(tell)
 config.api = api
-config.initializer( ({config, objects, isModule}) => {
+config.initializer( ({api, config, objects, isModule}) => {
+  if (!isModule) {
+    api.newDate = () => new Date("December 25, 1995 1:59:58 pm" )
+  }
   Object.assign(objects, {
     format: 12  // or 24
   });
@@ -159,20 +167,4 @@ knowledgeModule({
     name: './time.test.json',
     contents: time_tests
   },
-  /*
-  beforeQuery: ({query, isModule}) => {
-    const date = new Date("December 25, 1995 1:59:58 pm" )
-    const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )
-    Date = function(init) { 
-      return bunchOCopies.pop()
-    };
-  },
-  */
-  beforeTests: () => {
-    const date = new Date("December 25, 1995 1:59:58 pm" )
-    const bunchOCopies = [1,2,3,4,5,6,7].map( () => new Date(date) )
-    Date = function(init) { 
-      return bunchOCopies.pop()
-    };
-  }
 })
