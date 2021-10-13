@@ -56,7 +56,7 @@ let config = {
     { id: 'next', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'game', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'turn', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'new', level: 0, bridge: '{ ...after, new: "new", modifiers: append(["new"], operator.modifiers)}' },
+    { id: 'new', level: 0, bridge: '{ ...operator, ...after, new: "new", modifiers: append(["new"], operator.modifiers)}' },
     { id: 'winning', level: 0, bridge: '{ ...after, winning: "winning", modifiers: append(["winning"], operator.modifiers)}' },
     //{ id: 'winning', level: 0, bridge: '{ ...after, winning23: "winning24"}' },
     { id: 'score', level: 0, bridge: '{ ...next(operator) }' },
@@ -86,6 +86,7 @@ let config = {
   },
 
   priorities: [
+    [['whose', 0], ['is', 0], ['start', 0], ['a', 0]],
     [['is', 0], ['next', 0], ['scored', 0], ['scored', 0], ['point', 0]],
     [['is', 0], ['start', 0], ['whose', 0]],
     [['is', 0], ['scored', 0], ['whose', 0]],
