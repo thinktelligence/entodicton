@@ -63,7 +63,7 @@ let config = {
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value && !context.evaluate,
       ({context, g}) => {
         const property = Object.assign({}, context, { object: undefined })
-        return `${g(property)} of ${g({ ...context.object, determined: false })}`
+        return `${g(property)} of ${g({ ...context.object, paraphrase: true })}`
       }
     ],
     {
@@ -71,7 +71,8 @@ let config = {
       apply: ({context, g}) => {
                const base = { ...context }
                base.object = undefined;
-               return `${g(base)} of ${g(context.object)}`
+               // TODO make paraphrase be a default when paraphrasing?
+               return `${g(base)} of ${g({...context.object, paraphrase: true})}`
              }
     }
   ],
