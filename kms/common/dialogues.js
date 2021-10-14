@@ -98,6 +98,7 @@ let config = {
     [["is",0],["a",0]],
   ],
   hierarchy: [
+    ['unknown', 'theAble'],
     ['unknown', 'queryable'],
     ['it', 'queryable'],
     ['what', 'queryable'],

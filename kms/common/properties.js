@@ -18,6 +18,12 @@ const properties_tests = require('./properties.test.json')
 //        ],
 //
 
+const api = {
+  getProperty(objects, object, property) {
+    return objects.objects[object][property]
+  }
+}
+
 let config = {
   name: 'properties',
   operators: [
@@ -59,16 +65,37 @@ let config = {
         const property = Object.assign({}, context, { object: undefined })
         return `${g(property)} of ${g({ ...context.object, determined: false })}`
       }
-    ]
+    ],
+    {
+      match: ({context}) => context.paraphrase && context.modifiers && context.object, 
+      apply: ({context, g}) => {
+               const base = { ...context }
+               base.object = undefined;
+               return `${g(base)} of ${g(context.object)}`
+             }
+    }
   ],
   semantics: [
-    [({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, async ({objects, context}) => {
-      context.value = "value"
-    }],
+    {
+      match: ({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, 
+      apply: ({objects, context}) => {
+                context.value = "value"
+                // api.getProperty(objects, context.object.value, context.value)
+                // add property and object names to words + hierarchy
+              }
+    },
     {
       match: ({context}) => context.marker == 'property' && context.evaluate,
       apply: ({context}) => context.value = "object's property"
     }
+    /*
+    {
+      match: ({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, 
+      apply: ({objects, context, api}) => {
+        api.getProperty(objects, context.object.value, context.value)
+      }
+    }
+    */
   ]
 };
 

@@ -128,15 +128,14 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context, api}) => context.marker == 'time' && context.evaluate, async ({objects, context}) => {
-      debugger;
+    [({objects, context, api}) => context.marker == 'time' && context.evaluate, ({objects, context}) => {
       context.value = api.newDate()
       context.format = objects.format
     }],
-    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), async ({objects, context}) => {
+    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), ({objects, context}) => {
       objects.format = context.format.count
     }],
-    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), async ({objects, context}) => {
+    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), ({objects, context}) => {
       context.marker = 'response'
       context.text = 'The hour format is 12 hour or 24 hour'
     }],
