@@ -19,9 +19,27 @@ const properties_tests = require('./properties.test.json')
 //
 
 const api = {
+  getObject(objects, object) {
+    if (!objects.objects) {
+      objects.objects = {}
+    }
+    if (!objects.objects[object]) {
+      objects.objects[object] = {}
+    }
+    return objects.objects[object]
+  },
   getProperty(objects, object, property) {
     return objects.objects[object][property]
-  }
+  },
+  setProperty(objects, object, property, value) {
+    api.getObject(objects, object)[property] = value
+  },
+  knownObject(objects, object) {
+    return !!objects.objects[object]
+  },
+  knownProperty(objects, object) {
+    return !!objects.objects[object]
+  },
 }
 
 let config = {
@@ -78,6 +96,14 @@ let config = {
   ],
   semantics: [
     {
+      match: ({context}) => context.marker == 'property' && context.same && context.object,
+      apply: ({context, objects, api}) => {
+        api.setProperty(objects, context.object.value, context.value, context.same.value)
+        context.sameWasProcessed = true
+      }
+    },
+    /*
+    {
       match: ({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, 
       apply: ({objects, context}) => {
                 context.value = "value"
@@ -85,9 +111,22 @@ let config = {
                 // add property and object names to words + hierarchy
               }
     },
+    */
     {
       match: ({context}) => context.marker == 'property' && context.evaluate,
-      apply: ({context}) => context.value = "object's property"
+      apply: ({context, api, objects, g}) => {
+        const object = context.object.value;
+        if (!api.knownObject(objects, object)) {
+          context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
+          return
+        }
+        if (!api.knownProperty(objects, object, context.value)) {
+          context.verbatim = `There is property no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
+          return
+        }
+        context.value = api.getProperty(objects, context.object.value, context.value)
+        context.object = undefined;
+      }
     }
     /*
     {
@@ -101,7 +140,12 @@ let config = {
 };
 
 config = new entodicton.Config(config)
+config.api = api
 config.add(dialogues)
+config.initializer( ({objects}) => {
+  objects.objects = {
+  }
+})
 
 entodicton.knowledgeModule( { 
   module,

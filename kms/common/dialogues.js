@@ -64,6 +64,7 @@ let config = {
     "(<the|> ([theAble|]))",
     "(<a> ([theAble|]))",
     "([unknown])",
+    // joe is a person the age of joe ...
     //"arm them, what, the phasers"
     //greg is a first name
 
@@ -156,22 +157,6 @@ let config = {
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && context.unspecified && !context.determined, 
       ({g, context}) => `a ${context.word}`
     ],
-    /*
-    [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && !context.determined, 
-      ({g, context}) => `the ${context.word}`
-    ],
-    [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.response && !context.value && !context.determined && !context.verbatim, 
-      ({g, context}) => `the ${context.marker}`
-    ],
-    */
-    /*
-    [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && context.subject == 'your',
-      ({context}) => `my ${context.word}`
-    ],
-    */
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.subject,
       ({context}) => `${context.subject} ${context.word}`
@@ -201,6 +186,10 @@ let config = {
     [ 
       ({context}) => context.marker == 'name' && !context.isQuery && context.subject, 
       ({context}) => `${context.subject} ${context.word}` 
+    ],
+    [
+      ({context}) => context.response && context.response.verbatim,
+      ({context}) => context.response.verbatim
     ],
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.paraphrase,
@@ -279,6 +268,10 @@ let config = {
         km('dialogues').api.mentioned(concept)
         value = JSON.parse(JSON.stringify(value))
         const instance = evaluate(value, context, log, s)
+        if (instance.verbatim) {
+          context.response = { verbatim: instance.verbatim }
+          return
+        }
         concept = JSON.parse(JSON.stringify(value)) 
         concept.isQuery = undefined
 
