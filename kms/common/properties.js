@@ -28,8 +28,18 @@ const api = {
     }
     return objects.objects[object]
   },
-  getProperty(objects, object, property) {
-    return objects.objects[object][property]
+  getProperty(objects, object, property, g) {
+    if (property == 'properties') {
+      const objectProps = api.getObject(objects, object)
+      const values = []
+      debugger;
+      for (let key of Object.keys(objectProps)) {
+        values.push(`${g(key)}: ${g({ ...objectProps[key], evaluate: true })}`)
+      }
+      return { marker: 'list', value: values }
+    } else {
+      return objects.objects[object][property]
+    }
   },
   setProperty(objects, object, property, value) {
     api.getObject(objects, object)[property] = value
@@ -39,6 +49,8 @@ const api = {
   },
   knownProperty(objects, object) {
     return !!objects.objects[object]
+  },
+  learnWords(config, context) {
   },
 }
 
@@ -98,20 +110,10 @@ let config = {
     {
       match: ({context}) => context.marker == 'property' && context.same && context.object,
       apply: ({context, objects, api}) => {
-        api.setProperty(objects, context.object.value, context.value, context.same.value)
+        api.setProperty(objects, context.object.value, context.value, context.same)
         context.sameWasProcessed = true
       }
     },
-    /*
-    {
-      match: ({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, 
-      apply: ({objects, context}) => {
-                context.value = "value"
-                // api.getProperty(objects, context.object.value, context.value)
-                // add property and object names to words + hierarchy
-              }
-    },
-    */
     {
       match: ({context}) => context.marker == 'property' && context.evaluate,
       apply: ({context, api, objects, g}) => {
@@ -124,18 +126,10 @@ let config = {
           context.verbatim = `There is property no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
           return
         }
-        context.value = api.getProperty(objects, context.object.value, context.value)
+        context.value = api.getProperty(objects, context.object.value, context.value, g)
         context.object = undefined;
       }
     }
-    /*
-    {
-      match: ({objects, context, args, hierarchy}) => hierarchy.isA(context.marker, 'property') && args({ types: ['object'], properties: ['object'] }) && context.evaluate, 
-      apply: ({objects, context, api}) => {
-        api.getProperty(objects, context.object.value, context.value)
-      }
-    }
-    */
   ]
 };
 
