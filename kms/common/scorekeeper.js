@@ -19,13 +19,13 @@ api = {
 
 const setPlayers = (objects, config, players) => {
   for (let player of players) {
-    config.addWord(player, { "id": "player", "initial": `{ value: ${player} }` })
+    config.addWord(player, { "id": "player", "initial": `{ value: "${player}" }` })
   }
   objects.players = players;
 }
 
 const addPlayer = (objects, config, player) => {
-  config.addWord(player, { "id": "player", "initial": `{ value: ${player} }` })
+  config.addWord(player, { "id": "player", "initial": `{ value: "${player}" }` })
   objects.players.push(player);
 }
 
