@@ -61,6 +61,7 @@ let config = {
     "(<whose> ([property]))",
     "(<my> ([property]))",
     "(<your> ([property]))",
+    "(<(([object]) [possession|])> ([property|]))",
   ],
   hierarchy: [
     ['property', 'queryable'],
@@ -73,6 +74,8 @@ let config = {
   bridges: [
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
+    { id: "possession", level: 1, bridge: "{ ...after[0], object: operator.object, marker: operator('property', 0) }" },
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0] }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object }" },
     { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}' },
@@ -80,7 +83,12 @@ let config = {
     { id: "my", level: 0, bridge: "{ ...after, subject: 'my' }" },
 
   ],
+  words: {
+    "<<possession>>": [{ id: 'possession' }],
+    " 's": [{ id: 'possession' }],
+  },
   priorities: [
+    [['is', 0], ['possession', 1]],
     [['is', 0], ['my', 0]],
     [['is', 0], ['your', 0]],
     [['is', 0], ['what', 0], ['propertyOf', 0], ['the', 0], ['property', 0]],
@@ -103,8 +111,19 @@ let config = {
                base.object = undefined;
                // TODO make paraphrase be a default when paraphrasing?
                return `${g(base)} of ${g({...context.object, paraphrase: true})}`
-             }
-    }
+             },
+      notes: 'the property of object'
+    },
+    {
+      match: ({context}) => context.paraphrase && !context.modifiers && context.object, 
+      apply: ({context, g}) => {
+               const base = { ...context }
+               base.object = undefined;
+               // TODO make paraphrase be a default when paraphrasing?
+               return `${g({...context.object, paraphrase: true})}'s ${g(base)}`
+             },
+      notes: "object's property"
+    },
   ],
   semantics: [
     {
