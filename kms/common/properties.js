@@ -84,8 +84,8 @@ let config = {
 
   ],
   words: {
-    "<<possession>>": [{ id: 'possession' }],
-    " 's": [{ id: 'possession' }],
+    "<<possession>>": [{ id: 'possession', initial: "{ value: 'possession' }" }],
+    " 's": [{ id: 'possession', initial: "{ value: 'possession' }" }],
   },
   priorities: [
     [['is', 0], ['possession', 1]],
