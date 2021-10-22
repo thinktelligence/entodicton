@@ -62,7 +62,7 @@ let config = {
     "([it])",
     "([what])",
     "(<the|> ([theAble|]))",
-    "(<a> ([theAble|]))",
+    "(<a|a,an> ([theAble|]))",
     "([unknown])",
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
@@ -80,9 +80,9 @@ let config = {
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
-    { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
-    //{ id: "a", level: 0, bridge: "{ ...after[0], unspecified: true, dude: 'a', modifiers: append(['dude'], after[0].modifiers) }" },
-    { id: "a", level: 0, bridge: "{ ...after[0], unspecified: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
+    { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
+
+    { id: "a", level: 0, bridge: "{ ...after[0], pullFromContext: false, wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
@@ -154,7 +154,7 @@ let config = {
       ({g, context}) => `${context.subject} ${context.marker}`
     ],
     [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && context.unspecified && !context.determined, 
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'theAble') && context.paraphrase && context.wantsValue && !context.pullFromContext, 
       ({g, context}) => `a ${context.word}`
     ],
     [
