@@ -1,14 +1,5 @@
 {
   "what is your name": {
-    "generated": [
-      "my name is sulu"
-    ],
-    "paraphrases": [
-      "what is your name"
-    ],
-    "responses": [
-      "my name is sulu"
-    ],
     "contexts": [
       {
         "marker": "is",
@@ -16,131 +7,53 @@
           "determined": true,
           "marker": "what",
           "query": true,
+          "response": true,
           "types": [
             "what"
           ],
-          "word": "what",
-          "response": true
+          "word": "what"
         },
         "query": true,
+        "response": {
+          "concept": {
+            "evaluate": true,
+            "isSelf": true,
+            "marker": "name",
+            "paraphrase": true,
+            "subject": "your",
+            "types": [
+              "name"
+            ],
+            "word": "name"
+          },
+          "instance": {
+            "instance": true,
+            "marker": "name",
+            "subject": "your",
+            "types": [
+              "name"
+            ],
+            "value": "sulu",
+            "word": "name"
+          },
+          "isResponse": true
+        },
+        "topLevel": true,
         "two": {
           "marker": "name",
+          "response": true,
           "subject": "your",
           "types": [
             "name"
           ],
-          "word": "name",
-          "response": true
+          "word": "name"
         },
-        "word": "is",
-        "topLevel": true,
-        "response": {
-          "isResponse": true,
-          "instance": {
-            "marker": "name",
-            "subject": "your",
-            "types": [
-              "name"
-            ],
-            "word": "name",
-            "value": "sulu",
-            "instance": true
-          },
-          "concept": {
-            "marker": "name",
-            "subject": "your",
-            "types": [
-              "name"
-            ],
-            "word": "name",
-            "evaluate": true,
-            "paraphrase": true,
-            "isSelf": true
-          }
-        }
+        "word": "is"
       }
     ],
-    "objects": {
-      "namespaced": {
-        "0": {},
-        "1": {},
-        "2": {},
-        "3": {},
-        "4": {
-          "mentioned": [
-            {
-              "determined": true,
-              "marker": "what",
-              "query": true,
-              "types": [
-                "what"
-              ],
-              "word": "what",
-              "response": true
-            }
-          ]
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "marker": "is",
-            "one": {
-              "determined": true,
-              "marker": "what",
-              "query": true,
-              "types": [
-                "what"
-              ],
-              "word": "what",
-              "response": true
-            },
-            "query": true,
-            "two": {
-              "marker": "name",
-              "subject": "your",
-              "types": [
-                "name"
-              ],
-              "word": "name",
-              "response": true
-            },
-            "word": "is",
-            "topLevel": true,
-            "response": {
-              "isResponse": true,
-              "instance": {
-                "marker": "name",
-                "subject": "your",
-                "types": [
-                  "name"
-                ],
-                "word": "name",
-                "value": "sulu",
-                "instance": true
-              },
-              "concept": {
-                "marker": "name",
-                "subject": "your",
-                "types": [
-                  "name"
-                ],
-                "word": "name",
-                "evaluate": true,
-                "paraphrase": true,
-                "isSelf": true
-              }
-            }
-          },
-          "paraphrases": "what is your name",
-          "responses": [
-            "my name is sulu"
-          ]
-        }
-      ]
-    },
     "metadata": {
-      "associations": [],
+      "associations": [
+      ],
       "priorities": [
         [
           [
@@ -168,7 +81,7 @@
         ],
         [
           [
-            "what",
+            "your",
             0
           ],
           [
@@ -188,7 +101,7 @@
         ],
         [
           [
-            "your",
+            "what",
             0
           ],
           [
@@ -197,7 +110,7 @@
               0
             ],
             [
-              "your",
+              "what",
               0
             ]
           ]
@@ -215,6 +128,95 @@
           ]
         ]
       ]
-    }
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+          "mentioned": [
+            {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            }
+          ]
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": true,
+            "response": {
+              "concept": {
+                "evaluate": true,
+                "isSelf": true,
+                "marker": "name",
+                "paraphrase": true,
+                "subject": "your",
+                "types": [
+                  "name"
+                ],
+                "word": "name"
+              },
+              "instance": {
+                "instance": true,
+                "marker": "name",
+                "subject": "your",
+                "types": [
+                  "name"
+                ],
+                "value": "sulu",
+                "word": "name"
+              },
+              "isResponse": true
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "name",
+              "response": true,
+              "subject": "your",
+              "types": [
+                "name"
+              ],
+              "word": "name"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is your name",
+          "responses": [
+            "my name is sulu"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "what is your name"
+    ],
+    "responses": [
+      "my name is sulu"
+    ]
   }
 }

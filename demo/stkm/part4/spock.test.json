@@ -1,14 +1,5 @@
 {
   "what is your name": {
-    "generated": [
-      "my name is spock"
-    ],
-    "paraphrases": [
-      "what is your name"
-    ],
-    "responses": [
-      "my name is spock"
-    ],
     "contexts": [
       {
         "marker": "is",
@@ -16,139 +7,57 @@
           "determined": true,
           "marker": "what",
           "query": true,
+          "response": true,
           "types": [
             "what"
           ],
-          "word": "what",
-          "response": true
+          "word": "what"
         },
         "query": true,
+        "response": {
+          "concept": {
+            "evaluate": true,
+            "isSelf": true,
+            "marker": "name",
+            "paraphrase": true,
+            "subject": "your",
+            "types": [
+              "name"
+            ],
+            "word": "name"
+          },
+          "instance": {
+            "instance": true,
+            "marker": "name",
+            "subject": "your",
+            "types": [
+              "name"
+            ],
+            "value": "spock",
+            "word": "name"
+          },
+          "isResponse": true
+        },
+        "topLevel": true,
         "two": {
           "marker": "name",
+          "response": true,
           "subject": "your",
           "types": [
             "name"
           ],
-          "word": "name",
-          "response": true
+          "word": "name"
         },
-        "word": "is",
-        "topLevel": true,
-        "response": {
-          "isResponse": true,
-          "instance": {
-            "marker": "name",
-            "subject": "your",
-            "types": [
-              "name"
-            ],
-            "word": "name",
-            "value": "spock",
-            "instance": true
-          },
-          "concept": {
-            "marker": "name",
-            "subject": "your",
-            "types": [
-              "name"
-            ],
-            "word": "name",
-            "evaluate": true,
-            "paraphrase": true,
-            "isSelf": true
-          }
-        }
+        "word": "is"
       }
     ],
-    "objects": {
-      "namespaced": {
-        "0": {},
-        "1": {
-          "format": 12
-        },
-        "2": {},
-        "3": {},
-        "4": {},
-        "5": {},
-        "6": {
-          "mentioned": [
-            {
-              "determined": true,
-              "marker": "what",
-              "query": true,
-              "types": [
-                "what"
-              ],
-              "word": "what",
-              "response": true
-            }
-          ]
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "marker": "is",
-            "one": {
-              "determined": true,
-              "marker": "what",
-              "query": true,
-              "types": [
-                "what"
-              ],
-              "word": "what",
-              "response": true
-            },
-            "query": true,
-            "two": {
-              "marker": "name",
-              "subject": "your",
-              "types": [
-                "name"
-              ],
-              "word": "name",
-              "response": true
-            },
-            "word": "is",
-            "topLevel": true,
-            "response": {
-              "isResponse": true,
-              "instance": {
-                "marker": "name",
-                "subject": "your",
-                "types": [
-                  "name"
-                ],
-                "word": "name",
-                "value": "spock",
-                "instance": true
-              },
-              "concept": {
-                "marker": "name",
-                "subject": "your",
-                "types": [
-                  "name"
-                ],
-                "word": "name",
-                "evaluate": true,
-                "paraphrase": true,
-                "isSelf": true
-              }
-            }
-          },
-          "paraphrases": "what is your name",
-          "responses": [
-            "my name is spock"
-          ]
-        }
-      ]
-    },
     "metadata": {
-      "associations": [],
+      "associations": [
+      ],
       "priorities": [
         [
           [
-            "your",
+            "name",
             0
           ],
           [
@@ -172,26 +81,6 @@
         ],
         [
           [
-            "name",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "name",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "what",
             0
           ],
@@ -202,6 +91,26 @@
             ],
             [
               "what",
+              0
+            ],
+            [
+              "your",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "your",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "your",
               0
             ]
           ]
@@ -219,6 +128,100 @@
           ]
         ]
       ]
-    }
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+          "format": 12
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        },
+        "6": {
+          "mentioned": [
+            {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            }
+          ]
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "query": true,
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": true,
+            "response": {
+              "concept": {
+                "evaluate": true,
+                "isSelf": true,
+                "marker": "name",
+                "paraphrase": true,
+                "subject": "your",
+                "types": [
+                  "name"
+                ],
+                "word": "name"
+              },
+              "instance": {
+                "instance": true,
+                "marker": "name",
+                "subject": "your",
+                "types": [
+                  "name"
+                ],
+                "value": "spock",
+                "word": "name"
+              },
+              "isResponse": true
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "name",
+              "response": true,
+              "subject": "your",
+              "types": [
+                "name"
+              ],
+              "word": "name"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is your name",
+          "responses": [
+            "my name is spock"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "what is your name"
+    ],
+    "responses": [
+      "my name is spock"
+    ]
   }
 }
