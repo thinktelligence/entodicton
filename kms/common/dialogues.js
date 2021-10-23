@@ -64,6 +64,7 @@ let config = {
     "(<the|> ([theAble|]))",
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
+    "(([is/1]) <questionMark|>)",
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
     //greg is a first name
@@ -77,7 +78,9 @@ let config = {
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
     { id: "what", level: 0, bridge: "{ ...next(operator), query: true, determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "questionMark", level: 0, bridge: "{ ...before[0], query: true }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
+    { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
     { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
@@ -89,12 +92,14 @@ let config = {
     { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true, determined: true }" },
   ],
   words: {
+    "?": [{"id": "questionMark", "initial": "{}" }],
     "the": [{"id": "the", "initial": "{ modifiers: [] }" }],
     "who": [{"id": "what", "initial": "{ modifiers: [] }" }],
   },
 
   floaters: ['query'],
   priorities: [
+    [['questionMark', 0], ['is', 0]],
     [["is",0],["the",0]],
     [["is",0],["a",0]],
   ],
@@ -191,6 +196,13 @@ let config = {
       ({context}) => context.response && context.response.verbatim,
       ({context}) => context.response.verbatim
     ],
+    { 
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.paraphrase && context.topLevel && context.query,
+      apply: ({context, g}) => {
+        return `${g({...context, topLevel: undefined})}?` 
+      },
+      priority: -1,
+    },
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.paraphrase,
       ({context, g}) => {
@@ -290,17 +302,19 @@ let config = {
         const one = context.one;
         const two = context.two;
         one.same = two;
-        s(one)
-        if (!one.sameWasProcessed) {
+        const onePrime = s(one)
+        one.same = undefined
+
+        let twoPrime;
+        if (!onePrime.sameWasProcessed) {
+          two.same = one
+          twoPrime = s(two)
+          two.same = undefined
+        }
+        if (!onePrime.sameWasProcessed && !twoPrime.sameWasProcessed) {
+          warningSameNotEvaluated(log, context, two)
           warningSameNotEvaluated(log, context, one)
         }
-        one.same = undefined
-        two.same = one
-        s(two)
-        if (!two.sameWasProcessed) {
-          warningSameNotEvaluated(log, context, two)
-        }
-        two.same = undefined
       }
     ],
   ],
