@@ -25,6 +25,15 @@ class API {
 }
 const api = new API()
 
+const warningIsANotImplemented = (log, context) => {
+  const description = 'WARNING from Dialogues KM: For semantics in order to handle sentences of type "x is y?", set the response to what you like.'
+  const match = `({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && <other conditions as you like>`
+  const apply = `({context}) => <do stuff...>; context.response = <value>`
+  const input = indent(JSON.stringify(context, null, 2), 2)
+  const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
+  log(indent(message, 4))
+}
+
 const warningNotEvaluated = (log, context, value) => {
   const description = 'WARNING from Dialogues KM: For semantics, implement an evaluations handler, set "value" property of the operator to the value.'
   const match = `({context}) => context.marker == '${value.marker}' && context.evaluate && <other conditions as you like>`
@@ -262,11 +271,10 @@ let config = {
         }
       },
     ],
-
-    // query 
-    [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
-      ({context, s, log, km, objects}) => {
+    { 
+      notes: 'what x is y?',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
+      apply: ({context, s, log, km, objects}) => {
         const one = context.one;
         const two = context.two;
         let concept, value;
@@ -293,7 +301,17 @@ let config = {
           concept,
         }
       }
-    ],
+    },
+    { 
+      notes: 'x is y?',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
+      apply: ({context, log}) => {
+        warningIsANotImplemented(log, context)
+        context.response = {
+          verbatim: "I don't know"
+        }
+      }
+    },
 
     // statement
     [ 
