@@ -76,9 +76,9 @@ let config = {
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
-    { id: "what", level: 0, bridge: "{ ...next(operator), query: true, determined: true }" },
+    { id: "what", level: 0, bridge: "{ ...next(operator), query: ['what'], determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "questionMark", level: 0, bridge: "{ ...before[0], query: true }" },
+    { id: "questionMark", level: 0, bridge: "{ ...before[0], query: [before.marker] }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
