@@ -1,4 +1,5 @@
 {
+  "license": "ISC",
   "keywords": [
     "NLP",
     "NLU",
@@ -13,8 +14,17 @@
     "test:watch": "npm run test -- --watch",
     "test": "jest --config ./jest.config.json"
   },
-  "version": "6.12.4",
-  "main": "main.js",
+  "version": "6.12.4-beta.0",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "table": "^6.7.1",
+    "lodash": "^4.17.21",
+    "scriptjs": "^2.5.9",
+    "node-fetch": "^2.6.1",
+    "argparse": "^2.0.1",
+    "underscore": "^1.12.0",
+    "entodicton": "6.12.4-beta.0"
+  },
   "files": [
     "main.js",
     "helpers.js",
@@ -45,21 +55,11 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "dependencies": {
-    "argparse": "^2.0.1",
-    "base-64": "^1.0.0",
-    "underscore": "^1.12.0",
-    "node-fetch": "^2.6.1",
-    "table": "^6.7.1",
-    "entodicton": "6.12.4",
-    "scriptjs": "^2.5.9",
-    "lodash": "^4.17.21"
-  },
-  "name": "ekms",
-  "license": "ISC",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "author": "dev@thinktelligence.com",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter"
+  "main": "main.js",
+  "name": "ekms",
+  "author": "dev@thinktelligence.com"
 }
