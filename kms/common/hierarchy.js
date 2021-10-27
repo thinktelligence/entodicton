@@ -2,6 +2,27 @@ const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const hierarchy_tests = require('./hierarchy.test.json')
 
+// word is for one or many
+const makeObject = ({config, context}) => {
+  const { word, value, number } = context;
+  config.addOperator(`([${value}])`)
+  config.addBridge({ id: value, level: 0, bridge: "{ ...next(operator) }" })
+  config.addWord(word, { id: value, initial: `{value: "${value}", number: ${number}}` } )
+  if (number) {
+    config.addGenerator({
+        match: ({context}) => context.value == value && context.number == number && context.paraphrase,
+        apply: () => word
+    })
+
+    // add a generator for the other one what will ask what is the plural or singluar of known
+    /*
+    if (number == 'many') {
+    } else if (number == 'one') {
+    }
+    */
+  }
+}
+
 const api = {
   isA(objects, child, parent) {
     return objects.parents[child].includes(parent);
@@ -78,7 +99,13 @@ let config = {
     {
       notes: 'an x is a y',
       match: ({context}) => context.marker == 'unknown' && !context.pullFromContext && context.wantsValue && context.same,
-      apply: ({context, api, objects}) => {
+      apply: ({context, api, objects, config}) => {
+        if (context.unknown) {
+          makeObject({config, context})
+        }
+        if (context.same.unknown) {
+          makeObject({config, context: context.same})
+        }
         api.rememberIsA(objects, context.value, context.same.value) 
         context.sameWasProcessed = true
       }
@@ -103,6 +130,23 @@ entodicton.knowledgeModule( {
     name: './hierarchy.test.json',
     contents: hierarchy_tests
   },
+  afterTest: ({query, config}) => {
+    if (query == 'a cat is an animal') {
+      debugger;
+      const wordDef = config.config.words['cat'][0]
+      failure = ''
+      const expected = {
+        id: 'cat',
+        initial: '{value: "cat", number: undefined}',
+      }
+      for (key of Object.keys(expected)) {
+        if (wordDef[key] !== expected[key]) {
+          failure += `expected ${key} to be "${expected[value]}"\n`
+        }
+      }
+      return failure
+    }
+  }
 })
 
 /* Random design notes

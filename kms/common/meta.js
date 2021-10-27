@@ -5,6 +5,16 @@ const meta_tests = require('./meta.test.json')
 let config = {
   operators: [
     "((word) [means] (word))",
+    // "cats is the plural of cat"
+    // "is cat the plural of cats"
+    /*
+    if creating a new word make a motivation to ask if word is plura or singlar of anohter wordA
+
+      make object -> operator+bridge made add word
+      add word -> check fo plural or singular if so make motivate to ask (if yes update all contepts dups)
+      update hierarchy
+    */
+
     //"show the definition of word"
 //    "([testWord2|])",
     // make end of sentence an operators -> so means sucks up all the words

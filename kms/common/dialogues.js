@@ -74,6 +74,7 @@ let config = {
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
     "(([is/1]) <questionMark|>)",
+    // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
     //greg is a first name
@@ -94,7 +95,7 @@ let config = {
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
     { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
 
-    { id: "a", level: 0, bridge: "{ ...after[0], pullFromContext: false, wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
+    { id: "a", level: 0, bridge: "{ ...after[0], pullFromContext: false, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
