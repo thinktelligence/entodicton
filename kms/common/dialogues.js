@@ -68,6 +68,7 @@ let config = {
   name: 'dialogues',
   operators: [
     "(([queryable]) [is|is,are] ([queryable|]))",
+    "([is|is,are] ([queryable]) ([queryable]))",
     "([it])",
     "([what])",
     "(<the|> ([theAble|]))",
@@ -316,7 +317,7 @@ let config = {
 
     // statement
     [ 
-      ({context}) => context.marker == 'is' && !context.query,
+      ({context}) => context.marker == 'is' && !context.query && context.one && context.two,
       ({context, s, log}) => {
         const one = context.one;
         const two = context.two;

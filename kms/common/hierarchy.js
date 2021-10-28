@@ -13,7 +13,7 @@ const makeObject = ({config, context}) => {
         match: ({context}) => context.value == value && context.number == number && context.paraphrase,
         apply: () => word
     })
-
+    // mark greg as an instance?
     // add a generator for the other one what will ask what is the plural or singluar of known
     /*
     if (number == 'many') {
@@ -92,6 +92,13 @@ let config = {
       notes: 'c is a y',
       match: ({context}) => context.marker == 'unknown' && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
       apply: ({context, api, objects}) => {
+        // mark c as an instance?
+        if (context.unknown) {
+          makeObject({config, context})
+        }
+        if (context.same.unknown) {
+          makeObject({config, context: context.same})
+        }
         api.rememberIsA(objects, context.value, context.same.value)
         context.sameWasProcessed = true
       },
@@ -117,9 +124,14 @@ config = new entodicton.Config(config)
 config.api = api
 config.add(dialogues)
 config.initializer( ({objects}) => {
-  objects.parents = {
-  }
+  objects.parents = {}
   objects.concepts = []
+  /*
+  objects.parents = {
+    "greg": [ "human" ],
+  }
+  objects.concepts = [ "greg", "human" ]
+  */
 })
 
 entodicton.knowledgeModule( { 

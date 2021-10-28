@@ -62,6 +62,7 @@ let config = {
     "(<my> ([property]))",
     "(<your> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
+    // the plural of cat is cats what is the plural of cat?
   ],
   hierarchy: [
     ['property', 'queryable'],
