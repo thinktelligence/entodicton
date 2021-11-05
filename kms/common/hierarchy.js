@@ -7,7 +7,7 @@ const makeObject = ({config, context}) => {
   const { word, value, number } = context;
   config.addOperator(`([${value}])`)
   config.addBridge({ id: value, level: 0, bridge: "{ ...next(operator) }" })
-  config.addWord(word, { id: value, initial: `{value: "${value}", number: ${number}}` } )
+  config.addWord(word, { id: value, initial: `{value: "${value}", number: "${number}"}` } )
   if (number) {
     config.addGenerator({
         match: ({context}) => context.value == value && context.number == number && context.paraphrase,
@@ -144,16 +144,16 @@ entodicton.knowledgeModule( {
   },
   afterTest: ({query, config}) => {
     if (query == 'a cat is an animal') {
-      debugger;
       const wordDef = config.config.words['cat'][0]
       failure = ''
       const expected = {
         id: 'cat',
-        initial: '{value: "cat", number: undefined}',
+        initial: '{value: "cat", number: "one"}',
       }
       for (key of Object.keys(expected)) {
         if (wordDef[key] !== expected[key]) {
-          failure += `expected ${key} to be "${expected[value]}"\n`
+          debugger;
+          failure += `expected ${key} to be "${expected[expected]}"\n`
         }
       }
       return failure
