@@ -68,7 +68,7 @@ let config = {
   name: 'dialogues',
   operators: [
     "(([queryable]) [is|is,are] ([queryable|]))",
-    "([is|is,are] ([queryable]) ([queryable]))",
+    "([is:queryBridge|is,are] ([queryable]) ([queryable]))",
     "([it])",
     "([what])",
     "(<the|> ([theAble|]))",
@@ -90,7 +90,7 @@ let config = {
     { id: "what", level: 0, bridge: "{ ...next(operator), query: ['what'], determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "questionMark", level: 0, bridge: "{ ...before[0], query: [before.marker] }" },
-    { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }" },
+    { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }", queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
