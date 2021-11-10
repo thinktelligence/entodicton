@@ -113,6 +113,7 @@ let config = {
     [['questionMark', 0], ['is', 0]],
     [["is",0],["the",0]],
     [["is",0],["a",0]],
+    [["is",1],["is",0]],
   ],
   hierarchy: [
     ['unknown', 'theAble'],
