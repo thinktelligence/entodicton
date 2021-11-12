@@ -1,26 +1,42 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const hierarchy_tests = require('./hierarchy.test.json')
+var pluralize = require('pluralize')
 
 // word is for one or many
 const makeObject = ({config, context}) => {
   const { word, value, number } = context;
-  config.addOperator(`([${value}])`)
-  config.addBridge({ id: value, level: 0, bridge: "{ ...next(operator) }" })
-  config.addWord(word, { id: value, initial: `{value: "${value}", number: "${number}"}` } )
-  if (number) {
+  const concept = pluralize.singular(value)
+  config.addOperator(`([${concept}])`)
+  config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" })
+  
+  const addConcept = (word, number) => {
+    config.addWord(word, { id: concept, initial: `{ value: "${concept}", greg: 23, number: "${number}"}` } )
+    config.addHierarchy(concept, 'theAble')
+    config.addHierarchy(concept, 'queryable')
+    config.addHierarchy(concept, 'hierarchyAble')
     config.addGenerator({
-        match: ({context}) => context.value == value && context.number == number && context.paraphrase,
+        match: ({context}) => context.value == concept && context.number == number && context.paraphrase,
         apply: () => word
     })
-    // mark greg as an instance?
-    // add a generator for the other one what will ask what is the plural or singluar of known
-    /*
-    if (number == 'many') {
-    } else if (number == 'one') {
-    }
-    */
   }
+
+  if (pluralize.isSingular(word)) {
+    addConcept(word, 'one')
+    addConcept(pluralize.plural(word), 'many')
+  } else {
+    addConcept(pluralize.singular(word), 'one')
+    addConcept(word, 'many')
+  }
+
+  // mark greg as an instance?
+  // add a generator for the other one what will ask what is the plural or singluar of known
+  /*
+  if (number == 'many') {
+  } else if (number == 'one') {
+  }
+  */
+  return concept;
 }
 
 const api = {
@@ -93,13 +109,15 @@ let config = {
       match: ({context}) => context.marker == 'unknown' && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
       apply: ({context, api, objects}) => {
         // mark c as an instance?
+        let oneConcept = context.value;
+        let twoConcept = context.same.value;
         if (context.unknown) {
-          makeObject({config, context})
+          oneConcept = makeObject({config, context})
         }
         if (context.same.unknown) {
-          makeObject({config, context: context.same})
+          twoConcept = makeObject({config, context: context.same})
         }
-        api.rememberIsA(objects, context.value, context.same.value)
+        api.rememberIsA(objects, oneConcept, twoConcept)
         context.sameWasProcessed = true
       },
     },
@@ -107,13 +125,31 @@ let config = {
       notes: 'an x is a y',
       match: ({context}) => context.marker == 'unknown' && !context.pullFromContext && context.wantsValue && context.same,
       apply: ({context, api, objects, config}) => {
+        let oneConcept = context.value;
+        let twoConcept = context.same.value;
         if (context.unknown) {
-          makeObject({config, context})
+          oneConcept = makeObject({config, context})
         }
         if (context.same.unknown) {
-          makeObject({config, context: context.same})
+          twoConcept = makeObject({config, context: context.same})
         }
-        api.rememberIsA(objects, context.value, context.same.value) 
+        api.rememberIsA(objects, oneConcept, twoConcept) 
+        context.sameWasProcessed = true
+      }
+    },
+    {
+      notes: 'humans are mammels',
+      match: ({context}) => context.marker == 'unknown' && context.same,
+      apply: ({objects, context}) => {
+        let oneConcept = context.value;
+        let twoConcept = context.same.value;
+        if (context.unknown) {
+          oneConcept = makeObject({config, context})
+        }
+        if (context.same.unknown) {
+          twoConcept = makeObject({config, context: context.same})
+        }
+        api.rememberIsA(objects, oneConcept, twoConcept)
         context.sameWasProcessed = true
       }
     },
