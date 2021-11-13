@@ -73,11 +73,14 @@ let config = {
   ],
   hierarchy: [
     ['unknown', 'hierarchyAble'],
+    ['hierarchyAble', 'queryable'],
   ],
   words: {
   },
   priorities: [
     [['questionMark', 0], ['is', 0], ['a', 0]],
+    [['is', 0], ['hierarchyAble', 0]],
+    [['a', 0], ['is', 0], ['hierarchyAble', 0]],
   ],
   generators: [
   ],
