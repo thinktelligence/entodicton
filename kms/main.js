@@ -4,6 +4,7 @@ const characters = require('./common/characters');
 const currency = require('./common/currency');
 const dialogues = require('./common/dialogues');
 const help = require('./common/help');
+const hierarchy = require('./common/hierarchy');
 const javascript = require('./common/javascript');
 const numbers = require('./common/numbers');
 const people = require('./common/people');
@@ -20,6 +21,7 @@ module.exports = {
   currency,
   dialogues,
   help,
+  hierarchy,
   javascript,
   numbers,
   properties,
