@@ -1,13 +1,13 @@
-node avatar -s
-node characters -s
-node currency -s
-node dialogues -s
-node help -s
-node javascript -s
-node numbers -s
-node properties -s
-node reports -s
-node people -s
-node scorekeeper -s
-node tell -s
-node time -s
+node avatar -s -g
+node characters -s -g
+node currency -s -g
+node dialogues -s -g
+node help -s -g
+node javascript -s -g
+node numbers -s -g
+node properties -s -g
+node reports -s -g
+node people -s -g
+node scorekeeper -s -g
+node tell -s -g
+node time -s -g

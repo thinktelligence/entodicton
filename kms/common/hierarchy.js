@@ -11,7 +11,7 @@ const makeObject = ({config, context}) => {
   config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" })
   
   const addConcept = (word, number) => {
-    config.addWord(word, { id: concept, initial: `{ value: "${concept}", greg: 23, number: "${number}"}` } )
+    config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
     config.addHierarchy(concept, 'theAble')
     config.addHierarchy(concept, 'queryable')
     config.addHierarchy(concept, 'hierarchyAble')
@@ -73,11 +73,14 @@ let config = {
   ],
   hierarchy: [
     ['unknown', 'hierarchyAble'],
+    ['hierarchyAble', 'queryable'],
   ],
   words: {
   },
   priorities: [
     [['questionMark', 0], ['is', 0], ['a', 0]],
+    [['is', 0], ['hierarchyAble', 0]],
+    [['a', 0], ['is', 0], ['hierarchyAble', 0]],
   ],
   generators: [
   ],
@@ -184,7 +187,7 @@ entodicton.knowledgeModule( {
       failure = ''
       const expected = {
         id: 'cat',
-        initial: '{value: "cat", number: "one"}',
+        initial: '{ value: "cat", number: "one" }',
       }
       for (key of Object.keys(expected)) {
         if (wordDef[key] !== expected[key]) {
