@@ -1,5 +1,5 @@
 const entodicton = require('entodicton')
-const dialogues = require('./dialogues')
+const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
 var pluralize = require('pluralize')
 
@@ -15,6 +15,7 @@ const makeObject = ({config, context}) => {
     config.addHierarchy(concept, 'theAble')
     config.addHierarchy(concept, 'queryable')
     config.addHierarchy(concept, 'hierarchyAble')
+    config.addHierarchy(concept, 'object')
     config.addGenerator({
         match: ({context}) => context.value == concept && context.number == number && context.paraphrase,
         apply: () => word
@@ -65,15 +66,19 @@ let config = {
   name: 'hierarchy',
   operators: [
     "([hierarchyAble|])",
+    "([type|type,types])",
   ],
   hierarchy: [
+    ['type', 'property'],
   ],
   bridges: [
     { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
+    { id: 'type', level: 0, bridge: "{ ...next(operator) }" },
   ],
   hierarchy: [
     ['unknown', 'hierarchyAble'],
     ['hierarchyAble', 'queryable'],
+    ['type', 'property'],
   ],
   words: {
   },
@@ -156,12 +161,22 @@ let config = {
         context.sameWasProcessed = true
       }
     },
+
+    // 'types of type'
+    {
+      notes: 'types of type',
+      match: ({context}) => context.marker == 'type' && context.evaluate && context.object,
+      apply: ({context, objects}) => {
+        debugger;
+        context.value = 'cats'
+      }
+    },
   ]
 };
 
 config = new entodicton.Config(config)
 config.api = api
-config.add(dialogues)
+config.add(properties)
 config.initializer( ({objects}) => {
   objects.parents = {}
   objects.concepts = []
@@ -210,6 +225,7 @@ is greg a cat joe a human and fred a dog
 
 yfxx
 
+cats and dogs are animals
 
 1f00 == fxx -> xf
 */
