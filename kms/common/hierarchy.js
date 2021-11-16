@@ -51,6 +51,14 @@ const api = {
     if (!objects.parents[child].includes(parent)) {
       objects.parents[child].push(parent)
     }
+
+    if (!objects.children[parent]) {
+      objects.children[parent] = []
+    }
+    if (!objects.children[parent].includes(child)) {
+      objects.children[parent].push(child)
+    }
+
     if (!objects.concepts.includes(child)) {
       objects.concepts.push(child)
     }
@@ -166,9 +174,9 @@ let config = {
     {
       notes: 'types of type',
       match: ({context}) => context.marker == 'type' && context.evaluate && context.object,
-      apply: ({context, objects}) => {
-        debugger;
-        context.value = 'cats'
+      apply: ({context, objects, gs}) => {
+        const type = pluralize.singular(context.object.value);
+        context.value = gs(objects.children[type].map( (t) => pluralize.plural(t) ), ', ', ' and ')
       }
     },
   ]
@@ -179,6 +187,7 @@ config.api = api
 config.add(properties)
 config.initializer( ({objects}) => {
   objects.parents = {}
+  objects.children = {}
   objects.concepts = []
   /*
   objects.parents = {
@@ -206,7 +215,6 @@ entodicton.knowledgeModule( {
       }
       for (key of Object.keys(expected)) {
         if (wordDef[key] !== expected[key]) {
-          debugger;
           failure += `expected ${key} to be "${expected[expected]}"\n`
         }
       }
