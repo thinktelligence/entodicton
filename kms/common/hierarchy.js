@@ -99,17 +99,20 @@ let config = {
   ],
   semantics: [
     {
+      notes: 'is x y',
       match: ({context, hierarchy, args}) => hierarchy.isA(context.marker, 'is') && context.query && args( { types: ['hierarchyAble', 'hierarchyAble'], properties: ['one', 'two'] } ),
       apply: ({context, api, objects, g}) => {
         const one = context.one
         const two = context.two
-        if (!api.conceptExists(objects, one.value)) {
+        if (!api.conceptExists(objects, pluralize.singular(one.value))) {
+          debugger;
           context.response = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
           return
         }
-        if (!api.conceptExists(objects, two.value)) {
+        if (!api.conceptExists(objects, pluralize.singular(two.value))) {
+          debugger;
           context.response = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
           }
@@ -122,51 +125,73 @@ let config = {
     },
     {
       notes: 'c is a y',
-      match: ({context}) => context.marker == 'unknown' && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
-      apply: ({context, api, objects}) => {
+      match: ({context, listable}) => listable(context.marker, 'unknown') && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
+      apply: ({context, api, objects, asList}) => {
         // mark c as an instance?
-        let oneConcept = context.value;
-        let twoConcept = context.same.value;
-        if (context.unknown) {
-          oneConcept = makeObject({config, context})
+        const oneConcepts = asList(context);
+        const twoConcepts = asList(context.same);
+        for (let oneConcept of oneConcepts.value) {
+          for (let twoConcept of twoConcepts.value) {
+            if (context.unknown) {
+              oneConcept = makeObject({config, context})
+            }
+            if (context.same.unknown) {
+              twoConcept = makeObject({config, context: context.same})
+            }
+            api.rememberIsA(objects, oneConcept, twoConcept)
+          }
         }
-        if (context.same.unknown) {
-          twoConcept = makeObject({config, context: context.same})
-        }
-        api.rememberIsA(objects, oneConcept, twoConcept)
         context.sameWasProcessed = true
       },
     },
     {
       notes: 'an x is a y',
-      match: ({context}) => context.marker == 'unknown' && !context.pullFromContext && context.wantsValue && context.same,
-      apply: ({context, api, objects, config}) => {
-        let oneConcept = context.value;
-        let twoConcept = context.same.value;
-        if (context.unknown) {
-          oneConcept = makeObject({config, context})
+      match: ({context, listable}) => listable(context.marker, 'unknown') && !context.pullFromContext && context.wantsValue && context.same,
+      apply: ({context, api, objects, config, asList}) => {
+        const oneConcepts = asList(context);
+        const twoConcepts = asList(context.same);
+        for (let oneConcept of oneConcepts.value) {
+          for (let twoConcept of twoConcepts.value) {
+            if (context.unknown) {
+              oneConcept = makeObject({config, context})
+            }
+            if (context.same.unknown) {
+              twoConcept = makeObject({config, context: context.same})
+            }
+            api.rememberIsA(objects, oneConcept, twoConcept) 
+            context.sameWasProcessed = true
+          }
         }
-        if (context.same.unknown) {
-          twoConcept = makeObject({config, context: context.same})
-        }
-        api.rememberIsA(objects, oneConcept, twoConcept) 
-        context.sameWasProcessed = true
       }
     },
     {
       notes: 'humans are mammels',
-      match: ({context}) => context.marker == 'unknown' && context.same,
-      apply: ({objects, context}) => {
-        let oneConcept = context.value;
-        let twoConcept = context.same.value;
-        if (context.unknown) {
-          oneConcept = makeObject({config, context})
+      // match: ({context, listable}) => listable(context, 'unknown') && context.same,
+      match: ({context, listable}) => {
+        if (context.marker == 'list') {
+          listable(context, 'unknown')
         }
-        if (context.same.unknown) {
-          twoConcept = makeObject({config, context: context.same})
+        return listable(context, 'unknown') && context.same
+      },
+      apply: ({objects, context, asList, listable}) => {
+        const oneConcepts = asList(context);
+        const twoConcepts = asList(context.same);
+        for (let oneConcept of oneConcepts.value) {
+          for (let twoConcept of twoConcepts.value) {
+            if (oneConcept.unknown) {
+              oneConcept = makeObject({config, context: oneConcept})
+            } else {
+              oneConcept = oneConcept.value;
+            }
+            if (twoConcept.unknown) {
+              twoConcept = makeObject({config, context: twoConcept})
+            } else {
+              twoConcept = twoConcept.value;
+            }
+            api.rememberIsA(objects, oneConcept, twoConcept)
+            context.sameWasProcessed = true
+          }
         }
-        api.rememberIsA(objects, oneConcept, twoConcept)
-        context.sameWasProcessed = true
       }
     },
 

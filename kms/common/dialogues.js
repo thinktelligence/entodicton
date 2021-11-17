@@ -324,17 +324,18 @@ let config = {
         const two = context.two;
         one.same = two;
         const onePrime = s(one)
+        if (!onePrime.sameWasProcessed) {
+          warningSameNotEvaluated(log, context, one)
+        }
         one.same = undefined
-
         let twoPrime;
         if (!onePrime.sameWasProcessed) {
           two.same = one
           twoPrime = s(two)
+          if (!twoPrime.sameWasProcessed) {
+            warningSameNotEvaluated(log, context, two)
+          }
           two.same = undefined
-        }
-        if (!onePrime.sameWasProcessed && !twoPrime.sameWasProcessed) {
-          warningSameNotEvaluated(log, context, two)
-          warningSameNotEvaluated(log, context, one)
         }
       }
     ],
