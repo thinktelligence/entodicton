@@ -33,7 +33,6 @@ const api = {
     if (property == 'properties') {
       const objectProps = api.getObject(objects, object)
       const values = []
-      debugger;
       for (let key of Object.keys(objectProps)) {
         values.push(`${g(key)}: ${g({ ...objectProps[key], evaluate: true })}`)
       }
@@ -48,8 +47,11 @@ const api = {
   knownObject(objects, object) {
     return !!objects.objects[object]
   },
-  knownProperty(objects, object) {
-    return !!objects.objects[object]
+  knownProperty(objects, object, property) {
+    if (property == 'properties') {
+      return true;
+    }
+    return !!objects.objects[object][property]
   },
   learnWords(config, context) {
   },
@@ -64,6 +66,7 @@ let config = {
     "(<your> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
+    "(([have/1]) <questionMark|>)",
     // the plural of cat is cats what is the plural of cat?
     // does greg have ears (yes) greg does not have ears does greg have ears (no)
   ],
@@ -77,6 +80,7 @@ let config = {
   ],
   bridges: [
     { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
+    { id: "have", level: 1, bridge: "{ ...next(operator) }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
     { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
@@ -101,11 +105,18 @@ let config = {
     [['is', 0], ['propertyOf', 1]],
     [['propertyOf', 0], ['the', 0]],
     [['the', 0], ['propertyOf', 0], ['property', 0]],
+    [['questionMark', 0], ['have', 0]],
   ],
   generators: [
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase,
-      ({context, g}) => `${g(context.object)} ${context.word} ${g(context.property)}`
+      ({context, g}) => {
+        let query = ''
+        if (context.query) {
+          query = "?"
+        }
+        return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
+      }
     ],
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value && !context.evaluate,
@@ -153,10 +164,30 @@ let config = {
     */
     {
       notes: 'greg has eyes',
-      match: ({context}) => context.marker == 'have',
+      match: ({context}) => context.marker == 'have' && !context.query,
       apply: ({context, objects, api}) => {
         api.setProperty(objects, pluralize.singular(context.object.value), pluralize.singular(context.property.value))
         context.sameWasProcessed = true
+      }
+    },
+    {
+      notes: 'greg has eyes?',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.query,
+      apply: ({context, g, api, objects}) => {
+        const object = pluralize.singular(context.object.value);
+        const property = pluralize.singular(context.property.value);
+        context.response = true
+        if (!api.knownObject(objects, object)) {
+          context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
+          return
+        }
+        if (!api.knownProperty(objects, object, property)) {
+          context.verbatim = 'No'
+          return
+        } else {
+          context.verbatim = 'Yes'
+          return
+        }
       }
     },
     {

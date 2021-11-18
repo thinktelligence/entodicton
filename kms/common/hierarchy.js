@@ -78,6 +78,7 @@ let config = {
   ],
   hierarchy: [
     ['type', 'property'],
+    ['have', 'canBeQuestion'],
   ],
   bridges: [
     { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },

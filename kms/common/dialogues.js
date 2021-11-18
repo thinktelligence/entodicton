@@ -74,7 +74,8 @@ let config = {
     "(<the|> ([theAble|]))",
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
-    "(([is/1]) <questionMark|>)",
+    "([canBeQuestion])",
+    "(([canBeQuestion/1]) <questionMark|>)",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
@@ -86,6 +87,8 @@ let config = {
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
+    { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
     { id: "what", level: 0, bridge: "{ ...next(operator), query: ['what'], determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
@@ -120,6 +123,7 @@ let config = {
     ['unknown', 'queryable'],
     ['it', 'queryable'],
     ['what', 'queryable'],
+    ['is', 'canBeQuestion'],
   ],
   debug: false,
   version: '3',
@@ -209,7 +213,7 @@ let config = {
       ({context}) => context.response.verbatim
     ],
     { 
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.paraphrase && context.topLevel && context.query,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeQuestion') && context.paraphrase && context.topLevel && context.query,
       apply: ({context, g}) => {
         return `${g({...context, topLevel: undefined})}?` 
       },
