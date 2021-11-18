@@ -1,6 +1,7 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const properties_tests = require('./properties.test.json')
+const pluralize = require('pluralize')
 
 //
 // duck typing: 
@@ -42,7 +43,7 @@ const api = {
     }
   },
   setProperty(objects, object, property, value) {
-    api.getObject(objects, object)[property] = value
+    api.getObject(objects, object)[property] = value || null
   },
   knownObject(objects, object) {
     return !!objects.objects[object]
@@ -62,7 +63,9 @@ let config = {
     "(<my> ([property]))",
     "(<your> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
+    "(([object|]) [have|has,have] ([property|]))",
     // the plural of cat is cats what is the plural of cat?
+    // does greg have ears (yes) greg does not have ears does greg have ears (no)
   ],
   hierarchy: [
     ['property', 'queryable'],
@@ -73,6 +76,7 @@ let config = {
     ['whose', 'object'],
   ],
   bridges: [
+    { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
     { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
@@ -87,6 +91,7 @@ let config = {
   words: {
     "<<possession>>": [{ id: 'possession', initial: "{ value: 'possession' }" }],
     " 's": [{ id: 'possession', initial: "{ value: 'possession' }" }],
+    "have": [{ id: 'have', initial: "{ doesable: true }" }],
   },
   priorities: [
     [['is', 0], ['possession', 1]],
@@ -98,6 +103,10 @@ let config = {
     [['the', 0], ['propertyOf', 0], ['property', 0]],
   ],
   generators: [
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase,
+      ({context, g}) => `${g(context.object)} ${context.word} ${g(context.property)}`
+    ],
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value && !context.evaluate,
       ({context, g}) => {
@@ -127,6 +136,29 @@ let config = {
     },
   ],
   semantics: [
+    /*
+        "objects": {
+        "greg": {
+          "age": {
+            "marker": "unknown",
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "23",
+            "word": "23",
+            "response": true
+          }
+        }
+    */
+    {
+      notes: 'greg has eyes',
+      match: ({context}) => context.marker == 'have',
+      apply: ({context, objects, api}) => {
+        api.setProperty(objects, pluralize.singular(context.object.value), pluralize.singular(context.property.value))
+        context.sameWasProcessed = true
+      }
+    },
     {
       match: ({context}) => context.marker == 'property' && context.same && context.object,
       apply: ({context, objects, api}) => {

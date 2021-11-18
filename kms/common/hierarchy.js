@@ -1,7 +1,7 @@
 const entodicton = require('entodicton')
 const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
-var pluralize = require('pluralize')
+const pluralize = require('pluralize')
 
 // word is for one or many
 const makeObject = ({config, context}) => {
