@@ -56,7 +56,22 @@ class API {
     if (property == 'properties') {
       return true;
     }
-    return !!this.objects.properties[object][property]
+    const todo = [object];
+    const seen = [object];
+    while (todo.length > 0) {
+      const next = todo.pop();
+      if ((this.objects.properties[next] || {})[property] !== undefined) {
+        return true
+      }
+      const parents = this.objects.parents[next] || [];
+      for (let parent of parents) {
+        if (!seen.includes(parent)) {
+          todo.push(parent)
+          seen.push(parent)
+        } 
+      }
+    }
+    return false
   }
 
   learnWords(config, context) {
@@ -86,6 +101,14 @@ class API {
     }
     if (!this.objects.concepts.includes(parent)) {
       this.objects.concepts.push(parent)
+    }
+
+    if (!this.objects.properties[child]) {
+      this.objects.properties[child] = {}
+    }
+
+    if (!this.objects.properties[parent]) {
+      this.objects.properties[parent] = {}
     }
   }
 
@@ -150,6 +173,7 @@ let config = {
     [['propertyOf', 0], ['the', 0]],
     [['the', 0], ['propertyOf', 0], ['property', 0]],
     [['questionMark', 0], ['have', 0]],
+    [['questionMark', 0], ['have', 1], ['is', 1], ['have', 0]],
   ],
   generators: [
     [
