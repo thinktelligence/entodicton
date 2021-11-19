@@ -252,12 +252,10 @@ config = new entodicton.Config(config)
 config.api = api
 config.add(dialogues)
 config.initializer( ({objects}) => {
+  objects.concepts = []
   objects.properties = {}
-  /*
   objects.parents = {}
   objects.children = {}
-  objects.concepts = []
-  */
 })
 
 entodicton.knowledgeModule( { 
