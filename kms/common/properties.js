@@ -21,13 +21,13 @@ const pluralize = require('pluralize')
 
 const api = {
   getObject(objects, object) {
-    if (!objects.objects) {
-      objects.objects = {}
+    if (!objects.properties) {
+      objects.properties = {}
     }
-    if (!objects.objects[object]) {
-      objects.objects[object] = {}
+    if (!objects.properties[object]) {
+      objects.properties[object] = {}
     }
-    return objects.objects[object]
+    return objects.properties[object]
   },
   getProperty(objects, object, property, g) {
     if (property == 'properties') {
@@ -38,23 +38,54 @@ const api = {
       }
       return { marker: 'list', value: values }
     } else {
-      return objects.objects[object][property]
+      return objects.properties[object][property]
     }
   },
   setProperty(objects, object, property, value) {
     api.getObject(objects, object)[property] = value || null
   },
   knownObject(objects, object) {
-    return !!objects.objects[object]
+    return !!objects.properties[object]
   },
   knownProperty(objects, object, property) {
     if (property == 'properties') {
       return true;
     }
-    return !!objects.objects[object][property]
+    return !!objects.properties[object][property]
   },
   learnWords(config, context) {
   },
+
+/*
+  isA(objects, child, parent) {
+    return objects.parents[child].includes(parent);
+  },
+  rememberIsA(objects, child, parent) {
+    if (!objects.parents[child]) {
+      objects.parents[child] = []
+    }
+    if (!objects.parents[child].includes(parent)) {
+      objects.parents[child].push(parent)
+    }
+
+    if (!objects.children[parent]) {
+      objects.children[parent] = []
+    }
+    if (!objects.children[parent].includes(child)) {
+      objects.children[parent].push(child)
+    }
+
+    if (!objects.concepts.includes(child)) {
+      objects.concepts.push(child)
+    }
+    if (!objects.concepts.includes(parent)) {
+      objects.concepts.push(parent)
+    }
+  },
+  conceptExists(objects, concept) {
+    return objects.concepts.includes(concept)
+  }
+*/
 }
 
 let config = {
@@ -98,6 +129,7 @@ let config = {
     "have": [{ id: 'have', initial: "{ doesable: true }" }],
   },
   priorities: [
+    [['is', 0], ['possession', 0], ['propertyOf', 0], ['what', 0]],
     [['is', 0], ['possession', 1]],
     [['is', 0], ['my', 0]],
     [['is', 0], ['your', 0]],
@@ -220,8 +252,12 @@ config = new entodicton.Config(config)
 config.api = api
 config.add(dialogues)
 config.initializer( ({objects}) => {
-  objects.objects = {
-  }
+  objects.properties = {}
+  /*
+  objects.parents = {}
+  objects.children = {}
+  objects.concepts = []
+  */
 })
 
 entodicton.knowledgeModule( { 
