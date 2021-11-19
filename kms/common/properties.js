@@ -19,71 +19,86 @@ const pluralize = require('pluralize')
 //        ],
 //
 
-const api = {
-  getObject(objects, object) {
-    if (!objects.properties) {
-      objects.properties = {}
+class API {
+
+  getObject(object) {
+    if (!this.objects.properties) {
+      this.objects.properties = {}
     }
-    if (!objects.properties[object]) {
-      objects.properties[object] = {}
+    if (!this.objects.properties[object]) {
+      this.objects.properties[object] = {}
     }
-    return objects.properties[object]
-  },
-  getProperty(objects, object, property, g) {
+    return this.objects.properties[object]
+  }
+
+  getProperty(object, property, g) {
     if (property == 'properties') {
-      const objectProps = api.getObject(objects, object)
+      const objectProps = this.getObject(object)
       const values = []
       for (let key of Object.keys(objectProps)) {
         values.push(`${g(key)}: ${g({ ...objectProps[key], evaluate: true })}`)
       }
       return { marker: 'list', value: values }
     } else {
-      return objects.properties[object][property]
+      return this.objects.properties[object][property]
     }
-  },
-  setProperty(objects, object, property, value) {
-    api.getObject(objects, object)[property] = value || null
-  },
-  knownObject(objects, object) {
-    return !!objects.properties[object]
-  },
-  knownProperty(objects, object, property) {
+  }
+
+  setProperty(object, property, value) {
+    this.getObject(object)[property] = value || null
+  }
+
+  knownObject(object) {
+    return !!this.objects.properties[object]
+  }
+
+  knownProperty(object, property) {
     if (property == 'properties') {
       return true;
     }
-    return !!objects.properties[object][property]
-  },
-  learnWords(config, context) {
-  },
-  isA(objects, child, parent) {
-    return objects.parents[child].includes(parent);
-  },
-  rememberIsA(objects, child, parent) {
-    if (!objects.parents[child]) {
-      objects.parents[child] = []
-    }
-    if (!objects.parents[child].includes(parent)) {
-      objects.parents[child].push(parent)
-    }
-
-    if (!objects.children[parent]) {
-      objects.children[parent] = []
-    }
-    if (!objects.children[parent].includes(child)) {
-      objects.children[parent].push(child)
-    }
-
-    if (!objects.concepts.includes(child)) {
-      objects.concepts.push(child)
-    }
-    if (!objects.concepts.includes(parent)) {
-      objects.concepts.push(parent)
-    }
-  },
-  conceptExists(objects, concept) {
-    return objects.concepts.includes(concept)
+    return !!this.objects.properties[object][property]
   }
+
+  learnWords(config, context) {
+  }
+
+  isA(child, parent) {
+    return this.objects.parents[child].includes(parent);
+  }
+
+  rememberIsA(child, parent) {
+    if (!this.objects.parents[child]) {
+      this.objects.parents[child] = []
+    }
+    if (!this.objects.parents[child].includes(parent)) {
+      this.objects.parents[child].push(parent)
+    }
+
+    if (!this.objects.children[parent]) {
+      this.objects.children[parent] = []
+    }
+    if (!this.objects.children[parent].includes(child)) {
+      this.objects.children[parent].push(child)
+    }
+
+    if (!this.objects.concepts.includes(child)) {
+      this.objects.concepts.push(child)
+    }
+    if (!this.objects.concepts.includes(parent)) {
+      this.objects.concepts.push(parent)
+    }
+  }
+
+  children(parent) {
+    return this.objects.children[parent]
+  }
+
+  conceptExists(concept) {
+    return this.objects.concepts.includes(concept)
+  }
+
 }
+const api = new API();
 
 let config = {
   name: 'properties',
@@ -195,7 +210,7 @@ let config = {
       notes: 'greg has eyes',
       match: ({context}) => context.marker == 'have' && !context.query,
       apply: ({context, objects, api}) => {
-        api.setProperty(objects, pluralize.singular(context.object.value), pluralize.singular(context.property.value))
+        api.setProperty(pluralize.singular(context.object.value), pluralize.singular(context.property.value))
         context.sameWasProcessed = true
       }
     },
@@ -206,11 +221,11 @@ let config = {
         const object = pluralize.singular(context.object.value);
         const property = pluralize.singular(context.property.value);
         context.response = true
-        if (!api.knownObject(objects, object)) {
+        if (!api.knownObject(object)) {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
         }
-        if (!api.knownProperty(objects, object, property)) {
+        if (!api.knownProperty(object, property)) {
           context.verbatim = 'No'
           return
         } else {
@@ -222,7 +237,7 @@ let config = {
     {
       match: ({context}) => context.marker == 'property' && context.same && context.object,
       apply: ({context, objects, api}) => {
-        api.setProperty(objects, context.object.value, context.value, context.same)
+        api.setProperty(context.object.value, context.value, context.same)
         context.sameWasProcessed = true
       }
     },
@@ -230,15 +245,15 @@ let config = {
       match: ({context}) => context.marker == 'property' && context.evaluate,
       apply: ({context, api, objects, g}) => {
         const object = context.object.value;
-        if (!api.knownObject(objects, object)) {
+        if (!api.knownObject(object)) {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
         }
-        if (!api.knownProperty(objects, object, context.value)) {
+        if (!api.knownProperty(object, context.value)) {
           context.verbatim = `There is property no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
           return
         }
-        context.value = api.getProperty(objects, context.object.value, context.value, g)
+        context.value = api.getProperty(context.object.value, context.value, g)
         context.object = undefined;
       }
     }

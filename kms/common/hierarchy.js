@@ -76,14 +76,14 @@ let config = {
         const api = km('properties').api
         const one = context.one
         const two = context.two
-        if (!api.conceptExists(objects, pluralize.singular(one.value))) {
+        if (!api.conceptExists(pluralize.singular(one.value))) {
           debugger;
           context.response = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
           return
         }
-        if (!api.conceptExists(objects, pluralize.singular(two.value))) {
+        if (!api.conceptExists(pluralize.singular(two.value))) {
           debugger;
           context.response = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
@@ -111,7 +111,7 @@ let config = {
             if (context.same.unknown) {
               twoConcept = makeObject({config, context: context.same})
             }
-            api.rememberIsA(objects, oneConcept, twoConcept)
+            api.rememberIsA(oneConcept, twoConcept)
           }
         }
         context.sameWasProcessed = true
@@ -132,7 +132,7 @@ let config = {
             if (context.same.unknown) {
               twoConcept = makeObject({config, context: context.same})
             }
-            api.rememberIsA(objects, oneConcept, twoConcept) 
+            api.rememberIsA(oneConcept, twoConcept) 
             context.sameWasProcessed = true
           }
         }
@@ -163,7 +163,7 @@ let config = {
             } else {
               twoConcept = twoConcept.value;
             }
-            api.rememberIsA(objects, oneConcept, twoConcept)
+            api.rememberIsA(oneConcept, twoConcept)
             context.sameWasProcessed = true
           }
         }
@@ -174,9 +174,10 @@ let config = {
     {
       notes: 'types of type',
       match: ({context}) => context.marker == 'type' && context.evaluate && context.object,
-      apply: ({context, objects, gs}) => {
+      apply: ({context, objects, gs, km}) => {
+        const api = km('properties').api
         const type = pluralize.singular(context.object.value);
-        context.value = gs(objects.children[type].map( (t) => pluralize.plural(t) ), ', ', ' and ')
+        context.value = gs(api.children(type).map( (t) => pluralize.plural(t) ), ', ', ' and ')
       }
     },
   ]
@@ -184,17 +185,6 @@ let config = {
 
 config = new entodicton.Config(config)
 config.add(properties)
-config.initializer( ({objects}) => {
-  objects.parents = {}
-  objects.children = {}
-  objects.concepts = []
-  /*
-  objects.parents = {
-    "greg": [ "human" ],
-  }
-  objects.concepts = [ "greg", "human" ]
-  */
-})
 
 entodicton.knowledgeModule( { 
   module,
