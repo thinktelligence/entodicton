@@ -40,36 +40,6 @@ const makeObject = ({config, context}) => {
   return concept;
 }
 
-const api = {
-  isA(objects, child, parent) {
-    return objects.parents[child].includes(parent);
-  },
-  rememberIsA(objects, child, parent) {
-    if (!objects.parents[child]) {
-      objects.parents[child] = []
-    }
-    if (!objects.parents[child].includes(parent)) {
-      objects.parents[child].push(parent)
-    }
-
-    if (!objects.children[parent]) {
-      objects.children[parent] = []
-    }
-    if (!objects.children[parent].includes(child)) {
-      objects.children[parent].push(child)
-    }
-
-    if (!objects.concepts.includes(child)) {
-      objects.concepts.push(child)
-    }
-    if (!objects.concepts.includes(parent)) {
-      objects.concepts.push(parent)
-    }
-  },
-  conceptExists(objects, concept) {
-    return objects.concepts.includes(concept)
-  }
-}
 let config = {
   name: 'hierarchy',
   operators: [
@@ -213,7 +183,6 @@ let config = {
 };
 
 config = new entodicton.Config(config)
-config.api = api
 config.add(properties)
 config.initializer( ({objects}) => {
   objects.parents = {}
