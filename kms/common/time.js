@@ -19,7 +19,6 @@ const api = {
         if (ampm.ampm == 'pm') {
           hour += 12;
         }
-        debugger; // target
         const ms = helpers.millisecondsUntilHourOfDay(api.newDate, hour)
         const promise =  new Promise((resolve) => {
           setTimeout( () => resolve(context), ms);
@@ -98,7 +97,6 @@ let config = {
     ],
     [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
       console.log('-------------------', context.value)
-      debugger;
           let hh = context.value.getHours();
           let ampm = 'am'
           if (hh > 12) {

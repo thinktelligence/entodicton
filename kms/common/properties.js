@@ -179,11 +179,14 @@ let config = {
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase,
       ({context, g}) => {
+        /*
         let query = ''
         if (context.query) {
           query = "?"
         }
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
+        */
+        return `does ${g(context.object)} ${context.word} ${g(context.property)}`
       }
     ],
     [

@@ -46,10 +46,6 @@ let config = {
     "([hierarchyAble|])",
     "([type|type,types])",
   ],
-  hierarchy: [
-    ['type', 'property'],
-    ['have', 'canBeQuestion'],
-  ],
   bridges: [
     { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
     { id: 'type', level: 0, bridge: "{ ...next(operator) }" },
@@ -58,15 +54,13 @@ let config = {
     ['unknown', 'hierarchyAble'],
     ['hierarchyAble', 'queryable'],
     ['type', 'property'],
+    ['have', 'canBeQuestion'],
+    ['have', 'canBeDoQuestion'],
   ],
-  words: {
-  },
   priorities: [
     [['questionMark', 0], ['is', 0], ['a', 0]],
     [['is', 0], ['hierarchyAble', 0]],
     [['a', 0], ['is', 0], ['hierarchyAble', 0]],
-  ],
-  generators: [
   ],
   semantics: [
     {

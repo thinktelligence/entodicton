@@ -74,8 +74,12 @@ let config = {
     "(<the|> ([theAble|]))",
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
+
     "([canBeQuestion])",
     "(([canBeQuestion/1]) <questionMark|>)",
+
+    "([canBeDoQuestion])",
+    "(<does> ([canBeDoQuestion/1]))",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
@@ -95,6 +99,11 @@ let config = {
     { id: "questionMark", level: 0, bridge: "{ ...before[0], query: [before.marker] }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }", queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
+
+    { id: "canBeDoQuestion", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "canBeDoQuestion", level: 1, bridge: "{ ...next(operator) }" },
+    { id: "canBeDoQuestion", level: 2, bridge: "{ ...next(operator) }" },
+    { id: "does", level: 0, bridge: "{ ...after, query: true }" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
     { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
