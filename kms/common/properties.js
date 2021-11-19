@@ -55,8 +55,6 @@ const api = {
   },
   learnWords(config, context) {
   },
-
-/*
   isA(objects, child, parent) {
     return objects.parents[child].includes(parent);
   },
@@ -85,7 +83,6 @@ const api = {
   conceptExists(objects, concept) {
     return objects.concepts.includes(concept)
   }
-*/
 }
 
 let config = {

@@ -102,7 +102,8 @@ let config = {
     {
       notes: 'is x y',
       match: ({context, hierarchy, args}) => hierarchy.isA(context.marker, 'is') && context.query && args( { types: ['hierarchyAble', 'hierarchyAble'], properties: ['one', 'two'] } ),
-      apply: ({context, api, objects, g}) => {
+      apply: ({context, km, objects, g}) => {
+        const api = km('properties').api
         const one = context.one
         const two = context.two
         if (!api.conceptExists(objects, pluralize.singular(one.value))) {
@@ -127,7 +128,8 @@ let config = {
     {
       notes: 'c is a y',
       match: ({context, listable}) => listable(context.marker, 'unknown') && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
-      apply: ({context, api, objects, asList}) => {
+      apply: ({context, km, objects, asList}) => {
+        const api = km('properties').api
         // mark c as an instance?
         const oneConcepts = asList(context);
         const twoConcepts = asList(context.same);
@@ -148,7 +150,8 @@ let config = {
     {
       notes: 'an x is a y',
       match: ({context, listable}) => listable(context.marker, 'unknown') && !context.pullFromContext && context.wantsValue && context.same,
-      apply: ({context, api, objects, config, asList}) => {
+      apply: ({context, km, objects, config, asList}) => {
+        const api = km('properties').api
         const oneConcepts = asList(context);
         const twoConcepts = asList(context.same);
         for (let oneConcept of oneConcepts.value) {
@@ -174,7 +177,8 @@ let config = {
         }
         return listable(context, 'unknown') && context.same
       },
-      apply: ({objects, context, asList, listable}) => {
+      apply: ({objects, km, context, asList, listable}) => {
+        const api = km('properties').api
         const oneConcepts = asList(context);
         const twoConcepts = asList(context.same);
         for (let oneConcept of oneConcepts.value) {
