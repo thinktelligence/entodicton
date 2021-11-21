@@ -76,7 +76,31 @@ class API {
 
   learnWords(config, context) {
   }
+/*
+  ensureDefault(map, key, default) {
+    if (!this.objects[map][key]) {
+      this.objects[map][key] = default
+    }
+    return this.objects[map][key]
+  }
 
+  pushListNoDups(list, value) {
+    if (list.includes(value)) {
+      return
+    }
+    list.push(value)
+  }
+
+  ensureConcept(concept) {
+    ensureDefault(this.properties, concept, {})
+    ensureDefault(this.concepts, concept, [])
+  }
+
+  canDo(object, ability) {
+    this.ensureConcept(object)
+    this.pushListNoDups(this.ensureList('abilities', object), ability)
+  }
+*/
   isA(child, parent) {
     return this.objects.parents[child].includes(parent);
   }
