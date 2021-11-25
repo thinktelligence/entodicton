@@ -1,3 +1,388 @@
 {
-  "queries": []
+  "are humans animals": {
+    "contexts": [
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "marker": "human",
+          "number": "many",
+          "response": true,
+          "types": [
+            "human"
+          ],
+          "value": "human",
+          "word": "humans"
+        },
+        "query": true,
+        "response": {
+          "verbatim": "yes"
+        },
+        "topLevel": true,
+        "two": {
+          "marker": "animal",
+          "number": "many",
+          "response": true,
+          "types": [
+            "animal"
+          ],
+          "value": "animal",
+          "word": "animals"
+        },
+        "word": "are"
+      }
+    ],
+    "metadata": {
+      "associations": [
+      ],
+      "priorities": [
+        [
+          [
+            "animal",
+            0
+          ],
+          [
+            [
+              "animal",
+              0
+            ],
+            [
+              "human",
+              0
+            ],
+            [
+              "is",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "human",
+            0
+          ],
+          [
+            [
+              "human",
+              0
+            ],
+            [
+              "is",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            [
+              "is",
+              1
+            ]
+          ]
+        ]
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+          "children": {
+            "animal": [
+              "bird",
+              "feline",
+              "canine"
+            ],
+            "canine": [
+              "dog"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammel": [
+              "human",
+              "animal"
+            ]
+          },
+          "concepts": [
+            "human",
+            "mammel",
+            "animal",
+            "bird",
+            "feline",
+            "cat",
+            "canine",
+            "dog"
+          ],
+          "parents": {
+            "animal": [
+              "mammel"
+            ],
+            "bird": [
+              "animal"
+            ],
+            "canine": [
+              "animal"
+            ],
+            "cat": [
+              "feline"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "animal"
+            ],
+            "human": [
+              "mammel"
+            ]
+          },
+          "properties": {
+            "animal": {
+              "skin": null
+            },
+            "bird": {
+            },
+            "canine": {
+            },
+            "cat": {
+            },
+            "dog": {
+            },
+            "feline": {
+            },
+            "human": {
+            },
+            "mammel": {
+              "ear": null
+            }
+          }
+        },
+        "2": {
+          "mentioned": [
+          ]
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "human",
+              "number": "many",
+              "response": true,
+              "types": [
+                "human"
+              ],
+              "value": "human",
+              "word": "humans"
+            },
+            "query": true,
+            "response": {
+              "verbatim": "yes"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "animal",
+              "number": "many",
+              "response": true,
+              "types": [
+                "animal"
+              ],
+              "value": "animal",
+              "word": "animals"
+            },
+            "word": "are"
+          },
+          "paraphrases": "humans are animals?",
+          "responses": [
+            "yes"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "dogs",
+              "word": "dogs"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "canine",
+              "number": "many",
+              "response": true,
+              "types": [
+                "canine"
+              ],
+              "value": "canine",
+              "word": "canines"
+            },
+            "word": "are"
+          },
+          "paraphrases": "dogs are canines",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "canines",
+              "word": "canines"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "animal",
+              "number": "many",
+              "response": true,
+              "types": [
+                "animal"
+              ],
+              "value": "animal",
+              "word": "animals"
+            },
+            "word": "are"
+          },
+          "paraphrases": "canines are animals",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "cats",
+              "word": "cats"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "feline",
+              "number": "many",
+              "response": true,
+              "types": [
+                "feline"
+              ],
+              "value": "feline",
+              "word": "felines"
+            },
+            "word": "are"
+          },
+          "paraphrases": "cats are felines",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "felines",
+              "word": "felines"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "animal",
+              "number": "many",
+              "response": true,
+              "types": [
+                "animal"
+              ],
+              "value": "animal",
+              "word": "animals"
+            },
+            "word": "are"
+          },
+          "paraphrases": "felines are animals",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "birds",
+              "word": "birds"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "animal",
+              "number": "many",
+              "response": true,
+              "types": [
+                "animal"
+              ],
+              "value": "animal",
+              "word": "animals"
+            },
+            "word": "are"
+          },
+          "paraphrases": "birds are animals",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "humans are animals?"
+    ],
+    "responses": [
+      "yes"
+    ]
+  }
 }
