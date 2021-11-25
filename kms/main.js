@@ -1,4 +1,5 @@
 const entodicton = require('entodicton')
+const animals = require('./common/animals');
 const avatar = require('./common/avatar');
 const characters = require('./common/characters');
 const currency = require('./common/currency');
@@ -16,6 +17,7 @@ const time = require('./common/time');
 
 module.exports = { 
   Config: entodicton.Config,
+  animals,
   avatar,
   characters,
   currency,
