@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const entodicton = require('entodicton')
 const config = require('./hierarchy')
 const animals_tests = require('./animals.test.json')
