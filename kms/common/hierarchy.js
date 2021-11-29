@@ -71,21 +71,20 @@ let config = {
         const one = context.one
         const two = context.two
         if (!api.conceptExists(pluralize.singular(one.value))) {
-          debugger;
           context.response = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
           return
         }
         if (!api.conceptExists(pluralize.singular(two.value))) {
-          debugger;
           context.response = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
           }
           return
         }
         context.response = {
-          verbatim: 'yes'
+          marker: 'yesno',
+          value: true
         }
       }
     },

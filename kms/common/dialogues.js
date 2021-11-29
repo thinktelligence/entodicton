@@ -79,18 +79,19 @@ let config = {
     "(([canBeQuestion/1]) <questionMark|>)",
 
     "([canBeDoQuestion])",
-    "(<does> ([canBeDoQuestion/1]))",
+    "(<does|does,do> ([canBeDoQuestion/1]))",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
     //greg is a first name
-
     "(([theAble|]) [list|and] ([theAble|]))",
+    "([yesno|])",
   ],
   bridges: [
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
+    { id: "yesno", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
@@ -118,6 +119,8 @@ let config = {
     "?": [{"id": "questionMark", "initial": "{}" }],
     "the": [{"id": "the", "initial": "{ modifiers: [] }" }],
     "who": [{"id": "what", "initial": "{ modifiers: [] }" }],
+    "yes": [{"id": "yesno", "initial": "{ value: true }" }],
+    "no": [{"id": "yesno", "initial": "{ value: false }" }],
   },
 
   floaters: ['query'],
@@ -126,6 +129,7 @@ let config = {
     [["is",0],["the",0]],
     [["is",0],["a",0]],
     [["is",1],["is",0]],
+   [['is', 0], ['does', 0], ['a', 0]],
   ],
   hierarchy: [
     ['unknown', 'theAble'],
@@ -137,6 +141,10 @@ let config = {
   debug: false,
   version: '3',
   generators: [
+    {
+      match: ({context}) => context.marker == 'yesno',
+      apply: ({context}) => context.value ? 'yes' : 'no'
+    },
     /*
      * modifiers = <list of properties>
      */
@@ -241,10 +249,14 @@ let config = {
       ({context, g}) => {
         const response = context.response;
         const concept = response.concept;
-        concept.paraphrase = true
-        concept.isSelf = true
-        const instance = g(response.instance)
-        return `${g(concept)} ${context.word} ${instance}` 
+        if (concept) {
+          concept.paraphrase = true
+          concept.isSelf = true
+          const instance = g(response.instance)
+          return `${g(concept)} ${context.word} ${instance}` 
+        } else {
+          return `${g(response)}` 
+        }
       }
     ],
     [ 

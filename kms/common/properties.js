@@ -196,7 +196,7 @@ let config = {
     "(<your> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
-    "(<doesnt> ([have/0]))",
+    "(<doesnt|doesnt,dont> ([have/0]))",
     "(([have/1]) <questionMark|>)",
     // the plural of cat is cats what is the plural of cat?
     // does greg have ears (yes) greg does not have ears does greg have ears (no)
