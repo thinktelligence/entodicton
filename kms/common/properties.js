@@ -19,6 +19,14 @@ const pluralize = require('pluralize')
 //        ],
 //
 
+// property value has four cases. 
+//   Property has known value                           { has: true, value }
+//   Property exists but has unknown value              { has: true }
+//   Property exists and the object does not have it    { has: false }
+//   Property is not know to exist                      undefined
+//
+//   value is (has, value)
+
 class API {
 
   getObject(object) {
@@ -36,26 +44,58 @@ class API {
       const objectProps = this.getObject(object)
       const values = []
       for (let key of Object.keys(objectProps)) {
-        values.push(`${g(key)}: ${g({ ...objectProps[key], evaluate: true })}`)
+        if (objectProps[key].has) {
+          values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
+        }
       }
       return { marker: 'list', value: values }
     } else {
-      return this.objects.properties[object][property]
+      return (this.objects.properties[object][property] || {}).value
     }
   }
 
-  setProperty(object, property, value) {
-    this.getObject(object)[property] = value || null
+  hasProperty(object, property, has) {
+    this.getObject(object)[property].has
+  }
+
+  setProperty(object, property, value, has) {
+    this.getObject(object)[property] = {has, value} || undefined
   }
 
   knownObject(object) {
     return !!this.objects.properties[object]
   }
 
+  hasProperty(object, property) {
+    if (property == 'properties') {
+      return true;
+    }
+
+    // go up the hierarchy
+    const todo = [object];
+    const seen = [object];
+    while (todo.length > 0) {
+      const next = todo.pop();
+      if (((this.objects.properties[next] || {})[property] || {}).has) {
+        return true
+      }
+      const parents = this.objects.parents[next] || [];
+      for (let parent of parents) {
+        if (!seen.includes(parent)) {
+          todo.push(parent)
+          seen.push(parent)
+        } 
+      }
+    }
+    return false
+  }
+
   knownProperty(object, property) {
     if (property == 'properties') {
       return true;
     }
+
+    // go up the hierarchy
     const todo = [object];
     const seen = [object];
     while (todo.length > 0) {
@@ -156,6 +196,7 @@ let config = {
     "(<your> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
+    "(<doesnt> ([have/0]))",
     "(([have/1]) <questionMark|>)",
     // the plural of cat is cats what is the plural of cat?
     // does greg have ears (yes) greg does not have ears does greg have ears (no)
@@ -167,8 +208,10 @@ let config = {
     ['property', 'unknown'],
     ['object', 'theAble'],
     ['whose', 'object'],
+    ['have', 'canBeDoQuestion'],
   ],
   bridges: [
+    { id: "doesnt", level: 0, bridge: "{ ...after, negation: true }" },
     { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
     { id: "have", level: 1, bridge: "{ ...next(operator) }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
@@ -188,6 +231,8 @@ let config = {
     "have": [{ id: 'have', initial: "{ doesable: true }" }],
   },
   priorities: [
+    [['does', 0], ['have', 0]],
+    [['does', 0], ['have', 1]],
     [['is', 0], ['possession', 0], ['propertyOf', 0], ['what', 0]],
     [['is', 0], ['possession', 1]],
     [['is', 0], ['my', 0]],
@@ -201,7 +246,7 @@ let config = {
   ],
   generators: [
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && context.negation,
       ({context, g}) => {
         /*
         let query = ''
@@ -210,7 +255,26 @@ let config = {
         }
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
         */
-        return `does ${g(context.object)} ${context.word} ${g(context.property)}`
+        return `${g(context.object)} doesnt ${context.word} ${g(context.property)}`
+      }
+    ],
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && context.query,
+      ({context, g}) => {
+        /*
+        let query = ''
+        if (context.query) {
+          query = "?"
+        }
+        return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
+        */
+        return `does ${g(context.object)} ${context.word} ${g(context.property)}?`
+      }
+    ],
+    [
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && !context.query,
+      ({context, g}) => {
+        return `${g(context.object)} ${context.word} ${g(context.property)}`
       }
     ],
     [
@@ -261,7 +325,11 @@ let config = {
       notes: 'greg has eyes',
       match: ({context}) => context.marker == 'have' && !context.query,
       apply: ({context, objects, api}) => {
-        api.setProperty(pluralize.singular(context.object.value), pluralize.singular(context.property.value))
+        if (context.negation) {
+          api.setProperty(pluralize.singular(context.object.value), pluralize.singular(context.property.value), null, false)
+        } else {
+          api.setProperty(pluralize.singular(context.object.value), pluralize.singular(context.property.value), null, true)
+        }
         context.sameWasProcessed = true
       }
     },
@@ -276,7 +344,8 @@ let config = {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
         }
-        if (!api.knownProperty(object, property)) {
+        debugger;
+        if (!api.hasProperty(object, property)) {
           context.verbatim = 'No'
           return
         } else {
@@ -288,7 +357,7 @@ let config = {
     {
       match: ({context}) => context.marker == 'property' && context.same && context.object,
       apply: ({context, objects, api}) => {
-        api.setProperty(context.object.value, context.value, context.same)
+        api.setProperty(context.object.value, context.value, context.same, true)
         context.sameWasProcessed = true
       }
     },
