@@ -242,12 +242,14 @@
           "word": "wings"
         },
         "query": true,
-        "response": true,
+        "response": {
+          "marker": "yesno",
+          "value": false
+        },
         "topLevel": true,
         "types": [
           "have"
         ],
-        "verbatim": "No",
         "word": "have"
       }
     ],
@@ -501,18 +503,20 @@
               "word": "wings"
             },
             "query": true,
-            "response": true,
+            "response": {
+              "marker": "yesno",
+              "value": false
+            },
             "topLevel": true,
             "types": [
               "have"
             ],
-            "verbatim": "No",
             "word": "have"
           },
           "paraphrases": "does greg have wings?",
           "responses": [
             "",
-            "No"
+            "no"
           ]
         },
         {
@@ -549,7 +553,7 @@
           "paraphrases": "greg doesnt have wings",
           "responses": [
             "",
-            "No"
+            "no"
           ]
         }
       ]
@@ -560,7 +564,7 @@
     ],
     "responses": [
       "",
-      "No"
+      "no"
     ]
   },
   "greg has eyes": {
@@ -772,12 +776,14 @@
         "query": [
           "have"
         ],
-        "response": true,
+        "response": {
+          "marker": "yesno",
+          "value": true
+        },
         "topLevel": true,
         "types": [
           "have"
         ],
-        "verbatim": "Yes",
         "word": "has"
       }
     ],
@@ -993,18 +999,20 @@
             "query": [
               "have"
             ],
-            "response": true,
+            "response": {
+              "marker": "yesno",
+              "value": true
+            },
             "topLevel": true,
             "types": [
               "have"
             ],
-            "verbatim": "Yes",
             "word": "has"
           },
           "paraphrases": "does greg has eyes?",
           "responses": [
             "",
-            "Yes"
+            "yes"
           ]
         },
         {
@@ -1037,7 +1045,7 @@
           "paraphrases": "greg has eyes",
           "responses": [
             "",
-            "Yes"
+            "yes"
           ]
         }
       ]
@@ -1048,7 +1056,7 @@
     ],
     "responses": [
       "",
-      "Yes"
+      "yes"
     ]
   },
   "greg has eyes?": {
@@ -1296,12 +1304,14 @@
         "query": [
           "have"
         ],
-        "response": true,
+        "response": {
+          "marker": "yesno",
+          "value": false
+        },
         "topLevel": true,
         "types": [
           "have"
         ],
-        "verbatim": "No",
         "word": "has"
       }
     ],
@@ -1517,18 +1527,20 @@
             "query": [
               "have"
             ],
-            "response": true,
+            "response": {
+              "marker": "yesno",
+              "value": false
+            },
             "topLevel": true,
             "types": [
               "have"
             ],
-            "verbatim": "No",
             "word": "has"
           },
           "paraphrases": "does greg has eyes?",
           "responses": [
             "",
-            "No"
+            "no"
           ]
         },
         {
@@ -1561,7 +1573,7 @@
           "paraphrases": "greg has toes",
           "responses": [
             "",
-            "No"
+            "no"
           ]
         }
       ]
@@ -1572,7 +1584,7 @@
     ],
     "responses": [
       "",
-      "No"
+      "no"
     ]
   },
   "property of object": {
@@ -2819,7 +2831,7 @@
       "priorities": [
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -2874,61 +2886,9 @@
             [
               "unknown",
               0
-            ]
-          ]
-        ],
-        [
-          [
-            "unknown",
-            0
-          ],
-          [
-            [
-              "is",
-              0
             ],
             [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "unknown",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -2958,6 +2918,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         ],
@@ -2985,6 +2949,70 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -3015,7 +3043,7 @@
         ],
         [
           [
-            "possession",
+            "propertyOf",
             0
           ],
           [
@@ -3035,6 +3063,42 @@
         ],
         [
           [
+            "propertyOf",
+            1
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        ],
+        [
+          [
             "possession",
             1
           ],
@@ -3046,10 +3110,6 @@
             [
               "possession",
               1
-            ],
-            [
-              "propertyOf",
-              0
             ]
           ]
         ],
@@ -3066,42 +3126,6 @@
             [
               "property",
               0
-            ],
-            [
-              "propertyOf",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            1
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
             ]
           ]
         ],
@@ -5615,7 +5639,7 @@
         ],
         [
           [
-            "object",
+            "what",
             0
           ],
           [
@@ -5643,7 +5667,7 @@
         ],
         [
           [
-            "what",
+            "object",
             0
           ],
           [
@@ -5652,15 +5676,15 @@
               0
             ],
             [
+              "object",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -5860,7 +5884,7 @@
       "priorities": [
         [
           [
-            "property",
+            "whose",
             0
           ],
           [
@@ -5876,12 +5900,12 @@
         ],
         [
           [
-            "whose",
+            "property",
             0
           ],
           [
             [
-              "whose",
+              "property",
               0
             ]
           ]

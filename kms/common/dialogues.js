@@ -129,7 +129,7 @@ let config = {
     [["is",0],["the",0]],
     [["is",0],["a",0]],
     [["is",1],["is",0]],
-   [['is', 0], ['does', 0], ['a', 0]],
+    [['is', 0], ['does', 0], ['a', 0]],
   ],
   hierarchy: [
     ['unknown', 'theAble'],
@@ -275,6 +275,11 @@ let config = {
     [
       ({context}) => context.verbatim,
       ({context}) => context.verbatim
+    ],
+
+    [
+      ({context}) => context.response,
+      ({context, g}) => g(context.response)
     ],
 
     [

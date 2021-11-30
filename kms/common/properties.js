@@ -344,12 +344,16 @@ let config = {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
         }
-        debugger;
         if (!api.hasProperty(object, property)) {
-          context.verbatim = 'No'
-          return
+          context.response = {
+            marker: 'yesno', 
+            value: false,
+          }
         } else {
-          context.verbatim = 'Yes'
+          context.response = {
+            marker: 'yesno', 
+            value: true,
+          }
           return
         }
       }
