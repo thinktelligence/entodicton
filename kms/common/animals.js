@@ -1,5 +1,5 @@
 const entodicton = require('entodicton')
-const config = require('./hierarchy')
+const config = require('./hierarchy').copy()
 const animals_tests = require('./animals.test.json')
 const animals_instance = require('./hierarchy.animals.instance.json')
 
