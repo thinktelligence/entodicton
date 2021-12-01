@@ -209,6 +209,7 @@ let config = {
     ['object', 'theAble'],
     ['whose', 'object'],
     ['have', 'canBeDoQuestion'],
+    ['have', 'canBeQuestion'],
   ],
   bridges: [
     { id: "doesnt", level: 0, bridge: "{ ...after, negation: true }" },
@@ -268,7 +269,7 @@ let config = {
         }
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
         */
-        return `does ${g(context.object)} ${context.word} ${g(context.property)}?`
+        return `does ${g(context.object)} ${context.word} ${g(context.property)}`
       }
     ],
     [
