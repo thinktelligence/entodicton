@@ -107,9 +107,9 @@ let config = {
     { id: "does", level: 0, bridge: "{ ...after, query: true }" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
-    { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
+    { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
 
-    { id: "a", level: 0, bridge: "{ ...after[0], pullFromContext: false, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
+    { id: "a", level: 0, bridge: "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
@@ -168,13 +168,15 @@ let config = {
       }
     ],
 
-    [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
-      ({context, g}) => {
+    {
+      notes: 'paraphrase a queryable',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
+      apply: ({context, g}) => {
         context.value.paraphrase = true;
+        const greg = 1;
         return g(context.value)
       }
-    ],
+    },
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.isSelf && context.subject == 'my',
       ({context}) => `your ${context.word}`
@@ -347,9 +349,10 @@ let config = {
     },
 
     // statement
-    [ 
-      ({context}) => context.marker == 'is' && !context.query && context.one && context.two,
-      ({context, s, log}) => {
+    { 
+      notes: 'x is y',
+      match: ({context}) => context.marker == 'is' && !context.query && context.one && context.two,
+      apply: ({context, s, log}) => {
         const one = context.one;
         const two = context.two;
         one.same = two;
@@ -368,7 +371,7 @@ let config = {
           two.same = undefined
         }
       }
-    ],
+    },
   ],
 };
 

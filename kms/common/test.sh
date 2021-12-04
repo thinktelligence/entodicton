@@ -1,3 +1,4 @@
+node animals -tv 
 node avatar -tv 
 node characters -tv 
 node currency -tv 

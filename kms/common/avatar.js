@@ -1,6 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
-const properties = require('./properties')
+const hierarchy = require('./hierarchy')
 const avatar_tests = require('./avatar.test.json')
  
 let config = {
@@ -13,7 +13,7 @@ let config = {
 };
 
 config = new entodicton.Config(config)
-config.add(properties)
+config.add(hierarchy)
 
 entodicton.knowledgeModule( { 
   module,

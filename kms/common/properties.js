@@ -3,6 +3,15 @@ const dialogues = require('./dialogues')
 const properties_tests = require('./properties.test.json')
 const pluralize = require('pluralize')
 
+// TODO blue is a colour my eyes are blue what color are my eyes
+// TODO for my have a way to set context with current my and its changable
+// TODO mccoy is a crew member
+// TODO crew member is a type of person
+// TODO you are a captain are you a captain
+
+// your name is greg  -> greg is value
+// you are a captain  -> a captain is class
+
 //
 // duck typing: 
 //
@@ -231,6 +240,7 @@ let config = {
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
   priorities: [
+    [['have', 0], ['a', 0]],
     [['does', 0], ['have', 0]],
     [['does', 0], ['have', 1]],
     [['is', 0], ['possession', 0], ['propertyOf', 0], ['what', 0]],

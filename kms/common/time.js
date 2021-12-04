@@ -13,6 +13,7 @@ const api = {
   // gets the contexts for doing the happening
   semantics: 
       ({context, isModule, args, api}) => {
+        debugger;
         const values = args({ types: ['ampm', 'time'], properties: ['one', 'two']  })
         const ampm = context[values[0]]
         let hour = ampm.hour.hour
@@ -25,6 +26,7 @@ const api = {
         }).then( () => context )
         context.event = promise
       },
+
   newDate: () => new Date()
 }
 
@@ -126,17 +128,29 @@ let config = {
   ],
 
   semantics: [
-    [({objects, context, api}) => context.marker == 'time' && context.evaluate, ({objects, context}) => {
-      context.value = api.newDate()
-      context.format = objects.format
-    }],
-    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), ({objects, context}) => {
-      objects.format = context.format.count
-    }],
-    [({objects, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), ({objects, context}) => {
-      context.marker = 'response'
-      context.text = 'The hour format is 12 hour or 24 hour'
-    }],
+    {
+      notes: 'evaluate time',
+      match: ({objects, context, api}) => context.marker == 'time' && context.evaluate, 
+      apply: ({objects, context, api}) => {
+        context.value = api.newDate()
+        context.format = objects.format
+      }
+    },
+    {
+      notes: 'use time format working case',
+      match: ({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), 
+      apply: ({objects, context}) => {
+        objects.format = context.format.count
+      }
+    },
+    {
+      notes: 'use time format error case',
+      match: ({objects, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), 
+      apply: ({objects, context}) => {
+        context.marker = 'response'
+        context.text = 'The hour format is 12 hour or 24 hour'
+      }
+    },
   ],
 };
 
@@ -154,6 +168,7 @@ config.initializer( ({api, config, objects, isModule}) => {
       ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args({ types: ['ampm', 'time'], properties: ['one', 'two'] }),
       api.semantics
   )
+  debugger;
 })
 
 knowledgeModule({

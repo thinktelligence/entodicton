@@ -138,7 +138,10 @@ let config = {
         if (context.marker == 'list') {
           listable(context, 'unknown')
         }
-        return listable(context, 'unknown') && context.same
+        if (context.same && pluralize.isPlural(context.same.word)) {
+          context.same.concept = true;
+        }
+        return listable(context, 'unknown') && context.same && context.same.concept && !context.query
       },
       apply: ({objects, km, context, asList, listable}) => {
         const api = km('properties').api
