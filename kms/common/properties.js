@@ -192,8 +192,7 @@ let config = {
   operators: [
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
-    "(<my> ([property]))",
-    "(<your> ([property]))",
+    "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
     "(<doesnt|doesnt,dont> ([have/0]))",
@@ -222,22 +221,21 @@ let config = {
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0] }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object }" },
     { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}' },
-    { id: "your", level: 0, bridge: "{ ...after, subject: 'your' }" },
-    { id: "my", level: 0, bridge: "{ ...after, subject: 'my' }" },
-
+    { id: "objectPrefix", level: 0, bridge: '{ ...after[0], object: operator }' },
   ],
   words: {
     "<<possession>>": [{ id: 'possession', initial: "{ value: 'possession' }" }],
     " 's": [{ id: 'possession', initial: "{ value: 'possession' }" }],
     "have": [{ id: 'have', initial: "{ doesable: true }" }],
+    // "my": [{ id: 'objectPrefix', initial: "{ value: 'other' }" }],
+    // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
   priorities: [
     [['does', 0], ['have', 0]],
     [['does', 0], ['have', 1]],
     [['is', 0], ['possession', 0], ['propertyOf', 0], ['what', 0]],
     [['is', 0], ['possession', 1]],
-    [['is', 0], ['my', 0]],
-    [['is', 0], ['your', 0]],
+    [['is', 0], ['objectPrefix', 0]],
     [['is', 0], ['what', 0], ['propertyOf', 0], ['the', 0], ['property', 0]],
     [['is', 0], ['propertyOf', 1]],
     [['propertyOf', 0], ['the', 0]],
@@ -246,6 +244,22 @@ let config = {
     [['questionMark', 0], ['have', 1], ['is', 1], ['have', 0]],
   ],
   generators: [
+    {
+      match: ({context}) => context.marker == 'objectPrefix' && context.value == 'other' && context.paraphrase,
+      apply: ({context}) => `my`
+    },
+    {
+      match: ({context}) => context.marker == 'objectPrefix' && context.value == 'other',
+      apply: ({context}) => `your`
+    },
+    {
+      match: ({context}) => context.marker == 'objectPrefix' && context.value == 'self' && context.paraphrase,
+      apply: ({context}) => `your`
+    },
+    {
+      match: ({context}) => context.marker == 'objectPrefix' && context.value == 'self',
+      apply: ({context}) => `my`
+    },
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && context.negation,
       ({context, g}) => {
@@ -290,8 +304,13 @@ let config = {
       apply: ({context, g}) => {
                const base = { ...context }
                base.object = undefined;
-               // TODO make paraphrase be a default when paraphrasing?
-               return `${g(base)} of ${g({...context.object, paraphrase: true})}`
+
+               if (context.object.marker == 'objectPrefix') {
+                 return `${g(context.object)} ${g(base)}`
+               } else {
+                 // TODO make paraphrase be a default when paraphrasing?
+                 return `${g(base)} of ${g({...context.object, paraphrase: true})}`
+               }
              },
       notes: 'the property of object'
     },
@@ -299,9 +318,12 @@ let config = {
       match: ({context}) => context.paraphrase && !context.modifiers && context.object, 
       apply: ({context, g}) => {
                const base = { ...context }
-               base.object = undefined;
-               // TODO make paraphrase be a default when paraphrasing?
-               return `${g({...context.object, paraphrase: true})}'s ${g(base)}`
+               base.object = undefined; // TODO make paraphrase be a default when paraphrasing?
+               if (context.object.marker == 'objectPrefix') {
+                 return `${g(context.object)} ${g(base)}`
+               } else {
+                 return `${g({...context.object, paraphrase: true})}'s ${g(base)}`
+               }
              },
       notes: "object's property"
     },
@@ -360,6 +382,7 @@ let config = {
       }
     },
     {
+      notes: 'set the property of an object',
       match: ({context}) => context.marker == 'property' && context.same && context.object,
       apply: ({context, objects, api}) => {
         api.setProperty(context.object.value, context.value, context.same, true)
