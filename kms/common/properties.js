@@ -11,6 +11,9 @@ const pluralize = require('pluralize')
 // TODO captain is a type of job
 // TODO do you know any captains / who are the captains
 // TODO you hate brocoli do you want some brocoli
+// TODO the status of the photon torpedoes is armed
+// TODO the photon torpedoes are armed <- have a learning mode which is more flexible?
+// TODO make spock a doctor but not his job. is spock's job doctor is spock a doctor
 /*
 V1
    "mccoy's rank is doctor",
