@@ -70,13 +70,15 @@ let config = {
         const api = km('properties').api
         const one = context.one
         const two = context.two
-        if (!api.conceptExists(pluralize.singular(one.value))) {
+        const oneId = pluralize.singular(one.value);
+        if (!api.conceptExists(oneId)) {
           context.response = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
           return
         }
-        if (!api.conceptExists(pluralize.singular(two.value))) {
+        const twoId = pluralize.singular(two.value);
+        if (!api.conceptExists(twoId)) {
           context.response = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
           }
@@ -84,7 +86,7 @@ let config = {
         }
         context.response = {
           marker: 'yesno',
-          value: true
+          value: api.isA(oneId, twoId)
         }
       }
     },

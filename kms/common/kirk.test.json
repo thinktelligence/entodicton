@@ -156,6 +156,9 @@
               "captain",
               "second",
               "doctor"
+            ],
+            "status": [
+              "armed"
             ]
           },
           "concepts": [
@@ -171,9 +174,15 @@
             "spock",
             "brown",
             "doctor",
-            "mccoy"
+            "mccoy",
+            "armed",
+            "status",
+            "phasers"
           ],
           "parents": {
+            "armed": [
+              "status"
+            ],
             "blue": [
               "eyes"
             ],
@@ -204,6 +213,8 @@
             ]
           },
           "properties": {
+            "armed": {
+            },
             "blue": {
             },
             "brown": {
@@ -258,6 +269,21 @@
               }
             },
             "name": {
+            },
+            "phasers": {
+              "status": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "armed",
+                  "word": "armed"
+                }
+              }
             },
             "rank": {
             },
@@ -347,6 +373,8 @@
                   "word": "second"
                 }
               }
+            },
+            "status": {
             },
             "you": {
             }
@@ -450,6 +478,18 @@
                 "value": "doctor",
                 "word": "doctor"
               }
+            ],
+            "status": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
+              }
             ]
           }
         },
@@ -502,6 +542,62 @@
           "paraphrases": "you are a captain?",
           "responses": [
             "yes"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "object": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "phasers",
+                "wantsValue": true,
+                "word": "phasers"
+              },
+              "pullFromContext": true,
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "status",
+              "wantsValue": true,
+              "word": "status"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "armed",
+              "word": "armed"
+            },
+            "word": "is"
+          },
+          "paraphrases": "the status of the phasers is armed",
+          "responses": [
+            ""
           ]
         },
         {
@@ -666,48 +762,6 @@
             "word": "is"
           },
           "paraphrases": "mccoy's rank is doctor",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "spock",
-                "word": "spock"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "spock's eyes are brown",
           "responses": [
             ""
           ]
@@ -986,6 +1040,9 @@
               "captain",
               "second",
               "doctor"
+            ],
+            "status": [
+              "armed"
             ]
           },
           "concepts": [
@@ -1001,9 +1058,15 @@
             "spock",
             "brown",
             "doctor",
-            "mccoy"
+            "mccoy",
+            "armed",
+            "status",
+            "phasers"
           ],
           "parents": {
+            "armed": [
+              "status"
+            ],
             "blue": [
               "eyes"
             ],
@@ -1034,6 +1097,8 @@
             ]
           },
           "properties": {
+            "armed": {
+            },
             "blue": {
             },
             "brown": {
@@ -1088,6 +1153,21 @@
               }
             },
             "name": {
+            },
+            "phasers": {
+              "status": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "armed",
+                  "word": "armed"
+                }
+              }
             },
             "rank": {
             },
@@ -1177,6 +1257,8 @@
                   "word": "second"
                 }
               }
+            },
+            "status": {
             },
             "you": {
             }
@@ -1279,6 +1361,18 @@
                 "unknown": true,
                 "value": "doctor",
                 "word": "doctor"
+              }
+            ],
+            "status": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
               }
             ]
           }
@@ -1393,6 +1487,62 @@
           "paraphrases": "what is spock's name?",
           "responses": [
             "spock's name is spock"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "object": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "phasers",
+                "wantsValue": true,
+                "word": "phasers"
+              },
+              "pullFromContext": true,
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "status",
+              "wantsValue": true,
+              "word": "status"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "armed",
+              "word": "armed"
+            },
+            "word": "is"
+          },
+          "paraphrases": "the status of the phasers is armed",
+          "responses": [
+            ""
           ]
         },
         {
@@ -1557,48 +1707,6 @@
             "word": "is"
           },
           "paraphrases": "mccoy's rank is doctor",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "spock",
-                "word": "spock"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "spock's eyes are brown",
           "responses": [
             ""
           ]
@@ -1877,6 +1985,9 @@
               "captain",
               "second",
               "doctor"
+            ],
+            "status": [
+              "armed"
             ]
           },
           "concepts": [
@@ -1892,9 +2003,15 @@
             "spock",
             "brown",
             "doctor",
-            "mccoy"
+            "mccoy",
+            "armed",
+            "status",
+            "phasers"
           ],
           "parents": {
+            "armed": [
+              "status"
+            ],
             "blue": [
               "eyes"
             ],
@@ -1925,6 +2042,8 @@
             ]
           },
           "properties": {
+            "armed": {
+            },
             "blue": {
             },
             "brown": {
@@ -1979,6 +2098,21 @@
               }
             },
             "name": {
+            },
+            "phasers": {
+              "status": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "armed",
+                  "word": "armed"
+                }
+              }
             },
             "rank": {
             },
@@ -2067,6 +2201,8 @@
                   "word": "second"
                 }
               }
+            },
+            "status": {
             },
             "you": {
             }
@@ -2168,6 +2304,18 @@
                 "unknown": true,
                 "value": "doctor",
                 "word": "doctor"
+              }
+            ],
+            "status": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
               }
             ]
           }
@@ -2282,6 +2430,62 @@
           "paraphrases": "what is spock's rank?",
           "responses": [
             "spock's rank is second"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "object": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "phasers",
+                "wantsValue": true,
+                "word": "phasers"
+              },
+              "pullFromContext": true,
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "status",
+              "wantsValue": true,
+              "word": "status"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "armed",
+              "word": "armed"
+            },
+            "word": "is"
+          },
+          "paraphrases": "the status of the phasers is armed",
+          "responses": [
+            ""
           ]
         },
         {
@@ -2446,48 +2650,6 @@
             "word": "is"
           },
           "paraphrases": "mccoy's rank is doctor",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "spock",
-                "word": "spock"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "spock's eyes are brown",
           "responses": [
             ""
           ]
@@ -2803,6 +2965,9 @@
               "captain",
               "second",
               "doctor"
+            ],
+            "status": [
+              "armed"
             ]
           },
           "concepts": [
@@ -2818,9 +2983,15 @@
             "spock",
             "brown",
             "doctor",
-            "mccoy"
+            "mccoy",
+            "armed",
+            "status",
+            "phasers"
           ],
           "parents": {
+            "armed": [
+              "status"
+            ],
             "blue": [
               "eyes"
             ],
@@ -2851,6 +3022,8 @@
             ]
           },
           "properties": {
+            "armed": {
+            },
             "blue": {
             },
             "brown": {
@@ -2905,6 +3078,21 @@
               }
             },
             "name": {
+            },
+            "phasers": {
+              "status": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "armed",
+                  "word": "armed"
+                }
+              }
             },
             "rank": {
             },
@@ -2993,6 +3181,8 @@
                   "word": "second"
                 }
               }
+            },
+            "status": {
             },
             "you": {
             }
@@ -3094,6 +3284,18 @@
                 "unknown": true,
                 "value": "doctor",
                 "word": "doctor"
+              }
+            ],
+            "status": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
               }
             ]
           }
@@ -3229,6 +3431,62 @@
           "paraphrases": "what is the rank of spock?",
           "responses": [
             "the rank of spock is second"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "object": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "phasers",
+                "wantsValue": true,
+                "word": "phasers"
+              },
+              "pullFromContext": true,
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "status",
+              "wantsValue": true,
+              "word": "status"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "armed",
+              "word": "armed"
+            },
+            "word": "is"
+          },
+          "paraphrases": "the status of the phasers is armed",
+          "responses": [
+            ""
           ]
         },
         {
@@ -3393,48 +3651,6 @@
             "word": "is"
           },
           "paraphrases": "mccoy's rank is doctor",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "spock",
-                "word": "spock"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "spock's eyes are brown",
           "responses": [
             ""
           ]
@@ -3647,6 +3863,9 @@
               "captain",
               "second",
               "doctor"
+            ],
+            "status": [
+              "armed"
             ]
           },
           "concepts": [
@@ -3662,9 +3881,15 @@
             "spock",
             "brown",
             "doctor",
-            "mccoy"
+            "mccoy",
+            "armed",
+            "status",
+            "phasers"
           ],
           "parents": {
+            "armed": [
+              "status"
+            ],
             "blue": [
               "eyes"
             ],
@@ -3695,6 +3920,8 @@
             ]
           },
           "properties": {
+            "armed": {
+            },
             "blue": {
             },
             "brown": {
@@ -3749,6 +3976,21 @@
               }
             },
             "name": {
+            },
+            "phasers": {
+              "status": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "armed",
+                  "word": "armed"
+                }
+              }
             },
             "rank": {
             },
@@ -3836,6 +4078,8 @@
                   "word": "second"
                 }
               }
+            },
+            "status": {
             },
             "you": {
             }
@@ -3936,6 +4180,18 @@
                 "unknown": true,
                 "value": "doctor",
                 "word": "doctor"
+              }
+            ],
+            "status": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
               }
             ]
           }
@@ -4040,6 +4296,62 @@
           "paraphrases": "what is your name?",
           "responses": [
             "my name is jim"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "object": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "phasers",
+                "wantsValue": true,
+                "word": "phasers"
+              },
+              "pullFromContext": true,
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "status",
+              "wantsValue": true,
+              "word": "status"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "armed",
+              "word": "armed"
+            },
+            "word": "is"
+          },
+          "paraphrases": "the status of the phasers is armed",
+          "responses": [
+            ""
           ]
         },
         {
@@ -4204,48 +4516,6 @@
             "word": "is"
           },
           "paraphrases": "mccoy's rank is doctor",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "spock",
-                "word": "spock"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "spock's eyes are brown",
           "responses": [
             ""
           ]
