@@ -5,6 +5,7 @@ node currency -tv
 node dialogues -tv 
 node help -tv 
 node javascript -tv 
+node kirk -tv 
 node numbers -tv 
 node properties -tv 
 node reports -tv 
