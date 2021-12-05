@@ -10,6 +10,7 @@ const pluralize = require('pluralize')
 // TODO you are a captain are you a captain
 // TODO captain is a type of job
 // TODO do you know any captains / who are the captains
+// TODO you hate brocoli do you want some brocoli
 /*
 V1
    "mccoy's rank is doctor",
