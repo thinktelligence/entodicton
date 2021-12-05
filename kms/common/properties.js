@@ -11,10 +11,15 @@ const pluralize = require('pluralize')
 // TODO captain is a type of job
 // TODO do you know any captains / who are the captains
 /*
+V1
    "mccoy's rank is doctor",
    "mccoy is a doctor",
 
    if class is a value of property then class is a type of property
+
+V2
+   "mccoy's rank is doctor",
+   infer doctor is a type of rank
 */
 
 // your name is greg  -> greg is value
@@ -79,6 +84,12 @@ class API {
     this.getObject(object)[property] = {has, value} || undefined
     if (has && value) {
       this.objects.property[property] = (this.objects.property[property] || []).concat(value)
+      // "mccoy's rank is doctor",
+      // infer doctor is a type of rank
+      this.rememberIsA(value.value, property);
+    }
+    if (!this.objects.concepts.includes(object)) {
+      this.objects.concepts.push(object)
     }
   }
 
