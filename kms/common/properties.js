@@ -10,6 +10,12 @@ const pluralize = require('pluralize')
 // TODO you are a captain are you a captain
 // TODO captain is a type of job
 // TODO do you know any captains / who are the captains
+/*
+   "mccoy's rank is doctor",
+   "mccoy is a doctor",
+
+   if class is a value of property then class is a type of property
+*/
 
 // your name is greg  -> greg is value
 // you are a captain  -> a captain is class
@@ -71,6 +77,9 @@ class API {
 
   setProperty(object, property, value, has) {
     this.getObject(object)[property] = {has, value} || undefined
+    if (has && value) {
+      this.objects.property[property] = (this.objects.property[property] || []).concat(value)
+    }
   }
 
   knownObject(object) {
@@ -425,7 +434,10 @@ config.api = api
 config.add(dialogues)
 config.initializer( ({objects}) => {
   objects.concepts = []
+  // object -> property -> {has, value}
   objects.properties = {}
+  // property -> values
+  objects.property = {}
   objects.parents = {}
   objects.children = {}
 })
