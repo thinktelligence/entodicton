@@ -274,6 +274,7 @@ let config = {
     [['the', 0], ['propertyOf', 0], ['property', 0]],
     [['questionMark', 0], ['have', 0]],
     [['questionMark', 0], ['have', 1], ['is', 1], ['have', 0]],
+    [['is', 0], ['objectPrefix', 0], ['what', 0]],
   ],
   generators: [
     {
