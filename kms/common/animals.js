@@ -1,10 +1,11 @@
 const entodicton = require('entodicton')
-const config = require('./hierarchy').copy()
+const base = require('./hierarchy').copy()
 const animals_tests = require('./animals.test.json')
 const animals_instance = require('./hierarchy.animals.instance.json')
 
+const config = new entodicton.Config({ name: 'animals' })
+config.add(base)
 config.load(animals_instance)
-config.name = 'animals'
 
 entodicton.knowledgeModule( {
     module,
