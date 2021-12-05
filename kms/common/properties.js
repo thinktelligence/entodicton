@@ -8,6 +8,8 @@ const pluralize = require('pluralize')
 // TODO mccoy is a crew member
 // TODO crew member is a type of person
 // TODO you are a captain are you a captain
+// TODO captain is a type of job
+// TODO do you know any captains / who are the captains
 
 // your name is greg  -> greg is value
 // you are a captain  -> a captain is class
