@@ -5,15 +5,14 @@ const pluralize = require('pluralize')
 
 // TODO blue is a colour my eyes are blue what color are my eyes
 // TODO for my have a way to set context with current my and its changable
-// TODO mccoy is a crew member
 // TODO crew member is a type of person
-// TODO you are a captain are you a captain
 // TODO captain is a type of job
 // TODO do you know any captains / who are the captains
 // TODO you hate brocoli do you want some brocoli
-// TODO the status of the photon torpedoes is armed
+//
 // TODO the photon torpedoes are armed <- have a learning mode which is more flexible?
-// TODO make spock a doctor but not his job. is spock's job doctor is spock a doctor
+// TODO the status of the photon torpedoes is armed
+// TODO mccoy is a crew member
 /*
 V1
    "mccoy's rank is doctor",

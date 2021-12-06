@@ -289,10 +289,17 @@ let config = {
       ({context}) => `the ${context.word}` 
     ],
 
-    [
-      () => true,
-      ({context}) => JSON.stringify(context)
-    ]
+    {
+      notes: 'show word',
+      match: ({context}) => context.word,
+      apply: ({context}) => context.word,
+    },
+
+    {
+      notes: 'show json',
+      match: () => true,
+      apply: ({context}) => JSON.stringify(context)
+    }
   ],
 
   semantics: [
