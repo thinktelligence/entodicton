@@ -465,6 +465,11 @@ entodicton.knowledgeModule( {
   config,
   test: {
     name: './properties.test.json',
-    contents: properties_tests
+    contents: properties_tests,
+    include: {
+      words: true,
+      operators: true,
+      bridges: true,
+    }
   },
 })
