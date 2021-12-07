@@ -21,20 +21,13 @@ const modifier = (config, modifier, object) => {
   config.addHierarchy(objectId, 'theAble')
   config.addHierarchy(objectId, 'queryable')
 
-/*
   config.addPriorities([['torpedo', 0], ['photon', 0]])
   config.addPriorities([['is', 0], ['the', 0], ['propertyOf', 0], ['photon', 0]])
   config.addPriorities([['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['what', 0], ['unknown', 0], ['torpedo', 0]])
-*/
 }
 
 const config = new entodicton.Config({ 
   name: 'kirk',
-  priorities: [
-    [['torpedo', 0], ['photon', 0]],
-    [['is', 0], ['the', 0], ['propertyOf', 0], ['photon', 0]],
-    [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['what', 0], ['unknown', 0], ['torpedo', 0]],
-  ],
 })
 config.add(base)
 kirk_instance.base = 'avatar'
