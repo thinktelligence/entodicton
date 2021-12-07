@@ -126,6 +126,7 @@ let config = {
   floaters: ['query'],
   priorities: [
     [['questionMark', 0], ['is', 0]],
+    [['questionMark', 0], ['is', 1]],
     [["is",0],["the",0]],
     [["is",0],["a",0]],
     [["is",1],["is",0]],
