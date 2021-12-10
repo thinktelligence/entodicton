@@ -13,6 +13,7 @@ const pluralize = require('pluralize')
 // TODO the photon torpedoes are armed <- have a learning mode which is more flexible?
 // TODO the status of the photon torpedoes is armed
 // TODO mccoy is a crew member
+// TODO status can be armed or not armed (only)
 /*
 V1
    "mccoy's rank is doctor",
