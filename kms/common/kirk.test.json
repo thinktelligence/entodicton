@@ -13,6 +13,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -185,6 +195,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -194,6 +234,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -267,9 +315,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -396,6 +657,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -715,10 +1034,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -731,6 +1098,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -763,6 +1142,16 @@
             "initial": "{ value: true }"
           }
         ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
+          }
+        ],
         "your": [
           {
             "id": "objectPrefix",
@@ -776,12 +1165,12 @@
         "default": true,
         "marker": "is",
         "one": {
-          "marker": "unknown",
+          "marker": "you",
+          "number": "many",
           "response": true,
           "types": [
-            "unknown"
+            "you"
           ],
-          "unknown": true,
           "value": "you",
           "word": "you"
         },
@@ -794,7 +1183,7 @@
         "two": {
           "concept": true,
           "determiner": "a",
-          "marker": "unknown",
+          "marker": "captain",
           "modifiers": [
             "determiner"
           ],
@@ -802,9 +1191,8 @@
           "pullFromContext": false,
           "response": true,
           "types": [
-            "unknown"
+            "captain"
           ],
-          "unknown": true,
           "value": "captain",
           "wantsValue": true,
           "word": "captain"
@@ -814,11 +1202,53 @@
     ],
     "metadata": {
       "associations": [
+        [
+          [
+            0,
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "you",
+                0
+              ],
+              [
+                "a",
+                0
+              ],
+              [
+                "captain",
+                0
+              ]
+            ]
+          ]
+        ],
+        [
+          [
+            0,
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "you",
+                0
+              ],
+              [
+                "a",
+                0
+              ]
+            ]
+          ]
+        ]
       ],
       "priorities": [
         [
           [
-            "unknown",
+            "captain",
             0
           ],
           [
@@ -827,18 +1257,22 @@
               0
             ],
             [
+              "captain",
+              0
+            ],
+            [
               "is",
               0
             ],
             [
-              "unknown",
+              "you",
               0
             ]
           ]
         ],
         [
           [
-            "unknown",
+            "you",
             0
           ],
           [
@@ -851,7 +1285,7 @@
               0
             ],
             [
-              "unknown",
+              "you",
               0
             ]
           ]
@@ -1277,12 +1711,12 @@
             "default": true,
             "marker": "is",
             "one": {
-              "marker": "unknown",
+              "marker": "you",
+              "number": "many",
               "response": true,
               "types": [
-                "unknown"
+                "you"
               ],
-              "unknown": true,
               "value": "you",
               "word": "you"
             },
@@ -1295,7 +1729,7 @@
             "two": {
               "concept": true,
               "determiner": "a",
-              "marker": "unknown",
+              "marker": "captain",
               "modifiers": [
                 "determiner"
               ],
@@ -1303,16 +1737,15 @@
               "pullFromContext": false,
               "response": true,
               "types": [
-                "unknown"
+                "captain"
               ],
-              "unknown": true,
               "value": "captain",
               "wantsValue": true,
               "word": "captain"
             },
             "word": "are"
           },
-          "paraphrases": "you are a captain?",
+          "paraphrases": "you are captain?",
           "responses": [
             "yes"
           ]
@@ -1542,7 +1975,7 @@
       ]
     },
     "paraphrases": [
-      "you are a captain?"
+      "you are captain?"
     ],
     "responses": [
       "yes"
@@ -1559,6 +1992,16 @@
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
           "level": 0
         },
         {
@@ -1734,6 +2177,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -1743,6 +2216,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -1816,9 +2297,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -1945,6 +2639,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -2264,10 +3016,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -2280,6 +3080,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -2310,6 +3122,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -2415,7 +3237,7 @@
         ],
         [
           [
-            "photon",
+            "unknown",
             0
           ],
           [
@@ -2452,6 +3274,10 @@
               0
             ],
             [
+              "photon",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
@@ -2467,7 +3293,7 @@
         ],
         [
           [
-            "unknown",
+            "photon",
             0
           ],
           [
@@ -2476,15 +3302,15 @@
               0
             ],
             [
+              "photon",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -3293,6 +4119,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -3465,6 +4301,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -3474,6 +4340,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -3547,9 +4421,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -3676,6 +4763,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -3995,10 +5140,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -4011,6 +5204,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -4041,6 +5246,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -4279,7 +5494,7 @@
         ],
         [
           [
-            "photon",
+            "unknown",
             0
           ],
           [
@@ -4316,6 +5531,10 @@
               0
             ],
             [
+              "photon",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
@@ -4331,7 +5550,7 @@
         ],
         [
           [
-            "unknown",
+            "photon",
             0
           ],
           [
@@ -4340,15 +5559,15 @@
               0
             ],
             [
+              "photon",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -5487,6 +6706,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -5659,6 +6888,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -5668,6 +6927,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -5741,9 +7008,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -5870,6 +7350,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -6189,10 +7727,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -6205,6 +7791,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -6235,6 +7833,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -6359,7 +7967,7 @@
       "priorities": [
         [
           [
-            "type",
+            "unknown",
             0
           ],
           [
@@ -6391,7 +7999,7 @@
         ],
         [
           [
-            "unknown",
+            "type",
             0
           ],
           [
@@ -6408,7 +8016,7 @@
               0
             ],
             [
-              "unknown",
+              "type",
               0
             ],
             [
@@ -7263,6 +8871,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -7435,6 +9053,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -7444,6 +9092,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -7517,9 +9173,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -7646,6 +9515,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -7965,10 +9892,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -7981,6 +9956,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -8011,6 +9998,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -8047,12 +10044,11 @@
             "isSelf": true,
             "marker": "property",
             "object": {
-              "marker": "unknown",
+              "marker": "spock",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "spock"
               ],
-              "unknown": true,
               "value": "spock",
               "word": "spock"
             },
@@ -8090,12 +10086,11 @@
         "two": {
           "marker": "property",
           "object": {
-            "marker": "unknown",
+            "marker": "spock",
+            "number": "one",
             "types": [
-              "object",
-              "unknown"
+              "spock"
             ],
-            "unknown": true,
             "value": "spock",
             "word": "spock"
           },
@@ -8116,7 +10111,7 @@
       "priorities": [
         [
           [
-            "what",
+            "spock",
             0
           ],
           [
@@ -8126,6 +10121,10 @@
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -8155,12 +10154,16 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -8173,7 +10176,7 @@
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -8665,12 +10668,11 @@
                 "isSelf": true,
                 "marker": "property",
                 "object": {
-                  "marker": "unknown",
+                  "marker": "spock",
+                  "number": "one",
                   "types": [
-                    "object",
-                    "unknown"
+                    "spock"
                   ],
-                  "unknown": true,
                   "value": "spock",
                   "word": "spock"
                 },
@@ -8708,12 +10710,11 @@
             "two": {
               "marker": "property",
               "object": {
-                "marker": "unknown",
+                "marker": "spock",
+                "number": "one",
                 "types": [
-                  "object",
-                  "unknown"
+                  "spock"
                 ],
-                "unknown": true,
                 "value": "spock",
                 "word": "spock"
               },
@@ -8977,6 +10978,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -9149,6 +11160,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -9158,6 +11199,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -9231,9 +11280,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -9360,6 +11622,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -9679,10 +11999,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -9695,6 +12063,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -9725,6 +12105,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -9761,12 +12151,11 @@
             "isSelf": true,
             "marker": "property",
             "object": {
-              "marker": "unknown",
+              "marker": "spock",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "spock"
               ],
-              "unknown": true,
               "value": "spock",
               "word": "spock"
             },
@@ -9804,12 +12193,11 @@
         "two": {
           "marker": "property",
           "object": {
-            "marker": "unknown",
+            "marker": "spock",
+            "number": "one",
             "types": [
-              "object",
-              "unknown"
+              "spock"
             ],
-            "unknown": true,
             "value": "spock",
             "word": "spock"
           },
@@ -9830,7 +12218,7 @@
       "priorities": [
         [
           [
-            "what",
+            "spock",
             0
           ],
           [
@@ -9840,6 +12228,10 @@
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -9869,12 +12261,16 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -9887,7 +12283,7 @@
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -10377,12 +12773,11 @@
                 "isSelf": true,
                 "marker": "property",
                 "object": {
-                  "marker": "unknown",
+                  "marker": "spock",
+                  "number": "one",
                   "types": [
-                    "object",
-                    "unknown"
+                    "spock"
                   ],
-                  "unknown": true,
                   "value": "spock",
                   "word": "spock"
                 },
@@ -10420,12 +12815,11 @@
             "two": {
               "marker": "property",
               "object": {
-                "marker": "unknown",
+                "marker": "spock",
+                "number": "one",
                 "types": [
-                  "object",
-                  "unknown"
+                  "spock"
                 ],
-                "unknown": true,
                 "value": "spock",
                 "word": "spock"
               },
@@ -10689,6 +13083,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -10861,6 +13265,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -10870,6 +13304,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -10943,9 +13385,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -11072,6 +13727,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -11391,10 +14104,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -11407,6 +14168,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -11437,6 +14210,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -11473,12 +14256,11 @@
             "isSelf": true,
             "marker": "property",
             "object": {
-              "marker": "unknown",
+              "marker": "spock",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "spock"
               ],
-              "unknown": true,
               "value": "spock",
               "word": "spock"
             },
@@ -11516,12 +14298,11 @@
         "two": {
           "marker": "property",
           "object": {
-            "marker": "unknown",
+            "marker": "spock",
+            "number": "one",
             "types": [
-              "object",
-              "unknown"
+              "spock"
             ],
-            "unknown": true,
             "value": "spock",
             "word": "spock"
           },
@@ -11545,7 +14326,7 @@
       "priorities": [
         [
           [
-            "what",
+            "spock",
             0
           ],
           [
@@ -11559,6 +14340,10 @@
             ],
             [
               "questionMark",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -11592,12 +14377,16 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -11614,7 +14403,7 @@
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -12136,12 +14925,11 @@
                 "isSelf": true,
                 "marker": "property",
                 "object": {
-                  "marker": "unknown",
+                  "marker": "spock",
+                  "number": "one",
                   "types": [
-                    "object",
-                    "unknown"
+                    "spock"
                   ],
-                  "unknown": true,
                   "value": "spock",
                   "word": "spock"
                 },
@@ -12179,12 +14967,11 @@
             "two": {
               "marker": "property",
               "object": {
-                "marker": "unknown",
+                "marker": "spock",
+                "number": "one",
                 "types": [
-                  "object",
-                  "unknown"
+                  "spock"
                 ],
-                "unknown": true,
                 "value": "spock",
                 "word": "spock"
               },
@@ -12451,6 +15238,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -12623,6 +15420,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -12632,6 +15459,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -12705,9 +15540,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -12834,6 +15882,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -13153,10 +16259,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -13169,6 +16323,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -13199,6 +16365,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [
@@ -13240,12 +16416,11 @@
               "determiner"
             ],
             "object": {
-              "marker": "unknown",
+              "marker": "spock",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "spock"
               ],
-              "unknown": true,
               "value": "spock",
               "word": "spock"
             },
@@ -13297,12 +16472,11 @@
             "determiner"
           ],
           "object": {
-            "marker": "unknown",
+            "marker": "spock",
+            "number": "one",
             "types": [
-              "object",
-              "unknown"
+              "spock"
             ],
-            "unknown": true,
             "value": "spock",
             "word": "spock"
           },
@@ -13338,6 +16512,10 @@
               0
             ],
             [
+              "spock",
+              0
+            ],
+            [
               "the",
               0
             ],
@@ -13353,7 +16531,7 @@
         ],
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -13366,11 +16544,11 @@
               0
             ],
             [
-              "the",
+              "spock",
               0
             ],
             [
-              "unknown",
+              "the",
               0
             ],
             [
@@ -13897,12 +17075,11 @@
                   "determiner"
                 ],
                 "object": {
-                  "marker": "unknown",
+                  "marker": "spock",
+                  "number": "one",
                   "types": [
-                    "object",
-                    "unknown"
+                    "spock"
                   ],
-                  "unknown": true,
                   "value": "spock",
                   "word": "spock"
                 },
@@ -13954,12 +17131,11 @@
                 "determiner"
               ],
               "object": {
-                "marker": "unknown",
+                "marker": "spock",
+                "number": "one",
                 "types": [
-                  "object",
-                  "unknown"
+                  "spock"
                 ],
-                "unknown": true,
                 "value": "spock",
                 "word": "spock"
               },
@@ -14225,6 +17401,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...after, crew: operator, value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
@@ -14397,6 +17583,36 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "you",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -14406,6 +17622,14 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
           "queryable"
         ],
         [
@@ -14479,9 +17703,222 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "you",
+          "theAble"
+        ],
+        [
+          "you",
+          "queryable"
+        ],
+        [
+          "you",
+          "hierarchyAble"
+        ],
+        [
+          "you",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([you])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
         {
           "pattern": "(<photon> ([torpedo|]))"
         },
@@ -14608,6 +18045,64 @@
           ],
           [
             "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -14927,10 +18422,58 @@
             "initial": "{}"
           }
         ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
         "have": [
           {
             "id": "have",
             "initial": "{ doesable: true }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
           }
         ],
         "my": [
@@ -14943,6 +18486,18 @@
           {
             "id": "yesno",
             "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
           }
         ],
         "the": [
@@ -14973,6 +18528,16 @@
           {
             "id": "yesno",
             "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"many\" }"
+          },
+          {
+            "id": "you",
+            "initial": "{ value: \"you\", number: \"one\" }"
           }
         ],
         "your": [

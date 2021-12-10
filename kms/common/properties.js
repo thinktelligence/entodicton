@@ -54,6 +54,28 @@ V2
 
 class API {
 
+  kindOfConcept(config, modifier, object) {
+    const objectId = pluralize.singular(object)
+    const modifierId = pluralize.singular(modifier)
+
+    const objectSingular = pluralize.singular(object)
+    const objectPlural = pluralize.plural(object)
+    config.addOperator(`(<${modifierId}> ([${objectId}|]))`)
+
+    config.addWord(objectSingular, { id: objectId, initial: `{ value: '${objectId}' }`})
+    config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}' }`})
+
+    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
+    config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }` })
+
+    config.addHierarchy(objectId, 'theAble')
+    config.addHierarchy(objectId, 'queryable')
+
+    config.addPriorities([[objectId, 0], [modifierId, 0]])
+    config.addPriorities([['is', 0], ['the', 0], ['propertyOf', 0], [modifierId, 0]])
+    config.addPriorities([['is', 0], [modifierId, 0], ['propertyOf', 0], ['the', 0], ['what', 0], ['unknown', 0], [objectId, 0]])
+  }
+
   getObject(object) {
     if (!this.objects.properties) {
       this.objects.properties = {}

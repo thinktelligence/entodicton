@@ -92,7 +92,7 @@ let config = {
     },
     {
       notes: 'c is a y',
-      match: ({context, listable}) => listable(context.marker, 'unknown') && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
+      match: ({context, listable}) => listable(context.marker, 'hierarchyAble') && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
       apply: ({context, km, objects, asList}) => {
         const api = km('properties').api
         // mark c as an instance?
@@ -114,7 +114,7 @@ let config = {
     },
     {
       notes: 'an x is a y',
-      match: ({context, listable}) => listable(context.marker, 'unknown') && !context.pullFromContext && context.wantsValue && context.same,
+      match: ({context, listable}) => listable(context.marker, 'hierarchyAble') && !context.pullFromContext && context.wantsValue && context.same,
       apply: ({context, km, objects, config, asList}) => {
         const api = km('properties').api
         const oneConcepts = asList(context);
@@ -137,15 +137,17 @@ let config = {
       notes: 'humans are mammels',
       // match: ({context, listable}) => listable(context, 'unknown') && context.same,
       match: ({context, listable}) => {
+        /*
         if (context.marker == 'list') {
           listable(context, 'unknown')
         }
+        */
         if (context.same && pluralize.isPlural(context.same.word)) {
           context.same.concept = true;
         }
-        return listable(context, 'unknown') && context.same && context.same.concept && !context.query
+        return listable(context, 'hierarchyAble') && context.same && context.same.concept && !context.query
       },
-      apply: ({objects, km, context, asList, listable}) => {
+      apply: ({config, objects, km, context, asList, listable}) => {
         const api = km('properties').api
         const oneConcepts = asList(context);
         const twoConcepts = asList(context.same);

@@ -7,6 +7,7 @@ const dialogues = require('./common/dialogues');
 const help = require('./common/help');
 const hierarchy = require('./common/hierarchy');
 const javascript = require('./common/javascript');
+const kirk = require('./common/kirk');
 const numbers = require('./common/numbers');
 const people = require('./common/people');
 const properties = require('./common/properties');
@@ -25,6 +26,7 @@ module.exports = {
   help,
   hierarchy,
   javascript,
+  kirk,
   numbers,
   properties,
   reports,
