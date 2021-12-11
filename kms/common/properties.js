@@ -454,8 +454,8 @@ let config = {
     },
     {
       match: ({context}) => context.marker == 'property' && context.evaluate,
-      apply: ({context, api, objects, g}) => {
-        const object = context.object.value;
+      apply: ({context, api, km, objects, g}) => {
+        const object = km("dialogues").api.getVariable(context.object.value);
         if (!api.knownObject(object)) {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
@@ -464,7 +464,7 @@ let config = {
           context.verbatim = `There is property no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
           return
         }
-        context.value = api.getProperty(context.object.value, context.value, g)
+        context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)
         context.object = undefined;
       }
     }

@@ -24,7 +24,7 @@ class API {
   }
 
   getVariable(name) {
-    this.objects.variables[name]
+    return this.objects.variables[name] || name
   }
 
   setVariable(name, value) {
