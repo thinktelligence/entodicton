@@ -13,7 +13,6 @@ const api = {
   // gets the contexts for doing the happening
   semantics: 
       ({context, isModule, args, api}) => {
-        debugger;
         const values = args({ types: ['ampm', 'time'], properties: ['one', 'two']  })
         const ampm = context[values[0]]
         let hour = ampm.hour.hour
@@ -168,7 +167,6 @@ config.initializer( ({api, config, objects, isModule}) => {
       ({context, hierarchy, args}) => context.happening && context.marker == 'is' && args({ types: ['ampm', 'time'], properties: ['one', 'two'] }),
       api.semantics
   )
-  debugger;
 })
 
 knowledgeModule({
