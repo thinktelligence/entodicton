@@ -15,6 +15,7 @@ const pluralize = require('pluralize')
 // TODO mccoy is a crew member
 // TODO status can be armed or not armed (only)
 // TODO my -> have a dialog thing
+// TODO pretend you are spock what is your name stop pretending what is your name
 /*
 V1
    "mccoy's rank is doctor",
