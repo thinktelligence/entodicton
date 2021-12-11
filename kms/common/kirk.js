@@ -6,10 +6,10 @@ const pluralize = require('pluralize')
 
 const template = {
   "queries": [
-      "your name is jim",
-      "your rank is captain",
-      "your eyes are blue",
-      "you are a captain",
+      "kirk's name is jim",
+      "kirk's rank is captain",
+      "kirk's eyes are blue",
+      "kirk is a captain",
       "spock's rank is second",
       "spock's name is spock",
       "spock's eyes are brown",
@@ -20,6 +20,7 @@ const template = {
       "mccoy's eyes are brown",
       "the status of the phasers is armed",
       "the status of the photon torpedoes is armed",
+      //"you are kirk",
   ]
 };
 
@@ -39,7 +40,6 @@ config.initializer( ({config, km}) => {
   // api.kindOfConcept(config, 'crew', 'member')
 } )
 config.load(template, kirk_instance)
-
 entodicton.knowledgeModule( {
   module,
   description: 'Simulated Captain Kirk using a KM template',

@@ -1,1944 +1,4 @@
 {
-  "are you a captain": {
-    "config": {
-      "bridges": [
-        {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
-          "id": "photon",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: 'torpedo' }",
-          "id": "torpedo",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "hierarchyAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "type",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...after, negation: true }",
-          "id": "doesnt",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
-          "id": "have",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "have",
-          "level": 1
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "property",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "object",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), object: before[0] }",
-          "id": "possession",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
-          "id": "possession",
-          "level": 1
-        },
-        {
-          "bridge": "{ ...next(operator), object: after[0] }",
-          "id": "propertyOf",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...before[0], object: operator.object }",
-          "id": "propertyOf",
-          "level": 1
-        },
-        {
-          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
-          "id": "whose",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...after[0], object: operator }",
-          "id": "objectPrefix",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "list",
-          "level": 0,
-          "selector": {
-            "match": "same",
-            "passthrough": true,
-            "type": "infix"
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "list",
-          "level": 1,
-          "selector": {
-            "match": "same",
-            "passthrough": true,
-            "type": "postfix"
-          }
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "yesno",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "canBeQuestion",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "canBeQuestion",
-          "level": 1
-        },
-        {
-          "bridge": "{ ...next(operator), unknown: true }",
-          "id": "unknown",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
-          "id": "what",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "queryable",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...before[0], query: [before.marker] }",
-          "id": "questionMark",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
-          "id": "is",
-          "level": 0,
-          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "is",
-          "level": 1
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "canBeDoQuestion",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "canBeDoQuestion",
-          "level": 1
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "canBeDoQuestion",
-          "level": 2
-        },
-        {
-          "bridge": "{ ...after, query: true }",
-          "id": "does",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
-          "id": "the",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
-          "id": "a",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "theAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
-          "hierarchy": [
-            "queryable"
-          ],
-          "id": "it",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "you",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "captain",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "spock",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "doctor",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "mccoy",
-          "level": 0
-        }
-      ],
-      "hierarchy": [
-        [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "type",
-          "property"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "object",
-          "queryable"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "object",
-          "theAble"
-        ],
-        [
-          "whose",
-          "object"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "you",
-          "theAble"
-        ],
-        [
-          "you",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "you",
-          "object"
-        ],
-        [
-          "you",
-          "theAble"
-        ],
-        [
-          "you",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "you",
-          "object"
-        ],
-        [
-          "captain",
-          "theAble"
-        ],
-        [
-          "captain",
-          "queryable"
-        ],
-        [
-          "captain",
-          "hierarchyAble"
-        ],
-        [
-          "captain",
-          "object"
-        ],
-        [
-          "captain",
-          "theAble"
-        ],
-        [
-          "captain",
-          "queryable"
-        ],
-        [
-          "captain",
-          "hierarchyAble"
-        ],
-        [
-          "captain",
-          "object"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "spock",
-          "queryable"
-        ],
-        [
-          "spock",
-          "hierarchyAble"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "spock",
-          "queryable"
-        ],
-        [
-          "spock",
-          "hierarchyAble"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "doctor",
-          "hierarchyAble"
-        ],
-        [
-          "doctor",
-          "object"
-        ],
-        [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "doctor",
-          "hierarchyAble"
-        ],
-        [
-          "doctor",
-          "object"
-        ],
-        [
-          "mccoy",
-          "theAble"
-        ],
-        [
-          "mccoy",
-          "queryable"
-        ],
-        [
-          "mccoy",
-          "hierarchyAble"
-        ],
-        [
-          "mccoy",
-          "object"
-        ],
-        [
-          "mccoy",
-          "theAble"
-        ],
-        [
-          "mccoy",
-          "queryable"
-        ],
-        [
-          "mccoy",
-          "hierarchyAble"
-        ],
-        [
-          "mccoy",
-          "object"
-        ]
-      ],
-      "operators": [
-        {
-          "pattern": "([mccoy])"
-        },
-        {
-          "pattern": "([doctor])"
-        },
-        {
-          "pattern": "([spock])"
-        },
-        {
-          "pattern": "([captain])"
-        },
-        {
-          "pattern": "([you])"
-        },
-        {
-          "pattern": "(<photon> ([torpedo|]))"
-        },
-        {
-          "pattern": "([hierarchyAble|])"
-        },
-        {
-          "pattern": "([type|type,types])"
-        },
-        {
-          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
-        },
-        {
-          "pattern": "(<whose> ([property]))"
-        },
-        {
-          "pattern": "(<objectPrefix|> ([property]))"
-        },
-        {
-          "pattern": "(<(([object]) [possession|])> ([property|]))"
-        },
-        {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
-        },
-        {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "(([have/1]) <questionMark|>)"
-        },
-        {
-          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
-        },
-        {
-          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
-        },
-        {
-          "pattern": "([it])"
-        },
-        {
-          "pattern": "([what])"
-        },
-        {
-          "pattern": "(<the|> ([theAble|]))"
-        },
-        {
-          "pattern": "(<a|a,an> ([theAble|]))"
-        },
-        {
-          "pattern": "([unknown])"
-        },
-        {
-          "pattern": "([canBeQuestion])"
-        },
-        {
-          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
-        },
-        {
-          "pattern": "([canBeDoQuestion])"
-        },
-        {
-          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
-        },
-        {
-          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
-        },
-        {
-          "pattern": "([yesno|])"
-        }
-      ],
-      "priorities": [
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "photon",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "what",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "photon",
-            0
-          ]
-        ],
-        [
-          [
-            "torpedo",
-            0
-          ],
-          [
-            "photon",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "photon",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "photon",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "what",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "torpedo",
-            0
-          ]
-        ],
-        [
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "a",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "hierarchyAble",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "hierarchyAble",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "possession",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "possession",
-            1
-          ]
-        ],
-        [
-          [
-            "have",
-            0
-          ],
-          [
-            "a",
-            0
-          ]
-        ],
-        [
-          [
-            "does",
-            0
-          ],
-          [
-            "have",
-            0
-          ]
-        ],
-        [
-          [
-            "does",
-            0
-          ],
-          [
-            "have",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "what",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "objectPrefix",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "what",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "property",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "propertyOf",
-            1
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ]
-        ],
-        [
-          [
-            "the",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "property",
-            0
-          ]
-        ],
-        [
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "have",
-            0
-          ]
-        ],
-        [
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "have",
-            1
-          ],
-          [
-            "is",
-            1
-          ],
-          [
-            "have",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "objectPrefix",
-            0
-          ],
-          [
-            "what",
-            0
-          ]
-        ],
-        [
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "questionMark",
-            0
-          ],
-          [
-            "is",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "the",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "a",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            1
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "does",
-            0
-          ],
-          [
-            "a",
-            0
-          ]
-        ]
-      ],
-      "words": {
-        " 's": [
-          {
-            "id": "possession",
-            "initial": "{ value: 'possession' }"
-          }
-        ],
-        "<<possession>>": [
-          {
-            "id": "possession",
-            "initial": "{ value: 'possession' }"
-          }
-        ],
-        "?": [
-          {
-            "id": "questionMark",
-            "initial": "{}"
-          }
-        ],
-        "captain": [
-          {
-            "id": "captain",
-            "initial": "{ value: \"captain\", number: \"one\" }"
-          }
-        ],
-        "captains": [
-          {
-            "id": "captain",
-            "initial": "{ value: \"captain\", number: \"many\" }"
-          }
-        ],
-        "doctor": [
-          {
-            "id": "doctor",
-            "initial": "{ value: \"doctor\", number: \"one\" }"
-          }
-        ],
-        "doctors": [
-          {
-            "id": "doctor",
-            "initial": "{ value: \"doctor\", number: \"many\" }"
-          }
-        ],
-        "have": [
-          {
-            "id": "have",
-            "initial": "{ doesable: true }"
-          }
-        ],
-        "mccoy": [
-          {
-            "id": "mccoy",
-            "initial": "{ value: \"mccoy\", number: \"one\" }"
-          }
-        ],
-        "mccoys": [
-          {
-            "id": "mccoy",
-            "initial": "{ value: \"mccoy\", number: \"many\" }"
-          }
-        ],
-        "my": [
-          {
-            "id": "objectPrefix",
-            "initial": "{ value: 'other' }"
-          }
-        ],
-        "no": [
-          {
-            "id": "yesno",
-            "initial": "{ value: false }"
-          }
-        ],
-        "spock": [
-          {
-            "id": "spock",
-            "initial": "{ value: \"spock\", number: \"one\" }"
-          }
-        ],
-        "spocks": [
-          {
-            "id": "spock",
-            "initial": "{ value: \"spock\", number: \"many\" }"
-          }
-        ],
-        "the": [
-          {
-            "id": "the",
-            "initial": "{ modifiers: [] }"
-          }
-        ],
-        "torpedo": [
-          {
-            "id": "torpedo",
-            "initial": "{ value: 'torpedo' }"
-          }
-        ],
-        "torpedoes": [
-          {
-            "id": "torpedo",
-            "initial": "{ value: 'torpedo' }"
-          }
-        ],
-        "who": [
-          {
-            "id": "what",
-            "initial": "{ modifiers: [] }"
-          }
-        ],
-        "yes": [
-          {
-            "id": "yesno",
-            "initial": "{ value: true }"
-          }
-        ],
-        "you": [
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
-          }
-        ],
-        "your": [
-          {
-            "id": "objectPrefix",
-            "initial": "{ value: 'self' }"
-          }
-        ]
-      }
-    },
-    "contexts": [
-      {
-        "default": true,
-        "marker": "is",
-        "one": {
-          "marker": "you",
-          "number": "many",
-          "response": true,
-          "types": [
-            "you"
-          ],
-          "value": "you",
-          "word": "you"
-        },
-        "query": true,
-        "response": {
-          "marker": "yesno",
-          "value": true
-        },
-        "topLevel": true,
-        "two": {
-          "concept": true,
-          "determiner": "a",
-          "marker": "captain",
-          "modifiers": [
-            "determiner"
-          ],
-          "number": "one",
-          "pullFromContext": false,
-          "response": true,
-          "types": [
-            "captain"
-          ],
-          "value": "captain",
-          "wantsValue": true,
-          "word": "captain"
-        },
-        "word": "are"
-      }
-    ],
-    "metadata": {
-      "associations": [
-        [
-          [
-            0,
-            [
-              [
-                "is",
-                0
-              ],
-              [
-                "you",
-                0
-              ],
-              [
-                "a",
-                0
-              ]
-            ]
-          ]
-        ],
-        [
-          [
-            0,
-            [
-              [
-                "is",
-                0
-              ],
-              [
-                "you",
-                0
-              ],
-              [
-                "a",
-                0
-              ],
-              [
-                "captain",
-                0
-              ]
-            ]
-          ]
-        ]
-      ],
-      "priorities": [
-        [
-          [
-            "you",
-            0
-          ],
-          [
-            [
-              "a",
-              0
-            ],
-            [
-              "captain",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "you",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "captain",
-            0
-          ],
-          [
-            [
-              "a",
-              0
-            ],
-            [
-              "captain",
-              0
-            ],
-            [
-              "is",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            [
-              "a",
-              0
-            ],
-            [
-              "is",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "is",
-            1
-          ],
-          [
-            [
-              "is",
-              1
-            ]
-          ]
-        ]
-      ]
-    },
-    "objects": {
-      "namespaced": {
-        "0": {
-        },
-        "1": {
-        },
-        "2": {
-        },
-        "3": {
-          "children": {
-            "captain": [
-              "you"
-            ],
-            "doctor": [
-              "spock",
-              "mccoy"
-            ],
-            "eyes": [
-              "blue",
-              "brown"
-            ],
-            "name": [
-              "jim",
-              "spock",
-              "mccoy"
-            ],
-            "rank": [
-              "captain",
-              "second",
-              "doctor"
-            ],
-            "status": [
-              "armed"
-            ]
-          },
-          "concepts": [
-            "jim",
-            "name",
-            "self",
-            "captain",
-            "rank",
-            "blue",
-            "eyes",
-            "you",
-            "second",
-            "spock",
-            "brown",
-            "doctor",
-            "mccoy",
-            "armed",
-            "status",
-            "phasers",
-            "photon_torpedo"
-          ],
-          "parents": {
-            "armed": [
-              "status"
-            ],
-            "blue": [
-              "eyes"
-            ],
-            "brown": [
-              "eyes"
-            ],
-            "captain": [
-              "rank"
-            ],
-            "doctor": [
-              "rank"
-            ],
-            "jim": [
-              "name"
-            ],
-            "mccoy": [
-              "doctor",
-              "name"
-            ],
-            "second": [
-              "rank"
-            ],
-            "spock": [
-              "name",
-              "doctor"
-            ],
-            "you": [
-              "captain"
-            ]
-          },
-          "properties": {
-            "armed": {
-            },
-            "blue": {
-            },
-            "brown": {
-            },
-            "captain": {
-            },
-            "doctor": {
-            },
-            "eyes": {
-            },
-            "jim": {
-            },
-            "mccoy": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "brown",
-                  "word": "brown"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "mccoy",
-                  "number": "one",
-                  "response": true,
-                  "types": [
-                    "mccoy"
-                  ],
-                  "value": "mccoy",
-                  "word": "mccoy"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "doctor",
-                  "number": "one",
-                  "response": true,
-                  "types": [
-                    "doctor"
-                  ],
-                  "value": "doctor",
-                  "word": "doctor"
-                }
-              }
-            },
-            "name": {
-            },
-            "phasers": {
-              "status": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "armed",
-                  "word": "armed"
-                }
-              }
-            },
-            "photon_torpedo": {
-              "status": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "armed",
-                  "word": "armed"
-                }
-              }
-            },
-            "rank": {
-            },
-            "second": {
-            },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
-            "spock": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "brown",
-                  "word": "brown"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "spock",
-                  "word": "spock"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "second",
-                  "word": "second"
-                }
-              }
-            },
-            "status": {
-            },
-            "you": {
-            }
-          },
-          "property": {
-            "eyes": [
-              {
-                "marker": "unknown",
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "blue",
-                "word": "blue"
-              },
-              {
-                "marker": "unknown",
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "brown",
-                "word": "brown"
-              },
-              {
-                "marker": "unknown",
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "brown",
-                "word": "brown"
-              }
-            ],
-            "name": [
-              {
-                "marker": "unknown",
-                "paraphrase": true,
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "jim",
-                "word": "jim"
-              },
-              {
-                "marker": "unknown",
-                "paraphrase": true,
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "spock",
-                "word": "spock"
-              },
-              {
-                "marker": "mccoy",
-                "number": "one",
-                "response": true,
-                "types": [
-                  "mccoy"
-                ],
-                "value": "mccoy",
-                "word": "mccoy"
-              }
-            ],
-            "rank": [
-              {
-                "marker": "unknown",
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "captain",
-                "word": "captain"
-              },
-              {
-                "marker": "unknown",
-                "paraphrase": true,
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "second",
-                "word": "second"
-              },
-              {
-                "marker": "doctor",
-                "number": "one",
-                "response": true,
-                "types": [
-                  "doctor"
-                ],
-                "value": "doctor",
-                "word": "doctor"
-              }
-            ],
-            "status": [
-              {
-                "marker": "unknown",
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "armed",
-                "word": "armed"
-              },
-              {
-                "marker": "unknown",
-                "paraphrase": true,
-                "response": true,
-                "types": [
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "armed",
-                "word": "armed"
-              }
-            ]
-          }
-        },
-        "4": {
-          "mentioned": [
-          ]
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "you",
-              "number": "many",
-              "response": true,
-              "types": [
-                "you"
-              ],
-              "value": "you",
-              "word": "you"
-            },
-            "query": true,
-            "response": {
-              "marker": "yesno",
-              "value": true
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "determiner": "a",
-              "marker": "captain",
-              "modifiers": [
-                "determiner"
-              ],
-              "number": "one",
-              "pullFromContext": false,
-              "response": true,
-              "types": [
-                "captain"
-              ],
-              "value": "captain",
-              "wantsValue": true,
-              "word": "captain"
-            },
-            "word": "are"
-          },
-          "paraphrases": "you are captain?",
-          "responses": [
-            "yes"
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "determiner": "the",
-              "marker": "property",
-              "modifiers": [
-                "determiner"
-              ],
-              "object": {
-                "concept": true,
-                "determiner": "the",
-                "marker": "torpedo",
-                "modifiers": [
-                  "determiner",
-                  "photon"
-                ],
-                "photon": {
-                  "default": true,
-                  "marker": "photon",
-                  "word": "photon"
-                },
-                "pullFromContext": true,
-                "types": [
-                  "object",
-                  "torpedo"
-                ],
-                "value": "photon_torpedo",
-                "wantsValue": true,
-                "word": "torpedoes"
-              },
-              "pullFromContext": true,
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "status",
-              "wantsValue": true,
-              "word": "status"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "paraphrase": true,
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "armed",
-              "word": "armed"
-            },
-            "word": "is"
-          },
-          "paraphrases": "the status of the photon torpedoes is armed",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "determiner": "the",
-              "marker": "property",
-              "modifiers": [
-                "determiner"
-              ],
-              "object": {
-                "concept": true,
-                "determiner": "the",
-                "marker": "unknown",
-                "modifiers": [
-                  "determiner"
-                ],
-                "pullFromContext": true,
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "phasers",
-                "wantsValue": true,
-                "word": "phasers"
-              },
-              "pullFromContext": true,
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "status",
-              "wantsValue": true,
-              "word": "status"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "armed",
-              "word": "armed"
-            },
-            "word": "is"
-          },
-          "paraphrases": "the status of the phasers is armed",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "mccoy",
-                "number": "one",
-                "types": [
-                  "mccoy"
-                ],
-                "value": "mccoy",
-                "word": "mccoy"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "mccoy's eyes are brown",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "mccoy",
-                "number": "one",
-                "types": [
-                  "mccoy"
-                ],
-                "value": "mccoy",
-                "word": "mccoy"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "name",
-              "word": "name"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "mccoy",
-              "number": "one",
-              "response": true,
-              "types": [
-                "mccoy"
-              ],
-              "value": "mccoy",
-              "word": "mccoy"
-            },
-            "word": "is"
-          },
-          "paraphrases": "mccoy's name is mccoy",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "mccoy",
-              "word": "mccoy"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "determiner": "a",
-              "marker": "doctor",
-              "modifiers": [
-                "determiner"
-              ],
-              "number": "one",
-              "pullFromContext": false,
-              "response": true,
-              "types": [
-                "doctor"
-              ],
-              "value": "doctor",
-              "wantsValue": true,
-              "word": "doctor"
-            },
-            "word": "is"
-          },
-          "paraphrases": "mccoy is a doctor",
-          "responses": [
-            ""
-          ]
-        }
-      ]
-    },
-    "paraphrases": [
-      "you are captain?"
-    ],
-    "responses": [
-      "yes"
-    ]
-  },
   "the status of the photon torpedoes is armed": {
     "config": {
       "bridges": [
@@ -1954,6 +14,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -2128,7 +193,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -2159,6 +224,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -2234,35 +303,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -2408,10 +477,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -2929,6 +1001,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -2997,12 +1087,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -3108,7 +1194,7 @@
         ],
         [
           [
-            "torpedo",
+            "unknown",
             0
           ],
           [
@@ -3153,6 +1239,10 @@
               0
             ],
             [
+              "torpedo",
+              0
+            ],
+            [
               "unknown",
               0
             ]
@@ -3160,7 +1250,7 @@
         ],
         [
           [
-            "unknown",
+            "torpedo",
             0
           ],
           [
@@ -3177,7 +1267,7 @@
               0
             ],
             [
-              "unknown",
+              "torpedo",
               0
             ]
           ]
@@ -3291,7 +1381,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -3318,12 +1408,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -3354,6 +1443,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -3364,9 +1456,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -3383,6 +1472,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -3462,48 +1592,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -3563,8 +1651,6 @@
                   "word": "armed"
                 }
               }
-            },
-            "you": {
             }
           },
           "property": {
@@ -3603,7 +1689,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -3700,6 +1785,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -4032,6 +2119,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -4206,7 +2298,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -4237,6 +2329,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -4312,35 +2408,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -4486,10 +2582,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -5007,6 +3106,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -5075,12 +3192,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -5318,7 +3431,7 @@
         ],
         [
           [
-            "torpedo",
+            "unknown",
             0
           ],
           [
@@ -5363,6 +3476,10 @@
               0
             ],
             [
+              "torpedo",
+              0
+            ],
+            [
               "unknown",
               0
             ]
@@ -5370,7 +3487,7 @@
         ],
         [
           [
-            "unknown",
+            "torpedo",
             0
           ],
           [
@@ -5387,7 +3504,7 @@
               0
             ],
             [
-              "unknown",
+              "torpedo",
               0
             ]
           ]
@@ -5512,38 +3629,6 @@
             ],
             [
               "torpedo",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "what",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "photon",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
               0
             ],
             [
@@ -5581,6 +3666,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         ],
@@ -5604,6 +3693,34 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -5717,7 +3834,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -5744,12 +3861,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -5780,6 +3896,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -5790,9 +3909,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -5809,6 +3925,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -5888,48 +4045,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -5989,8 +4104,6 @@
                   "word": "armed"
                 }
               }
-            },
-            "you": {
             }
           },
           "property": {
@@ -6029,7 +4142,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -6126,6 +4238,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -6572,6 +4686,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -6746,7 +4865,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -6777,6 +4896,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -6852,35 +4975,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -7026,10 +5149,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -7547,6 +5673,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -7615,12 +5759,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -7777,7 +5917,7 @@
         ],
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -7805,7 +5945,7 @@
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -7822,7 +5962,7 @@
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -7916,7 +6056,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -7943,12 +6083,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -7978,6 +6117,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -7988,9 +6130,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -8007,6 +6146,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -8086,48 +6266,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -8172,8 +6310,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -8212,7 +6348,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -8299,6 +6434,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -8695,6 +6832,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -8869,7 +7011,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -8900,6 +7042,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -8975,35 +7121,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -9149,10 +7295,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -9670,6 +7819,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -9738,12 +7905,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -9847,7 +8010,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -9875,30 +8038,6 @@
         ],
         [
           [
-            "possession",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "spock",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "what",
             0
           ],
@@ -9909,10 +8048,50 @@
             ],
             [
               "possession",
-              1
+              0
+            ],
+            [
+              "unknown",
+              0
             ],
             [
               "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
               0
             ]
           ]
@@ -9986,7 +8165,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -10013,12 +8192,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -10048,6 +8226,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -10058,9 +8239,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -10077,6 +8255,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -10156,48 +8375,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -10242,8 +8419,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -10282,7 +8457,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -10369,6 +8543,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -10744,6 +8920,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -10918,7 +9099,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -10949,6 +9130,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -11024,35 +9209,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -11198,10 +9383,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -11719,6 +9907,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -11787,12 +9993,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -11896,7 +10098,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -11924,30 +10126,6 @@
         ],
         [
           [
-            "possession",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "spock",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "what",
             0
           ],
@@ -11958,10 +10136,50 @@
             ],
             [
               "possession",
-              1
+              0
+            ],
+            [
+              "unknown",
+              0
             ],
             [
               "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
               0
             ]
           ]
@@ -12035,7 +10253,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -12062,12 +10280,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -12097,6 +10314,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -12107,9 +10327,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -12126,6 +10343,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -12205,48 +10463,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -12290,8 +10506,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -12330,7 +10544,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -12416,6 +10629,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -12791,6 +11006,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -12965,7 +11185,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -12996,6 +11216,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -13071,35 +11295,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -13245,10 +11469,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -13766,6 +11993,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -13834,12 +12079,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -13946,7 +12187,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -13999,14 +12240,14 @@
               0
             ],
             [
-              "what",
+              "unknown",
               0
             ]
           ]
         ],
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -14023,7 +12264,7 @@
               0
             ],
             [
-              "what",
+              "unknown",
               0
             ]
           ]
@@ -14125,7 +12366,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -14152,12 +12393,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -14187,6 +12427,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -14197,9 +12440,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -14216,6 +12456,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -14295,48 +12576,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -14380,8 +12619,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -14420,7 +12657,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -14506,6 +12742,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -14884,6 +13122,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -15058,7 +13301,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -15089,6 +13332,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -15164,35 +13411,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -15338,10 +13585,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -15859,6 +14109,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -15927,12 +14195,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -16057,7 +14321,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -16089,7 +14353,7 @@
         ],
         [
           [
-            "the",
+            "unknown",
             0
           ],
           [
@@ -16102,11 +14366,11 @@
               0
             ],
             [
-              "spock",
+              "the",
               0
             ],
             [
-              "the",
+              "unknown",
               0
             ],
             [
@@ -16130,7 +14394,7 @@
               0
             ],
             [
-              "spock",
+              "the",
               0
             ],
             [
@@ -16141,7 +14405,7 @@
         ],
         [
           [
-            "spock",
+            "the",
             0
           ],
           [
@@ -16154,7 +14418,7 @@
               0
             ],
             [
-              "spock",
+              "the",
               0
             ]
           ]
@@ -16228,7 +14492,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -16255,12 +14519,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -16290,6 +14553,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -16300,9 +14566,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -16319,6 +14582,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -16398,48 +14702,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -16483,8 +14745,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -16523,7 +14783,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -16609,6 +14868,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -17005,6 +15266,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -17179,7 +15445,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -17210,6 +15476,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -17285,35 +15555,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -17459,10 +15729,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -17980,6 +16253,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -18048,12 +16339,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -18240,7 +16527,7 @@
         ],
         [
           [
-            "what",
+            "photon",
             0
           ],
           [
@@ -18272,34 +16559,6 @@
         ],
         [
           [
-            "photon",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "photon",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "unknown",
             0
           ],
@@ -18318,6 +16577,34 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -18431,7 +16718,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -18458,12 +16745,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -18493,6 +16779,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -18503,9 +16792,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -18522,6 +16808,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -18601,48 +16928,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -18685,8 +16970,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -18725,7 +17008,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -18810,6 +17092,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -19232,6 +17516,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -19406,7 +17695,7 @@
         },
         {
           "bridge": "{ ...next(operator) }",
-          "id": "you",
+          "id": "kirk",
           "level": 0
         },
         {
@@ -19437,6 +17726,10 @@
         ],
         [
           "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
           "queryable"
         ],
         [
@@ -19512,35 +17805,35 @@
           "canBeQuestion"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
-          "you",
+          "kirk",
           "theAble"
         ],
         [
-          "you",
+          "kirk",
           "queryable"
         ],
         [
-          "you",
+          "kirk",
           "hierarchyAble"
         ],
         [
-          "you",
+          "kirk",
           "object"
         ],
         [
@@ -19686,10 +17979,13 @@
           "pattern": "([captain])"
         },
         {
-          "pattern": "([you])"
+          "pattern": "([kirk])"
         },
         {
           "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
         },
         {
           "pattern": "([hierarchyAble|])"
@@ -20207,6 +18503,24 @@
             "initial": "{ doesable: true }"
           }
         ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
         "mccoy": [
           {
             "id": "mccoy",
@@ -20275,12 +18589,8 @@
         ],
         "you": [
           {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"many\" }"
-          },
-          {
-            "id": "you",
-            "initial": "{ value: \"you\", number: \"one\" }"
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
           }
         ],
         "your": [
@@ -20312,44 +18622,7 @@
           "what"
         ],
         "response": {
-          "concept": {
-            "evaluate": true,
-            "isSelf": true,
-            "marker": "property",
-            "object": {
-              "marker": "objectPrefix",
-              "value": "self",
-              "word": "your"
-            },
-            "paraphrase": true,
-            "types": [
-              "property"
-            ],
-            "unknown": true,
-            "value": "name",
-            "word": "name"
-          },
-          "instance": {
-            "instance": true,
-            "marker": "property",
-            "types": [
-              "property"
-            ],
-            "unknown": true,
-            "value": {
-              "marker": "unknown",
-              "paraphrase": true,
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "jim",
-              "word": "jim"
-            },
-            "word": "name"
-          },
-          "isResponse": true
+          "verbatim": "There is no object named your"
         },
         "topLevel": true,
         "two": {
@@ -20376,7 +18649,7 @@
       "priorities": [
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -20400,7 +18673,7 @@
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -20413,7 +18686,7 @@
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -20471,7 +18744,7 @@
         "3": {
           "children": {
             "captain": [
-              "you"
+              "kirk"
             ],
             "doctor": [
               "spock",
@@ -20498,12 +18771,11 @@
           "concepts": [
             "jim",
             "name",
-            "self",
+            "kirk",
             "captain",
             "rank",
             "blue",
             "eyes",
-            "you",
             "second",
             "spock",
             "brown",
@@ -20533,6 +18805,9 @@
             "jim": [
               "name"
             ],
+            "kirk": [
+              "captain"
+            ],
             "mccoy": [
               "doctor",
               "name"
@@ -20543,9 +18818,6 @@
             "spock": [
               "name",
               "doctor"
-            ],
-            "you": [
-              "captain"
             ]
           },
           "properties": {
@@ -20562,6 +18834,47 @@
             "eyes": {
             },
             "jim": {
+            },
+            "kirk": {
+              "eyes": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "blue",
+                  "word": "blue"
+                }
+              },
+              "name": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "jim",
+                  "word": "jim"
+                }
+              },
+              "rank": {
+                "has": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "captain",
+                  "word": "captain"
+                }
+              }
             },
             "mccoy": {
               "eyes": {
@@ -20640,48 +18953,6 @@
             },
             "second": {
             },
-            "self": {
-              "eyes": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "blue",
-                  "word": "blue"
-                }
-              },
-              "name": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                }
-              },
-              "rank": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "captain",
-                  "word": "captain"
-                }
-              }
-            },
             "spock": {
               "eyes": {
                 "has": true,
@@ -20724,8 +18995,6 @@
               }
             },
             "status": {
-            },
-            "you": {
             }
           },
           "property": {
@@ -20764,7 +19033,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -20848,6 +19116,8 @@
                 "word": "armed"
               }
             ]
+          },
+          "variables": {
           }
         },
         "4": {
@@ -20890,44 +19160,7 @@
               "what"
             ],
             "response": {
-              "concept": {
-                "evaluate": true,
-                "isSelf": true,
-                "marker": "property",
-                "object": {
-                  "marker": "objectPrefix",
-                  "value": "self",
-                  "word": "your"
-                },
-                "paraphrase": true,
-                "types": [
-                  "property"
-                ],
-                "unknown": true,
-                "value": "name",
-                "word": "name"
-              },
-              "instance": {
-                "instance": true,
-                "marker": "property",
-                "types": [
-                  "property"
-                ],
-                "unknown": true,
-                "value": {
-                  "marker": "unknown",
-                  "paraphrase": true,
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "jim",
-                  "word": "jim"
-                },
-                "word": "name"
-              },
-              "isResponse": true
+              "verbatim": "There is no object named your"
             },
             "topLevel": true,
             "two": {
@@ -20949,7 +19182,7 @@
           },
           "paraphrases": "what is your name?",
           "responses": [
-            "my name is jim"
+            "There is no object named your"
           ]
         },
         {
@@ -21196,7 +19429,7 @@
       "what is your name?"
     ],
     "responses": [
-      "my name is jim"
+      "There is no object named your"
     ]
   }
 }

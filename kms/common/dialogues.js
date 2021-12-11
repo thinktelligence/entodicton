@@ -22,6 +22,14 @@ class API {
   mentions() {
     return this.objects.mentioned
   }
+
+  getVariable(name) {
+    this.objects.variables[name]
+  }
+
+  setVariable(name, value) {
+    this.objects.variables[name] = value
+  }
 }
 const api = new API()
 
@@ -389,6 +397,8 @@ config.api = api
 
 config.initializer( ({objects, isModule}) => {
   objects.mentioned = []
+  objects.variables = {
+  }
   if (isModule) {
   } else {
   }

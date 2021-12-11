@@ -6,10 +6,36 @@ const avatar_tests = require('./avatar.test.json')
 let config = {
   name: 'avatar',
 
+  operators: [
+    "([self])",
+  ],
+
+  bridges: [
+    { id: 'self', level: 0, bridge: "{ ...next(operator) }" },
+  ],
+
+  hierarchy: [
+    ['self', 'queryable'],
+  ],
+
   words: {
-    "my": [{ id: 'objectPrefix', initial: "{ value: 'other' }" }],
-    "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
-  }
+    "my": [{ id: 'objectPrefix', initial: "{ variable: true, value: 'other' }" }],
+    "your": [{ id: 'objectPrefix', initial: "{ variable: true, value: 'self' }" }],
+    "you": [{ id: 'self', initial: "{ variable: true, value: 'self' }" }],
+    "i": [{ id: 'self', initial: "{ variable: true, value: 'speaker' }" }],
+  },
+
+  semantics: [
+    {
+      notes: 'you are x',
+      match: ({context, listable}) => context.marker == 'self',
+      apply: ({context, km}) => {
+        km("dialogues").api.setVariable('self', context.same.value)
+        context.sameWasProcessed = true
+      }
+    },
+  ],
+
 };
 
 config = new entodicton.Config(config)

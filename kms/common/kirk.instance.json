@@ -1,9 +1,9 @@
 {
   "queries": [
-    "your name is jim",
-    "your rank is captain",
-    "your eyes are blue",
-    "you are a captain",
+    "kirk's name is jim",
+    "kirk's rank is captain",
+    "kirk's eyes are blue",
+    "kirk is a captain",
     "spock's rank is second",
     "spock's name is spock",
     "spock's eyes are brown",
@@ -19,8 +19,12 @@
     {
       "hierarchy": [
         [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
+          "property",
+          "unknown"
+        ],
+        [
+          "it",
+          "queryable"
         ],
         [
           "unknown",
@@ -31,43 +35,19 @@
           "theAble"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "type",
           "property"
         ],
         [
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
           "property",
-          "theAble"
-        ],
-        [
-          "unknown",
           "queryable"
         ],
         [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "object",
+          "torpedo",
           "queryable"
         ],
         [
@@ -75,16 +55,28 @@
           "hierarchyAble"
         ],
         [
-          "property",
-          "queryable"
+          "whose",
+          "object"
         ],
         [
           "have",
-          "canBeQuestion"
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "object",
+          "queryable"
         ],
         [
           "hierarchyAble",
           "queryable"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
         ],
         [
           "object",
@@ -92,15 +84,15 @@
         ],
         [
           "have",
-          "canBeDoQuestion"
+          "canBeQuestion"
         ],
         [
-          "have",
-          "questionMark_before_canBeQuestion_have"
+          "self",
+          "queryable"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "queryable",
+          "queryable"
         ],
         [
           "torpedo",
@@ -108,19 +100,32 @@
         ],
         [
           "property",
-          "unknown"
+          "theAble"
         ],
         [
-          "whose",
-          "object"
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
         ]
       ],
-      "load_cache_time": 0.35915565490722656,
+      "load_cache_time": 0.33983349800109863,
       "logs": [
+        "Undefined word 'kirk'",
         "Undefined word 'name'",
         "Undefined word 'jim'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('objectPrefix', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('objectPrefix', 0), ('unknown', 0)]), (('objectPrefix', 0), [('is', 0), ('objectPrefix', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['objectPrefix', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['objectPrefix', 0], ['unknown', 0]]\n  Context for choosing the operator objectPrefix/0 was [['is', 0], ['objectPrefix', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('possession', 0), [('is', 0), ('possession', 0)]), (('possession', 1), [('is', 0), ('possession', 1)]), (('property', 0), [('is', 0), ('property', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         ""
       ],
       "metadata": {
@@ -137,7 +142,7 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
                 0
               ],
               [
@@ -157,7 +162,7 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
                 0
               ],
               [
@@ -168,7 +173,7 @@
           ],
           [
             [
-              "objectPrefix",
+              "unknown",
               0
             ],
             [
@@ -177,7 +182,59 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              "possession",
+              0
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "possession",
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              "possession",
+              1
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "possession",
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              "property",
+              0
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "property",
                 0
               ]
             ]
@@ -220,7 +277,7 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
               0
             ],
             [
@@ -240,7 +297,7 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
               0
             ],
             [
@@ -251,7 +308,7 @@
         ],
         [
           [
-            "objectPrefix",
+            "unknown",
             0
           ],
           [
@@ -260,7 +317,59 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            1
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            "property",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
               0
             ]
           ]
@@ -290,7 +399,7 @@
           ]
         ]
       ],
-      "times": 0.9100210666656494,
+      "times": 1.5166854858398438,
       "trace": "undefined",
       "contexts": [
         {
@@ -299,9 +408,14 @@
           "one": {
             "marker": "property",
             "object": {
-              "marker": "objectPrefix",
-              "value": "self",
-              "word": "your"
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kirk",
+              "word": "kirk"
             },
             "types": [
               "property"
@@ -329,19 +443,23 @@
         "name is jim"
       ],
       "paraphrases": [
-        "your name is jim"
+        "kirk's name is jim"
       ],
       "responses": [
         ""
       ],
-      "memory_free_percent": 79.7,
-      "version": "6.13.10"
+      "memory_free_percent": 45.6,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
+          "property",
+          "unknown"
+        ],
+        [
+          "it",
+          "queryable"
         ],
         [
           "unknown",
@@ -352,43 +470,19 @@
           "theAble"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "type",
           "property"
         ],
         [
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
           "property",
-          "theAble"
-        ],
-        [
-          "unknown",
           "queryable"
         ],
         [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "object",
+          "torpedo",
           "queryable"
         ],
         [
@@ -396,16 +490,28 @@
           "hierarchyAble"
         ],
         [
-          "property",
-          "queryable"
+          "whose",
+          "object"
         ],
         [
           "have",
-          "canBeQuestion"
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "object",
+          "queryable"
         ],
         [
           "hierarchyAble",
           "queryable"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
         ],
         [
           "object",
@@ -413,15 +519,15 @@
         ],
         [
           "have",
-          "canBeDoQuestion"
+          "canBeQuestion"
         ],
         [
-          "have",
-          "questionMark_before_canBeQuestion_have"
+          "self",
+          "queryable"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "queryable",
+          "queryable"
         ],
         [
           "torpedo",
@@ -429,19 +535,32 @@
         ],
         [
           "property",
-          "unknown"
+          "theAble"
         ],
         [
-          "whose",
-          "object"
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
         ]
       ],
-      "load_cache_time": 0.3533337116241455,
+      "load_cache_time": 0.34618139266967773,
       "logs": [
+        "Undefined word 'kirk'",
         "Undefined word 'rank'",
         "Undefined word 'captain'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('objectPrefix', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('objectPrefix', 0), ('unknown', 0)]), (('objectPrefix', 0), [('is', 0), ('objectPrefix', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['objectPrefix', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['objectPrefix', 0], ['unknown', 0]]\n  Context for choosing the operator objectPrefix/0 was [['is', 0], ['objectPrefix', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('possession', 0), [('is', 0), ('possession', 0)]), (('possession', 1), [('is', 0), ('possession', 1)]), (('property', 0), [('is', 0), ('property', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         ""
       ],
       "metadata": {
@@ -458,7 +577,7 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
                 0
               ],
               [
@@ -478,7 +597,7 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
                 0
               ],
               [
@@ -489,7 +608,7 @@
           ],
           [
             [
-              "objectPrefix",
+              "unknown",
               0
             ],
             [
@@ -498,7 +617,59 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              "possession",
+              0
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "possession",
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              "possession",
+              1
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "possession",
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              "property",
+              0
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "property",
                 0
               ]
             ]
@@ -541,7 +712,7 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
               0
             ],
             [
@@ -561,7 +732,7 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
               0
             ],
             [
@@ -572,7 +743,7 @@
         ],
         [
           [
-            "objectPrefix",
+            "unknown",
             0
           ],
           [
@@ -581,7 +752,59 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            1
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            "property",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
               0
             ]
           ]
@@ -611,7 +834,7 @@
           ]
         ]
       ],
-      "times": 0.9085004329681396,
+      "times": 1.5324387550354004,
       "trace": "undefined",
       "contexts": [
         {
@@ -620,9 +843,14 @@
           "one": {
             "marker": "property",
             "object": {
-              "marker": "objectPrefix",
-              "value": "self",
-              "word": "your"
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kirk",
+              "word": "kirk"
             },
             "types": [
               "property"
@@ -650,27 +878,47 @@
         "rank is captain"
       ],
       "paraphrases": [
-        "your rank is captain"
+        "kirk's rank is captain"
       ],
       "responses": [
         ""
       ],
-      "memory_free_percent": 80.1,
-      "version": "6.13.10"
+      "memory_free_percent": 46.2,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "object",
+          "property",
+          "unknown"
+        ],
+        [
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "type",
+          "property"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
         ],
         [
           "unknown",
@@ -681,56 +929,16 @@
           "object"
         ],
         [
+          "have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
           "what",
           "queryable"
         ],
         [
-          "torpedo",
+          "object",
           "queryable"
-        ],
-        [
-          "have",
-          "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
         ],
         [
           "hierarchyAble",
@@ -741,28 +949,53 @@
           "canBeDoQuestion"
         ],
         [
-          "property",
-          "unknown"
+          "object",
+          "theAble"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "self",
+          "queryable"
         ],
         [
           "queryable",
           "queryable"
         ],
         [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
           "is",
           "canBeQuestion"
         ],
         [
-          "object",
-          "theAble"
+          "unknown",
+          "queryable"
         ]
       ],
-      "load_cache_time": 4.958399772644043,
+      "load_cache_time": 0.36660170555114746,
       "logs": [
+        "Undefined word 'kirk'",
         "Undefined word 'eyes'",
         "Undefined word 'blue'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('objectPrefix', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('objectPrefix', 0), ('unknown', 0)]), (('objectPrefix', 0), [('is', 0), ('objectPrefix', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['objectPrefix', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['objectPrefix', 0], ['unknown', 0]]\n  Context for choosing the operator objectPrefix/0 was [['is', 0], ['objectPrefix', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('possession', 0), [('is', 0), ('possession', 0)]), (('possession', 1), [('is', 0), ('possession', 1)]), (('property', 0), [('is', 0), ('property', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         ""
       ],
       "metadata": {
@@ -779,7 +1012,7 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
                 0
               ],
               [
@@ -799,7 +1032,7 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
                 0
               ],
               [
@@ -810,7 +1043,7 @@
           ],
           [
             [
-              "objectPrefix",
+              "unknown",
               0
             ],
             [
@@ -819,7 +1052,59 @@
                 0
               ],
               [
-                "objectPrefix",
+                "possession",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              "possession",
+              0
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "possession",
+                0
+              ]
+            ]
+          ],
+          [
+            [
+              "possession",
+              1
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "possession",
+                1
+              ]
+            ]
+          ],
+          [
+            [
+              "property",
+              0
+            ],
+            [
+              [
+                "is",
+                0
+              ],
+              [
+                "property",
                 0
               ]
             ]
@@ -862,7 +1147,7 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
               0
             ],
             [
@@ -882,7 +1167,7 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
               0
             ],
             [
@@ -893,7 +1178,7 @@
         ],
         [
           [
-            "objectPrefix",
+            "unknown",
             0
           ],
           [
@@ -902,7 +1187,59 @@
               0
             ],
             [
-              "objectPrefix",
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            1
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        ],
+        [
+          [
+            "property",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
               0
             ]
           ]
@@ -932,7 +1269,7 @@
           ]
         ]
       ],
-      "times": 0.9527316093444824,
+      "times": 1.527564287185669,
       "trace": "undefined",
       "contexts": [
         {
@@ -941,9 +1278,14 @@
           "one": {
             "marker": "property",
             "object": {
-              "marker": "objectPrefix",
-              "value": "self",
-              "word": "your"
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kirk",
+              "word": "kirk"
             },
             "types": [
               "property"
@@ -971,27 +1313,47 @@
         "eyes is blue"
       ],
       "paraphrases": [
-        "your eyes are blue"
+        "kirk's eyes are blue"
       ],
       "responses": [
         ""
       ],
-      "memory_free_percent": 14.3,
-      "version": "6.13.10"
+      "memory_free_percent": 46.8,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "object",
+          "property",
+          "unknown"
+        ],
+        [
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "type",
+          "property"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
         ],
         [
           "unknown",
@@ -1002,56 +1364,16 @@
           "object"
         ],
         [
+          "have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
           "what",
           "queryable"
         ],
         [
-          "torpedo",
+          "object",
           "queryable"
-        ],
-        [
-          "have",
-          "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
         ],
         [
           "hierarchyAble",
@@ -1062,25 +1384,49 @@
           "canBeDoQuestion"
         ],
         [
-          "property",
-          "unknown"
+          "object",
+          "theAble"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "self",
+          "queryable"
         ],
         [
           "queryable",
           "queryable"
         ],
         [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
           "is",
           "canBeQuestion"
         ],
         [
-          "object",
-          "theAble"
+          "unknown",
+          "queryable"
         ]
       ],
-      "load_cache_time": 0.0022325515747070312,
+      "load_cache_time": 0.34550929069519043,
       "logs": [
-        "Undefined word 'you'",
+        "Undefined word 'kirk'",
         "Undefined word 'captain'",
         "Op choices were: [(('unknown', 0), [('a', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('a', 0), ('is', 0), ('unknown', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
@@ -1253,7 +1599,7 @@
           ]
         ]
       ],
-      "times": 1.089623212814331,
+      "times": 0.871668815612793,
       "trace": "undefined",
       "contexts": [
         {
@@ -1265,8 +1611,8 @@
               "unknown"
             ],
             "unknown": true,
-            "value": "you",
-            "word": "you",
+            "value": "kirk",
+            "word": "kirk",
             "response": true
           },
           "two": {
@@ -1287,50 +1633,66 @@
             "word": "captain",
             "response": true
           },
-          "word": "are",
+          "word": "is",
           "topLevel": true
         }
       ],
       "generated": [
-        "you is captain"
+        "kirk is captain"
       ],
       "paraphrases": [
-        "you are a captain"
+        "kirk is a captain"
       ],
       "responses": [
         ""
       ],
-      "memory_free_percent": 14.8,
-      "version": "6.13.10"
+      "memory_free_percent": 47.3,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "captain",
+          "theAble"
         ],
         [
-          "captain",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -1338,47 +1700,71 @@
           "object"
         ],
         [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
+          "captain",
+          "object"
         ],
         [
-          "property",
+          "object",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "kirk",
+          "hierarchyAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "object"
+        ],
+        [
+          "object",
           "theAble"
         ],
         [
-          "property",
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
           "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
           "theAble"
         ],
         [
@@ -1386,55 +1772,19 @@
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
         ],
         [
           "is",
           "canBeQuestion"
         ],
         [
-          "queryable",
+          "unknown",
           "queryable"
-        ],
-        [
-          "object",
-          "theAble"
-        ],
-        [
-          "you",
-          "theAble"
         ]
       ],
-      "load_cache_time": 5.6736979484558105,
+      "load_cache_time": 6.001309633255005,
       "logs": [
         "Undefined word 'spock'",
         "Undefined word 'rank'",
@@ -1714,7 +2064,7 @@
           ]
         ]
       ],
-      "times": 1.3818607330322266,
+      "times": 1.3183469772338867,
       "trace": "undefined",
       "contexts": [
         {
@@ -1763,37 +2113,53 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 15.4,
-      "version": "6.13.10"
+      "memory_free_percent": 48,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "captain",
+          "theAble"
         ],
         [
-          "captain",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -1801,47 +2167,71 @@
           "object"
         ],
         [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
+          "captain",
+          "object"
         ],
         [
-          "property",
+          "object",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "kirk",
+          "hierarchyAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "object"
+        ],
+        [
+          "object",
           "theAble"
         ],
         [
-          "property",
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
           "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
           "theAble"
         ],
         [
@@ -1849,55 +2239,19 @@
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
         ],
         [
           "is",
           "canBeQuestion"
         ],
         [
-          "queryable",
+          "unknown",
           "queryable"
-        ],
-        [
-          "object",
-          "theAble"
-        ],
-        [
-          "you",
-          "theAble"
         ]
       ],
-      "load_cache_time": 0.001806020736694336,
+      "load_cache_time": 0.00446629524230957,
       "logs": [
         "Undefined word 'spock'",
         "Undefined word 'name'",
@@ -2176,7 +2530,7 @@
           ]
         ]
       ],
-      "times": 2.0531551837921143,
+      "times": 2.2986204624176025,
       "trace": "undefined",
       "contexts": [
         {
@@ -2225,37 +2579,53 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 16,
-      "version": "6.13.10"
+      "memory_free_percent": 48.6,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "captain",
+          "theAble"
         ],
         [
-          "captain",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -2263,47 +2633,71 @@
           "object"
         ],
         [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
+          "captain",
+          "object"
         ],
         [
-          "property",
+          "object",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "kirk",
+          "hierarchyAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "object"
+        ],
+        [
+          "object",
           "theAble"
         ],
         [
-          "property",
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
           "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
           "theAble"
         ],
         [
@@ -2311,55 +2705,19 @@
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
         ],
         [
           "is",
           "canBeQuestion"
         ],
         [
-          "queryable",
+          "unknown",
           "queryable"
-        ],
-        [
-          "object",
-          "theAble"
-        ],
-        [
-          "you",
-          "theAble"
         ]
       ],
-      "load_cache_time": 0.004033803939819336,
+      "load_cache_time": 0.009117603302001953,
       "logs": [
         "Undefined word 'spock'",
         "Undefined word 'eyes'",
@@ -2639,7 +2997,7 @@
           ]
         ]
       ],
-      "times": 2.027745246887207,
+      "times": 2.1147620677948,
       "trace": "undefined",
       "contexts": [
         {
@@ -2688,37 +3046,53 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 16.5,
-      "version": "6.13.10"
+      "memory_free_percent": 49.2,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "captain",
+          "theAble"
         ],
         [
-          "captain",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -2726,47 +3100,71 @@
           "object"
         ],
         [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
+          "captain",
+          "object"
         ],
         [
-          "property",
+          "object",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "kirk",
+          "hierarchyAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "object"
+        ],
+        [
+          "object",
           "theAble"
         ],
         [
-          "property",
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
           "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
           "theAble"
         ],
         [
@@ -2774,55 +3172,19 @@
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
         ],
         [
           "is",
           "canBeQuestion"
         ],
         [
-          "queryable",
+          "unknown",
           "queryable"
-        ],
-        [
-          "object",
-          "theAble"
-        ],
-        [
-          "you",
-          "theAble"
         ]
       ],
-      "load_cache_time": 0.0019524097442626953,
+      "load_cache_time": 0.00919795036315918,
       "logs": [
         "Undefined word 'spock'",
         "Undefined word 'doctor'",
@@ -2997,7 +3359,7 @@
           ]
         ]
       ],
-      "times": 1.1703612804412842,
+      "times": 1.3861169815063477,
       "trace": "undefined",
       "contexts": [
         {
@@ -3044,37 +3406,61 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 16.9,
-      "version": "6.13.10"
+      "memory_free_percent": 49.6,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "spock",
+          "theAble"
         ],
         [
           "captain",
+          "theAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -3082,92 +3468,44 @@
           "object"
         ],
         [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "it",
-          "queryable"
+          "spock",
+          "hierarchyAble"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "doctor",
+          "captain",
           "object"
         ],
         [
-          "torpedo",
-          "theAble"
+          "spock",
+          "object"
         ],
         [
-          "spock",
+          "object",
+          "queryable"
+        ],
+        [
+          "captain",
           "hierarchyAble"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "kirk",
+          "hierarchyAble"
         ],
         [
           "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
+          "canBeDoQuestion"
         ],
         [
           "hierarchyAble",
@@ -3178,39 +3516,67 @@
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
+          "kirk",
           "object"
         ],
         [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "queryable",
-          "queryable"
+          "doctor",
+          "object"
         ],
         [
           "object",
           "theAble"
         ],
         [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
           "spock",
           "queryable"
         ],
         [
-          "you",
-          "theAble"
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
         ]
       ],
-      "load_cache_time": 6.503556489944458,
+      "load_cache_time": 6.4224536418914795,
       "logs": [
         "Undefined word 'mccoy'",
         "Undefined word 'rank'",
@@ -3505,7 +3871,7 @@
           ]
         ]
       ],
-      "times": 1.4915101528167725,
+      "times": 1.648230791091919,
       "trace": "undefined",
       "contexts": [
         {
@@ -3554,37 +3920,61 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 17.4,
-      "version": "6.13.10"
+      "memory_free_percent": 50.2,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "spock",
+          "theAble"
         ],
         [
           "captain",
+          "theAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -3592,92 +3982,44 @@
           "object"
         ],
         [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "it",
-          "queryable"
+          "spock",
+          "hierarchyAble"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "doctor",
+          "captain",
           "object"
         ],
         [
-          "torpedo",
-          "theAble"
+          "spock",
+          "object"
         ],
         [
-          "spock",
+          "object",
+          "queryable"
+        ],
+        [
+          "captain",
           "hierarchyAble"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "kirk",
+          "hierarchyAble"
         ],
         [
           "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
+          "canBeDoQuestion"
         ],
         [
           "hierarchyAble",
@@ -3688,39 +4030,67 @@
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
+          "kirk",
           "object"
         ],
         [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "queryable",
-          "queryable"
+          "doctor",
+          "object"
         ],
         [
           "object",
           "theAble"
         ],
         [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
           "spock",
           "queryable"
         ],
         [
-          "you",
-          "theAble"
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
         ]
       ],
-      "load_cache_time": 0.0021479129791259766,
+      "load_cache_time": 0.002088785171508789,
       "logs": [
         "Undefined word 'mccoy'",
         "Op choices were: [(('unknown', 0), [('a', 0), ('doctor', 0), ('is', 0), ('unknown', 0)]), (('doctor', 0), [('a', 0), ('doctor', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
@@ -3902,7 +4272,7 @@
           ]
         ]
       ],
-      "times": 1.2353696823120117,
+      "times": 1.421816349029541,
       "trace": "undefined",
       "contexts": [
         {
@@ -3948,41 +4318,61 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 17.8,
-      "version": "6.13.10"
+      "memory_free_percent": 50.6,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "spock",
+          "theAble"
         ],
         [
           "captain",
-          "hierarchyAble"
+          "theAble"
         ],
         [
-          "mccoy",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -3990,100 +4380,44 @@
           "object"
         ],
         [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "mccoy",
-          "object"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "it",
-          "queryable"
+          "spock",
+          "hierarchyAble"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "doctor",
+          "captain",
           "object"
         ],
         [
-          "mccoy",
+          "spock",
+          "object"
+        ],
+        [
+          "object",
           "queryable"
         ],
         [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "spock",
+          "captain",
           "hierarchyAble"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "kirk",
+          "hierarchyAble"
         ],
         [
           "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
+          "canBeDoQuestion"
         ],
         [
           "hierarchyAble",
@@ -4094,43 +4428,83 @@
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "queryable",
+          "mccoy",
           "queryable"
         ],
         [
-          "mccoy",
-          "theAble"
+          "kirk",
+          "object"
+        ],
+        [
+          "doctor",
+          "object"
         ],
         [
           "object",
           "theAble"
         ],
         [
+          "mccoy",
+          "object"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
           "spock",
           "queryable"
         ],
         [
-          "you",
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "mccoy",
           "theAble"
         ]
       ],
-      "load_cache_time": 7.000732660293579,
+      "load_cache_time": 7.116743803024292,
       "logs": [
         "Undefined word 'name'",
         "Op choices were: [(('unknown', 0), [('is', 0), ('mccoy', 0), ('possession', 0), ('unknown', 0)]), (('mccoy', 0), [('is', 0), ('mccoy', 0), ('possession', 0)]), (('mccoy', 0), [('is', 0), ('mccoy', 0), ('possession', 0)]), (('possession', 0), [('is', 0), ('possession', 0)]), (('possession', 1), [('is', 0), ('possession', 1)]), (('property', 0), [('is', 0), ('property', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
@@ -4416,7 +4790,7 @@
           ]
         ]
       ],
-      "times": 1.5534248352050781,
+      "times": 1.7656598091125488,
       "trace": "undefined",
       "contexts": [
         {
@@ -4464,41 +4838,61 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 18.4,
-      "version": "6.13.10"
+      "memory_free_percent": 51.2,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "spock",
+          "theAble"
         ],
         [
           "captain",
-          "hierarchyAble"
+          "theAble"
         ],
         [
-          "mccoy",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -4506,100 +4900,44 @@
           "object"
         ],
         [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "mccoy",
-          "object"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "it",
-          "queryable"
+          "spock",
+          "hierarchyAble"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "doctor",
+          "captain",
           "object"
         ],
         [
-          "mccoy",
+          "spock",
+          "object"
+        ],
+        [
+          "object",
           "queryable"
         ],
         [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "spock",
+          "captain",
           "hierarchyAble"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "kirk",
+          "hierarchyAble"
         ],
         [
           "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
+          "canBeDoQuestion"
         ],
         [
           "hierarchyAble",
@@ -4610,43 +4948,83 @@
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "queryable",
+          "mccoy",
           "queryable"
         ],
         [
-          "mccoy",
-          "theAble"
+          "kirk",
+          "object"
+        ],
+        [
+          "doctor",
+          "object"
         ],
         [
           "object",
           "theAble"
         ],
         [
+          "mccoy",
+          "object"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
           "spock",
           "queryable"
         ],
         [
-          "you",
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "mccoy",
           "theAble"
         ]
       ],
-      "load_cache_time": 0.0043680667877197266,
+      "load_cache_time": 0.00548100471496582,
       "logs": [
         "Undefined word 'eyes'",
         "Undefined word 'brown'",
@@ -4941,7 +5319,7 @@
           ]
         ]
       ],
-      "times": 2.258756637573242,
+      "times": 2.206716299057007,
       "trace": "undefined",
       "contexts": [
         {
@@ -4989,41 +5367,61 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 18.9,
-      "version": "6.13.10"
+      "memory_free_percent": 51.7,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "spock",
+          "theAble"
         ],
         [
           "captain",
-          "hierarchyAble"
+          "theAble"
         ],
         [
-          "mccoy",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -5031,100 +5429,44 @@
           "object"
         ],
         [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "mccoy",
-          "object"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "it",
-          "queryable"
+          "spock",
+          "hierarchyAble"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "doctor",
+          "captain",
           "object"
         ],
         [
-          "mccoy",
+          "spock",
+          "object"
+        ],
+        [
+          "object",
           "queryable"
         ],
         [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "spock",
+          "captain",
           "hierarchyAble"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "kirk",
+          "hierarchyAble"
         ],
         [
           "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
+          "canBeDoQuestion"
         ],
         [
           "hierarchyAble",
@@ -5135,43 +5477,83 @@
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "queryable",
+          "mccoy",
           "queryable"
         ],
         [
-          "mccoy",
-          "theAble"
+          "kirk",
+          "object"
+        ],
+        [
+          "doctor",
+          "object"
         ],
         [
           "object",
           "theAble"
         ],
         [
+          "mccoy",
+          "object"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
           "spock",
           "queryable"
         ],
         [
-          "you",
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "mccoy",
           "theAble"
         ]
       ],
-      "load_cache_time": 0.0021779537200927734,
+      "load_cache_time": 0.004794597625732422,
       "logs": [
         "Undefined word 'status'",
         "Undefined word 'phasers'",
@@ -5523,7 +5905,7 @@
           ]
         ]
       ],
-      "times": 1.922405481338501,
+      "times": 2.0099375247955322,
       "trace": "undefined",
       "contexts": [
         {
@@ -5586,41 +5968,61 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 19.4,
-      "version": "6.13.10"
+      "memory_free_percent": 52.2,
+      "version": "6.13.16-beta.2"
     },
     {
       "hierarchy": [
         [
-          "captain",
-          "theAble"
+          "property",
+          "unknown"
         ],
         [
-          "object",
+          "it",
           "queryable"
         ],
         [
-          "questionMark_before_canBeQuestion_have",
-          "questionMark_before_canBeQuestion_have"
+          "unknown",
+          "theAble"
         ],
         [
-          "you",
-          "object"
+          "type",
+          "property"
+        ],
+        [
+          "theAble",
+          "theAble"
         ],
         [
           "canBeDoQuestion",
           "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "spock",
+          "theAble"
         ],
         [
           "captain",
-          "hierarchyAble"
+          "theAble"
         ],
         [
-          "mccoy",
+          "property",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
@@ -5628,100 +6030,44 @@
           "object"
         ],
         [
-          "doctor",
-          "theAble"
-        ],
-        [
-          "what",
-          "queryable"
-        ],
-        [
-          "you",
-          "hierarchyAble"
-        ],
-        [
-          "mccoy",
-          "object"
-        ],
-        [
-          "torpedo",
-          "queryable"
-        ],
-        [
           "have",
           "questionMark_before_canBeQuestion_have"
         ],
         [
-          "it",
-          "queryable"
+          "spock",
+          "hierarchyAble"
         ],
         [
           "captain",
           "queryable"
         ],
         [
-          "you",
+          "what",
           "queryable"
         ],
         [
-          "type",
-          "property"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "spock",
-          "theAble"
-        ],
-        [
-          "doctor",
+          "captain",
           "object"
         ],
         [
-          "mccoy",
+          "spock",
+          "object"
+        ],
+        [
+          "object",
           "queryable"
         ],
         [
-          "torpedo",
-          "theAble"
-        ],
-        [
-          "spock",
+          "captain",
           "hierarchyAble"
         ],
         [
-          "canBeQuestion",
-          "questionMark_before_canBeQuestion_have"
+          "kirk",
+          "hierarchyAble"
         ],
         [
           "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "doctor",
-          "queryable"
-        ],
-        [
-          "spock",
-          "object"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "theAble",
-          "theAble"
+          "canBeDoQuestion"
         ],
         [
           "hierarchyAble",
@@ -5732,43 +6078,83 @@
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "captain",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "queryable",
+          "mccoy",
           "queryable"
         ],
         [
-          "mccoy",
-          "theAble"
+          "kirk",
+          "object"
+        ],
+        [
+          "doctor",
+          "object"
         ],
         [
           "object",
           "theAble"
         ],
         [
+          "mccoy",
+          "object"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
           "spock",
           "queryable"
         ],
         [
-          "you",
+          "canBeQuestion",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "questionMark_before_canBeQuestion_have",
+          "questionMark_before_canBeQuestion_have"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "mccoy",
           "theAble"
         ]
       ],
-      "load_cache_time": 0.00422358512878418,
+      "load_cache_time": 0.004718780517578125,
       "logs": [
         "Undefined word 'status'",
         "Undefined word 'armed'",
@@ -6191,7 +6577,7 @@
           ]
         ]
       ],
-      "times": 2.2262792587280273,
+      "times": 2.5041141510009766,
       "trace": "undefined",
       "contexts": [
         {
@@ -6259,8 +6645,8 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 19.9,
-      "version": "6.13.10"
+      "memory_free_percent": 52.6,
+      "version": "6.13.16-beta.2"
     }
   ]
 }
