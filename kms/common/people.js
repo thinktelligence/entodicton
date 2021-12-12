@@ -2,6 +2,9 @@ const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const people_tests = require('./people.test.json')
 
+// TODO first name 
+// TODO last name
+
 let config = {
   name: 'people',
   operators: [

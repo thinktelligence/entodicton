@@ -1,7 +1,7 @@
 const entodicton = require('entodicton')
 const avatar = require('./avatar')
-const kirk_tests = require('./kirk.test.json')
-const kirk_instance = require('./kirk.instance.json')
+const crew_tests = require('./crew.test.json')
+const crew_instance = require('./crew.instance.json')
 const pluralize = require('pluralize')
 
 const template = {
@@ -20,12 +20,11 @@ const template = {
       "mccoy's eyes are brown",
       "the status of the phasers is armed",
       "the status of the photon torpedoes is armed",
-      //"you are kirk",
   ]
 };
 
 const config = new entodicton.Config({ 
-  name: 'kirk',
+  name: 'crew',
   priorities: [
     [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['what', 0]],
     [['is', 0], ['unknown', 0], ['propertyOf', 0], ['the', 0], ['photon', 0]],
@@ -33,20 +32,20 @@ const config = new entodicton.Config({
 })
 
 config.add(avatar)
-kirk_instance.base = 'avatar'
+crew_instance.base = 'avatar'
 config.initializer( ({config, km}) => {
   const api = km('properties').api
   api.kindOfConcept(config, 'photon', 'torpedo')
   // api.kindOfConcept(config, 'crew', 'member')
 } )
-config.load(template, kirk_instance)
+config.load(template, crew_instance)
 entodicton.knowledgeModule( {
   module,
-  description: 'Simulated Captain Kirk using a KM template',
+  description: 'Knowledge about the enterprise and crew using a KM template',
   config,
   test: {
-          name: './kirk.test.json',
-          contents: kirk_tests,
+          name: './crew.test.json',
+          contents: crew_tests,
           include: {
             words: true,
             bridges: true,
