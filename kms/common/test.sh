@@ -1,6 +1,7 @@
 node animals -tv 
 node avatar -tv 
 node characters -tv 
+node crew -tv 
 node currency -tv 
 node dialogues -tv 
 node help -tv 
