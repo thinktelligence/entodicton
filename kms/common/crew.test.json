@@ -1486,6 +1486,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1668,6 +1669,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -3619,7 +3621,7 @@
         ],
         [
           [
-            "what",
+            "photon",
             0
           ],
           [
@@ -3651,34 +3653,6 @@
         ],
         [
           [
-            "photon",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "photon",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "unknown",
             0
           ],
@@ -3697,6 +3671,34 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -3919,6 +3921,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -4102,6 +4105,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -6127,6 +6131,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -6310,6 +6315,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -7972,7 +7978,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -8000,7 +8006,7 @@
         ],
         [
           [
-            "spock",
+            "unknown",
             0
           ],
           [
@@ -8013,7 +8019,7 @@
               0
             ],
             [
-              "spock",
+              "unknown",
               0
             ],
             [
@@ -8236,6 +8242,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -8419,6 +8426,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -10060,7 +10068,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -10088,7 +10096,7 @@
         ],
         [
           [
-            "spock",
+            "unknown",
             0
           ],
           [
@@ -10101,7 +10109,7 @@
               0
             ],
             [
-              "spock",
+              "unknown",
               0
             ],
             [
@@ -10324,6 +10332,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -10506,6 +10515,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -12149,7 +12159,7 @@
       "priorities": [
         [
           [
-            "possession",
+            "spock",
             0
           ],
           [
@@ -12181,7 +12191,7 @@
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -12191,7 +12201,7 @@
             ],
             [
               "possession",
-              1
+              0
             ],
             [
               "questionMark",
@@ -12209,7 +12219,7 @@
         ],
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -12219,14 +12229,34 @@
             ],
             [
               "possession",
-              1
+              0
             ],
             [
               "questionMark",
               0
             ],
             [
-              "what",
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "questionMark",
               0
             ]
           ]
@@ -12437,6 +12467,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -12619,6 +12650,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -13070,6 +13102,1105 @@
     ]
   },
   "what is the name of kirk": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "id": "photon",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'torpedo' }",
+          "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "self",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negation: true }",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0] }",
+          "id": "possession",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "id": "possession",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0] }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
+          "id": "what",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...after, query: true }",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "kirk",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "captain",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "spock",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doctor",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "mccoy",
+          "level": 0
+        }
+      ],
+      "hierarchy": [
+        [
+          "torpedo",
+          "theAble"
+        ],
+        [
+          "torpedo",
+          "queryable"
+        ],
+        [
+          "self",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "type",
+          "property"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "whose",
+          "object"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "hierarchyAble"
+        ],
+        [
+          "kirk",
+          "object"
+        ],
+        [
+          "kirk",
+          "theAble"
+        ],
+        [
+          "kirk",
+          "queryable"
+        ],
+        [
+          "kirk",
+          "hierarchyAble"
+        ],
+        [
+          "kirk",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "captain",
+          "theAble"
+        ],
+        [
+          "captain",
+          "queryable"
+        ],
+        [
+          "captain",
+          "hierarchyAble"
+        ],
+        [
+          "captain",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "spock",
+          "theAble"
+        ],
+        [
+          "spock",
+          "queryable"
+        ],
+        [
+          "spock",
+          "hierarchyAble"
+        ],
+        [
+          "spock",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "doctor",
+          "theAble"
+        ],
+        [
+          "doctor",
+          "queryable"
+        ],
+        [
+          "doctor",
+          "hierarchyAble"
+        ],
+        [
+          "doctor",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ],
+        [
+          "mccoy",
+          "theAble"
+        ],
+        [
+          "mccoy",
+          "queryable"
+        ],
+        [
+          "mccoy",
+          "hierarchyAble"
+        ],
+        [
+          "mccoy",
+          "object"
+        ]
+      ],
+      "operators": [
+        {
+          "pattern": "([mccoy])"
+        },
+        {
+          "pattern": "([doctor])"
+        },
+        {
+          "pattern": "([spock])"
+        },
+        {
+          "pattern": "([captain])"
+        },
+        {
+          "pattern": "([kirk])"
+        },
+        {
+          "pattern": "(<photon> ([torpedo|]))"
+        },
+        {
+          "pattern": "([self])"
+        },
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "([type|type,types])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([canBeQuestion])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        }
+      ],
+      "priorities": [
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "photon",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "photon",
+            0
+          ]
+        ],
+        [
+          [
+            "torpedo",
+            0
+          ],
+          [
+            "photon",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "photon",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "photon",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "a",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "possession",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "possession",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "a",
+            0
+          ]
+        ],
+        [
+          [
+            "does",
+            0
+          ],
+          [
+            "have",
+            0
+          ]
+        ],
+        [
+          [
+            "does",
+            0
+          ],
+          [
+            "have",
+            1
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "what",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            1
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "objectPrefix",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "property",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "propertyOf",
+            1
+          ]
+        ],
+        [
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "property",
+            0
+          ]
+        ],
+        [
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "have",
+            0
+          ]
+        ],
+        [
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "have",
+            1
+          ],
+          [
+            "is",
+            1
+          ],
+          [
+            "have",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "objectPrefix",
+            0
+          ],
+          [
+            "what",
+            0
+          ]
+        ],
+        [
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "is",
+            0
+          ]
+        ],
+        [
+          [
+            "questionMark",
+            0
+          ],
+          [
+            "is",
+            1
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "a",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "is",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "does",
+            0
+          ],
+          [
+            "a",
+            0
+          ]
+        ]
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "captain": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"one\" }"
+          }
+        ],
+        "captains": [
+          {
+            "id": "captain",
+            "initial": "{ value: \"captain\", number: \"many\" }"
+          }
+        ],
+        "doctor": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"one\" }"
+          }
+        ],
+        "doctors": [
+          {
+            "id": "doctor",
+            "initial": "{ value: \"doctor\", number: \"many\" }"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "i": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'speaker' }"
+          }
+        ],
+        "kirk": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"one\" }"
+          }
+        ],
+        "kirks": [
+          {
+            "id": "kirk",
+            "initial": "{ value: \"kirk\", number: \"many\" }"
+          }
+        ],
+        "mccoy": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"one\" }"
+          }
+        ],
+        "mccoys": [
+          {
+            "id": "mccoy",
+            "initial": "{ value: \"mccoy\", number: \"many\" }"
+          }
+        ],
+        "my": [
+          {
+            "id": "objectPrefix",
+            "initial": "{ variable: true, value: 'other' }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "spock": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"one\" }"
+          }
+        ],
+        "spocks": [
+          {
+            "id": "spock",
+            "initial": "{ value: \"spock\", number: \"many\" }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "torpedo": [
+          {
+            "id": "torpedo",
+            "initial": "{ value: 'torpedo' }"
+          }
+        ],
+        "torpedoes": [
+          {
+            "id": "torpedo",
+            "initial": "{ value: 'torpedo' }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ],
+        "you": [
+          {
+            "id": "self",
+            "initial": "{ variable: true, value: 'self' }"
+          }
+        ],
+        "your": [
+          {
+            "id": "objectPrefix",
+            "initial": "{ variable: true, value: 'self' }"
+          }
+        ]
+      }
+    },
     "contexts": [
       {
         "default": true,
@@ -13184,7 +14315,7 @@
       "priorities": [
         [
           [
-            "kirk",
+            "unknown",
             0
           ],
           [
@@ -13216,7 +14347,7 @@
         ],
         [
           [
-            "unknown",
+            "kirk",
             0
           ],
           [
@@ -13225,15 +14356,15 @@
               0
             ],
             [
+              "kirk",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ],
             [
@@ -13551,6 +14682,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -13596,6 +14728,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -13688,6 +14821,7 @@
               },
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -13720,6 +14854,7 @@
               },
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -13910,6 +15045,7 @@
             "topLevel": true,
             "two": {
               "marker": "unknown",
+              "paraphrase": true,
               "response": true,
               "types": [
                 "unknown"
@@ -15325,7 +16461,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "spock",
             0
           ],
           [
@@ -15357,7 +16493,7 @@
         ],
         [
           [
-            "spock",
+            "unknown",
             0
           ],
           [
@@ -15370,11 +16506,11 @@
               0
             ],
             [
-              "spock",
+              "the",
               0
             ],
             [
-              "the",
+              "unknown",
               0
             ],
             [
@@ -17531,7 +18667,7 @@
         ],
         [
           [
-            "what",
+            "photon",
             0
           ],
           [
@@ -17563,34 +18699,6 @@
         ],
         [
           [
-            "photon",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "photon",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "unknown",
             0
           ],
@@ -17609,6 +18717,34 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
