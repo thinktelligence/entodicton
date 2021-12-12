@@ -2,6 +2,7 @@ const entodicton = require('entodicton')
 const animals = require('./common/animals');
 const avatar = require('./common/avatar');
 const characters = require('./common/characters');
+const crew = require('./common/crew');
 const currency = require('./common/currency');
 const dialogues = require('./common/dialogues');
 const help = require('./common/help');
@@ -21,6 +22,7 @@ module.exports = {
   animals,
   avatar,
   characters,
+  crew,
   currency,
   dialogues,
   help,
