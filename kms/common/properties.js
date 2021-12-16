@@ -343,6 +343,7 @@ let config = {
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
   priorities: [
+    [['is', 0], ['questionMark', 0], ['objectPrefix', 0]],
     [['is', 0], ['questionMark', 0], ['possession', 0]],
     [['is', 0], ['questionMark', 0], ['possession', 1]],
     [['have', 0], ['a', 0]],
