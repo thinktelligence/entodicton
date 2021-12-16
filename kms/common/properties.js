@@ -200,8 +200,24 @@ class API {
     this.pushListNoDups(this.ensureList('abilities', object), ability)
   }
 */
-  isA(child, parent) {
-    return this.objects.parents[child].includes(parent);
+  isA(child, ancestor) {
+    // return this.objects.parents[child].includes(parent);
+    const todo = [child];
+    const seen = [child];
+    while (todo.length > 0) {
+      const next = todo.pop();
+      if (next == ancestor) {
+        return true
+      }
+      const parents = this.objects.parents[next] || [];
+      for (let parent of parents) {
+        if (!seen.includes(parent)) {
+          todo.push(parent)
+          seen.push(parent)
+        } 
+      }
+    }
+    return false
   }
 
   rememberIsA(child, parent) {
