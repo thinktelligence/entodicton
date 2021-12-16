@@ -5,6 +5,7 @@ node crew -tv
 node currency -tv 
 node dialogues -tv 
 node help -tv 
+node hierarchy -tv 
 node javascript -tv 
 node kirk -tv 
 node numbers -tv 
