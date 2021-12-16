@@ -79,6 +79,43 @@ class API {
     config.addPriorities([['is', 0], [modifierId, 0], ['propertyOf', 0], ['the', 0], ['what', 0], ['unknown', 0], [objectId, 0]])
   }
 
+  // word is for one or many
+  makeObject({config, context}) {
+    const { word, value, number } = context;
+    const concept = pluralize.singular(value)
+    config.addOperator(`([${concept}])`)
+    config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" })
+
+    const addConcept = (word, number) => {
+      config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
+      config.addHierarchy(concept, 'theAble')
+      config.addHierarchy(concept, 'queryable')
+      config.addHierarchy(concept, 'hierarchyAble')
+      config.addHierarchy(concept, 'object')
+      config.addGenerator({
+          match: ({context}) => context.value == concept && context.number == number && context.paraphrase,
+          apply: () => word
+      })
+    }
+
+    if (pluralize.isSingular(word)) {
+      addConcept(word, 'one')
+      addConcept(pluralize.plural(word), 'many')
+    } else {
+      addConcept(pluralize.singular(word), 'one')
+      addConcept(word, 'many')
+    }
+
+    // mark greg as an instance?
+    // add a generator for the other one what will ask what is the plural or singluar of known
+    /*
+    if (number == 'many') {
+    } else if (number == 'one') {
+    }
+    */
+    return concept;
+  }
+
   getObject(object) {
     if (!this.objects.properties) {
       this.objects.properties = {}

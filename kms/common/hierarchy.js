@@ -3,43 +3,6 @@ const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
 const pluralize = require('pluralize')
 
-// word is for one or many
-const makeObject = ({config, context}) => {
-  const { word, value, number } = context;
-  const concept = pluralize.singular(value)
-  config.addOperator(`([${concept}])`)
-  config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" })
-  
-  const addConcept = (word, number) => {
-    config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
-    config.addHierarchy(concept, 'theAble')
-    config.addHierarchy(concept, 'queryable')
-    config.addHierarchy(concept, 'hierarchyAble')
-    config.addHierarchy(concept, 'object')
-    config.addGenerator({
-        match: ({context}) => context.value == concept && context.number == number && context.paraphrase,
-        apply: () => word
-    })
-  }
-
-  if (pluralize.isSingular(word)) {
-    addConcept(word, 'one')
-    addConcept(pluralize.plural(word), 'many')
-  } else {
-    addConcept(pluralize.singular(word), 'one')
-    addConcept(word, 'many')
-  }
-
-  // mark greg as an instance?
-  // add a generator for the other one what will ask what is the plural or singluar of known
-  /*
-  if (number == 'many') {
-  } else if (number == 'one') {
-  }
-  */
-  return concept;
-}
-
 let config = {
   name: 'hierarchy',
   operators: [
@@ -101,10 +64,10 @@ let config = {
         for (let oneConcept of oneConcepts.value) {
           for (let twoConcept of twoConcepts.value) {
             if (context.unknown) {
-              oneConcept = makeObject({config, context})
+              oneConcept = api.makeObject({config, context})
             }
             if (context.same.unknown) {
-              twoConcept = makeObject({config, context: context.same})
+              twoConcept = api.makeObject({config, context: context.same})
             }
             api.rememberIsA(oneConcept, twoConcept)
           }
@@ -122,10 +85,10 @@ let config = {
         for (let oneConcept of oneConcepts.value) {
           for (let twoConcept of twoConcepts.value) {
             if (context.unknown) {
-              oneConcept = makeObject({config, context})
+              oneConcept = api.makeObject({config, context})
             }
             if (context.same.unknown) {
-              twoConcept = makeObject({config, context: context.same})
+              twoConcept = api.makeObject({config, context: context.same})
             }
             api.rememberIsA(oneConcept, twoConcept) 
             context.sameWasProcessed = true
@@ -154,12 +117,12 @@ let config = {
         for (let oneConcept of oneConcepts.value) {
           for (let twoConcept of twoConcepts.value) {
             if (oneConcept.unknown) {
-              oneConcept = makeObject({config, context: oneConcept})
+              oneConcept = api.makeObject({config, context: oneConcept})
             } else {
               oneConcept = oneConcept.value;
             }
             if (twoConcept.unknown) {
-              twoConcept = makeObject({config, context: twoConcept})
+              twoConcept = api.makeObject({config, context: twoConcept})
             } else {
               twoConcept = twoConcept.value;
             }
