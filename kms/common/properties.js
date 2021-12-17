@@ -11,7 +11,6 @@ const pluralize = require('pluralize')
 // TODO you hate brocoli do you want some brocoli
 //
 // TODO the photon torpedoes are armed <- have a learning mode which is more flexible?
-// TODO the status of the photon torpedoes is armed
 // TODO mccoy is a crew member
 // TODO status can be armed or not armed (only)
 // TODO my -> have a dialog thing
@@ -19,6 +18,9 @@ const pluralize = require('pluralize')
 // TODO who are the crew members / who are they
 // TODO the/a means put it in the context for reference
 // TODO the crew members are sss                abc are crew members
+// TODO who are they / what are they
+// TODO macro for verb forms -> arm x | go to y | i like x
+// TODO READONLY
 /*
 V1
    "mccoy's rank is doctor",
