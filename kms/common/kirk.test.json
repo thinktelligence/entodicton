@@ -256,6 +256,10 @@
           "torpedo"
         ],
         [
+          "torpedo",
+          "concept"
+        ],
+        [
           "member",
           "theAble"
         ],
@@ -266,6 +270,10 @@
         [
           "crew_member",
           "member"
+        ],
+        [
+          "member",
+          "concept"
         ],
         [
           "self",
@@ -606,6 +614,30 @@
         }
       ],
       "priorities": [
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
         [
           [
             "is",
@@ -1365,7 +1397,7 @@
       "priorities": [
         [
           [
-            "unknown",
+            "kirk",
             0
           ],
           [
@@ -1397,7 +1429,7 @@
         ],
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -1406,7 +1438,31 @@
               0
             ],
             [
-              "kirk",
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "what",
+            0
+          ],
+          [
+            [
+              "is",
               0
             ],
             [
@@ -1419,30 +1475,6 @@
             ],
             [
               "what",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "kirk",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "kirk",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -1540,6 +1572,11 @@
             "captain": [
               "kirk"
             ],
+            "crew_member": [
+              "kirk",
+              "spock",
+              "mccoy"
+            ],
             "doctor": [
               "spock",
               "mccoy"
@@ -1570,6 +1607,7 @@
             "rank",
             "blue",
             "eyes",
+            "crew_member",
             "second",
             "spock",
             "brown",
@@ -1600,18 +1638,21 @@
               "name"
             ],
             "kirk": [
-              "captain"
+              "captain",
+              "crew_member"
             ],
             "mccoy": [
-              "doctor",
-              "name"
+              "name",
+              "crew_member",
+              "doctor"
             ],
             "second": [
               "rank"
             ],
             "spock": [
               "name",
-              "doctor"
+              "doctor",
+              "crew_member"
             ]
           },
           "properties": {
@@ -1622,6 +1663,8 @@
             "brown": {
             },
             "captain": {
+            },
+            "crew_member": {
             },
             "doctor": {
             },
@@ -1688,12 +1731,12 @@
               "name": {
                 "has": true,
                 "value": {
-                  "marker": "mccoy",
-                  "number": "one",
+                  "marker": "unknown",
                   "response": true,
                   "types": [
-                    "mccoy"
+                    "unknown"
                   ],
+                  "unknown": true,
                   "value": "mccoy",
                   "word": "mccoy"
                 }
@@ -1848,12 +1891,12 @@
                 "word": "spock"
               },
               {
-                "marker": "mccoy",
-                "number": "one",
+                "marker": "unknown",
                 "response": true,
                 "types": [
-                  "mccoy"
+                  "unknown"
                 ],
+                "unknown": true,
                 "value": "mccoy",
                 "word": "mccoy"
               }
@@ -2095,7 +2138,7 @@
               "object": {
                 "concept": true,
                 "determiner": "the",
-                "marker": "torpedo",
+                "marker": "photon_torpedo",
                 "modifiers": [
                   "determiner",
                   "photon"
@@ -2108,7 +2151,7 @@
                 "pullFromContext": true,
                 "types": [
                   "object",
-                  "torpedo"
+                  "photon_torpedo"
                 ],
                 "value": "photon_torpedo",
                 "wantsValue": true,
@@ -2203,67 +2246,6 @@
             "default": true,
             "marker": "is",
             "one": {
-              "marker": "property",
-              "object": {
-                "marker": "mccoy",
-                "number": "one",
-                "types": [
-                  "mccoy"
-                ],
-                "value": "mccoy",
-                "word": "mccoy"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "eyes",
-              "word": "eyes"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "brown",
-              "word": "brown"
-            },
-            "word": "are"
-          },
-          "paraphrases": "mccoy's eyes are brown",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "property",
-              "object": {
-                "marker": "mccoy",
-                "number": "one",
-                "types": [
-                  "mccoy"
-                ],
-                "value": "mccoy",
-                "word": "mccoy"
-              },
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "name",
-              "word": "name"
-            },
-            "topLevel": true,
-            "two": {
               "marker": "mccoy",
               "number": "one",
               "response": true,
@@ -2273,9 +2255,72 @@
               "value": "mccoy",
               "word": "mccoy"
             },
+            "topLevel": true,
+            "two": {
+              "concept": true,
+              "determiner": "a",
+              "marker": "doctor",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": false,
+              "response": true,
+              "types": [
+                "doctor"
+              ],
+              "value": "doctor",
+              "wantsValue": true,
+              "word": "doctor"
+            },
             "word": "is"
           },
-          "paraphrases": "mccoy's name is mccoy",
+          "paraphrases": "mccoy is a doctor",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "mccoy",
+              "word": "mccoy"
+            },
+            "topLevel": true,
+            "two": {
+              "concept": true,
+              "crew": {
+                "default": true,
+                "marker": "crew",
+                "word": "crew"
+              },
+              "determiner": "a",
+              "marker": "crew_member",
+              "modifiers": [
+                "determiner",
+                "crew"
+              ],
+              "number": "one",
+              "pullFromContext": false,
+              "response": true,
+              "types": [
+                "crew_member"
+              ],
+              "value": "crew_member",
+              "wantsValue": true,
+              "word": "member"
+            },
+            "word": "is"
+          },
+          "paraphrases": "mccoy is a crew member",
           "responses": [
             ""
           ]

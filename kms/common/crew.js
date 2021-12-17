@@ -10,14 +10,17 @@ const template = {
       "kirk's rank is captain",
       "kirk's eyes are blue",
       "kirk is a captain",
+      "kirk is a crew member",
       "spock's rank is second",
       "spock's name is spock",
       "spock's eyes are brown",
       "spock is a doctor",
+      "spock is a crew member",
       "mccoy's rank is doctor",
-      "mccoy is a doctor",
       "mccoy's name is mccoy",
       "mccoy's eyes are brown",
+      "mccoy is a crew member",
+      "mccoy is a doctor",
       "the status of the phasers is armed",
       "the status of the photon torpedoes is armed",
   ]
@@ -26,6 +29,8 @@ const template = {
 const config = new entodicton.Config({ 
   name: 'crew',
   priorities: [
+    [['is', 0], ['crew', 0]],
+    [['a', 0], ['is', 0], ['crew', 0]],
     [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['what', 0]],
     [['is', 0], ['unknown', 0], ['propertyOf', 0], ['the', 0], ['photon', 0]],
   ],

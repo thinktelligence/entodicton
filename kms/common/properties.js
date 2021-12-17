@@ -16,6 +16,9 @@ const pluralize = require('pluralize')
 // TODO status can be armed or not armed (only)
 // TODO my -> have a dialog thing
 // TODO pretend you are spock what is your name stop pretending what is your name
+// TODO who are the crew members / who are they
+// TODO the/a means put it in the context for reference
+// TODO the crew members are sss                abc are crew members
 /*
 V1
    "mccoy's rank is doctor",
@@ -77,6 +80,7 @@ class API {
     config.addHierarchy(objectId, 'theAble')
     config.addHierarchy(objectId, 'queryable')
     config.addHierarchy(modifierObjectId, objectId)
+    config.addHierarchy(objectId, 'concept')
 
     config.addPriorities([[objectId, 0], [modifierId, 0]])
     config.addPriorities([['is', 0], ['the', 0], ['propertyOf', 0], [modifierId, 0]])
@@ -468,15 +472,17 @@ let config = {
           }
         }
     */
-    /*
     {
       notes: 'crew members. evaluate a concepts to get instances',
-      match: ({context, isA}) => isA(context.marker, 'concept') && context.evaluate,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'concept') && context.evaluate,
       apply: ({context, objects, api}) => {
-        context.sameWasProcessed = true
+        context.value = { 
+          marker: 'list', 
+          value: api.objects.children[context.marker]
+        }
+        context.evaluateWasProcessed = true
       }
     },
-    */
     {
       notes: 'greg has eyes',
       match: ({context}) => context.marker == 'have' && !context.query,
