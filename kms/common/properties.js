@@ -60,19 +60,23 @@ class API {
   kindOfConcept(config, modifier, object) {
     const objectId = pluralize.singular(object)
     const modifierId = pluralize.singular(modifier)
+    const modifierObjectId = `${modifierId}_${objectId}`
 
     const objectSingular = pluralize.singular(object)
     const objectPlural = pluralize.plural(object)
     config.addOperator(`(<${modifierId}> ([${objectId}|]))`)
+    config.addOperator(`([${modifierObjectId}|])`)
 
     config.addWord(objectSingular, { id: objectId, initial: `{ value: '${objectId}' }`})
     config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}' }`})
 
-    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
+    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
     config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }` })
+    config.addBridge({ id: modifierObjectId, level: 0, bridge: `{ ...next(operator), value: '${modifierObjectId}' }` })
 
     config.addHierarchy(objectId, 'theAble')
     config.addHierarchy(objectId, 'queryable')
+    config.addHierarchy(modifierObjectId, objectId)
 
     config.addPriorities([[objectId, 0], [modifierId, 0]])
     config.addPriorities([['is', 0], ['the', 0], ['propertyOf', 0], [modifierId, 0]])
@@ -304,6 +308,7 @@ let config = {
   operators: [
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
+    "([concept])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
@@ -323,6 +328,7 @@ let config = {
     ['have', 'canBeQuestion'],
   ],
   bridges: [
+    { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesnt", level: 0, bridge: "{ ...after, negation: true }" },
     { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
     { id: "have", level: 1, bridge: "{ ...next(operator) }" },
@@ -343,6 +349,7 @@ let config = {
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
   priorities: [
+    [['is', 1], ['propertyOf', 0], ['questionMark', 0]],
     [['is', 0], ['questionMark', 0], ['objectPrefix', 0]],
     [['is', 0], ['questionMark', 0], ['possession', 0]],
     [['is', 0], ['questionMark', 0], ['possession', 1]],
@@ -461,6 +468,15 @@ let config = {
           }
         }
     */
+    /*
+    {
+      notes: 'crew members. evaluate a concepts to get instances',
+      match: ({context, isA}) => isA(context.marker, 'concept') && context.evaluate,
+      apply: ({context, objects, api}) => {
+        context.sameWasProcessed = true
+      }
+    },
+    */
     {
       notes: 'greg has eyes',
       match: ({context}) => context.marker == 'have' && !context.query,
@@ -519,6 +535,7 @@ let config = {
           return
         }
         context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)
+        context.evaluateWasProcessed = true;
         context.object = undefined;
       }
     }

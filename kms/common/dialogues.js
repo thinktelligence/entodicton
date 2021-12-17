@@ -63,7 +63,7 @@ const warningSameNotEvaluated = (log, context, one) => {
 const evaluate = (value, context, log, s) => {
   value.evaluate = true;
   const instance = s(value) 
-  if (!instance.value) {
+  if (!instance.evaluateWasProcessed) {
     warningNotEvaluated(log, context, value);
   }
   delete instance.evaluate

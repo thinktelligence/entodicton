@@ -3,13 +3,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -25,6 +45,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -225,6 +250,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -480,6 +521,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -496,6 +546,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -657,6 +710,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -690,6 +801,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -1045,6 +1170,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -1127,7 +1264,7 @@
           "object": {
             "concept": true,
             "determiner": "the",
-            "marker": "torpedo",
+            "marker": "photon_torpedo",
             "modifiers": [
               "determiner",
               "photon"
@@ -1140,9 +1277,9 @@
             "pullFromContext": true,
             "types": [
               "object",
-              "torpedo"
+              "photon_torpedo"
             ],
-            "value": "torpedo",
+            "value": "photon_torpedo",
             "wantsValue": true,
             "word": "torpedoes"
           },
@@ -1176,7 +1313,7 @@
       "priorities": [
         [
           [
-            "photon",
+            "torpedo",
             0
           ],
           [
@@ -1208,12 +1345,16 @@
         ],
         [
           [
-            "torpedo",
+            "photon",
             0
           ],
           [
             [
               "is",
+              0
+            ],
+            [
+              "photon",
               0
             ],
             [
@@ -1225,7 +1366,31 @@
               0
             ],
             [
-              "torpedo",
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "photon_torpedo",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon_torpedo",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -1431,8 +1596,7 @@
             "armed",
             "status",
             "phasers",
-            "photon_torpedo",
-            "torpedo"
+            "photon_torpedo"
           ],
           "parents": {
             "armed": [
@@ -1588,7 +1752,6 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
-                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1647,21 +1810,6 @@
               }
             },
             "status": {
-            },
-            "torpedo": {
-              "status": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "armed",
-                  "word": "armed"
-                }
-              }
             }
           },
           "property": {
@@ -1821,7 +1969,7 @@
               "object": {
                 "concept": true,
                 "determiner": "the",
-                "marker": "torpedo",
+                "marker": "photon_torpedo",
                 "modifiers": [
                   "determiner",
                   "photon"
@@ -1834,9 +1982,9 @@
                 "pullFromContext": true,
                 "types": [
                   "object",
-                  "torpedo"
+                  "photon_torpedo"
                 ],
-                "value": "torpedo",
+                "value": "photon_torpedo",
                 "wantsValue": true,
                 "word": "torpedoes"
               },
@@ -2120,13 +2268,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -2142,6 +2310,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -2342,6 +2515,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -2597,6 +2786,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -2613,6 +2811,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -2774,6 +2975,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -2807,6 +3066,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -3162,6 +3435,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -3244,7 +3529,7 @@
           "object": {
             "concept": true,
             "determiner": "the",
-            "marker": "torpedo",
+            "marker": "photon_torpedo",
             "modifiers": [
               "determiner",
               "photon"
@@ -3257,9 +3542,9 @@
             "pullFromContext": true,
             "types": [
               "object",
-              "torpedo"
+              "photon_torpedo"
             ],
-            "value": "torpedo",
+            "value": "photon_torpedo",
             "wantsValue": true,
             "word": "torpedoes"
           },
@@ -3276,6 +3561,7 @@
         "topLevel": true,
         "two": {
           "marker": "unknown",
+          "paraphrase": true,
           "response": true,
           "types": [
             "unknown"
@@ -3318,7 +3604,7 @@
             "object": {
               "concept": true,
               "determiner": "the",
-              "marker": "torpedo",
+              "marker": "photon_torpedo",
               "modifiers": [
                 "determiner",
                 "photon"
@@ -3331,7 +3617,7 @@
               "pullFromContext": true,
               "types": [
                 "object",
-                "torpedo"
+                "photon_torpedo"
               ],
               "value": "photon_torpedo",
               "wantsValue": true,
@@ -3350,6 +3636,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -3387,7 +3674,7 @@
           "object": {
             "concept": true,
             "determiner": "the",
-            "marker": "torpedo",
+            "marker": "photon_torpedo",
             "modifiers": [
               "determiner",
               "photon"
@@ -3400,7 +3687,7 @@
             "pullFromContext": true,
             "types": [
               "object",
-              "torpedo"
+              "photon_torpedo"
             ],
             "value": "photon_torpedo",
             "wantsValue": true,
@@ -3425,7 +3712,7 @@
       "priorities": [
         [
           [
-            "photon",
+            "torpedo",
             0
           ],
           [
@@ -3457,12 +3744,16 @@
         ],
         [
           [
-            "torpedo",
+            "photon",
             0
           ],
           [
             [
               "is",
+              0
+            ],
+            [
+              "photon",
               0
             ],
             [
@@ -3474,7 +3765,31 @@
               0
             ],
             [
-              "torpedo",
+              "unknown",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "photon_torpedo",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon_torpedo",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -3697,12 +4012,16 @@
         ],
         [
           [
-            "unknown",
+            "photon_torpedo",
             0
           ],
           [
             [
               "is",
+              0
+            ],
+            [
+              "photon_torpedo",
               0
             ],
             [
@@ -3742,7 +4061,35 @@
               0
             ],
             [
+              "unknown",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
               0
             ]
           ]
@@ -3896,8 +4243,7 @@
             "armed",
             "status",
             "phasers",
-            "photon_torpedo",
-            "torpedo"
+            "photon_torpedo"
           ],
           "parents": {
             "armed": [
@@ -4112,21 +4458,6 @@
               }
             },
             "status": {
-            },
-            "torpedo": {
-              "status": {
-                "has": true,
-                "value": {
-                  "marker": "unknown",
-                  "response": true,
-                  "types": [
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "armed",
-                  "word": "armed"
-                }
-              }
             }
           },
           "property": {
@@ -4253,6 +4584,7 @@
               },
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -4318,7 +4650,7 @@
                 "object": {
                   "concept": true,
                   "determiner": "the",
-                  "marker": "torpedo",
+                  "marker": "photon_torpedo",
                   "modifiers": [
                     "determiner",
                     "photon"
@@ -4331,7 +4663,7 @@
                   "pullFromContext": true,
                   "types": [
                     "object",
-                    "torpedo"
+                    "photon_torpedo"
                   ],
                   "value": "photon_torpedo",
                   "wantsValue": true,
@@ -4350,6 +4682,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -4387,7 +4720,7 @@
               "object": {
                 "concept": true,
                 "determiner": "the",
-                "marker": "torpedo",
+                "marker": "photon_torpedo",
                 "modifiers": [
                   "determiner",
                   "photon"
@@ -4400,7 +4733,7 @@
                 "pullFromContext": true,
                 "types": [
                   "object",
-                  "torpedo"
+                  "photon_torpedo"
                 ],
                 "value": "photon_torpedo",
                 "wantsValue": true,
@@ -4437,7 +4770,7 @@
               "object": {
                 "concept": true,
                 "determiner": "the",
-                "marker": "torpedo",
+                "marker": "photon_torpedo",
                 "modifiers": [
                   "determiner",
                   "photon"
@@ -4450,9 +4783,9 @@
                 "pullFromContext": true,
                 "types": [
                   "object",
-                  "torpedo"
+                  "photon_torpedo"
                 ],
-                "value": "torpedo",
+                "value": "photon_torpedo",
                 "wantsValue": true,
                 "word": "torpedoes"
               },
@@ -4469,6 +4802,7 @@
             "topLevel": true,
             "two": {
               "marker": "unknown",
+              "paraphrase": true,
               "response": true,
               "types": [
                 "unknown"
@@ -4699,13 +5033,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -4721,6 +5075,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -4921,6 +5280,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -5176,6 +5551,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -5192,6 +5576,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -5353,6 +5740,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -5386,6 +5831,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -5741,6 +6200,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -5862,6 +6333,7 @@
             "concept": true,
             "default": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "type",
             "modifiers": [
@@ -5955,7 +6427,7 @@
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -5983,7 +6455,7 @@
         ],
         [
           [
-            "what",
+            "unknown",
             0
           ],
           [
@@ -6000,7 +6472,7 @@
               0
             ],
             [
-              "what",
+              "unknown",
               0
             ]
           ]
@@ -6550,6 +7022,7 @@
                 "concept": true,
                 "default": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "type",
                 "modifiers": [
@@ -6861,13 +7334,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -6883,6 +7376,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -7083,6 +7581,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -7338,6 +7852,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -7354,6 +7877,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -7515,6 +8041,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -7548,6 +8132,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -7903,6 +8501,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -8014,6 +8624,7 @@
             "word": "name"
           },
           "instance": {
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "types": [
@@ -8092,7 +8703,7 @@
         ],
         [
           [
-            "spock",
+            "what",
             0
           ],
           [
@@ -8116,7 +8727,7 @@
         ],
         [
           [
-            "what",
+            "spock",
             0
           ],
           [
@@ -8129,7 +8740,7 @@
               0
             ],
             [
-              "what",
+              "spock",
               0
             ]
           ]
@@ -8665,6 +9276,7 @@
                 "word": "name"
               },
               "instance": {
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "types": [
@@ -8965,13 +9577,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -8987,6 +9619,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -9187,6 +9824,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -9442,6 +10095,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -9458,6 +10120,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -9619,6 +10284,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -9652,6 +10375,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -10007,6 +10744,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -10118,6 +10867,7 @@
             "word": "rank"
           },
           "instance": {
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "types": [
@@ -10196,7 +10946,7 @@
         ],
         [
           [
-            "spock",
+            "what",
             0
           ],
           [
@@ -10220,7 +10970,7 @@
         ],
         [
           [
-            "what",
+            "spock",
             0
           ],
           [
@@ -10233,7 +10983,7 @@
               0
             ],
             [
-              "what",
+              "spock",
               0
             ]
           ]
@@ -10767,6 +11517,7 @@
                 "word": "rank"
               },
               "instance": {
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "types": [
@@ -11067,13 +11818,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -11089,6 +11860,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -11289,6 +12065,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -11544,6 +12336,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -11560,6 +12361,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -11721,6 +12525,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -11754,6 +12616,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -12109,6 +12985,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -12183,43 +13071,89 @@
         "marker": "is",
         "one": {
           "default": true,
+          "determined": true,
           "marker": "what",
+          "query": [
+            "what"
+          ],
           "response": true,
           "types": [
             "what"
           ],
           "word": "what"
         },
+        "query": [
+          "is"
+        ],
+        "response": {
+          "concept": {
+            "evaluate": true,
+            "isSelf": true,
+            "marker": "property",
+            "object": {
+              "marker": "spock",
+              "number": "one",
+              "types": [
+                "spock"
+              ],
+              "value": "spock",
+              "word": "spock"
+            },
+            "paraphrase": true,
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": "rank",
+            "word": "rank"
+          },
+          "instance": {
+            "evaluateWasProcessed": true,
+            "instance": true,
+            "marker": "property",
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": {
+              "marker": "unknown",
+              "paraphrase": true,
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "second",
+              "word": "second"
+            },
+            "word": "rank"
+          },
+          "isResponse": true
+        },
         "topLevel": true,
         "two": {
-          "marker": "spock",
-          "number": "one",
+          "marker": "property",
+          "object": {
+            "marker": "spock",
+            "number": "one",
+            "types": [
+              "spock"
+            ],
+            "value": "spock",
+            "word": "spock"
+          },
           "response": true,
           "types": [
-            "spock"
+            "property"
           ],
-          "value": "spock",
-          "word": "spock"
+          "unknown": true,
+          "value": "rank",
+          "word": "rank"
         },
+        "types": [
+          "is"
+        ],
         "word": "is"
-      },
-      {
-        "marker": "possession",
-        "topLevel": true,
-        "value": "possession",
-        "word": "'s"
-      },
-      {
-        "marker": "unknown",
-        "topLevel": true,
-        "unknown": true,
-        "value": "rank",
-        "word": "rank"
-      },
-      {
-        "marker": "questionMark",
-        "topLevel": true,
-        "word": "?"
       }
     ],
     "metadata": {
@@ -12260,7 +13194,7 @@
         ],
         [
           [
-            "is",
+            "what",
             0
           ],
           [
@@ -12288,16 +13222,96 @@
         ],
         [
           [
+            "spock",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "questionMark",
+              0
+            ],
+            [
+              "spock",
+              0
+            ]
+          ]
+        ],
+        [
+          [
             "possession",
             0
           ],
           [
             [
               "is",
-              1
+              0
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "questionMark",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "possession",
+            1
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "questionMark",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "property",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ],
+            [
+              "questionMark",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            [
+              "is",
               0
             ],
             [
@@ -12729,6 +13743,19 @@
         },
         "4": {
           "mentioned": [
+            {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            }
           ],
           "variables": {
           }
@@ -12737,81 +13764,97 @@
       "processed": [
         {
           "context": {
-            "marker": "questionMark",
-            "topLevel": true,
-            "word": "?"
-          },
-          "paraphrases": "?",
-          "responses": [
-            "",
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "context": {
-            "marker": "unknown",
-            "topLevel": true,
-            "unknown": true,
-            "value": "rank",
-            "word": "rank"
-          },
-          "paraphrases": "rank",
-          "responses": [
-            "",
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "context": {
-            "marker": "possession",
-            "topLevel": true,
-            "value": "possession",
-            "word": "'s"
-          },
-          "paraphrases": "'s",
-          "responses": [
-            "",
-            "",
-            "",
-            ""
-          ]
-        },
-        {
-          "context": {
             "default": true,
             "marker": "is",
             "one": {
               "default": true,
+              "determined": true,
               "marker": "what",
+              "query": [
+                "what"
+              ],
               "response": true,
               "types": [
                 "what"
               ],
               "word": "what"
             },
+            "query": [
+              "is"
+            ],
+            "response": {
+              "concept": {
+                "evaluate": true,
+                "isSelf": true,
+                "marker": "property",
+                "object": {
+                  "marker": "spock",
+                  "number": "one",
+                  "types": [
+                    "spock"
+                  ],
+                  "value": "spock",
+                  "word": "spock"
+                },
+                "paraphrase": true,
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "rank",
+                "word": "rank"
+              },
+              "instance": {
+                "evaluateWasProcessed": true,
+                "instance": true,
+                "marker": "property",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": {
+                  "marker": "unknown",
+                  "paraphrase": true,
+                  "response": true,
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "second",
+                  "word": "second"
+                },
+                "word": "rank"
+              },
+              "isResponse": true
+            },
             "topLevel": true,
             "two": {
-              "marker": "spock",
-              "number": "one",
+              "marker": "property",
+              "object": {
+                "marker": "spock",
+                "number": "one",
+                "types": [
+                  "spock"
+                ],
+                "value": "spock",
+                "word": "spock"
+              },
               "response": true,
               "types": [
-                "spock"
+                "property"
               ],
-              "value": "spock",
-              "word": "spock"
+              "unknown": true,
+              "value": "rank",
+              "word": "rank"
             },
+            "types": [
+              "is"
+            ],
             "word": "is"
           },
-          "paraphrases": "what is spock",
+          "paraphrases": "what is spock's rank?",
           "responses": [
-            "",
-            "",
-            "",
-            ""
+            "spock's rank is second"
           ]
         },
         {
@@ -12931,33 +13974,168 @@
           "responses": [
             ""
           ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "mccoy",
+                "number": "one",
+                "types": [
+                  "mccoy"
+                ],
+                "value": "mccoy",
+                "word": "mccoy"
+              },
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "eyes",
+              "word": "eyes"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "brown",
+              "word": "brown"
+            },
+            "word": "are"
+          },
+          "paraphrases": "mccoy's eyes are brown",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "mccoy",
+                "number": "one",
+                "types": [
+                  "mccoy"
+                ],
+                "value": "mccoy",
+                "word": "mccoy"
+              },
+              "response": true,
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "name",
+              "word": "name"
+            },
+            "topLevel": true,
+            "two": {
+              "marker": "mccoy",
+              "number": "one",
+              "response": true,
+              "types": [
+                "mccoy"
+              ],
+              "value": "mccoy",
+              "word": "mccoy"
+            },
+            "word": "is"
+          },
+          "paraphrases": "mccoy's name is mccoy",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "mccoy",
+              "word": "mccoy"
+            },
+            "topLevel": true,
+            "two": {
+              "concept": true,
+              "determiner": "a",
+              "marker": "doctor",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": false,
+              "response": true,
+              "types": [
+                "doctor"
+              ],
+              "value": "doctor",
+              "wantsValue": true,
+              "word": "doctor"
+            },
+            "word": "is"
+          },
+          "paraphrases": "mccoy is a doctor",
+          "responses": [
+            ""
+          ]
         }
       ]
     },
     "paraphrases": [
-      "what is spock",
-      "'s",
-      "rank",
-      "?"
+      "what is spock's rank?"
     ],
     "responses": [
-      "",
-      "",
-      "",
-      ""
+      "spock's rank is second"
     ]
   },
   "what is the name of kirk": {
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -12973,6 +14151,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -13173,6 +14356,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -13428,6 +14627,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -13444,6 +14652,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -13605,6 +14816,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -13638,6 +14907,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -13993,6 +15276,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -14113,6 +15408,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -14799,6 +16095,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -15111,13 +16408,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -15133,6 +16450,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -15333,6 +16655,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -15588,6 +16926,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -15604,6 +16951,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -15765,6 +17115,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -15798,6 +17206,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -16153,6 +17575,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -16273,6 +17707,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -16367,7 +17802,7 @@
         ],
         [
           [
-            "spock",
+            "what",
             0
           ],
           [
@@ -16395,7 +17830,7 @@
         ],
         [
           [
-            "what",
+            "spock",
             0
           ],
           [
@@ -16408,11 +17843,11 @@
               0
             ],
             [
-              "the",
+              "spock",
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -16957,6 +18392,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -17269,13 +18705,33 @@
     "config": {
       "bridges": [
         {
-          "bridge": "{ ...after, photon: operator, value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
+          "bridge": "{ ...after, photon: operator, marker: operator(concat('photon_', after.value)), value: concat('photon_', after.value), modifiers: append(['photon'], after[0].modifiers)}",
           "id": "photon",
           "level": 0
         },
         {
           "bridge": "{ ...next(operator), value: 'torpedo' }",
           "id": "torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'photon_torpedo' }",
+          "id": "photon_torpedo",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, crew: operator, marker: operator(concat('crew_', after.value)), value: concat('crew_', after.value), modifiers: append(['crew'], after[0].modifiers)}",
+          "id": "crew",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'member' }",
+          "id": "member",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'crew_member' }",
+          "id": "crew_member",
           "level": 0
         },
         {
@@ -17291,6 +18747,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "type",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
           "level": 0
         },
         {
@@ -17491,6 +18952,22 @@
         [
           "torpedo",
           "queryable"
+        ],
+        [
+          "photon_torpedo",
+          "torpedo"
+        ],
+        [
+          "member",
+          "theAble"
+        ],
+        [
+          "member",
+          "queryable"
+        ],
+        [
+          "crew_member",
+          "member"
         ],
         [
           "self",
@@ -17746,6 +19223,15 @@
           "pattern": "([kirk])"
         },
         {
+          "pattern": "([crew_member|])"
+        },
+        {
+          "pattern": "(<crew> ([member|]))"
+        },
+        {
+          "pattern": "([photon_torpedo|])"
+        },
+        {
           "pattern": "(<photon> ([torpedo|]))"
         },
         {
@@ -17762,6 +19248,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -17923,6 +19412,64 @@
         ],
         [
           [
+            "member",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "what",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
             "questionMark",
             0
           ],
@@ -17956,6 +19503,20 @@
           ],
           [
             "hierarchyAble",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            1
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "questionMark",
             0
           ]
         ],
@@ -18311,6 +19872,18 @@
             "initial": "{ value: \"mccoy\", number: \"many\" }"
           }
         ],
+        "member": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
+        "members": [
+          {
+            "id": "member",
+            "initial": "{ value: 'member' }"
+          }
+        ],
         "my": [
           {
             "id": "objectPrefix",
@@ -18412,7 +19985,7 @@
             "object": {
               "concept": true,
               "determiner": "the",
-              "marker": "torpedo",
+              "marker": "photon_torpedo",
               "modifiers": [
                 "determiner",
                 "photon"
@@ -18425,7 +19998,7 @@
               "pullFromContext": true,
               "types": [
                 "object",
-                "torpedo"
+                "photon_torpedo"
               ],
               "value": "photon_torpedo",
               "wantsValue": true,
@@ -18444,6 +20017,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -18481,7 +20055,7 @@
           "object": {
             "concept": true,
             "determiner": "the",
-            "marker": "torpedo",
+            "marker": "photon_torpedo",
             "modifiers": [
               "determiner",
               "photon"
@@ -18494,7 +20068,7 @@
             "pullFromContext": true,
             "types": [
               "object",
-              "torpedo"
+              "photon_torpedo"
             ],
             "value": "photon_torpedo",
             "wantsValue": true,
@@ -18587,12 +20161,16 @@
         ],
         [
           [
-            "unknown",
+            "photon_torpedo",
             0
           ],
           [
             [
               "is",
+              0
+            ],
+            [
+              "photon_torpedo",
               0
             ],
             [
@@ -18632,7 +20210,35 @@
               0
             ],
             [
+              "unknown",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "unknown",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
               0
             ]
           ]
@@ -19176,7 +20782,7 @@
                 "object": {
                   "concept": true,
                   "determiner": "the",
-                  "marker": "torpedo",
+                  "marker": "photon_torpedo",
                   "modifiers": [
                     "determiner",
                     "photon"
@@ -19189,7 +20795,7 @@
                   "pullFromContext": true,
                   "types": [
                     "object",
-                    "torpedo"
+                    "photon_torpedo"
                   ],
                   "value": "photon_torpedo",
                   "wantsValue": true,
@@ -19208,6 +20814,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -19245,7 +20852,7 @@
               "object": {
                 "concept": true,
                 "determiner": "the",
-                "marker": "torpedo",
+                "marker": "photon_torpedo",
                 "modifiers": [
                   "determiner",
                   "photon"
@@ -19258,7 +20865,7 @@
                 "pullFromContext": true,
                 "types": [
                   "object",
-                  "torpedo"
+                  "photon_torpedo"
                 ],
                 "value": "photon_torpedo",
                 "wantsValue": true,

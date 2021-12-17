@@ -3,6 +3,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -173,6 +178,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -476,6 +484,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -646,6 +659,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -1141,6 +1157,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -1311,6 +1332,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -1582,6 +1606,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -1752,6 +1781,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -2203,6 +2235,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -2373,6 +2410,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -2679,6 +2719,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -2849,6 +2894,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -3300,6 +3348,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -3470,6 +3523,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -3720,6 +3776,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -3890,6 +3951,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -4136,6 +4200,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -4853,6 +4918,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -5032,6 +5098,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -5202,6 +5273,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -5397,6 +5471,7 @@
             "word": "age"
           },
           "instance": {
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "types": [
@@ -5660,54 +5735,6 @@
         ],
         [
           [
-            "propertyOf",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            1
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        ],
-        [
-          [
             "the",
             0
           ],
@@ -5719,6 +5746,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "propertyOf",
+              0
             ],
             [
               "the",
@@ -5739,6 +5770,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "propertyOf",
+              0
             ]
           ]
         ],
@@ -5755,6 +5790,42 @@
             [
               "property",
               0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "propertyOf",
+            1
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
             ]
           ]
         ],
@@ -5933,6 +6004,7 @@
                 "word": "age"
               },
               "instance": {
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "types": [
@@ -6048,6 +6120,11 @@
   "the age of greg is 23 what is the age of greg": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
         {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
@@ -6219,6 +6296,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -6423,6 +6503,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -6940,6 +7021,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -7068,6 +7150,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -7238,6 +7325,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -7442,6 +7532,7 @@
           "instance": {
             "concept": true,
             "determiner": "the",
+            "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
             "modifiers": [
@@ -7939,6 +8030,7 @@
               "instance": {
                 "concept": true,
                 "determiner": "the",
+                "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
                 "modifiers": [
@@ -8064,6 +8156,11 @@
   "the property": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
         {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
@@ -8235,6 +8332,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -8451,6 +8551,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -8621,6 +8726,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -8760,7 +8868,7 @@
       "priorities": [
         [
           [
-            "object",
+            "property",
             0
           ],
           [
@@ -8784,12 +8892,12 @@
         ],
         [
           [
-            "property",
+            "object",
             0
           ],
           [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -8908,6 +9016,11 @@
   "the property of the object": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
         {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
@@ -9079,6 +9192,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -9225,7 +9341,7 @@
       "priorities": [
         [
           [
-            "object",
+            "property",
             0
           ],
           [
@@ -9249,12 +9365,12 @@
         ],
         [
           [
-            "property",
+            "object",
             0
           ],
           [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -9396,6 +9512,11 @@
   "what is the age of greg": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
         {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
@@ -9567,6 +9688,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"
@@ -9734,7 +9858,7 @@
       "priorities": [
         [
           [
-            "the",
+            "unknown",
             0
           ],
           [
@@ -9775,27 +9899,7 @@
               0
             ],
             [
-              "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        ],
-        [
-          [
-            "unknown",
-            0
-          ],
-          [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
+              "the",
               0
             ],
             [
@@ -9823,7 +9927,31 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -9992,6 +10120,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -10164,6 +10297,9 @@
           "pattern": "(<whose> ([property]))"
         },
         {
+          "pattern": "([concept])"
+        },
+        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -10326,7 +10462,7 @@
       "priorities": [
         [
           [
-            "object",
+            "property",
             0
           ],
           [
@@ -10358,7 +10494,7 @@
         ],
         [
           [
-            "property",
+            "what",
             0
           ],
           [
@@ -10367,7 +10503,7 @@
               0
             ],
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -10386,7 +10522,7 @@
         ],
         [
           [
-            "what",
+            "object",
             0
           ],
           [
@@ -10395,15 +10531,15 @@
               0
             ],
             [
+              "object",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -10589,6 +10725,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, negation: true }",
           "id": "doesnt",
           "level": 0
@@ -10759,6 +10900,9 @@
         },
         {
           "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
         },
         {
           "pattern": "(<objectPrefix|> ([property]))"

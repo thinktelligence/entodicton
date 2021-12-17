@@ -36,7 +36,7 @@ crew_instance.base = 'avatar'
 config.initializer( ({config, km}) => {
   const api = km('properties').api
   api.kindOfConcept(config, 'photon', 'torpedo')
-  // api.kindOfConcept(config, 'crew', 'member')
+  api.kindOfConcept(config, 'crew', 'member')
 } )
 config.load(template, crew_instance)
 entodicton.knowledgeModule( {

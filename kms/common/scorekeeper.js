@@ -235,6 +235,7 @@ let config = {
         } else {
           context.value = "no one's turn"
         }
+        context.evaluateWasProcessed = true
       }
     },
     {
@@ -245,6 +246,7 @@ let config = {
         } else {
           context.value = 'no one'
         }
+        context.evaluateWasProcessed = true
       }
     },
     {
@@ -256,6 +258,7 @@ let config = {
         } else {
           context.value = players.join(' ')
         }
+        context.evaluateWasProcessed = true
       }
     },
       // same
@@ -285,6 +288,7 @@ let config = {
             ],
             "word": "points",
           }
+        context.evaluateWasProcessed = true
       }
     },
     {
@@ -304,6 +308,7 @@ let config = {
           const scores = players.map( (player) => `${player} has ${objects.scores[player]} points` )
           context.value = scores.join(' ')
         }
+        context.evaluateWasProcessed = true
       }
     },
     {

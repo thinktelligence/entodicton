@@ -132,6 +132,7 @@ let config = {
       match: ({objects, context, api}) => context.marker == 'time' && context.evaluate, 
       apply: ({objects, context, api}) => {
         context.value = api.newDate()
+        context.evaluateWasProcessed = true
         context.format = objects.format
       }
     },

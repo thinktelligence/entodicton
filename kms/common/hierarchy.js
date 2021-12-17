@@ -141,6 +141,7 @@ let config = {
         const api = km('properties').api
         const type = pluralize.singular(context.object.value);
         context.value = gs(api.children(type).map( (t) => pluralize.plural(t) ), ', ', ' and ')
+        context.evaluateWasProcessed = true
       }
     },
   ]
