@@ -293,7 +293,7 @@ let config = {
           return
         }
         if (!api.knownProperty(object, context.value)) {
-          context.verbatim = `There is property no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
+          context.verbatim = `There is property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
           return
         }
         context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)

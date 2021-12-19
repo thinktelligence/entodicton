@@ -2,6 +2,7 @@ const pluralize = require('pluralize')
 
 class API {
 
+  // for example, "crew member" or "photon torpedo"
   kindOfConcept(config, modifier, object) {
     const objectId = pluralize.singular(object)
     const modifierId = pluralize.singular(modifier)
@@ -25,6 +26,10 @@ class API {
     config.addHierarchy(objectId, 'concept')
 
     config.addPriorities([[objectId, 0], [modifierId, 0]])
+    config.addPriorities([['a', 0], ['is', 0], [modifierId, 0]])
+    config.addPriorities([['a', 0], ['is', 0], [objectId, 0]])
+    config.addPriorities([['the', 0], ['is', 0], [modifierId, 0]])
+    config.addPriorities([['the', 0], ['is', 0], [objectId, 0]])
     config.addPriorities([['a', 0], [modifierId, 0]])
     config.addPriorities([['a', 0], [objectId, 0]])
     config.addPriorities([['the', 0], [modifierId, 0]])
@@ -34,6 +39,13 @@ class API {
     config.addPriorities([['is', 0], ['the', 0], ['propertyOf', 0], [modifierId, 0]])
     config.addPriorities([['is', 0], [modifierId, 0], ['propertyOf', 0], ['the', 0], ['what', 0], ['unknown', 0], [objectId, 0]])
   }
+
+  /*
+  // for example, "I bought a car" => { before: 'person'], operator: 'buy', words: ['bought'], after: ['car']) }
+  actionPrefix({before, operator, words, after, semantic}) {
+
+  }
+  */
 
   // word is for one or many
   makeObject({config, context}) {
@@ -172,11 +184,16 @@ class API {
 
     this.setPropertyDirectly(object, property, value, has, skipHandler)
   }
-
+  
   setPropertyDirectly(object, property, value, has, skipHandler) {
     this.getObject(object)[property] = {has, value} || undefined
     if (has && value) {
-      this.objects.property[property] = (this.objects.property[property] || []).concat(value)
+      let values = this.objects.property[property] || []
+      if (!values.includes(value)) {
+        values = values.concat(value)
+      }
+      this.objects.property[property] = values
+      // this.objects.property[property] = (this.objects.property[property] || []).concat(value)
       // "mccoy's rank is doctor",
       // infer doctor is a type of rank
       this.rememberIsA(value.value, property);

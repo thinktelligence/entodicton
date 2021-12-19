@@ -28,6 +28,36 @@ const template = {
   ]
 };
 
+// actionPrefix({before, operator, words, after, semantic})
+createActionPrefix = (config) => {
+  const operator = 'arm'
+  config.addOperator("([arm|] ([weapon|]))")
+  config.addBridge({ id: 'arm', level: 0, bridge: "{ ...next(operator), weapon: after[0] }"})
+  config.addBridge({ id: 'weapon', level: 0, bridge: "{ ...next(operator) }"})
+  config.addWord('arm', { id: 'arm', initial: '{ value: "arm" }' })
+  config.addGenerator({
+    match: ({context}) => context.marker == 'arm' && context.paraphrase,
+    apply: ({context, g}) => `${context.word} ${g(context.weapon)}`
+  })
+  config.addSemantic({
+    match: ({context}) => context.marker == 'arm',
+    apply: ({context, km}) => {
+      const value = {
+              "marker": "unknown",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "armed",
+              "word": "armed",
+              "response": true
+      }
+
+      km("properties").api.setProperty(context.weapon.value, 'status', value, true) 
+    }
+  })
+}
+
 const config = new entodicton.Config({ 
   name: 'crew',
   priorities: [
@@ -44,6 +74,7 @@ config.initializer( ({config, km}) => {
   const api = km('properties').api
   api.kindOfConcept(config, 'photon', 'torpedo')
   api.kindOfConcept(config, 'crew', 'member')
+  createActionPrefix(config)
   /*
   api.relationPrefix(config, 'arm', 'weapon')
   */
