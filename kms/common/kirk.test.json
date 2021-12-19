@@ -240,6 +240,16 @@
           "bridge": "{ ...next(operator) }",
           "id": "mccoy",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "phaser",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "weapon",
+          "level": 0
         }
       ],
       "hierarchy": [
@@ -510,9 +520,79 @@
         [
           "mccoy",
           "object"
+        ],
+        [
+          "phaser",
+          "theAble"
+        ],
+        [
+          "phaser",
+          "queryable"
+        ],
+        [
+          "phaser",
+          "hierarchyAble"
+        ],
+        [
+          "phaser",
+          "object"
+        ],
+        [
+          "phaser",
+          "theAble"
+        ],
+        [
+          "phaser",
+          "queryable"
+        ],
+        [
+          "phaser",
+          "hierarchyAble"
+        ],
+        [
+          "phaser",
+          "object"
+        ],
+        [
+          "weapon",
+          "theAble"
+        ],
+        [
+          "weapon",
+          "queryable"
+        ],
+        [
+          "weapon",
+          "hierarchyAble"
+        ],
+        [
+          "weapon",
+          "object"
+        ],
+        [
+          "weapon",
+          "theAble"
+        ],
+        [
+          "weapon",
+          "queryable"
+        ],
+        [
+          "weapon",
+          "hierarchyAble"
+        ],
+        [
+          "weapon",
+          "object"
         ]
       ],
       "operators": [
+        {
+          "pattern": "([weapon])"
+        },
+        {
+          "pattern": "([phaser])"
+        },
         {
           "pattern": "([mccoy])"
         },
@@ -694,6 +774,66 @@
         ],
         [
           [
+            "a",
+            0
+          ],
+          [
+            "photon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            "photon",
+            0
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            "torpedo",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "photon",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "torpedo",
+            0
+          ]
+        ],
+        [
+          [
             "is",
             0
           ],
@@ -747,6 +887,66 @@
           ],
           [
             "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "the",
+            0
+          ],
+          [
+            "member",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "crew",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "member",
             0
           ]
         ],
@@ -1226,6 +1426,18 @@
             "initial": "{ value: false }"
           }
         ],
+        "phaser": [
+          {
+            "id": "phaser",
+            "initial": "{ value: \"phaser\", number: \"one\" }"
+          }
+        ],
+        "phasers": [
+          {
+            "id": "phaser",
+            "initial": "{ value: \"phaser\", number: \"many\" }"
+          }
+        ],
         "spock": [
           {
             "id": "spock",
@@ -1254,6 +1466,18 @@
           {
             "id": "torpedo",
             "initial": "{ value: 'torpedo' }"
+          }
+        ],
+        "weapon": [
+          {
+            "id": "weapon",
+            "initial": "{ value: \"weapon\", number: \"one\" }"
+          }
+        ],
+        "weapons": [
+          {
+            "id": "weapon",
+            "initial": "{ value: \"weapon\", number: \"many\" }"
           }
         ],
         "who": [
@@ -1397,7 +1621,7 @@
       "priorities": [
         [
           [
-            "kirk",
+            "unknown",
             0
           ],
           [
@@ -1429,7 +1653,7 @@
         ],
         [
           [
-            "unknown",
+            "what",
             0
           ],
           [
@@ -1438,15 +1662,15 @@
               0
             ],
             [
+              "kirk",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ],
             [
@@ -1457,7 +1681,7 @@
         ],
         [
           [
-            "what",
+            "kirk",
             0
           ],
           [
@@ -1466,15 +1690,15 @@
               0
             ],
             [
+              "kirk",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -1597,6 +1821,12 @@
             ],
             "status": [
               "armed"
+            ],
+            "torpedo": [
+              "weapon"
+            ],
+            "weapon": [
+              "phaser"
             ]
           },
           "concepts": [
@@ -1615,8 +1845,14 @@
             "mccoy",
             "armed",
             "status",
-            "phasers",
-            "photon_torpedo"
+            "phaser",
+            "photon_torpedo",
+            "weapon",
+            "torpedo"
+          ],
+          "handlers": {
+          },
+          "initHandlers": [
           ],
           "parents": {
             "armed": [
@@ -1646,6 +1882,9 @@
               "crew_member",
               "doctor"
             ],
+            "phaser": [
+              "weapon"
+            ],
             "second": [
               "rank"
             ],
@@ -1653,6 +1892,9 @@
               "name",
               "doctor",
               "crew_member"
+            ],
+            "weapon": [
+              "torpedo"
             ]
           },
           "properties": {
@@ -1757,6 +1999,8 @@
             },
             "name": {
             },
+            "phaser": {
+            },
             "phasers": {
               "status": {
                 "has": true,
@@ -1833,6 +2077,10 @@
               }
             },
             "status": {
+            },
+            "torpedo": {
+            },
+            "weapon": {
             }
           },
           "property": {
@@ -2130,6 +2378,72 @@
             "marker": "is",
             "one": {
               "concept": true,
+              "marker": "torpedo",
+              "response": true,
+              "types": [
+                "torpedo"
+              ],
+              "value": "torpedo",
+              "word": "torpedoes"
+            },
+            "topLevel": true,
+            "two": {
+              "concept": true,
+              "marker": "weapon",
+              "number": "many",
+              "response": true,
+              "types": [
+                "weapon"
+              ],
+              "value": "weapon",
+              "word": "weapons"
+            },
+            "word": "are"
+          },
+          "paraphrases": "torpedoes are weapons",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "phasers",
+              "word": "phasers"
+            },
+            "topLevel": true,
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "response": true,
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "weapons",
+              "word": "weapons"
+            },
+            "word": "are"
+          },
+          "paraphrases": "phasers are weapons",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "concept": true,
               "determiner": "the",
               "marker": "property",
               "modifiers": [
@@ -2237,90 +2551,6 @@
             "word": "is"
           },
           "paraphrases": "the status of the phasers is armed",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "mccoy",
-              "number": "one",
-              "response": true,
-              "types": [
-                "mccoy"
-              ],
-              "value": "mccoy",
-              "word": "mccoy"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "determiner": "a",
-              "marker": "doctor",
-              "modifiers": [
-                "determiner"
-              ],
-              "number": "one",
-              "pullFromContext": false,
-              "response": true,
-              "types": [
-                "doctor"
-              ],
-              "value": "doctor",
-              "wantsValue": true,
-              "word": "doctor"
-            },
-            "word": "is"
-          },
-          "paraphrases": "mccoy is a doctor",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "mccoy",
-              "word": "mccoy"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "crew": {
-                "default": true,
-                "marker": "crew",
-                "word": "crew"
-              },
-              "determiner": "a",
-              "marker": "crew_member",
-              "modifiers": [
-                "determiner",
-                "crew"
-              ],
-              "number": "one",
-              "pullFromContext": false,
-              "response": true,
-              "types": [
-                "crew_member"
-              ],
-              "value": "crew_member",
-              "wantsValue": true,
-              "word": "member"
-            },
-            "word": "is"
-          },
-          "paraphrases": "mccoy is a crew member",
           "responses": [
             ""
           ]

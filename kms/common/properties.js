@@ -307,14 +307,18 @@ let config = {
 config = new entodicton.Config(config)
 config.api = api
 config.add(dialogues)
-config.initializer( ({objects}) => {
+config.initializer( ({objects, api}) => {
+  api.initialize(objects)
+  /*
   objects.concepts = []
   // object -> property -> {has, value}
   objects.properties = {}
   // property -> values
   objects.property = {}
+  objects.handlers = {}
   objects.parents = {}
   objects.children = {}
+  */
 })
 
 entodicton.knowledgeModule( { 

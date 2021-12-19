@@ -5,10 +5,10 @@ const animals_instance = require('./animals.instance.json')
 
 const template ={
   "queries": [
-    "humans are mammels",
-    "mammels are animals",
-    "mammels have ears",
-    "mammels dont have wings",
+    "humans are mammals",
+    "mammals are animals",
+    "mammals have ears",
+    "mammals dont have wings",
     "animals have skin",
     "birds are animals",
     "birds have wings",
@@ -16,7 +16,7 @@ const template ={
     "cats are felines",
     "canines are animals",
     "dogs are canines",
-    "bats are mammels",
+    "bats are mammals",
     "bats have wings"
   ],
 }

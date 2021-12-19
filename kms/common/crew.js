@@ -23,6 +23,8 @@ const template = {
       "mccoy is a doctor",
       "the status of the phasers is armed",
       "the status of the photon torpedoes is armed",
+      "phasers are weapons",
+      "torpedoes are weapons",
   ]
 };
 
@@ -42,7 +44,10 @@ config.initializer( ({config, km}) => {
   const api = km('properties').api
   api.kindOfConcept(config, 'photon', 'torpedo')
   api.kindOfConcept(config, 'crew', 'member')
-} )
+  /*
+  api.relationPrefix(config, 'arm', 'weapon')
+  */
+})
 config.load(template, crew_instance)
 entodicton.knowledgeModule( {
   module,
