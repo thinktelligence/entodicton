@@ -64,9 +64,11 @@ let config = {
   semantics: [
     [
       ({context}) => context.marker == 'character',
-      ({context, config}) => {
+      // ({context, config, km}) => {
+      ({context, km}) => {
         const words = context.words.map( (context) => context.word )
         const utterance = words.join(' ')
+        const config = km('characters')
         config._api.apis[context.value].process(utterance).then( (result) => {
           console.log('----------------------------------------')
           console.log(`${context.value} says: `, result.generated)
@@ -93,10 +95,14 @@ const initializeApi = (config, api) => {
 }
 
 config = new entodicton.Config(config)
+config.initializer( ({isModule, config}) => {
+  if (!isModule) {
+    config.api = api2
+    config.api = api
+  }
+})
 config.multiApi = initializeApi
 // mode this to non-module init only
-config.api = api2
-config.api = api
 entodicton.knowledgeModule({
   module,
   description: 'this module is for creating a team of characters that can respond to commands',
