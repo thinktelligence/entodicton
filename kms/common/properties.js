@@ -22,6 +22,7 @@ const pluralize = require('pluralize')
 // TODO who are they / what are they
 // TODO macro for verb forms -> arm x | go to y | i like x
 // TODO READONLY
+// TODO pokemon what is the attack/i own a pikachu/ what do i own
 /*
 V1
    "mccoy's rank is doctor",
