@@ -1,18 +1,19 @@
-node animals -s  -g
-node avatar -s  -g
-node characters -s  -g
-node currency -s  -g
-node dialogues -s  -g
-node help -s  -g
-node javascript -s  -g
-node numbers -s  -g
-node properties -s  -g
-node reports -s  -g
-node people -s  -g
-node scorekeeper -s  -g
-node tell -s  -g
-node time -s  -g
-node crew -s  -g
-node kirk -s  -g
-node spock -s  -g
-node stgame -s -g
+node animals -tva 
+node avatar -tva 
+node characters -tva 
+node currency -tva 
+node dialogues -tva 
+node help -tva 
+node javascript -tva 
+node numbers -tva 
+node properties -tva 
+node reports -tva 
+node people -tva 
+node scorekeeper -tva 
+node tell -tva 
+node time -tva 
+
+node crew -tva 
+node kirk -tva 
+node spock -tva 
+node stgame -tva
