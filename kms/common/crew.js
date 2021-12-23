@@ -35,7 +35,6 @@ const config = new entodicton.Config({
     [['crew', 0], ['is', 0], ['the', 0], ['what', 0]],
     [['a', 0], ['is', 0], ['crew', 0]],
     [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['what', 0]],
-    [['is', 0], ['unknown', 0], ['propertyOf', 0], ['the', 0], ['photon', 0]],
   ],
 })
 

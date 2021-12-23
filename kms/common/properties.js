@@ -77,6 +77,17 @@ let config = {
     // the plural of cat is cats what is the plural of cat?
     // does greg have ears (yes) greg does not have ears does greg have ears (no)
   ],
+  /*
+    [('is', 0), ('property', 0)]-('property', 0)
+
+
+    got from -> 
+    ['property', 'queryable']
+    "(([queryable]) [is|is,are] ([queryable|]))"
+
+    <> implies output is property/1 so that should be used to put propertyOf/0 below property/1
+    "(([property]) <([propertyOf|of] ([object]))>)",
+  */
   hierarchy: [
     ['property', 'queryable'],
     ['object', 'queryable'],

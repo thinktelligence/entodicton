@@ -71,6 +71,7 @@ class API {
     config.addHierarchy(modifierObjectId, objectId)
     config.addHierarchy(objectId, 'concept')
 
+    // [['a', 0], ['crew', 0], ['is', 0], ['kirk', 0]]
     config.addPriorities([[objectId, 0], [modifierId, 0]])
     config.addPriorities([['a', 0], ['is', 0], [modifierId, 0]])
     config.addPriorities([['a', 0], ['is', 0], [objectId, 0]])
