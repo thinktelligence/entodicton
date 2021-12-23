@@ -149,6 +149,7 @@ module.exports =
     [["plus", 0], ["equal", 0], ["count", 0]],
     [["earn", 0], ["worked", 0], ["every", 0], ["query", 0]],
     [["earn", 0], ["worked", 0], ["query", 0], ["count", 0]],
+    [["earn", 0], ["every", 0], ["worked", 0]],
     [["fromW", 0], ["wantWhitespot", 0], ["aEnglish", 0]],
     [["aEnglish", 0], ["wantWhitespot", 0], ["i", 0]],
     [["wantWhitespot", 0], ["aEnglish", 0], ["count", 0]],
