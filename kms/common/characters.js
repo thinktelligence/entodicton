@@ -6,6 +6,18 @@ const { table } = require('table')
 const _ = require('lodash')
 const characters_tests = require('./characters.test.json')
 
+const getHelp = (config, indent=2) => {
+  indent = ' '.repeat(indent)
+  let help = ''
+  help += `${indent}NAME: ${config.name}\n`
+  help += `${indent}DESCRIPTION: ${config.description}\n\n`
+  help += `${indent}SAMPLE SENTENCES\n\n`
+  for (query of Object.keys(config.tests)) {
+    help += `${indent}  ${query}\n`
+  }
+  return help
+}
+
 const api = {
   getName: () => "sally",
 
@@ -39,11 +51,13 @@ let config = {
   name: 'characters',
 
   operators: [
-    "([([character])] (any))"
+    "([([character])] (any))",
+    "([help])",
   ],
   bridges: [
     { id: 'character', level: 0, bridge: "{ ...next(operator), words: []  }" },
     { id: 'character', level: 1, bridge: "{ ...operator, words: append(operator.words, after) }" },
+    { id: 'help', level: 0, bridge: "{ ...next(operator)  }" },
   ],
   "words": {
     "sally": [{"id": "character", "initial": "{ value: 'sally' }" }],
@@ -65,7 +79,26 @@ let config = {
     [
       ({context}) => context.marker == 'character',
       ({context}) => context.value
-    ]
+    ],
+    {
+      match: ({context, config}) => context.marker == 'help',
+      apply: ({context, config}) => {
+        let help = `MAIN KNOWLEDGE MODULE\n\n`
+        help += getHelp(config, 2)
+
+        if (config.configs.length > 1) {
+          help += '\n\n'
+          help += 'INCLUDED KNOWLEDGE MODULES\n'
+          for (km of config.configs) {
+            if (km._config instanceof entodicton.Config) {
+              help += '\n' + getHelp(km._config, 4)
+            }
+          }
+        }
+
+        return help
+      }
+    },
   ],
 
   semantics: [
