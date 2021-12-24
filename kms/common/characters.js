@@ -31,6 +31,7 @@ const api = {
 
 let config = {
   name: 'characters',
+
   operators: [
     "([([character])] (any))"
   ],
