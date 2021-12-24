@@ -14,6 +14,7 @@ const people = require('./common/people');
 const properties = require('./common/properties');
 const reports = require('./common/reports');
 const scorekeeper = require('./common/scorekeeper');
+const stgame = require('./common/spock');
 const stgame = require('./common/stgame');
 const tell = require('./common/tell');
 const time = require('./common/time');
@@ -35,6 +36,7 @@ module.exports = {
   reports,
   people,
   scorekeeper,
+  spock,
   stgame,
   tell,
   time,
