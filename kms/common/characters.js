@@ -18,6 +18,12 @@ const api = {
     */
     return timeKM.process(utterance)
   },
+
+  response: ({context, result}) => {
+    console.log('----------------------------------------')
+    console.log(`${context.value} says: `, result.generated)
+    console.log('----------------------------------------')
+  }
 }
 
 /*
@@ -66,14 +72,18 @@ let config = {
     [
       ({context}) => context.marker == 'character',
       // ({context, config, km}) => {
-      ({context, km}) => {
+      (args) => {
+        const {context, km, log} = args;
         const words = context.words.map( (context) => context.word )
         const utterance = words.join(' ')
         const config = km('characters')
-        config._api.apis[context.value].process(utterance).then( (result) => {
-          console.log('----------------------------------------')
-          console.log(`${context.value} says: `, result.generated)
-          console.log('----------------------------------------')
+        const api = config._api.apis[context.value]
+        api.process(utterance).then( (result) => {
+          if (!api.response) {
+            throw `WARNING characters km: the "response" handler for the api "${api.getName()}" is not defined so no callback is made`
+          } else {
+            api.response({ ...args, result })
+          }
         })
         context.utterance = utterance
         context.response = true
@@ -88,6 +98,12 @@ const api2 = {
   process: (utterance) => {
     return currencyKM.process(utterance)
   },
+
+  response: ({context, result}) => {
+    console.log('----------------------------------------')
+    console.log(`${context.value} says: `, result.generated)
+    console.log('----------------------------------------')
+  }
 }
 
 const initializeApi = (config, api) => {
@@ -96,13 +112,14 @@ const initializeApi = (config, api) => {
 }
 
 config = new entodicton.Config(config)
+config.multiApi = initializeApi
 config.initializer( ({isModule, config}) => {
   if (!isModule) {
     config.api = api2
     config.api = api
   }
 })
-config.multiApi = initializeApi
+
 // mode this to non-module init only
 entodicton.knowledgeModule({
   module,
