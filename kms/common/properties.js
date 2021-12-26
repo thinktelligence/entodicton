@@ -70,6 +70,7 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
     "([concept])", 
+    "([readonly])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
@@ -90,6 +91,7 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
   */
   hierarchy: [
+    ['readonly', 'queryable'],
     ['property', 'queryable'],
     ['object', 'queryable'],
     ['property', 'theAble'],
@@ -100,6 +102,7 @@ let config = {
     ['have', 'canBeQuestion'],
   ],
   bridges: [
+    { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesnt", level: 0, bridge: "{ ...after, negation: true }" },
     { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
@@ -225,6 +228,14 @@ let config = {
     },
   ],
   semantics: [
+    {
+      nodes: 'marking something as readonly',
+      match: ({context}) => context.marker == 'readonly' && context.same,
+      apply: ({context, km, objects}) => {
+        km('properties').api.setReadOnly(context.same.value) 
+        context.sameWasProcessed = true
+      }
+    },
     /*
         "objects": {
         "greg": {

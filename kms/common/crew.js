@@ -31,6 +31,7 @@ const template = {
 const config = new entodicton.Config({ 
   name: 'crew',
   priorities: [
+    [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['what', 0]],
     [['is', 0], ['crew', 0]],
     [['crew', 0], ['is', 0], ['the', 0], ['what', 0]],
     [['a', 0], ['is', 0], ['crew', 0]],

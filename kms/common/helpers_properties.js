@@ -175,7 +175,7 @@ class API {
       where = where[arg]
     }
     where[args[args.length-1]] = handler
-    handler.api = this
+    //handler.api = this
   }
 
   getObject(object) {
