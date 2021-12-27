@@ -157,7 +157,9 @@ class API {
   setReadOnly(...args) {
     const handler = new Object({
       setProperty: (object, property, value, has) => {
-        throw "ReadOnly"
+        const error = Error(`The property '${property}' of the object '${object}' is read only`)
+        error.code = 'ReadOnly'
+        throw error
       },
       getProperty: (object, property) => {
         return this.getPropertyDirectly(object, property)

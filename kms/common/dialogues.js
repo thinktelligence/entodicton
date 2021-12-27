@@ -374,9 +374,15 @@ let config = {
         const one = context.one;
         const two = context.two;
         one.same = two;
+        one.response = null
+        two.response = null
         const onePrime = s(one)
         if (!onePrime.sameWasProcessed) {
           warningSameNotEvaluated(log, context, one)
+        } else {
+          if (onePrime.response) {
+            context.response = onePrime.response
+          }
         }
         one.same = undefined
         let twoPrime;
@@ -385,6 +391,10 @@ let config = {
           twoPrime = s(two)
           if (!twoPrime.sameWasProcessed) {
             warningSameNotEvaluated(log, context, two)
+          } else {
+            if (twoPrime.response) {
+              context.response = twoPrime.response
+            }
           }
           two.same = undefined
         }

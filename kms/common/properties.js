@@ -20,6 +20,7 @@ const pluralize = require('pluralize')
 // TODO the/a means put it in the context for reference
 // TODO the crew members are sss                abc are crew members
 // TODO who are they / what are they
+// TODO kirk: are you a captain
 // TODO macro for verb forms -> arm x | go to y | i like x
 // TODO READONLY
 // TODO pokemon what is the attack/i own a pikachu/ what do i own
@@ -229,7 +230,7 @@ let config = {
   ],
   semantics: [
     {
-      nodes: 'marking something as readonly',
+      notes: 'marking something as readonly',
       match: ({context}) => context.marker == 'readonly' && context.same,
       apply: ({context, km, objects}) => {
         km('properties').api.setReadOnly(context.same.value) 
@@ -303,8 +304,18 @@ let config = {
       notes: 'set the property of an object',
       match: ({context}) => context.marker == 'property' && context.same && context.object,
       apply: ({context, objects, api}) => {
-        api.setProperty(context.object.value, context.value, context.same, true)
-        context.sameWasProcessed = true
+        const objectId = context.object.value
+        const propertyId = context.value
+        try{
+          api.setProperty(objectId, propertyId, context.same, true)
+          context.sameWasProcessed = true
+        } catch (e) {
+          debugger;
+          // TODO - do a feature for this 'the uuid1 of uuid2 is uuid3'
+          // run the query 'the property of object' then copy that here and template it
+          context.response = { verbatim: "no way hose" }
+          context.sameWasProcessed = true
+        }
       }
     },
     {
