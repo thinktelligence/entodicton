@@ -72,12 +72,5 @@ entodicton.knowledgeModule( {
   test: {
           name: './crew.test.json',
           contents: crew_tests,
-          include: {
-            words: true,
-            bridges: true,
-            operators: true,
-            hierarchy: true,
-            priorities: true,
-          }
         },
 })
