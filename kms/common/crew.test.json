@@ -88,7 +88,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -104,6 +117,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -126,6 +148,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -160,17 +193,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -179,10 +233,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -197,22 +257,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -258,6 +357,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -300,6 +413,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
               "status": {
@@ -399,6 +514,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -536,7 +653,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
           ],
           "variables": {
@@ -791,7 +908,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -909,13 +1025,15 @@
         "4": {
           "children": {
             "animal": [
-              "mammal",
               "bird",
-              "feline",
-              "canine"
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
             ],
             "canine": [
-              "dog"
+              "dog",
+              "wolf"
             ],
             "captain": [
               "kirk"
@@ -938,7 +1056,9 @@
             ],
             "mammal": [
               "human",
-              "bat"
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -961,15 +1081,17 @@
             ]
           },
           "concepts": [
-            "human",
-            "mammal",
-            "animal",
             "bird",
-            "feline",
-            "cat",
-            "canine",
-            "dog",
+            "animal",
+            "mammal",
+            "human",
             "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -1017,7 +1139,7 @@
               "eyes"
             ],
             "canine": [
-              "animal"
+              "mammal"
             ],
             "captain": [
               "rank"
@@ -1032,7 +1154,7 @@
               "canine"
             ],
             "feline": [
-              "animal"
+              "mammal"
             ],
             "human": [
               "mammal"
@@ -1052,6 +1174,9 @@
               "crew_member",
               "doctor"
             ],
+            "parrot": [
+              "bird"
+            ],
             "phaser": [
               "weapon"
             ],
@@ -1065,10 +1190,17 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
             "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
               "skin": {
                 "has": true,
                 "value": null
@@ -1083,6 +1215,10 @@
               }
             },
             "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
               "wing": {
                 "has": true,
                 "value": null
@@ -1130,6 +1266,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1155,6 +1292,10 @@
             },
             "mammal": {
               "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
                 "has": true,
                 "value": null
               },
@@ -1206,6 +1347,8 @@
             },
             "name": {
             },
+            "parrot": {
+            },
             "phaser": {
             },
             "phasers": {
@@ -1228,6 +1371,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1260,6 +1404,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1273,6 +1418,7 @@
                 "has": true,
                 "value": {
                   "marker": "unknown",
+                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1288,6 +1434,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -1326,6 +1474,7 @@
             "name": [
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -1336,6 +1485,7 @@
               },
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -1368,6 +1518,7 @@
               },
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -1400,6 +1551,7 @@
               },
               {
                 "marker": "unknown",
+                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -1734,7 +1886,7 @@
         },
         {
           "op": [
-            "photon",
+            "unknown",
             0
           ],
           "ops": [
@@ -1762,6 +1914,58 @@
         },
         {
           "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "photon",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "photon_torpedo",
             0
           ],
@@ -1780,58 +1984,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -1943,7 +2095,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -1959,6 +2124,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -1981,6 +2155,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -2015,17 +2200,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -2034,10 +2240,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -2052,22 +2264,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -2113,6 +2364,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -2155,6 +2420,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -2240,6 +2507,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -2377,7 +2646,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
           ],
           "variables": {
@@ -2844,7 +3113,7 @@
         },
         {
           "op": [
-            "photon",
+            "unknown",
             0
           ],
           "ops": [
@@ -2872,6 +3141,58 @@
         },
         {
           "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "photon",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "photon_torpedo",
             0
           ],
@@ -2891,58 +3212,6 @@
             [
               "the",
               0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
             ]
           ]
         },
@@ -3044,7 +3313,7 @@
         },
         {
           "op": [
-            "what",
+            "torpedo",
             0
           ],
           "ops": [
@@ -3080,7 +3349,7 @@
         },
         {
           "op": [
-            "torpedo",
+            "what",
             0
           ],
           "ops": [
@@ -3101,7 +3370,35 @@
               0
             ],
             [
-              "torpedo",
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -3131,10 +3428,6 @@
             [
               "the",
               0
-            ],
-            [
-              "unknown",
-              0
             ]
           ]
         },
@@ -3158,34 +3451,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -3297,7 +3562,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -3313,6 +3591,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -3335,6 +3622,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -3369,17 +3667,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -3388,10 +3707,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -3406,22 +3731,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -3467,6 +3831,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -3509,6 +3887,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -3595,6 +3975,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -3733,7 +4115,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -4208,7 +4590,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "type",
             0
           ],
           "ops": [
@@ -4257,18 +4639,18 @@
               0
             ],
             [
-              "type",
+              "unknown",
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
         },
         {
           "op": [
-            "type",
+            "what",
             0
           ],
           "ops": [
@@ -4285,7 +4667,7 @@
               0
             ],
             [
-              "type",
+              "what",
               0
             ]
           ]
@@ -4377,7 +4759,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -4393,6 +4788,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -4415,6 +4819,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -4449,17 +4864,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -4468,10 +4904,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -4486,22 +4928,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -4547,6 +5028,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -4589,6 +5084,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -4675,6 +5172,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -4802,7 +5301,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -5352,7 +5851,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -5368,6 +5880,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -5390,6 +5911,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -5424,17 +5956,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -5443,10 +5996,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -5461,22 +6020,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -5522,6 +6120,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -5564,6 +6176,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -5650,6 +6264,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -5777,7 +6393,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -6306,7 +6922,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -6322,6 +6951,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -6344,6 +6982,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -6378,17 +7027,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -6397,10 +7067,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -6415,22 +7091,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -6476,6 +7191,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -6518,6 +7247,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -6603,6 +7334,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -6729,7 +7462,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -7305,7 +8038,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -7321,6 +8067,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -7343,6 +8098,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -7377,17 +8143,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -7396,10 +8183,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -7414,22 +8207,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -7475,6 +8307,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -7517,6 +8363,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -7602,6 +8450,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -7728,7 +8578,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -8128,7 +8978,7 @@
       "opChoices": [
         {
           "op": [
-            "unknown",
+            "kirk",
             0
           ],
           "ops": [
@@ -8160,7 +9010,7 @@
         },
         {
           "op": [
-            "what",
+            "unknown",
             0
           ],
           "ops": [
@@ -8169,7 +9019,31 @@
               0
             ],
             [
-              "kirk",
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -8182,30 +9056,6 @@
             ],
             [
               "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "kirk",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "kirk",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -8297,7 +9147,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -8313,6 +9176,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -8335,6 +9207,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -8369,17 +9252,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -8388,10 +9292,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -8406,22 +9316,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -8467,6 +9416,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -8509,6 +9472,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -8594,6 +9559,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -8720,7 +9687,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -9138,7 +10105,7 @@
       "opChoices": [
         {
           "op": [
-            "unknown",
+            "spock",
             0
           ],
           "ops": [
@@ -9170,7 +10137,7 @@
         },
         {
           "op": [
-            "spock",
+            "unknown",
             0
           ],
           "ops": [
@@ -9183,11 +10150,11 @@
               0
             ],
             [
-              "spock",
+              "the",
               0
             ],
             [
-              "the",
+              "unknown",
               0
             ],
             [
@@ -9307,7 +10274,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -9323,6 +10303,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -9345,6 +10334,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -9379,17 +10379,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -9398,10 +10419,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -9416,22 +10443,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -9476,6 +10542,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -9518,6 +10598,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -9603,6 +10685,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -9728,7 +10812,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -10172,7 +11256,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "torpedo",
             0
           ],
           "ops": [
@@ -10208,7 +11292,7 @@
         },
         {
           "op": [
-            "torpedo",
+            "what",
             0
           ],
           "ops": [
@@ -10229,7 +11313,35 @@
               0
             ],
             [
-              "torpedo",
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -10259,10 +11371,6 @@
             [
               "the",
               0
-            ],
-            [
-              "unknown",
-              0
             ]
           ]
         },
@@ -10286,34 +11394,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -10425,7 +11505,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -10441,6 +11534,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -10463,6 +11565,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -10497,17 +11610,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -10516,10 +11650,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -10534,22 +11674,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -10594,6 +11773,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -10636,6 +11829,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -10720,6 +11915,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -10844,7 +12041,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "default": true,
@@ -11284,7 +12481,7 @@
       "opChoices": [
         {
           "op": [
-            "crew",
+            "what",
             0
           ],
           "ops": [
@@ -11312,12 +12509,12 @@
         },
         {
           "op": [
-            "what",
+            "crew",
             0
           ],
           "ops": [
             [
-              "crew_member",
+              "crew",
               0
             ],
             [
@@ -11325,11 +12522,11 @@
               0
             ],
             [
-              "the",
+              "member",
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -11405,7 +12602,20 @@
         "2": {
         },
         "3": {
+        },
+        "4": {
           "children": {
+            "animal": [
+              "bird",
+              "mammal"
+            ],
+            "bird": [
+              "parrot"
+            ],
+            "canine": [
+              "dog",
+              "wolf"
+            ],
             "captain": [
               "kirk"
             ],
@@ -11421,6 +12631,15 @@
             "eyes": [
               "blue",
               "brown"
+            ],
+            "feline": [
+              "cat"
+            ],
+            "mammal": [
+              "human",
+              "bat",
+              "feline",
+              "canine"
             ],
             "name": [
               "jim",
@@ -11443,6 +12662,17 @@
             ]
           },
           "concepts": [
+            "bird",
+            "animal",
+            "mammal",
+            "human",
+            "bat",
+            "feline",
+            "canine",
+            "parrot",
+            "cat",
+            "dog",
+            "wolf",
             "jim",
             "name",
             "kirk",
@@ -11477,17 +12707,38 @@
             "armed": [
               "status"
             ],
+            "bat": [
+              "mammal"
+            ],
+            "bird": [
+              "animal"
+            ],
             "blue": [
               "eyes"
             ],
             "brown": [
               "eyes"
             ],
+            "canine": [
+              "mammal"
+            ],
             "captain": [
               "rank"
             ],
+            "cat": [
+              "feline"
+            ],
             "doctor": [
               "rank"
+            ],
+            "dog": [
+              "canine"
+            ],
+            "feline": [
+              "mammal"
+            ],
+            "human": [
+              "mammal"
             ],
             "jim": [
               "name"
@@ -11496,10 +12747,16 @@
               "captain",
               "crew_member"
             ],
+            "mammal": [
+              "animal"
+            ],
             "mccoy": [
               "name",
               "crew_member",
               "doctor"
+            ],
+            "parrot": [
+              "bird"
             ],
             "phaser": [
               "weapon"
@@ -11514,22 +12771,61 @@
             ],
             "weapon": [
               "torpedo"
+            ],
+            "wolf": [
+              "canine"
             ]
           },
           "properties": {
+            "animal": {
+              "eye": {
+                "has": true,
+                "value": null
+              },
+              "skin": {
+                "has": true,
+                "value": null
+              }
+            },
             "armed": {
+            },
+            "bat": {
+              "wing": {
+                "has": true,
+                "value": null
+              }
+            },
+            "bird": {
+              "beak": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": true,
+                "value": null
+              }
             },
             "blue": {
             },
             "brown": {
             },
+            "canine": {
+            },
             "captain": {
+            },
+            "cat": {
             },
             "crew_member": {
             },
             "doctor": {
             },
+            "dog": {
+            },
             "eyes": {
+            },
+            "feline": {
+            },
+            "human": {
             },
             "jim": {
             },
@@ -11574,6 +12870,20 @@
                 }
               }
             },
+            "mammal": {
+              "ear": {
+                "has": true,
+                "value": null
+              },
+              "hair": {
+                "has": true,
+                "value": null
+              },
+              "wing": {
+                "has": false,
+                "value": null
+              }
+            },
             "mccoy": {
               "eyes": {
                 "has": true,
@@ -11616,6 +12926,8 @@
               }
             },
             "name": {
+            },
+            "parrot": {
             },
             "phaser": {
             },
@@ -11699,6 +13011,8 @@
             "torpedo": {
             },
             "weapon": {
+            },
+            "wolf": {
             }
           },
           "property": {
@@ -11822,7 +13136,7 @@
             ]
           }
         },
-        "4": {
+        "5": {
           "mentioned": [
             {
               "determined": true,
