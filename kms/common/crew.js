@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const avatar = require('./avatar')
+const animals = require('./animals')
 const crew_tests = require('./crew.test.json')
 const crew_instance = require('./crew.instance.json')
 const pluralize = require('pluralize')
@@ -25,6 +26,9 @@ const template = {
       "the status of the photon torpedoes is armed",
       "phasers are weapons",
       "torpedoes are weapons",
+      "kirk is readonly",
+      "spock is readonly",
+      "mccoy is readonly",
   ]
 };
 
@@ -40,6 +44,7 @@ const config = new entodicton.Config({
 })
 
 config.add(avatar)
+config.add(animals)
 crew_instance.base = 'avatar'
 config.initializer( ({config, km}) => {
   const api = km('properties').api

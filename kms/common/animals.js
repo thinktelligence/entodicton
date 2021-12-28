@@ -5,19 +5,21 @@ const animals_instance = require('./animals.instance.json')
 
 const template ={
   "queries": [
-    "humans are mammals",
-    "mammals are animals",
+    "birds and mammals are animals",
     "mammals have ears",
+    "mammals have hair",
     "mammals dont have wings",
     "animals have skin",
-    "birds are animals",
+    "animals have eyes",
     "birds have wings",
-    "felines are animals",
+    "birds have beaks",
+    "humans bats felines and canines are mammals",
+    "owls eagles pidgeons parrots are birds",
     "cats are felines",
-    "canines are animals",
-    "dogs are canines",
-    "bats are mammals",
-    "bats have wings"
+    "dogs and wolves are canines",
+    "bats have wings",
+    // TODO "all kinds of animals are readonly"
+    // TODO "is a dog a type of mammal"
   ],
 }
 

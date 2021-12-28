@@ -345,6 +345,12 @@
             "torpedo"
           ],
           "handlers": {
+            "kirk": {
+            },
+            "mccoy": {
+            },
+            "spock": {
+            }
           },
           "initHandlers": [
           ],
@@ -873,6 +879,99 @@
             "default": true,
             "marker": "is",
             "one": {
+              "marker": "mccoy",
+              "number": "one",
+              "response": true,
+              "types": [
+                "mccoy"
+              ],
+              "value": "mccoy",
+              "word": "mccoy"
+            },
+            "topLevel": true,
+            "two": {
+              "default": true,
+              "marker": "readonly",
+              "response": true,
+              "types": [
+                "readonly"
+              ],
+              "word": "readonly"
+            },
+            "word": "is"
+          },
+          "paraphrases": "mccoy is readonly",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "spock",
+              "number": "one",
+              "response": true,
+              "types": [
+                "spock"
+              ],
+              "value": "spock",
+              "word": "spock"
+            },
+            "topLevel": true,
+            "two": {
+              "default": true,
+              "marker": "readonly",
+              "response": true,
+              "types": [
+                "readonly"
+              ],
+              "word": "readonly"
+            },
+            "word": "is"
+          },
+          "paraphrases": "spock is readonly",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "kirk",
+              "number": "one",
+              "response": true,
+              "types": [
+                "kirk"
+              ],
+              "value": "kirk",
+              "word": "kirk"
+            },
+            "topLevel": true,
+            "two": {
+              "default": true,
+              "marker": "readonly",
+              "response": true,
+              "types": [
+                "readonly"
+              ],
+              "word": "readonly"
+            },
+            "word": "is"
+          },
+          "paraphrases": "kirk is readonly",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
               "concept": true,
               "marker": "torpedo",
               "response": true,
@@ -897,156 +996,6 @@
             "word": "are"
           },
           "paraphrases": "torpedoes are weapons",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "phasers",
-              "word": "phasers"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "weapons",
-              "word": "weapons"
-            },
-            "word": "are"
-          },
-          "paraphrases": "phasers are weapons",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "determiner": "the",
-              "marker": "property",
-              "modifiers": [
-                "determiner"
-              ],
-              "object": {
-                "concept": true,
-                "determiner": "the",
-                "marker": "photon_torpedo",
-                "modifiers": [
-                  "determiner",
-                  "photon"
-                ],
-                "photon": {
-                  "default": true,
-                  "marker": "photon",
-                  "word": "photon"
-                },
-                "pullFromContext": true,
-                "types": [
-                  "object",
-                  "photon_torpedo"
-                ],
-                "value": "photon_torpedo",
-                "wantsValue": true,
-                "word": "torpedoes"
-              },
-              "pullFromContext": true,
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "status",
-              "wantsValue": true,
-              "word": "status"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "armed",
-              "word": "armed"
-            },
-            "word": "is"
-          },
-          "paraphrases": "the status of the photon torpedoes is armed",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "determiner": "the",
-              "marker": "property",
-              "modifiers": [
-                "determiner"
-              ],
-              "object": {
-                "concept": true,
-                "determiner": "the",
-                "marker": "unknown",
-                "modifiers": [
-                  "determiner"
-                ],
-                "pullFromContext": true,
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "phasers",
-                "wantsValue": true,
-                "word": "phasers"
-              },
-              "pullFromContext": true,
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "status",
-              "wantsValue": true,
-              "word": "status"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "armed",
-              "word": "armed"
-            },
-            "word": "is"
-          },
-          "paraphrases": "the status of the phasers is armed",
           "responses": [
             ""
           ]
@@ -1303,6 +1252,12 @@
             "torpedo"
           ],
           "handlers": {
+            "kirk": {
+            },
+            "mccoy": {
+            },
+            "spock": {
+            }
           },
           "initHandlers": [
           ],
@@ -1802,6 +1757,99 @@
             "default": true,
             "marker": "is",
             "one": {
+              "marker": "mccoy",
+              "number": "one",
+              "response": true,
+              "types": [
+                "mccoy"
+              ],
+              "value": "mccoy",
+              "word": "mccoy"
+            },
+            "topLevel": true,
+            "two": {
+              "default": true,
+              "marker": "readonly",
+              "response": true,
+              "types": [
+                "readonly"
+              ],
+              "word": "readonly"
+            },
+            "word": "is"
+          },
+          "paraphrases": "mccoy is readonly",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "spock",
+              "number": "one",
+              "response": true,
+              "types": [
+                "spock"
+              ],
+              "value": "spock",
+              "word": "spock"
+            },
+            "topLevel": true,
+            "two": {
+              "default": true,
+              "marker": "readonly",
+              "response": true,
+              "types": [
+                "readonly"
+              ],
+              "word": "readonly"
+            },
+            "word": "is"
+          },
+          "paraphrases": "spock is readonly",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "kirk",
+              "number": "one",
+              "response": true,
+              "types": [
+                "kirk"
+              ],
+              "value": "kirk",
+              "word": "kirk"
+            },
+            "topLevel": true,
+            "two": {
+              "default": true,
+              "marker": "readonly",
+              "response": true,
+              "types": [
+                "readonly"
+              ],
+              "word": "readonly"
+            },
+            "word": "is"
+          },
+          "paraphrases": "kirk is readonly",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
               "concept": true,
               "marker": "torpedo",
               "response": true,
@@ -1826,156 +1874,6 @@
             "word": "are"
           },
           "paraphrases": "torpedoes are weapons",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "phasers",
-              "word": "phasers"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "weapons",
-              "word": "weapons"
-            },
-            "word": "are"
-          },
-          "paraphrases": "phasers are weapons",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "determiner": "the",
-              "marker": "property",
-              "modifiers": [
-                "determiner"
-              ],
-              "object": {
-                "concept": true,
-                "determiner": "the",
-                "marker": "photon_torpedo",
-                "modifiers": [
-                  "determiner",
-                  "photon"
-                ],
-                "photon": {
-                  "default": true,
-                  "marker": "photon",
-                  "word": "photon"
-                },
-                "pullFromContext": true,
-                "types": [
-                  "object",
-                  "photon_torpedo"
-                ],
-                "value": "photon_torpedo",
-                "wantsValue": true,
-                "word": "torpedoes"
-              },
-              "pullFromContext": true,
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "status",
-              "wantsValue": true,
-              "word": "status"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "armed",
-              "word": "armed"
-            },
-            "word": "is"
-          },
-          "paraphrases": "the status of the photon torpedoes is armed",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "determiner": "the",
-              "marker": "property",
-              "modifiers": [
-                "determiner"
-              ],
-              "object": {
-                "concept": true,
-                "determiner": "the",
-                "marker": "unknown",
-                "modifiers": [
-                  "determiner"
-                ],
-                "pullFromContext": true,
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "phasers",
-                "wantsValue": true,
-                "word": "phasers"
-              },
-              "pullFromContext": true,
-              "response": true,
-              "types": [
-                "property"
-              ],
-              "unknown": true,
-              "value": "status",
-              "wantsValue": true,
-              "word": "status"
-            },
-            "topLevel": true,
-            "two": {
-              "marker": "unknown",
-              "response": true,
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "armed",
-              "word": "armed"
-            },
-            "word": "is"
-          },
-          "paraphrases": "the status of the phasers is armed",
           "responses": [
             ""
           ]
