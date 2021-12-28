@@ -184,7 +184,6 @@ let config = {
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       apply: ({context, g}) => {
         context.value.paraphrase = true;
-        const greg = 1;
         return g(context.value)
       }
     },
@@ -249,17 +248,18 @@ let config = {
       },
       priority: -1,
     },
-    [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.paraphrase,
-      ({context, g}) => {
+    { 
+      match: ({context, hierarchy}) => { return hierarchy.isA(context.marker, 'is') && context.paraphrase },
+      apply: ({context, g}) => {
         context.one.response = true
         context.two.response = true
         return `${g(context.one)} ${context.word} ${g(context.two)}` 
       }
-    ],
-    [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response,
-      ({context, g}) => {
+    },
+    { 
+      notes: 'is with a response defined',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response,
+      apply: ({context, g}) => {
         const response = context.response;
         const concept = response.concept;
         if (concept) {
@@ -271,7 +271,7 @@ let config = {
           return `${g(response)}` 
         }
       }
-    ],
+    },
     [ 
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
       ({context, g}) => {
