@@ -4,7 +4,9 @@
   "scripts": {
     "test:watch": "npm run test -- --watch",
     "test": "jest --config ./jest.config.json",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json"
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE"
   },
   "license": "ISC",
   "version": "6.13.23-beta.0",
@@ -40,6 +42,7 @@
     "common/people.js",
     "common/people.test.json",
     "common/properties.js",
+    "common/properties.instance.json",
     "common/properties.test.json",
     "common/reports.js",
     "common/reports.test.json",
