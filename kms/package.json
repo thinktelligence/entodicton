@@ -1,10 +1,13 @@
 {
-  "main": "main.js",
-  "name": "ekms",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "devDependencies": {
-    "jest": "^26.6.3"
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:watch": "npm run test -- --watch",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
   },
+  "license": "ISC",
+  "author": "dev@thinktelligence.com",
   "files": [
     "main.js",
     "common/helpers.js",
@@ -37,6 +40,7 @@
     "common/people.js",
     "common/people.test.json",
     "common/properties.js",
+    "common/properties.instance.json",
     "common/properties.test.json",
     "common/reports.js",
     "common/reports.test.json",
@@ -52,13 +56,22 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "scripts": {
-    "test:watch": "npm run test -- --watch",
-    "test": "jest --config ./jest.config.json",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json"
+  "version": "6.13.23-beta.15",
+  "devDependencies": {
+    "jest": "^26.6.3"
   },
-  "version": "6.13.22-beta.4",
-  "author": "dev@thinktelligence.com",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "underscore": "^1.12.0",
+    "entodicton": "6.13.23-beta.15",
+    "lodash": "^4.17.21",
+    "pluralize": "^8.0.0",
+    "table": "^6.7.1",
+    "node-fetch": "^2.6.1",
+    "scriptjs": "^2.5.9",
+    "argparse": "^2.0.1"
+  },
+  "main": "main.js",
   "keywords": [
     "NLP",
     "NLU",
@@ -68,16 +81,6 @@
     "natural language understanding",
     "chatbot"
   ],
-  "license": "ISC",
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "argparse": "^2.0.1",
-    "base-64": "^1.0.0",
-    "node-fetch": "^2.6.1",
-    "pluralize": "^8.0.0",
-    "entodicton": "6.13.22-beta.4",
-    "scriptjs": "^2.5.9",
-    "table": "^6.7.1",
-    "underscore": "^1.12.0"
-  }
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "name": "ekms"
 }

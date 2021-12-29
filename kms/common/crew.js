@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const avatar = require('./avatar')
+const animals = require('./animals')
 const crew_tests = require('./crew.test.json')
 const crew_instance = require('./crew.instance.json')
 const pluralize = require('pluralize')
@@ -25,12 +26,16 @@ const template = {
       "the status of the photon torpedoes is armed",
       "phasers are weapons",
       "torpedoes are weapons",
+      "kirk is readonly",
+      "spock is readonly",
+      "mccoy is readonly",
   ]
 };
 
 const config = new entodicton.Config({ 
   name: 'crew',
   priorities: [
+    [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['what', 0]],
     [['is', 0], ['crew', 0]],
     [['crew', 0], ['is', 0], ['the', 0], ['what', 0]],
     [['a', 0], ['is', 0], ['crew', 0]],
@@ -39,6 +44,7 @@ const config = new entodicton.Config({
 })
 
 config.add(avatar)
+config.add(animals)
 crew_instance.base = 'avatar'
 config.initializer( ({config, km}) => {
   const api = km('properties').api
@@ -72,12 +78,5 @@ entodicton.knowledgeModule( {
   test: {
           name: './crew.test.json',
           contents: crew_tests,
-          include: {
-            words: true,
-            bridges: true,
-            operators: true,
-            hierarchy: true,
-            priorities: true,
-          }
         },
 })

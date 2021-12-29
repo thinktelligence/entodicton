@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const properties_instance = require('./properties.instance.json')
 const properties_tests = require('./properties.test.json')
 const { API } = require('./helpers_properties')
 const pluralize = require('pluralize')
@@ -20,6 +21,7 @@ const pluralize = require('pluralize')
 // TODO the/a means put it in the context for reference
 // TODO the crew members are sss                abc are crew members
 // TODO who are they / what are they
+// TODO kirk: are you a captain
 // TODO macro for verb forms -> arm x | go to y | i like x
 // TODO READONLY
 // TODO pokemon what is the attack/i own a pikachu/ what do i own
@@ -62,6 +64,12 @@ V2
 //
 //   value is (has, value)
 
+const template = {
+  fragments: [
+    "the property1 of object1 is value1",
+  ],
+}
+
 const api = new API();
 
 let config = {
@@ -70,6 +78,7 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
     "([concept])", 
+    "([readonly])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
@@ -90,6 +99,7 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
   */
   hierarchy: [
+    ['readonly', 'queryable'],
     ['property', 'queryable'],
     ['object', 'queryable'],
     ['property', 'theAble'],
@@ -100,6 +110,7 @@ let config = {
     ['have', 'canBeQuestion'],
   ],
   bridges: [
+    { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesnt", level: 0, bridge: "{ ...after, negation: true }" },
     { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
@@ -208,7 +219,7 @@ let config = {
                  return `${g(base)} of ${g({...context.object, paraphrase: true})}`
                }
              },
-      notes: 'the property of object'
+      notes: 'the property of object',
     },
     {
       match: ({context}) => context.paraphrase && !context.modifiers && context.object, 
@@ -225,6 +236,14 @@ let config = {
     },
   ],
   semantics: [
+    {
+      notes: 'marking something as readonly',
+      match: ({context}) => context.marker == 'readonly' && context.same,
+      apply: ({context, km, objects}) => {
+        km('properties').api.setReadOnly(context.same.value) 
+        context.sameWasProcessed = true
+      }
+    },
     /*
         "objects": {
         "greg": {
@@ -291,9 +310,53 @@ let config = {
     {
       notes: 'set the property of an object',
       match: ({context}) => context.marker == 'property' && context.same && context.object,
-      apply: ({context, objects, api}) => {
-        api.setProperty(context.object.value, context.value, context.same, true)
-        context.sameWasProcessed = true
+      apply: ({context, objects, km, api}) => {
+        const objectContext = context.object;
+        const propertyContext = context;
+        const objectId = context.object.value
+        const propertyId = context.value
+        try{
+          api.setProperty(objectId, propertyId, context.same, true)
+          context.sameWasProcessed = true
+        } catch (e) {
+          const config = km('properties')
+          debugger;
+          const fragment = config.fragment("the property1 of object1 is value1")
+          const value = api.getProperty(objectId, propertyId)
+          if (value.value == context.same.value) {
+            context.response = [
+              { marker: 'yesno', value: true, paraphrase: true },
+            ]
+            context.sameWasProcessed = true
+          } else {
+            const mappings = [
+              {
+                match: ({context}) => context.value == 'property1',
+                apply: ({context}) => Object.assign(context, { word: propertyContext.word, value: propertyContext.value, paraphrase: true }),
+              },
+              {
+                match: ({context}) => context.value == 'object1',
+                apply: ({context}) => {
+                  Object.assign(context, { word: objectContext.word, value: objectContext.value, paraphrase: true })
+                },
+              },
+              {
+                match: ({context}) => context.value == 'value1',
+                apply: ({context}) => Object.assign(context, value),
+              },
+            ]
+            // run the query 'the property of object' then copy that here and template it
+            context.response = { 
+              verbatim: "no way hose" 
+            }
+            context.response = [
+              { marker: 'yesno', value: false, paraphrase: true },
+            ]
+            context.response = context.response.concat(fragment.instantiate(mappings))
+            context.response.forEach( (r) => r.paraphrase = true )
+            context.sameWasProcessed = true
+          }
+        }
       }
     },
     {
@@ -332,6 +395,7 @@ config.initializer( ({objects, api}) => {
   objects.children = {}
   */
 })
+config.load(template, properties_instance)
 
 entodicton.knowledgeModule( { 
   module,

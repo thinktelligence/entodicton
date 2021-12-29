@@ -23,12 +23,5 @@ entodicton.knowledgeModule( {
   test: {
           name: './spock.test.json',
           contents: spock_tests,
-          include: {
-            words: true,
-            bridges: true,
-            operators: true,
-            hierarchy: true,
-            priorities: true,
-          }
         },
 })

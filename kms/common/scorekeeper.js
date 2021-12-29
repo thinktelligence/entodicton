@@ -86,6 +86,7 @@ let config = {
   },
 
   priorities: [
+    [['a', 0], ['is', 0], ['the', 0], ['scored', 0], ['start', 0], ['score', 0]],
     [['is', 0], ['score', 0], ['the', 0], ['winning', 0], ['what', 0]],
     [['a', 0], ['whose', 0], ['is', 0], ['it', 0], ['new', 0], ['number', 0], ['point', 0], ['start', 0], ['turn', 0], ['game', 0]],
     [['a', 0], ['whose', 0], ['is', 0], ['it', 0], ['new', 0], ['number', 0], ['point', 0], ['start', 0], ['turn', 0], ['game', 0]],
