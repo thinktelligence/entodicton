@@ -47,7 +47,7 @@ config.add(characters)
 
 entodicton.knowledgeModule( {
   module,
-  description: 'Game simulator for star trek with characters',
+  description: 'Game simulator for trek-like characters',
   config,
   test: {
           name: './stgame.test.json',
