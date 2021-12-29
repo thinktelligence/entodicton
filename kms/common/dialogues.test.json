@@ -388,17 +388,70 @@
         "marker": "is",
         "one": {
           "default": true,
+          "determined": true,
+          "evaluate": true,
           "marker": "what",
+          "paraphrase": true,
+          "query": [
+            "what"
+          ],
           "response": true,
           "types": [
             "what"
           ],
           "word": "what"
         },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "concept": {
+            "default": true,
+            "determined": true,
+            "evaluate": true,
+            "isSelf": true,
+            "marker": "it",
+            "paraphrase": true,
+            "pullFromContext": true,
+            "types": [
+              "it"
+            ],
+            "word": "it"
+          },
+          "instance": {
+            "default": true,
+            "determined": true,
+            "instance": true,
+            "marker": "it",
+            "pullFromContext": true,
+            "types": [
+              "it"
+            ],
+            "value": {
+              "default": true,
+              "determined": true,
+              "evaluate": true,
+              "marker": "what",
+              "paraphrase": true,
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "word": "it"
+          },
+          "isResponse": true
+        },
         "topLevel": true,
         "two": {
           "default": true,
+          "determined": true,
           "marker": "it",
+          "pullFromContext": true,
           "response": true,
           "types": [
             "it"
@@ -412,7 +465,7 @@
       "opChoices": [
         {
           "op": [
-            "is",
+            "what",
             0
           ],
           "ops": [
@@ -426,6 +479,34 @@
             ],
             [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "it",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ]
           ]
@@ -448,6 +529,21 @@
       "namespaced": {
         "0": {
           "mentioned": [
+            {
+              "default": true,
+              "determined": true,
+              "evaluate": true,
+              "marker": "what",
+              "paraphrase": true,
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            }
           ],
           "variables": {
           }
@@ -460,17 +556,70 @@
             "marker": "is",
             "one": {
               "default": true,
+              "determined": true,
+              "evaluate": true,
               "marker": "what",
+              "paraphrase": true,
+              "query": [
+                "what"
+              ],
               "response": true,
               "types": [
                 "what"
               ],
               "word": "what"
             },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "concept": {
+                "default": true,
+                "determined": true,
+                "evaluate": true,
+                "isSelf": true,
+                "marker": "it",
+                "paraphrase": true,
+                "pullFromContext": true,
+                "types": [
+                  "it"
+                ],
+                "word": "it"
+              },
+              "instance": {
+                "default": true,
+                "determined": true,
+                "instance": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "types": [
+                  "it"
+                ],
+                "value": {
+                  "default": true,
+                  "determined": true,
+                  "evaluate": true,
+                  "marker": "what",
+                  "paraphrase": true,
+                  "query": [
+                    "what"
+                  ],
+                  "response": true,
+                  "types": [
+                    "what"
+                  ],
+                  "word": "what"
+                },
+                "word": "it"
+              },
+              "isResponse": true
+            },
             "topLevel": true,
             "two": {
               "default": true,
+              "determined": true,
               "marker": "it",
+              "pullFromContext": true,
               "response": true,
               "types": [
                 "it"
@@ -479,18 +628,18 @@
             },
             "word": "is"
           },
-          "paraphrases": "what is it",
+          "paraphrases": "what is it?",
           "responses": [
-            ""
+            "it is what"
           ]
         }
       ]
     },
     "paraphrases": [
-      "what is it"
+      "what is it?"
     ],
     "responses": [
-      ""
+      "it is what"
     ]
   },
   "x is y?": {
