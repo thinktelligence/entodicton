@@ -1,31 +1,29 @@
 {
-  "version": "6.13.23-beta.16",
   "license": "ISC",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "main": "main.js",
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "author": "dev@thinktelligence.com",
-  "scripts": {
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test": "jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
-  },
   "dependencies": {
-    "underscore": "^1.12.0",
-    "scriptjs": "^2.5.9",
+    "entodicton": "6.13.23-beta.17",
     "pluralize": "^8.0.0",
-    "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
-    "table": "^6.7.1",
-    "argparse": "^2.0.1",
     "base-64": "^1.0.0",
-    "entodicton": "6.13.23-beta.16"
+    "argparse": "^2.0.1",
+    "table": "^6.7.1",
+    "scriptjs": "^2.5.9",
+    "lodash": "^4.17.21",
+    "underscore": "^1.12.0"
   },
+  "version": "6.13.23-beta.17",
+  "main": "main.js",
   "name": "ekms",
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE"
+  },
   "files": [
     "main.js",
     "common/helpers.js",
@@ -82,5 +80,7 @@
     "natural language generation",
     "natural language understanding",
     "chatbot"
-  ]
+  ],
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "author": "dev@thinktelligence.com"
 }
