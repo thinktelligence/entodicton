@@ -18,7 +18,6 @@ config.load(template, spock_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Spock Simulator using a KM template',
-  section: 'star trek demo',
   config,
   test: {
           name: './spock.test.json',
