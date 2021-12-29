@@ -67,6 +67,7 @@ config.load(template, crew_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Knowledge about the enterprise and crew using a KM template',
+  section: 'star trek demo',
   config,
   test: {
           name: './crew.test.json',

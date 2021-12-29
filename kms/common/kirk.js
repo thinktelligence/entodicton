@@ -22,6 +22,7 @@ config.load(template, kirk_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Captain Kirk Simulator using a KM template',
+  section: 'star trek demo',
   config,
   test: {
           name: './kirk.test.json',
