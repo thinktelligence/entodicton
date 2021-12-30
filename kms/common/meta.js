@@ -1,10 +1,14 @@
 const entodicton= require('entodicton')
-const dialogue = require('./dialogues')
+const _ = require('lodash')
+
+//const dialogue = require('./dialogues')
+const { hashIndexesGet, hashIndexesSet, translationMapping, } = require('./helpers_meta')
 const meta_tests = require('./meta.test.json')
 
 let config = {
+  name: 'meta',
   operators: [
-    "((word) [means] (word))",
+    "((phrase) [means] (phrase))",
     // "cats is the plural of cat"
     // "is cat the plural of cats"
     /*
@@ -23,8 +27,7 @@ let config = {
     // what does (word) mean
   ],
   bridges: [
-    { "id": "means", "level": 0, "bridge": "{ ...next(operator), word: before[0], meaning: after[0] }" },
-
+    { "id": "means", "level": 0, "bridge": "{ ...next(operator), from: before[0], to: after[0] }" },
 //    { "id": "testWord2", "level": 0, "bridge": "{ ...next(operator) }" },
   ],
   version: '3',
@@ -33,20 +36,33 @@ let config = {
   },
 
   generators: [
-    [
-      ({context}) => context.marker == 'means' && !context.response,
-      ({context, g}) => `${g(context.word)} means ${g(context.meaning)}`
-    ],
-    [
-      ({context}) => context.response,
-      ({context, g}) => context.value
-    ]
+    {
+      match: ({context}) => context.marker == 'means' && context.paraphrase,
+      apply: ({context, g}) => `${g(context.from)} means ${g(context.to)}`
+    },
   ],
 
   semantics: [
     [
       ({context}) => context.marker == 'means',
       ({config, context}) => {
+        debugger;
+        debugger;
+        const match = ({context}) => context.marker == context.from.marker
+        const apply = (mappings, TO) => ({context}) => {
+          TO = _.cloneDeep(TO)
+          for (let { from, to } of mappings) {
+            hashIndexesSet(TO, to, hashIndexesGet(context, from))
+          }
+          Object.assign(context, TO)
+        }
+        const mappings = translationMapping(context.from, context.to)
+        const semantic = { match, apply: apply(mappings, _.cloneDeep(context.to)) }
+        config.addSemantic(semantic)
+
+        debugger;
+
+        /*
         const otherWord = context.meaning.word
         const word = context.word.word
         const defs = config.get('words')[otherWord]
@@ -58,21 +74,25 @@ let config = {
           config.addWord(word, defs[0])
         } else {
         }
+        */
       }
     ]
   ],
 };
 
 config = new entodicton.Config(config)
-config.add(dialogue)
+// config.add(dialogue)
 config.initializer( ({config, isModule}) => {
+  /*
   if (!isModule) {
     config.addWord('testword2', { id: "testword2", initial: "{ value: 'testWord2Value' }" })
     config.addBridge({ "id": "testword2", "level": 0, "bridge": "{ ...next(operator) }" })
     config.addOperator("([testword2|])")
   }
+  */
 })
 config.afterTest = ({query, expected, actual, config}) => {
+  /*
   if (query == 'testword means testword2') {
     expected = { id: "testword2", initial: "{ value: 'testWord2Value' }" }
     expect(config.get('words'))['testword'].toContainEqual(expected)
@@ -80,6 +100,7 @@ config.afterTest = ({query, expected, actual, config}) => {
   } else {
     return true;
   }
+  */
 }
 
 entodicton.knowledgeModule({ 

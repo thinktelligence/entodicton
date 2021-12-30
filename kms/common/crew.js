@@ -6,7 +6,7 @@ const crew_instance = require('./crew.instance.json')
 const pluralize = require('pluralize')
 
 const template = {
-  "queries": [
+  queries: [
       "kirk's name is jim",
       "kirk's rank is captain",
       "kirk's eyes are blue",
@@ -30,7 +30,7 @@ const template = {
       "spock is readonly",
       "mccoy is readonly",
   ],
-  "semantics": [
+  semantics: [
     {
       from: 'arm the weapon', 
       to: 'the status of the weapon is armed',
@@ -41,6 +41,10 @@ const template = {
 const config = new entodicton.Config({ 
   name: 'crew',
   priorities: [
+    [['means', 0], ['is', 1], ['arm', 0]],
+    [['arm', 0], ['is', 0], ['means', 0], ['phaser', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]],
+    [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0]],
+    [['arm', 0], ['means', 0], ['propertyOf', 0]],
     [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['what', 0]],
     [['is', 0], ['crew', 0]],
     [['crew', 0], ['is', 0], ['the', 0], ['what', 0]],

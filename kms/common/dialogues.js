@@ -1,4 +1,5 @@
 const entodicton = require('entodicton')
+const meta = require('./meta.js')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent } = require('./helpers')
 
@@ -133,6 +134,7 @@ let config = {
 
   floaters: ['query'],
   priorities: [
+    [['means', 0], ['is', 0]],
     [['questionMark', 0], ['is', 0]],
     [['questionMark', 0], ['is', 1]],
     [["is",0],["what",0]],
@@ -406,6 +408,7 @@ let config = {
 
 config = new entodicton.Config(config)
 config.api = api
+config.add(meta)
 
 config.initializer( ({objects, isModule}) => {
   objects.mentioned = []
