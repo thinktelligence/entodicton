@@ -29,7 +29,13 @@ const template = {
       "kirk is readonly",
       "spock is readonly",
       "mccoy is readonly",
-  ]
+  ],
+  "semantics": [
+    {
+      from: 'arm the weapon', 
+      to: 'the status of the weapon is armed',
+    }
+  ],
 };
 
 const config = new entodicton.Config({ 
@@ -64,10 +70,6 @@ config.initializer( ({config, km}) => {
 
             km("properties").api.setProperty(context.weapon.value, 'status', value, true) 
           })
-
-  /*
-  api.relationPrefix(config, 'arm', 'weapon')
-  */
 })
 config.load(template, crew_instance)
 entodicton.knowledgeModule( {
