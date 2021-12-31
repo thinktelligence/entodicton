@@ -1,22 +1,26 @@
 {
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "license": "ISC",
-  "main": "main.js",
-  "version": "6.13.24-beta.3",
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
   "author": "dev@thinktelligence.com",
-  "name": "ekms",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "entodicton": "6.13.24-beta.4",
+    "base-64": "^1.0.0",
+    "argparse": "^2.0.1",
+    "underscore": "^1.12.0",
+    "node-fetch": "^2.6.1",
+    "pluralize": "^8.0.0",
+    "scriptjs": "^2.5.9",
+    "table": "^6.7.1"
+  },
+  "version": "6.13.24-beta.4",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "files": [
     "main.js",
     "common/helpers.js",
@@ -68,22 +72,18 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "scripts": {
-    "test": "jest --config ./jest.config.json",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE"
-  },
-  "dependencies": {
-    "base-64": "^1.0.0",
-    "lodash": "^4.17.21",
-    "underscore": "^1.12.0",
-    "node-fetch": "^2.6.1",
-    "entodicton": "6.13.24-beta.3",
-    "table": "^6.7.1",
-    "pluralize": "^8.0.0",
-    "argparse": "^2.0.1",
-    "scriptjs": "^2.5.9"
+  "main": "main.js",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "name": "ekms",
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
