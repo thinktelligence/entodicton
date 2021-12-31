@@ -62,6 +62,7 @@ let config = {
   ],
   // TODO : fix the nn data generator to get this from the hierarchy
   priorities: [
+    [["info",0],["is",0],["tell",0],["time",0],["the",0]],
     [['is', 0], ['the', 0], ['what', 0]],
     [["is",0],["the",0],["time",0],["timeFormat",0],["use",0],["what",0],["count",0]],
     [['the', 0], ['hourUnits', 0], ['info', 0], ['is', 0], ['person', 0], ['tell', 0], ['ampm', 0]],

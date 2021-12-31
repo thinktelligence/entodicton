@@ -3,6 +3,7 @@ const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
 const pluralize = require('pluralize')
 
+// TODO the types of rank are x y z ....
 let config = {
   name: 'hierarchy',
   operators: [

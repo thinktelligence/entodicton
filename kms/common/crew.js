@@ -30,19 +30,15 @@ const template = {
       "spock is readonly",
       "mccoy is readonly",
   ],
-  semantics: [
-    {
-      from: 'arm the weapon', 
-      to: 'the status of the weapon is armed',
-    }
-  ],
 };
 
 const config = new entodicton.Config({ 
   name: 'crew',
   priorities: [
+    [["is",0],["propertyOf",0],["the",0],["type",0],["what",0],["unknown",0]],
+    // [['arm', 0], ['is', 0], ['means', 0], ['the', 0], ['propertyOf', 0], ['phaser', 0]],
     [['means', 0], ['is', 1], ['arm', 0]],
-    [['arm', 0], ['is', 0], ['means', 0], ['phaser', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]],
+    // [['arm', 0], ['is', 0], ['means', 0], ['phaser', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]],
     [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0]],
     [['arm', 0], ['means', 0], ['propertyOf', 0]],
     [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['what', 0]],

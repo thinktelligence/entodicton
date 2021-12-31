@@ -83,6 +83,7 @@ let config = {
     "(<the|> ([theAble|]))",
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
+    "([not] ([notAble|]))",
 
     "([canBeQuestion])",
     "(([canBeQuestion/1]) <questionMark|>)",
@@ -99,6 +100,9 @@ let config = {
   bridges: [
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+
+    { id: "notAble", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "not", level: 0, bridge: "{ ...after, negated: true }" },
 
     { id: "yesno", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
@@ -145,6 +149,7 @@ let config = {
     [['is', 0], ['does', 0], ['a', 0]],
   ],
   hierarchy: [
+    ['unknown', 'notAble'],
     ['unknown', 'theAble'],
     ['unknown', 'queryable'],
     ['it', 'queryable'],
@@ -175,11 +180,22 @@ let config = {
     ],
 
     [
-      ({context, hierarchy}) => context.marker == 'list' && context.paraphrase,
+      ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       ({context, gs}) => {
         return gs(context.value, ' ', ' and ')
       }
     ],
+
+    {
+      notes: 'paraphrase a negation',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'notAble') && context.negated, // && !context.isQuery && !context.paraphrase && context.value,
+      apply: ({context, g}) => {
+        context.negated = false
+        const result = g(context.value)
+        context.negated = true
+        return `not ${result}`
+      }
+    },
 
     {
       notes: 'paraphrase a queryable',

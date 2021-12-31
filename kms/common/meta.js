@@ -43,12 +43,10 @@ let config = {
   ],
 
   semantics: [
-    [
-      ({context}) => context.marker == 'means',
-      ({config, context}) => {
-        debugger;
-        debugger;
-        const match = ({context}) => context.marker == context.from.marker
+    {
+      match: ({context}) => context.marker == 'means',
+      apply: ({config, context}) => {
+        const match = (defContext) => ({context}) => context.marker == defContext.from.marker
         const apply = (mappings, TO) => ({context}) => {
           TO = _.cloneDeep(TO)
           for (let { from, to } of mappings) {
@@ -57,11 +55,8 @@ let config = {
           Object.assign(context, TO)
         }
         const mappings = translationMapping(context.from, context.to)
-        const semantic = { match, apply: apply(mappings, _.cloneDeep(context.to)) }
+        const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }
         config.addSemantic(semantic)
-
-        debugger;
-
         /*
         const otherWord = context.meaning.word
         const word = context.word.word
@@ -76,7 +71,7 @@ let config = {
         }
         */
       }
-    ]
+    }
   ],
 };
 
