@@ -9,6 +9,7 @@ const help = require('./common/help');
 const hierarchy = require('./common/hierarchy');
 const javascript = require('./common/javascript');
 const kirk = require('./common/kirk');
+const meta = require('./common/meta');
 const numbers = require('./common/numbers');
 const people = require('./common/people');
 const properties = require('./common/properties');
@@ -31,6 +32,7 @@ module.exports = {
   hierarchy,
   javascript,
   kirk,
+  meta,
   numbers,
   properties,
   reports,
