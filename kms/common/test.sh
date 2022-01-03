@@ -1,19 +1,18 @@
-node animals -tva 
-node avatar -tva 
-node characters -tva 
-node currency -tva 
-node dialogues -tva 
-node help -tva 
-node javascript -tva 
-node numbers -tva 
-node properties -tva 
-node reports -tva 
-node people -tva 
-node scorekeeper -tva 
-node tell -tva 
-node time -tva 
-
-node crew -tva 
-node kirk -tva 
-node spock -tva 
-node stgame -tva
+node animals -tva  -g
+node avatar -tva  -g
+node characters -tva  -g
+node currency -tva  -g
+node dialogues -tva  -g
+node help -tva  -g
+node javascript -tva  -g
+node numbers -tva  -g
+node properties -tva  -g
+node reports -tva  -g
+node people -tva  -g
+node scorekeeper -tva  -g
+node tell -tva  -g
+node time -tva  -g
+node crew -tva  -g
+node kirk -tva  -g
+node spock -tva  -g
+node stgame -tva -g

@@ -89,6 +89,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -230,6 +240,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -380,7 +393,7 @@
         },
         {
           "op": [
-            "doesnt",
+            "have",
             0
           ],
           "ops": [
@@ -390,6 +403,18 @@
             ],
             [
               "have",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "doesnt",
+            0
+          ],
+          "ops": [
+            [
+              "doesnt",
               0
             ]
           ]
@@ -590,6 +615,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -731,6 +766,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -1030,7 +1068,7 @@
         },
         {
           "op": [
-            "does",
+            "doesnt",
             0
           ],
           "ops": [
@@ -1046,22 +1084,14 @@
         },
         {
           "op": [
-            "doesnt",
-            0
-          ],
-          "ops": [
-            [
-              "doesnt",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "have",
             0
           ],
           "ops": [
+            [
+              "does",
+              0
+            ],
             [
               "have",
               0
@@ -1075,8 +1105,24 @@
           ],
           "ops": [
             [
+              "does",
+              0
+            ],
+            [
               "have",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "does",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
             ]
           ]
         }
@@ -1295,6 +1341,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -1436,6 +1492,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -1764,6 +1823,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -1905,6 +1974,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -2162,8 +2234,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -2185,18 +2257,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -2413,6 +2489,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -2554,6 +2640,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -2723,8 +2812,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -2739,13 +2828,13 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -2917,6 +3006,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -3058,6 +3157,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -3315,8 +3417,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -3338,18 +3440,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -3566,6 +3672,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -3709,6 +3825,9 @@
           "pattern": "([unknown])"
         },
         {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
           "pattern": "([canBeQuestion])"
         },
         {
@@ -3804,7 +3923,7 @@
       "opChoices": [
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
@@ -3824,12 +3943,12 @@
         },
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -4014,6 +4133,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -4155,6 +4284,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -4427,7 +4559,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "unknown",
             0
           ],
           "ops": [
@@ -4474,53 +4606,9 @@
             [
               "unknown",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
             ],
             [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -4546,53 +4634,9 @@
             [
               "unknown",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
             ],
             [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -4618,6 +4662,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -4641,6 +4689,118 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -5328,6 +5488,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -5469,6 +5639,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -5869,54 +6042,6 @@
         },
         {
           "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "the",
             0
           ],
@@ -5930,6 +6055,10 @@
               0
             ],
             [
+              "propertyOf",
+              0
+            ],
+            [
               "the",
               0
             ]
@@ -5948,6 +6077,10 @@
             [
               "possession",
               0
+            ],
+            [
+              "propertyOf",
+              0
             ]
           ]
         },
@@ -5964,6 +6097,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "propertyOf",
+              0
             ]
           ]
         },
@@ -5980,6 +6117,42 @@
             [
               "property",
               0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
             ]
           ]
         },
@@ -6367,6 +6540,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -6508,6 +6691,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -6741,7 +6927,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "unknown",
             0
           ],
           "ops": [
@@ -6788,53 +6974,9 @@
             [
               "unknown",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
             ],
             [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -6860,6 +7002,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -6883,6 +7029,62 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -7400,6 +7602,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -7541,6 +7753,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -7922,7 +8137,7 @@
         },
         {
           "op": [
-            "what",
+            "unknown",
             0
           ],
           "ops": [
@@ -7969,12 +8184,16 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "unknown",
+            "what",
             0
           ],
           "ops": [
@@ -7991,7 +8210,7 @@
               0
             ],
             [
-              "unknown",
+              "what",
               0
             ]
           ]
@@ -8423,6 +8642,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -8566,6 +8795,9 @@
           "pattern": "([unknown])"
         },
         {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
           "pattern": "([canBeQuestion])"
         },
         {
@@ -8655,6 +8887,7 @@
               "object",
               "unknown"
             ],
+            "unknown": true,
             "value": "greg",
             "word": "greg"
           },
@@ -8711,7 +8944,91 @@
       "opChoices": [
         {
           "op": [
-            "propertyOf",
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
             0
           ],
           "ops": [
@@ -8749,7 +9066,7 @@
             ],
             [
               "propertyOf",
-              1
+              0
             ],
             [
               "readonly",
@@ -8758,16 +9075,12 @@
             [
               "the",
               0
-            ],
-            [
-              "unknown",
-              0
             ]
           ]
         },
         {
           "op": [
-            "unknown",
+            "readonly",
             0
           ],
           "ops": [
@@ -8777,21 +9090,17 @@
             ],
             [
               "propertyOf",
-              1
-            ],
-            [
-              "readonly",
               0
             ],
             [
-              "unknown",
+              "readonly",
               0
             ]
           ]
         },
         {
           "op": [
-            "unknown",
+            "propertyOf",
             0
           ],
           "ops": [
@@ -8801,38 +9110,6 @@
             ],
             [
               "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -8850,26 +9127,6 @@
             [
               "propertyOf",
               1
-            ],
-            [
-              "readonly",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "readonly",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "readonly",
-              0
             ]
           ]
         },
@@ -9043,6 +9300,7 @@
                   "object",
                   "unknown"
                 ],
+                "unknown": true,
                 "value": "greg",
                 "word": "greg"
               },
@@ -9173,6 +9431,16 @@
             "passthrough": true,
             "type": "postfix"
           }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
         },
         {
           "bridge": "{ ...next(operator) }",
@@ -9319,6 +9587,9 @@
           "pattern": "([unknown])"
         },
         {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
           "pattern": "([canBeQuestion])"
         },
         {
@@ -9408,6 +9679,7 @@
               "object",
               "unknown"
             ],
+            "unknown": true,
             "value": "greg",
             "word": "greg"
           },
@@ -9475,6 +9747,7 @@
               "object",
               "unknown"
             ],
+            "unknown": true,
             "value": "greg",
             "word": "greg"
           },
@@ -9558,7 +9831,7 @@
       "opChoices": [
         {
           "op": [
-            "propertyOf",
+            "unknown",
             0
           ],
           "ops": [
@@ -9586,7 +9859,7 @@
         },
         {
           "op": [
-            "propertyOf",
+            "unknown",
             0
           ],
           "ops": [
@@ -9599,8 +9872,144 @@
               0
             ],
             [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
               "propertyOf",
-              1
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
             ],
             [
               "readonly",
@@ -9628,7 +10037,7 @@
             ],
             [
               "propertyOf",
-              1
+              0
             ],
             [
               "readonly",
@@ -9636,10 +10045,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ]
           ]
@@ -9656,7 +10061,7 @@
             ],
             [
               "propertyOf",
-              1
+              0
             ],
             [
               "readonly",
@@ -9664,170 +10069,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "readonly",
               0
             ]
           ]
@@ -9843,8 +10084,80 @@
               0
             ],
             [
+              "propertyOf",
+              0
+            ],
+            [
               "readonly",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
             ]
           ]
         },
@@ -10014,6 +10327,7 @@
                   "object",
                   "unknown"
                 ],
+                "unknown": true,
                 "value": "greg",
                 "word": "greg"
               },
@@ -10149,6 +10463,7 @@
                   "object",
                   "unknown"
                 ],
+                "unknown": true,
                 "value": "greg",
                 "word": "greg"
               },
@@ -10285,6 +10600,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -10426,6 +10751,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -10699,6 +11027,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -10840,6 +11178,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -11185,6 +11526,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -11326,6 +11677,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -11701,6 +12055,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -11842,6 +12206,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -12328,6 +12695,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -12469,6 +12846,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"
@@ -12953,6 +13333,16 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "yesno",
           "level": 0
         },
@@ -13094,6 +13484,9 @@
         },
         {
           "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
         },
         {
           "pattern": "([canBeQuestion])"

@@ -29,24 +29,12 @@ const template = {
       "kirk is readonly",
       "spock is readonly",
       "mccoy is readonly",
+      // "arm the weapon means the status of the weapon is armed",
   ],
 };
 
 const config = new entodicton.Config({ 
   name: 'crew',
-  priorities: [
-    [["is",0],["propertyOf",0],["the",0],["type",0],["what",0],["unknown",0]],
-    // [['arm', 0], ['is', 0], ['means', 0], ['the', 0], ['propertyOf', 0], ['phaser', 0]],
-    [['means', 0], ['is', 1], ['arm', 0]],
-    // [['arm', 0], ['is', 0], ['means', 0], ['phaser', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]],
-    [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0]],
-    [['arm', 0], ['means', 0], ['propertyOf', 0]],
-    [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['what', 0]],
-    [['is', 0], ['crew', 0]],
-    [['crew', 0], ['is', 0], ['the', 0], ['what', 0]],
-    [['a', 0], ['is', 0], ['crew', 0]],
-    [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['what', 0]],
-  ],
 })
 
 config.add(avatar)
