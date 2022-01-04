@@ -44,7 +44,12 @@ config.initializer( ({config, km}) => {
   const api = km('properties').api
   api.kindOfConcept(config, 'photon', 'torpedo')
   api.kindOfConcept(config, 'crew', 'member')
-  api.createActionPrefix(config, ({context, km}) => {
+  api.createActionPrefix({ 
+                operator: 'arm', 
+                create: ['arm', 'weapon'], 
+                after: [{tag: 'weapon', id: 'weapon'}],
+                config }, 
+                ({context, km}) => {
             const value = {
                     "marker": "unknown",
                     "types": [

@@ -6,11 +6,10 @@ class API {
   //
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for
-  createActionPrefix(config, semanticApply) {
-    const operator = 'arm'
-    const before = []
-    const after = [{tag: 'weapon', id: 'weapon'}]
-    const create = ['arm', 'weapon']
+  createActionPrefix({ operator, before=[], after=[], create=[], config }, semanticApply) {
+    // const before = []
+    // const after = [{tag: 'weapon', id: 'weapon'}]
+    // const create = ['arm', 'weapon']
 
     const beforeOperators = before.map( (arg) => `([${arg.id}|])` ).join('')
     const afterOperators = after.map( (arg) => `([${arg.id}|])` ).join('')
@@ -26,8 +25,6 @@ class API {
           }
           return r
         }
-        // const beforeArgs = before.map( (arg) => `` ).join('')
-        // const afterArgs = after.map( (arg) => `weapon: after[0]` ).join('')
         const beforeArgs = tagsToProps('before', before)
         const afterArgs = tagsToProps('after', after)
         config.addBridge({ id: operator, level: 0, bridge: "{ ...next(operator), weapon: after[0] }"})
@@ -42,10 +39,12 @@ class API {
       apply: ({context, g}) => `${context.word} ${g(context.weapon)}`
     })
 
-    config.addSemantic({
-      match: ({context}) => context.marker == operator,
-      apply: semanticApply,
-    })
+    if (semanticApply) {
+      config.addSemantic({
+        match: ({context}) => context.marker == operator,
+        apply: semanticApply,
+      })
+    }
   }
 
   // for example, "crew member" or "photon torpedo"
