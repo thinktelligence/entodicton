@@ -91,10 +91,7 @@ module.exports =
     ["buildingConcept", "anyConcept"],
   ],
   "priorities": [
-    [["equal", 0], ["the", 0], ["propertyConcept", 0], ["query", 0], ["property", 0], ["tankConcept", 0]],
-    [["equal", 0], ["the", 0], ["property", 0], ["query", 0], ["propertyConcept", 0]],
-    [["equal", 0], ["property", 0], ["query", 0]],
-    [["equal", 0], ["property", 1]],
+    [["equal", 0], ["property", 0], ["propertyConcept", 0], ["query", 0], ["the", 0], ["tankConcept", 0]],
   ],
   "associations": {
     "negative": [[["tankConcept", 0], ["french", 0], ["aEnglish", 0], ["buildingConcept", 0]], [["conj", 0], ["count", 0], ["plus", 0]], [["equal", 0], ["count", 0], ["plus", 0]]],
