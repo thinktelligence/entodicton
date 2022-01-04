@@ -47,12 +47,13 @@ let config = {
       match: ({context}) => context.marker == 'means',
       apply: ({config, context}) => {
         const match = (defContext) => ({context}) => context.marker == defContext.from.marker
-        const apply = (mappings, TO) => ({context}) => {
+        const apply = (mappings, TO) => ({context, s}) => {
           TO = _.cloneDeep(TO)
           for (let { from, to } of mappings) {
             hashIndexesSet(TO, to, hashIndexesGet(context, from))
           }
-          Object.assign(context, TO)
+          toPrime = s(TO)
+          context.result = toPrime.result
         }
         const mappings = translationMapping(context.from, context.to)
         const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }

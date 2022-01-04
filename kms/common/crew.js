@@ -29,7 +29,8 @@ const template = {
       "kirk is readonly",
       "spock is readonly",
       "mccoy is readonly",
-      // "arm the weapon means the status of the weapon is armed",
+      "arm the weapon means the status of the weapon is armed",
+      "disarm the weapon means the status of the weapon is not armed",
   ],
 };
 
@@ -62,7 +63,14 @@ config.initializer( ({config, km}) => {
             }
 
             km("properties").api.setProperty(context.weapon.value, 'status', value, true) 
-          })
+          }
+          )
+  
+  api.createActionPrefix({ 
+                operator: 'disarm', 
+                create: ['disarm'/*, 'weapon'*/], 
+                after: [{tag: 'weapon', id: 'weapon'}],
+                config }) 
 })
 config.load(template, crew_instance)
 entodicton.knowledgeModule( {

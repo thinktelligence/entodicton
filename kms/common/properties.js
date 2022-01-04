@@ -316,11 +316,10 @@ let config = {
         const objectId = context.object.value
         const propertyId = context.value
         try{
-          api.setProperty(objectId, propertyId, context.same, true)
+          api.setProperty(pluralize.singular(objectId), pluralize.singular(propertyId), context.same, true)
           context.sameWasProcessed = true
         } catch (e) {
           const config = km('properties')
-          debugger;
           const fragment = config.fragment("the property1 of object1 is value1")
           const value = api.getProperty(objectId, propertyId)
           if (value.value == context.same.value) {
@@ -368,7 +367,7 @@ let config = {
           return
         }
         if (!api.knownProperty(object, context.value)) {
-          context.verbatim = `There is property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
+          context.verbatim = `There is no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
           return
         }
         context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)

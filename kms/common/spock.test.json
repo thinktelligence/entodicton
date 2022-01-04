@@ -312,7 +312,7 @@
               "spock",
               "mccoy"
             ],
-            "eyes": [
+            "eye": [
               "blue",
               "brown"
             ],
@@ -363,7 +363,7 @@
             "captain",
             "rank",
             "blue",
-            "eyes",
+            "eye",
             "crew_member",
             "second",
             "spock",
@@ -398,10 +398,10 @@
               "animal"
             ],
             "blue": [
-              "eyes"
+              "eye"
             ],
             "brown": [
-              "eyes"
+              "eye"
             ],
             "canine": [
               "mammal"
@@ -505,7 +505,7 @@
             },
             "dog": {
             },
-            "eyes": {
+            "eye": {
             },
             "feline": {
             },
@@ -514,7 +514,7 @@
             "jim": {
             },
             "kirk": {
-              "eyes": {
+              "eye": {
                 "has": true,
                 "value": {
                   "marker": "unknown",
@@ -570,7 +570,7 @@
               }
             },
             "mccoy": {
-              "eyes": {
+              "eye": {
                 "has": true,
                 "value": {
                   "marker": "unknown",
@@ -615,8 +615,6 @@
             "parrot": {
             },
             "phaser": {
-            },
-            "phasers": {
               "status": {
                 "has": true,
                 "value": {
@@ -651,7 +649,7 @@
             "second": {
             },
             "spock": {
-              "eyes": {
+              "eye": {
                 "has": true,
                 "value": {
                   "marker": "unknown",
@@ -702,7 +700,7 @@
             }
           },
           "property": {
-            "eyes": [
+            "eye": [
               {
                 "marker": "unknown",
                 "response": true,
@@ -996,6 +994,165 @@
         {
           "context": {
             "default": true,
+            "from": {
+              "marker": "disarm",
+              "value": "disarm",
+              "weapon": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "weapon",
+                "modifiers": [
+                  "determiner"
+                ],
+                "number": "one",
+                "pullFromContext": true,
+                "types": [
+                  "weapon"
+                ],
+                "value": "weapon",
+                "wantsValue": true,
+                "word": "weapon"
+              },
+              "word": "disarm"
+            },
+            "marker": "means",
+            "to": {
+              "default": true,
+              "marker": "is",
+              "one": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "object": {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "weapon",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "number": "one",
+                  "pullFromContext": true,
+                  "types": [
+                    "weapon"
+                  ],
+                  "value": "weapon",
+                  "wantsValue": true,
+                  "word": "weapon"
+                },
+                "pullFromContext": true,
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "status",
+                "wantsValue": true,
+                "word": "status"
+              },
+              "two": {
+                "marker": "unknown",
+                "negated": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
+              },
+              "word": "is"
+            },
+            "topLevel": true,
+            "word": "means"
+          },
+          "paraphrases": "means",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "arm",
+              "value": "arm",
+              "weapon": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "weapon",
+                "modifiers": [
+                  "determiner"
+                ],
+                "number": "one",
+                "pullFromContext": true,
+                "types": [
+                  "weapon"
+                ],
+                "value": "weapon",
+                "wantsValue": true,
+                "word": "weapon"
+              },
+              "word": "arm"
+            },
+            "marker": "means",
+            "to": {
+              "default": true,
+              "marker": "is",
+              "one": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "object": {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "weapon",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "number": "one",
+                  "pullFromContext": true,
+                  "types": [
+                    "weapon"
+                  ],
+                  "value": "weapon",
+                  "wantsValue": true,
+                  "word": "weapon"
+                },
+                "pullFromContext": true,
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "status",
+                "wantsValue": true,
+                "word": "status"
+              },
+              "two": {
+                "marker": "unknown",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
+              },
+              "word": "is"
+            },
+            "topLevel": true,
+            "word": "means"
+          },
+          "paraphrases": "means",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
             "marker": "is",
             "one": {
               "marker": "mccoy",
@@ -1051,70 +1208,6 @@
             "word": "is"
           },
           "paraphrases": "spock is readonly",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "kirk",
-              "number": "one",
-              "response": true,
-              "types": [
-                "kirk"
-              ],
-              "value": "kirk",
-              "word": "kirk"
-            },
-            "topLevel": true,
-            "two": {
-              "default": true,
-              "marker": "readonly",
-              "response": true,
-              "types": [
-                "readonly"
-              ],
-              "word": "readonly"
-            },
-            "word": "is"
-          },
-          "paraphrases": "kirk is readonly",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "marker": "torpedo",
-              "response": true,
-              "types": [
-                "torpedo"
-              ],
-              "value": "torpedo",
-              "word": "torpedoes"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "marker": "weapon",
-              "number": "many",
-              "response": true,
-              "types": [
-                "weapon"
-              ],
-              "value": "weapon",
-              "word": "weapons"
-            },
-            "word": "are"
-          },
-          "paraphrases": "torpedoes are weapons",
           "responses": [
             ""
           ]
@@ -1338,7 +1431,7 @@
               "spock",
               "mccoy"
             ],
-            "eyes": [
+            "eye": [
               "blue",
               "brown"
             ],
@@ -1389,7 +1482,7 @@
             "captain",
             "rank",
             "blue",
-            "eyes",
+            "eye",
             "crew_member",
             "second",
             "spock",
@@ -1424,10 +1517,10 @@
               "animal"
             ],
             "blue": [
-              "eyes"
+              "eye"
             ],
             "brown": [
-              "eyes"
+              "eye"
             ],
             "canine": [
               "mammal"
@@ -1531,7 +1624,7 @@
             },
             "dog": {
             },
-            "eyes": {
+            "eye": {
             },
             "feline": {
             },
@@ -1540,7 +1633,7 @@
             "jim": {
             },
             "kirk": {
-              "eyes": {
+              "eye": {
                 "has": true,
                 "value": {
                   "marker": "unknown",
@@ -1595,7 +1688,7 @@
               }
             },
             "mccoy": {
-              "eyes": {
+              "eye": {
                 "has": true,
                 "value": {
                   "marker": "unknown",
@@ -1640,8 +1733,6 @@
             "parrot": {
             },
             "phaser": {
-            },
-            "phasers": {
               "status": {
                 "has": true,
                 "value": {
@@ -1676,7 +1767,7 @@
             "second": {
             },
             "spock": {
-              "eyes": {
+              "eye": {
                 "has": true,
                 "value": {
                   "marker": "unknown",
@@ -1727,7 +1818,7 @@
             }
           },
           "property": {
-            "eyes": [
+            "eye": [
               {
                 "marker": "unknown",
                 "response": true,
@@ -1993,6 +2084,165 @@
         {
           "context": {
             "default": true,
+            "from": {
+              "marker": "disarm",
+              "value": "disarm",
+              "weapon": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "weapon",
+                "modifiers": [
+                  "determiner"
+                ],
+                "number": "one",
+                "pullFromContext": true,
+                "types": [
+                  "weapon"
+                ],
+                "value": "weapon",
+                "wantsValue": true,
+                "word": "weapon"
+              },
+              "word": "disarm"
+            },
+            "marker": "means",
+            "to": {
+              "default": true,
+              "marker": "is",
+              "one": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "object": {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "weapon",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "number": "one",
+                  "pullFromContext": true,
+                  "types": [
+                    "weapon"
+                  ],
+                  "value": "weapon",
+                  "wantsValue": true,
+                  "word": "weapon"
+                },
+                "pullFromContext": true,
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "status",
+                "wantsValue": true,
+                "word": "status"
+              },
+              "two": {
+                "marker": "unknown",
+                "negated": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
+              },
+              "word": "is"
+            },
+            "topLevel": true,
+            "word": "means"
+          },
+          "paraphrases": "means",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "arm",
+              "value": "arm",
+              "weapon": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "weapon",
+                "modifiers": [
+                  "determiner"
+                ],
+                "number": "one",
+                "pullFromContext": true,
+                "types": [
+                  "weapon"
+                ],
+                "value": "weapon",
+                "wantsValue": true,
+                "word": "weapon"
+              },
+              "word": "arm"
+            },
+            "marker": "means",
+            "to": {
+              "default": true,
+              "marker": "is",
+              "one": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "object": {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "weapon",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "number": "one",
+                  "pullFromContext": true,
+                  "types": [
+                    "weapon"
+                  ],
+                  "value": "weapon",
+                  "wantsValue": true,
+                  "word": "weapon"
+                },
+                "pullFromContext": true,
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "status",
+                "wantsValue": true,
+                "word": "status"
+              },
+              "two": {
+                "marker": "unknown",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "armed",
+                "word": "armed"
+              },
+              "word": "is"
+            },
+            "topLevel": true,
+            "word": "means"
+          },
+          "paraphrases": "means",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
             "marker": "is",
             "one": {
               "marker": "mccoy",
@@ -2048,70 +2298,6 @@
             "word": "is"
           },
           "paraphrases": "spock is readonly",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "marker": "kirk",
-              "number": "one",
-              "response": true,
-              "types": [
-                "kirk"
-              ],
-              "value": "kirk",
-              "word": "kirk"
-            },
-            "topLevel": true,
-            "two": {
-              "default": true,
-              "marker": "readonly",
-              "response": true,
-              "types": [
-                "readonly"
-              ],
-              "word": "readonly"
-            },
-            "word": "is"
-          },
-          "paraphrases": "kirk is readonly",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "is",
-            "one": {
-              "concept": true,
-              "marker": "torpedo",
-              "response": true,
-              "types": [
-                "torpedo"
-              ],
-              "value": "torpedo",
-              "word": "torpedoes"
-            },
-            "topLevel": true,
-            "two": {
-              "concept": true,
-              "marker": "weapon",
-              "number": "many",
-              "response": true,
-              "types": [
-                "weapon"
-              ],
-              "value": "weapon",
-              "word": "weapons"
-            },
-            "word": "are"
-          },
-          "paraphrases": "torpedoes are weapons",
           "responses": [
             ""
           ]

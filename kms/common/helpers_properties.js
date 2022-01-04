@@ -28,11 +28,15 @@ class API {
         const beforeArgs = tagsToProps('before', before)
         const afterArgs = tagsToProps('after', after)
         config.addBridge({ id: operator, level: 0, bridge: "{ ...next(operator), weapon: after[0] }"})
-        config.addWord('arm', { id: operator, initial: `{ value: "${operator}" }` })
+        config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
       } else {
         config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }"})
       }
     })
+
+    config.addPriorities([['means', 0], [operator, 0]])
+    config.addPriorities([[operator, 0], ['the', 0]])
+    config.addPriorities([[operator, 0], ['a', 0]])
 
     config.addGenerator({
       match: ({context}) => context.marker == operator && context.paraphrase,
