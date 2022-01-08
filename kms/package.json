@@ -1,39 +1,4 @@
 {
-  "main": "main.js",
-  "dependencies": {
-    "node-fetch": "^2.6.1",
-    "entodicton": "6.13.26",
-    "underscore": "^1.12.0",
-    "pluralize": "^8.0.0",
-    "scriptjs": "^2.5.9",
-    "base-64": "^1.0.0",
-    "argparse": "^2.0.1",
-    "lodash": "^4.17.21",
-    "table": "^6.7.1"
-  },
-  "version": "6.13.26",
-  "license": "ISC",
-  "name": "ekms",
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
-  "author": "dev@thinktelligence.com",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
-  "scripts": {
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test": "jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
-  },
   "files": [
     "main.js",
     "common/helpers.js",
@@ -85,5 +50,40 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "description": "Reusable libraries for Entodicton, a natural language to json converter"
+  "scripts": {
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test": "jest --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:watch": "npm run test -- --watch"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "license": "ISC",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "version": "6.13.26-beta.0",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "main": "main.js",
+  "name": "ekms",
+  "author": "dev@thinktelligence.com",
+  "dependencies": {
+    "table": "^6.7.1",
+    "base-64": "^1.0.0",
+    "scriptjs": "^2.5.9",
+    "node-fetch": "^2.6.1",
+    "lodash": "^4.17.21",
+    "pluralize": "^8.0.0",
+    "underscore": "^1.12.0",
+    "argparse": "^2.0.1",
+    "entodicton": "6.13.26-beta.0"
+  }
 }
