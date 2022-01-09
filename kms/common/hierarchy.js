@@ -4,6 +4,7 @@ const hierarchy_tests = require('./hierarchy.test.json')
 const pluralize = require('pluralize')
 
 // TODO the types of rank are x y z ....
+// TODO x is a kind of y
 let config = {
   name: 'hierarchy',
   operators: [
@@ -64,12 +65,8 @@ let config = {
         const twoConcepts = asList(context.same);
         for (let oneConcept of oneConcepts.value) {
           for (let twoConcept of twoConcepts.value) {
-            if (context.unknown) {
-              oneConcept = api.makeObject({config, context})
-            }
-            if (context.same.unknown) {
-              twoConcept = api.makeObject({config, context: context.same})
-            }
+            oneConcept = api.makeObject({config, context})
+            twoConcept = api.makeObject({config, context: context.same})
             api.rememberIsA(oneConcept, twoConcept)
           }
         }
@@ -85,12 +82,8 @@ let config = {
         const twoConcepts = asList(context.same);
         for (let oneConcept of oneConcepts.value) {
           for (let twoConcept of twoConcepts.value) {
-            if (context.unknown) {
-              oneConcept = api.makeObject({config, context})
-            }
-            if (context.same.unknown) {
-              twoConcept = api.makeObject({config, context: context.same})
-            }
+            oneConcept = api.makeObject({config, context})
+            twoConcept = api.makeObject({config, context: context.same})
             api.rememberIsA(oneConcept, twoConcept) 
             context.sameWasProcessed = true
           }
@@ -117,16 +110,8 @@ let config = {
         const twoConcepts = asList(context.same);
         for (let oneConcept of oneConcepts.value) {
           for (let twoConcept of twoConcepts.value) {
-            if (oneConcept.unknown) {
-              oneConcept = api.makeObject({config, context: oneConcept})
-            } else {
-              oneConcept = oneConcept.value;
-            }
-            if (twoConcept.unknown) {
-              twoConcept = api.makeObject({config, context: twoConcept})
-            } else {
-              twoConcept = twoConcept.value;
-            }
+            oneConcept = api.makeObject({config, context: oneConcept})
+            twoConcept = api.makeObject({config, context: twoConcept})
             api.rememberIsA(oneConcept, twoConcept)
             context.sameWasProcessed = true
           }

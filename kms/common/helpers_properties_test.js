@@ -15,6 +15,7 @@ describe('helpersProperties', () => {
           "parents":  {},
           "properties":  {},
           "property":  {},
+          "relations": [],
         }
         expect(objects).toStrictEqual(expected)
       })

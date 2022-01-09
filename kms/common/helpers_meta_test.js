@@ -46,7 +46,7 @@ describe('helpersMeta', () => {
       expect(actual).toStrictEqual([])
     })
 
-    it('ONE from top level to top level', () => {
+    it('from top level to top level', () => {
       const from = { weapon: { marker: 'weapon', value: 'phaser' } }
       const to = { object: { marker: 'weapon', value: 'phaser' } }
       const actual = translationMapping(from, to)
@@ -54,7 +54,7 @@ describe('helpersMeta', () => {
       expect(actual).toStrictEqual(expected)
     })
 
-    it('ONE from top level to next one level', () => {
+    it('from top level to next one level', () => {
       const from = { weapon: { marker: 'weapon', value: 'phaser' } }
       const to = { one: { object: { marker: 'weapon', value: 'phaser' } } }
       const actual = translationMapping(from, to)

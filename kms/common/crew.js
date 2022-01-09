@@ -43,8 +43,8 @@ config.add(animals)
 crew_instance.base = 'avatar'
 config.initializer( ({config, km}) => {
   const api = km('properties').api
-  api.kindOfConcept(config, 'photon', 'torpedo')
-  api.kindOfConcept(config, 'crew', 'member')
+  api.kindOfConcept({ config, modifier: 'photon', object: 'torpedo' })
+  api.kindOfConcept({ config, modifier: 'crew', object: 'member' })
   api.createActionPrefix({ 
                 operator: 'arm', 
                 create: ['arm', 'weapon'], 

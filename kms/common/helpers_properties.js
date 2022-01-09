@@ -6,8 +6,8 @@ class API {
   //
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for
-  createActionPrefix({ operator, before=[], after=[], create=[], config }, semanticApply) {
-    // const before = []
+  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering }, semanticApply) {
+    // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
 
@@ -21,18 +21,25 @@ class API {
           let i = 0;
           let r = ''
           for (let arg of args) {
-            r += `${arg.tag}: ${where}[${i}] `
+            r += `, ${arg.tag}: ${where}[${i}] `
           }
           return r
         }
         const beforeArgs = tagsToProps('before', before)
         const afterArgs = tagsToProps('after', after)
-        config.addBridge({ id: operator, level: 0, bridge: "{ ...next(operator), weapon: after[0] }"})
+        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${beforeArgs} ${afterArgs} }` })
         config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
       } else {
         config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }"})
       }
     })
+
+    const operatorSingular = pluralize.singular(operator)
+    const operatorPlural = pluralize.plural(operator)
+    config.addWord(operatorSingular, { id: operator, initial: `{ value: '${operator}' }`})
+    config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}' }`})
+
+    config.addHierarchy(operator, 'canBeDoQuestion')
 
     config.addPriorities([['means', 0], [operator, 0]])
     config.addPriorities([[operator, 0], ['the', 0]])
@@ -40,8 +47,48 @@ class API {
 
     config.addGenerator({
       match: ({context}) => context.marker == operator && context.paraphrase,
-      apply: ({context, g}) => `${context.word} ${g(context.weapon)}`
+      apply: ({context, g}) => {
+        const beforeGenerator = before.map( (arg) => g(context[arg.tag]) )
+        const afterGenerator = after.map( (arg) => g(context[arg.tag]) )
+        return beforeGenerator.concat([`${context.word}`]).concat(afterGenerator).join(' ')
+      }
     })
+ 
+    if (ordering) {
+      config.addSemantic({
+        match: ({context}) => context.marker == operator,
+        apply: ({context, km}) => {
+          const api = km('ordering').api
+          api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context.value)
+        }
+      })
+      /*
+      config.addSemantic({
+        match: ({context}) => context.marker == operator && context.query,
+        apply: ({context, km}) => {
+          const api = km('properties').api
+          context.response = api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+        }
+      })
+      */
+    }
+
+    if (relation) {
+      config.addSemantic({
+        match: ({context}) => context.marker == operator,
+        apply: ({context, km}) => {
+          const api = km('properties').api
+          api.relation_set(context)
+        }
+      })
+      config.addSemantic({
+        match: ({context}) => context.marker == operator && context.query,
+        apply: ({context, km}) => {
+          const api = km('properties').api
+          context.response = api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+        }
+      })
+    }
 
     if (semanticApply) {
       config.addSemantic({
@@ -52,18 +99,19 @@ class API {
   }
 
   // for example, "crew member" or "photon torpedo"
-  kindOfConcept(config, modifier, object) {
+  kindOfConcept({ config, modifier, object }) {
     const objectId = pluralize.singular(object)
     const modifierId = pluralize.singular(modifier)
     const modifierObjectId = `${modifierId}_${objectId}`
 
     const objectSingular = pluralize.singular(object)
     const objectPlural = pluralize.plural(object)
-    config.addOperator(`(<${modifierId}> ([${objectId}|]))`)
+    config.addOperator(`(<${modifierId}|> ([${objectId}|]))`)
     config.addOperator(`([${modifierObjectId}|])`)
 
     config.addWord(objectSingular, { id: objectId, initial: `{ value: '${objectId}' }`})
     config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}' }`})
+    config.addWord(modifierId, { id: modifierId, initial: `{ value: '${modifierId}' }`})
 
     config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
     config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }` })
@@ -103,6 +151,9 @@ class API {
 
   // word is for one or many
   makeObject({config, context}) {
+    if (!context.unknown) {
+      return context.value
+    }
     const { word, value, number } = context;
     const concept = pluralize.singular(value)
     config.addOperator(`([${concept}])`)
@@ -138,8 +189,42 @@ class API {
     return concept;
   }
 
+  relation_set(relation) {
+    this.objects.relations.push(relation)
+  }
+
+  relation_match(args, template, value) {
+    if (template.marker !== value.marker) {
+      return null
+    }
+
+    const matches = (t, v) => {
+      if (t.query) {
+        return true
+      }
+      return t.value && v.value && t.value == v.value
+    }
+
+    for (let arg of args) {
+      if (!matches(template[arg], value[arg])) {
+        return null
+      }
+    }
+    return value
+  }
+
+  // relation_get(context, before.concat(after).map( (arg) => arg.tag ) ) {
+  relation_get(context, args) {
+    const andTheAnswerIs = []
+    for (let relation of this.objects.relations) {
+      if (this.relation_match(args, context, relation)) {
+        andTheAnswerIs.push(Object.assign({}, relation, { paraphrase: true }))
+      }
+    }
+    return andTheAnswerIs
+  }
+
   copyShared(fromApi) {
-    debugger;
     for (let {args, handler} of fromApi.objects.initHandlers) {
       this.setShared(handler, ...args)
     }
@@ -407,6 +492,7 @@ class API {
     objects.initHandlers = []
     objects.parents = {}
     objects.children = {}
+    objects.relations = []
   }
 
 }
