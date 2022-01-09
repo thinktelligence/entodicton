@@ -68,6 +68,7 @@ describe('helpersProperties', () => {
         let objects = {}
         api.initialize(objects)
         api.setProperty('object1', 'property1', 'value1')
+        debugger;
         const actual = api.getProperty('object1', 'property1')
         const expected = 'value1'
         expect(actual).toStrictEqual(expected)
@@ -191,10 +192,11 @@ describe('helpersProperties', () => {
   })
 
   describe('shared', () => {
-    it('mark share object', async () => {
+    it('ONEmark share object', async () => {
       const api1 = new API()
       api1.objects = {}
       api1.initialize(api1.objects)
+      debugger;
       const share = api1.setShared(null, 'object1')
 
       const api2 = new API()
@@ -245,7 +247,7 @@ describe('helpersProperties', () => {
       */
     })
 
-    it('copy shared to copy', async () => {
+    xit('copy shared to copy', async () => {
       const api1 = new API()
       api1.objects = {}
       api1.initialize(api1.objects)

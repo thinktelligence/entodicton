@@ -1,4 +1,5 @@
 const pluralize = require('pluralize')
+const _ = require('lodash')
 
 class Frankenhash {
   constructor(root, handlers, initHandlers, valueSet) {
@@ -8,14 +9,54 @@ class Frankenhash {
     this.valueSet = valueSet
   }
 
-  getObject(object) {
-    if (!this.root[object]) {
-      this.root[object] = {}
-    }
-    return this.root[object]
+  knownObject(object) {
+    return !!this.root[object]
   }
 
-  getProperty(object, property, g) {
+  /*
+  copyShared(fromApi) {
+    for (let {args, handler} of fromApi.objects.initHandlers) {
+      this.setShared(handler, ...args)
+    }
+  }
+  */
+
+  /*
+  setShared(handler, ...args) {
+    if (!handler) {
+      handler = new Object({
+        setProperty: (args, value, has) => {
+          return this.setPropertyDirectly(...args, value, has)
+        },
+        getProperty: (args) => {
+          return this.getPropertyDirectly(...args)
+        },
+      })
+    }
+    this.setHandler(handler, ...args)
+    this.initHandlers.push( { args, handler } )
+    return handler
+  }
+  */
+
+  setShared(handler, ...args) {
+    if (!handler) {
+      handler = new Object({
+        setProperty: (object, property, value, has) => {
+          return this.setPropertyDirectly(...[object, property], value, has)
+        },
+        getProperty: (...args) => {
+          return this.getPropertyDirectly(...args)
+        },
+      })
+    }
+    this.setHandler(handler, ...args)
+    this.initHandlers.push( { args, handler } )
+    return handler
+  }
+
+  /*
+  getProperty(object, property) {
     if (this.handlers[object]) {
       if ((this.handlers[object] || {})[property]) {
         return this.handlers[object][property].getProperty(object, property)
@@ -23,22 +64,51 @@ class Frankenhash {
         return this.handlers[object].getProperty(object, property)
       }
     }
-    return this.getPropertyDirectly(object, property, g)
+    return this.getPropertyDirectly(object, property)
+  }
+  */
+
+  getObject(object) {
+    if (!this.root[object]) {
+      this.root[object] = {}
+    }
+    const oldValue = this.root[object]
+    const newValue = this.getProperty(object)
+    if (oldValue !== newValue) {
+      debugger; // target
+      const newValue = this.getProperty(object)
+    }
+    return oldValue;
   }
 
-  getPropertyDirectly(object, property, g) {
-    if (property == 'properties') {
-      const objectProps = this.getObject(object)
-      const values = []
-      for (let key of Object.keys(objectProps)) {
-        if (objectProps[key].has) {
-          values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
-        }
+  getProperty(...args) {
+    let value = this.root;
+    let handler = this.handlers
+    const toDo = Object.assign([], args)
+    while (toDo.length > 0 ) {
+      const property = toDo.shift()
+      handler = handler[property] || {}
+      if (handler.getProperty) {
+        return handler.getProperty(...args)
+      } else {
+        value = value[property] || {}
       }
-      return { marker: 'list', value: values }
-    } else {
-      return (this.root[object][property] || {}).value
     }
+    return value.value || value
+  }
+
+  /*
+  getPropertyDirectly(object, property) {
+    return (this.root[object][property] || {}).value
+  }
+  */
+
+  getPropertyDirectly(...args) {
+    let value = this.root
+    for (let property of args) {
+      value = value[property] || {}
+    }
+    return value.value
   }
 
   setHandler(handler, ...args) {
@@ -67,11 +137,29 @@ class Frankenhash {
   }
 
   hasProperty(object, property, has) {
-    this.getObject(object)[property].has
+    return this.getObject(object)[property].has
   }
 
+  setProperty(object, property, value, has, skipHandler) {
+    if (!skipHandler) {
+      if ((this.handlers || {})[object]) {
+        if ((this.handlers[object] || {})[property]) {
+          return this.handlers[object][property].setProperty(object, property, value, has)
+        } else {
+          return this.handlers[object].setProperty(object, property, value, has)
+        }
+      }
+    }
+
+    this.setPropertyDirectly(object, property, value, has, skipHandler)
+  }
+  
   setPropertyDirectly(object, property, value, has, skipHandler) {
-    this.getObject(object)[property] = {has, value} || undefined
+    // this.getObject(object)[property] = {has, value} || undefined
+    if (!this.root[object]) {
+      this.root[object] = {}
+    }
+    this.root[object][property] = {has, value} || undefined
     if (has && value) {
       let values = this.root[property] || []
       if (!values.includes(value)) {
@@ -316,13 +404,17 @@ class API {
     return andTheAnswerIs
   }
 
+  /*
   copyShared(fromApi) {
     for (let {args, handler} of fromApi.objects.initHandlers) {
       this.setShared(handler, ...args)
     }
   }
+  */
 
   setShared(handler, ...args) {
+    return this.properties.setShared(handler, ...args)
+    /*
     if (!handler) {
       handler = new Object({
         setProperty: (object, property, value, has) => {
@@ -336,6 +428,7 @@ class API {
     this.setHandler(handler, ...args)
     this.objects.initHandlers.push( { args, handler } )
     return handler
+    */
   }
 
   setReadOnly(...args) {
@@ -385,7 +478,18 @@ class API {
 
   // greg
   getProperty(object, property, g) {
-    return this.properties.getProperty(object, property, g)
+    if (property == 'properties') {
+      const objectProps = this.getObject(object)
+      const values = []
+      for (let key of Object.keys(objectProps)) {
+        if (objectProps[key].has) {
+          values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
+        }
+      }
+      return { marker: 'list', value: values }
+    } else {
+      return this.properties.getProperty(object, property)
+    }
     /*
     if ((this.objects.handlers || {})[object]) {
       if ((this.objects.handlers[object] || {})[property]) {
@@ -399,7 +503,18 @@ class API {
   }
 
   getPropertyDirectly(object, property, g) {
-    return this.properties.getPropertyDirectly(object, property, g)
+    if (property == 'properties') {
+      const objectProps = this.getObject(object)
+      const values = []
+      for (let key of Object.keys(objectProps)) {
+        if (objectProps[key].has) {
+          values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
+        }
+      }
+      return { marker: 'list', value: values }
+    } else {
+      return this.properties.getPropertyDirectly(object, property)
+    }
     /*
     if (property == 'properties') {
       const objectProps = this.getObject(object)
@@ -422,6 +537,11 @@ class API {
   }
 
   setProperty(object, property, value, has, skipHandler) {
+    this.properties.setProperty(object, property, value, has, skipHandler)
+    if (!this.objects.concepts.includes(object)) {
+      this.objects.concepts.push(pluralize.singular(object))
+    }
+    /*
     if (!skipHandler) {
       if ((this.objects.handlers || {})[object]) {
         if ((this.objects.handlers[object] || {})[property]) {
@@ -433,13 +553,11 @@ class API {
     }
 
     this.setPropertyDirectly(object, property, value, has, skipHandler)
+    */
   }
   
   setPropertyDirectly(object, property, value, has, skipHandler) {
     this.properties.setPropertyDirectly(object, property, value, has, skipHandler)
-    if (!this.objects.concepts.includes(object)) {
-      this.objects.concepts.push(pluralize.singular(object))
-    }
     /*
     this.getObject(object)[property] = {has, value} || undefined
     if (has && value) {
