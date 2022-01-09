@@ -1,10 +1,11 @@
 const pluralize = require('pluralize')
 
 class Frankenhash {
-  constructor(root, handlers, initHandlers) {
+  constructor(root, handlers, initHandlers, valueSet) {
     this.root = root
     this.handlers = handlers
     this.initHandlers = initHandlers
+    this.valueSet = valueSet
   }
 
   getObject(object) {
@@ -49,6 +50,45 @@ class Frankenhash {
       where = where[arg]
     }
     where[args[args.length-1]] = handler
+  }
+
+  setReadOnly(...args) {
+    const handler = new Object({
+      setProperty: (object, property, value, has) => {
+        const error = Error(`The property '${property}' of the object '${object}' is read only`)
+        error.code = 'ReadOnly'
+        throw error
+      },
+      getProperty: (object, property) => {
+        return this.getPropertyDirectly(object, property)
+      },
+    })
+    this.setHandler(handler, ...args)
+  }
+
+  hasProperty(object, property, has) {
+    this.getObject(object)[property].has
+  }
+
+  setPropertyDirectly(object, property, value, has, skipHandler) {
+    this.getObject(object)[property] = {has, value} || undefined
+    if (has && value) {
+      let values = this.root[property] || []
+      if (!values.includes(value)) {
+        values = values.concat(value)
+      }
+      this.root[property] = values
+      // this.objects.property[property] = (this.objects.property[property] || []).concat(value)
+      // "mccoy's rank is doctor",
+      // infer doctor is a type of rank
+      //this.rememberIsA(value.value, property);
+      this.valueSet(object, property, value, has)
+    }
+    /*
+    if (!this.concepts.includes(object)) {
+      this.concepts.push(pluralize.singular(object))
+    }
+    */
   }
 }
 
@@ -299,6 +339,8 @@ class API {
   }
 
   setReadOnly(...args) {
+    return this.properties.setReadOnly(...args)
+    /*
     const handler = new Object({
       setProperty: (object, property, value, has) => {
         const error = Error(`The property '${property}' of the object '${object}' is read only`)
@@ -310,6 +352,7 @@ class API {
       },
     })
     this.setHandler(handler, ...args)
+    */
   }
 
   setHandler(handler, ...args) {
@@ -374,7 +417,8 @@ class API {
   }
 
   hasProperty(object, property, has) {
-    this.getObject(object)[property].has
+    // this.getObject(object)[property].has
+    return this.hasProperty(object, property, has)
   }
 
   setProperty(object, property, value, has, skipHandler) {
@@ -392,6 +436,11 @@ class API {
   }
   
   setPropertyDirectly(object, property, value, has, skipHandler) {
+    this.properties.setPropertyDirectly(object, property, value, has, skipHandler)
+    if (!this.objects.concepts.includes(object)) {
+      this.objects.concepts.push(pluralize.singular(object))
+    }
+    /*
     this.getObject(object)[property] = {has, value} || undefined
     if (has && value) {
       let values = this.objects.property[property] || []
@@ -407,6 +456,7 @@ class API {
     if (!this.objects.concepts.includes(object)) {
       this.objects.concepts.push(pluralize.singular(object))
     }
+    */
   }
 
   knownObject(object) {
@@ -461,33 +511,6 @@ class API {
     return false
   }
 
-  learnWords(config, context) {
-  }
-/*
-  ensureDefault(map, key, default) {
-    if (!this.objects[map][key]) {
-      this.objects[map][key] = default
-    }
-    return this.objects[map][key]
-  }
-
-  pushListNoDups(list, value) {
-    if (list.includes(value)) {
-      return
-    }
-    list.push(value)
-  }
-
-  ensureConcept(concept) {
-    ensureDefault(this.properties, concept, {})
-    ensureDefault(this.concepts, concept, [])
-  }
-
-  canDo(object, ability) {
-    this.ensureConcept(object)
-    this.pushListNoDups(this.ensureList('abilities', object), ability)
-  }
-*/
   isA(child, ancestor) {
     // return this.objects.parents[child].includes(parent);
     const todo = [child];
@@ -558,7 +581,11 @@ class API {
     objects.parents = {}
     objects.children = {}
     objects.relations = []
-    this.properties = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers)
+
+    const valueSet = (object, property, value, has) => {
+      this.rememberIsA(value.value, property);
+    }
+    this.properties = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers, valueSet)
     this.objects = objects;
   }
 
