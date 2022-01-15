@@ -22,17 +22,12 @@ describe('helpersProperties', () => {
 
       it('set property success non existant object no value', async () => {
         const api = new API()
-        let objects = {}
-        api.initialize(objects)
+        api.objects = {
+          concepts: []
+        }
         api.setProperty('object1', 'property1', 'value1')
         console.log(JSON.stringify(api.objects))
         expected = {
-          "children":  {},
-          "handlers":  {},
-          "initHandlers": [],
-          "parents":  {},
-          "property":  {},
-          "relations": [],
           "concepts": ["object1"],
           "properties": {
             "object1": {
@@ -48,8 +43,12 @@ describe('helpersProperties', () => {
 
       it('set property success non existant object has value', async () => {
           const api = new API()
-          let objects = {}
-          api.initialize(objects)
+          api.objects = {
+            concepts: [],
+            property: {},
+            parents: {},
+            children: {},
+          }
           api.setProperty('object1', 'property1', 'value1', 'has1')
           console.log(JSON.stringify(api.objects))
           expected = {
@@ -65,8 +64,9 @@ describe('helpersProperties', () => {
     describe('getProperty', () => {
       it('get property success', async () => {
         const api = new API()
-        let objects = {}
-        api.initialize(objects)
+        api.objects = {
+          concepts: []
+        }
         api.setProperty('object1', 'property1', 'value1')
         const actual = api.getProperty('object1', 'property1')
         const expected = 'value1'
@@ -81,8 +81,9 @@ describe('helpersProperties', () => {
         setProperty: jest.fn(),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        handlers: {}
+      }
       api.setHandler(handler, 'object1')
       // expect(handler.api).toBe(api)
       expect(api.objects.handlers['object1']).toEqual(handler)
@@ -93,8 +94,10 @@ describe('helpersProperties', () => {
         setProperty: jest.fn(),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        concepts: [],
+        handlers: {},
+      }
       api.setHandler(handler, 'object1')
       api.setProperty('object1', 'property1', 'value1', true)
       // expect(handler.api).toBe(api)
@@ -106,8 +109,9 @@ describe('helpersProperties', () => {
         setProperty: jest.fn(),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        handlers: {}
+      }
       api.setHandler(handler, 'object1', 'property1')
       // expect(handler.api).toBe(api)
       expect(api.objects.handlers['object1']['property1']).toEqual(handler)
@@ -118,8 +122,10 @@ describe('helpersProperties', () => {
         setProperty: jest.fn(),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        concepts: [],
+        handlers: {},
+      }
       api.setHandler(handler, 'object1')
       api.setProperty('object1', 'property1', 'value1', true)
       // expect(handler.api).toBe(api)
@@ -131,8 +137,10 @@ describe('helpersProperties', () => {
         setProperty: jest.fn(),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        concepts: [],
+        handlers: {},
+      }
       api.setHandler(handler, 'object1', 'property1')
       api.setProperty('object1', 'property1', 'value1', true)
       // expect(handler.api).toBe(api)
@@ -144,8 +152,10 @@ describe('helpersProperties', () => {
         getProperty: jest.fn().mockReturnValue(23),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        concepts: [],
+        handlers: {},
+      }
       api.setHandler(handler, 'object1')
       const actual = api.getProperty('object1', 'property1')
       // expect(handler.api).toBe(api)
@@ -158,8 +168,10 @@ describe('helpersProperties', () => {
         getProperty: jest.fn().mockReturnValue(23),
       })
       const api = new API()
-      let objects = {}
-      api.initialize(objects)
+      api.objects = {
+        concepts: [],
+        handlers: {},
+      }
       api.setHandler(handler, 'object1', 'property1')
       const actual = api.getProperty('object1', 'property1')
       // expect(handler.api).toBe(api)

@@ -1,57 +1,5 @@
 const pluralize = require('pluralize')
 
-class Frankenhash {
-  constructor(root, handlers, initHandlers) {
-    this.root = root
-    this.handlers = handlers
-    this.initHandlers = initHandlers
-  }
-
-  getObject(object) {
-    if (!this.root[object]) {
-      this.root[object] = {}
-    }
-    return this.root[object]
-  }
-
-  getProperty(object, property, g) {
-    if (this.handlers[object]) {
-      if ((this.handlers[object] || {})[property]) {
-        return this.handlers[object][property].getProperty(object, property)
-      } else {
-        return this.handlers[object].getProperty(object, property)
-      }
-    }
-    return this.getPropertyDirectly(object, property, g)
-  }
-
-  getPropertyDirectly(object, property, g) {
-    if (property == 'properties') {
-      const objectProps = this.getObject(object)
-      const values = []
-      for (let key of Object.keys(objectProps)) {
-        if (objectProps[key].has) {
-          values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
-        }
-      }
-      return { marker: 'list', value: values }
-    } else {
-      return (this.root[object][property] || {}).value
-    }
-  }
-
-  setHandler(handler, ...args) {
-    let where = this.handlers
-    for (let arg of args.slice(0, args.length-1)) {
-      if (!where[arg]) {
-        where[arg] = {}
-      }
-      where = where[arg]
-    }
-    where[args[args.length-1]] = handler
-  }
-}
-
 class API {
 
   // actionPrefix({before, operator, words, after, semantic, create})
@@ -313,8 +261,6 @@ class API {
   }
 
   setHandler(handler, ...args) {
-    this.properties.setHandler(handler, ...args)
-    /*
     let where = this.objects.handlers
     for (let arg of args.slice(0, args.length-1)) {
       if (!where[arg]) {
@@ -324,12 +270,9 @@ class API {
     }
     where[args[args.length-1]] = handler
     //handler.api = this
-    */
   }
 
   getObject(object) {
-    return this.properties.getObject(object);
-    /*
     if (!this.objects.properties) {
       this.objects.properties = {}
     }
@@ -337,13 +280,9 @@ class API {
       this.objects.properties[object] = {}
     }
     return this.objects.properties[object]
-    */
   }
 
-  // greg
   getProperty(object, property, g) {
-    return this.properties.getProperty(object, property, g)
-    /*
     if ((this.objects.handlers || {})[object]) {
       if ((this.objects.handlers[object] || {})[property]) {
         return this.objects.handlers[object][property].getProperty(object, property)
@@ -352,12 +291,9 @@ class API {
       }
     }
     return this.getPropertyDirectly(object, property, g)
-    */
   }
 
   getPropertyDirectly(object, property, g) {
-    return this.properties.getPropertyDirectly(object, property, g)
-    /*
     if (property == 'properties') {
       const objectProps = this.getObject(object)
       const values = []
@@ -370,7 +306,6 @@ class API {
     } else {
       return (this.objects.properties[object][property] || {}).value
     }
-    */
   }
 
   hasProperty(object, property, has) {
@@ -558,8 +493,6 @@ class API {
     objects.parents = {}
     objects.children = {}
     objects.relations = []
-    this.properties = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers)
-    this.objects = objects;
   }
 
 }
