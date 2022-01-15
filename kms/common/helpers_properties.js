@@ -6,6 +6,17 @@ class Frankenhash {
     this.handlers = handlers
     this.initHandlers = initHandlers
   }
+
+  getObject(path) {
+    let value = this.root
+    for (let property of path) {
+      if (!value[property]) {
+        value[property] = {}
+      }
+      value = value[property]
+    }
+    return value
+  }
   
 }
 
@@ -282,37 +293,7 @@ class API {
   }
 
   getObject(object) {
-    const vold = this.getObjectOld(object)
-    const vnew = this.getObjectNew(object)
-    if (vold !== vnew) {
-      debugger;
-      this.getObjectNew(object)
-    }
-    return vold
-  }
-
-  // greg
-  getObjectOld(object) {
-    if (!this.objects.properties) {
-      this.objects.properties = {}
-    }
-    if (!this.objects.properties[object]) {
-      this.objects.properties[object] = {}
-    }
-    return this.objects.properties[object]
-  }
-
-  getObjectNew(object) {
-    const path = [object]
-    const root = this._objects.properties
-    let value = root // root
-    for (let property of path) {
-      if (!value[object]) {
-        value[object] = {}
-      }
-      value = value[object]
-    }
-    return value
+    return this.propertiesFH.getObject([object])
   }
 
 
