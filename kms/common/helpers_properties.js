@@ -27,6 +27,9 @@ class Frankenhash {
     return value
   }
 
+  setValue(object, property, value, has) {
+    return this.getValue([object])[property] = {has, value} || undefined
+  }
 }
 
 class API {
@@ -332,12 +335,20 @@ class API {
     }
   }
 
+  // DONE
   hasProperty(object, property, has) {
     return this.propertiesFH.getValue([object, property]).has
   }
 
+  // NOT DONE
   setProperty(object, property, value, has, skipHandler) {
     if (!skipHandler) {
+      /*
+      const handler = this.propertiesFH.getHandler([object, property])
+      if (handler) {
+        return handler.setProperty(object, property, value, has)
+      }
+      */
       if ((this.objects.handlers || {})[object]) {
         if ((this.objects.handlers[object] || {})[property]) {
           return this.objects.handlers[object][property].setProperty(object, property, value, has)
@@ -351,8 +362,9 @@ class API {
   }
  
   // greg 
+  // DONE
   setPropertyDirectly(object, property, value, has, skipHandler) {
-    this.getObject(object)[property] = {has, value} || undefined
+    this.propertiesFH.setValue(object, property, value, has)
     if (has && value) {
       let values = this.objects.property[property] || []
       if (!values.includes(value)) {
@@ -373,6 +385,7 @@ class API {
     return !!this.objects.properties[object]
   }
 
+  // NOT DONE
   hasProperty(object, property) {
     if (property == 'properties') {
       return true;
@@ -384,6 +397,7 @@ class API {
     while (todo.length > 0) {
       const next = todo.pop();
       if (((this.objects.properties[next] || {})[property] || {}).has) {
+      //if (this.propertiesFH.getValue([object, property]).has) {
         return true
       }
       const parents = this.objects.parents[next] || [];
