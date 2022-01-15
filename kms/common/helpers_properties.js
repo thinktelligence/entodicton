@@ -482,6 +482,35 @@ class API {
     return this.objects.concepts.includes(concept)
   }
 
+  set objects(objects) {
+    this._objects = objects
+
+    objects.concepts = []
+    // object -> property -> {has, value}
+    objects.properties = {}
+    // property -> values
+    objects.property = {}
+    objects.handlers = {}
+    objects.initHandlers = []
+    objects.parents = {}
+    objects.children = {}
+    objects.relations = []
+    // this.propertiesFH = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers)
+    // this._objects.a = 23
+    // this.properties.root.a = 23
+    //this.getObject()
+    /*
+    if (this.propertiesFH.root != this.objects.properties) {
+      debugger // target 0
+    }
+    */
+  }
+
+  get objects() {
+    return this._objects
+  }
+
+  /*
   initialize(objects) {
     objects.concepts = []
     // object -> property -> {has, value}
@@ -494,6 +523,7 @@ class API {
     objects.children = {}
     objects.relations = []
   }
+  */
 
 }
 
