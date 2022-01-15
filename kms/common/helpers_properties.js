@@ -6,6 +6,7 @@ class Frankenhash {
     this.handlers = handlers
     this.initHandlers = initHandlers
   }
+  
 }
 
 class API {
@@ -254,7 +255,7 @@ class API {
     return handler
   }
 
-  setReadOnly(...path) {
+  setReadOnly(path) {
     const handler = new Object({
       setProperty: (object, property, value, has) => {
         const error = Error(`The property '${property}' of the object '${object}' is read only`)
@@ -281,6 +282,17 @@ class API {
   }
 
   getObject(object) {
+    const vold = this.getObjectOld(object)
+    const vnew = this.getObjectNew(object)
+    if (vold !== vnew) {
+      debugger;
+      this.getObjectNew(object)
+    }
+    return vold
+  }
+
+  // greg
+  getObjectOld(object) {
     if (!this.objects.properties) {
       this.objects.properties = {}
     }
@@ -289,6 +301,20 @@ class API {
     }
     return this.objects.properties[object]
   }
+
+  getObjectNew(object) {
+    const path = [object]
+    const root = this._objects.properties
+    let value = root // root
+    for (let property of path) {
+      if (!value[object]) {
+        value[object] = {}
+      }
+      value = value[object]
+    }
+    return value
+  }
+
 
   getProperty(object, property, g) {
     if ((this.objects.handlers || {})[object]) {
@@ -333,7 +359,8 @@ class API {
 
     this.setPropertyDirectly(object, property, value, has, skipHandler)
   }
-  
+ 
+  // greg 
   setPropertyDirectly(object, property, value, has, skipHandler) {
     this.getObject(object)[property] = {has, value} || undefined
     if (has && value) {

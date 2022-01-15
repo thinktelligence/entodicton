@@ -240,7 +240,7 @@ let config = {
       notes: 'marking something as readonly',
       match: ({context}) => context.marker == 'readonly' && context.same,
       apply: ({context, km, objects}) => {
-        km('properties').api.setReadOnly(context.same.value) 
+        km('properties').api.setReadOnly([context.same.value]) 
         context.sameWasProcessed = true
       }
     },
