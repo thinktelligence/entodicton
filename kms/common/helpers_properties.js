@@ -233,12 +233,12 @@ class API {
   }
 
   copyShared(fromApi) {
-    for (let {args, handler} of fromApi.objects.initHandlers) {
-      this.setShared(handler, ...args)
+    for (let {path, handler} of fromApi.objects.initHandlers) {
+      this.setShared(args, handler)
     }
   }
 
-  setShared(handler, ...args) {
+  setShared(path, handler) {
     if (!handler) {
       handler = new Object({
         setProperty: (object, property, value, has) => {
@@ -249,12 +249,12 @@ class API {
         },
       })
     }
-    this.setHandler(handler, ...args)
-    this.objects.initHandlers.push( { args, handler } )
+    this.setHandler(path, handler)
+    this.objects.initHandlers.push( { path, handler } )
     return handler
   }
 
-  setReadOnly(...args) {
+  setReadOnly(...path) {
     const handler = new Object({
       setProperty: (object, property, value, has) => {
         const error = Error(`The property '${property}' of the object '${object}' is read only`)
@@ -265,18 +265,18 @@ class API {
         return this.getPropertyDirectly(object, property)
       },
     })
-    this.setHandler(handler, ...args)
+    this.setHandler(path, handler)
   }
 
-  setHandler(handler, ...args) {
+  setHandler(path, handler) {
     let where = this.objects.handlers
-    for (let arg of args.slice(0, args.length-1)) {
+    for (let arg of path.slice(0, path.length-1)) {
       if (!where[arg]) {
         where[arg] = {}
       }
       where = where[arg]
     }
-    where[args[args.length-1]] = handler
+    where[path[path.length-1]] = handler
     //handler.api = this
   }
 
