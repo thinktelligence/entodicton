@@ -1,5 +1,13 @@
 const pluralize = require('pluralize')
 
+class Frankenhash {
+  constructor(root, handlers, initHandlers) {
+    this.root = root
+    this.handlers = handlers
+    this.initHandlers = initHandlers
+  }
+}
+
 class API {
 
   // actionPrefix({before, operator, words, after, semantic, create})
@@ -495,7 +503,7 @@ class API {
     objects.parents = {}
     objects.children = {}
     objects.relations = []
-    // this.propertiesFH = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers)
+    this.propertiesFH = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers)
     // this._objects.a = 23
     // this.properties.root.a = 23
     //this.getObject()
