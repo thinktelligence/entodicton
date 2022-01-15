@@ -7,7 +7,7 @@ class Frankenhash {
     this.initHandlers = initHandlers
   }
 
-  getObject(path) {
+  getValue(path) {
     let value = this.root
     for (let property of path) {
       if (!value[property]) {
@@ -18,6 +18,15 @@ class Frankenhash {
     return value
   }
   
+  getHandler(path) {
+    let value = this.handlers
+    for (let property in path) {
+      value = value || {}
+      value = value[property]
+    }
+    return value
+  }
+
 }
 
 class API {
@@ -293,24 +302,24 @@ class API {
   }
 
   getObject(object) {
-    return this.propertiesFH.getObject([object])
+    return this.propertiesFH.getValue([object])
   }
 
+  getHandler(object, property) {
+    return this.propertiesFH.getHandler([object, property])
+  }
 
   getProperty(object, property, g) {
-    if ((this.objects.handlers || {})[object]) {
-      if ((this.objects.handlers[object] || {})[property]) {
-        return this.objects.handlers[object][property].getProperty(object, property)
-      } else {
-        return this.objects.handlers[object].getProperty(object, property)
-      }
+    const handler = this.propertiesFH.getHandler([object, property])
+    if (handler) {
+      return handler.getProperty(object, property)
     }
     return this.getPropertyDirectly(object, property, g)
   }
 
   getPropertyDirectly(object, property, g) {
     if (property == 'properties') {
-      const objectProps = this.getObject(object)
+      const objectProps = this.propertiesFH.getValue([object])
       const values = []
       for (let key of Object.keys(objectProps)) {
         if (objectProps[key].has) {
@@ -319,12 +328,12 @@ class API {
       }
       return { marker: 'list', value: values }
     } else {
-      return (this.objects.properties[object][property] || {}).value
+      return this.propertiesFH.getValue([object, property]).value
     }
   }
 
   hasProperty(object, property, has) {
-    this.getObject(object)[property].has
+    return this.propertiesFH.getValue([object, property]).has
   }
 
   setProperty(object, property, value, has, skipHandler) {
