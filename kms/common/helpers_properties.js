@@ -7,6 +7,21 @@ class Frankenhash {
     this.initHandlers = initHandlers
   }
 
+  setInitHandler({path, handler}) {
+    this.initHandlers.puh( { path, handler } )
+  }
+
+  setHandler(path, handler) {
+    let where = this.handlers
+    for (let arg of path.slice(0, path.length-1)) {
+      if (!where[arg]) {
+        where[arg] = {}
+      }
+      where = where[arg]
+    }
+    where[path[path.length-1]] = handler
+  }
+
   getValue(path, writeDefault=true) {
     let value = this.root
     for (let property of path) {
@@ -305,8 +320,8 @@ class API {
         },
       })
     }
-    this.setHandler(path, handler)
-    this.objects.initHandlers.push( { path, handler } )
+    this.propertiesFH.setHandler(path, handler)
+    this.propertiesFH.setInitHandlers( { path, handler } )
     return handler
   }
 
@@ -321,19 +336,7 @@ class API {
         return this.getPropertyDirectly(object, property)
       },
     })
-    this.setHandler(path, handler)
-  }
-
-  setHandler(path, handler) {
-    let where = this.objects.handlers
-    for (let arg of path.slice(0, path.length-1)) {
-      if (!where[arg]) {
-        where[arg] = {}
-      }
-      where = where[arg]
-    }
-    where[path[path.length-1]] = handler
-    //handler.api = this
+    this.propertiesFH.setHandler(path, handler)
   }
 
   getObject(object) {
