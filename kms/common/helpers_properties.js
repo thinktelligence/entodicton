@@ -408,7 +408,6 @@ class API {
     return this.propertiesFH.knownProperty(path)
   }
 
-  // NOT DONE
   hasProperty(object, property) {
     if (property == 'properties') {
       return true;
@@ -444,7 +443,7 @@ class API {
     const seen = [object];
     while (todo.length > 0) {
       const next = todo.pop();
-      if ((this.objects.properties[next] || {})[property] !== undefined) {
+      if ((this.propertiesFH.getValue([next, property], false) || {}).has) {
         return true
       }
       const parents = this.objects.parents[next] || [];
