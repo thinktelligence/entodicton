@@ -7,11 +7,15 @@ class Frankenhash {
     this.initHandlers = initHandlers
   }
 
-  getValue(path) {
+  getValue(path, writeDefault=true) {
     let value = this.root
     for (let property of path) {
       if (!value[property]) {
-        value[property] = {}
+        if (writeDefault) {
+          value[property] = {}
+        } else {
+          return null
+        }
       }
       value = value[property]
     }
@@ -57,8 +61,6 @@ class Frankenhash {
     const prefix = path.slice(0, path.length - 1)
     const last = path[path.length-1]
     return this.getValue(prefix)[property] = {has, value} || undefined
-
-    //return this.getValue([object])[property] = {has, value} || undefined
   }
 }
 
@@ -370,11 +372,10 @@ class API {
     return this.propertiesFH.getValue([object, property]).has
   }
 
-  // NOT DONE
   setProperty(object, property, value, has, skipHandler) {
     if (!skipHandler) {
-      const handlerNew = this.propertiesFH.getHandler([object, property])
-      if (handlerNew) {
+      const handler = this.propertiesFH.getHandler([object, property])
+      if (handler) {
         return handler.setProperty(object, property, value, has)
       }
     }
@@ -418,8 +419,7 @@ class API {
     const seen = [object];
     while (todo.length > 0) {
       const next = todo.pop();
-      if (((this.objects.properties[next] || {})[property] || {}).has) {
-      //if (this.propertiesFH.getValue([object, property]).has) {
+      if ((this.propertiesFH.getValue([next, property], false) || {}).has) {
         return true
       }
       const parents = this.objects.parents[next] || [];
