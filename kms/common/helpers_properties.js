@@ -1,18 +1,19 @@
 const pluralize = require('pluralize')
 
 class Frankenhash {
-  constructor(root, handlers, initHandlers) {
-    this.root = root
-    this.handlers = handlers
-    this.initHandlers = initHandlers
+  constructor(data) {
+    this.data = data
+    this.data.root = {}
+    this.data.handlers = {}
+    this.data.initHandlers = {}
   }
 
   setInitHandler({path, handler}) {
-    this.initHandlers.puh( { path, handler } )
+    this.data.initHandlers.push( { path, handler } )
   }
 
   setHandler(path, handler) {
-    let where = this.handlers
+    let where = this.data.handlers
     for (let arg of path.slice(0, path.length-1)) {
       if (!where[arg]) {
         where[arg] = {}
@@ -23,7 +24,7 @@ class Frankenhash {
   }
 
   getValue(path, writeDefault=true) {
-    let value = this.root
+    let value = this.data.root
     for (let property of path) {
       if (!value[property]) {
         if (writeDefault) {
@@ -42,7 +43,7 @@ class Frankenhash {
   }
 
   getHandler(path) {
-    let value = this.handlers
+    let value = this.data.handlers
     for (let property of path) {
       if (this.isHandler(value)) {
         return value
@@ -54,7 +55,7 @@ class Frankenhash {
   }
 
   knownProperty(path) {
-    let value = this.root;
+    let value = this.data.root;
     for (let property of path) {
       if (!value[property]) {
         return false
@@ -550,12 +551,10 @@ class API {
     objects.properties = {}
     // property -> values
     objects.property = {}
-    objects.handlers = {}
-    objects.initHandlers = []
     objects.parents = {}
     objects.children = {}
     objects.relations = []
-    this.propertiesFH = new Frankenhash(objects.properties, objects.handlers, objects.initHandlers)
+    this.propertiesFH = new Frankenhash(objects.properties)
   }
 
   get objects() {
