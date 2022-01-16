@@ -27,6 +27,18 @@ class Frankenhash {
     return value
   }
 
+  knownProperty(path) {
+    let value = this.root;
+    for (let property of path) {
+      if (!value[property]) {
+        return false
+      }
+      value = value[property]
+    }
+    return !!value
+  }
+
+
   ensureValue(path, value, has=true) {
     if (!this.getValue(path)) {
       this.setValue(path, value, has)
@@ -391,9 +403,10 @@ class API {
     }
   }
 
-  // NOT DONE
   knownObject(object) {
-    return !!this.objects.properties[object]
+    const path = [object]
+    // return this.knownPropertyNew(path)
+    return this.propertiesFH.knownProperty(path)
   }
 
   // NOT DONE
