@@ -27,8 +27,19 @@ class Frankenhash {
     return value
   }
 
-  setValue(object, property, value, has) {
-    return this.getValue([object])[property] = {has, value} || undefined
+  ensureValue(path, value, has=true) {
+    if (!this.getValue(path)) {
+      this.setValue(path, value, has)
+    }
+  }
+
+  setValue(path, value, has) {
+    const [object, property] = path
+    const prefix = path.slice(0, path.length - 1)
+    const last = path[path.length-1]
+    return this.getValue(prefix)[property] = {has, value} || undefined
+
+    //return this.getValue([object])[property] = {has, value} || undefined
   }
 }
 
@@ -211,7 +222,7 @@ class API {
       addConcept(word, 'many')
     }
 
-    // mark greg as an instance?
+    // mark g2reg as an instance?
     // add a generator for the other one what will ask what is the plural or singluar of known
     /*
     if (number == 'many') {
@@ -361,10 +372,9 @@ class API {
     this.setPropertyDirectly(object, property, value, has, skipHandler)
   }
  
-  // greg 
   // DONE
   setPropertyDirectly(object, property, value, has, skipHandler) {
-    this.propertiesFH.setValue(object, property, value, has)
+    this.propertiesFH.setValue([object, property], value, has)
     if (has && value) {
       let values = this.objects.property[property] || []
       if (!values.includes(value)) {
@@ -500,17 +510,13 @@ class API {
     if (!this.objects.concepts.includes(child)) {
       this.objects.concepts.push(child)
     }
+
     if (!this.objects.concepts.includes(parent)) {
       this.objects.concepts.push(parent)
     }
 
-    if (!this.objects.properties[child]) {
-      this.objects.properties[child] = {}
-    }
-
-    if (!this.objects.properties[parent]) {
-      this.objects.properties[parent] = {}
-    }
+    this.propertiesFH.ensureValue([child], {})
+    this.propertiesFH.ensureValue([parent], {})
   }
 
   children(parent) {

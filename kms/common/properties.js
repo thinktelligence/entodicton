@@ -319,6 +319,7 @@ let config = {
           api.setProperty(pluralize.singular(objectId), pluralize.singular(propertyId), context.same, true)
           context.sameWasProcessed = true
         } catch (e) {
+          debugger;
           const config = km('properties')
           const fragment = config.fragment("the property1 of object1 is value1")
           const value = api.getProperty(objectId, propertyId)
