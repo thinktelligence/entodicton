@@ -17,10 +17,17 @@ class Frankenhash {
     }
     return value
   }
-  
+
+  isHandler(value) {
+    return value && !!value.getProperty && !!value.setProperty
+  }
+
   getHandler(path) {
     let value = this.handlers
-    for (let property in path) {
+    for (let property of path) {
+      if (this.isHandler(value)) {
+        return value
+      }
       value = value || {}
       value = value[property]
     }
@@ -366,18 +373,9 @@ class API {
   // NOT DONE
   setProperty(object, property, value, has, skipHandler) {
     if (!skipHandler) {
-      /*
-      const handler = this.propertiesFH.getHandler([object, property])
-      if (handler) {
+      const handlerNew = this.propertiesFH.getHandler([object, property])
+      if (handlerNew) {
         return handler.setProperty(object, property, value, has)
-      }
-      */
-      if ((this.objects.handlers || {})[object]) {
-        if ((this.objects.handlers[object] || {})[property]) {
-          return this.objects.handlers[object][property].setProperty(object, property, value, has)
-        } else {
-          return this.objects.handlers[object].setProperty(object, property, value, has)
-        }
       }
     }
 
