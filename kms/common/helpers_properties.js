@@ -5,7 +5,7 @@ class Frankenhash {
     this.data = data
     this.data.root = {}
     this.data.handlers = {}
-    this.data.initHandlers = {}
+    this.data.initHandlers = []
   }
 
   setInitHandler({path, handler}) {
@@ -39,7 +39,7 @@ class Frankenhash {
   }
 
   isHandler(value) {
-    return value && !!value.getProperty && !!value.setProperty
+    return value && !!value.getValue && !!value.setValue
   }
 
   getHandler(path) {
@@ -73,10 +73,9 @@ class Frankenhash {
   }
 
   setValue(path, value, has) {
-    const [object, property] = path
     const prefix = path.slice(0, path.length - 1)
     const last = path[path.length-1]
-    return this.getValue(prefix)[property] = {has, value} || undefined
+    this.getValue(prefix)[last] = {has, value} || undefined
   }
 }
 
@@ -304,36 +303,38 @@ class API {
     return andTheAnswerIs
   }
 
+  /*
   copyShared(fromApi) {
     for (let {path, handler} of fromApi.objects.initHandlers) {
       this.setShared(args, handler)
     }
   }
+  */
 
   setShared(path, handler) {
     if (!handler) {
       handler = new Object({
-        setProperty: (object, property, value, has) => {
-          return this.setPropertyDirectly(object, property, value, has)
+        setValue: ([object, property], value, has) => {
+          return this.setProperty(object, property, value, has, true)
         },
-        getProperty: (object, property) => {
+        getValue: ([object, property]) => {
           return this.getPropertyDirectly(object, property)
         },
       })
     }
     this.propertiesFH.setHandler(path, handler)
-    this.propertiesFH.setInitHandlers( { path, handler } )
+    this.propertiesFH.setInitHandler( { path, handler } )
     return handler
   }
 
   setReadOnly(path) {
     const handler = new Object({
-      setProperty: (object, property, value, has) => {
+      setValue: ([object, property], value, has) => {
         const error = Error(`The property '${property}' of the object '${object}' is read only`)
         error.code = 'ReadOnly'
         throw error
       },
-      getProperty: (object, property) => {
+      getValue: ([object, property]) => {
         return this.getPropertyDirectly(object, property)
       },
     })
@@ -351,7 +352,7 @@ class API {
   getProperty(object, property, g) {
     const handler = this.propertiesFH.getHandler([object, property])
     if (handler) {
-      return handler.getProperty(object, property)
+      return handler.getValue([object, property])
     }
     return this.getPropertyDirectly(object, property, g)
   }
@@ -371,7 +372,6 @@ class API {
     }
   }
 
-  // DONE
   hasProperty(object, property, has) {
     return this.propertiesFH.getValue([object, property]).has
   }
@@ -380,15 +380,10 @@ class API {
     if (!skipHandler) {
       const handler = this.propertiesFH.getHandler([object, property])
       if (handler) {
-        return handler.setProperty(object, property, value, has)
+        return handler.setValue([object, property], value, has)
       }
     }
 
-    this.setPropertyDirectly(object, property, value, has, skipHandler)
-  }
- 
-  // DONE
-  setPropertyDirectly(object, property, value, has, skipHandler) {
     this.propertiesFH.setValue([object, property], value, has)
     if (has && value) {
       let values = this.objects.property[property] || []
@@ -563,5 +558,6 @@ class API {
 }
 
 module.exports = {
-  API
+  API,
+  Frankenhash,
 }

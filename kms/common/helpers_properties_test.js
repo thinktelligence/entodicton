@@ -1,4 +1,4 @@
-const { API } = require('./helpers_properties')
+const { API, Frankenhash } = require('./helpers_properties')
 
 describe('helpersProperties', () => {
   describe('default', () => {
@@ -6,14 +6,16 @@ describe('helpersProperties', () => {
       it('initialize objects', async () => {
         const api = new API()
         const objects = {}
-        api.initialize(objects)
+        api.objects = objects
         expected = {
           "children":  {},
           "concepts": [],
-          "handlers":  {},
-          "initHandlers": [],
+          "properties":  {
+            "root":  {},
+            "handlers":  {},
+            "initHandlers": [],
+          },
           "parents":  {},
-          "properties":  {},
           "property":  {},
           "relations": [],
         }
@@ -26,18 +28,29 @@ describe('helpersProperties', () => {
           concepts: []
         }
         api.setProperty('object1', 'property1', 'value1')
-        console.log(JSON.stringify(api.objects))
+        console.log(JSON.stringify(api.objects, null, 2))
         expected = {
-          "concepts": ["object1"],
+          "concepts": [
+            "object1"
+          ],
           "properties": {
-            "object1": {
-              "property1": {
-                "has": undefined,
-                "value":"value1"
+            "root": {
+              "object1": {
+                "property1": {
+                  "value": "value1",
+                  "has": undefined,
+                }
               }
-            }
-          }
+            },
+            "handlers": {},
+            "initHandlers": []
+          },
+          "property": {},
+          "parents": {},
+          "children": {},
+          "relations": []
         }
+
         expect(api.objects).toStrictEqual(expected)
       })
 
@@ -57,7 +70,7 @@ describe('helpersProperties', () => {
                   "value":"value1"
                 }
               }
-          expect(api.objects.properties.object1).toStrictEqual(expected)
+          expect(api.objects.properties.root.object1).toStrictEqual(expected)
         })
     })
 
@@ -78,105 +91,108 @@ describe('helpersProperties', () => {
   describe('handler', () => {
     it('set object handler', async () => {
       const handler = new Object({
-        setProperty: jest.fn(),
+        getValue: jest.fn(),
+        setValue: jest.fn(),
       })
       const api = new API()
       api.objects = {
         handlers: {}
       }
-      api.setHandler(handler, 'object1')
+      api.propertiesFH.setHandler(['object1'], handler)
       // expect(handler.api).toBe(api)
-      expect(api.objects.handlers['object1']).toEqual(handler)
+      expect(api.objects.properties.handlers['object1']).toEqual(handler)
     })
 
     it('set uses object handler', async () => {
       const handler = new Object({
-        setProperty: jest.fn(),
+        getValue: jest.fn(),
+        setValue: jest.fn(),
       })
       const api = new API()
       api.objects = {
         concepts: [],
         handlers: {},
       }
-      api.setHandler(handler, 'object1')
+      api.propertiesFH.setHandler(['object1'], handler)
       api.setProperty('object1', 'property1', 'value1', true)
       // expect(handler.api).toBe(api)
-      expect(handler.setProperty).toBeCalledWith('object1', 'property1', 'value1', true)
+      expect(handler.setValue).toBeCalledWith(['object1', 'property1'], 'value1', true)
     })
 
     it('set property handler', async () => {
       const handler = new Object({
-        setProperty: jest.fn(),
+        getValue: jest.fn(),
+        setValue: jest.fn(),
       })
       const api = new API()
       api.objects = {
         handlers: {}
       }
-      api.setHandler(handler, 'object1', 'property1')
+      api.propertiesFH.setHandler(['object1', 'property1'], handler)
       // expect(handler.api).toBe(api)
-      expect(api.objects.handlers['object1']['property1']).toEqual(handler)
+      expect(api.objects.properties.handlers['object1']['property1']).toEqual(handler)
     })
 
     it('set uses property handler for object', async () => {
       const handler = new Object({
-        setProperty: jest.fn(),
+        getValue: jest.fn(),
+        setValue: jest.fn(),
       })
       const api = new API()
       api.objects = {
         concepts: [],
         handlers: {},
       }
-      api.setHandler(handler, 'object1')
+      api.propertiesFH.setHandler(['object1'], handler)
       api.setProperty('object1', 'property1', 'value1', true)
       // expect(handler.api).toBe(api)
-      expect(handler.setProperty).toBeCalledWith('object1', 'property1', 'value1', true)
+      expect(handler.setValue).toBeCalledWith(['object1', 'property1'], 'value1', true)
     })
 
     it('set uses property handler for property', async () => {
       const handler = new Object({
-        setProperty: jest.fn(),
+        getValue: jest.fn(),
+        setValue: jest.fn(),
       })
       const api = new API()
       api.objects = {
         concepts: [],
         handlers: {},
       }
-      api.setHandler(handler, 'object1', 'property1')
+      api.propertiesFH.setHandler(['object1', 'property1'], handler)
       api.setProperty('object1', 'property1', 'value1', true)
       // expect(handler.api).toBe(api)
-      expect(handler.setProperty).toBeCalledWith('object1', 'property1', 'value1', true)
+      expect(handler.setValue).toBeCalledWith(['object1', 'property1'], 'value1', true)
     })
 
     it('get property success with object having a handler', async () => {
       const handler = new Object({
-        getProperty: jest.fn().mockReturnValue(23),
+        getValue: jest.fn().mockReturnValue(23),
+        setValue: jest.fn(),
       })
       const api = new API()
       api.objects = {
         concepts: [],
         handlers: {},
       }
-      api.setHandler(handler, 'object1')
+      api.propertiesFH.setHandler(['object1'], handler)
       const actual = api.getProperty('object1', 'property1')
-      // expect(handler.api).toBe(api)
       expect(actual).toBe(23)
-      expect(handler.getProperty).toBeCalledWith('object1', 'property1')
+      expect(handler.getValue).toBeCalledWith(['object1', 'property1'])
     })
 
     it('get property success with object property having a handler', async () => {
       const handler = new Object({
-        getProperty: jest.fn().mockReturnValue(23),
+        getValue: jest.fn().mockReturnValue(23),
+        setValue: jest.fn(),
       })
       const api = new API()
-      api.objects = {
-        concepts: [],
-        handlers: {},
-      }
-      api.setHandler(handler, 'object1', 'property1')
+      api.objects = {}
+      api.propertiesFH.setHandler(['object1', 'property1'], handler)
       const actual = api.getProperty('object1', 'property1')
       // expect(handler.api).toBe(api)
       expect(actual).toBe(23)
-      expect(handler.getProperty).toBeCalledWith('object1', 'property1')
+      expect(handler.getValue).toBeCalledWith(['object1', 'property1'])
     })
   })
 
@@ -184,9 +200,8 @@ describe('helpersProperties', () => {
     it('mark object read only object', async () => {
       const api = new API()
       api.objects = {}
-      api.initialize(api.objects)
       api.setProperty('object1', 'property1', 'value1', 'has1')
-      api.setReadOnly('object1')
+      api.setReadOnly(['object1'])
       expect(api.getProperty('object1', 'property1')).toEqual('value1')
       expect(() => api.setProperty('object1', 'property1', 'value1', 'has1')).toThrow("The property 'property1' of the object 'object1' is read only")
     })
@@ -194,9 +209,8 @@ describe('helpersProperties', () => {
     it('mark object read only property', async () => {
       const api = new API()
       api.objects = {}
-      api.initialize(api.objects)
       api.setProperty('object1', 'property1', 'value1', 'has1')
-      api.setReadOnly('object1', 'property1')
+      api.setReadOnly(['object1', 'property1'])
       expect(api.getProperty('object1', 'property1')).toEqual('value1')
       expect(() => api.setProperty('object1', 'property1', 'value1', 'has1')).toThrow("The property 'property1' of the object 'object1' is read only")
     })
@@ -206,14 +220,13 @@ describe('helpersProperties', () => {
     it('mark share object', async () => {
       const api1 = new API()
       api1.objects = {}
-      api1.initialize(api1.objects)
-      const share = api1.setShared(null, 'object1')
+      const share = api1.setShared(['object1'])
 
       const api2 = new API()
       api2.objects = {}
-      api2.initialize(api2.objects)
-      api2.setShared(share, 'object1')
+      api2.setShared(['object1'], share)
 
+      debugger;
       api1.setProperty('object1', 'property1', 'value1', 'has1')
       api2.setProperty('object1', 'property2', 'value2', 'has2')
 
@@ -257,15 +270,16 @@ describe('helpersProperties', () => {
       */
     })
 
+    /*
     it('copy shared to copy', async () => {
       const api1 = new API()
       api1.objects = {}
-      api1.initialize(api1.objects)
-      api1.setShared(null, 'object1')
+      debugger;
+      //api1.initialize(api1.objects)
+      api1.setShared(['object1'])
 
       const api2 = new API()
       api2.objects = {}
-      api2.initialize(api2.objects)
       api2.copyShared(api1)
 
       api1.setProperty('object1', 'property1', 'value1', 'has1')
@@ -276,6 +290,7 @@ describe('helpersProperties', () => {
       expect(api2.getProperty('object1', 'property1')).toEqual('value1')
       expect(api2.getProperty('object1', 'property2')).toEqual('value2')
     })
+    */
   })
 
 })
