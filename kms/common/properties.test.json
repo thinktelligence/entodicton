@@ -18,7 +18,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -319,6 +319,10 @@
     },
     "contexts": [
       {
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "doesable": true,
         "marker": "have",
         "negation": true,
@@ -486,6 +490,10 @@
       "processed": [
         {
           "context": {
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "doesable": true,
             "marker": "have",
             "negation": true,
@@ -548,7 +556,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -849,6 +857,10 @@
     },
     "contexts": [
       {
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "doesable": true,
         "marker": "have",
         "negation": true,
@@ -879,6 +891,10 @@
         "word": "have"
       },
       {
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "doesable": true,
         "marker": "have",
         "object": {
@@ -1072,7 +1088,7 @@
         },
         {
           "op": [
-            "doesnt",
+            "does",
             0
           ],
           "ops": [
@@ -1088,14 +1104,22 @@
         },
         {
           "op": [
-            "have",
+            "doesnt",
             0
           ],
           "ops": [
             [
-              "does",
+              "doesnt",
               0
-            ],
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            0
+          ],
+          "ops": [
             [
               "have",
               0
@@ -1109,24 +1133,8 @@
           ],
           "ops": [
             [
-              "does",
-              0
-            ],
-            [
               "have",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "does",
-            0
-          ],
-          "ops": [
-            [
-              "does",
-              0
             ]
           ]
         }
@@ -1173,6 +1181,10 @@
       "processed": [
         {
           "context": {
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "doesable": true,
             "marker": "have",
             "object": {
@@ -1213,6 +1225,10 @@
         },
         {
           "context": {
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "doesable": true,
             "marker": "have",
             "negation": true,
@@ -1278,7 +1294,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -1580,6 +1596,10 @@
     "contexts": [
       {
         "default": true,
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -1707,6 +1727,10 @@
         {
           "context": {
             "default": true,
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -1764,7 +1788,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -2066,6 +2090,10 @@
     "contexts": [
       {
         "default": true,
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -2092,6 +2120,10 @@
       },
       {
         "default": true,
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -2332,6 +2364,10 @@
         {
           "context": {
             "default": true,
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -2374,6 +2410,10 @@
         {
           "context": {
             "default": true,
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -2434,7 +2474,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -2736,6 +2776,10 @@
     "contexts": [
       {
         "default": true,
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -2891,6 +2935,10 @@
         {
           "context": {
             "default": true,
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -2955,7 +3003,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -3257,6 +3305,10 @@
     "contexts": [
       {
         "default": true,
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -3283,6 +3335,10 @@
       },
       {
         "default": true,
+        "do": {
+          "left": "object",
+          "right": "property"
+        },
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -3523,6 +3579,10 @@
         {
           "context": {
             "default": true,
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -3565,6 +3625,10 @@
         {
           "context": {
             "default": true,
+            "do": {
+              "left": "object",
+              "right": "property"
+            },
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -3625,7 +3689,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -3947,7 +4011,7 @@
       "opChoices": [
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
@@ -3967,12 +4031,12 @@
         },
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -4090,7 +4154,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -4811,7 +4875,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -4850,6 +4914,10 @@
             [
               "the",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -4870,12 +4938,16 @@
             [
               "the",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -4888,7 +4960,7 @@
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -5449,7 +5521,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -6046,7 +6118,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -6074,7 +6146,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -6091,7 +6163,7 @@
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -6505,7 +6577,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -7103,7 +7175,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -7142,12 +7214,16 @@
             [
               "the",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -7160,7 +7236,7 @@
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -7571,7 +7647,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -8233,7 +8309,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -8257,7 +8333,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -8270,7 +8346,7 @@
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -8615,7 +8691,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -9411,7 +9487,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -10581,7 +10657,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -11012,7 +11088,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -11515,7 +11591,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -12048,7 +12124,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -12692,7 +12768,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -13334,7 +13410,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0] }",
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },

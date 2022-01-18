@@ -85,7 +85,8 @@ class API {
   //
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for
-  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering }, semanticApply) {
+  // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does greg like bananas
+  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble }, semanticApply) {
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
@@ -106,7 +107,11 @@ class API {
         }
         const beforeArgs = tagsToProps('before', before)
         const afterArgs = tagsToProps('after', after)
-        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${beforeArgs} ${afterArgs} }` })
+        let doParams = '';
+        if (doAble) {
+          doParams = `, do: { left: "${before[0].tag}", right: "${after[0].tag}" } `
+        }
+        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs} }` })
         config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
       } else {
         config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }"})
@@ -118,38 +123,55 @@ class API {
     config.addWord(operatorSingular, { id: operator, initial: `{ value: '${operator}' }`})
     config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}' }`})
 
-    config.addHierarchy(operator, 'canBeDoQuestion')
+    if (doAble) {
+      config.addHierarchy(operator, 'canBeDoQuestion')
+    }
 
     config.addPriorities([['means', 0], [operator, 0]])
     config.addPriorities([[operator, 0], ['the', 0]])
     config.addPriorities([[operator, 0], ['a', 0]])
 
     config.addGenerator({
-      match: ({context}) => context.marker == operator && context.paraphrase,
+      notes: 'ordering generator for paraphrase',
+      match: ({context}) => context.marker == operator && context.paraphrase && !context.query,
       apply: ({context, g}) => {
         const beforeGenerator = before.map( (arg) => g(context[arg.tag]) )
         const afterGenerator = after.map( (arg) => g(context[arg.tag]) )
         return beforeGenerator.concat([`${context.word}`]).concat(afterGenerator).join(' ')
       }
     })
+
+    config.addGenerator({
+      notes: 'ordering generator for response',
+      match: ({context}) => context.marker == operator && context.response,
+      apply: ({context, g}) => {
+        const { response } = context 
+        const beforeGenerator = before.map( (arg) => g(response[arg.tag]) )
+        const afterGenerator = after.map( (arg) => g(response[arg.tag]) )
+        return beforeGenerator.concat([`${response.word}`]).concat(afterGenerator).join(' ')
+      }
+    })
  
     if (ordering) {
       config.addSemantic({
+        notes: 'ordering setter',
+        // TODO use hierarchy for operator
         match: ({context}) => context.marker == operator,
         apply: ({context, km}) => {
           const api = km('ordering').api
-          api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context.value)
+          api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
         }
       })
-      /*
       config.addSemantic({
+        notes: 'ordering query',
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
-          const api = km('properties').api
-          context.response = api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+          const api = km('ordering').api
+          debugger; // 2
+          const value = api.getCategory(ordering.name, context[ordering.object].value, context[ordering.category].value)
+          context.response = value; 
         }
       })
-      */
     }
 
     if (relation) {

@@ -53,6 +53,7 @@ config.initializer(({config, km}) => {
                 object: 'lover',
                 category: 'lovee',
               },
+              doAble: true,
               config
             })
   papi.createActionPrefix({
@@ -65,6 +66,7 @@ config.initializer(({config, km}) => {
                 object: 'liker',
                 category: 'likee',
               },
+              doAble: true,
               config
             })
   papi.createActionPrefix({
@@ -77,6 +79,7 @@ config.initializer(({config, km}) => {
                 object: 'disliker',
                 category: 'dislikee',
               },
+              doAble: true,
               config
             })
   papi.createActionPrefix({
@@ -90,6 +93,7 @@ config.initializer(({config, km}) => {
                 object: 'hater',
                 category: 'hatee',
               },
+              doAble: true,
               // negation: 'likes',
               config
             })

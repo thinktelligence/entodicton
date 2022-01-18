@@ -4,6 +4,10 @@
     },
     "contexts": [
       {
+        "do": {
+          "left": "hater",
+          "right": "hatee"
+        },
         "hatee": {
           "marker": "unknown",
           "types": [
@@ -30,6 +34,10 @@
         "word": "hates"
       },
       {
+        "do": {
+          "left": "hater",
+          "right": "hatee"
+        },
         "hatee": {
           "marker": "unknown",
           "types": [
@@ -52,35 +60,36 @@
         },
         "marker": "hate",
         "query": true,
-        "response": [
-          {
-            "hatee": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "dragonfruit",
-              "word": "dragonfruit"
-            },
-            "hater": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "greg",
-              "word": "greg"
-            },
-            "marker": "hate",
-            "paraphrase": true,
-            "topLevel": true,
-            "value": "hate",
-            "word": "hates"
-          }
-        ],
+        "response": {
+          "do": {
+            "left": "hater",
+            "right": "hatee"
+          },
+          "hatee": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "dragonfruit",
+            "word": "dragonfruit"
+          },
+          "hater": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          "marker": "hate",
+          "topLevel": true,
+          "value": "hate",
+          "word": "hates"
+        },
         "topLevel": true,
         "types": [
           "hate"
@@ -89,7 +98,6 @@
         "word": "hate"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -221,6 +229,68 @@
     "objects": {
       "namespaced": {
         "0": {
+          "preference": {
+            "categories": [
+              [
+                "love",
+                "like"
+              ],
+              [
+                "hate",
+                "dislike"
+              ]
+            ],
+            "contextToObjectToCategory": {
+              "greg": {
+                "dragonfruit": {
+                  "do": {
+                    "left": "hater",
+                    "right": "hatee"
+                  },
+                  "hatee": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "dragonfruit",
+                    "word": "dragonfruit"
+                  },
+                  "hater": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  },
+                  "marker": "hate",
+                  "topLevel": true,
+                  "value": "hate",
+                  "word": "hates"
+                }
+              }
+            },
+            "lessThans": [
+            ],
+            "ordering": [
+              [
+                "love",
+                "like"
+              ],
+              [
+                "like",
+                "dislike"
+              ],
+              [
+                "dislike",
+                "hate"
+              ]
+            ]
+          }
         },
         "1": {
         },
@@ -229,18 +299,64 @@
           },
           "concepts": [
           ],
-          "handlers": {
-          },
-          "initHandlers": [
-          ],
           "parents": {
           },
           "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+            }
           },
           "property": {
           },
           "relations": [
-            {
+          ]
+        },
+        "3": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "do": {
+              "left": "hater",
+              "right": "hatee"
+            },
+            "hatee": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "dragonfruit",
+              "word": "dragonfruit"
+            },
+            "hater": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            },
+            "marker": "hate",
+            "query": true,
+            "response": {
+              "do": {
+                "left": "hater",
+                "right": "hatee"
+              },
               "hatee": {
                 "marker": "unknown",
                 "types": [
@@ -265,72 +381,7 @@
               "topLevel": true,
               "value": "hate",
               "word": "hates"
-            }
-          ]
-        },
-        "3": {
-          "mentioned": [
-          ],
-          "variables": {
-          }
-        },
-        "4": {
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "hatee": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "dragonfruit",
-              "word": "dragonfruit"
             },
-            "hater": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "greg",
-              "word": "greg"
-            },
-            "marker": "hate",
-            "query": true,
-            "response": [
-              {
-                "hatee": {
-                  "marker": "unknown",
-                  "types": [
-                    "object",
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "dragonfruit",
-                  "word": "dragonfruit"
-                },
-                "hater": {
-                  "marker": "unknown",
-                  "types": [
-                    "object",
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "greg",
-                  "word": "greg"
-                },
-                "marker": "hate",
-                "paraphrase": true,
-                "topLevel": true,
-                "value": "hate",
-                "word": "hates"
-              }
-            ],
             "topLevel": true,
             "types": [
               "hate"
@@ -338,7 +389,7 @@
             "value": "hate",
             "word": "hate"
           },
-          "paraphrases": "greg hate dragonfruit",
+          "paraphrases": "does greg hate dragonfruit",
           "responses": [
             "",
             "greg hates dragonfruit"
@@ -346,6 +397,10 @@
         },
         {
           "context": {
+            "do": {
+              "left": "hater",
+              "right": "hatee"
+            },
             "hatee": {
               "marker": "unknown",
               "types": [
@@ -381,7 +436,7 @@
     },
     "paraphrases": [
       "greg hates dragonfruit",
-      "greg hate dragonfruit"
+      "does greg hate dragonfruit"
     ],
     "responses": [
       "",
@@ -393,6 +448,10 @@
     },
     "contexts": [
       {
+        "do": {
+          "left": "liker",
+          "right": "likee"
+        },
         "likee": {
           "marker": "unknown",
           "types": [
@@ -413,12 +472,16 @@
           "value": "greg",
           "word": "greg"
         },
-        "marker": "likes",
+        "marker": "like",
         "topLevel": true,
-        "value": "likes",
+        "value": "like",
         "word": "likes"
       },
       {
+        "do": {
+          "left": "liker",
+          "right": "likee"
+        },
         "likee": {
           "marker": "unknown",
           "types": [
@@ -439,46 +502,46 @@
           "value": "greg",
           "word": "greg"
         },
-        "marker": "likes",
+        "marker": "like",
         "query": true,
-        "response": [
-          {
-            "likee": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "bananas",
-              "word": "bananas"
-            },
-            "liker": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "greg",
-              "word": "greg"
-            },
-            "marker": "likes",
-            "paraphrase": true,
-            "topLevel": true,
-            "value": "likes",
-            "word": "likes"
-          }
-        ],
+        "response": {
+          "do": {
+            "left": "liker",
+            "right": "likee"
+          },
+          "likee": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "bananas",
+            "word": "bananas"
+          },
+          "liker": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          "marker": "like",
+          "topLevel": true,
+          "value": "like",
+          "word": "likes"
+        },
         "topLevel": true,
         "types": [
-          "likes"
+          "like"
         ],
-        "value": "likes",
+        "value": "like",
         "word": "like"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -492,7 +555,7 @@
               0
             ],
             [
-              "likes",
+              "like",
               0
             ],
             [
@@ -512,7 +575,7 @@
               0
             ],
             [
-              "likes",
+              "like",
               0
             ],
             [
@@ -532,7 +595,7 @@
               0
             ],
             [
-              "likes",
+              "like",
               0
             ],
             [
@@ -552,7 +615,7 @@
               0
             ],
             [
-              "likes",
+              "like",
               0
             ],
             [
@@ -563,7 +626,7 @@
         },
         {
           "op": [
-            "likes",
+            "like",
             0
           ],
           "ops": [
@@ -572,14 +635,14 @@
               0
             ],
             [
-              "likes",
+              "like",
               0
             ]
           ]
         },
         {
           "op": [
-            "likes",
+            "like",
             0
           ],
           "ops": [
@@ -588,7 +651,7 @@
               0
             ],
             [
-              "likes",
+              "like",
               0
             ]
           ]
@@ -610,6 +673,68 @@
     "objects": {
       "namespaced": {
         "0": {
+          "preference": {
+            "categories": [
+              [
+                "love",
+                "like"
+              ],
+              [
+                "hate",
+                "dislike"
+              ]
+            ],
+            "contextToObjectToCategory": {
+              "greg": {
+                "bananas": {
+                  "do": {
+                    "left": "liker",
+                    "right": "likee"
+                  },
+                  "likee": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "bananas",
+                    "word": "bananas"
+                  },
+                  "liker": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  },
+                  "marker": "like",
+                  "topLevel": true,
+                  "value": "like",
+                  "word": "likes"
+                }
+              }
+            },
+            "lessThans": [
+            ],
+            "ordering": [
+              [
+                "love",
+                "like"
+              ],
+              [
+                "like",
+                "dislike"
+              ],
+              [
+                "dislike",
+                "hate"
+              ]
+            ]
+          }
         },
         "1": {
         },
@@ -618,18 +743,64 @@
           },
           "concepts": [
           ],
-          "handlers": {
-          },
-          "initHandlers": [
-          ],
           "parents": {
           },
           "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+            }
           },
           "property": {
           },
           "relations": [
-            {
+          ]
+        },
+        "3": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "do": {
+              "left": "liker",
+              "right": "likee"
+            },
+            "likee": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "bananas",
+              "word": "bananas"
+            },
+            "liker": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            },
+            "marker": "like",
+            "query": true,
+            "response": {
+              "do": {
+                "left": "liker",
+                "right": "likee"
+              },
               "likee": {
                 "marker": "unknown",
                 "types": [
@@ -650,84 +821,19 @@
                 "value": "greg",
                 "word": "greg"
               },
-              "marker": "likes",
+              "marker": "like",
               "topLevel": true,
-              "value": "likes",
+              "value": "like",
               "word": "likes"
-            }
-          ]
-        },
-        "3": {
-          "mentioned": [
-          ],
-          "variables": {
-          }
-        },
-        "4": {
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "likee": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "bananas",
-              "word": "bananas"
             },
-            "liker": {
-              "marker": "unknown",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "greg",
-              "word": "greg"
-            },
-            "marker": "likes",
-            "query": true,
-            "response": [
-              {
-                "likee": {
-                  "marker": "unknown",
-                  "types": [
-                    "object",
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "bananas",
-                  "word": "bananas"
-                },
-                "liker": {
-                  "marker": "unknown",
-                  "types": [
-                    "object",
-                    "unknown"
-                  ],
-                  "unknown": true,
-                  "value": "greg",
-                  "word": "greg"
-                },
-                "marker": "likes",
-                "paraphrase": true,
-                "topLevel": true,
-                "value": "likes",
-                "word": "likes"
-              }
-            ],
             "topLevel": true,
             "types": [
-              "likes"
+              "like"
             ],
-            "value": "likes",
+            "value": "like",
             "word": "like"
           },
-          "paraphrases": "greg like bananas",
+          "paraphrases": "does greg like bananas",
           "responses": [
             "",
             "greg likes bananas"
@@ -735,6 +841,10 @@
         },
         {
           "context": {
+            "do": {
+              "left": "liker",
+              "right": "likee"
+            },
             "likee": {
               "marker": "unknown",
               "types": [
@@ -755,9 +865,9 @@
               "value": "greg",
               "word": "greg"
             },
-            "marker": "likes",
+            "marker": "like",
             "topLevel": true,
-            "value": "likes",
+            "value": "like",
             "word": "likes"
           },
           "paraphrases": "greg likes bananas",
@@ -770,7 +880,7 @@
     },
     "paraphrases": [
       "greg likes bananas",
-      "greg like bananas"
+      "does greg like bananas"
     ],
     "responses": [
       "",
@@ -782,6 +892,10 @@
     },
     "contexts": [
       {
+        "do": {
+          "left": "lover",
+          "right": "lovee"
+        },
         "lovee": {
           "marker": "unknown",
           "types": [
@@ -808,7 +922,6 @@
         "word": "loves"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -873,7 +986,36 @@
             ],
             "contextToObjectToCategory": {
               "greg": {
-                "bananas": "love"
+                "bananas": {
+                  "do": {
+                    "left": "lover",
+                    "right": "lovee"
+                  },
+                  "lovee": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "bananas",
+                    "word": "bananas"
+                  },
+                  "lover": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  },
+                  "marker": "love",
+                  "topLevel": true,
+                  "value": "love",
+                  "word": "loves"
+                }
               }
             },
             "lessThans": [
@@ -901,13 +1043,15 @@
           },
           "concepts": [
           ],
-          "handlers": {
-          },
-          "initHandlers": [
-          ],
           "parents": {
           },
           "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+            }
           },
           "property": {
           },
@@ -926,6 +1070,10 @@
       "processed": [
         {
           "context": {
+            "do": {
+              "left": "lover",
+              "right": "lovee"
+            },
             "lovee": {
               "marker": "unknown",
               "types": [

@@ -113,7 +113,7 @@ let config = {
     { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesnt", level: 0, bridge: "{ ...after, negation: true }" },
-    { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0] }" },
+    { id: "have", level: 0, bridge: "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }" },
     { id: "have", level: 1, bridge: "{ ...next(operator) }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
@@ -168,7 +168,7 @@ let config = {
       apply: ({context}) => `my`
     },
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && context.negation,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.negation,
       ({context, g}) => {
         /*
         let query = ''
@@ -177,11 +177,11 @@ let config = {
         }
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
         */
-        return `${g(context.object)} doesnt ${context.word} ${g(context.property)}`
+        return `${g(context[context.do.left])} doesnt ${context.word} ${g(context[context.do.right])}`
       }
     ],
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && context.query,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query,
       ({context, g}) => {
         /*
         let query = ''
@@ -190,11 +190,11 @@ let config = {
         }
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
         */
-        return `does ${g(context.object)} ${context.word} ${g(context.property)}`
+        return `does ${g(context[context.do.left])} ${context.word} ${g(context[context.do.right])}`
       }
     ],
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.paraphrase && !context.query,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && !context.query,
       ({context, g}) => {
         return `${g(context.object)} ${context.word} ${g(context.property)}`
       }
