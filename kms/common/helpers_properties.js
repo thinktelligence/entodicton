@@ -146,9 +146,13 @@ class API {
       match: ({context}) => context.marker == operator && context.response,
       apply: ({context, g}) => {
         const { response } = context 
-        const beforeGenerator = before.map( (arg) => g(response[arg.tag]) )
-        const afterGenerator = after.map( (arg) => g(response[arg.tag]) )
-        return beforeGenerator.concat([`${response.word}`]).concat(afterGenerator).join(' ')
+        let yesno = ''
+        if (context.truthValue) {
+          yesno = 'yes'
+        } else if (context.truthValue === false) {
+          yesno = 'no'
+        }
+        return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
       }
     })
  
@@ -167,8 +171,8 @@ class API {
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('ordering').api
-          debugger; // 2
           const value = api.getCategory(ordering.name, context[ordering.object].value, context[ordering.category].value)
+          context.truthValue = (value.marker == context.marker)
           context.response = value; 
         }
       })

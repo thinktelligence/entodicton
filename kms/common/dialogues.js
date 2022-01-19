@@ -164,6 +164,18 @@ let config = {
       apply: ({context}) => context.value ? 'yes' : 'no'
     },
     /*
+    {
+      match: ({context}) => context.truthValue === false && !context.query && context.response,
+      apply: ({context, g}) => `no ${g({...context, truthValue: undefined})}`,
+      priority: -1,
+    },
+    {
+      match: ({context}) => context.truthValue === true && !context.query && context.response,
+      apply: ({context, g}) => `yes ${g({...context, truthValue: null})}`,
+      priority: -1,
+    },
+    */
+    /*
      * modifiers = <list of properties>
      */
     [

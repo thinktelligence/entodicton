@@ -19,6 +19,7 @@ class API {
       this.objects[name].contextToObjectToCategory[context] = {}
     }
     this.objects[name].contextToObjectToCategory[context][object] = category
+    category.truthValue = true
   }
 
   getCategory(name, context, object) {
