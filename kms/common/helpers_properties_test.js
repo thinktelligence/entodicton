@@ -226,7 +226,6 @@ describe('helpersProperties', () => {
       api2.objects = {}
       api2.setShared(['object1'], share)
 
-      debugger;
       api1.setProperty('object1', 'property1', 'value1', 'has1')
       api2.setProperty('object1', 'property2', 'value2', 'has2')
 

@@ -90,6 +90,7 @@ let config = {
 
     "([canBeDoQuestion])",
     "(<does|does,do> ([canBeDoQuestion/1]))",
+    "(([what]) [(<does> ([doesAble|]))])",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
@@ -114,10 +115,12 @@ let config = {
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }", queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
+    { id: "doesAble", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "doesAble", level: 1, bridge: "{ ...next(operator), before: before[0] }" },
     { id: "canBeDoQuestion", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeDoQuestion", level: 1, bridge: "{ ...next(operator) }" },
     { id: "canBeDoQuestion", level: 2, bridge: "{ ...next(operator) }" },
-    { id: "does", level: 0, bridge: "{ ...after, query: true }" },
+    { id: "does", level: 0, bridge: "{ ...context, query: true }*" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
     { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
@@ -438,12 +441,15 @@ config = new entodicton.Config(config)
 config.api = api
 config.add(meta)
 
-config.initializer( ({objects, isModule}) => {
+config.initializer( ({objects, config, isModule}) => {
   objects.mentioned = []
   objects.variables = {
   }
   if (isModule) {
   } else {
+    config.addWord("canbedoquestion", { id: "canBeDoQuestion", "initial": "{}" })
+    config.addWord("doesable", { id: "doesAble", "initial": "{}" })
+   // "?": [{"id": "questionMark", "initial": "{}" }],
   }
 })
 
