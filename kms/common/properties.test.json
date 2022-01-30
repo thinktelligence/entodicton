@@ -13,7 +13,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -159,7 +159,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -251,6 +261,9 @@
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
           "pattern": "([canBeDoQuestion])"
         },
         {
@@ -324,6 +337,7 @@
           "right": "property"
         },
         "doesable": true,
+        "is_compound": true,
         "marker": "have",
         "negation": true,
         "object": {
@@ -397,7 +411,7 @@
         },
         {
           "op": [
-            "have",
+            "doesnt",
             0
           ],
           "ops": [
@@ -407,18 +421,6 @@
             ],
             [
               "have",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "doesnt",
-            0
-          ],
-          "ops": [
-            [
-              "doesnt",
               0
             ]
           ]
@@ -495,6 +497,7 @@
               "right": "property"
             },
             "doesable": true,
+            "is_compound": true,
             "marker": "have",
             "negation": true,
             "object": {
@@ -551,7 +554,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -697,7 +700,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -789,6 +802,9 @@
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
           "pattern": "([canBeDoQuestion])"
         },
         {
@@ -862,6 +878,7 @@
           "right": "property"
         },
         "doesable": true,
+        "is_compound": true,
         "marker": "have",
         "negation": true,
         "object": {
@@ -896,6 +913,7 @@
           "right": "property"
         },
         "doesable": true,
+        "is_compound": true,
         "marker": "have",
         "object": {
           "marker": "unknown",
@@ -1028,7 +1046,7 @@
         },
         {
           "op": [
-            "have",
+            "doesnt",
             0
           ],
           "ops": [
@@ -1057,10 +1075,6 @@
               0
             ],
             [
-              "doesnt",
-              0
-            ],
-            [
               "have",
               0
             ]
@@ -1069,7 +1083,7 @@
         {
           "op": [
             "have",
-            1
+            0
           ],
           "ops": [
             [
@@ -1077,7 +1091,7 @@
               0
             ],
             [
-              "doesnt",
+              "have",
               0
             ],
             [
@@ -1097,32 +1111,20 @@
               0
             ],
             [
-              "doesnt",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "doesnt",
-            0
-          ],
-          "ops": [
-            [
-              "doesnt",
-              0
+              "have",
+              1
             ]
           ]
         },
         {
           "op": [
             "have",
-            0
+            1
           ],
           "ops": [
             [
               "have",
-              0
+              1
             ]
           ]
         },
@@ -1186,6 +1188,7 @@
               "right": "property"
             },
             "doesable": true,
+            "is_compound": true,
             "marker": "have",
             "object": {
               "marker": "unknown",
@@ -1230,6 +1233,7 @@
               "right": "property"
             },
             "doesable": true,
+            "is_compound": true,
             "marker": "have",
             "negation": true,
             "object": {
@@ -1289,7 +1293,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -1435,7 +1439,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -1525,6 +1539,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -1783,7 +1800,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -1929,7 +1946,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -2019,6 +2046,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -2469,7 +2499,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -2615,7 +2645,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -2705,6 +2745,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -2998,7 +3041,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -3144,7 +3187,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -3234,6 +3287,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -3684,7 +3740,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -3830,7 +3886,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -3922,6 +3988,9 @@
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
           "pattern": "([canBeDoQuestion])"
         },
         {
@@ -4011,7 +4080,7 @@
       "opChoices": [
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
@@ -4031,12 +4100,12 @@
         },
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
             [
-              "object",
+              "property",
               0
             ],
             [
@@ -4149,7 +4218,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -4295,7 +4364,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -4385,6 +4464,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -4875,78 +4957,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "what",
             0
           ],
@@ -4960,7 +4970,71 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -5516,7 +5590,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -5662,7 +5736,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -5752,6 +5836,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -6118,7 +6205,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -6146,30 +6233,6 @@
         },
         {
           "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "possession",
             0
           ],
@@ -6184,6 +6247,34 @@
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -6572,7 +6663,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -6718,7 +6809,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -6808,6 +6909,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -7175,54 +7279,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "what",
             0
           ],
@@ -7236,7 +7292,51 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -7642,7 +7742,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -7788,7 +7888,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -7878,6 +7988,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -8309,7 +8422,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -8333,7 +8446,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -8346,7 +8459,7 @@
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -8686,7 +8799,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -8832,7 +8945,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -8922,6 +9045,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -9482,7 +9608,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -9628,7 +9754,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -9718,6 +9854,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -10652,7 +10791,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -10798,7 +10937,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -10888,6 +11037,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -11083,7 +11235,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -11229,7 +11381,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -11319,6 +11481,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -11586,7 +11751,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -11732,7 +11897,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -11822,6 +11997,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -12119,7 +12297,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -12265,7 +12443,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -12355,6 +12543,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -12763,7 +12954,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -12909,7 +13100,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -12999,6 +13200,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
@@ -13154,7 +13358,7 @@
         },
         {
           "op": [
-            "what",
+            "object",
             0
           ],
           "ops": [
@@ -13182,7 +13386,7 @@
         },
         {
           "op": [
-            "object",
+            "what",
             0
           ],
           "ops": [
@@ -13191,15 +13395,15 @@
               0
             ],
             [
-              "object",
-              0
-            ],
-            [
               "propertyOf",
               0
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -13405,7 +13609,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, negation: true }",
+          "bridge": "{ ...context, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -13551,7 +13755,17 @@
           "level": 2
         },
         {
-          "bridge": "{ ...after, query: true }",
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
           "id": "does",
           "level": 0
         },
@@ -13641,6 +13855,9 @@
         },
         {
           "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
         },
         {
           "pattern": "([canBeDoQuestion])"
