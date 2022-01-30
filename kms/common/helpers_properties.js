@@ -91,25 +91,41 @@ class API {
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
 
+    if (doAble) {
+      if (before.length != 1) {
+        debugger;
+        throw "Expected exactly one before argument"
+      }
+      if (after.length != 1) {
+        throw "Expected exactly one after argument"
+      }
+    }
+
     const beforeOperators = before.map( (arg) => `([${arg.id}|])` ).join('')
     const afterOperators = after.map( (arg) => `([${arg.id}|])` ).join('')
-    config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
+    if (doAble) {
+      config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators}?)`)
+    } else {
+      config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
+    }
    
     create.map( (id) => {
       if (id === operator) {
-        const tagsToProps = (where, args) => {
+        const tagsToProps = (where, args, suffix='') => {
           let i = 0;
           let r = ''
           for (let arg of args) {
-            r += `, ${arg.tag}: ${where}[${i}] `
+            r += `, ${arg.tag}${suffix}: ${where}[${i}] `
           }
           return r
         }
+
         const beforeArgs = tagsToProps('before', before)
-        const afterArgs = tagsToProps('after', after)
+        let afterArgs = tagsToProps('after', after)
         let doParams = '';
         if (doAble) {
           doParams = `, do: { left: "${before[0].tag}", right: "${after[0].tag}" } `
+          afterArgs = tagsToProps('after', after, '*')
         }
         config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs} }` })
         config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
