@@ -9,6 +9,9 @@ const getHelp = (config, indent=2) => {
   help += `${indent}DESCRIPTION: ${config.description}\n\n`
   help += `${indent}SAMPLE SENTENCES\n\n`
   for (query of Object.keys(config.tests)) {
+    if (config.tests[query].developerTest) {
+      continue
+    }
     help += `${indent}  ${query}\n`
   }
   return help
