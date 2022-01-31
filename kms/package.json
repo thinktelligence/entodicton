@@ -1,7 +1,29 @@
 {
+  "author": "dev@thinktelligence.com",
+  "main": "main.js",
+  "license": "ISC",
+  "name": "ekms",
+  "version": "6.13.29",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "devDependencies": {
     "jest": "^26.6.3"
   },
+  "scripts": {
+    "test:watch": "npm run test -- --watch",
+    "test": "jest --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json"
+  },
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
   "files": [
     "main.js",
     "common/helpers.js",
@@ -53,37 +75,15 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "author": "dev@thinktelligence.com",
   "dependencies": {
-    "underscore": "^1.12.0",
-    "scriptjs": "^2.5.9",
-    "entodicton": "6.13.28-beta.1",
-    "base-64": "^1.0.0",
-    "lodash": "^4.17.21",
     "node-fetch": "^2.6.1",
-    "argparse": "^2.0.1",
+    "lodash": "^4.17.21",
+    "base-64": "^1.0.0",
     "table": "^6.7.1",
-    "pluralize": "^8.0.0"
-  },
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
-  "name": "ekms",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "version": "6.13.28-beta.1",
-  "main": "main.js",
-  "scripts": {
-    "test": "jest --config ./jest.config.json",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:watch": "npm run test -- --watch"
-  },
-  "license": "ISC"
+    "scriptjs": "^2.5.9",
+    "pluralize": "^8.0.0",
+    "underscore": "^1.12.0",
+    "entodicton": "6.13.29",
+    "argparse": "^2.0.1"
+  }
 }
