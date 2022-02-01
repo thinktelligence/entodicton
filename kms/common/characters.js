@@ -18,10 +18,12 @@ const getHelp = (config, indent=2) => {
   return help
 }
 
-const api = {
-  getName: () => "sally",
+class Sally {
+  getName() {
+    return "sally"
+  }
 
-  process: (utterance) => {
+  process(utterance) {
     // call the characters config to get response and return that. this is testing so I am not doing that
     /*
     if (utterance == 'what is the time') {
@@ -29,14 +31,15 @@ const api = {
     }
     */
     return timeKM.process(utterance)
-  },
+  }
 
-  response: ({context, result}) => {
+  response({context, result}) {
     console.log('----------------------------------------')
     console.log(`${context.value} says: `, result.generated)
     console.log('----------------------------------------')
   }
 }
+const api = new Sally()
 
 /*
   get request 
@@ -125,19 +128,22 @@ let config = {
   ]
 };
 
-const api2 = {
-  getName: () => "bob",
+class Bob {
+  getName() {
+    return "bob"
+  }
 
-  process: (utterance) => {
-    return currencyKM.process(utterance)
-  },
+  process(utterance) {
+    return currencyKM.process(utterance, { credentials: this.credentials })
+  }
 
-  response: ({context, result}) => {
+  response({context, result}) {
     console.log('----------------------------------------')
     console.log(`${context.value} says: `, result.generated)
     console.log('----------------------------------------')
   }
 }
+const api2 = new Bob()
 
 const initializeApi = (config, api) => {
   const name = api.getName();
