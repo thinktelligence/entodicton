@@ -17,7 +17,7 @@ const kirkAPI = {
   getName: () => "kirk",
 
   process: (utterance) => {
-    return kirk.process(utterance)
+    return kirk.process(utterance, { credentials: this.credentials })
   },
   
   response: ({km, context, result}) => {
@@ -30,7 +30,7 @@ const spockAPI = {
   getName: () => "spock",
 
   process: (utterance) => {
-    return spock.process(utterance)
+    return spock.process(utterance, { credentials: this.credentials })
   },
   
   response: ({km, context, result}) => {
