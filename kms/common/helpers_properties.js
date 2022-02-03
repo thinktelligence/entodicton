@@ -105,7 +105,13 @@ class API {
     const afterOperators = after.map( (arg) => `([${arg.id}|])` ).join('')
     // config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
     if (doAble) {
-      config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators}?)`)
+      config.addOperator(`([(${beforeOperators} [${operator}|] ${afterOperators}?)])`)
+      // config.addOperator({ id: operator, level: 1, words: [operator] })
+      config.addBridge({ id: operator, level: 1, bridge: '{ ...next(operator) }' })
+      config.addPriorities([[operator, 1], ['does', 0]])
+      config.addPriorities([[operator, 1], ['doesnt', 0]])
+      config.addPriorities([['does', 0], [operator, 0]])
+      config.addPriorities([['doesnt', 0], [operator, 0]])
     } else {
       config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
     }
