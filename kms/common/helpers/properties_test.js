@@ -1,4 +1,4 @@
-const { API, Frankenhash } = require('./helpers_properties')
+const { API, Frankenhash } = require('./properties')
 
 describe('helpersProperties', () => {
   describe('default', () => {

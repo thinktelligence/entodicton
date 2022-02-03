@@ -1,4 +1,4 @@
-const { API } = require('./helpers_ordering')
+const { API } = require('./ordering')
 
 describe('helpersOrdering', () => {
 
