@@ -2,7 +2,7 @@ const entodicton = require('entodicton')
 const hierarchy = require('./hierarchy').copy()
 const ordering_tests = require('./ordering.test.json')
 const ordering_instance = require('./ordering.instance.json')
-const { API } = require('./helpers_ordering')
+const { API } = require('./helpers/helpers_ordering')
 
 const template ={
   "queries": [

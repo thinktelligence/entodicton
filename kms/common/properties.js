@@ -2,7 +2,7 @@ const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const properties_instance = require('./properties.instance.json')
 const properties_tests = require('./properties.test.json')
-const { API } = require('./helpers_properties')
+const { API } = require('./helpers/helpers_properties')
 const pluralize = require('pluralize')
 
 // TODO blue is a colour my eyes are blue what color are my eyes
