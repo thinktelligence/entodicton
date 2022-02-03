@@ -226,7 +226,6 @@ describe('helpersProperties', () => {
       api2.objects = {}
       api2.setShared(['object1'], share)
 
-      debugger;
       api1.setProperty('object1', 'property1', 'value1', 'has1')
       api2.setProperty('object1', 'property2', 'value2', 'has2')
 
@@ -293,4 +292,59 @@ describe('helpersProperties', () => {
     */
   })
 
+  describe('relations', () => {
+    it('addRelation', async () => {
+      const api1 = new API()
+      api1.objects = {}
+      const relation = { a: 1, b: 2, c: 3}
+      api1.addRelation(relation)
+      console.log('--objects--', JSON.stringify(api1.objects, null, 2))
+      expect(api1.objects.relations[0]).toStrictEqual(relation)
+    })
+
+    it('matchRelation - one arg', async () => {
+      const api1 = new API()
+      api1.objects = {}
+      const a = { value: 1 }
+      const b = { value: 2 }
+      const c = { value: 3 }
+      const relation = { marker: 'run', a, b, c }
+      api1.addRelation(relation)
+      const args = ['a']
+      const template = { marker: 'run', a }
+      const match = api1.matchRelation(args, template, relation)
+      expect(match).toStrictEqual(relation)
+    })
+
+    it('setMatch - no match', async () => {
+      const api1 = new API()
+      api1.objects = {}
+      const a = { value: 1 }
+      const b = { value: 2 }
+      const c = { value: 3 }
+      const relation = { marker: 'run', a, b, c }
+      api1.addRelation(relation)
+      const args = ['a']
+      const template = { marker: 'run', a: { value: 100 } }
+      debugger;
+      const match = api1.matchRelation(args, template, relation)
+      expect(match).toBe(null)
+    })
+
+    it('queryMatch - match', async () => {
+      const api1 = new API()
+      api1.objects = {}
+      const a = { value: 1 }
+      const b = { value: 2 }
+      const c = { value: 3 }
+      const relation = { marker: 'run', a, b, c }
+      api1.addRelation(relation)
+      const args = ['a']
+      const template = { marker: 'run', a: { query: true, value: 100 } }
+      debugger;
+      const match = api1.matchRelation(args, template, relation)
+      expect(match).toStrictEqual(relation)
+    })
+
+  })
 })

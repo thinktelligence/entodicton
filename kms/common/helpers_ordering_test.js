@@ -10,7 +10,7 @@ describe('helpersOrdering', () => {
   })
 
   describe('categories', () => {
-    it('known comparison', async () => {
+    xit('known comparison', async () => {
       const objects = {}
       api = new API()
       api.objects = objects
@@ -21,7 +21,7 @@ describe('helpersOrdering', () => {
       expect(api.inCategory('speed', 'greg', 'a', 'slow')).toStrictEqual( true )
     })
 
-    it('ONElessThan with categories', async () => {
+    xit('lessThan with categories', async () => {
       const objects = {}
       api = new API()
       api.objects = objects

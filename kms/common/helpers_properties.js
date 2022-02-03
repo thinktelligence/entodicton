@@ -205,7 +205,7 @@ class API {
         match: ({context}) => context.marker == operator,
         apply: ({context, km}) => {
           const api = km('properties').api
-          api.relation_set(context)
+          api.addRelation(context)
         }
       })
       config.addSemantic({
@@ -316,11 +316,11 @@ class API {
     return concept;
   }
 
-  relation_set(relation) {
+  addRelation(relation) {
     this.objects.relations.push(relation)
   }
 
-  relation_match(args, template, value) {
+  matchRelation(args, template, value) {
     if (template.marker !== value.marker) {
       return null
     }
@@ -344,7 +344,7 @@ class API {
   relation_get(context, args) {
     const andTheAnswerIs = []
     for (let relation of this.objects.relations) {
-      if (this.relation_match(args, context, relation)) {
+      if (this.matchRelation(args, context, relation)) {
         andTheAnswerIs.push(Object.assign({}, relation, { paraphrase: true }))
       }
     }
