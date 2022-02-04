@@ -186,6 +186,8 @@ class API {
         apply: ({context, km}) => {
           const api = km('ordering').api
           api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
+          const propertiesAPI = km('properties').api
+          propertiesAPI.addRelation(context) 
         }
       })
       config.addSemantic({
@@ -193,9 +195,17 @@ class API {
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('ordering').api
+
           const value = api.getCategory(ordering.name, context[ordering.object].value, context[ordering.category].value)
           context.truthValue = (value.marker == context.marker)
           context.response = value; 
+
+          const propertiesAPI = km('properties').api
+          const matches = propertiesAPI.relation_get(context, [ordering.object, ordering.category])
+          context.truthValue = matches.length > 0
+          context.response = matches[0];
+          debugger;
+          debugger;
         }
       })
     }
