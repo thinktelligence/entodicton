@@ -1,4 +1,5 @@
 const { API } = require('./ordering')
+const { API:APIProperties } = require('./properties')
 
 describe('helpersOrdering', () => {
 
@@ -36,10 +37,13 @@ describe('helpersOrdering', () => {
 
   describe('lessThan', () => {
     it('known comparison - a is slower than b', async () => {
-      const objects = {}
       api = new API()
-      api.objects = objects
-      api.initialize(objects)
+      apiProperties = new APIProperties()
+      km = jest.fn()
+      km.mockReturnValue({ api: apiProperties })
+      config = { km }
+      const objects = {}
+      api.initialize({ config, objects })
       api.createOrdering({ name: 'speed', sections: ['slowest', 'slow', 'fast', 'fastest'] })
       const less1 = { name: 'speed', context: 'greg', smaller: 'a', larger: 'b' }
       api.setLessThan(less1)
@@ -48,10 +52,14 @@ describe('helpersOrdering', () => {
     })
 
     it('known comparison - what is slower than b', async () => {
-      const objects = {}
       api = new API()
-      api.objects = objects
-      api.initialize(objects)
+      apiProperties = new APIProperties()
+      km = jest.fn()
+      km.mockReturnValue({ api: apiProperties })
+      config = { km }
+      const objects = {}
+      api.initialize({ config, objects })
+
       api.createOrdering({ name: 'speed' })
       const less1 = { name: 'speed', context: 'greg', smaller: 'a', larger: 'b' }
       const less2 = { name: 'speed', context: 'greg', smaller: 'b', larger: 'c' }
@@ -65,10 +73,14 @@ describe('helpersOrdering', () => {
     })
 
     it('known comparison - what is faster than a', async () => {
-      const objects = {}
       api = new API()
-      api.objects = objects
-      api.initialize(objects)
+      apiProperties = new APIProperties()
+      km = jest.fn()
+      km.mockReturnValue({ api: apiProperties })
+      config = { km }
+      const objects = {}
+      api.initialize({ config, objects })
+
       api.createOrdering({ name: 'speed' })
       const less1 = { name: 'speed', context: 'greg', smaller: 'a', larger: 'b' }
       const less2 = { name: 'speed', context: 'greg', smaller: 'b', larger: 'c' }
