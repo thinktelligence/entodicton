@@ -85,7 +85,7 @@ class API {
   //
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for
-  // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does greg like bananas
+  // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does g2reg like bananas
   createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble }, semanticApply) {
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
@@ -187,7 +187,8 @@ class API {
           const api = km('ordering').api
           api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
           const propertiesAPI = km('properties').api
-          propertiesAPI.addRelation(context) 
+          context.ordering = ordering.name
+          propertiesAPI.relation_add(context) 
         }
       })
       config.addSemantic({
@@ -198,14 +199,20 @@ class API {
 
           const value = api.getCategory(ordering.name, context[ordering.object].value, context[ordering.category].value)
           context.truthValue = (value.marker == context.marker)
-          context.response = value; 
+          context.response = value
+          context.ordering = ordering.name
 
           const propertiesAPI = km('properties').api
-          const matches = propertiesAPI.relation_get(context, [ordering.object, ordering.category])
-          context.truthValue = matches.length > 0
-          context.response = matches[0];
-          debugger;
-          debugger;
+          const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object, ordering.category])
+          if (matches.length > 0) {
+            context.truthValue = matches.length > 0
+            context.response = { marker: 'list', value: matches }
+          } else {
+            // see if anything is preferred greg
+            const matches = propertiesAPI.relation_get(context, ['ordering'])
+            context.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
+            context.response = { marker: 'list', value: matches }
+          }
         }
       })
     }
@@ -215,7 +222,7 @@ class API {
         match: ({context}) => context.marker == operator,
         apply: ({context, km}) => {
           const api = km('properties').api
-          api.addRelation(context)
+          api.relation_add(context)
         }
       })
       config.addSemantic({
@@ -326,19 +333,25 @@ class API {
     return concept;
   }
 
-  addRelation(relation) {
+  relation_add(relation) {
     this.objects.relations.push(relation)
   }
 
-  matchRelation(args, template, value) {
-    if (template.marker !== value.marker) {
-      return null
-    }
-
+  relation_match(args, template, value) {
+    // greg
     const matches = (t, v) => {
+      if (typeof t == 'string' || typeof v == 'string') {
+        return t == v
+      }
+
+      if (!t || !v) {
+        return null
+      }
+
       if (t.query) {
         return true
       }
+
       return t.value && v.value && t.value == v.value
     }
 
@@ -354,7 +367,7 @@ class API {
   relation_get(context, args) {
     const andTheAnswerIs = []
     for (let relation of this.objects.relations) {
-      if (this.matchRelation(args, context, relation)) {
+      if (this.relation_match(args, context, relation)) {
         andTheAnswerIs.push(Object.assign({}, relation, { paraphrase: true }))
       }
     }

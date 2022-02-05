@@ -50,6 +50,7 @@ config.initializer(({config, km}) => {
               after: [{tag: 'lovee', id: 'object'}],
               ordering: {
                 name: 'preference',
+                marker: 'love',
                 object: 'lover',
                 category: 'lovee',
               },
@@ -63,6 +64,7 @@ config.initializer(({config, km}) => {
               after: [{tag: 'likee', id: 'object'}],
               ordering: {
                 name: 'preference',
+                marker: 'like',
                 object: 'liker',
                 category: 'likee',
               },
@@ -76,6 +78,7 @@ config.initializer(({config, km}) => {
               after: [{tag: 'dislikee', id: 'object'}],
               ordering: {
                 name: 'preference',
+                marker: 'dislike',
                 object: 'disliker',
                 category: 'dislikee',
               },
@@ -90,6 +93,7 @@ config.initializer(({config, km}) => {
               after: [{tag: 'hatee', id: 'object'}],
               ordering: {
                 name: 'preference',
+                marker: 'hate',
                 object: 'hater',
                 category: 'hatee',
               },
