@@ -1,23 +1,26 @@
 {
+  "dependencies": {
+    "entodicton": "6.13.32-beta.6",
+    "scriptjs": "^2.5.9",
+    "lodash": "^4.17.21",
+    "base-64": "^1.0.0",
+    "underscore": "^1.12.0",
+    "argparse": "^2.0.1",
+    "node-fetch": "^2.6.1",
+    "table": "^6.7.1",
+    "pluralize": "^8.0.0"
+  },
+  "main": "main.js",
   "scripts": {
     "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
     "test:watch": "npm run test -- --watch",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
     "test": "jest --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
     "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
   },
-  "main": "main.js",
-  "dependencies": {
-    "argparse": "^2.0.1",
-    "entodicton": "6.13.32-beta.5",
-    "lodash": "^4.17.21",
-    "table": "^6.7.1",
-    "scriptjs": "^2.5.9",
-    "pluralize": "^8.0.0",
-    "underscore": "^1.12.0",
-    "base-64": "^1.0.0",
-    "node-fetch": "^2.6.1"
-  },
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "name": "ekms",
+  "license": "ISC",
   "files": [
     "main.js",
     "helpers/properties.js",
@@ -75,7 +78,6 @@
     "common/time.test.json"
   ],
   "author": "dev@thinktelligence.com",
-  "name": "ekms",
   "keywords": [
     "NLP",
     "NLU",
@@ -85,9 +87,7 @@
     "natural language understanding",
     "chatbot"
   ],
-  "version": "6.13.32-beta.5",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "license": "ISC",
+  "version": "6.13.32-beta.6",
   "devDependencies": {
     "jest": "^26.6.3"
   }
