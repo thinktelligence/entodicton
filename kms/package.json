@@ -1,35 +1,5 @@
 {
-  "dependencies": {
-    "scriptjs": "^2.5.9",
-    "lodash": "^4.17.21",
-    "argparse": "^2.0.1",
-    "pluralize": "^8.0.0",
-    "underscore": "^1.12.0",
-    "table": "^6.7.1",
-    "entodicton": "6.13.32-beta.11",
-    "base-64": "^1.0.0",
-    "node-fetch": "^2.6.1"
-  },
-  "main": "main.js",
-  "license": "ISC",
-  "scripts": {
-    "test": "jest --config ./jest.config.json",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE"
-  },
-  "name": "ekms",
-  "version": "6.13.32-beta.11",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
+  "author": "dev@thinktelligence.com",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -87,8 +57,38 @@
     "common/time.test.json"
   ],
   "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "author": "dev@thinktelligence.com",
   "devDependencies": {
     "jest": "^26.6.3"
-  }
+  },
+  "dependencies": {
+    "underscore": "^1.12.0",
+    "scriptjs": "^2.5.9",
+    "base-64": "^1.0.0",
+    "table": "^6.7.1",
+    "pluralize": "^8.0.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1",
+    "argparse": "^2.0.1",
+    "entodicton": "6.13.32-beta.12"
+  },
+  "license": "ISC",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "name": "ekms",
+  "scripts": {
+    "test:watch": "npm run test -- --watch",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test": "jest --config ./jest.config.json"
+  },
+  "version": "6.13.32-beta.12",
+  "main": "main.js"
 }
