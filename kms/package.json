@@ -1,18 +1,31 @@
 {
+  "name": "ekms",
+  "author": "dev@thinktelligence.com",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "version": "6.13.34",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "scripts": {
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test": "jest --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "underscore": "^1.12.0",
+    "argparse": "^2.0.1",
+    "table": "^6.7.1",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1",
+    "pluralize": "^8.0.0",
+    "scriptjs": "^2.5.9",
+    "entodicton": "6.13.34"
   },
-  "author": "dev@thinktelligence.com",
-  "version": "6.13.33",
-  "license": "ISC",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -69,26 +82,13 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "main": "main.js",
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "pluralize": "^8.0.0",
-    "node-fetch": "^2.6.1",
-    "base-64": "^1.0.0",
-    "table": "^6.7.1",
-    "argparse": "^2.0.1",
-    "underscore": "^1.12.0",
-    "entodicton": "6.13.33",
-    "scriptjs": "^2.5.9"
+  "scripts": {
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test:watch": "npm run test -- --watch",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test": "jest --config ./jest.config.json"
   },
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
-  "name": "ekms"
+  "main": "main.js",
+  "license": "ISC"
 }
