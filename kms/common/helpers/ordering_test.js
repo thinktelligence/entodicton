@@ -11,17 +11,23 @@ describe('helpersOrdering', () => {
   })
 
   describe('categories', () => {
-    xit('known comparison', async () => {
-      const objects = {}
+    // TODO fix this
+    xit('ONEknown comparison', async () => {
       api = new API()
-      api.objects = objects
-      api.initialize(objects)
+      apiProperties = new APIProperties()
+      km = jest.fn()
+      km.mockReturnValue({ api: apiProperties })
+      config = { km }
+      const objects = {}
+      api.initialize({ config, objects })
       api.createOrdering({ name: 'speed', categories: [['slowest', 'slow'], ['fastest', 'fast']] })
+
       api.setCategory('speed', 'greg', 'a', 'slowest')
       expect(api.getCategory('speed', 'greg', 'a')).toStrictEqual( 'slowest' )
       expect(api.inCategory('speed', 'greg', 'a', 'slow')).toStrictEqual( true )
     })
 
+    // TODO fix this
     xit('lessThan with categories', async () => {
       const objects = {}
       api = new API()

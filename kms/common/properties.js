@@ -169,9 +169,10 @@ let config = {
       match: ({context}) => context.marker == 'objectPrefix' && context.value == 'self',
       apply: ({context}) => `my`
     },
-    [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.negation,
-      ({context, g}) => {
+    {
+      notes: 'negative do questions',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.negation,
+      apply: ({context, g}) => {
         /*
         let query = ''
         if (context.query) {
@@ -180,21 +181,21 @@ let config = {
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
         */
         return `${g(context[context.do.left])} doesnt ${context.word} ${g(context[context.do.right])}`
-      }
-    ],
-    [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query,
-      ({context, g}) => {
-        /*
-        let query = ''
-        if (context.query) {
-          query = "?"
+      },
+    },
+    {
+      notes: 'do questions',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query,
+      apply: ({context, g}) => {
+        const right = context['do'].right
+        if (context[right].query) {
+            const left = context['do'].left
+            return `${g(context[right])} does ${g(context[left])} ${context.word}`
+        } else {
+          return `does ${g(context[context.do.left])} ${context.word} ${g(context[context.do.right])}`
         }
-        return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
-        */
-        return `does ${g(context[context.do.left])} ${context.word} ${g(context[context.do.right])}`
-      }
-    ],
+      },
+    },
     [
       ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && !context.query,
       ({context, g}) => {

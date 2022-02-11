@@ -1,4 +1,5 @@
 const pluralize = require('pluralize')
+const { unflatten, flattens } = require('entodicton')
 
 class Frankenhash {
   constructor(data) {
@@ -93,7 +94,6 @@ class API {
 
    if (doAble) {
       if (before.length != 1) {
-        debugger;
         throw "Expected exactly one before argument"
       }
       if (after.length != 1) {
@@ -169,10 +169,12 @@ class API {
       apply: ({context, g}) => {
         const { response } = context 
         let yesno = ''
-        if (context.truthValue) {
-          yesno = 'yes'
-        } else if (context.truthValue === false) {
-          yesno = 'no'
+        if (!context.do.query) {
+          if (context.truthValue) {
+            yesno = 'yes'
+          } else if (context.truthValue === false) {
+            yesno = 'no'
+          }
         }
         return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
       }
@@ -188,7 +190,9 @@ class API {
           api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
-          propertiesAPI.relation_add(context) 
+          const fcontext = flattens(['list'], [context])
+          propertiesAPI.relation_add(fcontext) 
+          // propertiesAPI.relation_add(context) 
         }
       })
       config.addSemantic({
@@ -197,16 +201,18 @@ class API {
         apply: ({context, km}) => {
           const api = km('ordering').api
 
+          /*
           const value = api.getCategory(ordering.name, context[ordering.object].value, context[ordering.category].value)
           context.truthValue = (value.marker == context.marker)
           context.response = value
-          context.ordering = ordering.name
+          */
 
           const propertiesAPI = km('properties').api
+          context.ordering = ordering.name
           const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object, ordering.category])
           if (matches.length > 0) {
             context.truthValue = matches.length > 0
-            context.response = { marker: 'list', value: matches }
+            context.response = { marker: 'list', value: unflatten.unflatten(matches) }
           } else {
             // see if anything is preferred greg
             const matches = propertiesAPI.relation_get(context, ['ordering'])
@@ -333,8 +339,13 @@ class API {
     return concept;
   }
 
-  relation_add(relation) {
-    this.objects.relations.push(relation)
+  relation_add(relations) {
+    if (!Array.isArray(relations)) {
+      relations = [relations]
+    }
+    for (let relation of relations) {
+      this.objects.relations.push(relation)
+    }
   }
 
   relation_match(args, template, value) {

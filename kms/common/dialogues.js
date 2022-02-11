@@ -195,7 +195,9 @@ let config = {
     ],
 
     [
-      ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
+      // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
+      // ({context, hierarchy}) => context.marker == 'list' && context.value,
+      ({context, hierarchy}) => context.marker == 'list' && !context.response && context.value,
       ({context, gs}) => {
         return gs(context.value, ' ', ' and ')
       }
