@@ -186,8 +186,8 @@ class API {
         // TODO use hierarchy for operator
         match: ({context}) => context.marker == operator,
         apply: ({context, km}) => {
-          const api = km('ordering').api
-          api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
+          //const api = km('ordering').api
+          // api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
           const fcontext = flattens(['list'], [context])
