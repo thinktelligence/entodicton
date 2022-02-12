@@ -1,7 +1,608 @@
 {
+  "chicken modifies strips\\nchicken strips": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0] }",
+          "id": "possession",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "id": "possession",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0] }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
+          "id": "what",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...context, query: true }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
+          "id": "chicken",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'strip' }",
+          "id": "strip",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: 'chicken_strip' }",
+          "id": "chicken_strip",
+          "level": 0
+        }
+      ],
+      "operators": [
+        {
+          "pattern": "([chicken_strip|])"
+        },
+        {
+          "pattern": "(<chicken|> ([strip|]))"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([canBeQuestion])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "chicken": [
+          {
+            "id": "chicken",
+            "initial": "{ value: 'chicken' }"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "strip": [
+          {
+            "id": "strip",
+            "initial": "{ value: 'strip' }"
+          }
+        ],
+        "strips": [
+          {
+            "id": "strip",
+            "initial": "{ value: 'strip' }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "concept": {
+          "marker": "unknown",
+          "unknown": true,
+          "value": "strips",
+          "word": "strips"
+        },
+        "default": true,
+        "marker": "modifies",
+        "modifier": {
+          "marker": "unknown",
+          "unknown": true,
+          "value": "chicken",
+          "word": "chicken"
+        },
+        "topLevel": true,
+        "word": "modifies"
+      },
+      {
+        "chicken": {
+          "marker": "chicken",
+          "value": "chicken",
+          "word": "chicken"
+        },
+        "marker": "chicken_strip",
+        "modifiers": [
+          "chicken"
+        ],
+        "topLevel": true,
+        "types": [
+          "chicken_strip"
+        ],
+        "value": "chicken_strip",
+        "word": "strips"
+      }
+    ],
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "modifies",
+            0
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "strip",
+            0
+          ],
+          "ops": [
+            [
+              "chicken",
+              0
+            ],
+            [
+              "strip",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "chicken",
+            0
+          ],
+          "ops": [
+            [
+              "chicken",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "chicken_strip",
+            0
+          ],
+          "ops": [
+            [
+              "chicken_strip",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+          },
+          "concepts": [
+          ],
+          "parents": {
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ]
+        },
+        "1": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "2": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "chicken": {
+              "marker": "chicken",
+              "value": "chicken",
+              "word": "chicken"
+            },
+            "marker": "chicken_strip",
+            "modifiers": [
+              "chicken"
+            ],
+            "topLevel": true,
+            "types": [
+              "chicken_strip"
+            ],
+            "value": "chicken_strip",
+            "word": "strips"
+          },
+          "paraphrases": "chicken strips",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "concept": {
+              "marker": "unknown",
+              "unknown": true,
+              "value": "strips",
+              "word": "strips"
+            },
+            "default": true,
+            "marker": "modifies",
+            "modifier": {
+              "marker": "unknown",
+              "unknown": true,
+              "value": "chicken",
+              "word": "chicken"
+            },
+            "topLevel": true,
+            "word": "modifies"
+          },
+          "paraphrases": "chicken modifies strips",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "chicken modifies strips",
+      "chicken strips"
+    ],
+    "responses": [
+      "",
+      ""
+    ]
+  },
   "greg doesnt have wings": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
@@ -211,6 +812,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -544,6 +1151,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -752,6 +1364,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -1283,6 +1901,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -1491,6 +2114,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -1790,6 +2419,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -1998,6 +2632,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -2489,6 +3129,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -2697,6 +3342,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -3031,6 +3682,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -3239,6 +3895,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -3730,6 +4392,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -3938,6 +4605,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -4080,7 +4753,7 @@
       "opChoices": [
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
@@ -4100,12 +4773,12 @@
         },
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -4207,6 +4880,11 @@
   "the age of greg is 23 the profession of greg is programmer what are the properties of greg": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
@@ -4416,6 +5094,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -5580,6 +6264,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -5788,6 +6477,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -6653,6 +7348,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -6861,6 +7561,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -7732,6 +8438,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -7940,6 +8651,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -8789,6 +9506,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -8997,6 +9719,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -9598,6 +10326,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -9806,6 +10539,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -10781,6 +11520,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -10989,6 +11733,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -11225,6 +11975,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -11433,6 +12188,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -11741,6 +12502,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -11949,6 +12715,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -12287,6 +13059,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -12495,6 +13272,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -12944,6 +13727,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -13152,6 +13940,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"
@@ -13599,6 +14393,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator) }",
           "id": "readonly",
           "level": 0
@@ -13807,6 +14606,12 @@
         },
         {
           "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
         },
         {
           "pattern": "([readonly])"

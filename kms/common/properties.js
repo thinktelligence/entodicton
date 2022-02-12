@@ -78,6 +78,8 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
     "([concept])", 
+    "((modifier) [modifies] (concept))", 
+    "([readonly])", 
     "([readonly])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
@@ -110,6 +112,7 @@ let config = {
     ['have', 'canBeQuestion'],
   ],
   bridges: [
+    { id: "modifies", level: 0, bridge: "{ ...next(operator), modifier: before[0], concept: after[0] }" },
     { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesnt", level: 0, bridge: "{ ...context, negation: true }*" },
@@ -153,6 +156,10 @@ let config = {
     [['is', 0], ['objectPrefix', 0], ['what', 0]],
   ],
   generators: [
+    {
+      match: ({context}) => context.marker == 'modifies' && context.paraphrase,
+      apply: ({context}) => `${context.modifier.word} modifies ${context.concept.word}`,
+    },
     {
       match: ({context}) => context.marker == 'objectPrefix' && context.value == 'other' && context.paraphrase,
       apply: ({context}) => `my`
@@ -239,6 +246,17 @@ let config = {
     },
   ],
   semantics: [
+    {
+      notes: 'define a modifier',
+      tests: [
+        'chicken modifies strips',
+      ],
+      match: ({context}) => context.marker == 'modifies',
+      apply: ({config, km, context}) => {
+        debugger;
+        km('properties').api.kindOfConcept({ config, modifier: context.modifier.value, object: context.concept.value })
+      }
+    },
     {
       notes: 'marking something as readonly',
       match: ({context}) => context.marker == 'readonly' && context.same,
