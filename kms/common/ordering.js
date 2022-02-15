@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
-const hierarchy = require('./hierarchy').copy()
+// const hierarchy = require('./hierarchy').copy()
+const hierarchy = require('./hierarchy')
 const ordering_tests = require('./ordering.test.json')
 const ordering_instance = require('./ordering.instance.json')
 const { API } = require('./helpers/ordering')
@@ -29,6 +30,10 @@ config.add(hierarchy)
 config.load(template, ordering_instance)
 
 config.initializer(({config, km}) => {
+  if (!km('properties')) {
+    debugger;
+    return
+  }
   const oapi = km('ordering').api
   oapi.createOrdering({ name: 'preference', categories: [ ['love', 'like'], ['hate', 'dislike'] ], ordering: [ ['love', 'like'], ['like', 'dislike'], ['dislike', 'hate'] ] })
 

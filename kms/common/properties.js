@@ -253,7 +253,6 @@ let config = {
       ],
       match: ({context}) => context.marker == 'modifies',
       apply: ({config, km, context}) => {
-        debugger;
         km('properties').api.kindOfConcept({ config, modifier: context.modifier.value, object: context.concept.value })
       }
     },

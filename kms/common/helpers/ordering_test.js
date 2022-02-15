@@ -49,7 +49,7 @@ describe('helpersOrdering', () => {
       km.mockReturnValue({ api: apiProperties })
       config = { km }
       const objects = {}
-      api.initialize({ config, objects })
+      api.initialize({ km, config, objects })
       api.createOrdering({ name: 'speed', sections: ['slowest', 'slow', 'fast', 'fastest'] })
       const less1 = { name: 'speed', context: 'greg', smaller: 'a', larger: 'b' }
       api.setLessThan(less1)
@@ -64,7 +64,7 @@ describe('helpersOrdering', () => {
       km.mockReturnValue({ api: apiProperties })
       config = { km }
       const objects = {}
-      api.initialize({ config, objects })
+      api.initialize({ km, config, objects })
 
       api.createOrdering({ name: 'speed' })
       const less1 = { name: 'speed', context: 'greg', smaller: 'a', larger: 'b' }
@@ -85,7 +85,7 @@ describe('helpersOrdering', () => {
       km.mockReturnValue({ api: apiProperties })
       config = { km }
       const objects = {}
-      api.initialize({ config, objects })
+      api.initialize({ km, config, objects })
 
       api.createOrdering({ name: 'speed' })
       const less1 = { name: 'speed', context: 'greg', smaller: 'a', larger: 'b' }

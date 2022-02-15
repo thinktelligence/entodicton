@@ -225,6 +225,7 @@ class API {
 
     if (relation) {
       config.addSemantic({
+        notes: `setter for ${operator}`,
         match: ({context}) => context.marker == operator,
         apply: ({context, km}) => {
           const api = km('properties').api
@@ -232,6 +233,7 @@ class API {
         }
       })
       config.addSemantic({
+        notes: `getter for ${operator}`,
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('properties').api
@@ -242,6 +244,7 @@ class API {
 
     if (semanticApply) {
       config.addSemantic({
+        notes: `override semantic apply for ${operator}`,
         match: ({context}) => context.marker == operator,
         apply: semanticApply,
       })
@@ -315,10 +318,13 @@ class API {
       config.addHierarchy(concept, 'queryable')
       config.addHierarchy(concept, 'hierarchyAble')
       config.addHierarchy(concept, 'object')
+      /*
       config.addGenerator({
+          notes: 'generator for added concept',
           match: ({context}) => context.value == concept && context.number == number && context.paraphrase,
           apply: () => word
       })
+      */
     }
 
     if (pluralize.isSingular(word)) {

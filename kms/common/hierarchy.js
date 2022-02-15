@@ -102,6 +102,11 @@ let config = {
         if (context.same && pluralize.isPlural(context.same.word)) {
           context.same.concept = true;
         }
+        /*
+        if (context.same && pluralize.isSingular(context.same.word)) {
+          context.same.concept = true;
+        }
+        */
         return listable(context, 'hierarchyAble') && context.same && context.same.concept && !context.query
       },
       apply: ({config, objects, km, context, asList, listable}) => {
@@ -126,6 +131,7 @@ let config = {
       apply: ({context, objects, gs, km}) => {
         const api = km('properties').api
         const type = pluralize.singular(context.object.value);
+        debugger;
         context.value = gs(api.children(type).map( (t) => pluralize.plural(t) ), ', ', ' and ')
         context.evaluateWasProcessed = true
       }
