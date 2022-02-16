@@ -1,5 +1,4 @@
 const entodicton = require('entodicton')
-// const hierarchy = require('./hierarchy').copy()
 const hierarchy = require('./hierarchy')
 const ordering_tests = require('./ordering.test.json')
 const ordering_instance = require('./ordering.instance.json')

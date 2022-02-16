@@ -1,5 +1,5 @@
 const entodicton = require('entodicton')
-const hierarchy = require('./hierarchy').copy()
+const hierarchy = require('./hierarchy')
 entodicton.ensureTestFile(module, 'foods', 'test')
 entodicton.ensureTestFile(module, 'foods', 'instance')
 
