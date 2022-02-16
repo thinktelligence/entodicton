@@ -73,6 +73,7 @@
               },
               "hatee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -83,6 +84,7 @@
               },
               "hater": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -330,6 +332,7 @@
               },
               "hatee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -340,6 +343,7 @@
               },
               "hater": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -350,6 +354,7 @@
               },
               "marker": "hate",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "hate",
               "word": "hates"
@@ -406,6 +411,7 @@
                   },
                   "hatee": {
                     "marker": "unknown",
+                    "paraphrase": true,
                     "types": [
                       "object",
                       "unknown"
@@ -416,6 +422,7 @@
                   },
                   "hater": {
                     "marker": "unknown",
+                    "paraphrase": true,
                     "types": [
                       "object",
                       "unknown"
@@ -561,41 +568,40 @@
         "ordering": "preference",
         "query": true,
         "response": {
-          "marker": "list",
-          "value": [
-            {
-              "do": {
-                "left": "liker",
-                "right": "likee"
-              },
-              "likee": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "bananas",
-                "word": "bananas"
-              },
-              "liker": {
-                "marker": "unknown",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "greg",
-                "word": "greg"
-              },
-              "marker": "like",
-              "ordering": "preference",
-              "paraphrase": true,
-              "topLevel": true,
-              "value": "like",
-              "word": "likes"
-            }
-          ]
+          "do": {
+            "left": "hater",
+            "right": "hatee"
+          },
+          "hatee": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "bananas",
+            "word": "bananas"
+          },
+          "hater": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          "is_compound": true,
+          "marker": "hate",
+          "ordering": "preference",
+          "topLevel": true,
+          "truthValue": false,
+          "types": [
+            "hate"
+          ],
+          "value": "hate",
+          "word": "hate"
         },
         "topLevel": true,
         "truthValue": false,
@@ -706,7 +712,7 @@
         },
         {
           "op": [
-            "hate",
+            "like",
             0
           ],
           "ops": [
@@ -726,7 +732,7 @@
         },
         {
           "op": [
-            "like",
+            "hate",
             0
           ],
           "ops": [
@@ -736,11 +742,11 @@
             ],
             [
               "hate",
-              1
+              0
             ],
             [
               "like",
-              0
+              1
             ]
           ]
         },
@@ -855,6 +861,7 @@
               },
               "likee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -865,6 +872,7 @@
               },
               "liker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -875,6 +883,7 @@
               },
               "marker": "like",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "like",
               "word": "likes"
@@ -922,41 +931,40 @@
             "ordering": "preference",
             "query": true,
             "response": {
-              "marker": "list",
-              "value": [
-                {
-                  "do": {
-                    "left": "liker",
-                    "right": "likee"
-                  },
-                  "likee": {
-                    "marker": "unknown",
-                    "types": [
-                      "object",
-                      "unknown"
-                    ],
-                    "unknown": true,
-                    "value": "bananas",
-                    "word": "bananas"
-                  },
-                  "liker": {
-                    "marker": "unknown",
-                    "types": [
-                      "object",
-                      "unknown"
-                    ],
-                    "unknown": true,
-                    "value": "greg",
-                    "word": "greg"
-                  },
-                  "marker": "like",
-                  "ordering": "preference",
-                  "paraphrase": true,
-                  "topLevel": true,
-                  "value": "like",
-                  "word": "likes"
-                }
-              ]
+              "do": {
+                "left": "hater",
+                "right": "hatee"
+              },
+              "hatee": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "bananas",
+                "word": "bananas"
+              },
+              "hater": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              },
+              "is_compound": true,
+              "marker": "hate",
+              "ordering": "preference",
+              "topLevel": true,
+              "truthValue": false,
+              "types": [
+                "hate"
+              ],
+              "value": "hate",
+              "word": "hate"
             },
             "topLevel": true,
             "truthValue": false,
@@ -969,7 +977,7 @@
           "paraphrases": "does greg hate bananas",
           "responses": [
             "",
-            "no greg likes bananas"
+            "no greg hate bananas"
           ]
         },
         {
@@ -1007,7 +1015,7 @@
           "paraphrases": "greg likes bananas",
           "responses": [
             "",
-            "no greg likes bananas"
+            "no greg hate bananas"
           ]
         }
       ]
@@ -1018,7 +1026,7 @@
     ],
     "responses": [
       "",
-      "no greg likes bananas"
+      "no greg hate bananas"
     ]
   },
   "greg likes bananas does greg like bananas": {
@@ -1095,6 +1103,7 @@
               },
               "likee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1105,6 +1114,7 @@
               },
               "liker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1352,6 +1362,7 @@
               },
               "likee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1362,6 +1373,7 @@
               },
               "liker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1372,6 +1384,7 @@
               },
               "marker": "like",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "like",
               "word": "likes"
@@ -1428,6 +1441,7 @@
                   },
                   "likee": {
                     "marker": "unknown",
+                    "paraphrase": true,
                     "types": [
                       "object",
                       "unknown"
@@ -1438,6 +1452,7 @@
                   },
                   "liker": {
                     "marker": "unknown",
+                    "paraphrase": true,
                     "types": [
                       "object",
                       "unknown"
@@ -1675,6 +1690,7 @@
               },
               "lovee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1685,6 +1701,7 @@
               },
               "lover": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1695,6 +1712,7 @@
               },
               "marker": "love",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "love",
               "word": "loves"

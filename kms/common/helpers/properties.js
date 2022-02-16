@@ -1,5 +1,6 @@
 const pluralize = require('pluralize')
 const { unflatten, flattens } = require('entodicton')
+const _ = require('lodash')
 
 class Frankenhash {
   constructor(data) {
@@ -190,9 +191,13 @@ class API {
           // api.setCategory(ordering.name, context[ordering.object].value, context[ordering.category].value, context)
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
-          const fcontext = flattens(['list'], [context])
-          propertiesAPI.relation_add(fcontext) 
-          // propertiesAPI.relation_add(context) 
+          const fcontexts = flattens(['list'], [context])
+          for (const fcontext of fcontexts) {
+            fcontext.paraphrase = true
+            fcontext[ordering.object].paraphrase = true
+            fcontext[ordering.category].paraphrase = true
+          }
+          propertiesAPI.relation_add(fcontexts) 
         }
       })
       config.addSemantic({
@@ -210,14 +215,25 @@ class API {
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
           const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object, ordering.category])
-          if (matches.length > 0) {
+          if (matches.length > 0 || (typeof context.query == 'boolean' && context.query)) {
+            // does greg like bananas
             context.truthValue = matches.length > 0
-            context.response = { marker: 'list', value: unflatten.unflatten(matches) }
+            if (matches.length == 0) {
+              context.response = _.clone(context)
+              context.response.query = undefined
+            } else {
+              context.response = { marker: 'list', value: unflatten.unflatten(matches) }
+            }
           } else {
             // see if anything is preferred greg
-            const matches = propertiesAPI.relation_get(context, ['ordering'])
+            // what does greg like
+            const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object])
             context.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
-            context.response = { marker: 'list', value: matches }
+            if (matches.length == 0) {
+              // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
+            } else {
+              context.response = { marker: 'list', value: matches }
+            }
           }
         }
       })
@@ -349,7 +365,7 @@ class API {
     return concept;
   }
 
-  relation_add(relations) {
+  relation_add (relations) {
     if (!Array.isArray(relations)) {
       relations = [relations]
     }
@@ -358,8 +374,7 @@ class API {
     }
   }
 
-  relation_match(args, template, value) {
-    // greg
+  relation_match (args, template, value) {
     const matches = (t, v) => {
       if (typeof t == 'string' || typeof v == 'string') {
         return t == v
@@ -372,7 +387,6 @@ class API {
       if (t.query) {
         return true
       }
-
       return t.value && v.value && t.value == v.value
     }
 

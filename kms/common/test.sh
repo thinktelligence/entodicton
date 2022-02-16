@@ -3,6 +3,7 @@ node avatar  -tva
 node characters  -tva
 node currency  -tva
 node dialogues  -tva
+node foods  -tva
 node help  -tva
 node hierarchy  -tva
 node javascript  -tva
