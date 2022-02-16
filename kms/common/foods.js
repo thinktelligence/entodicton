@@ -11,8 +11,8 @@ const foods_instance = require('./foods.instance.json')
 
 const template ={
   "queries": [
-  /*
     "chicken modifies strips",
+    /*
     "chicken strips are food",
     "sushi is food",
     */

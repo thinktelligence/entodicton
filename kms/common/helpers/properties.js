@@ -274,6 +274,10 @@ class API {
     config.addHierarchy(objectId, 'queryable')
     config.addHierarchy(modifierObjectId, objectId)
     config.addHierarchy(objectId, 'concept')
+    if (config.config.bridges.find( (bridge) => bridge.id === 'hierarchyAble' )) {
+      config.addHierarchy(objectId, 'hierarchyAble')
+      config.addHierarchy(modifierObjectId, 'hierarchyAble')
+    }
 
     // [['a', 0], ['crew', 0], ['is', 0], ['kirk', 0]]
     /*
