@@ -38,7 +38,10 @@ let config = {
   generators: [
     {
       match: ({context}) => context.marker == 'means' && context.paraphrase,
-      apply: ({context, g}) => `${g(context.from)} means ${g(context.to)}`
+      apply: ({context, g}) => {
+        const before = g({ ...context.from, paraphrase: true, debug: true})
+        return `${g({ ...context.from, paraphrase: true})} means ${g(context.to)}`
+      }
     },
   ],
 
@@ -46,18 +49,41 @@ let config = {
     {
       match: ({context}) => context.marker == 'means',
       apply: ({config, context}) => {
-        const match = (defContext) => ({context}) => context.marker == defContext.from.marker
-        const apply = (mappings, TO) => ({context, s}) => {
-          TO = _.cloneDeep(TO)
-          for (let { from, to } of mappings) {
-            hashIndexesSet(TO, to, hashIndexesGet(context, from))
+
+        // setup the read semantic
+        if (false)
+        {
+          const match = (defContext) => ({context}) => context.marker == defContext.from.marker && context.query
+          const apply = (mappings, TO) => ({context, s}) => {
+            debugger;
+            TO = _.cloneDeep(TO)
+            for (let { from, to } of mappings) {
+              hashIndexesSet(TO, to, hashIndexesGet(context, from))
+            }
+            toPrime = s(TO)
+            context.result = toPrime.result
           }
-          toPrime = s(TO)
-          context.result = toPrime.result
+          const mappings = translationMapping(context.from, context.to)
+          const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }
+          config.addSemantic(semantic)
         }
-        const mappings = translationMapping(context.from, context.to)
-        const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }
-        config.addSemantic(semantic)
+
+        // setup the write semantic
+        {
+          const match = (defContext) => ({context}) => context.marker == defContext.from.marker
+          const apply = (mappings, TO) => ({context, s}) => {
+            TO = _.cloneDeep(TO)
+            for (let { from, to } of mappings) {
+              hashIndexesSet(TO, to, hashIndexesGet(context, from))
+            }
+            toPrime = s(TO)
+            context.result = toPrime.result
+          }
+          const mappings = translationMapping(context.from, context.to)
+          const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }
+          config.addSemantic(semantic)
+        }
+
         /*
         const otherWord = context.meaning.word
         const word = context.word.word
@@ -79,13 +105,17 @@ let config = {
 config = new entodicton.Config(config)
 // config.add(dialogue)
 config.initializer( ({config, isModule}) => {
-  /*
   if (!isModule) {
+    config.addGenerator({
+      match: ({context}) => context.marker == 'unknown',
+      apply: ({context}) => `${context.word}`
+    })
+    /*
     config.addWord('testword2', { id: "testword2", initial: "{ value: 'testWord2Value' }" })
     config.addBridge({ "id": "testword2", "level": 0, "bridge": "{ ...next(operator) }" })
     config.addOperator("([testword2|])")
+    */
   }
-  */
 })
 config.afterTest = ({query, expected, actual, config}) => {
   /*

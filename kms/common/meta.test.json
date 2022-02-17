@@ -1,51 +1,76 @@
 {
   "a means b": {
-    "generated": [
-      "b is not defined"
-    ],
-    "result": [
+    "config": {
+    },
+    "contexts": [
       {
-        "marker": "means",
-        "meaning": {
-          "marker": "b",
-          "unknown": true,
-          "word": "b"
-        },
-        "word": {
-          "marker": "a",
-          "unknown": true,
+        "default": true,
+        "from": {
+          "marker": "unknown",
+          "value": "a",
           "word": "a"
         },
-        "response": true,
-        "value": "b is not defined"
+        "marker": "means",
+        "to": {
+          "marker": "unknown",
+          "value": "b",
+          "word": "b"
+        },
+        "topLevel": true,
+        "word": "means"
       }
     ],
-    "objects": {
-      "namespaced": {
-        "0": {},
-        "1": {
-          "dialog": {
-            "current": []
-          }
-        }
-      }
-    },
     "metadata": {
-      "associations": [],
-      "priorities": [
-        [
-          [
+      "opChoices": [
+        {
+          "op": [
             "means",
             0
           ],
-          [
+          "ops": [
             [
               "means",
               0
             ]
           ]
-        ]
+        }
       ]
-    }
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "value": "a",
+              "word": "a"
+            },
+            "marker": "means",
+            "to": {
+              "marker": "unknown",
+              "value": "b",
+              "word": "b"
+            },
+            "topLevel": true,
+            "word": "means"
+          },
+          "paraphrases": "a means b",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "a means b"
+    ],
+    "responses": [
+      ""
+    ]
   }
 }

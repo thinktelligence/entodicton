@@ -61,7 +61,6 @@ config.initializer( ({config, km}) => {
                     "word": "armed",
                     "response": true
             }
-
             km("properties").api.setProperty(context.weapon.value, 'status', value, true) 
           }
           )
