@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const meta = require('./meta.js')
+const _ = require('lodash')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent } = require('./helpers')
 
@@ -405,7 +406,8 @@ let config = {
           context.response = { verbatim: instance.verbatim }
           return
         }
-        concept = JSON.parse(JSON.stringify(value)) 
+        // concept = JSON.parse(JSON.stringify(value)) 
+        concept = _.cloneDeep(value) 
         concept.isQuery = undefined
 
         context.response = {
