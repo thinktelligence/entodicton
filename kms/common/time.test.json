@@ -171,7 +171,7 @@
       "opChoices": [
         {
           "op": [
-            "hourUnits",
+            "person",
             0
           ],
           "ops": [
@@ -211,7 +211,7 @@
         },
         {
           "op": [
-            "ampm",
+            "info",
             0
           ],
           "ops": [
@@ -220,15 +220,15 @@
               0
             ],
             [
+              "hourUnits",
+              0
+            ],
+            [
               "info",
               0
             ],
             [
               "is",
-              0
-            ],
-            [
-              "person",
               0
             ],
             [
@@ -252,15 +252,15 @@
           ],
           "ops": [
             [
-              "info",
+              "ampm",
+              0
+            ],
+            [
+              "hourUnits",
               0
             ],
             [
               "is",
-              0
-            ],
-            [
-              "person",
               0
             ],
             [
@@ -279,20 +279,20 @@
         },
         {
           "op": [
-            "the",
+            "hourUnits",
             0
           ],
           "ops": [
             [
-              "info",
+              "ampm",
+              0
+            ],
+            [
+              "hourUnits",
               0
             ],
             [
               "is",
-              0
-            ],
-            [
-              "person",
               0
             ],
             [
@@ -307,12 +307,12 @@
         },
         {
           "op": [
-            "is",
+            "the",
             0
           ],
           "ops": [
             [
-              "info",
+              "ampm",
               0
             ],
             [
@@ -320,7 +320,43 @@
               0
             ],
             [
-              "person",
+              "tell",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "ampm",
+            0
+          ],
+          "ops": [
+            [
+              "ampm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "tell",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -336,52 +372,8 @@
           ],
           "ops": [
             [
-              "info",
-              0
-            ],
-            [
               "is",
               1
-            ],
-            [
-              "person",
-              0
-            ],
-            [
-              "tell",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "info",
-            0
-          ],
-          "ops": [
-            [
-              "info",
-              0
-            ],
-            [
-              "person",
-              0
-            ],
-            [
-              "tell",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "person",
-            0
-          ],
-          "ops": [
-            [
-              "person",
-              0
             ],
             [
               "tell",
@@ -540,17 +532,17 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "default": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "time",
             "modifiers": [
               "determiner"
             ],
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "time"
@@ -558,7 +550,7 @@
             "wantsValue": true,
             "word": "time"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "default": true,
             "determiner": "the",
@@ -578,7 +570,7 @@
             "wantsValue": true,
             "word": "time"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -604,7 +596,7 @@
       "opChoices": [
         {
           "op": [
-            "time",
+            "what",
             0
           ],
           "ops": [
@@ -661,6 +653,10 @@
               0
             ],
             [
+              "time",
+              0
+            ],
+            [
               "timeFormat",
               0
             ],
@@ -671,16 +667,44 @@
             [
               "use",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "time",
+            0
+          ],
+          "ops": [
+            [
+              "count",
+              0
             ],
             [
-              "what",
+              "is",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "time",
+              0
+            ],
+            [
+              "timeFormat",
+              0
+            ],
+            [
+              "use",
               0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "count",
             0
           ],
           "ops": [
@@ -703,53 +727,21 @@
             [
               "use",
               0
-            ],
-            [
-              "what",
-              0
             ]
           ]
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
-            [
-              "count",
-              0
-            ],
             [
               "is",
               0
             ],
             [
-              "timeFormat",
-              0
-            ],
-            [
-              "use",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "count",
-            0
-          ],
-          "ops": [
-            [
-              "count",
-              0
-            ],
-            [
-              "is",
+              "the",
               0
             ],
             [
@@ -879,17 +871,17 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "time",
                 "modifiers": [
                   "determiner"
                 ],
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "time"
@@ -897,7 +889,7 @@
                 "wantsValue": true,
                 "word": "time"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
@@ -917,7 +909,7 @@
                 "wantsValue": true,
                 "word": "time"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -1020,17 +1012,17 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "default": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "time",
             "modifiers": [
               "determiner"
             ],
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "time"
@@ -1038,7 +1030,7 @@
             "wantsValue": true,
             "word": "time"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "default": true,
             "determiner": "the",
@@ -1058,7 +1050,7 @@
             "wantsValue": true,
             "word": "time"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -1084,7 +1076,7 @@
       "opChoices": [
         {
           "op": [
-            "time",
+            "what",
             0
           ],
           "ops": [
@@ -1141,6 +1133,10 @@
               0
             ],
             [
+              "time",
+              0
+            ],
+            [
               "timeFormat",
               0
             ],
@@ -1151,16 +1147,44 @@
             [
               "use",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "time",
+            0
+          ],
+          "ops": [
+            [
+              "count",
+              0
             ],
             [
-              "what",
+              "is",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "time",
+              0
+            ],
+            [
+              "timeFormat",
+              0
+            ],
+            [
+              "use",
               0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "count",
             0
           ],
           "ops": [
@@ -1183,53 +1207,21 @@
             [
               "use",
               0
-            ],
-            [
-              "what",
-              0
             ]
           ]
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
-            [
-              "count",
-              0
-            ],
             [
               "is",
               0
             ],
             [
-              "timeFormat",
-              0
-            ],
-            [
-              "use",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "count",
-            0
-          ],
-          "ops": [
-            [
-              "count",
-              0
-            ],
-            [
-              "is",
+              "the",
               0
             ],
             [
@@ -1359,17 +1351,17 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "time",
                 "modifiers": [
                   "determiner"
                 ],
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "time"
@@ -1377,7 +1369,7 @@
                 "wantsValue": true,
                 "word": "time"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
@@ -1397,7 +1389,7 @@
                 "wantsValue": true,
                 "word": "time"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -1632,17 +1624,17 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "default": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "time",
             "modifiers": [
               "determiner"
             ],
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "time"
@@ -1650,7 +1642,7 @@
             "wantsValue": true,
             "word": "time"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "default": true,
             "determiner": "the",
@@ -1670,7 +1662,7 @@
             "wantsValue": true,
             "word": "time"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -1831,17 +1823,17 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "time",
                 "modifiers": [
                   "determiner"
                 ],
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "time"
@@ -1849,7 +1841,7 @@
                 "wantsValue": true,
                 "word": "time"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
@@ -1869,7 +1861,7 @@
                 "wantsValue": true,
                 "word": "time"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {

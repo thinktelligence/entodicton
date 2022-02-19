@@ -1,6 +1,7 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const numbers = require('./numbers')
+const pluralize = require('pluralize')
 //const people = require('./people')
 const properties = require('./properties')
 const scorekeeper_tests = require('./scorekeeper.test.json')
@@ -108,10 +109,10 @@ let config = {
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response && context.two && context.two.marker == 'next',
       apply: ({context, g}) => {
                 const response = context.response;
-                const concept = response.concept;
+                const concept = response.two;
                 concept.paraphrase = true
                 concept.isSelf = true
-                const instance = g(response.instance)
+                const instance = g(concept.value)
                 return instance
              }
     },
@@ -275,6 +276,9 @@ let config = {
             allScoresAreZero = false
             break;
           }
+        }
+        if (pluralize.isPlural(context.word)) {
+          context.number = 'many'
         }
         if (allScoresAreZero) {
           context.value = 'nothing for everyone'

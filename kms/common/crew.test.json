@@ -984,11 +984,12 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "modifiers": [
               "determiner"
@@ -1009,7 +1010,6 @@
               "wantsValue": true,
               "word": "phasers"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "property"
@@ -1019,7 +1019,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "determiner": "the",
             "evaluateWasProcessed": true,
@@ -1047,7 +1047,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -1298,7 +1298,7 @@
         },
         {
           "op": [
-            "propertyOf",
+            "disarm",
             0
           ],
           "ops": [
@@ -1306,6 +1306,22 @@
               "disarm",
               0
             ],
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
             [
               "is",
               0
@@ -1323,32 +1339,12 @@
           ],
           "ops": [
             [
-              "disarm",
-              0
-            ],
-            [
               "is",
               0
             ],
             [
               "propertyOf",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "disarm",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "is",
-              0
             ]
           ]
         },
@@ -1979,11 +1975,12 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "modifiers": [
                   "determiner"
@@ -2004,7 +2001,6 @@
                   "wantsValue": true,
                   "word": "phasers"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "property"
@@ -2014,7 +2010,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "determiner": "the",
                 "evaluateWasProcessed": true,
@@ -2042,7 +2038,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -4643,11 +4639,12 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "modifiers": [
               "determiner"
@@ -4674,7 +4671,6 @@
               "wantsValue": true,
               "word": "torpedoes"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "property"
@@ -4684,7 +4680,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "determiner": "the",
             "evaluateWasProcessed": true,
@@ -4711,7 +4707,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -5835,11 +5831,12 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "modifiers": [
                   "determiner"
@@ -5866,7 +5863,6 @@
                   "wantsValue": true,
                   "word": "torpedoes"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "property"
@@ -5876,7 +5872,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "determiner": "the",
                 "evaluateWasProcessed": true,
@@ -5903,7 +5899,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -6271,12 +6267,14 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "number": "many",
+          "one": {
             "concept": true,
             "default": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "type",
             "modifiers": [
               "determiner"
@@ -6291,7 +6289,6 @@
               "value": "rank",
               "word": "rank"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "type"
@@ -6299,7 +6296,7 @@
             "wantsValue": true,
             "word": "types"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "default": true,
             "determiner": "the",
@@ -6309,6 +6306,7 @@
             "modifiers": [
               "determiner"
             ],
+            "number": "many",
             "object": {
               "marker": "unknown",
               "types": [
@@ -6327,7 +6325,7 @@
             "wantsValue": true,
             "word": "types"
           },
-          "isResponse": true
+          "word": "are"
         },
         "topLevel": true,
         "two": {
@@ -7112,12 +7110,14 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "number": "many",
+              "one": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "type",
                 "modifiers": [
                   "determiner"
@@ -7132,7 +7132,6 @@
                   "value": "rank",
                   "word": "rank"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "type"
@@ -7140,7 +7139,7 @@
                 "wantsValue": true,
                 "word": "types"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "default": true,
                 "determiner": "the",
@@ -7150,6 +7149,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "many",
                 "object": {
                   "marker": "unknown",
                   "types": [
@@ -7168,7 +7168,7 @@
                 "wantsValue": true,
                 "word": "types"
               },
-              "isResponse": true
+              "word": "are"
             },
             "topLevel": true,
             "two": {
@@ -7492,9 +7492,10 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "object": {
               "marker": "spock",
@@ -7505,7 +7506,6 @@
               "value": "spock",
               "word": "spock"
             },
-            "paraphrase": true,
             "types": [
               "property"
             ],
@@ -7513,7 +7513,7 @@
             "value": "name",
             "word": "name"
           },
-          "instance": {
+          "two": {
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
@@ -7533,7 +7533,7 @@
             },
             "word": "name"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -7590,7 +7590,7 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
@@ -7614,7 +7614,7 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
@@ -7627,7 +7627,7 @@
               0
             ],
             [
-              "spock",
+              "what",
               0
             ]
           ]
@@ -8295,9 +8295,10 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "object": {
                   "marker": "spock",
@@ -8308,7 +8309,6 @@
                   "value": "spock",
                   "word": "spock"
                 },
-                "paraphrase": true,
                 "types": [
                   "property"
                 ],
@@ -8316,7 +8316,7 @@
                 "value": "name",
                 "word": "name"
               },
-              "instance": {
+              "two": {
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
@@ -8336,7 +8336,7 @@
                 },
                 "word": "name"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -8653,9 +8653,10 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "object": {
               "marker": "spock",
@@ -8666,7 +8667,6 @@
               "value": "spock",
               "word": "spock"
             },
-            "paraphrase": true,
             "types": [
               "property"
             ],
@@ -8674,7 +8674,7 @@
             "value": "rank",
             "word": "rank"
           },
-          "instance": {
+          "two": {
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
@@ -8694,7 +8694,7 @@
             },
             "word": "rank"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -8751,7 +8751,7 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
@@ -8775,7 +8775,7 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
@@ -8788,7 +8788,7 @@
               0
             ],
             [
-              "spock",
+              "what",
               0
             ]
           ]
@@ -9456,9 +9456,10 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "object": {
                   "marker": "spock",
@@ -9469,7 +9470,6 @@
                   "value": "spock",
                   "word": "spock"
                 },
-                "paraphrase": true,
                 "types": [
                   "property"
                 ],
@@ -9477,7 +9477,7 @@
                 "value": "rank",
                 "word": "rank"
               },
-              "instance": {
+              "two": {
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
@@ -9497,7 +9497,7 @@
                 },
                 "word": "rank"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -9814,9 +9814,10 @@
           "is"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "object": {
               "marker": "spock",
@@ -9827,7 +9828,6 @@
               "value": "spock",
               "word": "spock"
             },
-            "paraphrase": true,
             "types": [
               "property"
             ],
@@ -9835,7 +9835,7 @@
             "value": "rank",
             "word": "rank"
           },
-          "instance": {
+          "two": {
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
@@ -9855,7 +9855,7 @@
             },
             "word": "rank"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -9919,7 +9919,7 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
@@ -9947,7 +9947,7 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
@@ -9964,7 +9964,7 @@
               0
             ],
             [
-              "spock",
+              "what",
               0
             ]
           ]
@@ -10664,9 +10664,10 @@
               "is"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "object": {
                   "marker": "spock",
@@ -10677,7 +10678,6 @@
                   "value": "spock",
                   "word": "spock"
                 },
-                "paraphrase": true,
                 "types": [
                   "property"
                 ],
@@ -10685,7 +10685,7 @@
                 "value": "rank",
                 "word": "rank"
               },
-              "instance": {
+              "two": {
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
@@ -10705,7 +10705,7 @@
                 },
                 "word": "rank"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -11025,11 +11025,12 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "modifiers": [
               "determiner"
@@ -11043,7 +11044,6 @@
               "value": "kirk",
               "word": "kirk"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "property"
@@ -11053,7 +11053,7 @@
             "wantsValue": true,
             "word": "name"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "determiner": "the",
             "evaluateWasProcessed": true,
@@ -11080,7 +11080,7 @@
             "wantsValue": true,
             "word": "name"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -11148,7 +11148,7 @@
         },
         {
           "op": [
-            "kirk",
+            "what",
             0
           ],
           "ops": [
@@ -11176,7 +11176,7 @@
         },
         {
           "op": [
-            "what",
+            "kirk",
             0
           ],
           "ops": [
@@ -11185,15 +11185,15 @@
               0
             ],
             [
+              "kirk",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -11865,11 +11865,12 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "modifiers": [
                   "determiner"
@@ -11883,7 +11884,6 @@
                   "value": "kirk",
                   "word": "kirk"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "property"
@@ -11893,7 +11893,7 @@
                 "wantsValue": true,
                 "word": "name"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "determiner": "the",
                 "evaluateWasProcessed": true,
@@ -11920,7 +11920,7 @@
                 "wantsValue": true,
                 "word": "name"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -12244,11 +12244,12 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "modifiers": [
               "determiner"
@@ -12262,7 +12263,6 @@
               "value": "spock",
               "word": "spock"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "property"
@@ -12272,7 +12272,7 @@
             "wantsValue": true,
             "word": "rank"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "determiner": "the",
             "evaluateWasProcessed": true,
@@ -12299,7 +12299,7 @@
             "wantsValue": true,
             "word": "rank"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -12367,7 +12367,7 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
@@ -12395,7 +12395,7 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
@@ -12408,11 +12408,11 @@
               0
             ],
             [
-              "the",
+              "spock",
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -13084,11 +13084,12 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "modifiers": [
                   "determiner"
@@ -13102,7 +13103,6 @@
                   "value": "spock",
                   "word": "spock"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "property"
@@ -13112,7 +13112,7 @@
                 "wantsValue": true,
                 "word": "rank"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "determiner": "the",
                 "evaluateWasProcessed": true,
@@ -13139,7 +13139,7 @@
                 "wantsValue": true,
                 "word": "rank"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -13463,11 +13463,12 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "modifiers": [
               "determiner"
@@ -13488,7 +13489,6 @@
               "wantsValue": true,
               "word": "phasers"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "property"
@@ -13498,7 +13498,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "determiner": "the",
             "evaluateWasProcessed": true,
@@ -13525,7 +13525,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -14337,11 +14337,12 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "modifiers": [
                   "determiner"
@@ -14362,7 +14363,6 @@
                   "wantsValue": true,
                   "word": "phasers"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "property"
@@ -14372,7 +14372,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "determiner": "the",
                 "evaluateWasProcessed": true,
@@ -14399,7 +14399,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -14730,11 +14730,12 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "concept": true,
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "modifiers": [
               "determiner"
@@ -14761,7 +14762,6 @@
               "wantsValue": true,
               "word": "torpedoes"
             },
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "property"
@@ -14771,7 +14771,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "determiner": "the",
             "evaluateWasProcessed": true,
@@ -14798,7 +14798,7 @@
             "wantsValue": true,
             "word": "status"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -15676,11 +15676,12 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "concept": true,
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "modifiers": [
                   "determiner"
@@ -15707,7 +15708,6 @@
                   "wantsValue": true,
                   "word": "torpedoes"
                 },
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "property"
@@ -15717,7 +15717,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "determiner": "the",
                 "evaluateWasProcessed": true,
@@ -15744,7 +15744,7 @@
                 "wantsValue": true,
                 "word": "status"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -16082,7 +16082,10 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "number": "many",
+          "one": {
             "concept": true,
             "crew": {
               "marker": "crew",
@@ -16091,13 +16094,11 @@
             },
             "determiner": "the",
             "evaluate": true,
-            "isSelf": true,
             "marker": "crew_member",
             "modifiers": [
               "determiner",
               "crew"
             ],
-            "paraphrase": true,
             "pullFromContext": true,
             "types": [
               "crew_member"
@@ -16106,7 +16107,7 @@
             "wantsValue": true,
             "word": "members"
           },
-          "instance": {
+          "two": {
             "concept": true,
             "crew": {
               "marker": "crew",
@@ -16136,7 +16137,7 @@
             "wantsValue": true,
             "word": "members"
           },
-          "isResponse": true
+          "word": "are"
         },
         "topLevel": true,
         "two": {
@@ -16168,7 +16169,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "member",
             0
           ],
           "ops": [
@@ -16196,7 +16197,7 @@
         },
         {
           "op": [
-            "member",
+            "what",
             0
           ],
           "ops": [
@@ -16209,11 +16210,11 @@
               0
             ],
             [
-              "member",
+              "the",
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -16891,7 +16892,10 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "number": "many",
+              "one": {
                 "concept": true,
                 "crew": {
                   "marker": "crew",
@@ -16900,13 +16904,11 @@
                 },
                 "determiner": "the",
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "crew_member",
                 "modifiers": [
                   "determiner",
                   "crew"
                 ],
-                "paraphrase": true,
                 "pullFromContext": true,
                 "types": [
                   "crew_member"
@@ -16915,7 +16917,7 @@
                 "wantsValue": true,
                 "word": "members"
               },
-              "instance": {
+              "two": {
                 "concept": true,
                 "crew": {
                   "marker": "crew",
@@ -16945,7 +16947,7 @@
                 "wantsValue": true,
                 "word": "members"
               },
-              "isResponse": true
+              "word": "are"
             },
             "topLevel": true,
             "two": {

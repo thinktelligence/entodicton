@@ -1,6 +1,7 @@
 const entodicton = require('entodicton')
 const meta = require('./meta.js')
 const _ = require('lodash')
+const { isMany } = require('./helpers')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent } = require('./helpers')
 
@@ -333,12 +334,13 @@ let config = {
         }
       }
     },
-    [ 
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
-      ({context, g}) => {
-        return `${g(context.one)} is ${g(context.two)}`
-      }
-    ],
+    { 
+      notes: 'x is y (not a response)',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
+      apply: ({context, g}) => {
+        return `${g({ ...context.one, paraphrase: true })} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+      },
+    },
 
     // defaults
     [
@@ -410,10 +412,23 @@ let config = {
         concept = _.cloneDeep(value) 
         concept.isQuery = undefined
 
-        context.response = {
-          isResponse: true,
-          instance,
-          concept,
+        if (true) {
+          const many = isMany(concept) || isMany(instance)
+          const response = {
+            "default": true,
+            "marker": "is",
+            "one": concept,
+            "two": instance,
+            "word": many ? "are" : "is",
+            "number": many ? "many" : undefined,
+          }
+          context.response = response
+        } else {
+          context.response = {
+            isResponse: true,
+            instance,
+            concept,
+          }
         }
       }
     },
