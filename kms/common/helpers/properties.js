@@ -644,6 +644,24 @@ class API {
     return this.objects.concepts.includes(concept)
   }
 
+  addValueToWord(value, word) {
+    if (!this.objects.valueToWords[value]) {
+      this.objects.valueToWords[value] = []
+    }
+    const words = this.objects.valueToWords[value]
+    if (!words.includes(word)) {
+      words.push(word)
+    }
+  }
+
+  getWordForValue(value) {
+    return this.objects.valueToWords[value][0]
+  }
+
+  getWordsForValue(value) {
+    return this.objects.valueToWords[value]
+  }
+
   set objects(objects) {
     this._objects = objects
 
@@ -655,6 +673,7 @@ class API {
     objects.parents = {}
     objects.children = {}
     objects.relations = []
+    objects.valueToWords = {}
     this.propertiesFH = new Frankenhash(objects.properties)
   }
 

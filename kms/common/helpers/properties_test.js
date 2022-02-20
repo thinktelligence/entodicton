@@ -2,6 +2,55 @@ const { API, Frankenhash } = require('./properties')
 
 describe('helpersProperties', () => {
   describe('default', () => {
+    describe('value to words map', () => {
+      it('initialized', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        expect(api.objects.valueToWords).toStrictEqual({})
+      })
+
+      it('add one', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        api.addValueToWord('greg', { marker: "greg" })
+        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg" }] })
+      })
+
+      it('add two', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        api.addValueToWord('greg', { marker: "greg1" })
+        api.addValueToWord('greg', { marker: "greg2" })
+        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg1" }, { marker: "greg2" }] })
+      })
+
+      it('get all', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        api.addValueToWord('greg', { marker: "greg1" })
+        api.addValueToWord('greg', { marker: "greg2" })
+        expect(api.getWordsForValue('greg')).toStrictEqual([{ marker: "greg1" }, { marker: "greg2" }])
+      })
+
+      it('get one', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        api.addValueToWord('greg', { marker: "greg1" })
+        api.addValueToWord('greg', { marker: "greg2" })
+        expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg1" })
+      })
+    })
+
     describe('setProperty', () => {
       it('initialize objects', async () => {
         const api = new API()
@@ -18,6 +67,7 @@ describe('helpersProperties', () => {
           "parents":  {},
           "property":  {},
           "relations": [],
+          "valueToWords": {},
         }
         expect(objects).toStrictEqual(expected)
       })
@@ -43,12 +93,13 @@ describe('helpersProperties', () => {
               }
             },
             "handlers": {},
-            "initHandlers": []
+            "initHandlers": [],
           },
           "property": {},
           "parents": {},
           "children": {},
-          "relations": []
+          "relations": [],
+          "valueToWords": {},
         }
 
         expect(api.objects).toStrictEqual(expected)
