@@ -11,6 +11,7 @@ const pluralize = require('pluralize')
 
 const template = {
   queries: [
+    // TODO "owns is relation between owner and owned",
     "kia's sister is hana",
     "kia's name is kia",
     "kia's age is 27",
