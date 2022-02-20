@@ -17,7 +17,7 @@ const template ={
     // "neutral anger happiness and boredom are concepts",
     // "neutral anger happiness and boredom are emotions",
     "sentientBeing1 feels emotion1 means the emotion of sentientBeing1 is emotion1",
-    "greg feels angry", 
+    //"greg feels angry", 
   ],
 }
 

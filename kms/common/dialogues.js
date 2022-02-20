@@ -289,11 +289,12 @@ let config = {
       priority: -1,
     },
     { 
+      notes: "x is y",
       match: ({context, hierarchy}) => { return hierarchy.isA(context.marker, 'is') && context.paraphrase },
       apply: ({context, g}) => {
         context.one.response = true
         context.two.response = true
-        return `${g(context.one)} ${context.word} ${g(context.two)}` 
+        return `${g({ ...context.one, paraphrase: true })} ${context.word} ${g(context.two)}` 
       }
     },
     { 

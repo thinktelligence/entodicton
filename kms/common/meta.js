@@ -51,26 +51,31 @@ let config = {
       apply: ({config, context}) => {
 
         // setup the read semantic
-        if (false)
         {
           const match = (defContext) => ({context}) => context.marker == defContext.from.marker && context.query
-          const apply = (mappings, TO) => ({context, s}) => {
-            debugger;
+          const apply = (mappings, TO) => ({context, s, g, config}) => {
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
             }
+            // next move add debug arg to s and g
+            TO.query = true
             toPrime = s(TO)
-            context.result = toPrime.result
+            // toPrime = s(TO, { debug: { apply: true } })
+            context.response = toPrime.response
           }
           const mappings = translationMapping(context.from, context.to)
-          const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }
+          const semantic = { 
+            notes: "setup the read semantic",
+            match: match(context), 
+            apply: apply(mappings, _.cloneDeep(context.to)) ,
+          }
           config.addSemantic(semantic)
         }
 
         // setup the write semantic
         {
-          const match = (defContext) => ({context}) => context.marker == defContext.from.marker
+          const match = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query
           const apply = (mappings, TO) => ({context, s}) => {
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
@@ -80,7 +85,11 @@ let config = {
             context.result = toPrime.result
           }
           const mappings = translationMapping(context.from, context.to)
-          const semantic = { match: match(context), apply: apply(mappings, _.cloneDeep(context.to)) }
+          const semantic = { 
+            notes: "setup the read semantic",
+            match: match(context), 
+            apply: apply(mappings, _.cloneDeep(context.to)),
+          }
           config.addSemantic(semantic)
         }
 
