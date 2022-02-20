@@ -136,7 +136,6 @@ let config = {
       apply: ({context, objects, gs, km}) => {
         const api = km('properties').api
         const type = pluralize.singular(context.object.value);
-        debugger;
         const children = api.children(type)
         context.value = gs(children.map( (t) => pluralize.plural(t) ), ', ', ' and ')
         if (children.length > 1) {

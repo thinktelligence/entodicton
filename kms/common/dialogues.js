@@ -220,28 +220,6 @@ let config = {
       notes: 'paraphrase a queryable',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       apply: ({context, g}) => {
-        // return g(context.value)
-        /*
-        const text = []
-        for (modifier of (context.modifiers || [])) {
-          text.push(g(context[modifier]))
-        }
-        if (context.value) {
-          text.push(g(context.value))
-        } else {
-          text.push(context.word)
-        }
-        return text.join(' ')
-        */
-        /*
-        if (context.value) {
-          context.value.paraphrase = true;
-          return g(context.value)
-        } else {
-          context.word.paraphrase = true;
-          return g(context.word)
-        }
-        */
         const oldValue = context.value.paraphrase
         context.value.paraphrase = true
         const result = g(context.value)

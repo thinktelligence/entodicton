@@ -3,6 +3,7 @@ node avatar -tva
 node characters -tva
 node currency -tva
 node dialogues -tva
+node emotions -tva
 node foods -tva
 node help -tva
 node hierarchy -tva
@@ -21,3 +22,5 @@ node crew -tva
 node kirk -tva
 node spock -tva
 node stgame -tva
+
+node kia -tva

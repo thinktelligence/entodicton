@@ -23,9 +23,10 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "object": {
               "marker": "objectPrefix",
@@ -33,7 +34,6 @@
               "variable": true,
               "word": "your"
             },
-            "paraphrase": true,
             "types": [
               "property"
             ],
@@ -41,7 +41,7 @@
             "value": "name",
             "word": "name"
           },
-          "instance": {
+          "two": {
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
@@ -51,7 +51,6 @@
             "unknown": true,
             "value": {
               "marker": "unknown",
-              "paraphrase": true,
               "response": true,
               "types": [
                 "unknown"
@@ -62,7 +61,7 @@
             },
             "word": "name"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -84,7 +83,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -236,11 +234,12 @@
               "dog",
               "wolf"
             ],
-            "chicken_strip": [
-              "food"
-            ],
             "feline": [
               "cat"
+            ],
+            "food": [
+              "chicken_strip",
+              "sushi"
             ],
             "mammal": [
               "human",
@@ -258,8 +257,9 @@
             ]
           },
           "concepts": [
-            "food",
             "chicken_strip",
+            "food",
+            "sushi",
             "bird",
             "animal",
             "mammal",
@@ -298,14 +298,14 @@
             "cat": [
               "feline"
             ],
+            "chicken_strip": [
+              "food"
+            ],
             "dog": [
               "canine"
             ],
             "feline": [
               "mammal"
-            ],
-            "food": [
-              "chicken_strip"
             ],
             "hana": [
               "sister",
@@ -323,6 +323,9 @@
             ],
             "parrot": [
               "bird"
+            ],
+            "sushi": [
+              "food"
             ],
             "wolf": [
               "canine"
@@ -439,7 +442,6 @@
                   "has": true,
                   "value": {
                     "marker": "unknown",
-                    "paraphrase": true,
                     "response": true,
                     "types": [
                       "unknown"
@@ -483,6 +485,8 @@
               },
               "sister": {
               },
+              "sushi": {
+              },
               "wolf": {
               }
             }
@@ -513,7 +517,6 @@
             "name": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -572,6 +575,7 @@
                 "modifiers": [
                   "chicken"
                 ],
+                "paraphrase": true,
                 "types": [
                   "chicken_strip",
                   "object"
@@ -581,6 +585,7 @@
               },
               "lover": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -591,6 +596,7 @@
               },
               "marker": "love",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "love",
               "word": "loves"
@@ -602,6 +608,7 @@
               },
               "hatee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -612,6 +619,7 @@
               },
               "hater": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -622,6 +630,7 @@
               },
               "marker": "hate",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "hate",
               "word": "hates"
@@ -641,6 +650,7 @@
                 "modifiers": [
                   "chicken"
                 ],
+                "paraphrase": true,
                 "types": [
                   "chicken_strip",
                   "object"
@@ -650,6 +660,7 @@
               },
               "liker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -660,6 +671,7 @@
               },
               "marker": "like",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "like",
               "word": "likes"
@@ -667,6 +679,7 @@
             {
               "dislikee": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -677,6 +690,7 @@
               },
               "disliker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -691,6 +705,7 @@
               },
               "marker": "dislike",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "dislike",
               "word": "dislikes"
@@ -742,9 +757,10 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "object": {
                   "marker": "objectPrefix",
@@ -752,7 +768,6 @@
                   "variable": true,
                   "word": "your"
                 },
-                "paraphrase": true,
                 "types": [
                   "property"
                 ],
@@ -760,7 +775,7 @@
                 "value": "name",
                 "word": "name"
               },
-              "instance": {
+              "two": {
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
@@ -770,7 +785,6 @@
                 "unknown": true,
                 "value": {
                   "marker": "unknown",
-                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -781,7 +795,7 @@
                 },
                 "word": "name"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
