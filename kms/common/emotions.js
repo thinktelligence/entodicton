@@ -16,6 +16,7 @@ const template ={
   "queries": [
     // "neutral anger happiness and boredom are concepts",
     // "neutral anger happiness and boredom are emotions",
+    // TODO add an invert for mapping generator to "sb feels e"
     "sentientBeing1 feels emotion1 means the emotion of sentientBeing1 is emotion1",
     //"greg feels angry", 
   ],
