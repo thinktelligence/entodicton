@@ -17,7 +17,7 @@ describe('helpersProperties', () => {
           concepts: []
         }
         api.addWordToValue('greg', { marker: "greg" })
-        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg" }] })
+        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg", paraphrase: true }] })
       })
 
       it('add two', async () => {
@@ -27,7 +27,7 @@ describe('helpersProperties', () => {
         }
         api.addWordToValue('greg', { marker: "greg1" })
         api.addWordToValue('greg', { marker: "greg2" })
-        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg1" }, { marker: "greg2" }] })
+        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg1", paraphrase: true }, { marker: "greg2", paraphrase: true }] })
       })
 
       it('add one twice no dups', async () => {
@@ -46,7 +46,9 @@ describe('helpersProperties', () => {
 
         api.addWordToValue('greg', context)
         api.addWordToValue('greg', context)
-        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [context] })
+        expected = { ...context, paraphrase: true }
+        delete expected.response
+        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [expected] })
       })
 
       it('get all', async () => {
@@ -56,7 +58,22 @@ describe('helpersProperties', () => {
         }
         api.addWordToValue('greg', { marker: "greg1" })
         api.addWordToValue('greg', { marker: "greg2" })
-        expect(api.getWordsForValue('greg')).toStrictEqual([{ marker: "greg1" }, { marker: "greg2" }])
+        expect(api.getWordsForValue('greg')).toStrictEqual([{ marker: "greg1", paraphrase: true }, { marker: "greg2", paraphrase: true }])
+      })
+
+      it('get defaults to value', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg", value: 'greg' })
+      })
+
+      it('converts word to plural', async () => {
+        const api = new API()
+        api.objects = {}
+        api.addWordToValue('car', { marker: "car", value: 'car', word: 'car' })
+        expect(api.getWordForValue('car', { number: 'many' })).toStrictEqual({ marker: "car", value: 'car', paraphrase: true, word: 'cars' })
       })
 
       it('get one', async () => {
@@ -66,7 +83,7 @@ describe('helpersProperties', () => {
         }
         api.addWordToValue('greg', { marker: "greg1" })
         api.addWordToValue('greg', { marker: "greg2" })
-        expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg1" })
+        expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg1", paraphrase: true })
       })
 
       it('addWord', async () => {
@@ -76,7 +93,7 @@ describe('helpersProperties', () => {
         }
         const context = { marker: "gregMarker", word: 'gregWord', value: 'gregValue' }
         api.addWord(context)
-        expect(api.getWordForValue('gregValue')).toStrictEqual(context)
+        expect(api.getWordForValue('gregValue')).toStrictEqual({ ...context, paraphrase: true })
       })
     })
 

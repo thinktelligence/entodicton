@@ -75,7 +75,35 @@
             "types": [
               "type"
             ],
-            "value": "chicken_strips and sushis",
+            "value": {
+              "marker": "list",
+              "value": [
+                {
+                  "chicken": {
+                    "marker": "chicken",
+                    "value": "chicken",
+                    "word": "chicken"
+                  },
+                  "marker": "chicken_strip",
+                  "modifiers": [
+                    "chicken"
+                  ],
+                  "paraphrase": true,
+                  "types": [
+                    "chicken_strip"
+                  ],
+                  "value": "chicken_strip",
+                  "word": "strips"
+                },
+                {
+                  "marker": "sushi",
+                  "number": "many",
+                  "paraphrase": true,
+                  "value": "sushi",
+                  "word": "sushis"
+                }
+              ]
+            },
             "wantsValue": true,
             "word": "types"
           },
@@ -146,7 +174,7 @@
         },
         {
           "op": [
-            "what",
+            "food",
             0
           ],
           "ops": [
@@ -174,14 +202,10 @@
         },
         {
           "op": [
-            "food",
+            "what",
             0
           ],
           "ops": [
-            [
-              "food",
-              0
-            ],
             [
               "is",
               0
@@ -192,6 +216,10 @@
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -319,6 +347,25 @@
           "relations": [
           ],
           "valueToWords": {
+            "chicken_strip": [
+              {
+                "chicken": {
+                  "marker": "chicken",
+                  "value": "chicken",
+                  "word": "chicken"
+                },
+                "marker": "chicken_strip",
+                "modifiers": [
+                  "chicken"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "chicken_strip"
+                ],
+                "value": "chicken_strip",
+                "word": "strips"
+              }
+            ]
           }
         },
         "3": {
@@ -417,7 +464,35 @@
                 "types": [
                   "type"
                 ],
-                "value": "chicken_strips and sushis",
+                "value": {
+                  "marker": "list",
+                  "value": [
+                    {
+                      "chicken": {
+                        "marker": "chicken",
+                        "value": "chicken",
+                        "word": "chicken"
+                      },
+                      "marker": "chicken_strip",
+                      "modifiers": [
+                        "chicken"
+                      ],
+                      "paraphrase": true,
+                      "types": [
+                        "chicken_strip"
+                      ],
+                      "value": "chicken_strip",
+                      "word": "strips"
+                    },
+                    {
+                      "marker": "sushi",
+                      "number": "many",
+                      "paraphrase": true,
+                      "value": "sushi",
+                      "word": "sushis"
+                    }
+                  ]
+                },
                 "wantsValue": true,
                 "word": "types"
               },
@@ -453,7 +528,7 @@
           },
           "paraphrases": "what are the types of food?",
           "responses": [
-            "the types of food are chicken_strips and sushis"
+            "the types of food are chicken strips and sushis"
           ]
         },
         {
@@ -559,7 +634,7 @@
       "what are the types of food?"
     ],
     "responses": [
-      "the types of food are chicken_strips and sushis"
+      "the types of food are chicken strips and sushis"
     ]
   }
 }

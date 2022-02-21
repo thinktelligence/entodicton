@@ -1288,7 +1288,7 @@
         },
         {
           "op": [
-            "disarm",
+            "propertyOf",
             0
           ],
           "ops": [
@@ -1309,25 +1309,13 @@
         {
           "op": [
             "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
             1
           ],
           "ops": [
+            [
+              "disarm",
+              0
+            ],
             [
               "is",
               0
@@ -1345,8 +1333,28 @@
           ],
           "ops": [
             [
+              "disarm",
+              0
+            ],
+            [
               "is",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "disarm",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              1
             ]
           ]
         },
@@ -5024,7 +5032,7 @@
         },
         {
           "op": [
-            "torpedo",
+            "what",
             0
           ],
           "ops": [
@@ -5056,7 +5064,7 @@
         },
         {
           "op": [
-            "what",
+            "torpedo",
             0
           ],
           "ops": [
@@ -5077,7 +5085,7 @@
               0
             ],
             [
-              "what",
+              "torpedo",
               0
             ]
           ]
@@ -6319,7 +6327,32 @@
             "types": [
               "type"
             ],
-            "value": "captains, seconds and doctors",
+            "value": {
+              "marker": "list",
+              "value": [
+                {
+                  "marker": "captain",
+                  "number": "many",
+                  "paraphrase": true,
+                  "value": "captain",
+                  "word": "captains"
+                },
+                {
+                  "marker": "second",
+                  "number": "many",
+                  "paraphrase": true,
+                  "value": "second",
+                  "word": "seconds"
+                },
+                {
+                  "marker": "doctor",
+                  "number": "many",
+                  "paraphrase": true,
+                  "value": "doctor",
+                  "word": "doctors"
+                }
+              ]
+            },
             "wantsValue": true,
             "word": "types"
           },
@@ -7164,7 +7197,32 @@
                 "types": [
                   "type"
                 ],
-                "value": "captains, seconds and doctors",
+                "value": {
+                  "marker": "list",
+                  "value": [
+                    {
+                      "marker": "captain",
+                      "number": "many",
+                      "paraphrase": true,
+                      "value": "captain",
+                      "word": "captains"
+                    },
+                    {
+                      "marker": "second",
+                      "number": "many",
+                      "paraphrase": true,
+                      "value": "second",
+                      "word": "seconds"
+                    },
+                    {
+                      "marker": "doctor",
+                      "number": "many",
+                      "paraphrase": true,
+                      "value": "doctor",
+                      "word": "doctors"
+                    }
+                  ]
+                },
                 "wantsValue": true,
                 "word": "types"
               },
@@ -7590,7 +7648,7 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
@@ -7614,7 +7672,7 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
@@ -7627,7 +7685,7 @@
               0
             ],
             [
-              "spock",
+              "what",
               0
             ]
           ]
@@ -8753,7 +8811,7 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
@@ -8777,7 +8835,7 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
@@ -8790,7 +8848,7 @@
               0
             ],
             [
-              "spock",
+              "what",
               0
             ]
           ]
@@ -16183,7 +16241,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "member",
             0
           ],
           "ops": [
@@ -16211,7 +16269,7 @@
         },
         {
           "op": [
-            "member",
+            "what",
             0
           ],
           "ops": [
@@ -16224,11 +16282,11 @@
               0
             ],
             [
-              "member",
+              "the",
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -16992,7 +17050,7 @@
           },
           "paraphrases": "who are the crew members?",
           "responses": [
-            "the crew members are kirk spock and mccoy"
+            "the crew members are kirk, spock and mccoy"
           ]
         },
         {
@@ -17256,7 +17314,7 @@
       "who are the crew members?"
     ],
     "responses": [
-      "the crew members are kirk spock and mccoy"
+      "the crew members are kirk, spock and mccoy"
     ]
   }
 }

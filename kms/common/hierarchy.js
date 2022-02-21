@@ -137,7 +137,11 @@ let config = {
         const api = km('properties').api
         const type = pluralize.singular(context.object.value);
         const children = api.children(type)
-        context.value = gs(children.map( (t) => pluralize.plural(t) ), ', ', ' and ')
+        const values = children.map( (t) => api.getWordForValue(t, { number: 'many'}))
+        context.value = {
+          marker: 'list',
+          value: values,
+        }
         if (children.length > 1) {
           context.number = 'many'
         }

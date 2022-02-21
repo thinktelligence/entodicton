@@ -269,6 +269,7 @@ class API {
   }
 
   // for example, "crew member" or "photon torpedo"
+  // TODO account for modifier a complex phrase for example "hot (chicken strips)"
   kindOfConcept({ config, modifier, object }) {
     const objectId = pluralize.singular(object)
     const modifierId = pluralize.singular(modifier)
@@ -286,7 +287,25 @@ class API {
     config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
     config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }` })
     config.addBridge({ id: modifierObjectId, level: 0, bridge: `{ ...next(operator), value: '${modifierObjectId}' }` })
-
+    {
+      const word = {
+        "chicken": {
+          "marker": modifierId,
+          "value": modifierId,
+          "word": modifierId, 
+        },
+        "marker": modifierObjectId,
+        "modifiers": [
+          modifierId
+        ],
+        "types": [
+          modifierObjectId,
+        ],
+        "value": modifierObjectId,
+        "word": objectId,
+      }
+      this.addWord(word)
+    }
     config.addHierarchy(objectId, 'theAble')
     config.addHierarchy(objectId, 'queryable')
     config.addHierarchy(modifierObjectId, objectId)
@@ -672,8 +691,17 @@ class API {
     }
   }
 
-  getWordForValue(value) {
-    return this.objects.valueToWords[value][0]
+  getWordForValue(value, { number } = {}) {
+    let context;
+    if (!this.objects.valueToWords[value]) {
+      context = { marker: value, value: value, number, word: value, paraphrase: true }
+    } else {
+      context = this.objects.valueToWords[value][0]
+    }
+    if (context.word) {
+      context.word = (number == 'many') ? pluralize.plural(context.word) : pluralize.singular(context.word)
+    }
+    return context
   }
 
   getWordsForValue(value) {
