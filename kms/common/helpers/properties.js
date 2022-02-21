@@ -1,6 +1,7 @@
 const pluralize = require('pluralize')
 const { unflatten, flattens } = require('entodicton')
 const _ = require('lodash')
+const deepEqual = require('deep-equal')
 
 class Frankenhash {
   constructor(data) {
@@ -483,6 +484,7 @@ class API {
   }
 
   setProperty(object, property, value, has, skipHandler) {
+    // this.addWord(value)
     if (!skipHandler) {
       const handler = this.propertiesFH.getHandler([object, property])
       if (handler) {
@@ -644,10 +646,26 @@ class API {
     return this.objects.concepts.includes(concept)
   }
 
-  addValueToWord(value, word) {
+  addWord(context) {
+    if (!context || !context.value || !context.word) {
+      return
+    }
+    this.addWordToValue(context.value, context)
+  }
+
+  addWordToValue(value, word) {
     if (!this.objects.valueToWords[value]) {
       this.objects.valueToWords[value] = []
     }
+
+    word = Object.assign({}, word)
+    delete word.response
+    word.paraphrase = true
+
+    if (this.objects.valueToWords[value].some( (entry) => deepEqual(entry, word) )) {
+      return
+    }
+
     const words = this.objects.valueToWords[value]
     if (!words.includes(word)) {
       words.push(word)

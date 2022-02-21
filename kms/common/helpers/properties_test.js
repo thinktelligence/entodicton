@@ -16,7 +16,7 @@ describe('helpersProperties', () => {
         api.objects = {
           concepts: []
         }
-        api.addValueToWord('greg', { marker: "greg" })
+        api.addWordToValue('greg', { marker: "greg" })
         expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg" }] })
       })
 
@@ -25,9 +25,28 @@ describe('helpersProperties', () => {
         api.objects = {
           concepts: []
         }
-        api.addValueToWord('greg', { marker: "greg1" })
-        api.addValueToWord('greg', { marker: "greg2" })
+        api.addWordToValue('greg', { marker: "greg1" })
+        api.addWordToValue('greg', { marker: "greg2" })
         expect(api.objects.valueToWords).toStrictEqual({ 'greg': [{ marker: "greg1" }, { marker: "greg2" }] })
+      })
+
+      it('add one twice no dups', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        const context = {
+                          "marker": "unknown",
+                          "response": true,
+                          "types": [ "unknown" ],
+                          "unknown": true,
+                          "value": "brown",
+                          "word": "brown"
+                        }
+
+        api.addWordToValue('greg', context)
+        api.addWordToValue('greg', context)
+        expect(api.objects.valueToWords).toStrictEqual({ 'greg': [context] })
       })
 
       it('get all', async () => {
@@ -35,8 +54,8 @@ describe('helpersProperties', () => {
         api.objects = {
           concepts: []
         }
-        api.addValueToWord('greg', { marker: "greg1" })
-        api.addValueToWord('greg', { marker: "greg2" })
+        api.addWordToValue('greg', { marker: "greg1" })
+        api.addWordToValue('greg', { marker: "greg2" })
         expect(api.getWordsForValue('greg')).toStrictEqual([{ marker: "greg1" }, { marker: "greg2" }])
       })
 
@@ -45,9 +64,19 @@ describe('helpersProperties', () => {
         api.objects = {
           concepts: []
         }
-        api.addValueToWord('greg', { marker: "greg1" })
-        api.addValueToWord('greg', { marker: "greg2" })
+        api.addWordToValue('greg', { marker: "greg1" })
+        api.addWordToValue('greg', { marker: "greg2" })
         expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg1" })
+      })
+
+      it('addWord', async () => {
+        const api = new API()
+        api.objects = {
+          concepts: []
+        }
+        const context = { marker: "gregMarker", word: 'gregWord', value: 'gregValue' }
+        api.addWord(context)
+        expect(api.getWordForValue('gregValue')).toStrictEqual(context)
       })
     })
 

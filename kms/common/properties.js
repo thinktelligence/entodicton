@@ -336,6 +336,8 @@ let config = {
         const objectId = context.object.value
         const propertyId = context.value
         try{
+          // api.addWord(propertyContext)
+          // api.addWord(objectContext)
           api.setProperty(pluralize.singular(objectId), pluralize.singular(propertyId), context.same, true)
           context.sameWasProcessed = true
         } catch (e) {
