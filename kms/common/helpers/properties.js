@@ -178,7 +178,11 @@ class API {
             yesno = 'no'
           }
         }
-        return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
+        if (context.truthValueOnly) {
+          return `${yesno}`
+        } else {
+          return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
+        }
       }
     })
  
@@ -215,6 +219,7 @@ class API {
 
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
+          debugger;
           const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object, ordering.category])
           if (matches.length > 0 || (typeof context.query == 'boolean' && context.query)) {
             // does greg like bananas
@@ -224,6 +229,9 @@ class API {
               context.response.query = undefined
             } else {
               context.response = { marker: 'list', value: unflatten.unflatten(matches) }
+            }
+            if (!context.truthValue) {
+              context.truthValueOnly = true
             }
           } else {
             // see if anything is preferred greg
