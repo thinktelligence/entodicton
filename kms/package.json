@@ -1,29 +1,33 @@
 {
-  "version": "6.13.41-beta.0",
-  "author": "dev@thinktelligence.com",
   "main": "main.js",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "version": "6.13.42",
+  "name": "ekms",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "argparse": "^2.0.1",
+    "scriptjs": "^2.5.9",
+    "underscore": "^1.12.0",
+    "base-64": "^1.0.0",
+    "table": "^6.7.1",
+    "pluralize": "^8.0.0",
+    "lodash": "^4.17.21",
+    "entodicton": "6.13.42",
+    "deep-equal": "^2.0.5"
+  },
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "scripts": {
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "test": "jest --config ./jest.config.json"
-  },
-  "dependencies": {
-    "table": "^6.7.1",
-    "deep-equal": "^2.0.5",
-    "argparse": "^2.0.1",
-    "lodash": "^4.17.21",
-    "underscore": "^1.12.0",
-    "scriptjs": "^2.5.9",
-    "base-64": "^1.0.0",
-    "pluralize": "^8.0.0",
-    "entodicton": "6.13.41-beta.0",
-    "node-fetch": "^2.6.1"
-  },
+  "author": "dev@thinktelligence.com",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -80,16 +84,12 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "license": "ISC",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
-  "name": "ekms"
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
+  }
 }
