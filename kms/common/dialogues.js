@@ -122,7 +122,7 @@ let config = {
     { id: "canBeDoQuestion", level: 2, bridge: "{ ...next(operator) }" },
     { id: "doesAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesAble", level: 1, bridge: "{ ...next(operator), before: before[0] }" },
-    { id: "does", level: 0, bridge: "{ ...context, query: true }*" },
+    { id: "does", level: 0, bridge: "{ query: true, ...context }*" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
     { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
@@ -164,6 +164,10 @@ let config = {
   debug: false,
   version: '3',
   generators: [
+    {
+      match: ({context}) => context.marker === 'idontknow',
+      apply: ({context}) => "i don't know",
+    },
     {
       match: ({context}) => context.marker == 'yesno',
       apply: ({context}) => context.value ? 'yes' : 'no'

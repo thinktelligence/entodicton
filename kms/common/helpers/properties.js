@@ -171,7 +171,7 @@ class API {
       apply: ({context, g}) => {
         const { response } = context 
         let yesno = ''
-        if (!context.do.query) {
+        if (!context.do.query || context.truthValueOnly) {
           if (context.truthValue) {
             yesno = 'yes'
           } else if (context.truthValue === false) {
@@ -219,7 +219,6 @@ class API {
 
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
-          debugger;
           const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object, ordering.category])
           if (matches.length > 0 || (typeof context.query == 'boolean' && context.query)) {
             // does greg like bananas
@@ -240,6 +239,7 @@ class API {
             context.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
             if (matches.length == 0) {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
+              context.response = { marker: 'idontknow', query: _.clone(context) }
             } else {
               context.response = { marker: 'list', value: matches }
             }
