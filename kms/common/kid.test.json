@@ -24,9 +24,10 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "object": {
               "marker": "unknown",
@@ -38,7 +39,6 @@
               "value": "hana",
               "word": "hana"
             },
-            "paraphrase": true,
             "types": [
               "property"
             ],
@@ -46,7 +46,7 @@
             "value": "sister",
             "word": "sister"
           },
-          "instance": {
+          "two": {
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
@@ -56,7 +56,6 @@
             "unknown": true,
             "value": {
               "marker": "unknown",
-              "paraphrase": true,
               "response": true,
               "types": [
                 "unknown"
@@ -67,7 +66,7 @@
             },
             "word": "sister"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -283,6 +282,10 @@
         },
         "6": {
           "children": {
+            "age": [
+              "27",
+              "21"
+            ],
             "animal": [
               "bird",
               "mammal"
@@ -294,11 +297,12 @@
               "dog",
               "wolf"
             ],
-            "chicken_strip": [
-              "food"
-            ],
             "feline": [
               "cat"
+            ],
+            "food": [
+              "chicken_strip",
+              "sushi"
             ],
             "mammal": [
               "human",
@@ -316,8 +320,9 @@
             ]
           },
           "concepts": [
-            "food",
             "chicken_strip",
+            "food",
+            "sushi",
             "bird",
             "animal",
             "mammal",
@@ -332,9 +337,18 @@
             "hana",
             "sister",
             "kia",
-            "name"
+            "name",
+            "27",
+            "age",
+            "21"
           ],
           "parents": {
+            "21": [
+              "age"
+            ],
+            "27": [
+              "age"
+            ],
             "bat": [
               "mammal"
             ],
@@ -347,14 +361,14 @@
             "cat": [
               "feline"
             ],
+            "chicken_strip": [
+              "food"
+            ],
             "dog": [
               "canine"
             ],
             "feline": [
               "mammal"
-            ],
-            "food": [
-              "chicken_strip"
             ],
             "hana": [
               "sister",
@@ -373,6 +387,9 @@
             "parrot": [
               "bird"
             ],
+            "sushi": [
+              "food"
+            ],
             "wolf": [
               "canine"
             ]
@@ -383,6 +400,12 @@
             "initHandlers": [
             ],
             "root": {
+              "21": {
+              },
+              "27": {
+              },
+              "age": {
+              },
               "animal": {
                 "eye": {
                   "has": true,
@@ -422,6 +445,19 @@
               "food": {
               },
               "hana": {
+                "age": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "21",
+                    "word": "21"
+                  }
+                },
                 "name": {
                   "has": true,
                   "value": {
@@ -439,7 +475,6 @@
                   "has": true,
                   "value": {
                     "marker": "unknown",
-                    "paraphrase": true,
                     "response": true,
                     "types": [
                       "unknown"
@@ -453,6 +488,19 @@
               "human": {
               },
               "kia": {
+                "age": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "27",
+                    "word": "27"
+                  }
+                },
                 "name": {
                   "has": true,
                   "value": {
@@ -470,7 +518,6 @@
                   "has": true,
                   "value": {
                     "marker": "unknown",
-                    "paraphrase": true,
                     "response": true,
                     "types": [
                       "unknown"
@@ -501,11 +548,35 @@
               },
               "sister": {
               },
+              "sushi": {
+              },
               "wolf": {
               }
             }
           },
           "property": {
+            "age": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "27",
+                "word": "27"
+              },
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "21",
+                "word": "21"
+              }
+            ],
             "name": [
               {
                 "marker": "unknown",
@@ -531,7 +602,6 @@
             "sister": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -542,7 +612,6 @@
               },
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -569,6 +638,7 @@
                 "modifiers": [
                   "chicken"
                 ],
+                "paraphrase": true,
                 "types": [
                   "chicken_strip",
                   "object"
@@ -578,6 +648,7 @@
               },
               "lover": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -588,6 +659,7 @@
               },
               "marker": "love",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "love",
               "word": "loves"
@@ -598,17 +670,18 @@
                 "right": "hatee"
               },
               "hatee": {
-                "marker": "unknown",
+                "marker": "sushi",
+                "number": "one",
+                "paraphrase": true,
                 "types": [
-                  "object",
-                  "unknown"
+                  "sushi"
                 ],
-                "unknown": true,
                 "value": "sushi",
                 "word": "sushi"
               },
               "hater": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -619,6 +692,7 @@
               },
               "marker": "hate",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "hate",
               "word": "hates"
@@ -638,6 +712,7 @@
                 "modifiers": [
                   "chicken"
                 ],
+                "paraphrase": true,
                 "types": [
                   "chicken_strip",
                   "object"
@@ -647,6 +722,7 @@
               },
               "liker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -657,23 +733,25 @@
               },
               "marker": "like",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "like",
               "word": "likes"
             },
             {
               "dislikee": {
-                "marker": "unknown",
+                "marker": "sushi",
+                "number": "one",
+                "paraphrase": true,
                 "types": [
-                  "object",
-                  "unknown"
+                  "sushi"
                 ],
-                "unknown": true,
                 "value": "sushi",
                 "word": "sushi"
               },
               "disliker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -688,11 +766,33 @@
               },
               "marker": "dislike",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "dislike",
               "word": "dislikes"
             }
-          ]
+          ],
+          "valueToWords": {
+            "chicken_strip": [
+              {
+                "chicken": {
+                  "marker": "chicken",
+                  "value": "chicken",
+                  "word": "chicken"
+                },
+                "marker": "chicken_strip",
+                "modifiers": [
+                  "chicken"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "chicken_strip"
+                ],
+                "value": "chicken_strip",
+                "word": "strip"
+              }
+            ]
+          }
         },
         "7": {
           "mentioned": [
@@ -740,9 +840,10 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "object": {
                   "marker": "unknown",
@@ -754,7 +855,6 @@
                   "value": "hana",
                   "word": "hana"
                 },
-                "paraphrase": true,
                 "types": [
                   "property"
                 ],
@@ -762,7 +862,7 @@
                 "value": "sister",
                 "word": "sister"
               },
-              "instance": {
+              "two": {
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
@@ -772,7 +872,6 @@
                 "unknown": true,
                 "value": {
                   "marker": "unknown",
-                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -783,7 +882,7 @@
                 },
                 "word": "sister"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -816,12 +915,11 @@
         {
           "context": {
             "dislikee": {
-              "marker": "unknown",
+              "marker": "sushi",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "sushi"
               ],
-              "unknown": true,
               "value": "sushi",
               "word": "sushi"
             },
@@ -901,12 +999,11 @@
               "right": "hatee"
             },
             "hatee": {
-              "marker": "unknown",
+              "marker": "sushi",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "sushi"
               ],
-              "unknown": true,
               "value": "sushi",
               "word": "sushi"
             },
@@ -996,8 +1093,8 @@
                 "property"
               ],
               "unknown": true,
-              "value": "name",
-              "word": "name"
+              "value": "age",
+              "word": "age"
             },
             "topLevel": true,
             "two": {
@@ -1007,12 +1104,12 @@
                 "unknown"
               ],
               "unknown": true,
-              "value": "hana",
-              "word": "hana"
+              "value": "21",
+              "word": "21"
             },
             "word": "is"
           },
-          "paraphrases": "hana's name is hana",
+          "paraphrases": "hana's age is 21",
           "responses": [
             ""
           ]
@@ -1051,9 +1148,10 @@
           "what"
         ],
         "response": {
-          "concept": {
+          "default": true,
+          "marker": "is",
+          "one": {
             "evaluate": true,
-            "isSelf": true,
             "marker": "property",
             "object": {
               "marker": "unknown",
@@ -1065,7 +1163,6 @@
               "value": "kia",
               "word": "kia"
             },
-            "paraphrase": true,
             "types": [
               "property"
             ],
@@ -1073,7 +1170,7 @@
             "value": "sister",
             "word": "sister"
           },
-          "instance": {
+          "two": {
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
@@ -1083,7 +1180,6 @@
             "unknown": true,
             "value": {
               "marker": "unknown",
-              "paraphrase": true,
               "response": true,
               "types": [
                 "unknown"
@@ -1094,7 +1190,7 @@
             },
             "word": "sister"
           },
-          "isResponse": true
+          "word": "is"
         },
         "topLevel": true,
         "two": {
@@ -1310,6 +1406,10 @@
         },
         "6": {
           "children": {
+            "age": [
+              "27",
+              "21"
+            ],
             "animal": [
               "bird",
               "mammal"
@@ -1321,11 +1421,12 @@
               "dog",
               "wolf"
             ],
-            "chicken_strip": [
-              "food"
-            ],
             "feline": [
               "cat"
+            ],
+            "food": [
+              "chicken_strip",
+              "sushi"
             ],
             "mammal": [
               "human",
@@ -1343,8 +1444,9 @@
             ]
           },
           "concepts": [
-            "food",
             "chicken_strip",
+            "food",
+            "sushi",
             "bird",
             "animal",
             "mammal",
@@ -1359,9 +1461,18 @@
             "hana",
             "sister",
             "kia",
-            "name"
+            "name",
+            "27",
+            "age",
+            "21"
           ],
           "parents": {
+            "21": [
+              "age"
+            ],
+            "27": [
+              "age"
+            ],
             "bat": [
               "mammal"
             ],
@@ -1374,14 +1485,14 @@
             "cat": [
               "feline"
             ],
+            "chicken_strip": [
+              "food"
+            ],
             "dog": [
               "canine"
             ],
             "feline": [
               "mammal"
-            ],
-            "food": [
-              "chicken_strip"
             ],
             "hana": [
               "sister",
@@ -1400,6 +1511,9 @@
             "parrot": [
               "bird"
             ],
+            "sushi": [
+              "food"
+            ],
             "wolf": [
               "canine"
             ]
@@ -1410,6 +1524,12 @@
             "initHandlers": [
             ],
             "root": {
+              "21": {
+              },
+              "27": {
+              },
+              "age": {
+              },
               "animal": {
                 "eye": {
                   "has": true,
@@ -1449,6 +1569,19 @@
               "food": {
               },
               "hana": {
+                "age": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "21",
+                    "word": "21"
+                  }
+                },
                 "name": {
                   "has": true,
                   "value": {
@@ -1479,6 +1612,19 @@
               "human": {
               },
               "kia": {
+                "age": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "27",
+                    "word": "27"
+                  }
+                },
                 "name": {
                   "has": true,
                   "value": {
@@ -1496,7 +1642,6 @@
                   "has": true,
                   "value": {
                     "marker": "unknown",
-                    "paraphrase": true,
                     "response": true,
                     "types": [
                       "unknown"
@@ -1527,11 +1672,35 @@
               },
               "sister": {
               },
+              "sushi": {
+              },
               "wolf": {
               }
             }
           },
           "property": {
+            "age": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "27",
+                "word": "27"
+              },
+              {
+                "marker": "unknown",
+                "response": true,
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "21",
+                "word": "21"
+              }
+            ],
             "name": [
               {
                 "marker": "unknown",
@@ -1557,7 +1726,6 @@
             "sister": [
               {
                 "marker": "unknown",
-                "paraphrase": true,
                 "response": true,
                 "types": [
                   "unknown"
@@ -1594,6 +1762,7 @@
                 "modifiers": [
                   "chicken"
                 ],
+                "paraphrase": true,
                 "types": [
                   "chicken_strip",
                   "object"
@@ -1603,6 +1772,7 @@
               },
               "lover": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1613,6 +1783,7 @@
               },
               "marker": "love",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "love",
               "word": "loves"
@@ -1623,17 +1794,18 @@
                 "right": "hatee"
               },
               "hatee": {
-                "marker": "unknown",
+                "marker": "sushi",
+                "number": "one",
+                "paraphrase": true,
                 "types": [
-                  "object",
-                  "unknown"
+                  "sushi"
                 ],
-                "unknown": true,
                 "value": "sushi",
                 "word": "sushi"
               },
               "hater": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1644,6 +1816,7 @@
               },
               "marker": "hate",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "hate",
               "word": "hates"
@@ -1663,6 +1836,7 @@
                 "modifiers": [
                   "chicken"
                 ],
+                "paraphrase": true,
                 "types": [
                   "chicken_strip",
                   "object"
@@ -1672,6 +1846,7 @@
               },
               "liker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1682,23 +1857,25 @@
               },
               "marker": "like",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "like",
               "word": "likes"
             },
             {
               "dislikee": {
-                "marker": "unknown",
+                "marker": "sushi",
+                "number": "one",
+                "paraphrase": true,
                 "types": [
-                  "object",
-                  "unknown"
+                  "sushi"
                 ],
-                "unknown": true,
                 "value": "sushi",
                 "word": "sushi"
               },
               "disliker": {
                 "marker": "unknown",
+                "paraphrase": true,
                 "types": [
                   "object",
                   "unknown"
@@ -1713,11 +1890,33 @@
               },
               "marker": "dislike",
               "ordering": "preference",
+              "paraphrase": true,
               "topLevel": true,
               "value": "dislike",
               "word": "dislikes"
             }
-          ]
+          ],
+          "valueToWords": {
+            "chicken_strip": [
+              {
+                "chicken": {
+                  "marker": "chicken",
+                  "value": "chicken",
+                  "word": "chicken"
+                },
+                "marker": "chicken_strip",
+                "modifiers": [
+                  "chicken"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "chicken_strip"
+                ],
+                "value": "chicken_strip",
+                "word": "strip"
+              }
+            ]
+          }
         },
         "7": {
           "mentioned": [
@@ -1765,9 +1964,10 @@
               "what"
             ],
             "response": {
-              "concept": {
+              "default": true,
+              "marker": "is",
+              "one": {
                 "evaluate": true,
-                "isSelf": true,
                 "marker": "property",
                 "object": {
                   "marker": "unknown",
@@ -1779,7 +1979,6 @@
                   "value": "kia",
                   "word": "kia"
                 },
-                "paraphrase": true,
                 "types": [
                   "property"
                 ],
@@ -1787,7 +1986,7 @@
                 "value": "sister",
                 "word": "sister"
               },
-              "instance": {
+              "two": {
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
@@ -1797,7 +1996,6 @@
                 "unknown": true,
                 "value": {
                   "marker": "unknown",
-                  "paraphrase": true,
                   "response": true,
                   "types": [
                     "unknown"
@@ -1808,7 +2006,7 @@
                 },
                 "word": "sister"
               },
-              "isResponse": true
+              "word": "is"
             },
             "topLevel": true,
             "two": {
@@ -1841,12 +2039,11 @@
         {
           "context": {
             "dislikee": {
-              "marker": "unknown",
+              "marker": "sushi",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "sushi"
               ],
-              "unknown": true,
               "value": "sushi",
               "word": "sushi"
             },
@@ -1926,12 +2123,11 @@
               "right": "hatee"
             },
             "hatee": {
-              "marker": "unknown",
+              "marker": "sushi",
+              "number": "one",
               "types": [
-                "object",
-                "unknown"
+                "sushi"
               ],
-              "unknown": true,
               "value": "sushi",
               "word": "sushi"
             },
@@ -2021,8 +2217,8 @@
                 "property"
               ],
               "unknown": true,
-              "value": "name",
-              "word": "name"
+              "value": "age",
+              "word": "age"
             },
             "topLevel": true,
             "two": {
@@ -2032,12 +2228,12 @@
                 "unknown"
               ],
               "unknown": true,
-              "value": "hana",
-              "word": "hana"
+              "value": "21",
+              "word": "21"
             },
             "word": "is"
           },
-          "paraphrases": "hana's name is hana",
+          "paraphrases": "hana's age is 21",
           "responses": [
             ""
           ]

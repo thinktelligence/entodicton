@@ -50,6 +50,36 @@ let config = {
       match: ({context}) => context.marker == 'means',
       apply: ({config, context}) => {
 
+        // word means word
+
+        if (context.from.marker == 'unknown') {
+          let def;
+          const defs = config.config.words[context.to.word]
+          if (defs) {
+            config.addWord(context.from.word, defs[0])
+          } else if (context.to.marker == 'unknown') {
+            const def = { id: context.to.value, initial: '{ value: "${context.from.value}' }
+            config.addWord(context.from.word, def)
+          } 
+
+          return
+        }
+        /*
+        const otherWord = context.meaning.word
+        const word = context.word.word
+        const defs = config.get('words')[otherWord]
+        debugger;
+        if (!defs) {
+          context.response = true;
+          context.value = `${otherWord} is not defined`
+        } else if (defs.length == 1) {
+          config.addWord(word, defs[0])
+        } else {
+        }
+        */
+       
+        // phrase means phrase 
+
         // setup the read semantic
         {
           const match = (defContext) => ({context}) => context.marker == defContext.from.marker && context.query
@@ -92,20 +122,6 @@ let config = {
           }
           config.addSemantic(semantic)
         }
-
-        /*
-        const otherWord = context.meaning.word
-        const word = context.word.word
-        const defs = config.get('words')[otherWord]
-        debugger;
-        if (!defs) {
-          context.response = true;
-          context.value = `${otherWord} is not defined`
-        } else if (defs.length == 1) {
-          config.addWord(word, defs[0])
-        } else {
-        }
-        */
       }
     }
   ],
@@ -145,6 +161,6 @@ entodicton.knowledgeModule({
   config,
   test: {
     name: './meta.test.json',
-    contents: meta_tests
+    contents: meta_tests,
   },
 })

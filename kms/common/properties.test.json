@@ -3,6 +3,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -228,6 +233,9 @@
         },
         {
           "pattern": "(<chicken|> ([strip|]))"
+        },
+        {
+          "pattern": "([hierarchyAble|])"
         },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
@@ -620,6 +628,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -825,6 +838,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -1174,6 +1190,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -1379,6 +1400,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -1926,6 +1950,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -2131,6 +2160,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -2446,6 +2478,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -2651,6 +2688,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -2975,8 +3015,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -2998,18 +3038,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -3153,6 +3197,11 @@
   "greg has eyes?": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
         {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
@@ -3359,6 +3408,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -3591,8 +3643,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -3607,13 +3659,13 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -3708,6 +3760,11 @@
   "greg has toes greg has eyes?": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
         {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
@@ -3914,6 +3971,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -4238,8 +4298,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -4261,18 +4321,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -4416,6 +4480,11 @@
   "property of object": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
         {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
@@ -4622,6 +4691,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -4908,6 +4980,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -5113,6 +5190,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -6293,6 +6373,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -6498,6 +6583,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -7369,6 +7457,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -7574,6 +7667,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -8455,6 +8551,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -8660,6 +8761,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -9519,6 +9623,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -9724,6 +9833,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -10341,6 +10453,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -10546,6 +10663,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -11537,6 +11657,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -11742,6 +11867,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -11994,6 +12122,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -12199,6 +12332,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -12523,6 +12659,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -12728,6 +12869,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -13082,6 +13226,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -13287,6 +13436,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -13752,6 +13904,11 @@
     "config": {
       "bridges": [
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
           "level": 0
@@ -13957,6 +14114,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },
@@ -14177,7 +14337,7 @@
         },
         {
           "op": [
-            "object",
+            "what",
             0
           ],
           "ops": [
@@ -14205,7 +14365,7 @@
         },
         {
           "op": [
-            "what",
+            "object",
             0
           ],
           "ops": [
@@ -14214,15 +14374,15 @@
               0
             ],
             [
+              "object",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -14419,6 +14579,11 @@
   "whose property": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
         {
           "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
           "id": "modifies",
@@ -14625,6 +14790,9 @@
         }
       ],
       "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
         {
           "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
         },

@@ -8,24 +8,24 @@ const pluralize = require('pluralize')
 let config = {
   name: 'hierarchy',
   operators: [
-    "([hierarchyAble|])",
+    // "([hierarchyAble|])",
     "([type|type,types])",
   ],
   bridges: [
-    { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
+    // // { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
     { id: 'type', level: 0, bridge: "{ ...next(operator) }" },
   ],
   hierarchy: [
-    ['unknown', 'hierarchyAble'],
-    ['hierarchyAble', 'queryable'],
+    // ['unknown', 'hierarchyAble'],
+    // ['hierarchyAble', 'queryable'],
     ['type', 'property'],
     ['have', 'canBeQuestion'],
     ['have', 'canBeDoQuestion'],
   ],
   priorities: [
     [['questionMark', 0], ['is', 0], ['a', 0]],
-    [['is', 0], ['hierarchyAble', 0]],
-    [['a', 0], ['is', 0], ['hierarchyAble', 0]],
+    // [['is', 0], ['hierarchyAble', 0]],
+    // [['a', 0], ['is', 0], ['hierarchyAble', 0]],
   ],
   semantics: [
     {
@@ -160,7 +160,10 @@ entodicton.knowledgeModule( {
   config,
   test: {
     name: './hierarchy.test.json',
-    contents: hierarchy_tests
+    contents: hierarchy_tests,
+    includes: {
+      words: true,
+    }
   },
   afterTest: ({query, config}) => {
     if (query == 'a cat is an animal') {

@@ -75,6 +75,7 @@ const api = new API();
 let config = {
   name: 'properties',
   operators: [
+    "([hierarchyAble|])",
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
     "([concept])", 
@@ -101,6 +102,8 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
   */
   hierarchy: [
+    ['unknown', 'hierarchyAble'],
+    ['hierarchyAble', 'queryable'],
     ['readonly', 'queryable'],
     ['property', 'queryable'],
     ['object', 'queryable'],
@@ -112,6 +115,7 @@ let config = {
     ['have', 'canBeQuestion'],
   ],
   bridges: [
+    { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
     { id: "modifies", level: 0, bridge: "{ ...next(operator), modifier: before[0], concept: after[0] }" },
     { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
@@ -135,6 +139,7 @@ let config = {
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
   priorities: [
+    [['is', 0], ['hierarchyAble', 0]],
     [['have', 1], ['does', 0]],
     [['does', 0], ['have', 0], ['doesnt', 0]],
     [['is', 0], ['propertyOf', 0], ['not', 0]],
@@ -336,6 +341,8 @@ let config = {
         const objectId = context.object.value
         const propertyId = context.value
         try{
+          // greg
+          // api.makeObject({config, context: objectContext, doPluralize: false})
           // api.addWord(propertyContext)
           // api.addWord(objectContext)
           api.setProperty(pluralize.singular(objectId), pluralize.singular(propertyId), context.same, true)

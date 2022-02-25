@@ -23,4 +23,6 @@ node kirk -tva
 node spock -tva
 node stgame -tva
 
+node kid -tva
 node kia -tva
+node hana -tva

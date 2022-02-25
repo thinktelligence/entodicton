@@ -351,7 +351,7 @@ class API {
   */
 
   // word is for one or many
-  makeObject({config, context}) {
+  makeObject({config, context, doPluralize=true}) {
     if (!context.unknown) {
       return context.value
     }
@@ -377,9 +377,9 @@ class API {
 
     if (pluralize.isSingular(word)) {
       addConcept(word, 'one')
-      addConcept(pluralize.plural(word), 'many')
+      doPluralize && addConcept(pluralize.plural(word), 'many')
     } else {
-      addConcept(pluralize.singular(word), 'one')
+      doPluralize && addConcept(pluralize.singular(word), 'one')
       addConcept(word, 'many')
     }
 
