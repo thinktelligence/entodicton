@@ -140,6 +140,7 @@ let config = {
   },
   priorities: [
     [['is', 0], ['hierarchyAble', 0]],
+    [['a', 0], ['is', 0], ['hierarchyAble', 0]],
     [['have', 1], ['does', 0]],
     [['does', 0], ['have', 0], ['doesnt', 0]],
     [['is', 0], ['propertyOf', 0], ['not', 0]],
