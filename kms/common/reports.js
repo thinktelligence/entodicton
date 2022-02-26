@@ -209,7 +209,7 @@ const initializeApi = (config, api) => {
   config.addWord(type, {"id": "reportObject", "initial": `${open} value: '${type}' ${close}` })
  }
 
-config = new entodicton.Config(config).add(currencyKM).add(helpKM)
+config = new entodicton.Config(config, module).add(currencyKM).add(helpKM)
 config.multiApi = initializeApi
 // mode this to non-module init only
 config.api = api2

@@ -12,9 +12,7 @@ const template = {
   ]
 };
 
-const config = new entodicton.Config({ 
-  name: 'kia',
-})
+const config = new entodicton.Config({ name: 'kia', }, module)
 config.add(kid)
 config.load(template, kia_instance)
 entodicton.knowledgeModule( {

@@ -23,7 +23,7 @@ const template ={
   ],
 }
 
-const config = new entodicton.Config({ name: 'animals' })
+const config = new entodicton.Config({ name: 'animals' }, module)
 config.add(hierarchy)
 config.load(template, animals_instance)
 

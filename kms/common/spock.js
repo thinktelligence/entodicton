@@ -9,9 +9,7 @@ const template = {
   ]
 };
 
-const config = new entodicton.Config({ 
-  name: 'spock',
-})
+const config = new entodicton.Config({ name: 'spock', }, module)
 config.add(crew)
 spock_instance.base = 'crew'
 config.load(template, spock_instance)

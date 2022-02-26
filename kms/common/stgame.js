@@ -39,9 +39,7 @@ const spockAPI = {
 }
 characters.api = spockAPI;
 
-const config = new entodicton.Config({
-  name: 'stgame',
-})
+const config = new entodicton.Config({ name: 'stgame', }, module)
 config.api = api
 config.add(characters)
 

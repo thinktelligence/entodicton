@@ -86,7 +86,7 @@ let config = {
   ],
 };
 
-config = new entodicton.Config(config)
+config = new entodicton.Config(config, module)
 config.api = api
 config.add(dialogues)
 config.initializer( ({config, isModule}) => {

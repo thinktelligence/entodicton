@@ -84,7 +84,7 @@ let config = {
   ],
 };
 
-config = new entodicton.Config(config)
+config = new entodicton.Config(config, module)
 config.add(numbersKM)
 config.api = api
 config.initializer( ({config, objects, api, uuid}) => {

@@ -150,7 +150,7 @@ const initializeApi = (config, api) => {
   config.addWord(name, {"id": "character", "initial": "{ value: '" + name + `', api: '${name}'}` })
 }
 
-config = new entodicton.Config(config)
+config = new entodicton.Config(config, module)
 config.multiApi = initializeApi
 config.initializer( ({isModule, config}) => {
   if (!isModule) {

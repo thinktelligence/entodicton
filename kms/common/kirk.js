@@ -13,9 +13,7 @@ const template = {
 // TODO what is the name of you
 // TODO crew members -> who are the crew members
 
-const config = new entodicton.Config({ 
-  name: 'kirk',
-})
+const config = new entodicton.Config({ name: 'kirk', }, module)
 config.add(crew)
 kirk_instance.base = 'crew'
 config.load(template, kirk_instance)

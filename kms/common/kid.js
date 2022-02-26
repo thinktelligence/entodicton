@@ -25,9 +25,7 @@ const template = {
   ],
 };
 
-const config = new entodicton.Config({ 
-  name: 'kid',
-})
+const config = new entodicton.Config({ name: 'kid', }, module)
 
 config.add(avatar)
 config.add(animals)

@@ -144,7 +144,7 @@ let config = {
   ],
 };
 
-config = new Config(config)
+config = new Config(config, module)
 config.add(tell)
 config.api = api
 config.initializer( ({api, config, objects, isModule}) => {

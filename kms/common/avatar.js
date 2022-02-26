@@ -38,7 +38,7 @@ let config = {
 
 };
 
-config = new entodicton.Config(config)
+config = new entodicton.Config(config, module)
 config.add(hierarchy)
 
 entodicton.knowledgeModule( { 

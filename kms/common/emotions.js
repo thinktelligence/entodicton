@@ -38,7 +38,7 @@ const config = new entodicton.Config({
     ['emotion', 'unknown'],
     ['sentientBeing', 'unknown'],
   ]
-})
+}, module)
 config.add(hierarchy)
 config.initializer( ({config, km}) => {
   const api = km('properties').api

@@ -23,7 +23,7 @@ const api = new API();
   hate is a kind of dislike
   who is cleo's owner
 */
-const config = new entodicton.Config({ name: 'ordering' })
+const config = new entodicton.Config({ name: 'ordering' }, module)
 config.api = api
 config.add(hierarchy)
 config.load(template, ordering_instance)

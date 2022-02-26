@@ -32,7 +32,7 @@ let config = {
   semantics: [
   ],
 };
-config = new entodicton.Config(config)
+config = new entodicton.Config(config, module)
 entodicton.knowledgeModule( { 
   module,
   config,

@@ -12,9 +12,7 @@ const template = {
   ]
 };
 
-const config = new entodicton.Config({ 
-  name: 'hana',
-})
+const config = new entodicton.Config({ name: 'hana', }, module)
 config.add(kid)
 config.load(template, hana_instance)
 entodicton.knowledgeModule( {
