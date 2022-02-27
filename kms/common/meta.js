@@ -11,6 +11,7 @@ let config = {
     "((phrase) [means] (phrase))",
     // "cats is the plural of cat"
     // "is cat the plural of cats"
+    { pattern: "([x])", development: true },
     /*
     if creating a new word make a motivation to ask if word is plura or singlar of anohter wordA
 
@@ -27,14 +28,17 @@ let config = {
     // what does (word) mean
   ],
   bridges: [
-    { "id": "means", "level": 0, "bridge": "{ ...next(operator), from: before[0], to: after[0] }" },
-//    { "id": "testWord2", "level": 0, "bridge": "{ ...next(operator) }" },
+    { id: "means", level: 0, bridge: "{ ...next(operator), from: before[0], to: after[0] }" },
+    { id: "x", level: 0, bridge: "{ ...next(operator) }", development: true },
+//    { id: "testWord2", level: 0, bridge: "{ ...next(operator) }" },
   ],
   version: '3',
   words: {
   //  'testWord2': [{"id": "testWord2", "initial": "{ value: 'testWord2Value' }" }],
+    // TODO make this development and select out for module
+    // 'x': [{id: "x", initial: "{ value: 'x' }", development: true }],
+    'x': [{id: "x", initial: "{ value: 'x', word: 'x' }", development: true }],
   },
-
   generators: [
     {
       match: ({context}) => context.marker == 'means' && context.paraphrase,
@@ -42,6 +46,10 @@ let config = {
         const before = g({ ...context.from, paraphrase: true, debug: true})
         return `${g({ ...context.from, paraphrase: true})} means ${g(context.to)}`
       }
+    },
+    { 
+      match: ({context}) => context.marker === 'x',
+      apply: ({context}) => `${context.word}`
     },
   ],
 
@@ -162,5 +170,8 @@ entodicton.knowledgeModule({
   test: {
     name: './meta.test.json',
     contents: meta_tests,
+    include: {
+      words: true,
+    }
   },
 })

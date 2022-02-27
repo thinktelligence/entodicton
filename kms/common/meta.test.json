@@ -1,6 +1,21 @@
 {
   "a means b": {
     "config": {
+      "words": {
+        "a": [
+          {
+            "id": "b",
+            "initial": "{ value: \"${context.from.value}"
+          }
+        ],
+        "x": [
+          {
+            "development": true,
+            "id": "x",
+            "initial": "{ value: 'x', word: 'x' }"
+          }
+        ]
+      }
     },
     "contexts": [
       {
@@ -68,6 +83,112 @@
     },
     "paraphrases": [
       "a means b"
+    ],
+    "responses": [
+      ""
+    ]
+  },
+  "a means x": {
+    "config": {
+      "words": {
+        "a": [
+          {
+            "development": true,
+            "id": "x",
+            "initial": "{ value: 'x', word: 'x' }"
+          }
+        ],
+        "x": [
+          {
+            "development": true,
+            "id": "x",
+            "initial": "{ value: 'x', word: 'x' }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "default": true,
+        "from": {
+          "marker": "unknown",
+          "value": "a",
+          "word": "a"
+        },
+        "marker": "means",
+        "to": {
+          "marker": "x",
+          "value": "x",
+          "word": "x"
+        },
+        "topLevel": true,
+        "word": "means"
+      }
+    ],
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "x",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "x",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "means",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "value": "a",
+              "word": "a"
+            },
+            "marker": "means",
+            "to": {
+              "marker": "x",
+              "value": "x",
+              "word": "x"
+            },
+            "topLevel": true,
+            "word": "means"
+          },
+          "paraphrases": "a means x",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "a means x"
     ],
     "responses": [
       ""
