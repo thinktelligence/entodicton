@@ -33,7 +33,7 @@ config.add(animals)
 config.add(foods)
 config.add(ordering)
 config.load(template, kid_instance)
-entodicton.knowledgeModule( {
+entodicton.knowledgeModule({
   module,
   description: 'KM for my kids',
   config,
