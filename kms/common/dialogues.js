@@ -33,6 +33,20 @@ class API {
   setVariable(name, value) {
     this.objects.variables[name] = value
   }
+
+  // value is in response field
+  // TODO maybe generalize out query+evaluate along the lines of set value and set reference
+  evaluate(value, context, log, s) {
+    value.evaluate = true;
+    const instance = s(value) 
+    if (!instance.evaluateWasProcessed && !instance.verbatim) {
+      warningNotEvaluated(log, context, value);
+    }
+    delete instance.evaluate
+    instance.instance = true;
+    return instance
+  }
+
 }
 const api = new API()
 
@@ -61,17 +75,6 @@ const warningSameNotEvaluated = (log, context, one) => {
   const input = indent(JSON.stringify(one, null, 2), 2)
   const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
   log(indent(message, 4))
-}
-
-const evaluate = (value, context, log, s) => {
-  value.evaluate = true;
-  const instance = s(value) 
-  if (!instance.evaluateWasProcessed) {
-    warningNotEvaluated(log, context, value);
-  }
-  delete instance.evaluate
-  instance.instance = true;
-  return instance
 }
 
 // TODO implement what / what did you say ...
@@ -364,7 +367,7 @@ let config = {
       ({context}) => context.marker == 'it' && context.pullFromContext,
       ({context, s, api, log}) => {
         context.value = api.mentions()[0]
-        const instance = evaluate(context.value, context, log, s)
+        const instance = api.evaluate(context.value, context, log, s)
         if (instance.value) {
           context.value = instance.value
         }
@@ -386,7 +389,7 @@ let config = {
         }
         km('dialogues').api.mentioned(concept)
         value = JSON.parse(JSON.stringify(value))
-        const instance = evaluate(value, context, log, s)
+        const instance = api.evaluate(value, context, log, s)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           return

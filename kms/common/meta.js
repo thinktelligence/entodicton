@@ -51,7 +51,7 @@ let config = {
       apply: ({config, context}) => {
 
         // word means word
-
+        /*
         if (context.from.marker == 'unknown') {
           let def;
           const defs = config.config.words[context.to.word]
@@ -60,15 +60,23 @@ let config = {
           } else if (context.to.marker == 'unknown') {
             const def = { id: context.to.value, initial: '{ value: "${context.from.value}' }
             config.addWord(context.from.word, def)
+            if (!config.config.bridges.find( (bridge) => {
+              if (bridge.id == context.to.value) {
+                return true
+              }
+            })) {
+              config.addOperator(`([${context.to.value}])`)
+              config.addBridge({ id: context.to.value, level: 0, bridge: "{ ...next(operator) }" })
+            }
           } 
 
           return
         }
+        */
         /*
         const otherWord = context.meaning.word
         const word = context.word.word
         const defs = config.get('words')[otherWord]
-        debugger;
         if (!defs) {
           context.response = true;
           context.value = `${otherWord} is not defined`
@@ -80,32 +88,10 @@ let config = {
        
         // phrase means phrase 
 
-        // setup the read semantic
-        {
-          const match = (defContext) => ({context}) => context.marker == defContext.from.marker && context.query
-          const apply = (mappings, TO) => ({context, s, g, config}) => {
-            TO = _.cloneDeep(TO)
-            for (let { from, to } of mappings) {
-              hashIndexesSet(TO, to, hashIndexesGet(context, from))
-            }
-            // next move add debug arg to s and g
-            TO.query = true
-            toPrime = s(TO)
-            // toPrime = s(TO, { debug: { apply: true } })
-            context.response = toPrime.response
-          }
-          const mappings = translationMapping(context.from, context.to)
-          const semantic = { 
-            notes: "setup the read semantic",
-            match: match(context), 
-            apply: apply(mappings, _.cloneDeep(context.to)) ,
-          }
-          config.addSemantic(semantic)
-        }
-
         // setup the write semantic
         {
-          const match = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query
+          const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query
+          const matchByValue = (defContext) => ({context}) => context.value == defContext.from.value && !context.query
           const apply = (mappings, TO) => ({context, s}) => {
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
@@ -115,13 +101,52 @@ let config = {
             context.result = toPrime.result
           }
           const mappings = translationMapping(context.from, context.to)
+          let match = matchByMarker(context)
+          if (context.from.value) {
+            match = matchByValue(context)
+          }
           const semantic = { 
             notes: "setup the read semantic",
-            match: match(context), 
+            // match: match(context), 
+            match: match,
             apply: apply(mappings, _.cloneDeep(context.to)),
           }
           config.addSemantic(semantic)
         }
+
+        // setup the read semantic
+        {
+          const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && (context.query || context.evaluate)
+          const matchByValue = (defContext) => ({context}) => context.value == defContext.from.value && (context.query || context.evaluate)
+          const apply = (mappings, TO) => ({context, s, g, config}) => {
+            TO = _.cloneDeep(TO)
+            for (let { from, to } of mappings) {
+              hashIndexesSet(TO, to, hashIndexesGet(context, from))
+            }
+            // next move add debug arg to s and g
+            TO.query = true
+            toPrime = s(TO)
+            // toPrime = s(TO, { debug: { apply: true } })
+            if (toPrime.response) {
+              context.response = toPrime.response
+            } else {
+              context.response = toPrime
+            }
+          }
+          const mappings = translationMapping(context.from, context.to)
+          let match = matchByMarker(context)
+          if (context.from.value) {
+            match = matchByValue(context)
+          }
+          const semantic = { 
+            notes: "setup the read semantic",
+            // match: match(context), 
+            match: match,
+            apply: apply(mappings, _.cloneDeep(context.to)) ,
+          }
+          config.addSemantic(semantic)
+        }
+
       }
     }
   ],

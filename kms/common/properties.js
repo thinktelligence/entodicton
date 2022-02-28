@@ -389,9 +389,14 @@ let config = {
       }
     },
     {
+      notes: 'evaluate a property',
       match: ({context}) => context.marker == 'property' && context.evaluate,
-      apply: ({context, api, km, objects, g}) => {
-        const object = km("dialogues").api.getVariable(context.object.value);
+      apply: ({context, api, km, objects, g, s, log}) => {
+        let object = km("dialogues").api.evaluate(context.object, context, log, s).response;
+        if (!object) {
+          object = context.object
+        }
+        object = km("dialogues").api.getVariable(object.value);
         if (!api.knownObject(object)) {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
@@ -400,7 +405,8 @@ let config = {
           context.verbatim = `There is no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
           return
         }
-        context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)
+        // context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)
+        context.value = api.getProperty(km("dialogues").api.getVariable(object), context.value, g)
         context.evaluateWasProcessed = true;
         context.object = undefined;
       }

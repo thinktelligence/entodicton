@@ -22,7 +22,8 @@ const template = {
     "kia hates sushi",
     "hana likes chicken strips",
     "hana dislikes sushi",
-  ],
+    "hanna means hana",
+  ]
 };
 
 const config = new entodicton.Config({ name: 'kid', }, module)
