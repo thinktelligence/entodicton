@@ -89,7 +89,7 @@ class API {
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for
   // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does g2reg like bananas
-  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble }, semanticApply) {
+  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [] }, semanticApply) {
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
@@ -136,7 +136,13 @@ class API {
           afterArgs = tagsToProps('after', after, '*')
         }
         config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs} }` })
-        config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
+        if (words.length > 0) {
+          for (const word of words) {
+            config.addWord(word, { id: operator, initial: `{ value: "${operator}" }` })
+          }
+        } else {
+          config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
+        }
       } else {
         config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }"})
       }

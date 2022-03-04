@@ -1,17 +1,32 @@
 const entodicton= require('entodicton')
 const _ = require('lodash')
-
-//const dialogue = require('./dialogues')
-const { hashIndexesGet, hashIndexesSet, translationMapping, } = require('./helpers_meta')
+entodicton.ensureTestFile(module, 'meta', 'test')
+entodicton.ensureTestFile(module, 'meta', 'instance')
 const meta_tests = require('./meta.test.json')
+const meta_instance = require('./meta.instance.json')
+const { hashIndexesGet, hashIndexesSet, translationMapping, } = require('./helpers_meta')
 
+const template = {
+    queries: [
+//      "if f then g",
+    ]
+};
+
+// TODO -> if a car's top speed is over 200 mph then the car is fast
 let config = {
   name: 'meta',
   operators: [
     "((phrase) [means] (phrase))",
+    // if x likes y then x wants y
+    "([if] (phrase) ([then] (phrase)))",
     // "cats is the plural of cat"
     // "is cat the plural of cats"
     { pattern: "([x])", development: true },
+    // if f x then g x
+    { pattern: "([f])", development: true },
+    { pattern: "([g])", development: true },
+
+
     /*
     if creating a new word make a motivation to ask if word is plura or singlar of anohter wordA
 
@@ -29,7 +44,11 @@ let config = {
   ],
   bridges: [
     { id: "means", level: 0, bridge: "{ ...next(operator), from: before[0], to: after[0] }" },
+    { id: "if", level: 0, bridge: "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }" },
+    { id: "then", level: 0, bridge: "{ ...next(operator), consequence: after[0] }" },
     { id: "x", level: 0, bridge: "{ ...next(operator) }", development: true },
+    { id: "f", level: 0, bridge: "{ ...next(operator) }", development: true },
+    { id: "g", level: 0, bridge: "{ ...next(operator) }", development: true },
 //    { id: "testWord2", level: 0, bridge: "{ ...next(operator) }" },
   ],
   version: '3',
@@ -38,6 +57,7 @@ let config = {
     // TODO make this development and select out for module
     // 'x': [{id: "x", initial: "{ value: 'x' }", development: true }],
     'x': [{id: "x", initial: "{ value: 'x', word: 'x' }", development: true }],
+    'gq': [{id: "g", initial: "{ value: 'g', word: 'g', query: true }", development: true }],
   },
   generators: [
     {
@@ -48,54 +68,65 @@ let config = {
       }
     },
     { 
+      match: ({context}) => context.marker === 'f',
+      apply: ({context}) => `f`,
+      development: true,
+    },
+    { 
+      match: ({context}) => context.marker === 'g',
+      apply: ({context}) => `g`,
+      development: true,
+    },
+    { 
       match: ({context}) => context.marker === 'x',
       apply: ({context}) => `${context.word}`
+    },
+    {
+      match: ({context}) => context.marker === 'if',
+      apply: ({context, g}) => {
+        return `if ${g(context.antecedant)} then ${g(context.consequence)}`
+      }
     },
   ],
 
   semantics: [
     {
+      match: ({context}) => context.marker == 'if',
+      apply: ({config, context}) => {
+        // setup the read semantic
+        
+          const match = (defContext) => ({context}) => context.marker == defContext.consequence?.marker && context.query
+          const apply = (mappings, TO) => ({context, s, g, config}) => {
+            debugger;
+            TO = _.cloneDeep(TO)
+            for (let { from, to } of mappings) {
+              hashIndexesSet(TO, to, hashIndexesGet(context, from))
+            }
+            // next move add debug arg to s and g
+            debugger;
+            TO.query = true
+            toPrime = s(TO)
+            // toPrime = s(TO, { debug: { apply: true } })
+            if (toPrime.response) {
+              context.response = toPrime.response
+            } else {
+              context.response = toPrime
+            }
+          }
+          // const mappings = translationMapping(context.from, context.to)
+          const mappings = translationMapping(context.antecedant, context.consequence)
+          const semantic = { 
+            notes: "setup the read semantic",
+            // match: match(context), 
+            match: match(context),
+            apply: apply(mappings, _.cloneDeep(context.antecedant)) ,
+          }
+          config.addSemantic(semantic)
+      }
+    },
+    {
       match: ({context}) => context.marker == 'means',
       apply: ({config, context}) => {
-
-        // word means word
-        /*
-        if (context.from.marker == 'unknown') {
-          let def;
-          const defs = config.config.words[context.to.word]
-          if (defs) {
-            config.addWord(context.from.word, defs[0])
-          } else if (context.to.marker == 'unknown') {
-            const def = { id: context.to.value, initial: '{ value: "${context.from.value}' }
-            config.addWord(context.from.word, def)
-            if (!config.config.bridges.find( (bridge) => {
-              if (bridge.id == context.to.value) {
-                return true
-              }
-            })) {
-              config.addOperator(`([${context.to.value}])`)
-              config.addBridge({ id: context.to.value, level: 0, bridge: "{ ...next(operator) }" })
-            }
-          } 
-
-          return
-        }
-        */
-        /*
-        const otherWord = context.meaning.word
-        const word = context.word.word
-        const defs = config.get('words')[otherWord]
-        if (!defs) {
-          context.response = true;
-          context.value = `${otherWord} is not defined`
-        } else if (defs.length == 1) {
-          config.addWord(word, defs[0])
-        } else {
-        }
-        */
-       
-        // phrase means phrase 
-
         // setup the write semantic
         {
           const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query
@@ -161,6 +192,7 @@ let config = {
 };
 
 config = new entodicton.Config(config, module)
+config.load(template, meta_instance)
 // config.add(dialogue)
 config.initializer( ({config, isModule}) => {
   if (!isModule) {
@@ -168,6 +200,8 @@ config.initializer( ({config, isModule}) => {
       match: ({context}) => context.marker == 'unknown',
       apply: ({context}) => `${context.word}`
     })
+    config.addPriorities([['then', 0], ['g', 0], ['if', 0], ['f', 0]])
+    config.addPriorities([['then', 0], ['if', 0], ['g', 0]])
     /*
     config.addWord('testword2', { id: "testword2", initial: "{ value: 'testWord2Value' }" })
     config.addBridge({ "id": "testword2", "level": 0, "bridge": "{ ...next(operator) }" })

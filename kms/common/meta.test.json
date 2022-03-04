@@ -2,6 +2,13 @@
   "a means b": {
     "config": {
       "words": {
+        "gq": [
+          {
+            "development": true,
+            "id": "g",
+            "initial": "{ value: 'g', word: 'g', query: true }"
+          }
+        ],
         "x": [
           {
             "development": true,
@@ -85,6 +92,13 @@
   "a means x": {
     "config": {
       "words": {
+        "gq": [
+          {
+            "development": true,
+            "id": "g",
+            "initial": "{ value: 'g', word: 'g', query: true }"
+          }
+        ],
         "x": [
           {
             "development": true,
@@ -116,7 +130,7 @@
       "opChoices": [
         {
           "op": [
-            "means",
+            "x",
             0
           ],
           "ops": [
@@ -126,6 +140,18 @@
             ],
             [
               "x",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "means",
+            0
+          ],
+          "ops": [
+            [
+              "means",
               0
             ]
           ]
@@ -167,6 +193,212 @@
     ],
     "responses": [
       ""
+    ]
+  },
+  "if f then g gq": {
+    "config": {
+      "words": {
+        "gq": [
+          {
+            "development": true,
+            "id": "g",
+            "initial": "{ value: 'g', word: 'g', query: true }"
+          }
+        ],
+        "x": [
+          {
+            "development": true,
+            "id": "x",
+            "initial": "{ value: 'x', word: 'x' }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "antecedant": {
+          "default": true,
+          "marker": "f",
+          "word": "f"
+        },
+        "consequence": {
+          "default": true,
+          "marker": "g",
+          "word": "g"
+        },
+        "default": true,
+        "marker": "if",
+        "topLevel": true,
+        "word": "if"
+      },
+      {
+        "marker": "g",
+        "query": true,
+        "response": {
+          "default": true,
+          "marker": "f",
+          "query": true,
+          "word": "f"
+        },
+        "topLevel": true,
+        "value": "g",
+        "word": "gq"
+      }
+    ],
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "f",
+            0
+          ],
+          "ops": [
+            [
+              "f",
+              0
+            ],
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "g",
+            0
+          ],
+          "ops": [
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "g",
+            0
+          ],
+          "ops": [
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "then",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "if",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "g",
+            "query": true,
+            "response": {
+              "default": true,
+              "marker": "f",
+              "query": true,
+              "word": "f"
+            },
+            "topLevel": true,
+            "value": "g",
+            "word": "gq"
+          },
+          "paraphrases": "g",
+          "responses": [
+            "",
+            "g"
+          ]
+        },
+        {
+          "context": {
+            "antecedant": {
+              "default": true,
+              "marker": "f",
+              "word": "f"
+            },
+            "consequence": {
+              "default": true,
+              "marker": "g",
+              "word": "g"
+            },
+            "default": true,
+            "marker": "if",
+            "topLevel": true,
+            "word": "if"
+          },
+          "paraphrases": "if f then g",
+          "responses": [
+            "",
+            "g"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "if f then g",
+      "g"
+    ],
+    "responses": [
+      "",
+      "g"
     ]
   }
 }

@@ -212,6 +212,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
@@ -317,6 +327,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -755,6 +768,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
@@ -860,6 +883,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -1378,6 +1404,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -1464,6 +1500,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -1940,6 +1979,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -2026,6 +2075,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -2700,6 +2752,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -2786,6 +2848,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -3228,6 +3293,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -3314,6 +3389,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -3948,6 +4026,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -4034,6 +4122,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -4511,6 +4602,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -4597,6 +4698,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -4841,45 +4945,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -5231,6 +5331,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -5317,6 +5427,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -5730,6 +5843,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -5816,6 +5939,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -7125,6 +7251,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -7211,6 +7347,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -8211,6 +8350,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -8297,6 +8446,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -9307,6 +9459,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -9393,6 +9555,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -10381,6 +10546,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -10467,6 +10642,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -11211,6 +11389,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -11297,6 +11485,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -12415,6 +12606,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -12501,6 +12702,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -12880,6 +13084,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -12966,6 +13180,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -13417,6 +13634,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -13503,6 +13730,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -13984,6 +14214,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -14070,6 +14310,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -14662,6 +14905,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -14748,6 +15001,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
@@ -14888,7 +15144,7 @@
         },
         {
           "op": [
-            "object",
+            "what",
             0
           ],
           "ops": [
@@ -14916,7 +15172,7 @@
         },
         {
           "op": [
-            "what",
+            "object",
             0
           ],
           "ops": [
@@ -14925,15 +15181,15 @@
               0
             ],
             [
+              "object",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -15338,6 +15594,16 @@
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
         }
       ],
       "operators": [
@@ -15424,6 +15690,9 @@
         },
         {
           "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] (phrase) ([then] (phrase)))"
         }
       ],
       "words": {
