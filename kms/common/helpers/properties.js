@@ -89,6 +89,7 @@ class API {
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for
   // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does g2reg like bananas
+  // relation -> the semantics will be implements using relations
   createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [] }, semanticApply) {
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]

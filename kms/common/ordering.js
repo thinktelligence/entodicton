@@ -51,6 +51,8 @@ config.initializer(({config, km}) => {
               before: [{tag: 'wanter', id: 'object'}],
               after: [{tag: 'wantee', id: 'object'}],
               relation: true,
+              //relation: false,
+              //doAble: true,
               config
             })
   config.addHierarchy('want', 'canBeQuestion')
