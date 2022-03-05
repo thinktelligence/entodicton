@@ -179,9 +179,9 @@ class API {
         const { response } = context 
         let yesno = ''
         if (!context.do.query || context.truthValueOnly) {
-          if (context.truthValue) {
+          if (response.truthValue) {
             yesno = 'yes'
-          } else if (context.truthValue === false) {
+          } else if (response.truthValue === false) {
             yesno = 'no'
           }
         }
@@ -217,39 +217,32 @@ class API {
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('ordering').api
-
-          /*
-          const value = api.getCategory(ordering.name, context[ordering.object].value, context[ordering.category].value)
-          context.truthValue = (value.marker == context.marker)
-          context.response = value
-          */
-
           const propertiesAPI = km('properties').api
           context.ordering = ordering.name
           const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object, ordering.category])
           if (matches.length > 0 || (typeof context.query == 'boolean' && context.query)) {
             // does greg like bananas
-            context.truthValue = matches.length > 0
             if (matches.length == 0) {
               context.response = _.clone(context)
               context.response.query = undefined
             } else {
               context.response = { marker: 'list', value: unflatten.unflatten(matches) }
             }
-            if (!context.truthValue) {
+            context.response.truthValue = matches.length > 0
+            if (!context.response.truthValue) {
               context.truthValueOnly = true
             }
           } else {
             // see if anything is preferred greg
             // what does greg like
             const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object])
-            context.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
             if (matches.length == 0) {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
               context.response = { marker: 'idontknow', query: _.clone(context) }
             } else {
               context.response = { marker: 'list', value: matches }
             }
+            context.response.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
           }
         }
       })
