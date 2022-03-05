@@ -178,14 +178,14 @@ class API {
       apply: ({context, g}) => {
         const { response } = context 
         let yesno = ''
-        if (!context.do.query || context.truthValueOnly) {
+        if (!context.do.query || response.truthValueOnly) {
           if (response.truthValue) {
             yesno = 'yes'
           } else if (response.truthValue === false) {
             yesno = 'no'
           }
         }
-        if (context.truthValueOnly) {
+        if (response.truthValueOnly) {
           return `${yesno}`
         } else {
           return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
@@ -230,7 +230,7 @@ class API {
             }
             context.response.truthValue = matches.length > 0
             if (!context.response.truthValue) {
-              context.truthValueOnly = true
+              context.response.truthValueOnly = true
             }
           } else {
             // see if anything is preferred greg
