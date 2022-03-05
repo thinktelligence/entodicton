@@ -50,7 +50,7 @@ config.initializer( ({config, km}) => {
                 doAble: true,
                 config })
 })
-config.load(template, emotions_instance)
+//config.load(template, emotions_instance)
 
 entodicton.knowledgeModule( {
     module,
@@ -60,4 +60,8 @@ entodicton.knowledgeModule( {
               name: './emotions.test.json',
               contents: emotions_tests
             },
+      template: {
+        template,
+        instance: emotions_instance,
+      },
 })

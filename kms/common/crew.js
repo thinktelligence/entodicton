@@ -69,7 +69,7 @@ config.initializer( ({config, km}) => {
                 after: [{tag: 'weapon', id: 'weapon'}],
                 config }) 
 })
-config.load(template, crew_instance)
+// config.load(template, crew_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Knowledge about the enterprise and crew using a KM template',
@@ -78,4 +78,8 @@ entodicton.knowledgeModule( {
           name: './crew.test.json',
           contents: crew_tests,
         },
+  template: {
+    template,
+    instance: crew_instance,
+  },
 })

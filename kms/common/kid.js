@@ -32,7 +32,7 @@ config.add(avatar)
 config.add(animals)
 config.add(foods)
 config.add(ordering)
-config.load(template, kid_instance)
+// config.load(template, kid_instance)
 entodicton.knowledgeModule({
   module,
   description: 'KM for my kids',
@@ -41,4 +41,8 @@ entodicton.knowledgeModule({
           name: './kid.test.json',
           contents: kid_tests,
         },
+  template: {
+    template,
+    instance: kid_instance,
+  },
 })

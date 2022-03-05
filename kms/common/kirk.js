@@ -16,7 +16,7 @@ const template = {
 const config = new entodicton.Config({ name: 'kirk', }, module)
 config.add(crew)
 kirk_instance.base = 'crew'
-config.load(template, kirk_instance)
+// config.load(template, kirk_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Captain Kirk Simulator using a KM template',
@@ -25,4 +25,8 @@ entodicton.knowledgeModule( {
           name: './kirk.test.json',
           contents: kirk_tests,
         },
+  template: {
+    template,
+    instance: kirk_instance,
+  },
 })

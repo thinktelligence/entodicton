@@ -426,7 +426,7 @@ config.initializer( ({objects, api}) => {
   api.initialize(objects)
 })
 */
-config.load(template, properties_instance)
+// config.load(template, properties_instance)
 
 entodicton.knowledgeModule( { 
   module,
@@ -440,5 +440,9 @@ entodicton.knowledgeModule( {
       operators: true,
       bridges: true,
     }
+  },
+  template: {
+    template,
+    instance: properties_instance,
   },
 })

@@ -31,7 +31,7 @@ const api = new API();
 const config = new entodicton.Config({ name: 'ordering' }, module)
 config.api = api
 config.add(hierarchy)
-config.load(template, ordering_instance)
+// config.load(template, ordering_instance)
 
 config.initializer(({config, km}) => {
   /*
@@ -136,10 +136,14 @@ config.initializer(({config, km}) => {
 
 entodicton.knowledgeModule( {
     module,
-      description: 'ordering related concepts',
-      config,
-      test: {
-              name: './ordering.test.json',
-              contents: ordering_tests
-            },
+    description: 'ordering related concepts',
+    config,
+    test: {
+            name: './ordering.test.json',
+            contents: ordering_tests
+          },
+    template: {
+      template, 
+      instance: ordering_instance
+    }
 })

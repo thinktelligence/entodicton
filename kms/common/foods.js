@@ -19,7 +19,7 @@ const template ={
 
 const config = new entodicton.Config({ name: 'foods' }, module)
 config.add(hierarchy)
-config.load(template, foods_instance)
+// config.load(template, foods_instance)
 
 entodicton.knowledgeModule( {
     module,
@@ -29,4 +29,8 @@ entodicton.knowledgeModule( {
               name: './foods.test.json',
               contents: foods_tests
             },
+      template: {
+        template,
+        instance: foods_instance,
+      },
 })

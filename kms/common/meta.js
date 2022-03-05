@@ -209,7 +209,7 @@ let config = {
 };
 
 config = new entodicton.Config(config, module)
-config.load(template, meta_instance)
+//config.load(template, meta_instance)
 // config.add(dialogue)
 config.initializer( ({config, isModule}) => {
   if (!isModule) {
@@ -249,5 +249,9 @@ entodicton.knowledgeModule({
     include: {
       words: true,
     }
+  },
+  template: {
+    template,
+    instance: meta_instance,
   },
 })

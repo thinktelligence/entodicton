@@ -14,7 +14,7 @@ const template = {
 
 const config = new entodicton.Config({ name: 'kia', }, module)
 config.add(kid)
-config.load(template, kia_instance)
+// config.load(template, kia_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Kia Simulator using a KM template',
@@ -23,4 +23,8 @@ entodicton.knowledgeModule( {
           name: './kia.test.json',
           contents: kia_tests,
         },
+  template: {
+    template,
+    instance: kia_instance,
+  },
 })

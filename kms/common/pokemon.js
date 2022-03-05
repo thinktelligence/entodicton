@@ -47,7 +47,7 @@ config.initializer( ({config, km}) => {
               config 
             })
 })
-config.load(template, pokemon_instance)
+// config.load(template, pokemon_instance)
 entodicton.knowledgeModule( {
   module,
   description: 'Knowledge about the pokemon using a KM template',
@@ -56,4 +56,8 @@ entodicton.knowledgeModule( {
           name: './pokemon.test.json',
           contents: pokemon_tests,
         },
+  template: {
+    template,
+    instance: pokemon_instance,
+  },
 })
