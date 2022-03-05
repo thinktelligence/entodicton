@@ -6,7 +6,7 @@
           {
             "development": true,
             "id": "g",
-            "initial": "{ value: 'g', word: 'g', query: true }"
+            "initial": "{ word: 'gq', query: true }"
           }
         ],
         "x": [
@@ -96,7 +96,7 @@
           {
             "development": true,
             "id": "g",
-            "initial": "{ value: 'g', word: 'g', query: true }"
+            "initial": "{ word: 'gq', query: true }"
           }
         ],
         "x": [
@@ -130,7 +130,7 @@
       "opChoices": [
         {
           "op": [
-            "x",
+            "means",
             0
           ],
           "ops": [
@@ -140,18 +140,6 @@
             ],
             [
               "x",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "means",
-            0
-          ],
-          "ops": [
-            [
-              "means",
               0
             ]
           ]
@@ -202,7 +190,7 @@
           {
             "development": true,
             "id": "g",
-            "initial": "{ value: 'g', word: 'g', query: true }"
+            "initial": "{ word: 'gq', query: true }"
           }
         ],
         "x": [
@@ -219,11 +207,17 @@
         "antecedant": {
           "default": true,
           "marker": "f",
+          "types": [
+            "f"
+          ],
           "word": "f"
         },
         "consequence": {
           "default": true,
           "marker": "g",
+          "types": [
+            "g"
+          ],
           "word": "g"
         },
         "default": true,
@@ -235,13 +229,9 @@
         "marker": "g",
         "query": true,
         "response": {
-          "default": true,
-          "marker": "f",
-          "query": true,
-          "word": "f"
+          "verbatim": "this is f response"
         },
         "topLevel": true,
-        "value": "g",
         "word": "gq"
       }
     ],
@@ -352,19 +342,15 @@
             "marker": "g",
             "query": true,
             "response": {
-              "default": true,
-              "marker": "f",
-              "query": true,
-              "word": "f"
+              "verbatim": "this is f response"
             },
             "topLevel": true,
-            "value": "g",
             "word": "gq"
           },
-          "paraphrases": "g",
+          "paraphrases": "gq",
           "responses": [
             "",
-            "g"
+            "this is f response"
           ]
         },
         {
@@ -372,11 +358,17 @@
             "antecedant": {
               "default": true,
               "marker": "f",
+              "types": [
+                "f"
+              ],
               "word": "f"
             },
             "consequence": {
               "default": true,
               "marker": "g",
+              "types": [
+                "g"
+              ],
               "word": "g"
             },
             "default": true,
@@ -387,18 +379,18 @@
           "paraphrases": "if f then g",
           "responses": [
             "",
-            "g"
+            "this is f response"
           ]
         }
       ]
     },
     "paraphrases": [
       "if f then g",
-      "g"
+      "gq"
     ],
     "responses": [
       "",
-      "g"
+      "this is f response"
     ]
   }
 }

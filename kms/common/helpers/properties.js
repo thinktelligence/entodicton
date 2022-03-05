@@ -254,6 +254,11 @@ class API {
       })
     }
 
+    if (ordering || relation) {
+      config.addHierarchy(operator, 'canBeQuestion')
+      config.addHierarchy(operator, 'ifAble')
+    }
+
     if (relation) {
       config.addSemantic({
         notes: `setter for ${operator}`,

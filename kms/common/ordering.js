@@ -7,7 +7,8 @@ const { API } = require('./helpers/ordering')
 const template ={
   "queries": [
     // "if a likes or loves b then a wants b",
-    // "if a likes b then a wants b",
+    // "x likes y",
+    // "if x likes y then x wants y",
   ],
 }
 
@@ -52,6 +53,7 @@ config.initializer(({config, km}) => {
               relation: true,
               config
             })
+  config.addHierarchy('want', 'canBeQuestion')
   /*
   papi.createActionPrefix({
               operator: 'can',

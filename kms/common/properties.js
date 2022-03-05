@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
+const meta = require('./meta')
 const properties_instance = require('./properties.instance.json')
 const properties_tests = require('./properties.test.json')
 const { API } = require('./helpers/properties')
@@ -419,6 +420,7 @@ let config = {
 config = new entodicton.Config(config, module)
 config.api = api
 config.add(dialogues)
+config.add(meta)
 /*
 config.initializer( ({objects, api}) => {
   api.initialize(objects)

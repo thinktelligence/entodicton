@@ -18,14 +18,13 @@ let config = {
   operators: [
     "((phrase) [means] (phrase))",
     // if x likes y then x wants y
-    "([if] (phrase) ([then] (phrase)))",
+    "([if] ([ifAble]) ([then] ([ifAble])))",
     // "cats is the plural of cat"
     // "is cat the plural of cats"
     { pattern: "([x])", development: true },
     // if f x then g x
     { pattern: "([f])", development: true },
     { pattern: "([g])", development: true },
-
 
     /*
     if creating a new word make a motivation to ask if word is plura or singlar of anohter wordA
@@ -42,10 +41,15 @@ let config = {
     // forget (word)
     // what does (word) mean
   ],
+  hierarchy: [
+    { child: 'f', parent: 'ifAble', development: true },
+    { child: 'g', parent: 'ifAble', development: true },
+  ],
   bridges: [
     { id: "means", level: 0, bridge: "{ ...next(operator), from: before[0], to: after[0] }" },
     { id: "if", level: 0, bridge: "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }" },
     { id: "then", level: 0, bridge: "{ ...next(operator), consequence: after[0] }" },
+    { id: "ifAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "x", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "f", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "g", level: 0, bridge: "{ ...next(operator) }", development: true },
@@ -56,10 +60,17 @@ let config = {
   //  'testWord2': [{"id": "testWord2", "initial": "{ value: 'testWord2Value' }" }],
     // TODO make this development and select out for module
     // 'x': [{id: "x", initial: "{ value: 'x' }", development: true }],
+    // 'f': [{id: "ifAble", initial: "{ word: 'f' }", development: true }],
+    // 'g': [{id: "ifAble", initial: "{ word: 'g' }", development: true }],
     'x': [{id: "x", initial: "{ value: 'x', word: 'x' }", development: true }],
-    'gq': [{id: "g", initial: "{ value: 'g', word: 'g', query: true }", development: true }],
+    'gq': [{id: "g", initial: "{ word: 'gq', query: true }", development: true }],
   },
   generators: [
+    {
+      match: ({context}) => context.response,
+      apply: ({context}) => context.response.verbatim,
+      development: true,
+    },
     {
       match: ({context}) => context.marker == 'means' && context.paraphrase,
       apply: ({context, g}) => {
@@ -68,18 +79,14 @@ let config = {
       }
     },
     { 
-      match: ({context}) => context.marker === 'f',
-      apply: ({context}) => `f`,
+      match: ({context}) => context.marker === 'ifAble',
+      apply: ({context}) => context.value,
       development: true,
     },
     { 
-      match: ({context}) => context.marker === 'g',
-      apply: ({context}) => `g`,
+      match: ({context}) => ['x', 'g', 'f', 'ifAble'].includes(context.marker),
+      apply: ({context}) => `${context.word}`,
       development: true,
-    },
-    { 
-      match: ({context}) => context.marker === 'x',
-      apply: ({context}) => `${context.word}`
     },
     {
       match: ({context}) => context.marker === 'if',
@@ -91,13 +98,22 @@ let config = {
 
   semantics: [
     {
+      match: ({context}) => ['f', 'g'].includes(context.marker),
+      apply: ({context}) => {
+        context.response = {
+          verbatim: `this is ${context.marker} response`
+        }
+      },
+      development: true,
+    },
+    {
       match: ({context}) => context.marker == 'if',
       apply: ({config, context}) => {
         // setup the read semantic
-        
-          const match = (defContext) => ({context}) => context.marker == defContext.consequence?.marker && context.query
-          const apply = (mappings, TO) => ({context, s, g, config}) => {
-            debugger;
+       
+          // !topLevel or maybe !value??!?! 
+          const match = (defContext) => ({context}) => context.marker == (defContext.consequence || {}).marker && context.query && !context.value
+          const apply = (mappings, TO) => ({context, s, g, config}) => { 
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
@@ -107,6 +123,7 @@ let config = {
             TO.query = true
             toPrime = s(TO)
             // toPrime = s(TO, { debug: { apply: true } })
+            // maps the response back?
             if (toPrime.response) {
               context.response = toPrime.response
             } else {
@@ -200,8 +217,8 @@ config.initializer( ({config, isModule}) => {
       match: ({context}) => context.marker == 'unknown',
       apply: ({context}) => `${context.word}`
     })
-    config.addPriorities([['then', 0], ['g', 0], ['if', 0], ['f', 0]])
-    config.addPriorities([['then', 0], ['if', 0], ['g', 0]])
+    //config.addPriorities([['then', 0], ['g', 0], ['if', 0], ['f', 0]])
+    //config.addPriorities([['then', 0], ['if', 0], ['g', 0]])
     /*
     config.addWord('testword2', { id: "testword2", initial: "{ value: 'testWord2Value' }" })
     config.addBridge({ "id": "testword2", "level": 0, "bridge": "{ ...next(operator) }" })
