@@ -419,8 +419,8 @@ let config = {
 
 config = new entodicton.Config(config, module)
 config.api = api
-config.add(dialogues)
 config.add(meta)
+config.add(dialogues)
 /*
 config.initializer( ({objects, api}) => {
   api.initialize(objects)

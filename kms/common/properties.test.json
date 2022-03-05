@@ -78,6 +78,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -207,26 +227,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
@@ -286,6 +286,12 @@
           "pattern": "(([have/1]) <questionMark|>)"
         },
         {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
         },
         {
@@ -329,12 +335,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -518,12 +518,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -636,6 +636,26 @@
         {
           "bridge": "{ ...after[0], object: operator }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
           "level": 0
         },
         {
@@ -768,26 +788,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
@@ -847,6 +847,12 @@
           "pattern": "(([have/1]) <questionMark|>)"
         },
         {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
         },
         {
@@ -890,12 +896,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -1136,12 +1136,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -1282,6 +1282,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -1409,26 +1429,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -1467,6 +1467,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -1512,12 +1518,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -1724,12 +1724,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -1862,6 +1862,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -1989,26 +2009,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -2047,6 +2047,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -2092,12 +2098,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -2454,12 +2454,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -2640,6 +2640,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -2767,26 +2787,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -2825,6 +2825,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -2870,12 +2876,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -3053,12 +3053,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -3183,6 +3183,26 @@
         {
           "bridge": "{ ...after[0], object: operator }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
           "level": 0
         },
         {
@@ -3313,26 +3333,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -3371,6 +3371,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3416,12 +3422,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -3666,8 +3666,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -3689,18 +3689,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -3738,12 +3742,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -3920,6 +3924,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -4047,26 +4071,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -4105,6 +4109,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -4150,12 +4160,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -4308,8 +4312,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -4324,13 +4328,13 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -4361,12 +4365,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -4501,6 +4505,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -4628,26 +4652,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -4686,6 +4690,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -4731,12 +4741,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -4981,8 +4985,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -5004,18 +5008,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -5053,12 +5061,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -5235,6 +5243,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -5362,26 +5390,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -5420,6 +5428,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -5465,12 +5479,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -5547,7 +5555,7 @@
       "opChoices": [
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
@@ -5567,12 +5575,12 @@
         },
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
             [
-              "object",
+              "property",
               0
             ],
             [
@@ -5632,12 +5640,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -5752,6 +5760,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -5879,26 +5907,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -5937,6 +5945,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -5982,12 +5996,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -6834,6 +6842,8 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
             {
               "default": true,
@@ -6851,8 +6861,6 @@
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -7165,6 +7173,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -7292,26 +7320,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -7350,6 +7358,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -7395,12 +7409,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -8012,6 +8020,8 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
             {
               "default": true,
@@ -8029,8 +8039,6 @@
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -8269,6 +8277,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -8396,26 +8424,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -8454,6 +8462,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -8499,12 +8513,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -9105,6 +9113,8 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
             {
               "default": true,
@@ -9122,8 +9132,6 @@
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -9383,6 +9391,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -9510,26 +9538,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -9568,6 +9576,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -9613,12 +9627,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -10199,6 +10207,8 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
             {
               "default": true,
@@ -10216,8 +10226,6 @@
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -10475,6 +10483,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -10602,26 +10630,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -10660,6 +10668,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -10705,12 +10719,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -11142,12 +11150,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -11323,6 +11331,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -11450,26 +11478,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -11508,6 +11516,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -11553,12 +11567,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -12257,12 +12265,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -12545,6 +12553,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -12672,26 +12700,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -12730,6 +12738,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -12775,12 +12789,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -12909,12 +12917,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -13025,6 +13033,26 @@
         {
           "bridge": "{ ...after[0], object: operator }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
           "level": 0
         },
         {
@@ -13155,26 +13183,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -13213,6 +13221,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -13258,12 +13272,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -13456,12 +13464,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -13580,6 +13588,26 @@
         {
           "bridge": "{ ...after[0], object: operator }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
           "level": 0
         },
         {
@@ -13710,26 +13738,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -13768,6 +13776,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -13813,12 +13827,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -14034,12 +14042,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -14165,6 +14173,26 @@
         {
           "bridge": "{ ...after[0], object: operator }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
           "level": 0
         },
         {
@@ -14295,26 +14323,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -14353,6 +14361,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -14398,12 +14412,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -14696,6 +14704,8 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
             {
               "default": true,
@@ -14713,8 +14723,6 @@
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -14864,6 +14872,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -14991,26 +15019,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -15049,6 +15057,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -15094,12 +15108,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -15393,6 +15401,8 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
             {
               "default": true,
@@ -15410,8 +15420,6 @@
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
@@ -15558,6 +15566,26 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
           "bridge": "{ ...next(operator), value: append(before, after) }",
           "id": "list",
           "level": 0,
@@ -15685,26 +15713,6 @@
           ],
           "id": "it",
           "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
         }
       ],
       "operators": [
@@ -15743,6 +15751,12 @@
         },
         {
           "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -15788,12 +15802,6 @@
         },
         {
           "pattern": "([yesno|])"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
         }
       ],
       "words": {
@@ -15920,12 +15928,12 @@
           }
         },
         "1": {
+        },
+        "2": {
           "mentioned": [
           ],
           "variables": {
           }
-        },
-        "2": {
         }
       },
       "processed": [
