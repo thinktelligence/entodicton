@@ -66,7 +66,7 @@ describe('helpersProperties', () => {
         api.objects = {
           concepts: []
         }
-        expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg", value: 'greg' })
+        expect(api.getWordForValue('greg')).toStrictEqual({ marker: "greg", value: 'greg', number: undefined, paraphrase: true, word: 'greg', })
       })
 
       it('converts word to plural', async () => {
