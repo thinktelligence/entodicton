@@ -113,7 +113,7 @@ let config = {
        
           // !topLevel or maybe !value??!?! 
           const match = (defContext) => ({context}) => context.marker == (defContext.consequence || {}).marker && context.query // && !context.value
-          const apply = (mappings, TO) => ({context, s, g, config}) => { 
+          const apply = (mappings, TO, FROM) => ({context, s, g, config}) => { 
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
@@ -124,6 +124,18 @@ let config = {
             // toPrime = s(TO, { debug: { apply: true } })
             // maps the response back?
             if (toPrime.response) {
+              if (toPrime.response.value) {
+                const valuesPrime = []
+                for (const value of toPrime.response.value) {
+                  valuePrime = _.cloneDeep(FROM)
+                  for (let { from, to } of mappings) {
+                    hashIndexesSet(valuePrime, from, hashIndexesGet(context, to))
+                  }
+                  valuePrime.paraphrase = true
+                  valuesPrime.push(valuePrime)
+                }
+                toPrime.response.value = valuesPrime
+              }
               context.response = toPrime.response
             } else {
               context.response = toPrime
@@ -135,7 +147,7 @@ let config = {
             notes: "setup the read semantic",
             // match: match(context), 
             match: match(context),
-            apply: apply(mappings, _.cloneDeep(context.antecedant)) ,
+            apply: apply(mappings, _.cloneDeep(context.antecedant), _.cloneDeep(context.consequence)) ,
           }
           config.addSemantic(semantic)
       }
