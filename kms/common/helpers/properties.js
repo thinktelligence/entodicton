@@ -248,7 +248,7 @@ class API {
       })
     }
 
-    if (ordering || relation) {
+    if (ordering || relation || doAble) {
       config.addHierarchy(operator, 'canBeQuestion')
       config.addHierarchy(operator, 'ifAble')
     }
