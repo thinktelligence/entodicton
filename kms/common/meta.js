@@ -119,7 +119,6 @@ let config = {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
             }
             // next move add debug arg to s and g
-            debugger;
             TO.query = true
             toPrime = s(TO)
             // toPrime = s(TO, { debug: { apply: true } })

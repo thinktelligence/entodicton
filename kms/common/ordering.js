@@ -9,6 +9,7 @@ const template ={
     // "if a likes or loves b then a wants b",
     // "x likes y",
     // "if x likes y then x wants y",
+    // "x likes y",
   ],
 }
 
