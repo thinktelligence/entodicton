@@ -84,7 +84,7 @@ class Frankenhash {
 
 class API {
 
-  // actionPrefix({before, operator, words, after, semantic, create})
+  // createActionPrefix({before, operator, words, after, semantic, create})
   //
   // before == [ { tag, marker }, ... ]
   // create == [ id, ... ] // ids to create bridges for

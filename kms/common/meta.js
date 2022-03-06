@@ -112,7 +112,7 @@ let config = {
         // setup the read semantic
        
           // !topLevel or maybe !value??!?! 
-          const match = (defContext) => ({context}) => context.marker == (defContext.consequence || {}).marker && context.query && !context.value
+          const match = (defContext) => ({context}) => context.marker == (defContext.consequence || {}).marker && context.query // && !context.value
           const apply = (mappings, TO) => ({context, s, g, config}) => { 
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
