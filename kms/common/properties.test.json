@@ -78,6 +78,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -95,6 +126,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -290,6 +326,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -639,6 +678,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -656,6 +726,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -851,6 +926,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -1282,6 +1360,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -1299,6 +1408,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -1473,6 +1587,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -1862,6 +1979,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -1879,6 +2027,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -2053,6 +2206,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -2640,6 +2796,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -2657,6 +2844,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -2831,6 +3023,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3186,6 +3381,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -3203,6 +3429,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -3377,6 +3608,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3924,6 +4158,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -3941,6 +4206,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -4115,6 +4385,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -4505,6 +4778,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -4522,6 +4826,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -4696,6 +5005,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -5243,6 +5555,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -5260,6 +5603,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -5434,6 +5782,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -5760,6 +6111,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -5777,6 +6159,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -5951,6 +6338,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -7173,6 +7563,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -7190,6 +7611,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -7364,6 +7790,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -8277,6 +8706,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -8294,6 +8754,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -8468,6 +8933,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -9391,6 +9859,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -9408,6 +9907,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -9582,6 +10086,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -10483,6 +10990,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -10500,6 +11038,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -10674,6 +11217,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -11331,6 +11877,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -11348,6 +11925,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -11522,6 +12104,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -12553,6 +13138,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -12570,6 +13186,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -12744,6 +13365,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -13036,6 +13660,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -13053,6 +13708,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -13227,6 +13887,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -13591,6 +14254,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -13608,6 +14302,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -13782,6 +14481,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -14176,6 +14878,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -14193,6 +14926,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -14367,6 +15105,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -14872,6 +15613,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -14889,6 +15661,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -15063,6 +15840,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -15566,6 +16346,37 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
           "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
           "id": "means",
           "level": 0
@@ -15583,6 +16394,11 @@
         {
           "bridge": "{ ...next(operator) }",
           "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
           "level": 0
         },
         {
@@ -15757,6 +16573,9 @@
         },
         {
           "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"

@@ -9,6 +9,7 @@ const { hashIndexesGet, hashIndexesSet, translationMapping, } = require('./helpe
 const template = {
     queries: [
 //      "if f then g",
+      //"if e or f then g",
     ]
 };
 
@@ -19,10 +20,12 @@ let config = {
     "((phrase) [means] (phrase))",
     // if x likes y then x wants y
     "([if] ([ifAble]) ([then] ([ifAble])))",
+    "(([orAble|]) [orList|or] ([orAble|]))",
     // "cats is the plural of cat"
     // "is cat the plural of cats"
     { pattern: "([x])", development: true },
     // if f x then g x
+    { pattern: "([e])", development: true },
     { pattern: "([f])", development: true },
     { pattern: "([g])", development: true },
 
@@ -42,15 +45,26 @@ let config = {
     // what does (word) mean
   ],
   hierarchy: [
-    { child: 'f', parent: 'ifAble', development: true },
+    { child: 'e', parent: 'orAble', development: true },
+    { child: 'f', parent: 'orAble', development: true },
     { child: 'g', parent: 'ifAble', development: true },
+    { child: 'orAble', parent: 'ifAble' },
   ],
   bridges: [
+    {id: "orList", level: 0, selector: {left: [{ marker: 'orAble' }], right: [{ marker: 'orAble' }], passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
+    {id: "orList", level: 1, selector: {left: [{ marker: 'orAble' }], passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+
+    // {id: "orList", level: 0, selector: {/*match: "same", type: "infix",*/ left: [{ marker: 'orAble'}], right: [{ marker: 'orAble' }], passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
+    // {id: "orList", level: 1, selector: {/*match: "same",*/ left: [{ marker: 'orAble' }], passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+
+
     { id: "means", level: 0, bridge: "{ ...next(operator), from: before[0], to: after[0] }" },
     { id: "if", level: 0, bridge: "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }" },
     { id: "then", level: 0, bridge: "{ ...next(operator), consequence: after[0] }" },
     { id: "ifAble", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "orAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "x", level: 0, bridge: "{ ...next(operator) }", development: true },
+    { id: "e", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "f", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "g", level: 0, bridge: "{ ...next(operator) }", development: true },
 //    { id: "testWord2", level: 0, bridge: "{ ...next(operator) }" },
@@ -72,6 +86,12 @@ let config = {
       development: true,
     },
     {
+      match: ({context}) => context.marker == 'orList' && context.paraphrase,
+      apply: ({context, gs}) => {
+        return gs(context.value, ', ', ' or ')
+      }
+    },
+    {
       match: ({context}) => context.marker == 'means' && context.paraphrase,
       apply: ({context, g}) => {
         const before = g({ ...context.from, paraphrase: true, debug: true})
@@ -84,7 +104,7 @@ let config = {
       development: true,
     },
     { 
-      match: ({context}) => ['x', 'g', 'f', 'ifAble'].includes(context.marker),
+      match: ({context}) => ['x', 'g', 'f', 'e', 'ifAble'].includes(context.marker),
       apply: ({context}) => `${context.word}`,
       development: true,
     },
@@ -98,13 +118,26 @@ let config = {
 
   semantics: [
     {
-      match: ({context}) => ['f', 'g'].includes(context.marker),
+      match: ({context}) => ['e', 'f', 'g'].includes(context.marker),
       apply: ({context}) => {
         context.response = {
           verbatim: `this is ${context.marker} response`
         }
       },
       development: true,
+    },
+    {
+      match: ({context}) => context.marker == 'orList',
+      apply: ({context, s}) => {
+        const response = []
+        for (const value of context.value) {
+          response.push(s(value))
+        }
+        context.response = {
+          marker: 'orList', 
+          value: response
+        }
+      },
     },
     {
       match: ({context}) => context.marker == 'if',
@@ -120,6 +153,7 @@ let config = {
             }
             // next move add debug arg to s and g
             TO.query = true
+            debugger
             toPrime = s(TO)
             // toPrime = s(TO, { debug: { apply: true } })
             // maps the response back?
