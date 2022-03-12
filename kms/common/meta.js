@@ -4,7 +4,7 @@ entodicton.ensureTestFile(module, 'meta', 'test')
 entodicton.ensureTestFile(module, 'meta', 'instance')
 const meta_tests = require('./meta.test.json')
 const meta_instance = require('./meta.instance.json')
-const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers_meta')
+const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers/meta.js')
 const { zip } = require('./helpers.js')
 
 const template = {

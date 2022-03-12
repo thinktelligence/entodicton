@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers_meta')
+const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./meta')
 
 describe('helpersMeta', () => {
   describe('hashIndexGet', () => {
