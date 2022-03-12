@@ -150,15 +150,16 @@ let config = {
        
           // !topLevel or maybe !value??!?! 
           const match = (defContext) => ({context}) => context.marker == (defContext.consequence || {}).marker && context.query // && !context.value
-          const apply = (TOs, FROM) => {
-            const mappingss = translationMappings(TOs, FROM)
+          const apply = (DEFINITIONs, DERIVED) => {
+            const mappingss = translationMappings(DEFINITIONs, DERIVED)
+            const invertMappings = (mappings) => mappings.map( ({ from, to }) => { return { to: from, from: to } } )
 
             return ({context, s, g, config}) => { 
-              TOs = _.cloneDeep(TOs)
+              DEFINITIONs = _.cloneDeep(DEFINITIONs)
               //const mappings = mappingss[0]
-              const toPrimes = []
-              for (const [TO, mappings] of zip(TOs, mappingss)) {
-                for (let { from, to } of mappings) {
+              let toPrimes = []
+              for (const [TO, mappings] of zip(DEFINITIONs, mappingss)) {
+                for (let { from, to } of invertMappings(mappings)) {
                   hashIndexesSet(TO, to, hashIndexesGet(context, from))
                 }
                 // next move add debug arg to s and g
@@ -184,19 +185,20 @@ let config = {
                 const toPrime = toPrimes[0][0]
                 if (hasValue) {
                   const valuesPrime = []
-                  // for (const value of toPrimes.filter((toPrime) => toPrime.response && toPrime.response.value).map((toPrime) => toPrime.response.value)) {
-                  const valuess = toPrimes.filter((toPrime) => toPrime[0].response && toPrime[0].response.value).map((toPrime) => [toPrime[0].response.value, toPrime[1]])
-                  for (const [value, mappings] of valuess) {
-                    valuePrime = _.cloneDeep(FROM)
-                    for (let { from, to } of mappings) {
-                      hashIndexesSet(valuePrime, from, hashIndexesGet(context, to))
+                  toPrimes = toPrimes.filter( (toPrime) => (toPrime[0].response || {}).truthValue )
+                  // const valueAndMappings = toPrimes.filter((toPrime) => toPrime[0].response && toPrime[0].response.value).map((toPrime) => [toPrime[0].response.value, toPrime[1]])
+                  
+                  for (const [relations, mappings] of toPrimes) {
+                    for (const relation of relations.response.value) {
+                      valuePrime = _.cloneDeep(DERIVED)
+                      for (let { from, to } of mappings) {
+                        hashIndexesSet(valuePrime, to, hashIndexesGet(relation, from))
+                      }
+                      valuePrime.paraphrase = true
+                      valuesPrime.push(valuePrime)
                     }
-                    valuePrime.paraphrase = true
-                    valuesPrime.push(valuePrime)
                   }
-                  toPrime.response.truthValue = valuesPrime.length > 0
-                  toPrime.response.value = valuesPrime
-                  response = toPrime.response
+                  response = { marker: 'list', truthValue: valuesPrime.length > 0, value: valuesPrime }
                 } else {
                   response = toPrime.response
                 }
@@ -210,6 +212,9 @@ let config = {
           }
 
           let antecedants = [_.cloneDeep(context.antecedant)]
+          if (context.antecedant.marker == 'orList') {
+            antecedants = antecedants[0].value
+          }
 
           const semantic = { 
             notes: "setup the read semantic",
