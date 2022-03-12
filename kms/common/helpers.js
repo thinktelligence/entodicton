@@ -37,8 +37,25 @@ const isMany = (context) => {
   return false
 }
 
+const zip = (...arrays) => {
+  if (arrays == []) {
+    return []
+  }
+  const zipped = []
+  for(let i = 0; i < arrays[0].length; i++){
+    //const tuple = arrays.map( (array) => array[i] )
+    let tuple = []
+    for (const array of arrays) {
+      tuple.push(array[i])
+    }
+    zipped.push(tuple)
+  }
+  return zipped
+}
+
 module.exports = {
   millisecondsUntilHourOfDay,
   indent,
   isMany,
+  zip,
 }

@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const { hashIndexesGet, hashIndexesSet, translationMapping } = require('./helpers_meta')
+const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers_meta')
 
 describe('helpersMeta', () => {
   describe('hashIndexGet', () => {
@@ -61,6 +61,33 @@ describe('helpersMeta', () => {
       const expected = [{ from: ['weapon'], to: ['one', 'object'] }]
       expect(actual).toStrictEqual(expected)
     })
+  })
+
+  describe('mappingss', () => {
+    it('empty mappings', () => {
+      const to = {}
+      const actual = translationMappings([], to)
+      expect(actual).toStrictEqual([])
+    })
+
+    it('one', () => {
+      const from = { weapon: { marker: 'weapon', value: 'phaser' } }
+      const to = { object: { marker: 'weapon', value: 'phaser' } }
+      const actual = translationMappings([from], to)
+      const mapping1 = [{ from: ['weapon'], to: ['object'] }]
+      const expected = [mapping1]
+      expect(actual).toStrictEqual(expected)
+    })
+
+    it('two', () => {
+      const from = { weapon: { marker: 'weapon', value: 'phaser' } }
+      const to = { object: { marker: 'weapon', value: 'phaser' } }
+      const actual = translationMappings([from, from], to)
+      const mapping1 = [{ from: ['weapon'], to: ['object'] }]
+      const expected = [mapping1, mapping1]
+      expect(actual).toStrictEqual(expected)
+    })
+
   })
 
   describe('semanticsGenerate', () => {

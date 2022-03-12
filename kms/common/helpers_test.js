@@ -29,5 +29,21 @@ describe('helpers', () => {
       const ms = helpers.millisecondsUntilHourOfDay(newDate, 1)
       expect(ms).toBe(0)
     })
+
+    it('zip empty list', async () => {
+      expect(helpers.zip([])).toStrictEqual([])
+    })
+
+    it('zip one list', async () => {
+      expect(helpers.zip([1,2,3])).toStrictEqual([[1], [2], [3]])
+    })
+
+    it('zip two list', async () => {
+      expect(helpers.zip([1,2,3], [4,5,6])).toStrictEqual([[1,4], [2,5], [3,6]])
+    })
+
+    it('zip three list', async () => {
+      expect(helpers.zip([1,2,3], [4,5,6], [7,8,9])).toStrictEqual([[1,4,7], [2,5,8], [3,6,9]])
+    })
   })
 })

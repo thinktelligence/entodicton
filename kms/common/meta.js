@@ -4,7 +4,8 @@ entodicton.ensureTestFile(module, 'meta', 'test')
 entodicton.ensureTestFile(module, 'meta', 'instance')
 const meta_tests = require('./meta.test.json')
 const meta_instance = require('./meta.instance.json')
-const { hashIndexesGet, hashIndexesSet, translationMapping, } = require('./helpers_meta')
+const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers_meta')
+const { zip } = require('./helpers.js')
 
 const template = {
     queries: [
@@ -43,6 +44,9 @@ let config = {
     // undefine (word)
     // forget (word)
     // what does (word) mean
+  ],
+  priorities: [
+    [['if', 0], ['then', 0], ['orList', 0]],
   ],
   hierarchy: [
     { child: 'e', parent: 'orAble', development: true },
@@ -146,42 +150,72 @@ let config = {
        
           // !topLevel or maybe !value??!?! 
           const match = (defContext) => ({context}) => context.marker == (defContext.consequence || {}).marker && context.query // && !context.value
-          const apply = (mappings, TO, FROM) => ({context, s, g, config}) => { 
-            TO = _.cloneDeep(TO)
-            for (let { from, to } of mappings) {
-              hashIndexesSet(TO, to, hashIndexesGet(context, from))
-            }
-            // next move add debug arg to s and g
-            TO.query = true
-            debugger
-            toPrime = s(TO)
-            // toPrime = s(TO, { debug: { apply: true } })
-            // maps the response back?
-            if (toPrime.response) {
-              if (toPrime.response.value) {
-                const valuesPrime = []
-                for (const value of toPrime.response.value) {
-                  valuePrime = _.cloneDeep(FROM)
-                  for (let { from, to } of mappings) {
-                    hashIndexesSet(valuePrime, from, hashIndexesGet(context, to))
-                  }
-                  valuePrime.paraphrase = true
-                  valuesPrime.push(valuePrime)
+          const apply = (TOs, FROM) => {
+            const mappingss = translationMappings(TOs, FROM)
+
+            return ({context, s, g, config}) => { 
+              TOs = _.cloneDeep(TOs)
+              //const mappings = mappingss[0]
+              const toPrimes = []
+              for (const [TO, mappings] of zip(TOs, mappingss)) {
+                for (let { from, to } of mappings) {
+                  hashIndexesSet(TO, to, hashIndexesGet(context, from))
                 }
-                toPrime.response.value = valuesPrime
+                // next move add debug arg to s and g
+                TO.query = true
+                toPrimes.push([s(TO), mappings])
+                // toPrime = s(TO, { debug: { apply: true } })
               }
-              context.response = toPrime.response
-            } else {
-              context.response = toPrime
+
+              let hasResponse = false
+              let hasValue = false
+              for (const [tp, _] of toPrimes) {
+                if (tp.response) {
+                  hasResponse = true
+                  if (tp.response.value) {
+                    hasValue = true
+                  }
+                }
+              }
+
+              // maps the response back
+              let response;
+              if (hasResponse) {
+                const toPrime = toPrimes[0][0]
+                if (hasValue) {
+                  const valuesPrime = []
+                  // for (const value of toPrimes.filter((toPrime) => toPrime.response && toPrime.response.value).map((toPrime) => toPrime.response.value)) {
+                  const valuess = toPrimes.filter((toPrime) => toPrime[0].response && toPrime[0].response.value).map((toPrime) => [toPrime[0].response.value, toPrime[1]])
+                  for (const [value, mappings] of valuess) {
+                    valuePrime = _.cloneDeep(FROM)
+                    for (let { from, to } of mappings) {
+                      hashIndexesSet(valuePrime, from, hashIndexesGet(context, to))
+                    }
+                    valuePrime.paraphrase = true
+                    valuesPrime.push(valuePrime)
+                  }
+                  toPrime.response.truthValue = valuesPrime.length > 0
+                  toPrime.response.value = valuesPrime
+                  response = toPrime.response
+                } else {
+                  response = toPrime.response
+                }
+              } else {
+                const toPrime = toPrimes[0][0]
+                response = toPrime
+              }
+
+              context.response = response
             }
           }
-          // const mappings = translationMapping(context.from, context.to)
-          const mappings = translationMapping(context.antecedant, context.consequence)
+
+          let antecedants = [_.cloneDeep(context.antecedant)]
+
           const semantic = { 
             notes: "setup the read semantic",
             // match: match(context), 
             match: match(context),
-            apply: apply(mappings, _.cloneDeep(context.antecedant), _.cloneDeep(context.consequence)) ,
+            apply: apply(antecedants, _.cloneDeep(context.consequence)) ,
           }
           config.addSemantic(semantic)
       }

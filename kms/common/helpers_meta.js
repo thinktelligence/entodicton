@@ -46,8 +46,17 @@ const translationMapping = (from, to) => {
   return mappings
 }
 
+const translationMappings = (froms, to) => {
+  const mappingss = []
+  for (const from of froms) {
+    mappingss.push(translationMapping(from, to))
+  }
+  return mappingss
+}
+
 module.exports = {
   hashIndexesGet,
   hashIndexesSet,
   translationMapping,
+  translationMappings,
 }
