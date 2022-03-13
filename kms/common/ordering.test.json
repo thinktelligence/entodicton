@@ -4889,6 +4889,1503 @@
       "yes x wants z"
     ]
   },
+  "if x likes y or x loves y then x wants y x loves y x likes y\\nwhat does x want": {
+    "config": {
+    },
+    "contexts": [
+      {
+        "antecedant": {
+          "default": true,
+          "marker": "orList",
+          "types": [
+            "like",
+            "orList"
+          ],
+          "value": [
+            {
+              "do": {
+                "left": "liker",
+                "right": "likee"
+              },
+              "likee": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "y",
+                "word": "y"
+              },
+              "liker": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "marker": "like",
+              "types": [
+                "like"
+              ],
+              "value": "like",
+              "word": "likes"
+            },
+            {
+              "do": {
+                "left": "lover",
+                "right": "lovee"
+              },
+              "lovee": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "y",
+                "word": "y"
+              },
+              "lover": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "marker": "love",
+              "types": [
+                "love"
+              ],
+              "value": "love",
+              "word": "loves"
+            }
+          ],
+          "word": "or"
+        },
+        "consequence": {
+          "do": {
+            "left": "wanter",
+            "right": "wantee"
+          },
+          "marker": "want",
+          "types": [
+            "want"
+          ],
+          "value": "want",
+          "wantee": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "y",
+            "word": "y"
+          },
+          "wanter": {
+            "marker": "unknown",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "x",
+            "word": "x"
+          },
+          "word": "wants"
+        },
+        "default": true,
+        "marker": "if",
+        "topLevel": true,
+        "word": "if"
+      },
+      {
+        "do": {
+          "left": "lover",
+          "right": "lovee"
+        },
+        "lovee": {
+          "marker": "unknown",
+          "types": [
+            "object",
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "y",
+          "word": "y"
+        },
+        "lover": {
+          "marker": "unknown",
+          "types": [
+            "object",
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "marker": "love",
+        "ordering": "preference",
+        "topLevel": true,
+        "value": "love",
+        "word": "loves"
+      },
+      {
+        "do": {
+          "left": "liker",
+          "right": "likee"
+        },
+        "likee": {
+          "marker": "unknown",
+          "types": [
+            "object",
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "y",
+          "word": "y"
+        },
+        "liker": {
+          "marker": "unknown",
+          "types": [
+            "object",
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "marker": "like",
+        "ordering": "preference",
+        "topLevel": true,
+        "value": "like",
+        "word": "likes"
+      },
+      {
+        "do": {
+          "left": "wanter",
+          "query": [
+            "what"
+          ],
+          "right": "wantee"
+        },
+        "is_compound": true,
+        "marker": "want",
+        "query": [
+          "what"
+        ],
+        "response": {
+          "marker": "list",
+          "truthValue": true,
+          "value": [
+            {
+              "do": {
+                "left": "wanter",
+                "right": "wantee"
+              },
+              "marker": "want",
+              "paraphrase": true,
+              "types": [
+                "want"
+              ],
+              "value": "want",
+              "wantee": {
+                "marker": "unknown",
+                "paraphrase": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "y",
+                "word": "y"
+              },
+              "wanter": {
+                "marker": "unknown",
+                "paraphrase": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "word": "wants"
+            }
+          ]
+        },
+        "topLevel": true,
+        "types": [
+          "want"
+        ],
+        "value": "want",
+        "wantee": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "query": [
+            "what"
+          ],
+          "types": [
+            "object",
+            "what"
+          ],
+          "word": "what"
+        },
+        "wanter": {
+          "marker": "unknown",
+          "types": [
+            "object",
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "word": "want"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "orList",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "orList",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "then",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "if",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "want",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ],
+            [
+              "want",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "does",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            0
+          ],
+          "ops": [
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "want",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "preference": {
+            "categories": [
+              [
+                "love",
+                "like"
+              ],
+              [
+                "hate",
+                "dislike"
+              ]
+            ],
+            "contextToObjectToCategory": {
+            },
+            "lessThans": [
+            ],
+            "ordering": [
+              [
+                "love",
+                "like"
+              ],
+              [
+                "like",
+                "dislike"
+              ],
+              [
+                "dislike",
+                "hate"
+              ]
+            ]
+          }
+        },
+        "1": {
+        },
+        "2": {
+          "children": {
+          },
+          "concepts": [
+          ],
+          "parents": {
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+            }
+          },
+          "property": {
+          },
+          "relations": [
+            {
+              "do": {
+                "left": "lover",
+                "right": "lovee"
+              },
+              "lovee": {
+                "marker": "unknown",
+                "paraphrase": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "y",
+                "word": "y"
+              },
+              "lover": {
+                "marker": "unknown",
+                "paraphrase": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "marker": "love",
+              "ordering": "preference",
+              "paraphrase": true,
+              "topLevel": true,
+              "value": "love",
+              "word": "loves"
+            },
+            {
+              "do": {
+                "left": "liker",
+                "right": "likee"
+              },
+              "likee": {
+                "marker": "unknown",
+                "paraphrase": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "y",
+                "word": "y"
+              },
+              "liker": {
+                "marker": "unknown",
+                "paraphrase": true,
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "marker": "like",
+              "ordering": "preference",
+              "paraphrase": true,
+              "topLevel": true,
+              "value": "like",
+              "word": "likes"
+            }
+          ],
+          "valueToWords": {
+          }
+        },
+        "3": {
+        },
+        "4": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "do": {
+              "left": "wanter",
+              "query": [
+                "what"
+              ],
+              "right": "wantee"
+            },
+            "is_compound": true,
+            "marker": "want",
+            "query": [
+              "what"
+            ],
+            "response": {
+              "marker": "list",
+              "truthValue": true,
+              "value": [
+                {
+                  "do": {
+                    "left": "wanter",
+                    "right": "wantee"
+                  },
+                  "marker": "want",
+                  "paraphrase": true,
+                  "types": [
+                    "want"
+                  ],
+                  "value": "want",
+                  "wantee": {
+                    "marker": "unknown",
+                    "paraphrase": true,
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "y",
+                    "word": "y"
+                  },
+                  "wanter": {
+                    "marker": "unknown",
+                    "paraphrase": true,
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "x",
+                    "word": "x"
+                  },
+                  "word": "wants"
+                }
+              ]
+            },
+            "topLevel": true,
+            "types": [
+              "want"
+            ],
+            "value": "want",
+            "wantee": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "query": [
+                "what"
+              ],
+              "types": [
+                "object",
+                "what"
+              ],
+              "word": "what"
+            },
+            "wanter": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "word": "want"
+          },
+          "paraphrases": "what does x want?",
+          "responses": [
+            " x wants y"
+          ]
+        },
+        {
+          "context": {
+            "do": {
+              "left": "liker",
+              "right": "likee"
+            },
+            "likee": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "y",
+              "word": "y"
+            },
+            "liker": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "marker": "like",
+            "ordering": "preference",
+            "topLevel": true,
+            "value": "like",
+            "word": "likes"
+          },
+          "paraphrases": "x likes y",
+          "responses": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "context": {
+            "do": {
+              "left": "lover",
+              "right": "lovee"
+            },
+            "lovee": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "y",
+              "word": "y"
+            },
+            "lover": {
+              "marker": "unknown",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "marker": "love",
+            "ordering": "preference",
+            "topLevel": true,
+            "value": "love",
+            "word": "loves"
+          },
+          "paraphrases": "x loves y",
+          "responses": [
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "context": {
+            "antecedant": {
+              "default": true,
+              "marker": "orList",
+              "types": [
+                "like",
+                "orList"
+              ],
+              "value": [
+                {
+                  "do": {
+                    "left": "liker",
+                    "right": "likee"
+                  },
+                  "likee": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "y",
+                    "word": "y"
+                  },
+                  "liker": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "x",
+                    "word": "x"
+                  },
+                  "marker": "like",
+                  "types": [
+                    "like"
+                  ],
+                  "value": "like",
+                  "word": "likes"
+                },
+                {
+                  "do": {
+                    "left": "lover",
+                    "right": "lovee"
+                  },
+                  "lovee": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "y",
+                    "word": "y"
+                  },
+                  "lover": {
+                    "marker": "unknown",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "x",
+                    "word": "x"
+                  },
+                  "marker": "love",
+                  "types": [
+                    "love"
+                  ],
+                  "value": "love",
+                  "word": "loves"
+                }
+              ],
+              "word": "or"
+            },
+            "consequence": {
+              "do": {
+                "left": "wanter",
+                "right": "wantee"
+              },
+              "marker": "want",
+              "types": [
+                "want"
+              ],
+              "value": "want",
+              "wantee": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "y",
+                "word": "y"
+              },
+              "wanter": {
+                "marker": "unknown",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "word": "wants"
+            },
+            "default": true,
+            "marker": "if",
+            "topLevel": true,
+            "word": "if"
+          },
+          "paraphrases": "if x likes y or x loves y then x wants y",
+          "responses": [
+            "",
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "if x likes y or x loves y then x wants y",
+      "x loves y",
+      "x likes y",
+      "what does x want?"
+    ],
+    "responses": [
+      "",
+      "",
+      "",
+      " x wants y"
+    ]
+  },
   "if x likes y or x loves y then x wants y x loves y\\ndoes x want y": {
     "config": {
     },

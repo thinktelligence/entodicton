@@ -6,6 +6,7 @@ const meta_tests = require('./meta.test.json')
 const meta_instance = require('./meta.instance.json')
 const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers/meta.js')
 const { zip } = require('./helpers.js')
+const { unflatten, flattens } = require('entodicton')
 
 const template = {
     queries: [
@@ -198,7 +199,7 @@ let config = {
                       valuesPrime.push(valuePrime)
                     }
                   }
-                  response = { marker: 'list', truthValue: valuesPrime.length > 0, value: valuesPrime }
+                  response = { marker: 'list', truthValue: valuesPrime.length > 0, value: unflatten(valuesPrime) }
                 } else {
                   response = toPrime.response
                 }

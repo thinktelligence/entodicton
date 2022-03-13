@@ -226,7 +226,7 @@ class API {
               context.response = _.clone(context)
               context.response.query = undefined
             } else {
-              context.response = { marker: 'list', value: unflatten.unflatten(matches) }
+              context.response = { marker: 'list', value: unflatten(matches) }
             }
             context.response.truthValue = matches.length > 0
             if (!context.response.truthValue) {
