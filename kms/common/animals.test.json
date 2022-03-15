@@ -10,6 +10,7 @@
           "marker": "bat",
           "number": "many",
           "response": true,
+          "text": "bats",
           "types": [
             "bat"
           ],
@@ -21,11 +22,13 @@
           "marker": "yesno",
           "value": true
         },
+        "text": "are bats mammals",
         "topLevel": true,
         "two": {
           "marker": "mammal",
           "number": "many",
           "response": true,
+          "text": "mammals",
           "types": [
             "mammal"
           ],
@@ -37,7 +40,8 @@
       {
         "do": {
           "left": "object",
-          "right": "property"
+          "right": "property",
+          "text": "mammals have wings"
         },
         "doesable": true,
         "is_compound": true,
@@ -45,6 +49,7 @@
         "object": {
           "marker": "mammal",
           "number": "many",
+          "text": "mammals",
           "types": [
             "mammal"
           ],
@@ -53,6 +58,7 @@
         },
         "property": {
           "marker": "property",
+          "text": "wings",
           "types": [
             "property"
           ],
@@ -65,6 +71,7 @@
           "marker": "yesno",
           "value": false
         },
+        "text": "mammals have wings",
         "topLevel": true,
         "types": [
           "have"
@@ -74,7 +81,8 @@
       {
         "do": {
           "left": "object",
-          "right": "property"
+          "right": "property",
+          "text": "bats have wings"
         },
         "doesable": true,
         "is_compound": true,
@@ -82,6 +90,7 @@
         "object": {
           "marker": "bat",
           "number": "many",
+          "text": "bats",
           "types": [
             "bat"
           ],
@@ -90,6 +99,7 @@
         },
         "property": {
           "marker": "property",
+          "text": "wings",
           "types": [
             "property"
           ],
@@ -102,6 +112,7 @@
           "marker": "yesno",
           "value": true
         },
+        "text": "bats have wings",
         "topLevel": true,
         "types": [
           "have"
@@ -111,7 +122,8 @@
       {
         "do": {
           "left": "object",
-          "right": "property"
+          "right": "property",
+          "text": "dogs have wings"
         },
         "doesable": true,
         "is_compound": true,
@@ -119,6 +131,7 @@
         "object": {
           "marker": "dog",
           "number": "many",
+          "text": "dogs",
           "types": [
             "dog"
           ],
@@ -127,6 +140,7 @@
         },
         "property": {
           "marker": "property",
+          "text": "wings",
           "types": [
             "property"
           ],
@@ -139,6 +153,7 @@
           "marker": "yesno",
           "value": false
         },
+        "text": "dogs have wings",
         "topLevel": true,
         "types": [
           "have"
@@ -530,8 +545,40 @@
         },
         {
           "op": [
-            "is",
-            0
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ],
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ],
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
           ],
           "ops": [
             [
@@ -547,51 +594,23 @@
         {
           "op": [
             "is",
-            1
+            0
           ],
           "ops": [
-            [
-              "have",
-              1
-            ],
             [
               "is",
-              1
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
+            "is",
             1
           ],
           "ops": [
             [
-              "have",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
+              "is",
               1
             ]
           ]
@@ -755,7 +774,8 @@
           "context": {
             "do": {
               "left": "object",
-              "right": "property"
+              "right": "property",
+              "text": "dogs have wings"
             },
             "doesable": true,
             "is_compound": true,
@@ -763,6 +783,7 @@
             "object": {
               "marker": "dog",
               "number": "many",
+              "text": "dogs",
               "types": [
                 "dog"
               ],
@@ -771,6 +792,7 @@
             },
             "property": {
               "marker": "property",
+              "text": "wings",
               "types": [
                 "property"
               ],
@@ -783,6 +805,7 @@
               "marker": "yesno",
               "value": false
             },
+            "text": "dogs have wings",
             "topLevel": true,
             "types": [
               "have"
@@ -801,7 +824,8 @@
           "context": {
             "do": {
               "left": "object",
-              "right": "property"
+              "right": "property",
+              "text": "bats have wings"
             },
             "doesable": true,
             "is_compound": true,
@@ -809,6 +833,7 @@
             "object": {
               "marker": "bat",
               "number": "many",
+              "text": "bats",
               "types": [
                 "bat"
               ],
@@ -817,6 +842,7 @@
             },
             "property": {
               "marker": "property",
+              "text": "wings",
               "types": [
                 "property"
               ],
@@ -829,6 +855,7 @@
               "marker": "yesno",
               "value": true
             },
+            "text": "bats have wings",
             "topLevel": true,
             "types": [
               "have"
@@ -847,7 +874,8 @@
           "context": {
             "do": {
               "left": "object",
-              "right": "property"
+              "right": "property",
+              "text": "mammals have wings"
             },
             "doesable": true,
             "is_compound": true,
@@ -855,6 +883,7 @@
             "object": {
               "marker": "mammal",
               "number": "many",
+              "text": "mammals",
               "types": [
                 "mammal"
               ],
@@ -863,6 +892,7 @@
             },
             "property": {
               "marker": "property",
+              "text": "wings",
               "types": [
                 "property"
               ],
@@ -875,6 +905,7 @@
               "marker": "yesno",
               "value": false
             },
+            "text": "mammals have wings",
             "topLevel": true,
             "types": [
               "have"
@@ -897,6 +928,7 @@
               "marker": "bat",
               "number": "many",
               "response": true,
+              "text": "bats",
               "types": [
                 "bat"
               ],
@@ -908,11 +940,13 @@
               "marker": "yesno",
               "value": true
             },
+            "text": "are bats mammals",
             "topLevel": true,
             "two": {
               "marker": "mammal",
               "number": "many",
               "response": true,
+              "text": "mammals",
               "types": [
                 "mammal"
               ],
@@ -1031,7 +1065,8 @@
       {
         "do": {
           "left": "object",
-          "right": "property"
+          "right": "property",
+          "text": "dogs have skin"
         },
         "doesable": true,
         "is_compound": true,
@@ -1039,6 +1074,7 @@
         "object": {
           "marker": "dog",
           "number": "many",
+          "text": "dogs",
           "types": [
             "dog"
           ],
@@ -1047,6 +1083,7 @@
         },
         "property": {
           "marker": "property",
+          "text": "skin",
           "types": [
             "property"
           ],
@@ -1059,6 +1096,7 @@
           "marker": "yesno",
           "value": true
         },
+        "text": "dogs have skin",
         "topLevel": true,
         "types": [
           "have"
@@ -1315,7 +1353,8 @@
           "context": {
             "do": {
               "left": "object",
-              "right": "property"
+              "right": "property",
+              "text": "dogs have skin"
             },
             "doesable": true,
             "is_compound": true,
@@ -1323,6 +1362,7 @@
             "object": {
               "marker": "dog",
               "number": "many",
+              "text": "dogs",
               "types": [
                 "dog"
               ],
@@ -1331,6 +1371,7 @@
             },
             "property": {
               "marker": "property",
+              "text": "skin",
               "types": [
                 "property"
               ],
@@ -1343,6 +1384,7 @@
               "marker": "yesno",
               "value": true
             },
+            "text": "dogs have skin",
             "topLevel": true,
             "types": [
               "have"
@@ -1545,6 +1587,7 @@
           "number": "one",
           "pullFromContext": false,
           "response": true,
+          "text": "a dog",
           "types": [
             "dog"
           ],
@@ -1557,6 +1600,7 @@
           "marker": "yesno",
           "value": true
         },
+        "text": "is a dog a mammal",
         "topLevel": true,
         "two": {
           "concept": true,
@@ -1568,6 +1612,7 @@
           "number": "one",
           "pullFromContext": false,
           "response": true,
+          "text": "a mammal",
           "types": [
             "mammal"
           ],
@@ -1849,6 +1894,7 @@
               "number": "one",
               "pullFromContext": false,
               "response": true,
+              "text": "a dog",
               "types": [
                 "dog"
               ],
@@ -1861,6 +1907,7 @@
               "marker": "yesno",
               "value": true
             },
+            "text": "is a dog a mammal",
             "topLevel": true,
             "two": {
               "concept": true,
@@ -1872,6 +1919,7 @@
               "number": "one",
               "pullFromContext": false,
               "response": true,
+              "text": "a mammal",
               "types": [
                 "mammal"
               ],
@@ -2075,6 +2123,7 @@
             "what"
           ],
           "response": true,
+          "text": "what",
           "types": [
             "what"
           ],
@@ -2099,6 +2148,7 @@
             "object": {
               "marker": "canine",
               "number": "many",
+              "text": "canines",
               "types": [
                 "canine"
               ],
@@ -2106,6 +2156,7 @@
               "word": "canines"
             },
             "pullFromContext": true,
+            "text": "the types of canines",
             "types": [
               "type"
             ],
@@ -2126,6 +2177,7 @@
             "object": {
               "marker": "canine",
               "number": "many",
+              "text": "canines",
               "types": [
                 "canine"
               ],
@@ -2133,6 +2185,7 @@
               "word": "canines"
             },
             "pullFromContext": true,
+            "text": "the types of canines",
             "types": [
               "type"
             ],
@@ -2160,6 +2213,7 @@
           },
           "word": "are"
         },
+        "text": "what are the types of canines",
         "topLevel": true,
         "two": {
           "concept": true,
@@ -2172,6 +2226,7 @@
           "object": {
             "marker": "canine",
             "number": "many",
+            "text": "canines",
             "types": [
               "canine"
             ],
@@ -2180,6 +2235,7 @@
           },
           "pullFromContext": true,
           "response": true,
+          "text": "the types of canines",
           "types": [
             "type"
           ],
@@ -2225,7 +2281,7 @@
         },
         {
           "op": [
-            "what",
+            "canine",
             0
           ],
           "ops": [
@@ -2253,14 +2309,10 @@
         },
         {
           "op": [
-            "canine",
+            "what",
             0
           ],
           "ops": [
-            [
-              "canine",
-              0
-            ],
             [
               "is",
               0
@@ -2271,6 +2323,10 @@
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -2508,6 +2564,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -2531,6 +2588,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -2555,6 +2613,7 @@
                 "object": {
                   "marker": "canine",
                   "number": "many",
+                  "text": "canines",
                   "types": [
                     "canine"
                   ],
@@ -2562,6 +2621,7 @@
                   "word": "canines"
                 },
                 "pullFromContext": true,
+                "text": "the types of canines",
                 "types": [
                   "type"
                 ],
@@ -2582,6 +2642,7 @@
                 "object": {
                   "marker": "canine",
                   "number": "many",
+                  "text": "canines",
                   "types": [
                     "canine"
                   ],
@@ -2589,6 +2650,7 @@
                   "word": "canines"
                 },
                 "pullFromContext": true,
+                "text": "the types of canines",
                 "types": [
                   "type"
                 ],
@@ -2616,6 +2678,7 @@
               },
               "word": "are"
             },
+            "text": "what are the types of canines",
             "topLevel": true,
             "two": {
               "concept": true,
@@ -2628,6 +2691,7 @@
               "object": {
                 "marker": "canine",
                 "number": "many",
+                "text": "canines",
                 "types": [
                   "canine"
                 ],
@@ -2636,6 +2700,7 @@
               },
               "pullFromContext": true,
               "response": true,
+              "text": "the types of canines",
               "types": [
                 "type"
               ],
@@ -2838,6 +2903,7 @@
             "what"
           ],
           "response": true,
+          "text": "what",
           "types": [
             "what"
           ],
@@ -2862,6 +2928,7 @@
             "object": {
               "marker": "mammal",
               "number": "many",
+              "text": "mammals",
               "types": [
                 "mammal"
               ],
@@ -2869,6 +2936,7 @@
               "word": "mammals"
             },
             "pullFromContext": true,
+            "text": "the types of mammals",
             "types": [
               "type"
             ],
@@ -2889,6 +2957,7 @@
             "object": {
               "marker": "mammal",
               "number": "many",
+              "text": "mammals",
               "types": [
                 "mammal"
               ],
@@ -2896,6 +2965,7 @@
               "word": "mammals"
             },
             "pullFromContext": true,
+            "text": "the types of mammals",
             "types": [
               "type"
             ],
@@ -2937,6 +3007,7 @@
           },
           "word": "are"
         },
+        "text": "what are the types of mammals",
         "topLevel": true,
         "two": {
           "concept": true,
@@ -2949,6 +3020,7 @@
           "object": {
             "marker": "mammal",
             "number": "many",
+            "text": "mammals",
             "types": [
               "mammal"
             ],
@@ -2957,6 +3029,7 @@
           },
           "pullFromContext": true,
           "response": true,
+          "text": "the types of mammals",
           "types": [
             "type"
           ],
@@ -3285,6 +3358,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -3308,6 +3382,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -3332,6 +3407,7 @@
                 "object": {
                   "marker": "mammal",
                   "number": "many",
+                  "text": "mammals",
                   "types": [
                     "mammal"
                   ],
@@ -3339,6 +3415,7 @@
                   "word": "mammals"
                 },
                 "pullFromContext": true,
+                "text": "the types of mammals",
                 "types": [
                   "type"
                 ],
@@ -3359,6 +3436,7 @@
                 "object": {
                   "marker": "mammal",
                   "number": "many",
+                  "text": "mammals",
                   "types": [
                     "mammal"
                   ],
@@ -3366,6 +3444,7 @@
                   "word": "mammals"
                 },
                 "pullFromContext": true,
+                "text": "the types of mammals",
                 "types": [
                   "type"
                 ],
@@ -3407,6 +3486,7 @@
               },
               "word": "are"
             },
+            "text": "what are the types of mammals",
             "topLevel": true,
             "two": {
               "concept": true,
@@ -3419,6 +3499,7 @@
               "object": {
                 "marker": "mammal",
                 "number": "many",
+                "text": "mammals",
                 "types": [
                   "mammal"
                 ],
@@ -3427,6 +3508,7 @@
               },
               "pullFromContext": true,
               "response": true,
+              "text": "the types of mammals",
               "types": [
                 "type"
               ],

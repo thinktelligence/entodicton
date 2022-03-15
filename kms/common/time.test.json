@@ -9,12 +9,14 @@
         "hour": {
           "hour": 2,
           "marker": "hourUnits",
+          "text": "2",
           "types": [
             "hourUnits"
           ],
           "word": "2"
         },
         "marker": "ampm",
+        "text": "2 pm",
         "topLevel": true,
         "word": "pm"
       }
@@ -73,12 +75,14 @@
             "hour": {
               "hour": 2,
               "marker": "hourUnits",
+              "text": "2",
               "types": [
                 "hourUnits"
               ],
               "word": "2"
             },
             "marker": "ampm",
+            "text": "2 pm",
             "topLevel": true,
             "word": "pm"
           },
@@ -115,18 +119,21 @@
             ],
             "pullFromContext": true,
             "response": true,
+            "text": "the time",
             "types": [
               "time"
             ],
             "wantsValue": true,
             "word": "time"
           },
+          "text": "the time is 2 pm",
           "two": {
             "ampm": "pm",
             "determined": true,
             "hour": {
               "hour": 2,
               "marker": "hourUnits",
+              "text": "2",
               "types": [
                 "hourUnits"
               ],
@@ -134,6 +141,7 @@
             },
             "marker": "ampm",
             "response": true,
+            "text": "2 pm",
             "types": [
               "ampm"
             ],
@@ -147,6 +155,7 @@
         "info": {
           "info": "when",
           "marker": "info",
+          "text": "when",
           "types": [
             "info"
           ],
@@ -156,11 +165,13 @@
         "target": {
           "marker": "person",
           "target": "me",
+          "text": "me",
           "types": [
             "person"
           ],
           "word": "me"
         },
+        "text": "tell me when the time is 2 pm",
         "topLevel": true,
         "word": "tell"
       }
@@ -169,7 +180,7 @@
       "opChoices": [
         {
           "op": [
-            "person",
+            "info",
             0
           ],
           "ops": [
@@ -222,11 +233,11 @@
               0
             ],
             [
-              "info",
+              "is",
               0
             ],
             [
-              "is",
+              "person",
               0
             ],
             [
@@ -239,38 +250,6 @@
             ],
             [
               "time",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "info",
-            0
-          ],
-          "ops": [
-            [
-              "ampm",
-              0
-            ],
-            [
-              "hourUnits",
-              0
-            ],
-            [
-              "info",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "tell",
-              0
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -291,6 +270,38 @@
             ],
             [
               "is",
+              0
+            ],
+            [
+              "person",
+              0
+            ],
+            [
+              "tell",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "ampm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "person",
               0
             ],
             [
@@ -318,31 +329,11 @@
               0
             ],
             [
-              "tell",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
+              "person",
               0
             ],
             [
               "tell",
-              0
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -355,6 +346,30 @@
           "ops": [
             [
               "is",
+              0
+            ],
+            [
+              "person",
+              0
+            ],
+            [
+              "tell",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "person",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ],
+            [
+              "person",
               0
             ],
             [
@@ -424,18 +439,21 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
                 "wantsValue": true,
                 "word": "time"
               },
+              "text": "the time is 2 pm",
               "two": {
                 "ampm": "pm",
                 "determined": true,
                 "hour": {
                   "hour": 2,
                   "marker": "hourUnits",
+                  "text": "2",
                   "types": [
                     "hourUnits"
                   ],
@@ -443,6 +461,7 @@
                 },
                 "marker": "ampm",
                 "response": true,
+                "text": "2 pm",
                 "types": [
                   "ampm"
                 ],
@@ -456,6 +475,7 @@
             "info": {
               "info": "when",
               "marker": "info",
+              "text": "when",
               "types": [
                 "info"
               ],
@@ -465,11 +485,13 @@
             "target": {
               "marker": "person",
               "target": "me",
+              "text": "me",
               "types": [
                 "person"
               ],
               "word": "me"
             },
+            "text": "tell me when the time is 2 pm",
             "topLevel": true,
             "word": "tell"
           },
@@ -497,6 +519,7 @@
           "count": 12,
           "default": true,
           "marker": "timeFormat",
+          "text": "12 hour format",
           "types": [
             "timeFormat",
             "timeUnit"
@@ -505,6 +528,7 @@
           "word": "format"
         },
         "marker": "use",
+        "text": "use 12 hour format",
         "topLevel": true,
         "word": "use"
       },
@@ -519,6 +543,7 @@
             "what"
           ],
           "response": true,
+          "text": "what",
           "types": [
             "what"
           ],
@@ -540,6 +565,7 @@
               "determiner"
             ],
             "pullFromContext": true,
+            "text": "the time",
             "types": [
               "time"
             ],
@@ -558,6 +584,7 @@
               "determiner"
             ],
             "pullFromContext": true,
+            "text": "the time",
             "types": [
               "time"
             ],
@@ -568,6 +595,7 @@
           },
           "word": "is"
         },
+        "text": "what is the time",
         "topLevel": true,
         "two": {
           "concept": true,
@@ -579,6 +607,7 @@
           ],
           "pullFromContext": true,
           "response": true,
+          "text": "the time",
           "types": [
             "time"
           ],
@@ -592,7 +621,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "time",
             0
           ],
           "ops": [
@@ -649,10 +678,6 @@
               0
             ],
             [
-              "time",
-              0
-            ],
-            [
               "timeFormat",
               0
             ],
@@ -663,12 +688,16 @@
             [
               "use",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "time",
+            "the",
             0
           ],
           "ops": [
@@ -685,15 +714,15 @@
               0
             ],
             [
-              "time",
-              0
-            ],
-            [
               "timeFormat",
               0
             ],
             [
               "use",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -713,7 +742,27 @@
               0
             ],
             [
-              "the",
+              "timeFormat",
+              0
+            ],
+            [
+              "use",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -723,21 +772,21 @@
             [
               "use",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "is",
             0
           ],
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "the",
               0
             ],
             [
@@ -758,26 +807,10 @@
           "ops": [
             [
               "is",
-              0
+              1
             ],
             [
               "timeFormat",
-              0
-            ],
-            [
-              "use",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "is",
-            0
-          ],
-          "ops": [
-            [
-              "is",
               0
             ],
             [
@@ -833,6 +866,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -856,6 +890,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -877,6 +912,7 @@
                   "determiner"
                 ],
                 "pullFromContext": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
@@ -895,6 +931,7 @@
                   "determiner"
                 ],
                 "pullFromContext": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
@@ -905,6 +942,7 @@
               },
               "word": "is"
             },
+            "text": "what is the time",
             "topLevel": true,
             "two": {
               "concept": true,
@@ -916,6 +954,7 @@
               ],
               "pullFromContext": true,
               "response": true,
+              "text": "the time",
               "types": [
                 "time"
               ],
@@ -937,6 +976,7 @@
               "count": 12,
               "default": true,
               "marker": "timeFormat",
+              "text": "12 hour format",
               "types": [
                 "timeFormat",
                 "timeUnit"
@@ -945,6 +985,7 @@
               "word": "format"
             },
             "marker": "use",
+            "text": "use 12 hour format",
             "topLevel": true,
             "word": "use"
           },
@@ -975,6 +1016,7 @@
           "count": 24,
           "default": true,
           "marker": "timeFormat",
+          "text": "24 hour format",
           "types": [
             "timeFormat",
             "timeUnit"
@@ -983,6 +1025,7 @@
           "word": "format"
         },
         "marker": "use",
+        "text": "use 24 hour format",
         "topLevel": true,
         "word": "use"
       },
@@ -997,6 +1040,7 @@
             "what"
           ],
           "response": true,
+          "text": "what",
           "types": [
             "what"
           ],
@@ -1018,6 +1062,7 @@
               "determiner"
             ],
             "pullFromContext": true,
+            "text": "the time",
             "types": [
               "time"
             ],
@@ -1036,6 +1081,7 @@
               "determiner"
             ],
             "pullFromContext": true,
+            "text": "the time",
             "types": [
               "time"
             ],
@@ -1046,6 +1092,7 @@
           },
           "word": "is"
         },
+        "text": "what is the time",
         "topLevel": true,
         "two": {
           "concept": true,
@@ -1057,6 +1104,7 @@
           ],
           "pullFromContext": true,
           "response": true,
+          "text": "the time",
           "types": [
             "time"
           ],
@@ -1070,7 +1118,7 @@
       "opChoices": [
         {
           "op": [
-            "what",
+            "time",
             0
           ],
           "ops": [
@@ -1127,10 +1175,6 @@
               0
             ],
             [
-              "time",
-              0
-            ],
-            [
               "timeFormat",
               0
             ],
@@ -1141,12 +1185,16 @@
             [
               "use",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "time",
+            "the",
             0
           ],
           "ops": [
@@ -1163,15 +1211,15 @@
               0
             ],
             [
-              "time",
-              0
-            ],
-            [
               "timeFormat",
               0
             ],
             [
               "use",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -1191,7 +1239,27 @@
               0
             ],
             [
-              "the",
+              "timeFormat",
+              0
+            ],
+            [
+              "use",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -1201,21 +1269,21 @@
             [
               "use",
               0
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "is",
             0
           ],
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "the",
               0
             ],
             [
@@ -1236,26 +1304,10 @@
           "ops": [
             [
               "is",
-              0
+              1
             ],
             [
               "timeFormat",
-              0
-            ],
-            [
-              "use",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "is",
-            0
-          ],
-          "ops": [
-            [
-              "is",
               0
             ],
             [
@@ -1311,6 +1363,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -1334,6 +1387,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -1355,6 +1409,7 @@
                   "determiner"
                 ],
                 "pullFromContext": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
@@ -1373,6 +1428,7 @@
                   "determiner"
                 ],
                 "pullFromContext": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
@@ -1383,6 +1439,7 @@
               },
               "word": "is"
             },
+            "text": "what is the time",
             "topLevel": true,
             "two": {
               "concept": true,
@@ -1394,6 +1451,7 @@
               ],
               "pullFromContext": true,
               "response": true,
+              "text": "the time",
               "types": [
                 "time"
               ],
@@ -1415,6 +1473,7 @@
               "count": 24,
               "default": true,
               "marker": "timeFormat",
+              "text": "24 hour format",
               "types": [
                 "timeFormat",
                 "timeUnit"
@@ -1423,6 +1482,7 @@
               "word": "format"
             },
             "marker": "use",
+            "text": "use 24 hour format",
             "topLevel": true,
             "word": "use"
           },
@@ -1453,6 +1513,7 @@
           "count": 36,
           "default": true,
           "marker": "timeFormat",
+          "text": "36 hour format",
           "types": [
             "timeFormat",
             "timeUnit"
@@ -1564,6 +1625,7 @@
               "count": 36,
               "default": true,
               "marker": "timeFormat",
+              "text": "36 hour format",
               "types": [
                 "timeFormat",
                 "timeUnit"
@@ -1605,6 +1667,7 @@
             "what"
           ],
           "response": true,
+          "text": "what",
           "types": [
             "what"
           ],
@@ -1626,6 +1689,7 @@
               "determiner"
             ],
             "pullFromContext": true,
+            "text": "the time",
             "types": [
               "time"
             ],
@@ -1644,6 +1708,7 @@
               "determiner"
             ],
             "pullFromContext": true,
+            "text": "the time",
             "types": [
               "time"
             ],
@@ -1654,6 +1719,7 @@
           },
           "word": "is"
         },
+        "text": "what is the time",
         "topLevel": true,
         "two": {
           "concept": true,
@@ -1665,6 +1731,7 @@
           ],
           "pullFromContext": true,
           "response": true,
+          "text": "the time",
           "types": [
             "time"
           ],
@@ -1702,7 +1769,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -1722,7 +1789,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -1731,7 +1798,7 @@
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -1779,6 +1846,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -1802,6 +1870,7 @@
                 "what"
               ],
               "response": true,
+              "text": "what",
               "types": [
                 "what"
               ],
@@ -1823,6 +1892,7 @@
                   "determiner"
                 ],
                 "pullFromContext": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
@@ -1841,6 +1911,7 @@
                   "determiner"
                 ],
                 "pullFromContext": true,
+                "text": "the time",
                 "types": [
                   "time"
                 ],
@@ -1851,6 +1922,7 @@
               },
               "word": "is"
             },
+            "text": "what is the time",
             "topLevel": true,
             "two": {
               "concept": true,
@@ -1862,6 +1934,7 @@
               ],
               "pullFromContext": true,
               "response": true,
+              "text": "the time",
               "types": [
                 "time"
               ],
