@@ -58,12 +58,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -664,12 +664,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -1356,12 +1356,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -1983,12 +1983,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -2816,12 +2816,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -3409,12 +3409,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -3956,45 +3956,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -4202,12 +4198,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -4653,8 +4649,8 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
@@ -4669,13 +4665,13 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
-              "questionMark",
-              0
+              "have",
+              1
             ]
           ]
         }
@@ -4830,12 +4826,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -5377,45 +5373,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -5623,12 +5615,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -5984,6 +5976,26 @@
           ],
           "word": "object"
         },
+        "objects": [
+          {
+            "default": true,
+            "marker": "property",
+            "text": "property",
+            "types": [
+              "property"
+            ],
+            "word": "property"
+          },
+          {
+            "default": true,
+            "marker": "object",
+            "text": "object",
+            "types": [
+              "object"
+            ],
+            "word": "object"
+          }
+        ],
         "text": "property of object",
         "topLevel": true,
         "types": [
@@ -6103,6 +6115,26 @@
               ],
               "word": "object"
             },
+            "objects": [
+              {
+                "default": true,
+                "marker": "property",
+                "text": "property",
+                "types": [
+                  "property"
+                ],
+                "word": "property"
+              },
+              {
+                "default": true,
+                "marker": "object",
+                "text": "object",
+                "types": [
+                  "object"
+                ],
+                "word": "object"
+              }
+            ],
             "text": "property of object",
             "topLevel": true,
             "types": [
@@ -6183,12 +6215,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -6553,6 +6585,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -6600,6 +6662,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the profession",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "profession",
+              "wantsValue": true,
+              "word": "profession"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the profession of greg",
@@ -6670,6 +6762,36 @@
               "value": "greg",
               "word": "greg"
             },
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the properties",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "properties",
+                "wantsValue": true,
+                "word": "properties"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
+            ],
             "pullFromContext": true,
             "text": "the properties of greg",
             "types": [
@@ -6688,6 +6810,36 @@
             "marker": "property",
             "modifiers": [
               "determiner"
+            ],
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the properties",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "properties",
+                "wantsValue": true,
+                "word": "properties"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
             ],
             "pullFromContext": true,
             "text": "the properties of greg",
@@ -6727,6 +6879,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the properties",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "properties",
+              "wantsValue": true,
+              "word": "properties"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the properties of greg",
@@ -7411,6 +7593,36 @@
                   "value": "greg",
                   "word": "greg"
                 },
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the properties",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "properties",
+                    "wantsValue": true,
+                    "word": "properties"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
+                ],
                 "pullFromContext": true,
                 "text": "the properties of greg",
                 "types": [
@@ -7429,6 +7641,36 @@
                 "marker": "property",
                 "modifiers": [
                   "determiner"
+                ],
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the properties",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "properties",
+                    "wantsValue": true,
+                    "word": "properties"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
                 ],
                 "pullFromContext": true,
                 "text": "the properties of greg",
@@ -7468,6 +7710,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the properties",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "properties",
+                  "wantsValue": true,
+                  "word": "properties"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the properties of greg",
@@ -7510,6 +7782,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the profession",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "profession",
+                  "wantsValue": true,
+                  "word": "profession"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the profession of greg",
@@ -7565,6 +7867,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -7670,12 +8002,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -8040,6 +8372,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -8355,7 +8717,7 @@
         },
         {
           "op": [
-            "possession",
+            "the",
             0
           ],
           "ops": [
@@ -8379,7 +8741,7 @@
         },
         {
           "op": [
-            "the",
+            "possession",
             0
           ],
           "ops": [
@@ -8389,14 +8751,10 @@
             ],
             [
               "possession",
-              1
-            ],
-            [
-              "propertyOf",
               0
             ],
             [
-              "the",
+              "propertyOf",
               0
             ]
           ]
@@ -8742,6 +9100,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -8844,12 +9232,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -9214,6 +9602,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -9283,6 +9701,36 @@
               "value": "greg",
               "word": "greg"
             },
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the age",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "age",
+                "wantsValue": true,
+                "word": "age"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
+            ],
             "pullFromContext": true,
             "text": "the age of greg",
             "types": [
@@ -9301,6 +9749,36 @@
             "marker": "property",
             "modifiers": [
               "determiner"
+            ],
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the age",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "age",
+                "wantsValue": true,
+                "word": "age"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
             ],
             "pullFromContext": true,
             "text": "the age of greg",
@@ -9344,6 +9822,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -9820,6 +10328,36 @@
                   "value": "greg",
                   "word": "greg"
                 },
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the age",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "age",
+                    "wantsValue": true,
+                    "word": "age"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
+                ],
                 "pullFromContext": true,
                 "text": "the age of greg",
                 "types": [
@@ -9838,6 +10376,36 @@
                 "marker": "property",
                 "modifiers": [
                   "determiner"
+                ],
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the age",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "age",
+                    "wantsValue": true,
+                    "word": "age"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
                 ],
                 "pullFromContext": true,
                 "text": "the age of greg",
@@ -9881,6 +10449,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -9922,6 +10520,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -10024,12 +10652,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -10394,6 +11022,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -10463,6 +11121,36 @@
               "value": "greg",
               "word": "greg"
             },
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the age",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "age",
+                "wantsValue": true,
+                "word": "age"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
+            ],
             "pullFromContext": true,
             "text": "the age of greg",
             "types": [
@@ -10481,6 +11169,36 @@
             "marker": "property",
             "modifiers": [
               "determiner"
+            ],
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the age",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "age",
+                "wantsValue": true,
+                "word": "age"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
             ],
             "pullFromContext": true,
             "text": "the age of greg",
@@ -10524,6 +11242,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -10980,6 +11728,36 @@
                   "value": "greg",
                   "word": "greg"
                 },
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the age",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "age",
+                    "wantsValue": true,
+                    "word": "age"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
+                ],
                 "pullFromContext": true,
                 "text": "the age of greg",
                 "types": [
@@ -10998,6 +11776,36 @@
                 "marker": "property",
                 "modifiers": [
                   "determiner"
+                ],
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the age",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "age",
+                    "wantsValue": true,
+                    "word": "age"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
                 ],
                 "pullFromContext": true,
                 "text": "the age of greg",
@@ -11041,6 +11849,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -11081,6 +11919,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -11182,12 +12050,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -11552,6 +12420,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the name",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "name",
+              "wantsValue": true,
+              "word": "name"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the name of greg",
@@ -11983,6 +12881,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the name",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "name",
+                  "wantsValue": true,
+                  "word": "name"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the name of greg",
@@ -12085,12 +13013,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -12455,6 +13383,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the name",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "name",
+              "wantsValue": true,
+              "word": "name"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the name of greg",
@@ -12530,6 +13488,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the name",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "name",
+              "wantsValue": true,
+              "word": "name"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the name of greg",
@@ -13123,6 +14111,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the name",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "name",
+                  "wantsValue": true,
+                  "word": "name"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the name of greg",
@@ -13267,6 +14285,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the name",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "name",
+                  "wantsValue": true,
+                  "word": "name"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the name of greg",
@@ -13372,12 +14420,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -13896,12 +14944,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -14262,6 +15310,33 @@
           ],
           "word": "object"
         },
+        "objects": [
+          {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the property",
+            "types": [
+              "property"
+            ],
+            "wantsValue": true,
+            "word": "property"
+          },
+          {
+            "default": true,
+            "marker": "object",
+            "text": "object",
+            "types": [
+              "object"
+            ],
+            "word": "object"
+          }
+        ],
         "pullFromContext": true,
         "text": "the property of object",
         "topLevel": true,
@@ -14276,7 +15351,7 @@
       "opChoices": [
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
@@ -14300,12 +15375,12 @@
         },
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -14412,6 +15487,33 @@
               ],
               "word": "object"
             },
+            "objects": [
+              {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the property",
+                "types": [
+                  "property"
+                ],
+                "wantsValue": true,
+                "word": "property"
+              },
+              {
+                "default": true,
+                "marker": "object",
+                "text": "object",
+                "types": [
+                  "object"
+                ],
+                "word": "object"
+              }
+            ],
             "pullFromContext": true,
             "text": "the property of object",
             "topLevel": true,
@@ -14494,12 +15596,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -14867,6 +15969,40 @@
           "wantsValue": true,
           "word": "object"
         },
+        "objects": [
+          {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the property",
+            "types": [
+              "property"
+            ],
+            "wantsValue": true,
+            "word": "property"
+          },
+          {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "marker": "object",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the object",
+            "types": [
+              "object"
+            ],
+            "wantsValue": true,
+            "word": "object"
+          }
+        ],
         "pullFromContext": true,
         "text": "the property of the object",
         "topLevel": true,
@@ -14881,7 +16017,7 @@
       "opChoices": [
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
@@ -14905,12 +16041,12 @@
         },
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
             [
-              "property",
+              "object",
               0
             ],
             [
@@ -15040,6 +16176,40 @@
               "wantsValue": true,
               "word": "object"
             },
+            "objects": [
+              {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the property",
+                "types": [
+                  "property"
+                ],
+                "wantsValue": true,
+                "word": "property"
+              },
+              {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "marker": "object",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the object",
+                "types": [
+                  "object"
+                ],
+                "wantsValue": true,
+                "word": "object"
+              }
+            ],
             "pullFromContext": true,
             "text": "the property of the object",
             "topLevel": true,
@@ -15122,12 +16292,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -15514,6 +16684,36 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "wantsValue": true,
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the age of greg",
@@ -15780,6 +16980,36 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "wantsValue": true,
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the age of greg",
@@ -15866,12 +17096,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
@@ -16257,6 +17487,33 @@
             ],
             "word": "object"
           },
+          "objects": [
+            {
+              "concept": true,
+              "default": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the property",
+              "types": [
+                "property"
+              ],
+              "wantsValue": true,
+              "word": "property"
+            },
+            {
+              "default": true,
+              "marker": "object",
+              "text": "object",
+              "types": [
+                "object"
+              ],
+              "word": "object"
+            }
+          ],
           "pullFromContext": true,
           "response": true,
           "text": "the property of object",
@@ -16524,6 +17781,33 @@
                 ],
                 "word": "object"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "default": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the property",
+                  "types": [
+                    "property"
+                  ],
+                  "wantsValue": true,
+                  "word": "property"
+                },
+                {
+                  "default": true,
+                  "marker": "object",
+                  "text": "object",
+                  "types": [
+                    "object"
+                  ],
+                  "word": "object"
+                }
+              ],
               "pullFromContext": true,
               "response": true,
               "text": "the property of object",
@@ -16608,12 +17892,12 @@
           "level": 1
         },
         {
-          "bridge": "{ ...next(operator), object: after[0] }",
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
           "id": "propertyOf",
           "level": 0
         },
         {
-          "bridge": "{ ...before[0], object: operator.object }",
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
           "id": "propertyOf",
           "level": 1
         },
