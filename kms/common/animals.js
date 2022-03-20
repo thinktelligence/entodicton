@@ -14,7 +14,7 @@ const template ={
     "birds have wings",
     "birds have beaks",
     "humans bats felines and canines are mammals",
-    "owls eagles pidgeons parrots are birds",
+    "owls eagles pidgeons and parrots are birds",
     "cats are felines",
     "dogs and wolves are canines",
     "bats have wings",
