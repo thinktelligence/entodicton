@@ -99,7 +99,7 @@ let config = {
     [ ({context}) => context.marker == 'reportAction' && context.response, ({context, g}) => `reporting on ${context.report.word}` ],
     [ ({context}) => context.marker == 'reportAction' && context.paraphrase, ({context, g}) => `report on ${context.report.word}` ],
     [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
-    [ ({context}) => context.marker == 'listAction' && !context.response, ({g, context}) => `list ${g(context.what)}` ],
+    [ ({context}) => context.marker == 'listAction' && context.paraphrase, ({g, context}) => `list ${g(context.what)}` ],
     [ 
       ({context, api}) => api.listing.type == 'sentences' && context.marker == 'listAction' && context.response, 
       ({g, gs, context}) => {
@@ -107,9 +107,10 @@ let config = {
         return `${g(context.what)} are ${gs(context.listing, ' ', ' and ')}` 
       }
     ],
-    [ 
-      ({context, api}) => api.listing.type == 'tables' && context.marker == 'listAction' && context.response, 
-      ({g, gs, objects, context}) => {
+    { 
+      notes: 'show the results as a table',
+      match: ({context, api}) => api.listing.type == 'tables' && context.marker == 'listAction' && context.response && !context.paraphrase, 
+      apply: ({g, gs, objects, context}) => {
         let report = '';
         const products = context.listing
         const columns = api.listing.columns
@@ -123,7 +124,7 @@ let config = {
         report += table([columns].concat(data))
         return report
       }
-    ],
+    },
     [ 
       ({context}) => context.marker == 'answer', 
       ({g, context}) => `answering with ${context.type}` 

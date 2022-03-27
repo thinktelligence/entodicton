@@ -90,7 +90,7 @@ class API {
   // create == [ id, ... ] // ids to create bridges for
   // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does g2reg like bananas
   // relation -> the semantics will be implements using relations
-  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [] }, semanticApply) {
+  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [] }, semanticApply) {
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
@@ -118,7 +118,7 @@ class API {
     } else {
       config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
     }
-   
+  
     create.map( (id) => {
       if (id === operator) {
         const tagsToProps = (where, args, suffix='') => {
@@ -136,7 +136,7 @@ class API {
           doParams = `, do: { left: "${before[0].tag}", right: "${after[0].tag}" } `
           afterArgs = tagsToProps('after', after, '*')
         }
-        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs} }` })
+        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)} }` })
         if (words.length > 0) {
           for (const word of words) {
             config.addWord(word, { id: operator, initial: `{ value: "${operator}" }` })
@@ -174,7 +174,8 @@ class API {
 
     config.addGenerator({
       notes: 'ordering generator for response',
-      match: ({context}) => context.marker == operator && context.response,
+      // match: ({context}) => context.marker == operator && context.response && !context.paraphrase,
+      match: ({context}) => context.marker == operator && context.response && context.isResponse,
       apply: ({context, g}) => {
         const { response } = context 
         let yesno = ''
@@ -489,7 +490,16 @@ class API {
     return this.propertiesFH.getHandler([object, property])
   }
 
+  toValue(context) {
+    if (typeof context == 'string') {
+      return context
+    }
+    return context.value
+  }
+
   getProperty(object, property, g) {
+    object = this.toValue(object)
+    property = this.toValue(property)
     const handler = this.propertiesFH.getHandler([object, property])
     if (handler) {
       return handler.getValue([object, property])
@@ -543,6 +553,9 @@ class API {
   }
 
   knownObject(object) {
+    if ((object || {}).value) {
+      object = value
+    }
     const path = [object]
     // return this.knownPropertyNew(path)
     return this.propertiesFH.knownProperty(path)
@@ -574,6 +587,8 @@ class API {
 
   // NOT DONE
   knownProperty(object, property) {
+    object = this.toValue(object)
+    property = this.toValue(property)
     if (property == 'properties') {
       return true;
     }

@@ -3399,13 +3399,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -3424,7 +3426,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -3836,6 +3838,7 @@
         "word": "has"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -3956,8 +3959,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -3979,18 +3982,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -4081,7 +4088,7 @@
             ],
             "word": "has"
           },
-          "paraphrases": "does greg has eyes?",
+          "paraphrases": "does greg have eyes?",
           "responses": [
             "",
             "yes"
@@ -4132,7 +4139,7 @@
     },
     "paraphrases": [
       "greg has eyes",
-      "does greg has eyes?"
+      "does greg have eyes?"
     ],
     "responses": [
       "",
@@ -4188,13 +4195,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -4213,7 +4222,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -4589,6 +4598,7 @@
         "word": "has"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -4649,8 +4659,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -4665,13 +4675,13 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -4753,7 +4763,7 @@
             "verbatim": "There is no object named greg",
             "word": "has"
           },
-          "paraphrases": "does greg has eyes?",
+          "paraphrases": "does greg have eyes?",
           "responses": [
             "There is no object named greg"
           ]
@@ -4761,7 +4771,7 @@
       ]
     },
     "paraphrases": [
-      "does greg has eyes?"
+      "does greg have eyes?"
     ],
     "responses": [
       "There is no object named greg"
@@ -4816,13 +4826,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -4841,7 +4853,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -5253,6 +5265,7 @@
         "word": "has"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -5373,8 +5386,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -5396,18 +5409,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -5498,7 +5515,7 @@
             ],
             "word": "has"
           },
-          "paraphrases": "does greg has eyes?",
+          "paraphrases": "does greg have eyes?",
           "responses": [
             "",
             "no"
@@ -5549,11 +5566,5073 @@
     },
     "paraphrases": [
       "greg has toes",
-      "does greg has eyes?"
+      "does greg have eyes?"
     ],
     "responses": [
       "",
       "no"
+    ]
+  },
+  "greg's car's bumper": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
+          "id": "possession",
+          "inverted": true,
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
+          "id": "possession",
+          "inverted": true,
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
+          "id": "what",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ query: true, ...context }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        }
+      ],
+      "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([canBeQuestion])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "marker": "property",
+        "object": {
+          "marker": "unknown",
+          "text": "greg",
+          "types": [
+            "object",
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "greg",
+          "word": "greg"
+        },
+        "objects": [
+          {
+            "marker": "unknown",
+            "text": "greg",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          {
+            "marker": "unknown",
+            "text": "car",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "car",
+            "word": "car"
+          },
+          {
+            "marker": "property",
+            "text": "bumper",
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": "bumper",
+            "word": "bumper"
+          }
+        ],
+        "text": "greg 's car 's bumper",
+        "topLevel": true,
+        "types": [
+          "property"
+        ],
+        "unknown": true,
+        "value": "bumper",
+        "word": "bumper"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "possession",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "possession",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "possession",
+              1
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "property",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+          },
+          "concepts": [
+          ],
+          "parents": {
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "1": {
+        },
+        "2": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "property",
+            "object": {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            },
+            "objects": [
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              },
+              {
+                "marker": "unknown",
+                "text": "car",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "car",
+                "word": "car"
+              },
+              {
+                "marker": "property",
+                "text": "bumper",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "bumper",
+                "word": "bumper"
+              }
+            ],
+            "text": "greg 's car 's bumper",
+            "topLevel": true,
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": "bumper",
+            "word": "bumper"
+          },
+          "paraphrases": "greg's car's bumper",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "greg's car's bumper"
+    ],
+    "responses": [
+      ""
+    ]
+  },
+  "hana's sister is kia": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
+          "id": "possession",
+          "inverted": true,
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
+          "id": "possession",
+          "inverted": true,
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
+          "id": "what",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ query: true, ...context }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        }
+      ],
+      "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([canBeQuestion])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "marker": "property",
+          "object": {
+            "marker": "unknown",
+            "text": "hana",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "hana",
+            "word": "hana"
+          },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "sister",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            }
+          ],
+          "response": true,
+          "text": "hana 's sister",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "sister",
+          "word": "sister"
+        },
+        "text": "hana 's sister is kia",
+        "topLevel": true,
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "kia",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "kia",
+          "word": "kia"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+            "sister": [
+              "kia"
+            ]
+          },
+          "concepts": [
+            "kia",
+            "sister",
+            "hana"
+          ],
+          "parents": {
+            "kia": [
+              "sister"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "hana": {
+                "sister": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "text": "kia",
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "kia",
+                    "word": "kia"
+                  }
+                }
+              },
+              "kia": {
+              },
+              "sister": {
+              }
+            }
+          },
+          "property": {
+            "sister": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "text": "kia",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              }
+            ]
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "1": {
+        },
+        "2": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "sister",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "sister",
+                  "word": "sister"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                }
+              ],
+              "response": true,
+              "text": "hana 's sister",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            "text": "hana 's sister is kia",
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "kia",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kia",
+              "word": "kia"
+            },
+            "word": "is"
+          },
+          "paraphrases": "hana's sister is kia",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "hana's sister is kia"
+    ],
+    "responses": [
+      ""
+    ]
+  },
+  "hana's sister is kia kia's cat is cleo\\nwho is hana's sister's cat": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
+          "id": "possession",
+          "inverted": true,
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
+          "id": "possession",
+          "inverted": true,
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
+          "id": "what",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ query: true, ...context }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        }
+      ],
+      "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([canBeQuestion])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "marker": "property",
+          "object": {
+            "marker": "unknown",
+            "text": "hana",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "hana",
+            "word": "hana"
+          },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "sister",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            }
+          ],
+          "response": true,
+          "text": "hana 's sister",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "sister",
+          "word": "sister"
+        },
+        "text": "hana 's sister is kia",
+        "topLevel": true,
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "kia",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "kia",
+          "word": "kia"
+        },
+        "word": "is"
+      },
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "marker": "property",
+          "object": {
+            "marker": "unknown",
+            "text": "kia",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "kia",
+            "word": "kia"
+          },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "word": "cat"
+            },
+            {
+              "marker": "unknown",
+              "text": "kia",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kia",
+              "word": "kia"
+            }
+          ],
+          "response": true,
+          "text": "kia 's cat",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "cat",
+          "word": "cat"
+        },
+        "text": "kia 's cat is cleo",
+        "topLevel": true,
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "cleo",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "cleo",
+          "word": "cleo"
+        },
+        "word": "is"
+      },
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "determined": true,
+          "marker": "what",
+          "modifiers": [
+          ],
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "who",
+          "types": [
+            "what"
+          ],
+          "word": "who"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "marker": "is",
+          "one": {
+            "evaluate": true,
+            "marker": "property",
+            "object": {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            },
+            "objects": [
+              {
+                "marker": "property",
+                "text": "cat",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "word": "cat"
+              },
+              {
+                "marker": "unknown",
+                "text": "sister",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "sister",
+                "word": "sister"
+              },
+              {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              }
+            ],
+            "text": "hana 's sister 's cat",
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": "cat",
+            "word": "cat"
+          },
+          "two": {
+            "evaluateWasProcessed": true,
+            "instance": true,
+            "marker": "property",
+            "objects": [
+              {
+                "marker": "property",
+                "text": "cat",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "word": "cat"
+              },
+              {
+                "marker": "unknown",
+                "text": "sister",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "sister",
+                "word": "sister"
+              },
+              {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              }
+            ],
+            "text": "hana 's sister 's cat",
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "cleo",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "cleo",
+              "word": "cleo"
+            },
+            "word": "cat"
+          },
+          "word": "is"
+        },
+        "text": "who is hana 's sister 's cat",
+        "topLevel": true,
+        "two": {
+          "marker": "property",
+          "object": {
+            "marker": "unknown",
+            "text": "hana",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "hana",
+            "word": "hana"
+          },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "word": "cat"
+            },
+            {
+              "marker": "unknown",
+              "text": "sister",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            }
+          ],
+          "response": true,
+          "text": "hana 's sister 's cat",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "cat",
+          "word": "cat"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+            "cat": [
+              "cleo"
+            ],
+            "sister": [
+              "kia"
+            ]
+          },
+          "concepts": [
+            "kia",
+            "sister",
+            "hana",
+            "cleo",
+            "cat"
+          ],
+          "parents": {
+            "cleo": [
+              "cat"
+            ],
+            "kia": [
+              "sister"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "cat": {
+              },
+              "cleo": {
+              },
+              "hana": {
+                "sister": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "text": "kia",
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "kia",
+                    "word": "kia"
+                  }
+                }
+              },
+              "kia": {
+                "cat": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "text": "cleo",
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "cleo",
+                    "word": "cleo"
+                  }
+                }
+              },
+              "sister": {
+              }
+            }
+          },
+          "property": {
+            "cat": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "text": "cleo",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "cleo",
+                "word": "cleo"
+              }
+            ],
+            "sister": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "text": "kia",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              }
+            ]
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "1": {
+        },
+        "2": {
+          "mentioned": [
+            {
+              "determined": true,
+              "marker": "what",
+              "modifiers": [
+              ],
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "who",
+              "types": [
+                "what"
+              ],
+              "word": "who"
+            }
+          ],
+          "variables": {
+          }
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "modifiers": [
+              ],
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "who",
+              "types": [
+                "what"
+              ],
+              "word": "who"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "marker": "is",
+              "one": {
+                "evaluate": true,
+                "marker": "property",
+                "object": {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                },
+                "objects": [
+                  {
+                    "marker": "property",
+                    "text": "cat",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "cat",
+                    "word": "cat"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "sister",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "sister",
+                    "word": "sister"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "hana",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "hana",
+                    "word": "hana"
+                  }
+                ],
+                "text": "hana 's sister 's cat",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "word": "cat"
+              },
+              "two": {
+                "evaluateWasProcessed": true,
+                "instance": true,
+                "marker": "property",
+                "objects": [
+                  {
+                    "marker": "property",
+                    "text": "cat",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "cat",
+                    "word": "cat"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "sister",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "sister",
+                    "word": "sister"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "hana",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "hana",
+                    "word": "hana"
+                  }
+                ],
+                "text": "hana 's sister 's cat",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "cleo",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "cleo",
+                  "word": "cleo"
+                },
+                "word": "cat"
+              },
+              "word": "is"
+            },
+            "text": "who is hana 's sister 's cat",
+            "topLevel": true,
+            "two": {
+              "marker": "property",
+              "object": {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "cat",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "cat",
+                  "word": "cat"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "sister",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "sister",
+                  "word": "sister"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                }
+              ],
+              "response": true,
+              "text": "hana 's sister 's cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "word": "cat"
+            },
+            "word": "is"
+          },
+          "paraphrases": "who is hana's sister's cat?",
+          "responses": [
+            "hana's sister's cat is cleo"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "unknown",
+                "text": "kia",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "cat",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "cat",
+                  "word": "cat"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "kia",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "kia",
+                  "word": "kia"
+                }
+              ],
+              "response": true,
+              "text": "kia 's cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "word": "cat"
+            },
+            "text": "kia 's cat is cleo",
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "cleo",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "cleo",
+              "word": "cleo"
+            },
+            "word": "is"
+          },
+          "paraphrases": "kia's cat is cleo",
+          "responses": [
+            "",
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "sister",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "sister",
+                  "word": "sister"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                }
+              ],
+              "response": true,
+              "text": "hana 's sister",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            "text": "hana 's sister is kia",
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "kia",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kia",
+              "word": "kia"
+            },
+            "word": "is"
+          },
+          "paraphrases": "hana's sister is kia",
+          "responses": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "hana's sister is kia",
+      "kia's cat is cleo",
+      "who is hana's sister's cat?"
+    ],
+    "responses": [
+      "",
+      "",
+      "hana's sister's cat is cleo"
+    ]
+  },
+  "hana's sister is kia kia's cat is cleo\\nwho is the cat of the sister of hana": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
+          "id": "possession",
+          "inverted": true,
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
+          "id": "possession",
+          "inverted": true,
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), query: ['what'], determined: true }",
+          "id": "what",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ query: true, ...context }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        }
+      ],
+      "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([have/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([canBeQuestion])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "marker": "property",
+          "object": {
+            "marker": "unknown",
+            "text": "hana",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "hana",
+            "word": "hana"
+          },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "sister",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            }
+          ],
+          "response": true,
+          "text": "hana 's sister",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "sister",
+          "word": "sister"
+        },
+        "text": "hana 's sister is kia",
+        "topLevel": true,
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "kia",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "kia",
+          "word": "kia"
+        },
+        "word": "is"
+      },
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "marker": "property",
+          "object": {
+            "marker": "unknown",
+            "text": "kia",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "kia",
+            "word": "kia"
+          },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "word": "cat"
+            },
+            {
+              "marker": "unknown",
+              "text": "kia",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kia",
+              "word": "kia"
+            }
+          ],
+          "response": true,
+          "text": "kia 's cat",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "cat",
+          "word": "cat"
+        },
+        "text": "kia 's cat is cleo",
+        "topLevel": true,
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "cleo",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "cleo",
+          "word": "cleo"
+        },
+        "word": "is"
+      },
+      {
+        "default": true,
+        "marker": "is",
+        "one": {
+          "determined": true,
+          "marker": "what",
+          "modifiers": [
+          ],
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "who",
+          "types": [
+            "what"
+          ],
+          "word": "who"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "marker": "is",
+          "one": {
+            "concept": true,
+            "determiner": "the",
+            "evaluate": true,
+            "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
+            "object": {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            },
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the cat",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "wantsValue": true,
+                "word": "cat"
+              },
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the sister",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "sister",
+                "wantsValue": true,
+                "word": "sister"
+              },
+              {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              }
+            ],
+            "pullFromContext": true,
+            "text": "the cat of the sister of hana",
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": "cat",
+            "wantsValue": true,
+            "word": "cat"
+          },
+          "two": {
+            "concept": true,
+            "determiner": "the",
+            "evaluateWasProcessed": true,
+            "instance": true,
+            "marker": "property",
+            "modifiers": [
+              "determiner"
+            ],
+            "objects": [
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the cat",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "wantsValue": true,
+                "word": "cat"
+              },
+              {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the sister",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "sister",
+                "wantsValue": true,
+                "word": "sister"
+              },
+              {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              }
+            ],
+            "pullFromContext": true,
+            "text": "the cat of the sister of hana",
+            "types": [
+              "property"
+            ],
+            "unknown": true,
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "cleo",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "cleo",
+              "word": "cleo"
+            },
+            "wantsValue": true,
+            "word": "cat"
+          },
+          "word": "is"
+        },
+        "text": "who is the cat of the sister of hana",
+        "topLevel": true,
+        "two": {
+          "concept": true,
+          "determiner": "the",
+          "marker": "property",
+          "modifiers": [
+            "determiner"
+          ],
+          "object": {
+            "marker": "unknown",
+            "text": "hana",
+            "types": [
+              "object",
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "hana",
+            "word": "hana"
+          },
+          "objects": [
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "wantsValue": true,
+              "word": "cat"
+            },
+            {
+              "concept": true,
+              "determiner": "the",
+              "marker": "unknown",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the sister",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "wantsValue": true,
+              "word": "sister"
+            },
+            {
+              "marker": "unknown",
+              "text": "hana",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "hana",
+              "word": "hana"
+            }
+          ],
+          "pullFromContext": true,
+          "response": true,
+          "text": "the cat of the sister of hana",
+          "types": [
+            "property"
+          ],
+          "unknown": true,
+          "value": "cat",
+          "wantsValue": true,
+          "word": "cat"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+            "cat": [
+              "cleo"
+            ],
+            "sister": [
+              "kia"
+            ]
+          },
+          "concepts": [
+            "kia",
+            "sister",
+            "hana",
+            "cleo",
+            "cat"
+          ],
+          "parents": {
+            "cleo": [
+              "cat"
+            ],
+            "kia": [
+              "sister"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "cat": {
+              },
+              "cleo": {
+              },
+              "hana": {
+                "sister": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "text": "kia",
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "kia",
+                    "word": "kia"
+                  }
+                }
+              },
+              "kia": {
+                "cat": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "text": "cleo",
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "cleo",
+                    "word": "cleo"
+                  }
+                }
+              },
+              "sister": {
+              }
+            }
+          },
+          "property": {
+            "cat": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "text": "cleo",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "cleo",
+                "word": "cleo"
+              }
+            ],
+            "sister": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "text": "kia",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              }
+            ]
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "1": {
+        },
+        "2": {
+          "mentioned": [
+            {
+              "determined": true,
+              "marker": "what",
+              "modifiers": [
+              ],
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "who",
+              "types": [
+                "what"
+              ],
+              "word": "who"
+            }
+          ],
+          "variables": {
+          }
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "determined": true,
+              "marker": "what",
+              "modifiers": [
+              ],
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "who",
+              "types": [
+                "what"
+              ],
+              "word": "who"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "marker": "is",
+              "one": {
+                "concept": true,
+                "determiner": "the",
+                "evaluate": true,
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "object": {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                },
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the cat",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "cat",
+                    "wantsValue": true,
+                    "word": "cat"
+                  },
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "unknown",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the sister",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "sister",
+                    "wantsValue": true,
+                    "word": "sister"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "hana",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "hana",
+                    "word": "hana"
+                  }
+                ],
+                "pullFromContext": true,
+                "text": "the cat of the sister of hana",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "wantsValue": true,
+                "word": "cat"
+              },
+              "two": {
+                "concept": true,
+                "determiner": "the",
+                "evaluateWasProcessed": true,
+                "instance": true,
+                "marker": "property",
+                "modifiers": [
+                  "determiner"
+                ],
+                "objects": [
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "property",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the cat",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "cat",
+                    "wantsValue": true,
+                    "word": "cat"
+                  },
+                  {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "unknown",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the sister",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "sister",
+                    "wantsValue": true,
+                    "word": "sister"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "hana",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "hana",
+                    "word": "hana"
+                  }
+                ],
+                "pullFromContext": true,
+                "text": "the cat of the sister of hana",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "cleo",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "cleo",
+                  "word": "cleo"
+                },
+                "wantsValue": true,
+                "word": "cat"
+              },
+              "word": "is"
+            },
+            "text": "who is the cat of the sister of hana",
+            "topLevel": true,
+            "two": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "property",
+              "modifiers": [
+                "determiner"
+              ],
+              "object": {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the cat",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "cat",
+                  "wantsValue": true,
+                  "word": "cat"
+                },
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "unknown",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "pullFromContext": true,
+                  "text": "the sister",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "sister",
+                  "wantsValue": true,
+                  "word": "sister"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                }
+              ],
+              "pullFromContext": true,
+              "response": true,
+              "text": "the cat of the sister of hana",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "wantsValue": true,
+              "word": "cat"
+            },
+            "word": "is"
+          },
+          "paraphrases": "who is the cat of the sister of hana?",
+          "responses": [
+            "the cat of the sister of hana is cleo"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "unknown",
+                "text": "kia",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "cat",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "cat",
+                  "word": "cat"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "kia",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "kia",
+                  "word": "kia"
+                }
+              ],
+              "response": true,
+              "text": "kia 's cat",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "cat",
+              "word": "cat"
+            },
+            "text": "kia 's cat is cleo",
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "cleo",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "cleo",
+              "word": "cleo"
+            },
+            "word": "is"
+          },
+          "paraphrases": "kia's cat is cleo",
+          "responses": [
+            "",
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "object": {
+                "marker": "unknown",
+                "text": "hana",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "hana",
+                "word": "hana"
+              },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "sister",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "sister",
+                  "word": "sister"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "hana",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "hana",
+                  "word": "hana"
+                }
+              ],
+              "response": true,
+              "text": "hana 's sister",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "sister",
+              "word": "sister"
+            },
+            "text": "hana 's sister is kia",
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "kia",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "kia",
+              "word": "kia"
+            },
+            "word": "is"
+          },
+          "paraphrases": "hana's sister is kia",
+          "responses": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "hana's sister is kia",
+      "kia's cat is cleo",
+      "who is the cat of the sister of hana?"
+    ],
+    "responses": [
+      "",
+      "",
+      "the cat of the sister of hana is cleo"
     ]
   },
   "property of object": {
@@ -16282,13 +21361,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -16307,7 +21388,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -16662,7 +21743,7 @@
           "what"
         ],
         "response": {
-          "verbatim": "There is no object named greg"
+          "verbatim": "There is no property the age of greg"
         },
         "text": "what is the age of greg",
         "topLevel": true,
@@ -16728,6 +21809,7 @@
         "word": "is"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -16958,7 +22040,7 @@
               "what"
             ],
             "response": {
-              "verbatim": "There is no object named greg"
+              "verbatim": "There is no property the age of greg"
             },
             "text": "what is the age of greg",
             "topLevel": true,
@@ -17025,7 +22107,7 @@
           },
           "paraphrases": "what is the age of greg?",
           "responses": [
-            "There is no object named greg"
+            "There is no property the age of greg"
           ]
         }
       ]
@@ -17034,7 +22116,7 @@
       "what is the age of greg?"
     ],
     "responses": [
-      "There is no object named greg"
+      "There is no property the age of greg"
     ]
   },
   "what is the property of object": {
@@ -17086,13 +22168,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -17466,7 +22550,7 @@
           "what"
         ],
         "response": {
-          "verbatim": "There is no object named object"
+          "verbatim": "What \"object\" means is unknown"
         },
         "text": "what is the property of object",
         "topLevel": true,
@@ -17526,6 +22610,7 @@
         "word": "is"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -17760,7 +22845,7 @@
               "what"
             ],
             "response": {
-              "verbatim": "There is no object named object"
+              "verbatim": "What \"object\" means is unknown"
             },
             "text": "what is the property of object",
             "topLevel": true,
@@ -17821,7 +22906,7 @@
           },
           "paraphrases": "what is the property of object?",
           "responses": [
-            "There is no object named object"
+            "What \"object\" means is unknown"
           ]
         }
       ]
@@ -17830,7 +22915,7 @@
       "what is the property of object?"
     ],
     "responses": [
-      "There is no object named object"
+      "What \"object\" means is unknown"
     ]
   },
   "whose property": {

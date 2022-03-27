@@ -25,6 +25,21 @@ let config = {
     "i": [{ id: 'self', initial: "{ variable: true, value: 'speaker' }" }],
   },
 
+  generators: [
+    {
+       notes: 'paraphrase: add possession ending for your/my',
+       priority: -1,
+       match: ({context}) => !context.isResponse && context.possessive && ['self', 'other'].includes(context.value),
+       apply: ({context, g}) => { return { "self": "your", "other": "my" }[context.value] },
+    },
+    {
+       notes: 'not paraphrase: add possession ending for your/my',
+       priority: -1,
+       match: ({context}) => context.isResponse && context.possessive && ['self', 'other'].includes(context.value),
+       apply: ({context, g}) => { return { "self": "my", "other": "your" }[context.value] },
+    },
+  ],
+
   semantics: [
     {
       notes: 'you are x',

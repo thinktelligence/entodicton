@@ -127,12 +127,18 @@ let config = {
     { id: "have", level: 1, bridge: "{ ...next(operator) }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
-    { id: "possession", level: 1, bridge: "{ ...after[0], object: operator.object, marker: operator('property', 0) }" },
+
+    // old
+    // { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
+    // { id: "possession", level: 1, bridge: "{ ...after[0], object: operator.object, marker: operator('property', 0) }" },
+
+    { id: "possession", level: 0, inverted: true, bridge: "{ ...next(operator), object: before[0], objects: before }" },
+    { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
+
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0], objects: after }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }" },
     { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}' },
-    { id: "objectPrefix", level: 0, bridge: '{ ...after[0], object: operator }' },
+    { id: "objectPrefix", level: 0, bridge: '{ ...after[0], object: operator, objects: [after[0], operator] }' },
   ],
   words: {
     "<<possession>>": [{ id: 'possession', initial: "{ value: 'possession' }" }],
@@ -166,6 +172,21 @@ let config = {
   ],
   generators: [
     {
+      notes: 'add possession ending',
+      priority: -1, 
+      match: ({context}) => context.paraphrase && context.possessive,
+      apply: ({context, g}) => {
+        context.possessive = false
+        const phrase = g(context)
+        context.possessive = true
+        if (phrase.endsWith('s')) {
+          return `${phrase}'`
+        } else {
+          return `${phrase}'s`
+        }
+      }
+    },
+    {
       match: ({context}) => context.marker == 'modifies' && context.paraphrase,
       apply: ({context}) => `${context.modifier.word} modifies ${context.concept.word}`,
     },
@@ -196,11 +217,12 @@ let config = {
         }
         return `${g(context.object)} ${context.word} ${g(context.property)}${query}`
         */
-        return `${g(context[context.do.left])} doesnt ${context.word} ${g(context[context.do.right])}`
+        return `${g(context[context.do.left])} doesnt ${pluralize.plural(context.word)} ${g(context[context.do.right])}`
       },
     },
     {
       notes: 'do questions',
+      // debug: 'call9',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query,
       apply: ({context, g}) => {
         const right = context['do'].right
@@ -208,7 +230,9 @@ let config = {
             const left = context['do'].left
             return `${g(context[right])} does ${g(context[left])} ${context.word}`
         } else {
-          return `does ${g(context[context.do.left])} ${context.word} ${g(context[context.do.right])}`
+          // return `does ${g(context[context.do.left])} ${pluralize.singular(context.word)} ${g(context[context.do.right])}`
+          // the marker is the infinite form
+          return `does ${g(context[context.do.left])} ${context.marker} ${g(context[context.do.right])}`
         }
       },
     },
@@ -226,32 +250,49 @@ let config = {
       }
     ],
     {
+      notes: 'the property of object',
       match: ({context}) => context.paraphrase && context.modifiers && context.object, 
-      apply: ({context, g}) => {
+      apply: ({context, g, gs}) => {
                const base = { ...context }
                base.object = undefined;
-
                if (context.object.marker == 'objectPrefix') {
                  return `${g(context.object)} ${g(base)}`
                } else {
-                 // TODO make paraphrase be a default when paraphrasing?
-                 return `${g(base)} of ${g({...context.object, paraphrase: true})}`
+                 if (context.objects) {
+                   return gs(context.objects.map( (c) => g({...c, paraphrase: true}) ), ' of ')
+                 } else {
+                   // TODO make paraphrase be a default when paraphrasing?
+                   return `${g(base)} of ${g({...context.object, paraphrase: true})}`
+                 }
                }
              },
-      notes: 'the property of object',
     },
     {
-      match: ({context}) => context.paraphrase && !context.modifiers && context.object, 
-      apply: ({context, g}) => {
-               const base = { ...context }
-               base.object = undefined; // TODO make paraphrase be a default when paraphrasing?
-               if (context.object.marker == 'objectPrefix') {
-                 return `${g(context.object)} ${g(base)}`
+      notes: "object's property",
+      // match: ({context}) => context.paraphrase && !context.modifiers && context.object, 
+      match: ({context}) => !context.modifiers && context.object, 
+      apply: ({context, g, gs}) => {
+               if (context.objects) {
+                 const objects = [ ...context.objects ]
+                 objects.reverse()
+                 let phrase = ''
+                 let separator = ''
+                 for (let i = 0; i < objects.length-1; ++i) {
+                   phrase = phrase + separator + g({...objects[i], paraphrase: context.paraphrase, possessive: true})
+                   separator = ' '
+                 }
+                 phrase = phrase + separator + g({...objects[objects.length-1], paraphrase: context.paraphrase})
+                 return phrase
                } else {
-                 return `${g({...context.object, paraphrase: true})}'s ${g(base)}`
-               }
+                 const base = { ...context }
+                 base.object = undefined; // TODO make paraphrase be a default when paraphrasing?
+                 if (context.object.marker == 'objectPrefix') {
+                   return `${g(context.object)} ${g(base)}`
+                 } else {
+                   return `${g({...context.object, paraphrase: context.paraphrase})}'s ${g(base)}`
+                 }
+               }  
              },
-      notes: "object's property"
     },
   ],
   semantics: [
@@ -344,6 +385,7 @@ let config = {
         const propertyContext = context;
         const objectId = context.object.value
         const propertyId = context.value
+        debugger;
         try{
           // greg
           // api.makeObject({config, context: objectContext, doPluralize: false})
@@ -395,6 +437,64 @@ let config = {
       notes: 'evaluate a property',
       match: ({context}) => context.marker == 'property' && context.evaluate,
       apply: ({context, api, km, objects, g, s, log}) => {
+        try{  
+          [ ...context.objects ]
+        } catch( e ) {
+          debugger;
+          debugger;
+        }
+        const toDo = [ ...context.objects ]
+
+        const toValue = (objectContext) => {
+          if (!objectContext.value) {
+            return objectContext;
+          }
+          let objectValue = km("dialogues").api.getVariable(objectContext.value);
+          if (!api.knownObject(objectValue)) {
+            context.verbatim = `There is no object named "${g({...objectContext, paraphrase: true})}"`
+            return
+          }
+          return objectValue
+        }
+
+        let currentContext = toDo.pop()
+        let currentValue = toValue(currentContext)
+        while (toDo.length > 0) {
+          const nextContext = toDo.pop()
+          const nextValue = toValue(nextContext)
+          if (!nextValue) {
+            // TODO maybe this I aware so it can say "I don't know about blah..." and below
+            // if (currentContext.unknown || !currentContext.value) {
+            if (!api.conceptExists(currentContext.value)) {
+              api.conceptExists(currentContext)
+              const objectPhrase = g({...currentContext, paraphrase: true})
+              context.verbatim = `What "${objectPhrase}" means is unknown`
+              return
+            }
+
+            const propertyPhrase = g({...nextContext, paraphrase: true})
+            const objectPhrase = g({...currentContext, paraphrase: true})
+            context.verbatim = `There is no interpretation for "${propertyPhrase} of ${objectPhrase}"`
+            return
+          }
+
+          if (!api.knownProperty(currentContext, nextContext)) {
+            debugger;
+            api.knownProperty(currentContext, nextContext)
+            context.verbatim = `There is no property ${g({...nextContext, paraphrase: true})} of ${g({...currentContext, paraphrase: true})}`
+            return
+          }
+          if (nextValue.value == 'properties') {
+            debugger;
+          }
+          currentContext = api.getProperty(currentValue, nextValue, g)
+          currentValue = currentContext.value
+        }
+        context.value = currentContext
+        context.evaluateWasProcessed = true;
+        context.object = undefined;
+       
+        /* 
         let object = km("dialogues").api.evaluate(context.object, context, log, s).response;
         if (!object) {
           object = context.object
@@ -412,6 +512,7 @@ let config = {
         context.value = api.getProperty(km("dialogues").api.getVariable(object), context.value, g)
         context.evaluateWasProcessed = true;
         context.object = undefined;
+        */
       }
     }
   ]

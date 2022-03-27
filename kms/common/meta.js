@@ -48,6 +48,7 @@ let config = {
   ],
   priorities: [
     [['if', 0], ['then', 0], ['orList', 0]],
+    [['means', 0], ['is', 0]],
   ],
   hierarchy: [
     { child: 'e', parent: 'orAble', development: true },
@@ -99,7 +100,8 @@ let config = {
     {
       match: ({context}) => context.marker == 'means' && context.paraphrase,
       apply: ({context, g}) => {
-        const before = g({ ...context.from, paraphrase: true, debug: true})
+        // const before = g({ ...context.from, paraphrase: true, debug: true})
+        const before = g({ ...context.from, paraphrase: true})
         return `${g({ ...context.from, paraphrase: true})} means ${g(context.to)}`
       }
     },
@@ -199,7 +201,7 @@ let config = {
                       valuesPrime.push(valuePrime)
                     }
                   }
-                  response = { marker: 'list', truthValue: valuesPrime.length > 0, value: unflatten(valuesPrime) }
+                  response = { marker: 'list', truthValue: valuesPrime.length > 0, value: unflatten(valuesPrime, context.flatten || []) }
                 } else {
                   response = toPrime.response
                 }

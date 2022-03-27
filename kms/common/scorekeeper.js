@@ -106,7 +106,7 @@ let config = {
 
   generators: [
     {
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response && context.two && context.two.marker == 'next',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.isResponse && context.two && context.two.marker == 'next',
       apply: ({context, g}) => {
                 const response = context.response;
                 const concept = response.two;

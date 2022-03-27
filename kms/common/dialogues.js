@@ -4,6 +4,7 @@ const _ = require('lodash')
 const { isMany } = require('./helpers')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent } = require('./helpers')
+const pluralize = require('pluralize')
 
 class API {
   //
@@ -167,13 +168,28 @@ let config = {
   debug: false,
   version: '3',
   generators: [
+    /*
+    {
+       notes: 'paraphrase: plural/singular',
+       priority: -1,
+       match: ({context}) => context.paraphrase && context.word
+       apply: ({context, g}) => { return { "self": "your", "other": "my" }[context.value] },
+    },
+    */
     {
       match: ({context}) => context.marker === 'idontknow',
       apply: ({context}) => "i don't know",
     },
     {
       match: ({context}) => context.marker == 'yesno',
-      apply: ({context}) => context.value ? 'yes' : 'no'
+      apply: ({context}) => context.value ? 'yes' : 'no',
+      priority: -1,
+      // debug: 'call11',
+    },
+    {
+      match: ({context}) => !context.paraphrase && context.response && context.response.marker == 'yesno',
+      apply: ({context}) => context.response.value ? 'yes' : 'no',
+      priority: -1,
     },
     /*
      * modifiers = <list of properties>
@@ -194,7 +210,7 @@ let config = {
     [
       // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
-      ({context, hierarchy}) => context.marker == 'list' && !context.response && context.value,
+      ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       ({context, gs}) => {
         return gs(context.value, ', ', ' and ')
       }
@@ -272,10 +288,15 @@ let config = {
       ({context}) => context.marker == 'name' && !context.isQuery && context.subject, 
       ({context}) => `${context.subject} ${context.word}` 
     ],
-    [
-      ({context}) => context.response && context.response.verbatim,
-      ({context}) => context.response.verbatim
-    ],
+    {
+      match: ({context}) => context.response && context.response.verbatim && !context.paraphrase,
+      apply: ({context}) => context.response.verbatim,
+    },
+    {
+      match: ({context}) => context.isResponse && context.verbatim && !context.paraphrase,
+      apply: ({context}) => context.verbatim,
+      priority: -1,
+    },
     { 
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeQuestion') && context.paraphrase && context.topLevel && context.query,
       apply: ({context, g}) => {
@@ -304,6 +325,7 @@ let config = {
           const instance = g(response.instance)
           return `${g(concept)} ${context.word} ${instance}` 
         } else {
+          debugger;
           return `${g(response)}` 
         }
       }
@@ -312,7 +334,13 @@ let config = {
       notes: 'x is y (not a response)',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
       apply: ({context, g}) => {
-        return `${g({ ...context.one, paraphrase: true })} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        // return `${g({ ...context.one, paraphrase: true })} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        // response or not response -> paraphrase
+        // the age of greg is the age -> age is 23    -> first only missing paraphrase marker because it is coming from the context
+        // your name is greg --response--> your name is greg // should be my name
+        // return `${g({...context.one, paraphrase: context.paraphrase})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        return `${g({...context.one, paraphrase: true})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        // return `${g({...context.one})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
       },
     },
 

@@ -30,6 +30,7 @@ let config = {
   semantics: [
     {
       notes: 'is x y',
+      // debug: 'call2',
       match: ({context, hierarchy, args}) => hierarchy.isA(context.marker, 'is') && context.query && args( { types: ['hierarchyAble', 'hierarchyAble'], properties: ['one', 'two'] } ),
       apply: ({context, km, objects, g}) => {
         const api = km('properties').api

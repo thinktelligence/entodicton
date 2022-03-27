@@ -54,7 +54,8 @@ config.initializer(({config, km}) => {
               // relation: true,
               relation: false,
               doAble: true,
-              config
+              config,
+              unflatten: ['wanter', 'wantee'],
             })
   config.addHierarchy('want', 'canBeQuestion')
   /*
