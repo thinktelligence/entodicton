@@ -494,7 +494,8 @@ class API {
     if (typeof context == 'string') {
       return context
     }
-    return context.value
+    return this.config().km("dialogues").api.getVariable(context.value);
+    // return context.value
   }
 
   getProperty(object, property, g) {
@@ -553,6 +554,9 @@ class API {
   }
 
   knownObject(object) {
+    if (object == 'properties') {
+      return object
+    }
     if ((object || {}).value) {
       object = value
     }
@@ -740,7 +744,7 @@ class API {
   set objects(objects) {
     this._objects = objects
 
-    objects.concepts = []
+    objects.concepts = ['properties']
     // object -> property -> {has, value}
     objects.properties = {}
     // property -> values

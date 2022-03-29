@@ -30,13 +30,31 @@
             "evaluate": true,
             "marker": "property",
             "object": {
-              "evaluate": true,
               "marker": "objectPrefix",
               "text": "your",
               "value": "self",
               "variable": true,
               "word": "your"
             },
+            "objects": [
+              {
+                "marker": "property",
+                "text": "name",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "name",
+                "word": "name"
+              },
+              {
+                "marker": "objectPrefix",
+                "text": "your",
+                "value": "self",
+                "variable": true,
+                "word": "your"
+              }
+            ],
             "text": "your name",
             "types": [
               "property"
@@ -49,6 +67,25 @@
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
+            "objects": [
+              {
+                "marker": "property",
+                "text": "name",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "name",
+                "word": "name"
+              },
+              {
+                "marker": "objectPrefix",
+                "text": "your",
+                "value": "self",
+                "variable": true,
+                "word": "your"
+              }
+            ],
             "text": "your name",
             "types": [
               "property"
@@ -57,6 +94,7 @@
             "value": {
               "marker": "unknown",
               "response": true,
+              "text": "kia",
               "types": [
                 "unknown"
               ],
@@ -79,6 +117,25 @@
             "variable": true,
             "word": "your"
           },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "name",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "name",
+              "word": "name"
+            },
+            {
+              "marker": "objectPrefix",
+              "text": "your",
+              "value": "self",
+              "variable": true,
+              "word": "your"
+            }
+          ],
           "response": true,
           "text": "your name",
           "types": [
@@ -268,6 +325,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "chicken_strip",
             "food",
             "sushi",
@@ -412,6 +470,7 @@
                   "value": {
                     "marker": "unknown",
                     "response": true,
+                    "text": "21",
                     "types": [
                       "unknown"
                     ],
@@ -425,6 +484,7 @@
                   "value": {
                     "marker": "unknown",
                     "response": true,
+                    "text": "hana",
                     "types": [
                       "unknown"
                     ],
@@ -438,6 +498,7 @@
                   "value": {
                     "marker": "unknown",
                     "response": true,
+                    "text": "kia",
                     "types": [
                       "unknown"
                     ],
@@ -455,6 +516,7 @@
                   "value": {
                     "marker": "unknown",
                     "response": true,
+                    "text": "27",
                     "types": [
                       "unknown"
                     ],
@@ -468,6 +530,7 @@
                   "value": {
                     "marker": "unknown",
                     "response": true,
+                    "text": "kia",
                     "types": [
                       "unknown"
                     ],
@@ -481,6 +544,7 @@
                   "value": {
                     "marker": "unknown",
                     "response": true,
+                    "text": "hana",
                     "types": [
                       "unknown"
                     ],
@@ -525,6 +589,7 @@
               {
                 "marker": "unknown",
                 "response": true,
+                "text": "27",
                 "types": [
                   "unknown"
                 ],
@@ -535,6 +600,7 @@
               {
                 "marker": "unknown",
                 "response": true,
+                "text": "21",
                 "types": [
                   "unknown"
                 ],
@@ -547,6 +613,7 @@
               {
                 "marker": "unknown",
                 "response": true,
+                "text": "kia",
                 "types": [
                   "unknown"
                 ],
@@ -557,6 +624,7 @@
               {
                 "marker": "unknown",
                 "response": true,
+                "text": "hana",
                 "types": [
                   "unknown"
                 ],
@@ -569,6 +637,7 @@
               {
                 "marker": "unknown",
                 "response": true,
+                "text": "hana",
                 "types": [
                   "unknown"
                 ],
@@ -579,6 +648,7 @@
               {
                 "marker": "unknown",
                 "response": true,
+                "text": "kia",
                 "types": [
                   "unknown"
                 ],
@@ -592,11 +662,13 @@
             {
               "do": {
                 "left": "lover",
-                "right": "lovee"
+                "right": "lovee",
+                "text": "kia loves chicken strips"
               },
               "lovee": {
                 "chicken": {
                   "marker": "chicken",
+                  "text": "chicken",
                   "value": "chicken",
                   "word": "chicken"
                 },
@@ -605,6 +677,7 @@
                   "chicken"
                 ],
                 "paraphrase": true,
+                "text": "chicken strips",
                 "types": [
                   "chicken_strip",
                   "object"
@@ -615,6 +688,7 @@
               "lover": {
                 "marker": "unknown",
                 "paraphrase": true,
+                "text": "kia",
                 "types": [
                   "object",
                   "unknown"
@@ -626,19 +700,24 @@
               "marker": "love",
               "ordering": "preference",
               "paraphrase": true,
+              "text": "kia loves chicken strips",
               "topLevel": true,
+              "unflatten": [
+              ],
               "value": "love",
               "word": "loves"
             },
             {
               "do": {
                 "left": "hater",
-                "right": "hatee"
+                "right": "hatee",
+                "text": "kia hates sushi"
               },
               "hatee": {
                 "marker": "sushi",
                 "number": "one",
                 "paraphrase": true,
+                "text": "sushi",
                 "types": [
                   "sushi"
                 ],
@@ -648,6 +727,7 @@
               "hater": {
                 "marker": "unknown",
                 "paraphrase": true,
+                "text": "kia",
                 "types": [
                   "object",
                   "unknown"
@@ -659,18 +739,23 @@
               "marker": "hate",
               "ordering": "preference",
               "paraphrase": true,
+              "text": "kia hates sushi",
               "topLevel": true,
+              "unflatten": [
+              ],
               "value": "hate",
               "word": "hates"
             },
             {
               "do": {
                 "left": "liker",
-                "right": "likee"
+                "right": "likee",
+                "text": "hana likes chicken strips"
               },
               "likee": {
                 "chicken": {
                   "marker": "chicken",
+                  "text": "chicken",
                   "value": "chicken",
                   "word": "chicken"
                 },
@@ -679,6 +764,7 @@
                   "chicken"
                 ],
                 "paraphrase": true,
+                "text": "chicken strips",
                 "types": [
                   "chicken_strip",
                   "object"
@@ -689,6 +775,7 @@
               "liker": {
                 "marker": "unknown",
                 "paraphrase": true,
+                "text": "hana",
                 "types": [
                   "object",
                   "unknown"
@@ -700,7 +787,10 @@
               "marker": "like",
               "ordering": "preference",
               "paraphrase": true,
+              "text": "hana likes chicken strips",
               "topLevel": true,
+              "unflatten": [
+              ],
               "value": "like",
               "word": "likes"
             },
@@ -709,6 +799,7 @@
                 "marker": "sushi",
                 "number": "one",
                 "paraphrase": true,
+                "text": "sushi",
                 "types": [
                   "sushi"
                 ],
@@ -718,6 +809,7 @@
               "disliker": {
                 "marker": "unknown",
                 "paraphrase": true,
+                "text": "hana",
                 "types": [
                   "object",
                   "unknown"
@@ -728,12 +820,16 @@
               },
               "do": {
                 "left": "disliker",
-                "right": "dislikee"
+                "right": "dislikee",
+                "text": "hana dislikes sushi"
               },
               "marker": "dislike",
               "ordering": "preference",
               "paraphrase": true,
+              "text": "hana dislikes sushi",
               "topLevel": true,
+              "unflatten": [
+              ],
               "value": "dislike",
               "word": "dislikes"
             }
@@ -780,6 +876,7 @@
             }
           ],
           "variables": {
+            "hanna": "hana",
             "self": "kia"
           }
         }
@@ -813,13 +910,31 @@
                 "evaluate": true,
                 "marker": "property",
                 "object": {
-                  "evaluate": true,
                   "marker": "objectPrefix",
                   "text": "your",
                   "value": "self",
                   "variable": true,
                   "word": "your"
                 },
+                "objects": [
+                  {
+                    "marker": "property",
+                    "text": "name",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "name",
+                    "word": "name"
+                  },
+                  {
+                    "marker": "objectPrefix",
+                    "text": "your",
+                    "value": "self",
+                    "variable": true,
+                    "word": "your"
+                  }
+                ],
                 "text": "your name",
                 "types": [
                   "property"
@@ -832,6 +947,25 @@
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
+                "objects": [
+                  {
+                    "marker": "property",
+                    "text": "name",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "name",
+                    "word": "name"
+                  },
+                  {
+                    "marker": "objectPrefix",
+                    "text": "your",
+                    "value": "self",
+                    "variable": true,
+                    "word": "your"
+                  }
+                ],
                 "text": "your name",
                 "types": [
                   "property"
@@ -840,6 +974,7 @@
                 "value": {
                   "marker": "unknown",
                   "response": true,
+                  "text": "kia",
                   "types": [
                     "unknown"
                   ],
@@ -862,6 +997,25 @@
                 "variable": true,
                 "word": "your"
               },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "name",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "name",
+                  "word": "name"
+                },
+                {
+                  "marker": "objectPrefix",
+                  "text": "your",
+                  "value": "self",
+                  "variable": true,
+                  "word": "your"
+                }
+              ],
               "response": true,
               "text": "your name",
               "types": [
@@ -885,6 +1039,7 @@
             "one": {
               "marker": "self",
               "response": true,
+              "text": "you",
               "types": [
                 "self"
               ],
@@ -892,10 +1047,12 @@
               "variable": true,
               "word": "you"
             },
+            "text": "you are kia",
             "topLevel": true,
             "two": {
               "marker": "unknown",
               "response": true,
+              "text": "kia",
               "types": [
                 "unknown"
               ],
@@ -915,13 +1072,16 @@
             "default": true,
             "from": {
               "marker": "unknown",
+              "text": "hanna",
               "unknown": true,
               "value": "hanna",
               "word": "hanna"
             },
             "marker": "means",
+            "text": "hanna means hana",
             "to": {
               "marker": "unknown",
+              "text": "hana",
               "unknown": true,
               "value": "hana",
               "word": "hana"
@@ -939,6 +1099,7 @@
             "dislikee": {
               "marker": "sushi",
               "number": "one",
+              "text": "sushi",
               "types": [
                 "sushi"
               ],
@@ -947,6 +1108,7 @@
             },
             "disliker": {
               "marker": "unknown",
+              "text": "hana",
               "types": [
                 "object",
                 "unknown"
@@ -957,11 +1119,15 @@
             },
             "do": {
               "left": "disliker",
-              "right": "dislikee"
+              "right": "dislikee",
+              "text": "hana dislikes sushi"
             },
             "marker": "dislike",
             "ordering": "preference",
+            "text": "hana dislikes sushi",
             "topLevel": true,
+            "unflatten": [
+            ],
             "value": "dislike",
             "word": "dislikes"
           },
@@ -974,11 +1140,13 @@
           "context": {
             "do": {
               "left": "liker",
-              "right": "likee"
+              "right": "likee",
+              "text": "hana likes chicken strips"
             },
             "likee": {
               "chicken": {
                 "marker": "chicken",
+                "text": "chicken",
                 "value": "chicken",
                 "word": "chicken"
               },
@@ -986,6 +1154,7 @@
               "modifiers": [
                 "chicken"
               ],
+              "text": "chicken strips",
               "types": [
                 "chicken_strip",
                 "object"
@@ -995,6 +1164,7 @@
             },
             "liker": {
               "marker": "unknown",
+              "text": "hana",
               "types": [
                 "object",
                 "unknown"
@@ -1005,7 +1175,10 @@
             },
             "marker": "like",
             "ordering": "preference",
+            "text": "hana likes chicken strips",
             "topLevel": true,
+            "unflatten": [
+            ],
             "value": "like",
             "word": "likes"
           },
@@ -1018,11 +1191,13 @@
           "context": {
             "do": {
               "left": "hater",
-              "right": "hatee"
+              "right": "hatee",
+              "text": "kia hates sushi"
             },
             "hatee": {
               "marker": "sushi",
               "number": "one",
+              "text": "sushi",
               "types": [
                 "sushi"
               ],
@@ -1031,6 +1206,7 @@
             },
             "hater": {
               "marker": "unknown",
+              "text": "kia",
               "types": [
                 "object",
                 "unknown"
@@ -1041,7 +1217,10 @@
             },
             "marker": "hate",
             "ordering": "preference",
+            "text": "kia hates sushi",
             "topLevel": true,
+            "unflatten": [
+            ],
             "value": "hate",
             "word": "hates"
           },

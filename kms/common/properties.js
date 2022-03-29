@@ -385,7 +385,6 @@ let config = {
         const propertyContext = context;
         const objectId = context.object.value
         const propertyId = context.value
-        debugger;
         try{
           // greg
           // api.makeObject({config, context: objectContext, doPluralize: false})
@@ -466,7 +465,8 @@ let config = {
             // TODO maybe this I aware so it can say "I don't know about blah..." and below
             // if (currentContext.unknown || !currentContext.value) {
             if (!api.conceptExists(currentContext.value)) {
-              api.conceptExists(currentContext)
+              // debugger;
+              // api.conceptExists(currentContext)
               const objectPhrase = g({...currentContext, paraphrase: true})
               context.verbatim = `What "${objectPhrase}" means is unknown`
               return
@@ -479,7 +479,7 @@ let config = {
           }
 
           if (!api.knownProperty(currentContext, nextContext)) {
-            debugger;
+            debugger; // target
             api.knownProperty(currentContext, nextContext)
             context.verbatim = `There is no property ${g({...nextContext, paraphrase: true})} of ${g({...currentContext, paraphrase: true})}`
             return
@@ -523,8 +523,8 @@ config.api = api
 config.add(meta)
 config.add(dialogues)
 /*
-config.initializer( ({objects, api}) => {
-  api.initialize(objects)
+config.initializer( ({config}) => {
+  config.km('properties').config = config
 })
 */
 // config.load(template, properties_instance)

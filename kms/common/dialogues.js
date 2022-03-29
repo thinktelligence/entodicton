@@ -325,7 +325,6 @@ let config = {
           const instance = g(response.instance)
           return `${g(concept)} ${context.word} ${instance}` 
         } else {
-          debugger;
           return `${g(response)}` 
         }
       }

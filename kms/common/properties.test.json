@@ -48,13 +48,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -73,7 +75,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -522,6 +524,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -654,13 +657,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -679,7 +684,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -1187,6 +1192,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -1346,13 +1352,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -1371,7 +1379,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -1835,6 +1843,7 @@
           "children": {
           },
           "concepts": [
+            "properties",
             "greg"
           ],
           "parents": {
@@ -1973,13 +1982,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -1998,7 +2009,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -2616,6 +2627,7 @@
           "children": {
           },
           "concepts": [
+            "properties",
             "greg"
           ],
           "parents": {
@@ -2806,13 +2818,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -2831,7 +2845,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -3266,6 +3280,7 @@
           "children": {
           },
           "concepts": [
+            "properties",
             "greg"
           ],
           "parents": {
@@ -3838,7 +3853,6 @@
         "word": "has"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -3959,45 +3973,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -4009,6 +4019,7 @@
           "children": {
           },
           "concepts": [
+            "properties",
             "greg"
           ],
           "parents": {
@@ -4598,7 +4609,6 @@
         "word": "has"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -4659,8 +4669,8 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
@@ -4675,13 +4685,13 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
-              "questionMark",
-              0
+              "have",
+              1
             ]
           ]
         }
@@ -4693,6 +4703,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -5265,7 +5276,6 @@
         "word": "has"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -5386,45 +5396,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -5436,6 +5442,7 @@
           "children": {
           },
           "concepts": [
+            "properties",
             "greg"
           ],
           "parents": {
@@ -5649,7 +5656,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -5998,15 +6005,14 @@
         },
         "objects": [
           {
-            "marker": "unknown",
-            "text": "greg",
+            "marker": "property",
+            "text": "bumper",
             "types": [
-              "object",
-              "unknown"
+              "property"
             ],
             "unknown": true,
-            "value": "greg",
-            "word": "greg"
+            "value": "bumper",
+            "word": "bumper"
           },
           {
             "marker": "unknown",
@@ -6020,14 +6026,15 @@
             "word": "car"
           },
           {
-            "marker": "property",
-            "text": "bumper",
+            "marker": "unknown",
+            "text": "greg",
             "types": [
-              "property"
+              "object",
+              "unknown"
             ],
             "unknown": true,
-            "value": "bumper",
-            "word": "bumper"
+            "value": "greg",
+            "word": "greg"
           }
         ],
         "text": "greg 's car 's bumper",
@@ -6040,7 +6047,6 @@
         "word": "bumper"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -6179,6 +6185,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -6223,15 +6230,14 @@
             },
             "objects": [
               {
-                "marker": "unknown",
-                "text": "greg",
+                "marker": "property",
+                "text": "bumper",
                 "types": [
-                  "object",
-                  "unknown"
+                  "property"
                 ],
                 "unknown": true,
-                "value": "greg",
-                "word": "greg"
+                "value": "bumper",
+                "word": "bumper"
               },
               {
                 "marker": "unknown",
@@ -6245,14 +6251,15 @@
                 "word": "car"
               },
               {
-                "marker": "property",
-                "text": "bumper",
+                "marker": "unknown",
+                "text": "greg",
                 "types": [
-                  "property"
+                  "object",
+                  "unknown"
                 ],
                 "unknown": true,
-                "value": "bumper",
-                "word": "bumper"
+                "value": "greg",
+                "word": "greg"
               }
             ],
             "text": "greg 's car 's bumper",
@@ -6354,7 +6361,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -6752,7 +6759,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -6898,6 +6904,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "kia",
             "sister",
             "hana"
@@ -7119,7 +7126,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -7778,7 +7785,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -8291,6 +8297,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "kia",
             "sister",
             "hana",
@@ -8842,7 +8849,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -9564,7 +9571,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -10097,6 +10103,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "kia",
             "sister",
             "hana",
@@ -10684,13 +10691,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -10709,7 +10718,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -11153,6 +11162,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -11284,13 +11294,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -11309,7 +11321,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -11830,7 +11842,6 @@
               "determiner"
             ],
             "object": {
-              "evaluate": true,
               "marker": "unknown",
               "text": "greg",
               "types": [
@@ -12510,6 +12521,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "23",
             "age",
             "greg",
@@ -12661,7 +12673,6 @@
                   "determiner"
                 ],
                 "object": {
-                  "evaluate": true,
                   "marker": "unknown",
                   "text": "greg",
                   "types": [
@@ -13071,13 +13082,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -13096,7 +13109,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -13534,7 +13547,6 @@
             "evaluate": true,
             "marker": "property",
             "object": {
-              "evaluate": true,
               "marker": "unknown",
               "text": "greg",
               "types": [
@@ -13545,6 +13557,29 @@
               "value": "greg",
               "word": "greg"
             },
+            "objects": [
+              {
+                "marker": "property",
+                "text": "age",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "age",
+                "word": "age"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
+            ],
             "text": "greg 's age",
             "types": [
               "property"
@@ -13557,6 +13592,29 @@
             "evaluateWasProcessed": true,
             "instance": true,
             "marker": "property",
+            "objects": [
+              {
+                "marker": "property",
+                "text": "age",
+                "types": [
+                  "property"
+                ],
+                "unknown": true,
+                "value": "age",
+                "word": "age"
+              },
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              }
+            ],
             "text": "greg 's age",
             "types": [
               "property"
@@ -13592,6 +13650,29 @@
             "value": "greg",
             "word": "greg"
           },
+          "objects": [
+            {
+              "marker": "property",
+              "text": "age",
+              "types": [
+                "property"
+              ],
+              "unknown": true,
+              "value": "age",
+              "word": "age"
+            },
+            {
+              "marker": "unknown",
+              "text": "greg",
+              "types": [
+                "object",
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            }
+          ],
           "response": true,
           "text": "greg 's age",
           "types": [
@@ -13973,6 +14054,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "23",
             "age",
             "greg"
@@ -14082,7 +14164,6 @@
                 "evaluate": true,
                 "marker": "property",
                 "object": {
-                  "evaluate": true,
                   "marker": "unknown",
                   "text": "greg",
                   "types": [
@@ -14093,6 +14174,29 @@
                   "value": "greg",
                   "word": "greg"
                 },
+                "objects": [
+                  {
+                    "marker": "property",
+                    "text": "age",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "age",
+                    "word": "age"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
+                ],
                 "text": "greg 's age",
                 "types": [
                   "property"
@@ -14105,6 +14209,29 @@
                 "evaluateWasProcessed": true,
                 "instance": true,
                 "marker": "property",
+                "objects": [
+                  {
+                    "marker": "property",
+                    "text": "age",
+                    "types": [
+                      "property"
+                    ],
+                    "unknown": true,
+                    "value": "age",
+                    "word": "age"
+                  },
+                  {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  }
+                ],
                 "text": "greg 's age",
                 "types": [
                   "property"
@@ -14140,6 +14267,29 @@
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "marker": "property",
+                  "text": "age",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "age",
+                  "word": "age"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "greg",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "response": true,
               "text": "greg 's age",
               "types": [
@@ -14301,13 +14451,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -14326,7 +14478,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -14769,7 +14921,6 @@
               "determiner"
             ],
             "object": {
-              "evaluate": true,
               "marker": "unknown",
               "text": "greg",
               "types": [
@@ -15282,6 +15433,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "23",
             "age",
             "greg"
@@ -15396,7 +15548,6 @@
                   "determiner"
                 ],
                 "object": {
-                  "evaluate": true,
                   "marker": "unknown",
                   "text": "greg",
                   "types": [
@@ -15721,13 +15872,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -15746,7 +15899,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -16189,7 +16342,6 @@
               "determiner"
             ],
             "object": {
-              "evaluate": true,
               "marker": "unknown",
               "text": "greg",
               "types": [
@@ -16682,6 +16834,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "23",
             "age",
             "greg"
@@ -16796,7 +16949,6 @@
                   "determiner"
                 ],
                 "object": {
-                  "evaluate": true,
                   "marker": "unknown",
                   "text": "greg",
                   "types": [
@@ -17119,13 +17271,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -17144,7 +17298,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -17837,6 +17991,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "greg",
             "name"
           ],
@@ -18082,13 +18237,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -18107,7 +18264,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -18625,18 +18782,53 @@
                 "determiner"
               ],
               "object": {
-                "marker": "object",
+                "marker": "unknown",
                 "paraphrase": true,
+                "text": "object1",
                 "types": [
-                  "object"
+                  "object",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "greg",
                 "word": "greg"
               },
+              "objects": [
+                {
+                  "concept": true,
+                  "determiner": "the",
+                  "marker": "property",
+                  "modifiers": [
+                    "determiner"
+                  ],
+                  "paraphrase": true,
+                  "pullFromContext": true,
+                  "text": "the property1",
+                  "types": [
+                    "property"
+                  ],
+                  "unknown": true,
+                  "value": "name",
+                  "wantsValue": true,
+                  "word": "name"
+                },
+                {
+                  "marker": "unknown",
+                  "paraphrase": true,
+                  "text": "object1",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "greg",
+                  "word": "greg"
+                }
+              ],
               "paraphrase": true,
               "pullFromContext": true,
               "response": true,
+              "text": "the property1 of object1",
               "types": [
                 "property"
               ],
@@ -18646,6 +18838,7 @@
               "word": "name"
             },
             "paraphrase": true,
+            "text": "the property1 of object1 is value1",
             "topLevel": true,
             "two": {
               "marker": "unknown",
@@ -19102,6 +19295,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "greg",
             "name"
           ],
@@ -19248,18 +19442,53 @@
                     "determiner"
                   ],
                   "object": {
-                    "marker": "object",
+                    "marker": "unknown",
                     "paraphrase": true,
+                    "text": "object1",
                     "types": [
-                      "object"
+                      "object",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "greg",
                     "word": "greg"
                   },
+                  "objects": [
+                    {
+                      "concept": true,
+                      "determiner": "the",
+                      "marker": "property",
+                      "modifiers": [
+                        "determiner"
+                      ],
+                      "paraphrase": true,
+                      "pullFromContext": true,
+                      "text": "the property1",
+                      "types": [
+                        "property"
+                      ],
+                      "unknown": true,
+                      "value": "name",
+                      "wantsValue": true,
+                      "word": "name"
+                    },
+                    {
+                      "marker": "unknown",
+                      "paraphrase": true,
+                      "text": "object1",
+                      "types": [
+                        "object",
+                        "unknown"
+                      ],
+                      "unknown": true,
+                      "value": "greg",
+                      "word": "greg"
+                    }
+                  ],
                   "paraphrase": true,
                   "pullFromContext": true,
                   "response": true,
+                  "text": "the property1 of object1",
                   "types": [
                     "property"
                   ],
@@ -19269,6 +19498,7 @@
                   "word": "name"
                 },
                 "paraphrase": true,
+                "text": "the property1 of object1 is value1",
                 "topLevel": true,
                 "two": {
                   "marker": "unknown",
@@ -19489,13 +19719,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -19514,7 +19746,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -19904,6 +20136,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -20013,13 +20246,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -20038,7 +20273,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -20520,6 +20755,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -20665,13 +20901,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -20690,7 +20928,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -21202,6 +21440,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -21743,7 +21982,7 @@
           "what"
         ],
         "response": {
-          "verbatim": "There is no property the age of greg"
+          "verbatim": "What \"greg\" means is unknown"
         },
         "text": "what is the age of greg",
         "topLevel": true,
@@ -21809,7 +22048,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -21976,6 +22214,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -22040,7 +22279,7 @@
               "what"
             ],
             "response": {
-              "verbatim": "There is no property the age of greg"
+              "verbatim": "What \"greg\" means is unknown"
             },
             "text": "what is the age of greg",
             "topLevel": true,
@@ -22107,7 +22346,7 @@
           },
           "paraphrases": "what is the age of greg?",
           "responses": [
-            "There is no property the age of greg"
+            "What \"greg\" means is unknown"
           ]
         }
       ]
@@ -22116,7 +22355,7 @@
       "what is the age of greg?"
     ],
     "responses": [
-      "There is no property the age of greg"
+      "What \"greg\" means is unknown"
     ]
   },
   "what is the property of object": {
@@ -22195,7 +22434,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -22550,7 +22789,7 @@
           "what"
         ],
         "response": {
-          "verbatim": "What \"object\" means is unknown"
+          "verbatim": "There is no property the property of object"
         },
         "text": "what is the property of object",
         "topLevel": true,
@@ -22610,7 +22849,6 @@
         "word": "is"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -22781,6 +23019,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },
@@ -22845,7 +23084,7 @@
               "what"
             ],
             "response": {
-              "verbatim": "What \"object\" means is unknown"
+              "verbatim": "There is no property the property of object"
             },
             "text": "what is the property of object",
             "topLevel": true,
@@ -22906,7 +23145,7 @@
           },
           "paraphrases": "what is the property of object?",
           "responses": [
-            "What \"object\" means is unknown"
+            "There is no property the property of object"
           ]
         }
       ]
@@ -22915,7 +23154,7 @@
       "what is the property of object?"
     ],
     "responses": [
-      "What \"object\" means is unknown"
+      "There is no property the property of object"
     ]
   },
   "whose property": {
@@ -22967,13 +23206,15 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0] }",
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
           "id": "possession",
+          "inverted": true,
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator.object, marker: operator('property', 0) }",
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
           "id": "possession",
+          "inverted": true,
           "level": 1
         },
         {
@@ -22992,7 +23233,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after[0], object: operator }",
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
           "level": 0
         },
@@ -23380,6 +23621,7 @@
           "children": {
           },
           "concepts": [
+            "properties"
           ],
           "parents": {
           },

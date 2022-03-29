@@ -229,6 +229,15 @@ let config = {
       }
     },
     {
+      notes: 'from means to where from is unknown',
+      match: ({context}) => context.marker == 'means' && context.from.marker == 'unknown',
+      apply: ({config, context, km}) => {
+        debugger;
+        km("dialogues").api.setVariable(context.from.value, context.to.value)
+      }
+    },
+    {
+      notes: 'x means y where x and y have known markers',
       match: ({context}) => context.marker == 'means',
       apply: ({config, context}) => {
         // setup the write semantic

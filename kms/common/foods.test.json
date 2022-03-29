@@ -266,7 +266,7 @@
         },
         {
           "op": [
-            "what",
+            "food",
             0
           ],
           "ops": [
@@ -294,14 +294,10 @@
         },
         {
           "op": [
-            "food",
+            "what",
             0
           ],
           "ops": [
-            [
-              "food",
-              0
-            ],
             [
               "is",
               0
@@ -312,6 +308,10 @@
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -408,6 +408,7 @@
             ]
           },
           "concepts": [
+            "properties",
             "chicken_strip",
             "food",
             "sushi"
@@ -723,6 +724,7 @@
             "one": {
               "marker": "unknown",
               "response": true,
+              "text": "sushi",
               "types": [
                 "unknown"
               ],
@@ -730,12 +732,14 @@
               "value": "sushi",
               "word": "sushi"
             },
+            "text": "sushi is food",
             "topLevel": true,
             "two": {
               "concept": true,
               "marker": "food",
               "number": "one",
               "response": true,
+              "text": "food",
               "types": [
                 "food"
               ],
@@ -756,6 +760,7 @@
             "one": {
               "chicken": {
                 "marker": "chicken",
+                "text": "chicken",
                 "value": "chicken",
                 "word": "chicken"
               },
@@ -764,17 +769,20 @@
                 "chicken"
               ],
               "response": true,
+              "text": "chicken strips",
               "types": [
                 "chicken_strip"
               ],
               "value": "chicken_strip",
               "word": "strips"
             },
+            "text": "chicken strips are food",
             "topLevel": true,
             "two": {
               "concept": true,
               "marker": "unknown",
               "response": true,
+              "text": "food",
               "types": [
                 "unknown"
               ],
@@ -793,6 +801,7 @@
           "context": {
             "concept": {
               "marker": "unknown",
+              "text": "strips",
               "unknown": true,
               "value": "strips",
               "word": "strips"
@@ -801,10 +810,12 @@
             "marker": "modifies",
             "modifier": {
               "marker": "unknown",
+              "text": "chicken",
               "unknown": true,
               "value": "chicken",
               "word": "chicken"
             },
+            "text": "chicken modifies strips",
             "topLevel": true,
             "word": "modifies"
           },
