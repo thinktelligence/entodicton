@@ -48,7 +48,7 @@ let config = {
   ],
   priorities: [
     [['if', 0], ['then', 0], ['orList', 0]],
-    [['means', 0], ['is', 0]],
+  //  [['means', 0], ['is', 0]],
   ],
   hierarchy: [
     { child: 'e', parent: 'orAble', development: true },
@@ -82,12 +82,13 @@ let config = {
     // 'x': [{id: "x", initial: "{ value: 'x' }", development: true }],
     // 'f': [{id: "ifAble", initial: "{ word: 'f' }", development: true }],
     // 'g': [{id: "ifAble", initial: "{ word: 'g' }", development: true }],
+    'f': [{id: "f", initial: "{ value: 'f', word: 'f' }", development: true }],
     'x': [{id: "x", initial: "{ value: 'x', word: 'x' }", development: true }],
     'gq': [{id: "g", initial: "{ word: 'gq', query: true }", development: true }],
   },
   generators: [
     {
-      match: ({context}) => context.response,
+      match: ({context}) => context.response && !context.paraphrase,
       apply: ({context}) => context.response.verbatim,
       development: true,
     },
@@ -231,9 +232,12 @@ let config = {
     {
       notes: 'from means to where from is unknown',
       match: ({context}) => context.marker == 'means' && context.from.marker == 'unknown',
-      apply: ({config, context, km}) => {
-        debugger;
-        km("dialogues").api.setVariable(context.from.value, context.to.value)
+      apply: ({config, context, km, isTest}) => {
+        if (isTest) {
+          return
+        } else {
+          km("dialogues").api.setVariable(context.from.value, context.to.value)
+        }
       }
     },
     {
