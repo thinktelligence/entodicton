@@ -104,7 +104,7 @@ describe('helpersProperties', () => {
         api.objects = objects
         expected = {
           "children":  {},
-          "concepts": [],
+          "concepts": ['properties'],
           "properties":  {
             "root":  {},
             "handlers":  {},
@@ -127,6 +127,7 @@ describe('helpersProperties', () => {
         console.log(JSON.stringify(api.objects, null, 2))
         expected = {
           "concepts": [
+            "properties",
             "object1"
           ],
           "properties": {

@@ -47,3 +47,32 @@ describe('helpers', () => {
     })
   })
 })
+
+describe('focus', () => {
+  it('empty', () => {
+    context = {}
+    expect(helpers.focus(context)).toStrictEqual([])
+  })
+
+  it('topLevel focusable not focus', () => {
+    context = {
+      focusable: ['a'],
+      a: {
+        value: 'this is a'
+      }
+    }
+    expect(helpers.focus(context)).toStrictEqual([])
+  })
+
+  it('topLevel focusable has focus', () => {
+    context = {
+      focusable: ['a'],
+      a: {
+        value: 'this is a',
+        focus: true,
+      }
+    }
+    expect(helpers.focus(context)).toStrictEqual(context.a)
+  })
+})
+

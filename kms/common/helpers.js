@@ -53,9 +53,22 @@ const zip = (...arrays) => {
   return zipped
 }
 
+const focus = (context) => {
+  if (!context.focusable) {
+    return []
+  }
+  for (const property of context.focusable) {
+    if (context[property].focus) {
+      return context[property]
+    }
+  }
+  return []
+}
+
 module.exports = {
   millisecondsUntilHourOfDay,
   indent,
   isMany,
   zip,
+  focus,
 }
