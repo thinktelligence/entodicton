@@ -302,6 +302,9 @@
               "dog",
               "wolf"
             ],
+            "cat": [
+              "cleo"
+            ],
             "feline": [
               "cat"
             ],
@@ -349,7 +352,8 @@
             "name",
             "27",
             "age",
-            "21"
+            "21",
+            "cleo"
           ],
           "parents": {
             "21": [
@@ -372,6 +376,9 @@
             ],
             "chicken_strip": [
               "food"
+            ],
+            "cleo": [
+              "cat"
             ],
             "dog": [
               "canine"
@@ -456,6 +463,8 @@
               },
               "chicken_strip": {
               },
+              "cleo": {
+              },
               "dog": {
               },
               "eagle": {
@@ -523,6 +532,20 @@
                     "unknown": true,
                     "value": "27",
                     "word": "27"
+                  }
+                },
+                "cat": {
+                  "has": true,
+                  "value": {
+                    "marker": "unknown",
+                    "response": true,
+                    "text": "cleo",
+                    "types": [
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "cleo",
+                    "word": "cleo"
                   }
                 },
                 "name": {
@@ -607,6 +630,19 @@
                 "unknown": true,
                 "value": "21",
                 "word": "21"
+              }
+            ],
+            "cat": [
+              {
+                "marker": "unknown",
+                "response": true,
+                "text": "cleo",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "cleo",
+                "word": "cleo"
               }
             ],
             "name": [
@@ -1070,6 +1106,77 @@
         {
           "context": {
             "default": true,
+            "marker": "is",
+            "one": {
+              "marker": "property",
+              "number": "one",
+              "object": {
+                "marker": "unknown",
+                "text": "kia",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              },
+              "objects": [
+                {
+                  "marker": "cat",
+                  "number": "one",
+                  "text": "cat",
+                  "types": [
+                    "cat",
+                    "property"
+                  ],
+                  "value": "cat",
+                  "word": "cat"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "kia",
+                  "types": [
+                    "object",
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "kia",
+                  "word": "kia"
+                }
+              ],
+              "response": true,
+              "text": "kia 's cat",
+              "types": [
+                "cat",
+                "property"
+              ],
+              "value": "cat",
+              "word": "cat"
+            },
+            "text": "kia 's cat is cleo",
+            "topLevel": true,
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "cleo",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "cleo",
+              "word": "cleo"
+            },
+            "word": "is"
+          },
+          "paraphrases": "kia's cat is cleo",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
             "from": {
               "marker": "unknown",
               "text": "hanna",
@@ -1183,48 +1290,6 @@
             "word": "likes"
           },
           "paraphrases": "hana likes chicken strips",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "do": {
-              "left": "hater",
-              "right": "hatee",
-              "text": "kia hates sushi"
-            },
-            "hatee": {
-              "marker": "sushi",
-              "number": "one",
-              "text": "sushi",
-              "types": [
-                "sushi"
-              ],
-              "value": "sushi",
-              "word": "sushi"
-            },
-            "hater": {
-              "marker": "unknown",
-              "text": "kia",
-              "types": [
-                "object",
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "kia",
-              "word": "kia"
-            },
-            "marker": "hate",
-            "ordering": "preference",
-            "text": "kia hates sushi",
-            "topLevel": true,
-            "unflatten": [
-            ],
-            "value": "hate",
-            "word": "hates"
-          },
-          "paraphrases": "kia hates sushi",
           "responses": [
             ""
           ]

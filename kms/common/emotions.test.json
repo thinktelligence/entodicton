@@ -20,6 +20,10 @@
           "value": "angry",
           "word": "angry"
         },
+        "focusable": [
+          "sentientBeing",
+          "emotion"
+        ],
         "marker": "feel",
         "sentientBeing": {
           "marker": "sentientBeing",
@@ -34,6 +38,8 @@
         "text": "greg feels angry",
         "topLevel": true,
         "unflatten": [
+          "sentientBeing",
+          "emotion"
         ],
         "value": "feel",
         "word": "feels"
@@ -429,7 +435,7 @@
         },
         {
           "op": [
-            "propertyOf",
+            "feel",
             0
           ],
           "ops": [
@@ -449,14 +455,46 @@
         },
         {
           "op": [
-            "propertyOf",
+            "feel",
             1
           ],
           "ops": [
             [
               "feel",
+              1
+            ],
+            [
+              "is",
               0
             ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
             [
               "is",
               0
@@ -469,30 +507,10 @@
         },
         {
           "op": [
-            "feel",
-            0
-          ],
-          "ops": [
-            [
-              "feel",
-              0
-            ],
-            [
-              "is",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "is",
             0
           ],
           "ops": [
-            [
-              "feel",
-              1
-            ],
             [
               "is",
               0
@@ -506,23 +524,7 @@
           ],
           "ops": [
             [
-              "feel",
-              1
-            ],
-            [
               "is",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "feel",
-            1
-          ],
-          "ops": [
-            [
-              "feel",
               1
             ]
           ]
@@ -855,6 +857,10 @@
               "value": "angry",
               "word": "angry"
             },
+            "focusable": [
+              "sentientBeing",
+              "emotion"
+            ],
             "marker": "feel",
             "sentientBeing": {
               "marker": "sentientBeing",
@@ -869,6 +875,8 @@
             "text": "greg feels angry",
             "topLevel": true,
             "unflatten": [
+              "sentientBeing",
+              "emotion"
             ],
             "value": "feel",
             "word": "feels"

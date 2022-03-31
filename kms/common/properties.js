@@ -6,7 +6,6 @@ const properties_tests = require('./properties.test.json')
 const { API } = require('./helpers/properties')
 const pluralize = require('pluralize')
 
-// TODO if a likes b then a wants b                                  does kia want sushi   // dislikes is the negation of likes
 // TODO what is kia's cat's name
 // TODO blue is a colour my eyes are blue what color are my eyes
 // TODO for my have a way to set context with current my and its changable

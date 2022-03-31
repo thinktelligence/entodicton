@@ -90,7 +90,7 @@ class API {
   // create == [ id, ... ] // ids to create bridges for
   // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does g2reg like bananas
   // relation -> the semantics will be implements using relations
-  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [] }, semanticApply) {
+  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [] }, semanticApply) {
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
@@ -136,7 +136,10 @@ class API {
           doParams = `, do: { left: "${before[0].tag}", right: "${after[0].tag}" } `
           afterArgs = tagsToProps('after', after, '*')
         }
-        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)} }` })
+
+        const unflattenArgs = [ ...before.map( (arg) => arg.tag ), ...after.map( (arg) => arg.tag ) ] 
+        const focusable = [ ...before.map( (arg) => arg.tag ), ...after.map( (arg) => arg.tag ) ] 
+        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)}, focusable: ${JSON.stringify(focusable)} }` })
         if (words.length > 0) {
           for (const word of words) {
             config.addWord(word, { id: operator, initial: `{ value: "${operator}" }` })
