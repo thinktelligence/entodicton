@@ -425,6 +425,7 @@ class API {
       if (t.query) {
         return true
       }
+
       return t.value && v.value && t.value == v.value
     }
 
@@ -441,6 +442,11 @@ class API {
     const andTheAnswerIs = []
     for (let relation of this.objects.relations) {
       if (this.relation_match(args, context, relation)) {
+        const queriedArgs = args.filter( (arg) => context[arg].query )
+        if (queriedArgs.length == 1) {
+          relation[queriedArgs[0]] = { ...relation[queriedArgs[0]], focus: true }
+        }
+
         andTheAnswerIs.push(Object.assign({}, relation, { paraphrase: true }))
       }
     }

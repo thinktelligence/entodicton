@@ -409,6 +409,7 @@ let config = {
           context.response = { verbatim: instance.verbatim }
           return
         }
+        instance.focus = true
         // concept = JSON.parse(JSON.stringify(value)) 
         concept = _.cloneDeep(value) 
         concept.isQuery = undefined
