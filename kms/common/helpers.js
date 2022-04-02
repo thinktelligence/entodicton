@@ -43,7 +43,6 @@ const zip = (...arrays) => {
   }
   const zipped = []
   for(let i = 0; i < arrays[0].length; i++){
-    //const tuple = arrays.map( (array) => array[i] )
     let tuple = []
     for (const array of arrays) {
       tuple.push(array[i])
@@ -53,19 +52,22 @@ const zip = (...arrays) => {
   return zipped
 }
 
+
 const focus = (context) => {
-  return []
-  if (!context.focusable) {
-    return []
-  }
-  debugger;
-  console.log(JSON.stringify(context, null, 2))
-  for (const property of context.focusable) {
-    if (context[property].focus) {
-      return context[property]
+  const helper = (context) => {
+    if (!context.focusable) {
+      return null
     }
+    for (const property of context.focusable) {
+      let focus = helper(context[property])
+      if (!focus && context[property].focus) {
+        focus = context[property]
+      }
+      return focus
+    }
+    return null
   }
-  return []
+  return helper(context) || context
 }
 
 module.exports = {

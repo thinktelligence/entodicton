@@ -51,7 +51,7 @@ describe('helpers', () => {
 describe('focus', () => {
   it('empty', () => {
     context = {}
-    expect(helpers.focus(context)).toStrictEqual([])
+    expect(helpers.focus(context)).toStrictEqual({})
   })
 
   it('topLevel focusable not focus', () => {
@@ -61,7 +61,7 @@ describe('focus', () => {
         value: 'this is a'
       }
     }
-    expect(helpers.focus(context)).toStrictEqual([])
+    expect(helpers.focus(context)).toStrictEqual(context)
   })
 
   it('topLevel focusable has focus', () => {
@@ -73,6 +73,31 @@ describe('focus', () => {
       }
     }
     expect(helpers.focus(context)).toStrictEqual(context.a)
+  })
+
+  it('topLevel focusable has focus nested two deep outer is set to focus', () => {
+    context = {
+      focusable: ['a'],
+      a: {
+        focusable: ['b'],
+        b: { value: 'this is b', focus: true },
+        value: 'this is a',
+        focus: true,
+      }
+    }
+    expect(helpers.focus(context)).toStrictEqual(context.a.b)
+  })
+
+  it('topLevel focusable has focus nested two deep outer is not set to focus', () => {
+    context = {
+      focusable: ['a'],
+      a: {
+        focusable: ['b'],
+        b: { value: 'this is b', focus: true },
+        value: 'this is a',
+      }
+    }
+    expect(helpers.focus(context)).toStrictEqual(context.a.b)
   })
 })
 
