@@ -133,6 +133,8 @@ let config = {
 
     { id: "possession", level: 0, inverted: true, bridge: "{ ...next(operator), object: before[0], objects: before }" },
     { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
+    // TODO make object be after[0] that makes more sense
+    // { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: after[0], objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
 
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0], objects: after }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }" },
@@ -478,17 +480,14 @@ let config = {
           }
 
           if (!api.knownProperty(currentContext, nextContext)) {
-            debugger; // target
             api.knownProperty(currentContext, nextContext)
             context.verbatim = `There is no property ${g({...nextContext, paraphrase: true})} of ${g({...currentContext, paraphrase: true})}`
             return
           }
-          if (nextValue.value == 'properties') {
-            debugger;
-          }
           currentContext = api.getProperty(currentValue, nextValue, g)
           currentValue = currentContext.value
         }
+        context.focusable = ['object[0]']
         context.value = currentContext
         context.evaluateWasProcessed = true;
         context.object = undefined;

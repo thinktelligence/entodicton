@@ -3,7 +3,7 @@ const entodicton = require('entodicton')
 const _ = require('lodash')
 const { isMany } = require('./helpers')
 const dialogues_tests = require('./dialogues.test.json')
-const { indent } = require('./helpers')
+const { indent, focus } = require('./helpers')
 const pluralize = require('pluralize')
 
 class API {
@@ -18,6 +18,14 @@ class API {
 
   // used with context sensitive words like 'it', 'that' etc. for example if you have a sentence "create a tank"
   // then call mentioned with the tank created. Then if one asks 'what is it' the 'it' will be found to be the tank.
+
+  setBrief(value) {
+    this.objects.brief = value
+  }
+
+  getBrief(value) {
+    return this.objects.brief
+  }
 
   mentioned(concept) {
     this.objects.mentioned.push(concept)
@@ -91,6 +99,8 @@ let config = {
     "([unknown])",
     "([not] ([notAble|]))",
 
+    "([be] ([briefOrWordy|]))",
+
     "([canBeQuestion])",
     "(([canBeQuestion/1]) <questionMark|>)",
 
@@ -107,6 +117,9 @@ let config = {
   bridges: [
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+
+    { id: "be", level: 0, bridge: "{ ...next(operator), type: after[0] }" },
+    { id: "briefOrWordy", level: 0, bridge: "{ ...next(operator) }" },
 
     { id: "notAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "not", level: 0, bridge: "{ ...after, negated: true }" },
@@ -143,6 +156,8 @@ let config = {
     "who": [{"id": "what", "initial": "{ modifiers: [] }" }],
     "yes": [{"id": "yesno", "initial": "{ value: true }" }],
     "no": [{"id": "yesno", "initial": "{ value: false }" }],
+    "brief": [{"id": "briefOrWordy", "initial": "{ value: 'brief' }" }],
+    "wordy": [{"id": "briefOrWordy", "initial": "{ value: 'wordy' }" }],
   },
 
   floaters: ['query'],
@@ -168,6 +183,19 @@ let config = {
   debug: false,
   version: '3',
   generators: [
+    {
+      notes: "handle making resonses brief",
+      match: ({context, objects}) => (context.topLevel || context.isResponse) && objects.brief && focus(context).length > 0,
+      apply: ({context}) => {
+        debugger; // target
+      },
+      priority: -2,
+    },
+    {
+      notes: "be brief or wordy",
+      match: ({context}) => context.marker == 'be',
+      apply: ({context}) => `be ${context.type.word}`,
+    },
     /*
     {
        notes: 'paraphrase: plural/singular',
@@ -378,6 +406,13 @@ let config = {
   ],
 
   semantics: [
+    { 
+      todo: 'be brief or wordy',
+      match: ({context}) => context.marker == 'be',
+      apply: ({context, api}) => {
+        api.setBrief( context.type.value == 'brief' )
+      },
+    },
     [ 
       ({context}) => context.marker == 'it' && context.pullFromContext,
       ({context, s, api, log}) => {
@@ -409,6 +444,7 @@ let config = {
           context.response = { verbatim: instance.verbatim }
           return
         }
+        // instance.focusable = ['one', 'two']
         instance.focus = true
         // concept = JSON.parse(JSON.stringify(value)) 
         concept = _.cloneDeep(value) 
@@ -421,6 +457,7 @@ let config = {
             "marker": "is",
             "one": concept,
             "two": instance,
+            "focusable": ['two', 'one'],
             "word": many ? "are" : "is",
             "number": many ? "many" : undefined,
           }

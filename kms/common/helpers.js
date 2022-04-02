@@ -54,9 +54,12 @@ const zip = (...arrays) => {
 }
 
 const focus = (context) => {
+  return []
   if (!context.focusable) {
     return []
   }
+  debugger;
+  console.log(JSON.stringify(context, null, 2))
   for (const property of context.focusable) {
     if (context[property].focus) {
       return context[property]
