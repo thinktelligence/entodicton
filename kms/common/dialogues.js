@@ -185,9 +185,11 @@ let config = {
   generators: [
     {
       notes: "handle making resonses brief",
-      match: ({context, objects}) => (context.topLevel || context.isResponse) && objects.brief && focus(context).length > 0,
-      apply: ({context}) => {
-        debugger; // target
+      match: ({context, objects}) => (context.topLevel || context.isResponse) && objects.brief && !context.briefWasRun,
+      apply: ({context, g}) => {
+        const focussed = focus(context)
+        context.briefWasRun = true
+        return g(focussed)
       },
       priority: -2,
     },

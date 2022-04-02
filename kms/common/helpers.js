@@ -55,12 +55,12 @@ const zip = (...arrays) => {
 
 const focus = (context) => {
   const helper = (context) => {
-    if (!context.focusable) {
+    if (!context || !context.focusable) {
       return null
     }
     for (const property of context.focusable) {
       let focus = helper(context[property])
-      if (!focus && context[property].focus) {
+      if (!focus && (context[property] || {}).focus) {
         focus = context[property]
       }
       return focus
