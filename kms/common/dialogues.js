@@ -237,14 +237,25 @@ let config = {
       }
     ],
 
-    [
+    {
+      notes: 'handle lists with yes no',
       // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
-      ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
-      ({context, gs}) => {
+      match: ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value && context.value.length > 0 && context.value[0].marker == 'yesno',
+      apply: ({context, g, gs}) => {
+        return `${g(context.value[0])} ${gs(context.value.slice(1), ', ', ' and ')}`
+      }
+    },
+
+    {
+      notes: 'handle lists',
+      // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
+      // ({context, hierarchy}) => context.marker == 'list' && context.value,
+      match: ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
+      apply: ({context, gs}) => {
         return gs(context.value, ', ', ' and ')
       }
-    ],
+    },
 
     {
       notes: 'paraphrase a negation',
