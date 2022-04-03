@@ -179,17 +179,19 @@ class API {
       notes: 'ordering generator for response',
       // match: ({context}) => context.marker == operator && context.response && !context.paraphrase,
       match: ({context}) => context.marker == operator && context.response && context.isResponse,
-      apply: ({context, g}) => {
+      apply: ({context, g, km}) => {
+        const brief = km("dialogues").api.getBrief()
+
         const { response } = context 
         let yesno = ''
-        if (!context.do.query || response.truthValueOnly) {
+        if (!context.do.query || response.truthValueOnly || brief) {
           if (response.truthValue) {
             yesno = 'yes'
           } else if (response.truthValue === false) {
             yesno = 'no'
           }
         }
-        if (response.truthValueOnly) {
+        if (response.truthValueOnly || brief) {
           return `${yesno}`
         } else {
           return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
@@ -228,11 +230,15 @@ class API {
             // does greg like bananas
             if (matches.length == 0) {
               context.response = _.clone(context)
+              context.response.isResponse = true
               context.response.query = undefined
             } else {
               context.response = { marker: 'list', value: unflatten(matches) }
+              context.response.isResponse = true
             }
             context.response.truthValue = matches.length > 0
+            context.response.truth = { marker: 'yesno', value: matches.length > 0, isResponse: true, focus: true }
+            context.response.focusable = ['truth']
             if (!context.response.truthValue) {
               context.response.truthValueOnly = true
             }
@@ -242,9 +248,9 @@ class API {
             const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object])
             if (matches.length == 0) {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
-              context.response = { marker: 'idontknow', query: _.clone(context) }
+              context.response = { marker: 'idontknow', query: _.clone(context), isResponse: true }
             } else {
-              context.response = { marker: 'list', value: matches }
+              context.response = { marker: 'list', value: matches, isResponse: true }
             }
             context.response.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
           }
@@ -273,6 +279,7 @@ class API {
         apply: ({context, km}) => {
           const api = km('properties').api
           context.response = api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+          context.response.isResponse = true
         }
       })
     }

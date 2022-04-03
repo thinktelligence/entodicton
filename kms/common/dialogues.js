@@ -23,7 +23,7 @@ class API {
     this.objects.brief = value
   }
 
-  getBrief(value) {
+  getBrief() {
     return this.objects.brief
   }
 
@@ -184,7 +184,7 @@ let config = {
   version: '3',
   generators: [
     {
-      notes: "handle making resonses brief",
+      notes: "handle making responses brief",
       match: ({context, objects}) => (context.topLevel || context.isResponse) && objects.brief && !context.briefWasRun,
       apply: ({context, g}) => {
         const focussed = focus(context)
