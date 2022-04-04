@@ -1475,42 +1475,10 @@
         "ordering": "preference",
         "query": true,
         "response": {
-          "do": {
-            "left": "hater",
-            "right": "hatee",
-            "text": "greg hate bananas"
-          },
           "focusable": [
             "truth"
           ],
-          "hatee": {
-            "marker": "unknown",
-            "text": "bananas",
-            "types": [
-              "object",
-              "unknown"
-            ],
-            "unknown": true,
-            "value": "bananas",
-            "word": "bananas"
-          },
-          "hater": {
-            "marker": "unknown",
-            "text": "greg",
-            "types": [
-              "object",
-              "unknown"
-            ],
-            "unknown": true,
-            "value": "greg",
-            "word": "greg"
-          },
-          "isResponse": true,
-          "is_compound": true,
-          "marker": "hate",
-          "ordering": "preference",
-          "text": "greg hate bananas",
-          "topLevel": true,
+          "marker": "list",
           "truth": {
             "focus": true,
             "isResponse": true,
@@ -1519,15 +1487,56 @@
           },
           "truthValue": false,
           "truthValueOnly": true,
-          "types": [
-            "hate"
-          ],
-          "unflatten": [
-            "hater",
-            "hatee"
-          ],
-          "value": "hate",
-          "word": "hate"
+          "value": [
+            {
+              "do": {
+                "left": "hater",
+                "right": "hatee",
+                "text": "greg hate bananas"
+              },
+              "focusable": [
+                "hater",
+                "hatee"
+              ],
+              "hatee": {
+                "marker": "unknown",
+                "text": "bananas",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "bananas",
+                "word": "bananas"
+              },
+              "hater": {
+                "marker": "unknown",
+                "text": "greg",
+                "types": [
+                  "object",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              },
+              "isResponse": true,
+              "is_compound": true,
+              "marker": "hate",
+              "ordering": "preference",
+              "text": "greg hate bananas",
+              "topLevel": true,
+              "types": [
+                "hate"
+              ],
+              "unflatten": [
+                "hater",
+                "hatee"
+              ],
+              "value": "hate",
+              "word": "hate"
+            }
+          ]
         },
         "text": "greg hate bananas",
         "topLevel": true,
@@ -1645,7 +1654,7 @@
         },
         {
           "op": [
-            "like",
+            "hate",
             0
           ],
           "ops": [
@@ -1665,7 +1674,7 @@
         },
         {
           "op": [
-            "hate",
+            "like",
             0
           ],
           "ops": [
@@ -1675,11 +1684,11 @@
             ],
             [
               "hate",
-              0
+              1
             ],
             [
               "like",
-              1
+              0
             ]
           ]
         },
@@ -1705,7 +1714,7 @@
         },
         {
           "op": [
-            "like",
+            "hate",
             1
           ],
           "ops": [
@@ -1721,12 +1730,12 @@
         },
         {
           "op": [
-            "hate",
+            "like",
             1
           ],
           "ops": [
             [
-              "hate",
+              "like",
               1
             ]
           ]
@@ -1886,42 +1895,10 @@
             "ordering": "preference",
             "query": true,
             "response": {
-              "do": {
-                "left": "hater",
-                "right": "hatee",
-                "text": "greg hate bananas"
-              },
               "focusable": [
                 "truth"
               ],
-              "hatee": {
-                "marker": "unknown",
-                "text": "bananas",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "bananas",
-                "word": "bananas"
-              },
-              "hater": {
-                "marker": "unknown",
-                "text": "greg",
-                "types": [
-                  "object",
-                  "unknown"
-                ],
-                "unknown": true,
-                "value": "greg",
-                "word": "greg"
-              },
-              "isResponse": true,
-              "is_compound": true,
-              "marker": "hate",
-              "ordering": "preference",
-              "text": "greg hate bananas",
-              "topLevel": true,
+              "marker": "list",
               "truth": {
                 "focus": true,
                 "isResponse": true,
@@ -1930,15 +1907,56 @@
               },
               "truthValue": false,
               "truthValueOnly": true,
-              "types": [
-                "hate"
-              ],
-              "unflatten": [
-                "hater",
-                "hatee"
-              ],
-              "value": "hate",
-              "word": "hate"
+              "value": [
+                {
+                  "do": {
+                    "left": "hater",
+                    "right": "hatee",
+                    "text": "greg hate bananas"
+                  },
+                  "focusable": [
+                    "hater",
+                    "hatee"
+                  ],
+                  "hatee": {
+                    "marker": "unknown",
+                    "text": "bananas",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "bananas",
+                    "word": "bananas"
+                  },
+                  "hater": {
+                    "marker": "unknown",
+                    "text": "greg",
+                    "types": [
+                      "object",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "greg",
+                    "word": "greg"
+                  },
+                  "isResponse": true,
+                  "is_compound": true,
+                  "marker": "hate",
+                  "ordering": "preference",
+                  "text": "greg hate bananas",
+                  "topLevel": true,
+                  "types": [
+                    "hate"
+                  ],
+                  "unflatten": [
+                    "hater",
+                    "hatee"
+                  ],
+                  "value": "hate",
+                  "word": "hate"
+                }
+              ]
             },
             "text": "greg hate bananas",
             "topLevel": true,
@@ -3314,7 +3332,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -3356,11 +3374,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -3378,7 +3396,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -3388,11 +3406,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -3442,8 +3460,8 @@
         },
         {
           "op": [
-            "then",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -3461,6 +3479,26 @@
             [
               "want",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "then",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
             ]
           ]
         },
@@ -4332,7 +4370,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -4343,6 +4381,42 @@
             [
               "like",
               0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "like",
+              1
             ],
             [
               "love",
@@ -4374,11 +4448,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -4396,7 +4470,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -4406,47 +4480,11 @@
             ],
             [
               "like",
-              0
-            ],
-            [
-              "love",
-              1
-            ],
-            [
-              "orList",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "like",
               1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -4491,6 +4529,58 @@
             [
               "want",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
             ]
           ]
         },
@@ -4505,20 +4595,12 @@
               0
             ],
             [
-              "like",
-              1
-            ],
-            [
               "orList",
               1
             ],
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -4533,27 +4615,7 @@
               0
             ],
             [
-              "like",
-              1
-            ],
-            [
               "orList",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
               1
             ]
           ]
@@ -5707,7 +5769,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -5718,6 +5780,42 @@
             [
               "like",
               0
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "like",
+              1
             ],
             [
               "love",
@@ -5749,11 +5847,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -5771,7 +5869,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -5781,47 +5879,11 @@
             ],
             [
               "like",
-              0
-            ],
-            [
-              "love",
-              1
-            ],
-            [
-              "orList",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "like",
               1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -5866,6 +5928,58 @@
             [
               "want",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
             ]
           ]
         },
@@ -5880,20 +5994,12 @@
               0
             ],
             [
-              "like",
-              1
-            ],
-            [
               "orList",
               1
             ],
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -5908,27 +6014,7 @@
               0
             ],
             [
-              "like",
-              1
-            ],
-            [
               "orList",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
               1
             ]
           ]
@@ -7209,7 +7295,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -7241,7 +7327,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -7254,12 +7340,12 @@
               0
             ],
             [
-              "love",
-              0
+              "like",
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -7287,11 +7373,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -7309,7 +7395,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -7319,11 +7405,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -7341,7 +7427,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -7351,11 +7437,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
-              "like",
-              1
+              "love",
+              0
             ],
             [
               "love",
@@ -7436,6 +7522,34 @@
             [
               "want",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "orList",
+              1
+            ],
+            [
+              "then",
+              0
             ]
           ]
         },
@@ -7450,10 +7564,6 @@
               0
             ],
             [
-              "like",
-              1
-            ],
-            [
               "love",
               1
             ],
@@ -7469,17 +7579,13 @@
         },
         {
           "op": [
-            "love",
+            "orList",
             1
           ],
           "ops": [
             [
               "if",
               0
-            ],
-            [
-              "like",
-              1
             ],
             [
               "love",
@@ -7493,42 +7599,6 @@
         },
         {
           "op": [
-            "orList",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              1
-            ],
-            [
-              "orList",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "if",
             0
           ],
@@ -7536,6 +7606,22 @@
             [
               "if",
               0
+            ],
+            [
+              "love",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            1
+          ],
+          "ops": [
+            [
+              "love",
+              1
             ]
           ]
         },
@@ -8803,7 +8889,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -8818,42 +8904,6 @@
             [
               "love",
               0
-            ],
-            [
-              "orList",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "love",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "love",
-              0
-            ],
-            [
-              "love",
-              1
             ],
             [
               "orList",
@@ -8881,11 +8931,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -8903,7 +8953,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -8913,6 +8963,42 @@
             ],
             [
               "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
               0
             ],
             [
@@ -8967,8 +9053,8 @@
         },
         {
           "op": [
-            "then",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -8995,7 +9081,7 @@
         },
         {
           "op": [
-            "if",
+            "then",
             0
           ],
           "ops": [
@@ -9009,6 +9095,46 @@
             ],
             [
               "orList",
+              1
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "orList",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "orList",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "if",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "love",
               1
             ]
           ]
@@ -10171,7 +10297,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             0
           ],
           "ops": [
@@ -10186,42 +10312,6 @@
             [
               "love",
               0
-            ],
-            [
-              "orList",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "love",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "love",
-              0
-            ],
-            [
-              "love",
-              1
             ],
             [
               "orList",
@@ -10249,11 +10339,11 @@
             ],
             [
               "like",
-              0
+              1
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "orList",
@@ -10271,7 +10361,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             0
           ],
           "ops": [
@@ -10281,6 +10371,42 @@
             ],
             [
               "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
               0
             ],
             [
@@ -10335,8 +10461,8 @@
         },
         {
           "op": [
-            "then",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -10363,7 +10489,7 @@
         },
         {
           "op": [
-            "if",
+            "then",
             0
           ],
           "ops": [
@@ -10377,6 +10503,46 @@
             ],
             [
               "orList",
+              1
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "orList",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "love",
+              1
+            ],
+            [
+              "orList",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "if",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "love",
               1
             ]
           ]
@@ -11612,8 +11778,8 @@
         },
         {
           "op": [
-            "then",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -11649,6 +11815,10 @@
               1
             ],
             [
+              "then",
+              0
+            ],
+            [
               "want",
               1
             ]
@@ -11656,8 +11826,8 @@
         },
         {
           "op": [
-            "like",
-            1
+            "then",
+            0
           ],
           "ops": [
             [
@@ -11667,22 +11837,10 @@
             [
               "like",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
             ],
             [
-              "like",
-              1
+              "then",
+              0
             ]
           ]
         },
@@ -11695,6 +11853,22 @@
             [
               "if",
               0
+            ],
+            [
+              "like",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            1
+          ],
+          "ops": [
+            [
+              "like",
+              1
             ]
           ]
         }
@@ -12608,8 +12782,8 @@
         },
         {
           "op": [
-            "then",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -12632,8 +12806,8 @@
         },
         {
           "op": [
-            "like",
-            1
+            "then",
+            0
           ],
           "ops": [
             [
@@ -12643,22 +12817,10 @@
             [
               "like",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
             ],
             [
-              "like",
-              1
+              "then",
+              0
             ]
           ]
         },
@@ -12671,6 +12833,22 @@
             [
               "if",
               0
+            ],
+            [
+              "like",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            1
+          ],
+          "ops": [
+            [
+              "like",
+              1
             ]
           ]
         },
@@ -13436,30 +13614,6 @@
         },
         {
           "op": [
-            "love",
-            0
-          ],
-          "ops": [
-            [
-              "does",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "love",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "like",
             0
           ],
@@ -13474,7 +13628,7 @@
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "what",
@@ -13494,10 +13648,26 @@
             ],
             [
               "love",
-              1
+              0
             ],
             [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ],
+            [
+              "love",
               0
             ]
           ]
@@ -13536,7 +13706,7 @@
         },
         {
           "op": [
-            "love",
+            "like",
             1
           ],
           "ops": [
@@ -13552,12 +13722,12 @@
         },
         {
           "op": [
-            "like",
+            "love",
             1
           ],
           "ops": [
             [
-              "like",
+              "love",
               1
             ]
           ]

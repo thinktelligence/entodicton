@@ -229,9 +229,16 @@ class API {
           if (matches.length > 0 || (typeof context.query == 'boolean' && context.query)) {
             // does greg like bananas
             if (matches.length == 0) {
+              /*
               context.response = _.clone(context)
               context.response.isResponse = true
               context.response.query = undefined
+              */
+
+              const response = _.clone(context)
+              response.isResponse = true
+              response.query = undefined
+              context.response = { marker: 'list', value: [response] }
             } else {
               context.response = { marker: 'list', value: unflatten(matches) }
               context.response.isResponse = true
@@ -242,6 +249,12 @@ class API {
             if (!context.response.truthValue) {
               context.response.truthValueOnly = true
             }
+
+            // context.response = context.response;
+            // const response = context.response
+            // ADD this line back and remove it to check
+            // context.response = { marker: 'list', value: [response], isResponse: true }
+            // Object.assign(context, { marker: 'list', value: responses, focusable: ['value'], paraphrase: true, truthValue: matches.length > 0 })
           } else {
             // see if anything is preferred greg
             // what does greg like

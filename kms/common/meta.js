@@ -186,12 +186,10 @@ let config = {
               // maps the response back
               let response;
               if (hasResponse) {
-                const toPrime = toPrimes[0][0]
                 if (hasValue) {
                   const valuesPrime = []
                   toPrimes = toPrimes.filter( (toPrime) => (toPrime[0].response || {}).truthValue )
                   // const valueAndMappings = toPrimes.filter((toPrime) => toPrime[0].response && toPrime[0].response.value).map((toPrime) => [toPrime[0].response.value, toPrime[1]])
-                  
                   for (const [relations, mappings] of toPrimes) {
                     for (const relation of relations.response.value) {
                       valuePrime = _.cloneDeep(DERIVED)
@@ -204,6 +202,7 @@ let config = {
                   }
                   response = { marker: 'list', truthValue: valuesPrime.length > 0, value: unflatten(valuesPrime, context.flatten || []) }
                 } else {
+                  const toPrime = toPrimes[0][0]
                   response = toPrime.response
                 }
               } else {
