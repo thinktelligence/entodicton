@@ -70,6 +70,25 @@ const focus = (context) => {
   return helper(context) || context
 }
 
+/*
+  Use this for leaning matches to the generators or semantics
+      how to deal with or's? maybe massive or'ing with simplification
+      what about and's
+  Generator the mappings as in meta as well?
+*/
+const common = (jsons) => {
+  const propertiess = jsons.map( (json) => new Set(Object.keys()) )
+  const properties = Array.from(propertiess[0]) 
+  for (const ps of propertiess.slice(1)) {
+    let next = []
+    for (p of ps) {
+      if (properties.has(p)) {
+        next.push(p)
+      }
+    }
+  }
+}
+
 module.exports = {
   millisecondsUntilHourOfDay,
   indent,

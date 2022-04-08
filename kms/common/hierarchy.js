@@ -19,7 +19,7 @@ let config = {
     // ['unknown', 'hierarchyAble'],
     // ['hierarchyAble', 'queryable'],
     ['type', 'property'],
-    ['have', 'canBeQuestion'],
+    // ['have', 'canBeQuestion'],
     ['have', 'canBeDoQuestion'],
   ],
   priorities: [
