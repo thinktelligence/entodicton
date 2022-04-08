@@ -101,12 +101,11 @@ let config = {
 
     "([be] ([briefOrWordy|]))",
 
-    "([canBeDoQuestion])",
-    "(([canBeDoQuestion/1]) <questionMark|>)",
+    "([canBeQuestion])",
+    "(([canBeQuestion/1]) <questionMark|>)",
 
     "(([what]) [(<does> ([doesAble|]))])",
-    "([canBeDoQuestion])",
-    "(<does|does,do> ([canBeDoQuestion/1]))",
+    "(<does|does,do> ([canBeQuestion/1]))",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
@@ -134,9 +133,9 @@ let config = {
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }", queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
-    { id: "canBeDoQuestion", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "canBeDoQuestion", level: 1, bridge: "{ ...next(operator) }" },
-    { id: "canBeDoQuestion", level: 2, bridge: "{ ...next(operator) }" },
+    { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
+    { id: "canBeQuestion", level: 2, bridge: "{ ...next(operator) }" },
     { id: "doesAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesAble", level: 1, bridge: "{ ...next(operator), before: before[0] }" },
     { id: "does", level: 0, bridge: "{ query: true, ...context }*" },
@@ -178,7 +177,7 @@ let config = {
     ['unknown', 'queryable'],
     ['it', 'queryable'],
     ['what', 'queryable'],
-    ['is', 'canBeDoQuestion'],
+    ['is', 'canBeQuestion'],
   ],
   debug: false,
   version: '3',
@@ -340,7 +339,7 @@ let config = {
     },
     { 
       notes: 'remove top level for some reason', 
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.topLevel && context.query,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeQuestion') && context.paraphrase && context.topLevel && context.query,
       apply: ({context, g}) => {
         return `${g({...context, topLevel: undefined})}?` 
       },
@@ -544,7 +543,7 @@ config.initializer( ({objects, config, isModule}) => {
   }
   if (isModule) {
   } else {
-    config.addWord("canbedoquestion", { id: "canBeDoQuestion", "initial": "{}" })
+    config.addWord("canbedoquestion", { id: "canBeQuestion", "initial": "{}" })
     config.addWord("doesable", { id: "doesAble", "initial": "{}" })
   }
 })

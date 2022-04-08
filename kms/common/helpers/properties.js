@@ -158,7 +158,7 @@ class API {
     config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}' }`})
 
     if (doAble) {
-      config.addHierarchy(operator, 'canBeDoQuestion')
+      config.addHierarchy(operator, 'canBeQuestion')
     }
 
     config.addPriorities([['means', 0], [operator, 0]])
@@ -272,7 +272,7 @@ class API {
     }
 
     if (ordering || relation || doAble) {
-      config.addHierarchy(operator, 'canBeDoQuestion')
+      config.addHierarchy(operator, 'canBeQuestion')
       config.addHierarchy(operator, 'ifAble')
       config.addHierarchy(operator, 'orAble')
     }

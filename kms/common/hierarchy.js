@@ -20,7 +20,7 @@ let config = {
     // ['hierarchyAble', 'queryable'],
     ['type', 'property'],
     // ['have', 'canBeQuestion'],
-    ['have', 'canBeDoQuestion'],
+    ['have', 'canBeQuestion'],
   ],
   priorities: [
     [['questionMark', 0], ['is', 0], ['a', 0]],
