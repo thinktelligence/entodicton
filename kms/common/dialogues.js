@@ -101,8 +101,8 @@ let config = {
 
     "([be] ([briefOrWordy|]))",
 
-    "([canBeDoQuestion])",
-    "(([canBeDoQuestion/1]) <questionMark|>)",
+    "([canBeQuestion])",
+    "(([canBeQuestion/1]) <questionMark|>)",
 
     "(([what]) [(<does> ([doesAble|]))])",
     "([canBeDoQuestion])",
@@ -125,8 +125,8 @@ let config = {
     { id: "not", level: 0, bridge: "{ ...after, negated: true }" },
 
     { id: "yesno", level: 0, bridge: "{ ...next(operator) }" },
-    // { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
-    // { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
+    { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
     { id: "what", level: 0, bridge: "{ ...next(operator), query: ['what'], determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
@@ -178,7 +178,7 @@ let config = {
     ['unknown', 'queryable'],
     ['it', 'queryable'],
     ['what', 'queryable'],
-    ['is', 'canBeDoQuestion'],
+    ['is', 'canBeQuestion'],
   ],
   debug: false,
   version: '3',
@@ -339,8 +339,7 @@ let config = {
       priority: -1,
     },
     { 
-      notes: 'remove top level for some reason', 
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.topLevel && context.query,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeQuestion') && context.paraphrase && context.topLevel && context.query,
       apply: ({context, g}) => {
         return `${g({...context, topLevel: undefined})}?` 
       },

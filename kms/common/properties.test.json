@@ -181,6 +181,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -360,10 +370,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -811,6 +821,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -990,10 +1010,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -1527,6 +1547,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -1685,10 +1715,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -2178,6 +2208,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -2336,10 +2376,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -3041,6 +3081,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -3199,10 +3249,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -3658,6 +3708,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -3816,10 +3876,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -4105,8 +4165,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -4128,18 +4188,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -4477,6 +4541,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -4635,10 +4709,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -4825,8 +4899,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -4841,13 +4915,13 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -5129,6 +5203,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -5287,10 +5371,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -5576,8 +5660,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -5599,18 +5683,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -5948,6 +6036,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -6106,10 +6204,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -6668,6 +6766,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -6826,10 +6934,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -7454,6 +7562,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -7612,10 +7730,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -9232,6 +9350,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -9390,10 +9518,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -10247,54 +10375,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "what",
             0
           ],
@@ -10308,7 +10388,51 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -11160,6 +11284,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -11318,10 +11452,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -11778,6 +11912,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -11936,10 +12080,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -12627,78 +12771,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "what",
             0
           ],
@@ -12712,7 +12784,71 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -13629,6 +13765,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -13787,10 +13933,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -14323,7 +14469,7 @@
         },
         {
           "op": [
-            "the",
+            "possession",
             0
           ],
           "ops": [
@@ -14347,7 +14493,7 @@
         },
         {
           "op": [
-            "possession",
+            "the",
             0
           ],
           "ops": [
@@ -14357,10 +14503,14 @@
             ],
             [
               "possession",
-              0
+              1
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -15047,6 +15197,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -15205,10 +15365,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -15735,54 +15895,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "what",
             0
           ],
@@ -15796,7 +15908,51 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -16521,6 +16677,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -16679,10 +16845,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -17273,7 +17439,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -17297,7 +17463,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -17310,7 +17476,7 @@
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -17969,6 +18135,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -18127,10 +18303,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -18962,6 +19138,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -19120,10 +19306,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -20477,6 +20663,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -20635,10 +20831,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -21019,6 +21215,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -21177,10 +21383,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -21689,6 +21895,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -21847,10 +22063,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -22403,6 +22619,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -22561,10 +22787,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -22796,7 +23022,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -22820,7 +23046,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -22833,7 +23059,7 @@
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -23231,6 +23457,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -23389,10 +23625,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"
@@ -23622,7 +23858,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -23646,7 +23882,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -23659,7 +23895,7 @@
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -24051,6 +24287,16 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
           "bridge": "{ ...next(operator), unknown: true }",
           "id": "unknown",
           "level": 0
@@ -24209,10 +24455,10 @@
           "pattern": "([be] ([briefOrWordy|]))"
         },
         {
-          "pattern": "([canBeDoQuestion])"
+          "pattern": "([canBeQuestion])"
         },
         {
-          "pattern": "(([canBeDoQuestion/1]) <questionMark|>)"
+          "pattern": "(([canBeQuestion/1]) <questionMark|>)"
         },
         {
           "pattern": "(([what]) [(<does> ([doesAble|]))])"

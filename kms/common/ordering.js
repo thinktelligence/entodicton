@@ -57,7 +57,7 @@ config.initializer(({config, km}) => {
               config,
               unflatten: ['wanter', 'wantee'],
             })
-  config.addHierarchy('want', 'canBeDoQuestion')
+  config.addHierarchy('want', 'canBeQuestion')
   /*
   papi.createActionPrefix({
               operator: 'can',

@@ -114,7 +114,7 @@ let config = {
     ['object', 'theAble'],
     ['whose', 'object'],
     ['have', 'canBeDoQuestion'],
-    // ['have', 'canBeQuestion'],
+    ['have', 'canBeQuestion'],
   ],
   bridges: [
     { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
@@ -224,7 +224,7 @@ let config = {
     {
       notes: 'do questions',
       // debug: 'call9',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.marker !== 'is' && context.paraphrase && context.query && !context.response.verbatim,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query,
       apply: ({context, g}) => {
         const right = context['do'].right
         if (context[right].query) {
@@ -238,7 +238,7 @@ let config = {
       },
     },
     [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.marker !== 'is' && context.paraphrase && !context.query,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && !context.query,
       ({context, g}) => {
         return `${g(context.object)} ${context.word} ${g(context.property)}`
       }
