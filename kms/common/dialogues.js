@@ -101,12 +101,13 @@ let config = {
 
     "([be] ([briefOrWordy|]))",
 
-    "([canBeQuestion])",
-    "(([canBeQuestion/1]) <questionMark|>)",
+    "([([canBeQuestion])])",
+    "(([canBeQuestion/1,2]) <questionMark|>)",
+    // "(([is/2]) <questionMark|>)",
 
     "(([what]) [(<does> ([doesAble|]))])",
     "([canBeDoQuestion])",
-    "(<does|does,do> ([canBeDoQuestion/1]))",
+    "(<does|does,do> ([canBeDoQuestion/0,1]))",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"

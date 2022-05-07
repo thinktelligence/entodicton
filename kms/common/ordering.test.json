@@ -171,9 +171,6 @@
         "touchedBy": [
           "call16"
         ],
-        "types": [
-          "like"
-        ],
         "unflatten": [
           "liker",
           "likee"
@@ -654,9 +651,6 @@
             "touchedBy": [
               "call16"
             ],
-            "types": [
-              "like"
-            ],
             "unflatten": [
               "liker",
               "likee"
@@ -917,9 +911,6 @@
         "topLevel": true,
         "touchedBy": [
           "call8"
-        ],
-        "types": [
-          "hate"
         ],
         "unflatten": [
           "hater",
@@ -1308,9 +1299,6 @@
             "touchedBy": [
               "call8"
             ],
-            "types": [
-              "hate"
-            ],
             "unflatten": [
               "hater",
               "hatee"
@@ -1526,9 +1514,6 @@
               "ordering": "preference",
               "text": "greg hate bananas",
               "topLevel": true,
-              "types": [
-                "hate"
-              ],
               "unflatten": [
                 "hater",
                 "hatee"
@@ -1542,9 +1527,6 @@
         "topLevel": true,
         "touchedBy": [
           "call8"
-        ],
-        "types": [
-          "hate"
         ],
         "unflatten": [
           "hater",
@@ -1654,7 +1636,7 @@
         },
         {
           "op": [
-            "hate",
+            "like",
             0
           ],
           "ops": [
@@ -1674,7 +1656,7 @@
         },
         {
           "op": [
-            "like",
+            "hate",
             0
           ],
           "ops": [
@@ -1684,11 +1666,11 @@
             ],
             [
               "hate",
-              1
+              0
             ],
             [
               "like",
-              0
+              1
             ]
           ]
         },
@@ -1946,9 +1928,6 @@
                   "ordering": "preference",
                   "text": "greg hate bananas",
                   "topLevel": true,
-                  "types": [
-                    "hate"
-                  ],
                   "unflatten": [
                     "hater",
                     "hatee"
@@ -1962,9 +1941,6 @@
             "topLevel": true,
             "touchedBy": [
               "call8"
-            ],
-            "types": [
-              "hate"
             ],
             "unflatten": [
               "hater",
@@ -2195,9 +2171,6 @@
         "topLevel": true,
         "touchedBy": [
           "call8"
-        ],
-        "types": [
-          "like"
         ],
         "unflatten": [
           "liker",
@@ -2585,9 +2558,6 @@
             "topLevel": true,
             "touchedBy": [
               "call8"
-            ],
-            "types": [
-              "like"
             ],
             "unflatten": [
               "liker",
@@ -3364,7 +3334,7 @@
         },
         {
           "op": [
-            "want",
+            "love",
             0
           ],
           "ops": [
@@ -3396,7 +3366,7 @@
         },
         {
           "op": [
-            "love",
+            "want",
             0
           ],
           "ops": [
@@ -3410,7 +3380,39 @@
             ],
             [
               "love",
+              1
+            ],
+            [
+              "orList",
               0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
             ],
             [
               "orList",
@@ -3451,34 +3453,6 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "want",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "orList",
-              1
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -4045,9 +4019,6 @@
         "touchedBy": [
           "call2"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -4438,7 +4409,7 @@
         },
         {
           "op": [
-            "want",
+            "love",
             0
           ],
           "ops": [
@@ -4470,7 +4441,7 @@
         },
         {
           "op": [
-            "love",
+            "want",
             0
           ],
           "ops": [
@@ -4484,7 +4455,39 @@
             ],
             [
               "love",
+              1
+            ],
+            [
+              "orList",
               0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
             ],
             [
               "orList",
@@ -4525,17 +4528,13 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
         {
           "op": [
-            "want",
-            1
+            "then",
+            0
           ],
           "ops": [
             [
@@ -4553,10 +4552,6 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -4577,30 +4572,6 @@
             [
               "orList",
               1
-            ],
-            [
-              "then",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "then",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "orList",
-              1
-            ],
-            [
-              "then",
-              0
             ]
           ]
         },
@@ -4904,9 +4875,6 @@
             "topLevel": true,
             "touchedBy": [
               "call2"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -5444,9 +5412,6 @@
         "touchedBy": [
           "call2"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -5837,7 +5802,7 @@
         },
         {
           "op": [
-            "want",
+            "love",
             0
           ],
           "ops": [
@@ -5869,7 +5834,7 @@
         },
         {
           "op": [
-            "love",
+            "want",
             0
           ],
           "ops": [
@@ -5883,7 +5848,39 @@
             ],
             [
               "love",
+              1
+            ],
+            [
+              "orList",
               0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            1
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              1
             ],
             [
               "orList",
@@ -5924,17 +5921,13 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
         {
           "op": [
-            "want",
-            1
+            "then",
+            0
           ],
           "ops": [
             [
@@ -5952,10 +5945,6 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -5976,30 +5965,6 @@
             [
               "orList",
               1
-            ],
-            [
-              "then",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "then",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "orList",
-              1
-            ],
-            [
-              "then",
-              0
             ]
           ]
         },
@@ -6303,9 +6268,6 @@
             "topLevel": true,
             "touchedBy": [
               "call2"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -6895,9 +6857,6 @@
         "touchedBy": [
           "call2"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -7363,6 +7322,38 @@
         },
         {
           "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "want",
             0
           ],
@@ -7380,6 +7371,10 @@
               0
             ],
             [
+              "love",
+              1
+            ],
+            [
               "orList",
               0
             ],
@@ -7412,6 +7407,10 @@
               0
             ],
             [
+              "love",
+              1
+            ],
+            [
               "orList",
               0
             ],
@@ -7427,8 +7426,8 @@
         },
         {
           "op": [
-            "love",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -7438,10 +7437,6 @@
             [
               "like",
               1
-            ],
-            [
-              "love",
-              0
             ],
             [
               "love",
@@ -7486,17 +7481,13 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
         {
           "op": [
-            "want",
-            1
+            "then",
+            0
           ],
           "ops": [
             [
@@ -7518,10 +7509,6 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -7546,17 +7533,13 @@
             [
               "orList",
               1
-            ],
-            [
-              "then",
-              0
             ]
           ]
         },
         {
           "op": [
-            "then",
-            0
+            "love",
+            1
           ],
           "ops": [
             [
@@ -7570,10 +7553,6 @@
             [
               "orList",
               1
-            ],
-            [
-              "then",
-              0
             ]
           ]
         },
@@ -7586,10 +7565,6 @@
             [
               "if",
               0
-            ],
-            [
-              "love",
-              1
             ],
             [
               "orList",
@@ -7606,22 +7581,6 @@
             [
               "if",
               0
-            ],
-            [
-              "love",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "love",
-            1
-          ],
-          "ops": [
-            [
-              "love",
-              1
             ]
           ]
         },
@@ -7963,9 +7922,6 @@
             "topLevel": true,
             "touchedBy": [
               "call2"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -8564,9 +8520,6 @@
         "touchedBy": [
           "call2"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -8921,6 +8874,38 @@
         },
         {
           "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "want",
             0
           ],
@@ -8938,6 +8923,10 @@
               0
             ],
             [
+              "love",
+              1
+            ],
+            [
               "orList",
               0
             ],
@@ -8970,6 +8959,10 @@
               0
             ],
             [
+              "love",
+              1
+            ],
+            [
               "orList",
               0
             ],
@@ -8985,8 +8978,8 @@
         },
         {
           "op": [
-            "love",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -8996,10 +8989,6 @@
             [
               "like",
               1
-            ],
-            [
-              "love",
-              0
             ],
             [
               "love",
@@ -9044,38 +9033,6 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "want",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "love",
-              1
-            ],
-            [
-              "orList",
-              1
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -9105,7 +9062,7 @@
         },
         {
           "op": [
-            "orList",
+            "love",
             1
           ],
           "ops": [
@@ -9125,8 +9082,8 @@
         },
         {
           "op": [
-            "if",
-            0
+            "orList",
+            1
           ],
           "ops": [
             [
@@ -9134,20 +9091,20 @@
               0
             ],
             [
-              "love",
+              "orList",
               1
             ]
           ]
         },
         {
           "op": [
-            "love",
-            1
+            "if",
+            0
           ],
           "ops": [
             [
-              "love",
-              1
+              "if",
+              0
             ]
           ]
         },
@@ -9423,9 +9380,6 @@
             "topLevel": true,
             "touchedBy": [
               "call2"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -9969,9 +9923,6 @@
         "touchedBy": [
           "call2"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -10329,6 +10280,38 @@
         },
         {
           "op": [
+            "love",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "love",
+              0
+            ],
+            [
+              "orList",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "want",
             0
           ],
@@ -10346,6 +10329,10 @@
               0
             ],
             [
+              "love",
+              1
+            ],
+            [
               "orList",
               0
             ],
@@ -10378,6 +10365,10 @@
               0
             ],
             [
+              "love",
+              1
+            ],
+            [
               "orList",
               0
             ],
@@ -10393,8 +10384,8 @@
         },
         {
           "op": [
-            "love",
-            0
+            "want",
+            1
           ],
           "ops": [
             [
@@ -10404,10 +10395,6 @@
             [
               "like",
               1
-            ],
-            [
-              "love",
-              0
             ],
             [
               "love",
@@ -10452,38 +10439,6 @@
             [
               "then",
               0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "want",
-            1
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "love",
-              1
-            ],
-            [
-              "orList",
-              1
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              1
             ]
           ]
         },
@@ -10513,7 +10468,7 @@
         },
         {
           "op": [
-            "orList",
+            "love",
             1
           ],
           "ops": [
@@ -10533,8 +10488,8 @@
         },
         {
           "op": [
-            "if",
-            0
+            "orList",
+            1
           ],
           "ops": [
             [
@@ -10542,20 +10497,20 @@
               0
             ],
             [
-              "love",
+              "orList",
               1
             ]
           ]
         },
         {
           "op": [
-            "love",
-            1
+            "if",
+            0
           ],
           "ops": [
             [
-              "love",
-              1
+              "if",
+              0
             ]
           ]
         },
@@ -10850,9 +10805,6 @@
             "topLevel": true,
             "touchedBy": [
               "call2"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -11337,9 +11289,6 @@
         "touchedBy": [
           "call20"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -11630,66 +11579,6 @@
         },
         {
           "op": [
-            "want",
-            0
-          ],
-          "ops": [
-            [
-              "does",
-              0
-            ],
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "want",
-            0
-          ],
-          "ops": [
-            [
-              "does",
-              0
-            ],
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "like",
             0
           ],
@@ -11712,7 +11601,7 @@
             ],
             [
               "want",
-              1
+              0
             ]
           ]
         },
@@ -11740,6 +11629,66 @@
             ],
             [
               "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "want",
+            0
+          ],
+          "ops": [
+            [
+              "does",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
               0
             ],
             [
@@ -11846,8 +11795,8 @@
         },
         {
           "op": [
-            "if",
-            0
+            "like",
+            1
           ],
           "ops": [
             [
@@ -11867,8 +11816,24 @@
           ],
           "ops": [
             [
+              "if",
+              0
+            ],
+            [
               "like",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "if",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
             ]
           ]
         }
@@ -12060,9 +12025,6 @@
             "topLevel": true,
             "touchedBy": [
               "call20"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -12498,9 +12460,6 @@
         "touchedBy": [
           "call2"
         ],
-        "types": [
-          "want"
-        ],
         "unflatten": [
           "wanter",
           "wantee"
@@ -12706,6 +12665,58 @@
         },
         {
           "op": [
+            "like",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "like",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
+            ],
+            [
+              "like",
+              0
+            ],
+            [
+              "like",
+              1
+            ],
+            [
+              "then",
+              0
+            ],
+            [
+              "want",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "want",
             0
           ],
@@ -12716,58 +12727,6 @@
             ],
             [
               "like",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "then",
-              0
-            ],
-            [
-              "want",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "like",
-            0
-          ],
-          "ops": [
-            [
-              "if",
-              0
-            ],
-            [
-              "like",
-              0
-            ],
-            [
-              "like",
               1
             ],
             [
@@ -12776,7 +12735,7 @@
             ],
             [
               "want",
-              1
+              0
             ]
           ]
         },
@@ -12826,8 +12785,8 @@
         },
         {
           "op": [
-            "if",
-            0
+            "like",
+            1
           ],
           "ops": [
             [
@@ -12847,8 +12806,24 @@
           ],
           "ops": [
             [
+              "if",
+              0
+            ],
+            [
               "like",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "if",
+            0
+          ],
+          "ops": [
+            [
+              "if",
+              0
             ]
           ]
         },
@@ -13143,9 +13118,6 @@
             "topLevel": true,
             "touchedBy": [
               "call2"
-            ],
-            "types": [
-              "want"
             ],
             "unflatten": [
               "wanter",
@@ -13498,9 +13470,6 @@
             ],
             "text": "what like",
             "topLevel": true,
-            "types": [
-              "like"
-            ],
             "unflatten": [
               "liker",
               "likee"
@@ -13514,9 +13483,6 @@
         "topLevel": true,
         "touchedBy": [
           "call8"
-        ],
-        "types": [
-          "like"
         ],
         "unflatten": [
           "liker",
@@ -13638,7 +13604,7 @@
         },
         {
           "op": [
-            "what",
+            "love",
             0
           ],
           "ops": [
@@ -13658,7 +13624,7 @@
         },
         {
           "op": [
-            "love",
+            "what",
             0
           ],
           "ops": [
@@ -13668,6 +13634,10 @@
             ],
             [
               "love",
+              1
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -13706,7 +13676,7 @@
         },
         {
           "op": [
-            "like",
+            "love",
             1
           ],
           "ops": [
@@ -13722,12 +13692,12 @@
         },
         {
           "op": [
-            "love",
+            "like",
             1
           ],
           "ops": [
             [
-              "love",
+              "like",
               1
             ]
           ]
@@ -13943,9 +13913,6 @@
                 ],
                 "text": "what like",
                 "topLevel": true,
-                "types": [
-                  "like"
-                ],
                 "unflatten": [
                   "liker",
                   "likee"
@@ -13959,9 +13926,6 @@
             "topLevel": true,
             "touchedBy": [
               "call8"
-            ],
-            "types": [
-              "like"
             ],
             "unflatten": [
               "liker",
