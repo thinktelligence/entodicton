@@ -1,5 +1,5 @@
 const entodicton = require('entodicton')
-const dialogues = require('./dialogues')
+const hierarchy = require('./hierarchy')
 const people_tests = require('./people.test.json')
 
 // TODO first name 
@@ -20,7 +20,7 @@ let config = {
 };
 
 config = new entodicton.Config(config, module)
-config.add(dialogues)
+config.add(hierarchy)
 
 entodicton.knowledgeModule( { 
   module,

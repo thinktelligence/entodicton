@@ -275,7 +275,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
+          "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), atomic: true, value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
         },
@@ -912,7 +912,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
+          "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), atomic: true, value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
         },
@@ -1132,6 +1132,7 @@
         "word": "modifies"
       },
       {
+        "atomic": true,
         "chicken": {
           "marker": "chicken",
           "text": "chicken",
@@ -1295,6 +1296,7 @@
       "processed": [
         {
           "context": {
+            "atomic": true,
             "chicken": {
               "marker": "chicken",
               "text": "chicken",
@@ -11506,7 +11508,7 @@
       "opChoices": [
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
@@ -11526,12 +11528,12 @@
         },
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
             [
-              "object",
+              "property",
               0
             ],
             [
@@ -23724,7 +23726,7 @@
         },
         {
           "op": [
-            "object",
+            "what",
             0
           ],
           "ops": [
@@ -23752,7 +23754,7 @@
         },
         {
           "op": [
-            "what",
+            "object",
             0
           ],
           "ops": [
@@ -23761,15 +23763,15 @@
               0
             ],
             [
+              "object",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]

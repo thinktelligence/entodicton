@@ -322,12 +322,12 @@ class API {
     config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}' }`})
     config.addWord(modifierId, { id: modifierId, initial: `{ value: '${modifierId}' }`})
 
-    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
+    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), atomic: true, value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
     config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }` })
     config.addBridge({ id: modifierObjectId, level: 0, bridge: `{ ...next(operator), value: '${modifierObjectId}' }` })
     {
       const word = {
-        "chicken": {
+        [modifierId]: {
           "marker": modifierId,
           "value": modifierId,
           "word": modifierId, 
@@ -346,6 +346,7 @@ class API {
     }
     config.addHierarchy(objectId, 'theAble')
     config.addHierarchy(objectId, 'queryable')
+    config.addHierarchy(objectId, 'property')
     config.addHierarchy(modifierObjectId, objectId)
     config.addHierarchy(objectId, 'concept')
     if (config.config.bridges.find( (bridge) => bridge.id === 'hierarchyAble' )) {

@@ -220,7 +220,7 @@ let config = {
           }
 
           const semantic = { 
-            notes: "setup the read semantic",
+            notes: "setup the read semantic (1)",
             // match: match(context), 
             match: match(context),
             apply: apply(antecedants, _.cloneDeep(context.consequence)) ,
@@ -261,7 +261,7 @@ let config = {
             match = matchByValue(context)
           }
           const semantic = { 
-            notes: "setup the read semantic",
+            notes: "setup the read semantic (2)",
             // match: match(context), 
             match: match,
             apply: apply(mappings, _.cloneDeep(context.to)),
@@ -279,13 +279,21 @@ let config = {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
             }
             // next move add debug arg to s and g
-            TO.query = true
+            if (context.query) {
+              TO.query = true
+            } else {
+              TO.evaluate = true
+            }
             toPrime = s(TO)
             // toPrime = s(TO, { debug: { apply: true } })
-            if (toPrime.response) {
-              context.response = toPrime.response
+            if (context.query) {
+              if (toPrime.response) {
+                context.response = toPrime.response
+              } else {
+                context.response = toPrime
+              }
             } else {
-              context.response = toPrime
+              context.value = toPrime.value
             }
           }
           const mappings = translationMapping(context.from, context.to)

@@ -21,6 +21,9 @@ const hashIndexesSet = (hash, indexes, value) => {
 
 const translationMapping = (from, to) => {
   const mappings = []
+  if (from.atomic) {
+    return mappings
+  }
   for (let fkey of Object.keys(from)) {
     if (from[fkey].value) {
       let found = false
