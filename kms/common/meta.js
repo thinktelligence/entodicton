@@ -245,8 +245,8 @@ let config = {
       apply: ({config, context}) => {
         // setup the write semantic
         {
-          const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query
-          const matchByValue = (defContext) => ({context}) => context.value == defContext.from.value && !context.query
+          const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query && !context.objects
+          const matchByValue = (defContext) => ({context}) => context.value == defContext.from.value && !context.query && !context.objects
           const apply = (mappings, TO) => ({context, s}) => {
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {

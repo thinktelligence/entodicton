@@ -14,7 +14,7 @@ const template = {
       "last modifies name",
       "surname means last name",
       "given modifies name",
-      // "given name means first name",
+      "given name means first name",
     ],
 }
 let config = {
