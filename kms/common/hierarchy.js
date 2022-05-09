@@ -94,14 +94,17 @@ let config = {
     {
       notes: 'humans are mammels',
       // match: ({context, listable}) => listable(context, 'unknown') && context.same,
-      match: ({context, listable}) => {
+      match: ({context, listable, hierarchy}) => {
         /*
         if (context.marker == 'list') {
           listable(context, 'unknown')
         }
         */
         // TODO some generalizaton for this? maybe canInstanceOfClass + canBeClass
-        if ((context.marker === 'property') || ((context.same||{}).marker === 'readonly')) {
+        // greg
+        //if ((context.marker === 'property') || ((context.same||{}).marker === 'readonly')) {
+        //if ((hierarchy.isA(context.marker, 'property') && context.wantsValue && context.same)|| ((context.same||{}).marker === 'readonly')) {
+        if ((hierarchy.isA(context.marker, 'property') && context.same && context.objects)|| ((context.same||{}).marker === 'readonly')) {
           return;
         }
 

@@ -380,7 +380,8 @@ let config = {
     },
     {
       notes: 'set the property of an object',
-      match: ({context}) => context.marker == 'property' && context.same && context.object,
+      // match: ({context}) => context.marker == 'property' && context.same && context.object,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.same && context.objects,
       apply: ({context, objects, km, api}) => {
         const objectContext = context.object;
         const propertyContext = context;
@@ -436,6 +437,7 @@ let config = {
     {
       notes: 'evaluate a property',
       match: ({context}) => context.marker == 'property' && context.evaluate,
+      // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.evaluate,
       apply: ({context, api, km, objects, g, s, log}) => {
         try{  
           [ ...context.objects ]

@@ -114,8 +114,11 @@ let config = {
     //greg is a first name
     "(([theAble|]) [list|and] ([theAble|]))",
     "([yesno|])",
+    { pattern: "([debug23])" },
   ],
   bridges: [
+    { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
+
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
@@ -166,6 +169,7 @@ let config = {
     // [['means', 0], ['is', 0]],
     [['questionMark', 0], ['is', 0]],
     [['questionMark', 0], ['is', 1]],
+    [["does",0],["what",0]],
     [["is",0],["what",0]],
     [["is",1],["what",0]],
     [["is",0],["the",0]],
@@ -420,6 +424,14 @@ let config = {
   ],
 
   semantics: [
+    {
+      todo: 'debug23',
+      match: ({context}) => context.marker == 'debug23',
+      apply: ({context, hierarchy}) => {
+        debugger
+        debugger
+      },
+    },
     { 
       todo: 'be brief or wordy',
       match: ({context}) => context.marker == 'be',
