@@ -4,20 +4,16 @@
     {
       "hierarchy": [
         [
-          "unknown",
-          "hierarchyAble"
+          "it",
+          "queryable"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
         ],
         [
           "unknown",
-          "notAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
+          "queryable"
         ],
         [
           "theAble",
@@ -28,68 +24,16 @@
           "queryable"
         ],
         [
-          "canBeQuestion",
-          "canBeQuestion"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
           "ifAble",
           "ifAble"
         ],
         [
-          "what",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "object",
-          "theAble"
+          "orAble",
+          "ifAble"
         ],
         [
           "whose",
           "object"
-        ],
-        [
-          "object",
-          "queryable"
         ],
         [
           "property",
@@ -98,16 +42,73 @@
         [
           "queryable",
           "queryable"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
         ]
       ],
-      "load_cache_time": 5.772089719772339,
+      "load_cache_time": 0.3965775966644287,
       "logs": [
         "Undefined word 'property1'",
         "Undefined word 'object1'",
         "Undefined word 'value1'",
         "Op choices were: [(('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        ""
+        "",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"property1\",\n        \"text\": \"the property1 of object1\",\n        \"value\": \"property1\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"object1\",\n          \"text\": \"object1\",\n          \"value\": \"object1\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"property1\",\n            \"text\": \"the property1\",\n            \"value\": \"property1\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"object1\",\n            \"text\": \"object1\",\n            \"value\": \"object1\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"value1\",\n          \"text\": \"value1\",\n          \"value\": \"value1\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties3\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -261,7 +262,7 @@
           }
         ]
       },
-      "times": 1.0163295269012451,
+      "times": 0.9329195022583008,
       "trace": "undefined",
       "contexts": [
         {
@@ -354,7 +355,7 @@
       "responses": [
         ""
       ],
-      "memory_free_percent": 14,
+      "memory_free_percent": 14.6,
       "version": "6.13.45-beta.20",
       "query": "the property1 of object1 is value1"
     }

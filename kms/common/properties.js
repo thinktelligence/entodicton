@@ -332,7 +332,7 @@ let config = {
     */
     {
       notes: 'crew members. evaluate a concepts to get instances',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'concept') && context.evaluate,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'concept') && context.evaluate && !context.evaluate.toConcept,
       apply: ({context, objects, api}) => {
         context.value = { 
           marker: 'list', 
@@ -381,17 +381,32 @@ let config = {
     {
       notes: 'set the property of an object',
       // match: ({context}) => context.marker == 'property' && context.same && context.object,
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.same && context.objects,
-      apply: ({context, objects, km, api}) => {
+      match: ({context, hierarchy, uuid}) => hierarchy.isA(context.marker, 'property') && context.same && context.objects && !context[`disable${uuid}`],
+      apply: ({context, objects, km, api, log, s, uuid}) => {
         const objectContext = context.object;
         const propertyContext = context;
         const objectId = context.object.value
-        const propertyId = context.value
+        // const propertyId = context.value
+        /*
+        const propertyId = context.marker
+        if (context.marker != context.value) {
+          debugger
+          debugger // target
+        }
+        */
+        // const propertyId = context.marker
+        /*
+        // greg HERE
+        */
+        // debugger;
+        propertyContext[`disable${uuid}`] = true
+        const propertyId = km("dialogues").api.evaluateToConcept(propertyContext, context, log, s).value;
         try{
           // greg
           // api.makeObject({config, context: objectContext, doPluralize: false})
           // api.addWord(propertyContext)
           // api.addWord(objectContext)
+          // propertyContext.objects = null;
           api.setProperty(pluralize.singular(objectId), pluralize.singular(propertyId), context.same, true)
           context.sameWasProcessed = true
         } catch (e) {
@@ -436,7 +451,7 @@ let config = {
     },
     {
       notes: 'evaluate a property',
-      match: ({context}) => context.marker == 'property' && context.evaluate,
+      match: ({context}) => context.marker == 'property' && context.evaluate && !context.evaluate.toConcept,
       // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.evaluate,
       apply: ({context, api, km, objects, g, s, log}) => {
         try{  

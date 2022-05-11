@@ -47,13 +47,25 @@ class API {
   // TODO maybe generalize out query+evaluate along the lines of set value and set reference
   evaluate(value, context, log, s) {
     value.evaluate = true;
-    const instance = s(value) 
+    // const instance = s(value, { debug: { apply: true } }) 
+    const instance = s(value)
     if (!instance.evaluateWasProcessed && !instance.verbatim) {
       warningNotEvaluated(log, context, value);
     }
     delete instance.evaluate
     instance.instance = true;
     return instance
+  }
+
+  evaluateToConcept(value, context, log, s) {
+    value.evaluate = { toConcept: true }
+    // const concept = s(value, { debug: { apply: true } }) 
+    const concept = s(value)
+    if (!concept.evaluateWasProcessed && !concept.verbatim) {
+      warningNotEvaluated(log, context, value);
+    }
+    delete concept.evaluate
+    return concept
   }
 
 }

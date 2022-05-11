@@ -271,21 +271,23 @@ let config = {
 
         // setup the read semantic
         {
-          const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && (context.query || context.evaluate)
-          const matchByValue = (defContext) => ({context}) => context.value == defContext.from.value && (context.query || context.evaluate)
-          const apply = (mappings, TO) => ({context, s, g, config}) => {
+          const matchByMarker = (defContext) => ({context, uuid}) => context.marker == defContext.from.marker && (context.query || context.evaluate) && !context[`disable${uuid}`]
+          const matchByValue = (defContext) => ({context, uuid}) => context.value == defContext.from.value && (context.query || context.evaluate) && !context[`disable${uuid}`]
+          const apply = (mappings, TO) => ({uuid, context, s, g, config}) => {
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
             }
             // next move add debug arg to s and g
+            // TODO why is there query and evaluate?
             if (context.query) {
-              TO.query = true
+              TO.query = context.query
             } else {
-              TO.evaluate = true
+              TO.evaluate = context.evaluate
             }
-            toPrime = s(TO)
+            TO[`disable${uuid}`] = true
             // toPrime = s(TO, { debug: { apply: true } })
+            toPrime = s(TO)
             if (context.query) {
               if (toPrime.response) {
                 context.response = toPrime.response
@@ -294,6 +296,8 @@ let config = {
               }
             } else {
               context.value = toPrime.value
+              // context.marker = toPrime.marker
+              // context.evaluateWasProcessed = true
             }
           }
           const mappings = translationMapping(context.from, context.to)
