@@ -6,10 +6,18 @@ const pluralize = require('pluralize')
 
 const template = {
   queries: [
-    'pikachu squirtle weedle and pidgeot are pokemon',
-    "fire is a pokemon type",
-    "water is a pokemon type",
-    "pikachu's type is electric",
+    "pikachu squirtle weedle and pidgeot are pokemon",
+    "fire modifies type",
+    "water modifies type",
+    "earth modifies type",
+    "electric modifies type",
+    "pokemon modifies type",
+    "fire type is a pokemon type",
+    "water type is a pokemon type",
+    "electric type is a pokemon type",
+    "earth type is a pokemon type",
+    "pikachu is an electric type",
+    "charmander is a fire type",
   ],
 };
 

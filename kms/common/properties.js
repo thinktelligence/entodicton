@@ -334,9 +334,12 @@ let config = {
       notes: 'crew members. evaluate a concepts to get instances',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'concept') && context.evaluate && !context.evaluate.toConcept,
       apply: ({context, objects, api}) => {
+        const values = api.objects.children[context.marker]
+        const phrases = values.map( (value) => api.getWordForValue(value) )
         context.value = { 
           marker: 'list', 
-          value: api.objects.children[context.marker]
+          // value: api.objects.children[context.marker]
+          value: phrases,
         }
         context.evaluateWasProcessed = true
       }
