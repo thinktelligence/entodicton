@@ -388,8 +388,8 @@ class API {
     }
     const { word, value, number } = context;
     const concept = pluralize.singular(value)
-    config.addOperator(`([${concept}])`)
-    config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" })
+    config.addOperator(`([${concept}])`, { noDups: true })
+    config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" }, { noDups: true })
 
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )

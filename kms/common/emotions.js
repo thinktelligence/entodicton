@@ -31,9 +31,13 @@ const config = new entodicton.Config({
   bridges: [
     { id: 'sentientBeing', level: 0, bridge: '{ ...next(operator) }' },
     // just here so it loads and the sentence can make the semantics
-    { id: 'feel', level: 0, bridge: '{ ...next(operator) }' },
+    // { id: 'feel', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'emotion', level: 0, bridge: '{ ...next(operator) }' },
   ],
+  priorities: [
+    [['means', 0], ['feel', 0]]
+  ],
+
   hierarchy: [
     ['emotion', 'unknown'],
     ['sentientBeing', 'unknown'],
