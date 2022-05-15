@@ -80,62 +80,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -280,16 +224,75 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "allowDups": true,
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), atomic: true, value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
         },
         {
+          "allowDups": true,
           "bridge": "{ ...next(operator), value: 'strip' }",
           "id": "strip",
           "level": 0
         },
         {
+          "allowDups": true,
           "bridge": "{ ...next(operator), value: 'chicken_strip' }",
           "id": "chicken_strip",
           "level": 0
@@ -297,9 +300,11 @@
       ],
       "operators": [
         {
+          "allowDups": true,
           "pattern": "([chicken_strip|])"
         },
         {
+          "allowDups": true,
           "pattern": "(<chicken|> ([strip|]))"
         },
         {
@@ -321,9 +326,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -334,15 +336,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -394,6 +387,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -596,12 +598,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -722,62 +724,6 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
           "level": 0
         },
         {
@@ -925,16 +871,75 @@
           "level": 0
         },
         {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "allowDups": true,
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), atomic: true, value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
           "level": 0
         },
         {
+          "allowDups": true,
           "bridge": "{ ...next(operator), value: 'strip' }",
           "id": "strip",
           "level": 0
         },
         {
+          "allowDups": true,
           "bridge": "{ ...next(operator), value: 'chicken_strip' }",
           "id": "chicken_strip",
           "level": 0
@@ -942,9 +947,11 @@
       ],
       "operators": [
         {
+          "allowDups": true,
           "pattern": "([chicken_strip|])"
         },
         {
+          "allowDups": true,
           "pattern": "(<chicken|> ([strip|]))"
         },
         {
@@ -966,9 +973,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -979,15 +983,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -1039,6 +1034,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -1301,12 +1305,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -1458,62 +1462,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -1656,6 +1604,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -1678,9 +1682,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -1691,15 +1692,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -1751,6 +1743,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -1974,12 +1975,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -2115,62 +2116,6 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
           "level": 0
         },
         {
@@ -2316,6 +2261,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -2338,9 +2339,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -2351,15 +2349,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -2411,6 +2400,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -2788,12 +2786,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -2984,62 +2982,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -3182,6 +3124,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -3204,9 +3202,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -3217,15 +3212,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3277,6 +3263,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -3474,12 +3469,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -3613,62 +3608,6 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
           "level": 0
         },
         {
@@ -3814,6 +3753,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -3836,9 +3831,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -3849,15 +3841,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3909,6 +3892,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -4253,12 +4245,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -4448,62 +4440,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -4646,6 +4582,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -4668,9 +4660,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -4681,15 +4670,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -4741,6 +4721,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -4963,12 +4952,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -5106,62 +5095,6 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
           "level": 0
         },
         {
@@ -5307,6 +5240,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -5329,9 +5318,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -5342,15 +5328,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -5402,6 +5379,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -5746,12 +5732,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -5941,62 +5927,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -6139,6 +6069,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -6161,9 +6147,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -6174,15 +6157,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -6234,6 +6208,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -6515,12 +6498,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -6676,62 +6659,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -6874,6 +6801,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -6896,9 +6879,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -6909,15 +6889,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -6969,6 +6940,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -7306,12 +7286,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -7477,62 +7457,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -7675,6 +7599,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -7697,9 +7677,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -7710,15 +7687,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -7770,6 +7738,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -8788,8 +8765,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "determined": true,
@@ -8809,6 +8784,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -9270,62 +9247,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -9468,6 +9389,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -9490,9 +9467,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -9503,15 +9477,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -9563,6 +9528,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -10664,8 +10638,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "determined": true,
@@ -10685,6 +10657,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -11209,62 +11183,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -11407,6 +11325,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -11429,9 +11403,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -11442,15 +11413,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -11502,6 +11464,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -11612,7 +11583,7 @@
       "opChoices": [
         {
           "op": [
-            "property",
+            "object",
             0
           ],
           "ops": [
@@ -11632,12 +11603,12 @@
         },
         {
           "op": [
-            "object",
+            "property",
             0
           ],
           "ops": [
             [
-              "object",
+              "property",
               0
             ],
             [
@@ -11698,12 +11669,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -11842,62 +11813,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -12040,6 +11955,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -12062,9 +12033,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -12075,15 +12043,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -12135,6 +12094,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -13182,8 +13150,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "default": true,
@@ -13202,6 +13168,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -13700,62 +13668,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -13898,6 +13810,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -13920,9 +13888,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -13933,15 +13898,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -13993,6 +13949,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -14746,8 +14711,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "default": true,
@@ -14766,6 +14729,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -15133,62 +15098,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -15331,6 +15240,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -15353,9 +15318,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -15366,15 +15328,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -15426,6 +15379,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -16189,8 +16151,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "default": true,
@@ -16209,6 +16169,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -16618,62 +16580,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -16816,6 +16722,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -16838,9 +16800,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -16851,15 +16810,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -16911,6 +16861,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -17654,8 +17613,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "default": true,
@@ -17674,6 +17631,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -18081,62 +18040,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -18279,6 +18182,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -18301,9 +18260,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -18314,15 +18270,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -18374,6 +18321,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -18863,12 +18819,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -19089,62 +19045,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -19287,6 +19187,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -19309,9 +19265,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -19322,15 +19275,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -19382,6 +19326,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -20215,12 +20168,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -20625,62 +20578,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -20823,6 +20720,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -20845,9 +20798,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -20858,15 +20808,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -20918,6 +20859,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -21060,12 +21010,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -21179,62 +21129,6 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
           "level": 0
         },
         {
@@ -21380,6 +21274,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -21402,9 +21352,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -21415,15 +21362,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -21475,6 +21413,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -21709,12 +21656,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -21867,62 +21814,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -22065,6 +21956,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -22087,9 +22034,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -22100,15 +22044,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -22160,6 +22095,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -22424,12 +22368,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -22596,62 +22540,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -22794,6 +22682,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -22816,9 +22760,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -22829,15 +22770,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -22889,6 +22821,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -23231,8 +23172,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "default": true,
@@ -23251,6 +23190,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -23439,62 +23380,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -23637,6 +23522,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -23659,9 +23600,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -23672,15 +23610,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -23732,6 +23661,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -23918,7 +23856,7 @@
         },
         {
           "op": [
-            "what",
+            "object",
             0
           ],
           "ops": [
@@ -23946,7 +23884,7 @@
         },
         {
           "op": [
-            "object",
+            "what",
             0
           ],
           "ops": [
@@ -23955,15 +23893,15 @@
               0
             ],
             [
-              "object",
-              0
-            ],
-            [
               "propertyOf",
               0
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -24072,8 +24010,6 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
             {
               "default": true,
@@ -24092,6 +24028,8 @@
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [
@@ -24274,62 +24212,6 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), value: append(before, after) }",
-          "id": "orList",
-          "level": 0,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true,
-            "right": [
-              {
-                "marker": "orAble"
-              }
-            ]
-          }
-        },
-        {
-          "bridge": "{ ...operator, value: append(before, operator.value) }",
-          "id": "orList",
-          "level": 1,
-          "selector": {
-            "left": [
-              {
-                "marker": "orAble"
-              }
-            ],
-            "passthrough": true
-          }
-        },
-        {
-          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
-          "id": "means",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
-          "id": "if",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator), consequence: after[0] }",
-          "id": "then",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "ifAble",
-          "level": 0
-        },
-        {
-          "bridge": "{ ...next(operator) }",
-          "id": "orAble",
-          "level": 0
-        },
-        {
           "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
@@ -24472,6 +24354,62 @@
           ],
           "id": "it",
           "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
         }
       ],
       "operators": [
@@ -24494,9 +24432,6 @@
           "pattern": "([readonly])"
         },
         {
-          "pattern": "([readonly])"
-        },
-        {
           "pattern": "(<objectPrefix|> ([property]))"
         },
         {
@@ -24507,15 +24442,6 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
-        },
-        {
-          "pattern": "((phrase) [means] (phrase))"
-        },
-        {
-          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
-        },
-        {
-          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -24567,6 +24493,15 @@
         },
         {
           "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
         }
       ],
       "words": {
@@ -24707,12 +24642,12 @@
           }
         },
         "1": {
-        },
-        "2": {
           "mentioned": [
           ],
           "variables": {
           }
+        },
+        "2": {
         }
       },
       "processed": [

@@ -315,16 +315,16 @@ class API {
 
     const objectSingular = pluralize.singular(object)
     const objectPlural = pluralize.plural(object)
-    config.addOperator(`(<${modifierId}|> ([${objectId}|]))`)
-    config.addOperator(`([${modifierObjectId}|])`)
+    config.addOperator({ pattern: `(<${modifierId}|> ([${objectId}|]))`, allowDups: true })
+    config.addOperator({ pattern: `([${modifierObjectId}|])`, allowDups: true })
 
     config.addWord(objectSingular, { id: objectId, initial: `{ value: '${objectId}' }`})
     config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}' }`})
     config.addWord(modifierId, { id: modifierId, initial: `{ value: '${modifierId}' }`})
 
-    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), atomic: true, value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}` })
-    config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }` })
-    config.addBridge({ id: modifierObjectId, level: 0, bridge: `{ ...next(operator), value: '${modifierObjectId}' }` })
+    config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), atomic: true, value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}`, allowDups: true })
+    config.addBridge({ id: objectId, level: 0, bridge: `{ ...next(operator), value: '${objectId}' }`,  allowDups: true })
+    config.addBridge({ id: modifierObjectId, level: 0, bridge: `{ ...next(operator), value: '${modifierObjectId}' }`, allowDups: true })
     {
       const word = {
         [modifierId]: {
@@ -388,8 +388,8 @@ class API {
     }
     const { word, value, number } = context;
     const concept = pluralize.singular(value)
-    config.addOperator(`([${concept}])`, { noDups: true })
-    config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" }, { noDups: true })
+    config.addOperator({ pattern: `([${concept}])`, allowDups: true })
+    config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" , allowDups: true })
 
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )

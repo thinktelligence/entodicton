@@ -83,7 +83,6 @@ let config = {
     "([concept])", 
     "((modifier) [modifies] (concept))", 
     "([readonly])", 
-    "([readonly])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
@@ -172,6 +171,68 @@ let config = {
     [['is', 0], ['objectPrefix', 0], ['what', 0]],
   ],
   generators: [
+    {
+      notes: '"fire type, water type and earth type" to "fire water and earth type"',
+      tests: [
+        'chicken modifies strips',
+      ],
+      /*
+        {
+          "water": {
+            "marker": "water",
+            "value": "water",
+            "word": "water"
+          },
+          "marker": "water_type",
+          "modifiers": [
+            "water"
+          ],
+          "types": [
+            "water_type"
+          ],
+          "value": "water_type",
+          "word": "type",
+          "paraphrase": true
+        },
+      */
+      match: ({context}) => {
+        // debugger;
+        if (!context.paraphrase) {
+          return
+        }
+        if (context.marker !== 'list') {
+          return
+        }
+        if ((context.value || []).length < 2) {
+          return
+        }
+        if (!context.value[0].word) {
+          return
+        }
+        const word = context.value[0].word
+
+        for (let value of context.value) {
+          if (!(value.modifiers && value.modifiers.length == 1 && value.word == word)) {
+            return
+          }
+        }
+        return true
+      },
+      apply: ({g, context}) => {
+        debugger;
+        const modifiers = context.value.map( (p) => p[p.modifiers[0]] )
+        context.word = context.value[0].word
+        context.value = null
+        context.modifiers = ['modifier']
+        context.modifier = {
+          marker: 'list',
+          paraphrase: true,
+          value: modifiers
+        }
+        context.paraphrase = true
+        return g(context)
+      }
+    },
     {
       notes: 'add possession ending',
       priority: -1, 
