@@ -105,7 +105,7 @@ let config = {
     "(([queryable]) [is|is,are] ([queryable|]))",
     "([is:queryBridge|is,are] ([queryable]) ([queryable]))",
     "([it])",
-    "([what])",
+    "([what] ([whatable|])?)",
     "(<the|> ([theAble|]))",
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
@@ -130,6 +130,7 @@ let config = {
   ],
   bridges: [
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "whatable", level: 0, bridge: "{ ...next(operator) }" },
 
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},

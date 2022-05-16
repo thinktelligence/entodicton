@@ -219,7 +219,6 @@ let config = {
         return true
       },
       apply: ({g, context}) => {
-        debugger;
         const modifiers = context.value.map( (p) => p[p.modifiers[0]] )
         context.word = context.value[0].word
         context.value = null
