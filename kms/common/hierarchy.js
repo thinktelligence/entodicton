@@ -19,6 +19,7 @@ let config = {
     // ['unknown', 'hierarchyAble'],
     // ['hierarchyAble', 'queryable'],
     ['type', 'property'],
+    ['type', 'whatAble'],
     ['have', 'canBeQuestion'],
     ['have', 'canBeDoQuestion'],
   ],

@@ -105,7 +105,8 @@ let config = {
     "(([queryable]) [is|is,are] ([queryable|]))",
     "([is:queryBridge|is,are] ([queryable]) ([queryable]))",
     "([it])",
-    "([what] ([whatable|])?)",
+    "([what] ([whatAble|]))",
+    "([what:optional])",
     "(<the|> ([theAble|]))",
     "(<a|a,an> ([theAble|]))",
     "([unknown])",
@@ -130,7 +131,9 @@ let config = {
   ],
   bridges: [
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "whatable", level: 0, bridge: "{ ...next(operator) }" },
+    // { id: "what", level: 0, bridge: "{ ...next(operator), ...after[0], query: ['what'], determined: true }" },
+    { id: "what", level: 0, optional: "{ ...next(operator), query: ['what'], determined: true }", bridge: "{ ...after, query: ['what'], modifiers: ['what'], what: operator }" },
+    { id: "whatAble", level: 0, bridge: "{ ...next(operator) }" },
 
     {id: "list", level: 0, selector: {match: "same", type: "infix", passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", type: "postfix", passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
@@ -145,7 +148,6 @@ let config = {
     { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
-    { id: "what", level: 0, bridge: "{ ...next(operator), query: ['what'], determined: true }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "questionMark", level: 0, bridge: "{ ...before[0], query: [before.marker] }" },
     { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }", queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" },
