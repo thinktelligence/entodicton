@@ -2,6 +2,8 @@ const entodicton = require('entodicton')
 const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
 const pluralize = require('pluralize')
+const _ = require('lodash')
+const { isMany } = require('./helpers')
 
 // TODO the types of rank are x y z ....
 // TODO x is a kind of y
@@ -29,6 +31,75 @@ let config = {
     // [['a', 0], ['is', 0], ['hierarchyAble', 0]],
   ],
   semantics: [
+    {
+      notes: 'what type is pikachu',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && !['what', 'unknown'].includes(context.one.marker) && !['what', 'unknown'].includes(context.two.marker) && (context.one.query || context.two.query),
+      apply: ({context, hierarchy, km, log, s}) => {
+        const one = context.one;
+        const two = context.two;
+        let concept, value;
+        if (one.query) {
+          concept = one;
+          value = two;
+        } else {
+          concept = two;
+          value = one;
+        }
+        let instance = km('dialogues').api.evaluate(value, context, log, s)
+        if (instance.verbatim) {
+          context.response = { verbatim: instance.verbatim }
+          return
+        }
+        const propertiesAPI = km('properties').api;
+        const digraph = propertiesAPI.digraph;
+        const intersect = (set1, set2) => {
+          return new Set([...set1].filter(x => set2.has(x)))
+        }
+        const descendants = digraph.descendants(concept.value)
+        const ancestors = digraph.ancestors(instance.value)
+        const common = intersect(ancestors, descendants)
+        const answer = Array.from(digraph.minima(common))
+        const words = answer.map( (value) => propertiesAPI.getWordForValue(value) )
+        for (const word of words) {
+          word.paraphrase = true
+        }
+        instance = {
+          marker: 'list', 
+          value: words,
+          paraphrase: true,
+        }
+
+        // instance.focusable = ['one', 'two']
+        instance.focus = true
+        // concept = JSON.parse(JSON.stringify(value)) 
+        // greg
+        concept = _.cloneDeep(value)
+        concept.isQuery = undefined
+
+        if (true) {
+          const many = isMany(concept) || isMany(instance)
+          const response = {
+            "default": true,
+            "marker": "is",
+            "one": concept,
+            "two": instance,
+            "focusable": ['two', 'one'],
+            "word": many ? "are" : "is",
+            "number": many ? "many" : undefined,
+          }
+          context.response = response
+        } else {
+          context.response = {
+            isResponse: true,
+            instance,
+            concept,
+          }
+        }
+
+
+
+      },
+    },
     {
       notes: 'is x y',
       // debug: 'call2',

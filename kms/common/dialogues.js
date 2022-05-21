@@ -466,6 +466,12 @@ let config = {
     ],
     { 
       notes: 'what x is y?',
+      /*
+        what type is object (what type is pikachu)   (the type is typeValue)
+        what property is object (what color are greg's eyes)
+        object is a type (is greg a human) // handled by queryBridge
+      */
+
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
       apply: ({context, s, log, km, objects}) => {
         const one = context.one;
@@ -479,8 +485,10 @@ let config = {
           value = one;
         }
         km('dialogues').api.mentioned(concept)
+        // TODO wtf is the next line?
         value = JSON.parse(JSON.stringify(value))
-        const instance = api.evaluate(value, context, log, s)
+        // const instance = api.evaluate(value, context, log, s)
+        const instance = km('dialogues').api.evaluate(value, context, log, s)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           return

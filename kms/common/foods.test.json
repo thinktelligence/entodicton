@@ -282,7 +282,7 @@
         },
         {
           "op": [
-            "food",
+            "what",
             0
           ],
           "ops": [
@@ -310,10 +310,14 @@
         },
         {
           "op": [
-            "what",
+            "food",
             0
           ],
           "ops": [
+            [
+              "food",
+              0
+            ],
             [
               "is",
               0
@@ -324,10 +328,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -418,13 +418,31 @@
         },
         "2": {
           "children": {
+            "canBeDoQuestion": [
+              "have"
+            ],
+            "canBeQuestion": [
+              "have"
+            ],
             "food": [
               "chicken_strip",
               "sushi"
+            ],
+            "property": [
+              "type"
+            ],
+            "whatAble": [
+              "type"
             ]
           },
           "concepts": [
             "properties",
+            "type",
+            "property",
+            "whatAble",
+            "have",
+            "canBeQuestion",
+            "canBeDoQuestion",
             "chicken_strip",
             "food",
             "sushi"
@@ -433,8 +451,16 @@
             "chicken_strip": [
               "food"
             ],
+            "have": [
+              "canBeQuestion",
+              "canBeDoQuestion"
+            ],
             "sushi": [
               "food"
+            ],
+            "type": [
+              "property",
+              "whatAble"
             ]
           },
           "properties": {
@@ -443,11 +469,23 @@
             "initHandlers": [
             ],
             "root": {
+              "canBeDoQuestion": {
+              },
+              "canBeQuestion": {
+              },
               "chicken_strip": {
               },
               "food": {
               },
+              "have": {
+              },
+              "property": {
+              },
               "sushi": {
+              },
+              "type": {
+              },
+              "whatAble": {
               }
             }
           },

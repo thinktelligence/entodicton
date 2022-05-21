@@ -18,6 +18,7 @@ const template = {
     "earth type is a pokemon type",
     "pikachu is an electric type",
     "charmander is a fire type",
+    "pokemon type is a type",
   ],
 };
 

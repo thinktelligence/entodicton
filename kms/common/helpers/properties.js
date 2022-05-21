@@ -1,5 +1,5 @@
 const pluralize = require('pluralize')
-const { unflatten, flattens } = require('entodicton')
+const { unflatten, flattens, Digraph } = require('entodicton')
 const _ = require('lodash')
 const deepEqual = require('deep-equal')
 
@@ -83,6 +83,9 @@ class Frankenhash {
 }
 
 class API {
+  constructor() {
+    this.digraph = new Digraph()
+  }
 
   // createActionPrefix({before, operator, words, after, semantic, create})
   //
@@ -694,6 +697,8 @@ class API {
   }
 
   rememberIsA(child, parent) {
+    this.digraph.add(child, parent)
+
     if (!this.objects.parents[child]) {
       this.objects.parents[child] = []
     }
@@ -788,6 +793,17 @@ class API {
 
   get objects() {
     return this._objects
+  }
+
+  set config(config) {
+    this._config = config
+    for (const tuple of config().config.hierarchy) {
+      this.rememberIsA(tuple[0], tuple[1])
+    }
+  }
+
+  get config() {
+    return this._config
   }
 }
 

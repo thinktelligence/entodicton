@@ -25,7 +25,7 @@ const indent = (string, indent) => {
 }
 
 const isMany = (context) => {
-  if (((context || {}).value || {}).marker == 'list') {
+  if (((context || {}).value || {}).marker == 'list' && (((context || {}).value || {}).value || []).length > 1) {
     return true
   }
   if (context.number == 'many') {
