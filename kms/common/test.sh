@@ -22,6 +22,7 @@ node crew -tva -g
 node kirk -tva -g
 node spock -tva -g
 node stgame -tva -g
+node pokemon -tva -g
 # -g
 node kid -tva -g
 node kia -tva -g
