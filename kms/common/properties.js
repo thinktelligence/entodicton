@@ -396,6 +396,7 @@ let config = {
       apply: ({context, objects, api}) => {
         const values = api.objects.children[context.marker]
         const phrases = values.map( (value) => api.getWordForValue(value) )
+        context.focusableForPhrase = true
         context.value = { 
           marker: 'list', 
           // value: api.objects.children[context.marker]

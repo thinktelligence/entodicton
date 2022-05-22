@@ -399,7 +399,21 @@ let config = {
         // the age of greg is the age -> age is 23    -> first only missing paraphrase marker because it is coming from the context
         // your name is greg --response--> your name is greg // should be my name
         // return `${g({...context.one, paraphrase: context.paraphrase})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        /*
+        let first = context.one
+        let second = context.two
+        if (second.focusInPhrase) {
+          second = context.one
+          first = context.two
+        }
         return `${g({...context.one, paraphrase: true})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        */
+        // return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true})}`
+        if (context.two.focusableForPhrase) {
+          return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true})}`
+        } else {
+          return `${g({...context.one, paraphrase: true})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+        }
         // return `${g({...context.one})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
       },
     },
