@@ -5,6 +5,29 @@ const pluralize = require('pluralize')
 const _ = require('lodash')
 const { isMany } = require('./helpers')
 
+const getTypes = ( km, concept, instance ) => {
+  const propertiesAPI = km('properties').api;
+  const digraph = propertiesAPI.digraph;
+  const intersect = (set1, set2) => {
+    return new Set([...set1].filter(x => set2.has(x)))
+  }
+  const descendants = digraph.descendants(concept.value)
+  const ancestors = digraph.ancestors(instance.value)
+  const common = intersect(ancestors, descendants)
+  const answer = Array.from(digraph.minima(common))
+  const words = answer.map( (value) => propertiesAPI.getWordForValue(value) )
+  for (const word of words) {
+    word.paraphrase = true
+  }
+  instance = {
+    marker: 'list', 
+    value: words,
+    paraphrase: true,
+  }
+  instance.focus = true
+  return instance
+}
+
 // TODO the types of rank are x y z ....
 // TODO x is a kind of y
 let config = {
@@ -33,7 +56,7 @@ let config = {
   semantics: [
     {
       notes: 'what type is pikachu',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && !['what', 'unknown'].includes(context.one.marker) && !['what', 'unknown'].includes(context.two.marker) && (context.one.query || context.two.query),
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && !['what'].includes(context.one.marker) && !['what'].includes(context.two.marker) && (context.one.query || context.two.query),
       apply: ({context, hierarchy, km, log, s}) => {
         const one = context.one;
         const two = context.two;
@@ -50,27 +73,9 @@ let config = {
           context.response = { verbatim: instance.verbatim }
           return
         }
-        const propertiesAPI = km('properties').api;
-        const digraph = propertiesAPI.digraph;
-        const intersect = (set1, set2) => {
-          return new Set([...set1].filter(x => set2.has(x)))
-        }
-        const descendants = digraph.descendants(concept.value)
-        const ancestors = digraph.ancestors(instance.value)
-        const common = intersect(ancestors, descendants)
-        const answer = Array.from(digraph.minima(common))
-        const words = answer.map( (value) => propertiesAPI.getWordForValue(value) )
-        for (const word of words) {
-          word.paraphrase = true
-        }
-        instance = {
-          marker: 'list', 
-          value: words,
-          paraphrase: true,
-        }
+        instance = getTypes(km, concept, instance )
 
         // instance.focusable = ['one', 'two']
-        instance.focus = true
         // concept = JSON.parse(JSON.stringify(value)) 
         // greg
         concept = _.cloneDeep(value)
@@ -95,11 +100,31 @@ let config = {
             concept,
           }
         }
-
-
-
       },
     },
+    {
+      // type of pikachu        what is the type of pikachu -> this one
+      // name of pikachu        what is the name of pikachu -> properties
+      // types of job           what are the types of animals -> next one
+      notes: 'type of pikachu',  // the types of type is the next one
+      match: ({context}) => context.marker == 'type' && context.evaluate && context.object && context.objects[context.objects.length-1].number == 'one' && pluralize.isSingular(context.objects[0].word),
+      apply: ({context, objects, gs, km, log, s}) => {
+        const concept = context.objects[0];
+        const value = context.objects[1];
+        let instance = km('dialogues').api.evaluate(value, context, log, s)
+        if (instance.verbatim) {
+          context.response = { verbatim: instance.verbatim }
+          return
+        }
+        instance = getTypes(km, concept, instance)
+        context.value = instance
+        context.evaluateWasProcessed = true
+        if (context.value.value.length > 1) {
+          context.number = 'many'
+        }
+      }
+    },
+
     {
       notes: 'is x y',
       // debug: 'call2',
@@ -204,10 +229,11 @@ let config = {
         }
       }
     },
-
     // 'types of type'
     {
-      notes: 'types of type',
+      // type of pikachu
+      // types of job
+      notes: 'types of type', // what are the types of animals
       match: ({context}) => context.marker == 'type' && context.evaluate && context.object,
       apply: ({context, objects, gs, km}) => {
         const api = km('properties').api
