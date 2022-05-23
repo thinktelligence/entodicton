@@ -87,6 +87,22 @@ class API {
     this.digraph = new Digraph()
   }
 
+  createBinaryRelation (config, operator, words, before, after) {
+    this.createActionPrefix({
+                operator: operator,
+                words: words,
+                create: [operator],
+                before: [{tag: before, id: 'object'}],
+                after: [{tag: after, id: 'object'}],
+                // relation: true,
+                relation: false,
+                doAble: true,
+                config,
+                unflatten: [before, after],
+              })
+    config.addHierarchy(operator, 'canBeQuestion')
+  }
+
   // createActionPrefix({before, operator, words, after, semantic, create})
   //
   // before == [ { tag, marker }, ... ]
@@ -111,15 +127,15 @@ class API {
     const afterOperators = after.map( (arg) => `([${arg.id}|])` ).join('')
     // config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
     if (doAble) {
-      config.addOperator(`([(${beforeOperators} [${operator}|] ${afterOperators}?)])`)
+      config.addOperator({ pattern: `([(${beforeOperators} [${operator}|] ${afterOperators}?)])`, allowDups: true })
       // config.addOperator({ id: operator, level: 1, words: [operator] })
-      config.addBridge({ id: operator, level: 1, bridge: '{ ...next(operator) }' })
+      config.addBridge({ id: operator, level: 1, bridge: '{ ...next(operator) }', allowDups: true })
       config.addPriorities([[operator, 1], ['does', 0]])
       config.addPriorities([[operator, 1], ['doesnt', 0]])
       config.addPriorities([['does', 0], [operator, 0]])
       config.addPriorities([['doesnt', 0], [operator, 0]])
     } else {
-      config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
+      config.addOperator({ pattern: `(${beforeOperators} [${operator}|] ${afterOperators})`, allowDups: true })
     }
   
     create.map( (id) => {
@@ -142,7 +158,7 @@ class API {
 
         const unflattenArgs = [ ...before.map( (arg) => arg.tag ), ...after.map( (arg) => arg.tag ) ] 
         const focusable = [ ...before.map( (arg) => arg.tag ), ...after.map( (arg) => arg.tag ) ] 
-        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)}, focusable: ${JSON.stringify(focusable)} }` })
+        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)}, focusable: ${JSON.stringify(focusable)} }`, allowDups: true })
         if (words.length > 0) {
           for (const word of words) {
             config.addWord(word, { id: operator, initial: `{ value: "${operator}" }` })
@@ -151,7 +167,7 @@ class API {
           config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
         }
       } else {
-        config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }"})
+        config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }", allowDups: true })
       }
     })
 

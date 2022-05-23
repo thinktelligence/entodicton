@@ -96,7 +96,8 @@ let config = {
       match: ({context}) => context.marker == 'orList' && context.paraphrase,
       apply: ({context, gs}) => {
         return gs(context.value, ', ', ' or ')
-      }
+      },
+      priority: -1,
     },
     {
       match: ({context}) => context.marker == 'means' && context.paraphrase,
@@ -120,7 +121,8 @@ let config = {
       match: ({context}) => context.marker === 'if',
       apply: ({context, g}) => {
         return `if ${g(context.antecedant)} then ${g(context.consequence)}`
-      }
+      },
+      priority: -1,
     },
   ],
 

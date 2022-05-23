@@ -27,6 +27,7 @@ const pluralize = require('pluralize')
 // TODO macro for verb forms -> arm x | go to y | i like x
 // TODO READONLY
 // TODO pokemon what is the attack/i own a pikachu/ what do i own
+// own is xfx owner ownee
 /*
 V1
    "mccoy's rank is doctor",
@@ -87,6 +88,7 @@ let config = {
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|has,have] ([property|]))",
     "(<doesnt|doesnt,dont> ([have/0]))",
+    "(([xfx]) <([between] (words))>)",
     // "(([have/1]) <questionMark|>)",
     // the plural of cat is cats what is the plural of cat?
     // does greg have ears (yes) greg does not have ears does greg have ears (no)
@@ -108,6 +110,7 @@ let config = {
     ['readonly', 'queryable'],
     ['property', 'queryable'],
     ['object', 'queryable'],
+    ['xfx', 'queryable'],
     ['property', 'theAble'],
     ['property', 'unknown'],
     ['object', 'theAble'],
@@ -116,6 +119,10 @@ let config = {
     ['have', 'canBeQuestion'],
   ],
   bridges: [
+    { id: 'xfx', level: 0, bridge: "{ ...next(operator) }" },
+    { id: 'between', level: 0, bridge: "{ ...next(operator), arguments: after[0] }" },
+    { id: 'between', level: 1, bridge: "{ ...before[0], arguments: operator.arguments }" },
+
     { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
     { id: "modifies", level: 0, bridge: "{ ...next(operator), modifier: before[0], concept: after[0] }" },
     { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
@@ -148,6 +155,7 @@ let config = {
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
   priorities: [
+    [['is', 0], ['between', 1]],
     [['is', 0], ['hierarchyAble', 0]],
     [['a', 0], ['is', 0], ['hierarchyAble', 0]],
     [['have', 1], ['does', 0]],
@@ -171,6 +179,10 @@ let config = {
     [['is', 0], ['objectPrefix', 0], ['what', 0]],
   ],
   generators: [
+    {
+      match: ({context}) => context.marker == 'xfx',
+      apply: ({context, g}) => `${context.word} between ${g(context.arguments)}`
+    },
     {
       notes: '"fire type, water type and earth type" to "fire water and earth type"',
       tests: [
@@ -357,6 +369,20 @@ let config = {
     },
   ],
   semantics: [
+    {
+      // TODO maybe use the dialogue management to get params
+      notes: 'wants is xfx between wanter and wantee',
+      match: ({context}) => context.same && context.same.marker == 'xfx',
+      // debug: 'call3',
+      apply: ({context, km, config}) => {
+        const papi = km('properties').api
+        const singular = pluralize.singular(context.word)
+        const plural = pluralize.plural(context.word)
+        const args = context.same.arguments.value;
+        papi.createBinaryRelation(config, singular, [singular, plural], args[0].word, args[1].word)
+      },
+      priority: -1,
+    },
     {
       notes: 'define a modifier',
       tests: [

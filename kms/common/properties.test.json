@@ -4,6 +4,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -342,6 +357,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -582,7 +600,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -600,6 +619,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -631,6 +651,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -660,6 +683,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -741,6 +766,21 @@
   "chicken modifies strips\\nchicken strips": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -1081,6 +1121,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -1381,7 +1424,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -1399,6 +1443,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -1430,6 +1475,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -1459,6 +1507,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -1568,6 +1618,21 @@
   "greg doesnt have wings": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -1882,6 +1947,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -2155,7 +2223,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -2173,6 +2242,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -2205,6 +2275,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -2240,6 +2313,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -2317,6 +2392,21 @@
   "greg doesnt have wings does greg have wings": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -2631,6 +2721,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3058,7 +3151,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -3076,6 +3170,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -3108,6 +3203,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -3143,6 +3241,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -3272,6 +3372,21 @@
   "greg has eyes": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -3586,6 +3701,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -3833,7 +3951,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -3851,6 +3970,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -3883,6 +4003,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -3918,6 +4041,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -3993,6 +4118,21 @@
   "greg has eyes greg has eyes?": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -4307,6 +4447,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -4697,7 +4840,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -4715,6 +4859,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -4747,6 +4892,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -4782,6 +4930,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -4910,6 +5060,21 @@
   "greg has eyes?": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -5224,6 +5389,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -5503,7 +5671,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -5521,6 +5690,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -5552,6 +5722,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -5581,6 +5754,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -5660,6 +5835,21 @@
   "greg has toes greg has eyes?": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -5974,6 +6164,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -6364,7 +6557,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -6382,6 +6576,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -6414,6 +6609,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -6449,6 +6647,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -6577,6 +6777,21 @@
   "greg's car's bumper": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -6891,6 +7106,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -7229,7 +7447,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -7247,6 +7466,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -7278,6 +7498,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -7307,6 +7530,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -7401,6 +7626,21 @@
   "hana's sister is kia": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -7715,6 +7955,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -8067,7 +8310,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "sister": [
               "kia"
@@ -8088,6 +8332,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -8125,6 +8370,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -8174,6 +8422,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -8291,6 +8541,21 @@
   "hana's sister is kia kia's cat is cleo\\nwho is hana's sister's cat": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -8605,6 +8870,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -9602,7 +9870,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "sister": [
               "kia"
@@ -9623,6 +9892,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -9665,6 +9935,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -9732,6 +10005,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -10175,6 +10450,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -10487,6 +10777,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -11567,7 +11860,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "sister": [
               "kia"
@@ -11588,6 +11882,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -11630,6 +11925,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -11697,6 +11995,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -12203,6 +12503,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -12515,6 +12830,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -12768,7 +13086,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -12786,6 +13105,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -12817,6 +13137,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -12846,6 +13169,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -12923,6 +13248,21 @@
   "the age of greg is 23 the profession of greg is programmer what are the properties of greg": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -13237,6 +13577,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -14266,7 +14609,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -14284,6 +14628,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -14326,6 +14671,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -14393,6 +14741,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -14872,6 +15222,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -15184,6 +15549,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -15764,7 +16132,7 @@
         },
         {
           "op": [
-            "possession",
+            "the",
             0
           ],
           "ops": [
@@ -15788,7 +16156,7 @@
         },
         {
           "op": [
-            "the",
+            "possession",
             0
           ],
           "ops": [
@@ -15798,14 +16166,10 @@
             ],
             [
               "possession",
-              1
-            ],
-            [
-              "propertyOf",
               0
             ],
             [
-              "the",
+              "propertyOf",
               0
             ]
           ]
@@ -15959,7 +16323,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -15977,6 +16342,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -16014,6 +16380,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -16063,6 +16432,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -16398,6 +16769,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -16710,6 +17096,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -17491,7 +17880,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -17509,6 +17899,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -17546,6 +17937,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -17595,6 +17989,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -17972,6 +18368,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -18284,6 +18695,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -19045,7 +19459,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -19063,6 +19478,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -19100,6 +19516,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -19149,6 +19568,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -19524,6 +19945,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -19836,6 +20272,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -20344,7 +20783,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -20362,6 +20802,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -20398,6 +20839,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -20447,6 +20891,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -20619,6 +21065,21 @@
   "the name of greg is greg greg is readonly the name of greg is fred": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -20933,6 +21394,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -21785,7 +22249,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -21803,6 +22268,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -21839,6 +22305,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -21888,6 +22357,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -22246,6 +22717,21 @@
       "bridges": [
         {
           "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
           "level": 0
         },
@@ -22558,6 +23044,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -22757,7 +23246,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -22775,6 +23265,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -22806,6 +23297,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -22835,6 +23329,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -22890,6 +23386,21 @@
   "the property of object": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -23204,6 +23715,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -23495,7 +24009,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -23513,6 +24028,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -23544,6 +24060,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -23573,6 +24092,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -23664,6 +24185,21 @@
   "the property of the object": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -23978,6 +24514,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -24299,7 +24838,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -24317,6 +24857,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -24348,6 +24889,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -24377,6 +24921,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -24482,6 +25028,21 @@
   "what is the age of greg": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -24796,6 +25357,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -25195,7 +25759,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -25213,6 +25778,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -25244,6 +25810,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -25273,6 +25842,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -25414,6 +25985,21 @@
   "what is the property of object": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -25728,6 +26314,9 @@
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
         },
         {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
@@ -26125,7 +26714,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -26143,6 +26733,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -26174,6 +26765,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -26203,6 +26797,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -26338,6 +26934,21 @@
   "whose property": {
     "config": {
       "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
         {
           "bridge": "{ ...next(operator) }",
           "id": "hierarchyAble",
@@ -26654,6 +27265,9 @@
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
         },
         {
+          "pattern": "(([xfx]) <([between] (words))>)"
+        },
+        {
           "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
         },
         {
@@ -26849,7 +27463,8 @@
               "hierarchyAble",
               "readonly",
               "property",
-              "object"
+              "object",
+              "xfx"
             ],
             "theAble": [
               "property",
@@ -26867,6 +27482,7 @@
             "readonly",
             "property",
             "object",
+            "xfx",
             "theAble",
             "whose",
             "have",
@@ -26898,6 +27514,9 @@
             ],
             "whose": [
               "object"
+            ],
+            "xfx": [
+              "queryable"
             ]
           },
           "properties": {
@@ -26927,6 +27546,8 @@
               "unknown": {
               },
               "whose": {
+              },
+              "xfx": {
               }
             }
           },
@@ -26972,6 +27593,757 @@
     },
     "paraphrases": [
       "whose property"
+    ],
+    "responses": [
+      ""
+    ]
+  },
+  "xfx between a1 and a2": {
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
+          "id": "possession",
+          "inverted": true,
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
+          "id": "possession",
+          "inverted": true,
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "debug23",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, query: ['what'], modifiers: ['what'], what: operator }",
+          "id": "what",
+          "level": 0,
+          "optional": "{ ...next(operator), query: ['what'], determined: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "whatAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "infix"
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "match": "same",
+            "passthrough": true,
+            "type": "postfix"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), type: after[0] }",
+          "id": "be",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "briefOrWordy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ query: true, ...context }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        }
+      ],
+      "operators": [
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|has,have] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
+        },
+        {
+          "pattern": "(([queryable]) [is|is,are] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "([what] ([whatAble|]))"
+        },
+        {
+          "pattern": "([what:optional])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([be] ([briefOrWordy|]))"
+        },
+        {
+          "pattern": "([([canBeQuestion])])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1,2]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|does,do> ([canBeDoQuestion/0,1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "brief": [
+          {
+            "id": "briefOrWordy",
+            "initial": "{ value: 'brief' }"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "wordy": [
+          {
+            "id": "briefOrWordy",
+            "initial": "{ value: 'wordy' }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "arguments": {
+          "marker": "list",
+          "value": [
+            {
+              "marker": "unknown",
+              "text": "a1",
+              "unknown": true,
+              "value": "a1",
+              "word": "a1"
+            },
+            {
+              "marker": "unknown",
+              "text": "a2",
+              "unknown": true,
+              "value": "a2",
+              "word": "a2"
+            }
+          ]
+        },
+        "default": true,
+        "marker": "xfx",
+        "text": "xfx between",
+        "topLevel": true,
+        "types": [
+          "xfx"
+        ],
+        "word": "xfx"
+      }
+    ],
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "between",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "xfx",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "between",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "xfx",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "between",
+            0
+          ],
+          "ops": [
+            [
+              "between",
+              0
+            ],
+            [
+              "xfx",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "xfx",
+            0
+          ],
+          "ops": [
+            [
+              "between",
+              1
+            ],
+            [
+              "xfx",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "between",
+            1
+          ],
+          "ops": [
+            [
+              "between",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+            "canBeDoQuestion": [
+              "have"
+            ],
+            "canBeQuestion": [
+              "have"
+            ],
+            "hierarchyAble": [
+              "unknown"
+            ],
+            "object": [
+              "whose"
+            ],
+            "queryable": [
+              "hierarchyAble",
+              "readonly",
+              "property",
+              "object",
+              "xfx"
+            ],
+            "theAble": [
+              "property",
+              "object"
+            ],
+            "unknown": [
+              "property"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "unknown",
+            "hierarchyAble",
+            "queryable",
+            "readonly",
+            "property",
+            "object",
+            "xfx",
+            "theAble",
+            "whose",
+            "have",
+            "canBeDoQuestion",
+            "canBeQuestion"
+          ],
+          "parents": {
+            "have": [
+              "canBeDoQuestion",
+              "canBeQuestion"
+            ],
+            "hierarchyAble": [
+              "queryable"
+            ],
+            "object": [
+              "queryable",
+              "theAble"
+            ],
+            "property": [
+              "queryable",
+              "theAble",
+              "unknown"
+            ],
+            "readonly": [
+              "queryable"
+            ],
+            "unknown": [
+              "hierarchyAble"
+            ],
+            "whose": [
+              "object"
+            ],
+            "xfx": [
+              "queryable"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "canBeDoQuestion": {
+              },
+              "canBeQuestion": {
+              },
+              "have": {
+              },
+              "hierarchyAble": {
+              },
+              "object": {
+              },
+              "property": {
+              },
+              "queryable": {
+              },
+              "readonly": {
+              },
+              "theAble": {
+              },
+              "unknown": {
+              },
+              "whose": {
+              },
+              "xfx": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "1": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "2": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "arguments": {
+              "marker": "list",
+              "value": [
+                {
+                  "marker": "unknown",
+                  "text": "a1",
+                  "unknown": true,
+                  "value": "a1",
+                  "word": "a1"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "a2",
+                  "unknown": true,
+                  "value": "a2",
+                  "word": "a2"
+                }
+              ]
+            },
+            "default": true,
+            "marker": "xfx",
+            "text": "xfx between",
+            "topLevel": true,
+            "types": [
+              "xfx"
+            ],
+            "word": "xfx"
+          },
+          "paraphrases": "xfx between a1 and a2",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "xfx between a1 and a2"
     ],
     "responses": [
       ""

@@ -6,7 +6,9 @@ const { API } = require('./helpers/ordering')
 
 const template ={
   "queries": [
+    "wants is xfx between wanter and wantee",
     // "if a likes or loves b then a wants b",
+    "if x likes y or x loves y then x wants y",
     // "x likes y",
     // "if x likes y then x wants y",
     // "x likes y",
@@ -35,39 +37,12 @@ config.add(hierarchy)
 // config.load(template, ordering_instance)
 
 config.initializer(({config, km}) => {
-  /*
-  if (!km('properties')) {
-    debugger;
-    return
-  }
-  */
   const oapi = km('ordering').api
   oapi.createOrdering({ name: 'preference', categories: [ ['love', 'like'], ['hate', 'dislike'] ], ordering: [ ['love', 'like'], ['like', 'dislike'], ['dislike', 'hate'] ] })
 
   const papi = km('properties').api
-  papi.createActionPrefix({
-              operator: 'want',
-              words: ['want', 'wants'],
-              create: ['want'],
-              before: [{tag: 'wanter', id: 'object'}],
-              after: [{tag: 'wantee', id: 'object'}],
-              // relation: true,
-              relation: false,
-              doAble: true,
-              config,
-              unflatten: ['wanter', 'wantee'],
-            })
-  config.addHierarchy('want', 'canBeQuestion')
-  /*
-  papi.createActionPrefix({
-              operator: 'can',
-              create: ['can'],
-              before: [{tag: 'actor', id: 'object'}],
-              after: [{tag: 'ability', id: 'object'}],
-              relation: true,
-              config
-            })
-  */
+  // want is xfx between wanter and wantee
+  // papi.createBinaryRelation(config, 'want', ['want', 'wants'], 'wanter', 'wantee')
   papi.createActionPrefix({
               operator: 'love',
               create: ['love'],

@@ -1,6 +1,1223 @@
 {
-  "queries": [],
-  "resultss": [],
+  "queries": [
+    "wants is xfx between wanter and wantee",
+    "if x likes y or x loves y then x wants y"
+  ],
+  "resultss": [
+    {
+      "hierarchy": [
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "dislike",
+          "canBeDoQuestion"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "dislike",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "readonly",
+          "queryable"
+        ],
+        [
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "hate",
+          "ifAble"
+        ],
+        [
+          "love",
+          "ifAble"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "whose",
+          "object"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "like",
+          "ifAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "dislike",
+          "ifAble"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "whatAble",
+          "whatAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "xfx",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "love",
+          "orAble"
+        ],
+        [
+          "hate",
+          "orAble"
+        ],
+        [
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "love",
+          "canBeDoQuestion"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "love",
+          "canBeQuestion"
+        ],
+        [
+          "like",
+          "orAble"
+        ],
+        [
+          "hate",
+          "canBeQuestion"
+        ],
+        [
+          "hate",
+          "canBeDoQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "type",
+          "property"
+        ],
+        [
+          "type",
+          "whatAble"
+        ],
+        [
+          "dislike",
+          "orAble"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "like",
+          "canBeDoQuestion"
+        ],
+        [
+          "like",
+          "canBeQuestion"
+        ]
+      ],
+      "load_cache_time": 0.32773351669311523,
+      "logs": [
+        "Undefined word 'wants'",
+        "Undefined word 'wanter'",
+        "Undefined word 'wantee'",
+        "Op choices were: [(('unknown', 0), [('between', 0), ('is', 0), ('unknown', 0), ('xfx', 0)]), (('unknown', 0), [('between', 0), ('is', 0), ('unknown', 0), ('xfx', 0)]), (('unknown', 0), [('between', 0), ('is', 0), ('unknown', 0), ('xfx', 0)]), (('xfx', 0), [('between', 0), ('is', 0), ('xfx', 0)]), (('between', 0), [('between', 0), ('is', 0)]), (('between', 1), [('between', 1), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['between', 0], ['is', 0], ['unknown', 0], ['xfx', 0]]\n  Context for choosing the operator unknown/0 was [['between', 0], ['is', 0], ['unknown', 0], ['xfx', 0]]\n  Context for choosing the operator unknown/0 was [['between', 0], ['is', 0], ['unknown', 0], ['xfx', 0]]\n  Context for choosing the operator xfx/0 was [['between', 0], ['is', 0], ['xfx', 0]]\n  Context for choosing the operator between/0 was [['between', 0], ['is', 0]]\n  Context for choosing the operator between/1 was [['between', 1], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "",
+        "    WARNING from Dialogues KM: For the \"X is Y\" type phrase implement a same handler.\n    The semantic would be\n      match: ({context}) => context.marker == 'unknown' && context.same && <other conditions as you like>\n      apply: ({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true\n    The input context would be:\n      {\n        \"marker\": \"unknown\",\n        \"word\": \"wants\",\n        \"text\": \"wants\",\n        \"value\": \"wants\",\n        \"unknown\": true,\n        \"types\": [\n          \"unknown\"\n        ],\n        \"same\": {\n          \"marker\": \"xfx\",\n          \"default\": true,\n          \"text\": \"xfx between\",\n          \"word\": \"xfx\",\n          \"types\": [\n            \"xfx\"\n          ],\n          \"arguments\": {\n            \"marker\": \"list\",\n            \"value\": [\n              {\n                \"marker\": \"unknown\",\n                \"word\": \"wanter\",\n                \"text\": \"wanter\",\n                \"value\": \"wanter\",\n                \"unknown\": true\n              },\n              {\n                \"marker\": \"unknown\",\n                \"word\": \"wantee\",\n                \"text\": \"wantee\",\n                \"value\": \"wantee\",\n                \"unknown\": true\n              }\n            ]\n          },\n          \"response\": null\n        },\n        \"response\": null\n      }\n    ",
+        "    WARNING from Dialogues KM: For the \"X is Y\" type phrase implement a same handler.\n    The semantic would be\n      match: ({context}) => context.marker == 'xfx' && context.same && <other conditions as you like>\n      apply: ({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true\n    The input context would be:\n      {\n        \"marker\": \"xfx\",\n        \"default\": true,\n        \"text\": \"xfx between\",\n        \"word\": \"xfx\",\n        \"types\": [\n          \"xfx\"\n        ],\n        \"arguments\": {\n          \"marker\": \"list\",\n          \"value\": [\n            {\n              \"marker\": \"unknown\",\n              \"word\": \"wanter\",\n              \"text\": \"wanter\",\n              \"value\": \"wanter\",\n              \"unknown\": true\n            },\n            {\n              \"marker\": \"unknown\",\n              \"word\": \"wantee\",\n              \"text\": \"wantee\",\n              \"value\": \"wantee\",\n              \"unknown\": true\n            }\n          ]\n        },\n        \"response\": null,\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"wants\",\n          \"text\": \"wants\",\n          \"value\": \"wants\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null,\n          \"concept\": true\n        }\n      }\n    "
+      ],
+      "metadata": {
+        "opChoices": [
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "between",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "xfx",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "between",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "xfx",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "between",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "xfx",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "xfx",
+              0
+            ],
+            "ops": [
+              [
+                "between",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "xfx",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "between",
+              0
+            ],
+            "ops": [
+              [
+                "between",
+                0
+              ],
+              [
+                "is",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "between",
+              1
+            ],
+            "ops": [
+              [
+                "between",
+                1
+              ],
+              [
+                "is",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "times": 1.2537739276885986,
+      "trace": "undefined",
+      "contexts": [
+        {
+          "marker": "is",
+          "default": true,
+          "word": "is",
+          "text": "wants is xfx between",
+          "one": {
+            "marker": "unknown",
+            "word": "wants",
+            "text": "wants",
+            "value": "wants",
+            "unknown": true,
+            "types": [
+              "unknown"
+            ],
+            "response": true,
+            "concept": true
+          },
+          "two": {
+            "marker": "xfx",
+            "default": true,
+            "text": "xfx between",
+            "word": "xfx",
+            "types": [
+              "xfx"
+            ],
+            "arguments": {
+              "marker": "list",
+              "value": [
+                {
+                  "marker": "unknown",
+                  "word": "wanter",
+                  "text": "wanter",
+                  "value": "wanter",
+                  "unknown": true
+                },
+                {
+                  "marker": "unknown",
+                  "word": "wantee",
+                  "text": "wantee",
+                  "value": "wantee",
+                  "unknown": true
+                }
+              ]
+            },
+            "response": true
+          },
+          "topLevel": true,
+          "touchedBy": [
+            "call2"
+          ]
+        }
+      ],
+      "generated": [
+        "wants are xfx between {\"marker\":\"list\",\"value\":[{\"marker\":\"unknown\",\"word\":\"wanter\",\"text\":\"wanter\",\"value\":\"wanter\",\"unknown\":true},{\"marker\":\"unknown\",\"word\":\"wantee\",\"text\":\"wantee\",\"value\":\"wantee\",\"unknown\":true}],\"isResponse\":true}"
+      ],
+      "paraphrases": [
+        "wants is xfx between wanter and wantee"
+      ],
+      "responses": [
+        ""
+      ],
+      "memory_free_percent": 14.8,
+      "version": "6.13.45-beta.24",
+      "query": "wants is xfx between wanter and wantee"
+    },
+    {
+      "hierarchy": [
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "dislike",
+          "canBeDoQuestion"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "dislike",
+          "canBeQuestion"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "want",
+          "orAble"
+        ],
+        [
+          "readonly",
+          "queryable"
+        ],
+        [
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "hate",
+          "ifAble"
+        ],
+        [
+          "love",
+          "ifAble"
+        ],
+        [
+          "want",
+          "canBeQuestion"
+        ],
+        [
+          "want",
+          "canBeDoQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "whose",
+          "object"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "like",
+          "ifAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "dislike",
+          "ifAble"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "whatAble",
+          "whatAble"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "want",
+          "ifAble"
+        ],
+        [
+          "xfx",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "love",
+          "orAble"
+        ],
+        [
+          "hate",
+          "orAble"
+        ],
+        [
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "love",
+          "canBeDoQuestion"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "love",
+          "canBeQuestion"
+        ],
+        [
+          "like",
+          "orAble"
+        ],
+        [
+          "hate",
+          "canBeQuestion"
+        ],
+        [
+          "hate",
+          "canBeDoQuestion"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "type",
+          "property"
+        ],
+        [
+          "type",
+          "whatAble"
+        ],
+        [
+          "dislike",
+          "orAble"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "like",
+          "canBeDoQuestion"
+        ],
+        [
+          "like",
+          "canBeQuestion"
+        ]
+      ],
+      "load_cache_time": 0.4011878967285156,
+      "logs": [
+        "Undefined word 'x'",
+        "Undefined word 'y'",
+        "Counter == 13. Applying\n\t\t\t\t\t\t\t\tOperator(orList/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), [Type('orAble')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('orAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(if/0, [Selector(Bridge('{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }'), []<==>[Type('ifAble'), Type('then')], bridge(bridge))], evaluator(Bridge('{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }')), variables({}) bridge(bridge)), 'default': True, 'text': 'if', 'word': 'if'})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('unknown', 0), ('want', 0)]), (('unknown', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('unknown', 0), ('want', 0)]), (('unknown', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('unknown', 0), ('want', 0)]), (('unknown', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('unknown', 0), ('want', 0)]), (('unknown', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('unknown', 0), ('want', 0)]), (('unknown', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('unknown', 0), ('want', 0)]), (('love', 0), [('if', 0), ('like', 0), ('love', 0), ('orList', 0), ('then', 0), ('want', 0)]), (('like', 0), [('if', 0), ('like', 0), ('love', 1), ('orList', 0), ('then', 0), ('want', 0)]), (('want', 0), [('if', 0), ('like', 1), ('love', 1), ('orList', 0), ('then', 0), ('want', 0)]), (('like', 1), [('if', 0), ('like', 1), ('love', 1), ('orList', 0), ('then', 0), ('want', 1)]), (('orList', 0), [('if', 0), ('love', 1), ('orList', 0), ('then', 0), ('want', 1)]), (('then', 0), [('if', 0), ('orList', 1), ('then', 0), ('want', 1)]), (('orList', 1), [('if', 0), ('orList', 1)]), (('if', 0), [('if', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['unknown', 0], ['want', 0]]\n  Context for choosing the operator unknown/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['unknown', 0], ['want', 0]]\n  Context for choosing the operator unknown/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['unknown', 0], ['want', 0]]\n  Context for choosing the operator unknown/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['unknown', 0], ['want', 0]]\n  Context for choosing the operator unknown/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['unknown', 0], ['want', 0]]\n  Context for choosing the operator unknown/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['unknown', 0], ['want', 0]]\n  Context for choosing the operator love/0 was [['if', 0], ['like', 0], ['love', 0], ['orList', 0], ['then', 0], ['want', 0]]\n  Context for choosing the operator like/0 was [['if', 0], ['like', 0], ['love', 1], ['orList', 0], ['then', 0], ['want', 0]]\n  Context for choosing the operator want/0 was [['if', 0], ['like', 1], ['love', 1], ['orList', 0], ['then', 0], ['want', 0]]\n  Context for choosing the operator like/1 was [['if', 0], ['like', 1], ['love', 1], ['orList', 0], ['then', 0], ['want', 1]]\n  Context for choosing the operator orList/0 was [['if', 0], ['love', 1], ['orList', 0], ['then', 0], ['want', 1]]\n  Context for choosing the operator then/0 was [['if', 0], ['orList', 1], ['then', 0], ['want', 1]]\n  Context for choosing the operator orList/1 was [['if', 0], ['orList', 1]]\n  Context for choosing the operator if/0 was [['if', 0]]",
+        ""
+      ],
+      "metadata": {
+        "opChoices": [
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "love",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                0
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "like",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                0
+              ],
+              [
+                "love",
+                1
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "want",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                1
+              ],
+              [
+                "love",
+                1
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "want",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "like",
+              1
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "like",
+                1
+              ],
+              [
+                "love",
+                1
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "want",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "orList",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "love",
+                1
+              ],
+              [
+                "orList",
+                0
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "want",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "then",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "orList",
+                1
+              ],
+              [
+                "then",
+                0
+              ],
+              [
+                "want",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "orList",
+              1
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ],
+              [
+                "orList",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "if",
+              0
+            ],
+            "ops": [
+              [
+                "if",
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      "times": 1.722184658050537,
+      "trace": "undefined",
+      "contexts": [
+        {
+          "marker": "if",
+          "default": true,
+          "text": "if x likes y or x loves y then x wants y",
+          "word": "if",
+          "antecedant": {
+            "marker": "orList",
+            "default": true,
+            "word": "or",
+            "text": "x likes y or x loves y",
+            "value": [
+              {
+                "value": "like",
+                "text": "x likes y",
+                "marker": "like",
+                "word": "likes",
+                "do": {
+                  "left": "liker",
+                  "right": "likee",
+                  "text": "x likes y"
+                },
+                "liker": {
+                  "marker": "unknown",
+                  "word": "x",
+                  "text": "x",
+                  "value": "x",
+                  "unknown": true,
+                  "types": [
+                    "object",
+                    "unknown"
+                  ]
+                },
+                "likee": {
+                  "marker": "unknown",
+                  "word": "y",
+                  "text": "y",
+                  "value": "y",
+                  "unknown": true,
+                  "types": [
+                    "object",
+                    "unknown"
+                  ]
+                },
+                "unflatten": [
+                  "liker",
+                  "likee"
+                ],
+                "focusable": [
+                  "liker",
+                  "likee"
+                ],
+                "types": [
+                  "like"
+                ]
+              },
+              {
+                "value": "love",
+                "text": "x loves y",
+                "marker": "love",
+                "word": "loves",
+                "do": {
+                  "left": "lover",
+                  "right": "lovee",
+                  "text": "x loves y"
+                },
+                "lover": {
+                  "marker": "unknown",
+                  "word": "x",
+                  "text": "x",
+                  "value": "x",
+                  "unknown": true,
+                  "types": [
+                    "object",
+                    "unknown"
+                  ]
+                },
+                "lovee": {
+                  "marker": "unknown",
+                  "word": "y",
+                  "text": "y",
+                  "value": "y",
+                  "unknown": true,
+                  "types": [
+                    "object",
+                    "unknown"
+                  ]
+                },
+                "unflatten": [
+                  "lover",
+                  "lovee"
+                ],
+                "focusable": [
+                  "lover",
+                  "lovee"
+                ],
+                "types": [
+                  "love"
+                ]
+              }
+            ],
+            "types": [
+              "like",
+              "orList"
+            ]
+          },
+          "consequence": {
+            "value": "want",
+            "text": "x wants y",
+            "marker": "want",
+            "word": "wants",
+            "do": {
+              "left": "wanter",
+              "right": "wantee",
+              "text": "x wants y"
+            },
+            "wanter": {
+              "marker": "unknown",
+              "word": "x",
+              "text": "x",
+              "value": "x",
+              "unknown": true,
+              "types": [
+                "object",
+                "unknown"
+              ]
+            },
+            "wantee": {
+              "marker": "unknown",
+              "word": "y",
+              "text": "y",
+              "value": "y",
+              "unknown": true,
+              "types": [
+                "object",
+                "unknown"
+              ]
+            },
+            "unflatten": [
+              "wanter",
+              "wantee"
+            ],
+            "focusable": [
+              "wanter",
+              "wantee"
+            ],
+            "types": [
+              "want"
+            ]
+          },
+          "topLevel": true,
+          "touchedBy": [
+            "call2"
+          ]
+        }
+      ],
+      "generated": [
+        "if or then wants"
+      ],
+      "paraphrases": [
+        "if x likes y or x loves y then x wants y"
+      ],
+      "responses": [
+        ""
+      ],
+      "memory_free_percent": 14.8,
+      "version": "6.13.45-beta.24",
+      "query": "if x likes y or x loves y then x wants y"
+    }
+  ],
   "fragments": [],
   "semantics": []
 }
