@@ -137,7 +137,16 @@ class API {
     } else {
       config.addOperator({ pattern: `(${beforeOperators} [${operator}|] ${afterOperators})`, allowDups: true })
     }
-  
+ 
+    for (let argument of before.concat(after)) {
+      if (create.includes(argument.id)) {
+        // config.addHierarchy('unknown', argument.id)
+        // config.addHierarchy('what', argument.id)
+        config.addHierarchy(argument.id, 'unknown')
+        config.addHierarchy(argument.id, 'what')
+      }
+    }
+
     create.map( (id) => {
       if (id === operator) {
         const tagsToProps = (where, args, suffix='') => {

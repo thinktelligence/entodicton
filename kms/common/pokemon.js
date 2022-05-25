@@ -39,6 +39,7 @@ config.add(hierarchy)
 config.initializer( ({config, km}) => {
   const api = km('properties').api
   api.kindOfConcept({ config, modifier: 'pokemon', object: 'type' })
+  /*
   api.createActionPrefix({
               operator: 'owns',
               create: ['owns'],
@@ -47,6 +48,7 @@ config.initializer( ({config, km}) => {
               relation: true,
               config 
             })
+  */
   api.createActionPrefix({
               operator: 'likes',
               create: ['likes'],

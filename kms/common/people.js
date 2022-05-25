@@ -27,11 +27,29 @@ let config = {
   ],
   hierarchy: [
     ['person', 'unknown'],
+    /*
+    ['unknown', 'owner'],
+    ['unknown', 'ownee'],
+    ['what', 'owner'],
+    ['what', 'ownee'],
+    */
   ]
 };
 
 config = new entodicton.Config(config, module)
 config.add(hierarchy)
+config.initializer( ({context, km}) => {
+  const api = km('properties').api
+  api.createActionPrefix({
+            operator: 'owns',
+            create: ['owns', 'owner', 'ownee'],
+            before: [{tag: 'owner', id: 'owner'}],
+            after: [{tag: 'owned', id: 'ownee'}],
+            relation: true,
+            doAble: true,
+            config
+          })
+})
 
 entodicton.knowledgeModule( { 
   module,
