@@ -319,7 +319,10 @@ class API {
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('properties').api
-          context.response = api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+          context.response = {
+            marker: 'list',
+            value: api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+          }
           context.response.isResponse = true
         }
       })
