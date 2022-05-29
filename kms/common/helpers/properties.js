@@ -198,7 +198,7 @@ class API {
       match: ({context}) => context.marker == operator && context.paraphrase && !context.query,
       apply: ({context, g}) => {
         const beforeGenerator = before.map( (arg) => g(context[arg.tag]) )
-        const afterGenerator = after.map( (arg) => g(context[arg.tag]) )
+        const afterGenerator = after.map( (arg) => g(context[arg.tag], { assumed: { paraphrase: true } }) )
         return beforeGenerator.concat([`${context.word}`]).concat(afterGenerator).join(' ')
       }
     })
@@ -321,7 +321,7 @@ class API {
           const api = km('properties').api
           context.response = {
             marker: 'list',
-            value: api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) )
+            value: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
           }
           context.response.isResponse = true
         }
