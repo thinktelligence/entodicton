@@ -15,6 +15,7 @@ const template = {
       "surname means last name",
       "given modifies name",
       "given name means first name",
+//      "ownee is owned by owner means owner owns ownee",
     ],
 }
 let config = {
@@ -27,18 +28,12 @@ let config = {
   ],
   hierarchy: [
     ['person', 'unknown'],
-    /*
-    ['unknown', 'owner'],
-    ['unknown', 'ownee'],
-    ['what', 'owner'],
-    ['what', 'ownee'],
-    */
   ]
 };
 
 config = new entodicton.Config(config, module)
 config.add(hierarchy)
-config.initializer( ({context, km}) => {
+config.initializer( ({config, context, km}) => {
   const api = km('properties').api
   api.createActionPrefix({
             operator: 'owns',
@@ -49,6 +44,19 @@ config.initializer( ({context, km}) => {
             doAble: true,
             config
           })
+  /*
+  config.addOperator("(([ownee])? <owned> ([by] ([owner])))")
+  config.addBridge({
+           id: "owned", 
+           level: 0,
+           bridge: "{ ...before, contraints: [ { property: 'ownee', constraint: { ...next(operator), owner: after[0].object, ownee: before[0] } } ] }",
+           deferred: "{ ...next(operator), 'ownee': before[0], owner: after[0].object }" })
+  config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }"})
+  config.addHierarchy('owned', 'isEdAble')
+  */
+  // config.addBridge({ id: "ownee", level: 0, bridge: "{ ...next(operator) }"})
+  // config.addBridge({ id: "owner", level: 0, bridge: "{ ...next(operator) }"})
+
 })
 
 entodicton.knowledgeModule( { 

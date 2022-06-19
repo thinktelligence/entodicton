@@ -104,6 +104,8 @@ let config = {
   operators: [
     "(([queryable]) [is|is,are] ([queryable|]))",
     "([is:queryBridge|is,are] ([queryable]) ([queryable]))",
+    // "(([queryable]) [is:isEdBridge|is,are] ([isEdAble|]))",
+    "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])",
     "([it])",
     "([what] ([whatAble|]))",
     "([what:optional])",
@@ -129,6 +131,16 @@ let config = {
     "([yesno|])",
     { pattern: "([debug23])" },
   ],
+  associations: {
+    negative: [
+      [['isEd', 0], ['unknown', 0]],
+      [['isEd', 0], ['unknown', 1]],
+    ],
+    positive: [
+      [['is', 0], ['unknown', 0]],
+      [['is', 0], ['unknown', 1]],
+    ]
+  },
   bridges: [
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
     // { id: "what", level: 0, bridge: "{ ...next(operator), ...after[0], query: ['what'], determined: true }" },
@@ -148,9 +160,16 @@ let config = {
     { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
+    { id: "unknown", level: 1, bridge: "{ ...next(operator) }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "questionMark", level: 0, bridge: "{ ...before[0], query: [before.marker] }" },
-    { id: "is", level: 0, bridge: "{ ...next(operator), one: before[0], two: after[0] }", queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" },
+    { id: "isEd", level: 0, bridge: "{ ...context, query: true }" },
+    { id: "isEdAble", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "isEdAble", level: 1, bridge: "{ ...next(operator) }" },
+    { id: "is", level: 0, 
+            bridge: "{ ...next(operator), one: before[0], two: after[0] }", 
+            queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" ,
+    },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
     { id: "canBeDoQuestion", level: 0, bridge: "{ ...next(operator) }" },
@@ -199,6 +218,8 @@ let config = {
     ['it', 'queryable'],
     ['what', 'queryable'],
     ['is', 'canBeQuestion'],
+    ['isEd', 'means'],
+    ['is', 'means'],
   ],
   debug: false,
   version: '3',

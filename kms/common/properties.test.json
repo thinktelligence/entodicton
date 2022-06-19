@@ -1,5 +1,41 @@
 {
   "chicken modifies strips": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "modifies",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "modifies",
+          0
+        ]
+      ],
+      [
+        [
+          "modifies",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -172,6 +208,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -179,6 +220,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -304,19 +360,22 @@
           "allowDups": true,
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), atomic: true, value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
-          "level": 0
+          "level": 0,
+          "transitoryMode": true
         },
         {
           "allowDups": true,
           "bridge": "{ ...next(operator), value: 'strip' }",
           "id": "strip",
-          "level": 0
+          "level": 0,
+          "transitoryMode": true
         },
         {
           "allowDups": true,
           "bridge": "{ ...next(operator), value: 'chicken_strip' }",
           "id": "chicken_strip",
-          "level": 0
+          "level": 0,
+          "transitoryMode": true
         }
       ],
       "operators": [
@@ -366,6 +425,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -563,6 +625,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -575,6 +641,10 @@
             [
               "modifies",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         }
@@ -764,6 +834,8 @@
     ]
   },
   "chicken modifies strips\\nchicken strips": {
+    "associations": [
+    ],
     "config": {
       "bridges": [
         {
@@ -936,6 +1008,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -943,6 +1020,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -1068,19 +1160,22 @@
           "allowDups": true,
           "bridge": "{ ...after, chicken: operator, marker: operator(concat('chicken_', after.value)), atomic: true, value: concat('chicken_', after.value), modifiers: append(['chicken'], after[0].modifiers)}",
           "id": "chicken",
-          "level": 0
+          "level": 0,
+          "transitoryMode": true
         },
         {
           "allowDups": true,
           "bridge": "{ ...next(operator), value: 'strip' }",
           "id": "strip",
-          "level": 0
+          "level": 0,
+          "transitoryMode": true
         },
         {
           "allowDups": true,
           "bridge": "{ ...next(operator), value: 'chicken_strip' }",
           "id": "chicken_strip",
-          "level": 0
+          "level": 0,
+          "transitoryMode": true
         }
       ],
       "operators": [
@@ -1130,6 +1225,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -1347,6 +1445,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -1359,6 +1461,10 @@
             [
               "modifies",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -1616,6 +1722,64 @@
     ]
   },
   "greg doesnt have wings": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "doesnt",
+          0
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "doesnt",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "doesnt",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -1788,6 +1952,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -1795,6 +1964,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -1956,6 +2140,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -2158,6 +2345,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2174,6 +2365,10 @@
             [
               "have",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2186,6 +2381,10 @@
             [
               "have",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2390,6 +2589,120 @@
     ]
   },
   "greg doesnt have wings does greg have wings": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "does",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "doesnt",
+          0
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "does",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "doesnt",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "doesnt",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "does",
+          0
+        ],
+        [
+          "have",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "does",
+          0
+        ],
+        [
+          "have",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -2562,6 +2875,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -2569,6 +2887,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -2730,6 +3063,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -2982,6 +3318,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -3006,6 +3346,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -3030,6 +3374,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -3050,6 +3398,10 @@
             [
               "have",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -3066,6 +3418,10 @@
             [
               "have",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -3085,6 +3441,10 @@
             ],
             [
               "have",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -3370,6 +3730,42 @@
     ]
   },
   "greg has eyes": {
+    "associations": [
+      [
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -3542,6 +3938,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -3549,6 +3950,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -3710,6 +4126,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -3902,6 +4321,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -3914,6 +4337,10 @@
             [
               "have",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -4116,6 +4543,98 @@
     ]
   },
   "greg has eyes greg has eyes?": {
+    "associations": [
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          1
+        ]
+      ],
+      [
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -4288,6 +4807,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -4295,6 +4819,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -4456,6 +4995,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -4699,6 +5241,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -4719,6 +5265,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -4739,6 +5289,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -4755,6 +5309,10 @@
             [
               "questionMark",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -4775,6 +5333,10 @@
             [
               "questionMark",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -5058,6 +5620,64 @@
     ]
   },
   "greg has eyes?": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          1
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -5230,6 +5850,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -5237,6 +5862,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -5398,6 +6038,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -5602,6 +6245,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -5618,6 +6265,10 @@
             [
               "questionMark",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -5833,6 +6484,98 @@
     ]
   },
   "greg has toes greg has eyes?": {
+    "associations": [
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          1
+        ]
+      ],
+      [
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "have",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "have",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -6005,6 +6748,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -6012,6 +6760,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -6173,6 +6936,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -6416,6 +7182,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -6436,6 +7206,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -6456,6 +7230,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -6472,6 +7250,10 @@
             [
               "questionMark",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -6492,6 +7274,10 @@
             [
               "questionMark",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -6775,6 +7561,76 @@
     ]
   },
   "greg's car's bumper": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "possession",
+          1
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "possession",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          1
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -6947,6 +7803,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -6954,6 +7815,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -7115,6 +7991,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -7326,6 +8205,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -7342,6 +8225,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -7354,6 +8241,10 @@
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -7370,6 +8261,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -7381,6 +8276,10 @@
           "ops": [
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -7624,6 +8523,102 @@
     ]
   },
   "hana's sister is kia": {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -7796,6 +8791,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -7803,6 +8803,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -7964,6 +8979,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -8193,6 +9211,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -8213,6 +9235,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -8229,6 +9255,10 @@
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -8244,6 +9274,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -8261,6 +9295,10 @@
             [
               "property",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -8273,6 +9311,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -8539,6 +9581,152 @@
     ]
   },
   "hana's sister is kia kia's cat is cleo\\nwho is hana's sister's cat": {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "property",
+          0
+        ],
+        [
+          "possession",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "possession",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "property",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          1
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -8711,6 +9899,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -8718,6 +9911,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -8879,6 +10087,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -9386,6 +10597,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9406,6 +10621,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9426,6 +10645,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9446,6 +10669,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9466,6 +10693,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9482,6 +10713,10 @@
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9502,6 +10737,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9517,6 +10756,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -9538,6 +10781,10 @@
             [
               "property",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9553,6 +10800,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -9570,6 +10821,10 @@
             [
               "property",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9582,6 +10837,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9597,6 +10856,10 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -9632,7 +10895,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -9668,6 +10931,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -9690,6 +10957,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -9712,6 +10983,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -9730,6 +11005,10 @@
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9750,6 +11029,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -9765,6 +11048,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -10446,6 +11733,166 @@
     ]
   },
   "hana's sister is kia kia's cat is cleo\\nwho is the cat of the sister of hana": {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -10618,6 +12065,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -10625,6 +12077,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -10786,6 +12253,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -11356,6 +12826,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11376,6 +12850,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11396,6 +12874,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11416,6 +12898,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11436,6 +12922,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11452,6 +12942,10 @@
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11472,6 +12966,10 @@
             [
               "possession",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11487,6 +12985,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -11508,6 +13010,10 @@
             [
               "property",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11523,6 +13029,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -11540,6 +13050,10 @@
             [
               "property",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11552,6 +13066,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11567,6 +13085,10 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -11646,6 +13168,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -11672,6 +13198,66 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -11694,8 +13280,8 @@
               0
             ],
             [
-              "the",
-              0
+              "unknown",
+              1
             ],
             [
               "what",
@@ -11705,46 +13291,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "propertyOf",
             0
           ],
@@ -11756,6 +13302,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11776,21 +13326,9 @@
             [
               "propertyOf",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
             ],
             [
-              "propertyOf",
+              "unknown",
               1
             ]
           ]
@@ -11807,6 +13345,30 @@
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -11820,6 +13382,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -12499,6 +14065,42 @@
     ]
   },
   "property of object": {
+    "associations": [
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -12671,6 +14273,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -12678,6 +14285,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -12839,6 +14461,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -13246,6 +14871,258 @@
     ]
   },
   "the age of greg is 23 the profession of greg is programmer what are the properties of greg": {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -13418,6 +15295,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -13425,6 +15307,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -13586,6 +15483,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -14140,60 +16040,8 @@
               0
             ],
             [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
               "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
+              1
             ],
             [
               "what",
@@ -14224,6 +16072,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -14252,6 +16104,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -14280,6 +16136,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -14306,6 +16166,158 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -14328,8 +16340,8 @@
               0
             ],
             [
-              "the",
-              0
+              "unknown",
+              1
             ],
             [
               "what",
@@ -14339,82 +16351,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "propertyOf",
             0
           ],
@@ -14428,7 +16364,7 @@
               0
             ],
             [
-              "propertyOf",
+              "unknown",
               1
             ]
           ]
@@ -14449,6 +16385,34 @@
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -14466,21 +16430,9 @@
             [
               "propertyOf",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
             ],
             [
-              "propertyOf",
+              "unknown",
               1
             ]
           ]
@@ -14498,18 +16450,30 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
         {
           "op": [
-            "is",
-            0
+            "propertyOf",
+            1
           ],
           "ops": [
             [
               "is",
               0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -14524,7 +16488,7 @@
               0
             ],
             [
-              "is",
+              "unknown",
               1
             ]
           ]
@@ -14541,6 +16505,30 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -15218,6 +17206,228 @@
     ]
   },
   "the age of greg is 23 what is greg's age": {
+    "associations": [
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -15390,6 +17600,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -15397,6 +17612,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -15558,6 +17788,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -15953,35 +18186,7 @@
               0
             ],
             [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -16017,6 +18222,10 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "possession",
               0
             ],
@@ -16031,6 +18240,50 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -16065,6 +18318,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -16097,32 +18354,8 @@
               0
             ],
             [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
+              "unknown",
+              1
             ],
             [
               "what",
@@ -16151,6 +18384,42 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -16171,6 +18440,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -16185,12 +18458,20 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "possession",
               1
             ],
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -16205,12 +18486,20 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "property",
               0
             ],
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -16225,8 +18514,16 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -16241,20 +18538,16 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "propertyOf",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "is",
-            0
-          ],
-          "ops": [
+            ],
             [
-              "is",
-              0
+              "unknown",
+              1
             ]
           ]
         },
@@ -16269,7 +18562,11 @@
               0
             ],
             [
-              "is",
+              "isEd",
+              0
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -16283,6 +18580,34 @@
             [
               "is",
               1
+            ],
+            [
+              "isEd",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -16765,6 +19090,258 @@
     ]
   },
   "the age of greg is 23 what is the age of greg": {
+    "associations": [
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -16937,6 +19514,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -16944,6 +19526,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -17105,6 +19702,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -17582,6 +20182,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -17610,6 +20214,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -17638,6 +20246,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "what",
               0
             ]
@@ -17664,6 +20276,74 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -17686,8 +20366,8 @@
               0
             ],
             [
-              "the",
-              0
+              "unknown",
+              1
             ],
             [
               "what",
@@ -17697,46 +20377,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "propertyOf",
             0
           ],
@@ -17748,6 +20388,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17767,6 +20411,10 @@
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -17784,6 +20432,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17800,6 +20452,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17812,6 +20468,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17827,6 +20487,10 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -18364,6 +21028,152 @@
     ]
   },
   "the age of greg is 23\\nwhat is the age of greg": {
+    "associations": [
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -18536,6 +21346,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -18543,6 +21358,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -18704,6 +21534,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -19175,6 +22008,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19199,6 +22036,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19219,6 +22060,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19235,6 +22080,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19251,6 +22100,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19263,6 +22116,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19327,6 +22184,38 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -19349,31 +22238,11 @@
               0
             ],
             [
-              "the",
-              0
+              "unknown",
+              1
             ],
             [
               "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
               0
             ]
           ]
@@ -19391,6 +22260,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19407,6 +22280,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19419,6 +22296,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19941,6 +22822,146 @@
     ]
   },
   "the name of greg is greg greg is readonly": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -20113,6 +23134,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -20120,6 +23146,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -20281,6 +23322,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -20571,6 +23615,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20599,6 +23647,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20627,6 +23679,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20651,6 +23707,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20671,6 +23731,10 @@
             [
               "readonly",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20687,6 +23751,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20703,6 +23771,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20715,6 +23787,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -20730,6 +23806,10 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -21063,6 +24143,146 @@
     ]
   },
   "the name of greg is greg greg is readonly the name of greg is fred": {
+    "associations": [
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ]
+      ],
+      [
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -21235,6 +24455,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -21242,6 +24467,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -21403,6 +24643,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -21865,6 +25108,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21893,6 +25140,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21921,6 +25172,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21949,6 +25204,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21977,6 +25236,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22005,6 +25268,10 @@
             [
               "unknown",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22029,6 +25296,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22053,6 +25324,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22073,6 +25348,10 @@
             [
               "readonly",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22089,6 +25368,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22108,6 +25391,10 @@
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -22125,6 +25412,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -22141,18 +25432,10 @@
             [
               "propertyOf",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "is",
-            0
-          ],
-          "ops": [
+            ],
             [
-              "is",
-              0
+              "unknown",
+              1
             ]
           ]
         },
@@ -22167,7 +25450,7 @@
               0
             ],
             [
-              "is",
+              "unknown",
               1
             ]
           ]
@@ -22184,6 +25467,30 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -22713,6 +26020,18 @@
     ]
   },
   "the property": {
+    "associations": [
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -22885,6 +26204,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -22892,6 +26216,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -23053,6 +26392,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -23384,6 +26726,78 @@
     ]
   },
   "the property of object": {
+    "associations": [
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "object",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -23556,6 +26970,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -23563,6 +26982,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -23724,6 +27158,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -24183,6 +27620,102 @@
     ]
   },
   "the property of the object": {
+    "associations": [
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "object",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "object",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -24355,6 +27888,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -24362,6 +27900,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -24523,6 +28076,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -25026,6 +28582,152 @@
     ]
   },
   "what is the age of greg": {
+    "associations": [
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -25198,6 +28900,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -25205,6 +28912,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -25366,6 +29088,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -25632,28 +29357,8 @@
               0
             ],
             [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
+              "unknown",
+              1
             ],
             [
               "what",
@@ -25678,6 +29383,38 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -25694,6 +29431,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -25710,6 +29451,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -25722,6 +29467,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -25983,6 +29732,130 @@
     ]
   },
   "what is the property of object": {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "object",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "property",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ]
+      ],
+      [
+        [
+          "object",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "property",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "object",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -26155,6 +30028,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -26162,6 +30040,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -26323,6 +30216,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -26594,7 +30490,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -26618,7 +30514,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -26631,7 +30527,7 @@
               0
             ],
             [
-              "the",
+              "what",
               0
             ]
           ]
@@ -26932,6 +30828,18 @@
     ]
   },
   "whose property": {
+    "associations": [
+      [
+        [
+          "property",
+          0
+        ],
+        [
+          "whose",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -27104,6 +31012,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -27111,6 +31024,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -27272,6 +31200,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -27599,6 +31530,64 @@
     ]
   },
   "xfx between a1 and a2": {
+    "associations": [
+      [
+        [
+          "xfx",
+          0
+        ],
+        [
+          "between",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "list",
+          1
+        ],
+        [
+          "between",
+          0
+        ],
+        [
+          "xfx",
+          0
+        ]
+      ],
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "xfx",
+          0
+        ],
+        [
+          "between",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "list",
+          1
+        ],
+        [
+          "between",
+          0
+        ]
+      ]
+    ],
     "config": {
       "bridges": [
         {
@@ -27771,6 +31760,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "queryable",
           "level": 0
         },
@@ -27778,6 +31772,21 @@
           "bridge": "{ ...before[0], query: [before.marker] }",
           "id": "questionMark",
           "level": 0
+        },
+        {
+          "bridge": "{ ...context, query: true }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
         },
         {
           "bridge": "{ ...next(operator), one: before[0], two: after[0] }",
@@ -27939,6 +31948,9 @@
         },
         {
           "pattern": "([is:queryBridge|is,are] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])"
         },
         {
           "pattern": "([it])"
@@ -28145,6 +32157,10 @@
               0
             ],
             [
+              "unknown",
+              1
+            ],
+            [
               "xfx",
               0
             ]
@@ -28159,6 +32175,10 @@
             [
               "between",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
