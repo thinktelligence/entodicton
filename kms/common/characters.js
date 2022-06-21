@@ -23,13 +23,14 @@ class Sally {
     return "sally"
   }
 
-  process(utterance) {
+  process(config, utterance) {
     // call the characters config to get response and return that. this is testing so I am not doing that
     /*
     if (utterance == 'what is the time') {
       return 'the magic has happened'
     }
     */
+    timeKM.server(config.getServer(), config.getAPIKey())
     return timeKM.process(utterance)
   }
 
@@ -114,7 +115,7 @@ let config = {
         const utterance = words.join(' ')
         const config = km('characters')
         const api = config._api.apis[context.value]
-        api.process(utterance).then( (result) => {
+        api.process(config, utterance).then( (result) => {
           if (!api.response) {
             throw `WARNING characters km: the "response" handler for the api "${api.getName()}" is not defined so no callback is made`
           } else {
@@ -133,7 +134,8 @@ class Bob {
     return "bob"
   }
 
-  process(utterance) {
+  process(config, utterance) {
+    currencyKM.server(config.getServer(), config.getAPIKey())
     return currencyKM.process(utterance, { credentials: this.credentials })
   }
 

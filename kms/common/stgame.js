@@ -16,7 +16,8 @@ const api = new Object({
 const kirkAPI = {
   getName: () => "kirk",
 
-  process: (utterance) => {
+  process: (config, utterance) => {
+    kirk.server(config.getServer(), config.getAPIKey())
     return kirk.process(utterance, { credentials: this.credentials })
   },
   
@@ -29,7 +30,8 @@ characters.api = kirkAPI;
 const spockAPI = {
   getName: () => "spock",
 
-  process: (utterance) => {
+  process: (config, utterance) => {
+    spock.server(config.getServer(), config.getAPIKey())
     return spock.process(utterance, { credentials: this.credentials })
   },
   
