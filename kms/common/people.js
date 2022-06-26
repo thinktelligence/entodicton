@@ -15,7 +15,7 @@ const template = {
       "surname means last name",
       "given modifies name",
       "given name means first name",
-//      "ownee is owned by owner means owner owns ownee",
+      "ownee is owned by owner means owner owns ownee",
     ],
 }
 let config = {
@@ -44,7 +44,6 @@ config.initializer( ({config, context, km}) => {
             doAble: true,
             config
           })
-  /*
   config.addOperator("(([ownee])? <owned> ([by] ([owner])))")
   config.addBridge({
            id: "owned", 
@@ -53,7 +52,12 @@ config.initializer( ({config, context, km}) => {
            deferred: "{ ...next(operator), 'ownee': before[0], owner: after[0].object }" })
   config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }"})
   config.addHierarchy('owned', 'isEdAble')
-  */
+  config.addGenerator({
+    match: ({context}) => context.marker == 'owned',
+    apply: ({context, g}) => {
+      return `${g(context.ownee)} is owned by ${g(context.owner)}`
+    }
+  })
   // config.addBridge({ id: "ownee", level: 0, bridge: "{ ...next(operator) }"})
   // config.addBridge({ id: "owner", level: 0, bridge: "{ ...next(operator) }"})
 

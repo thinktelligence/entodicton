@@ -135,10 +135,12 @@ let config = {
     negative: [
       [['isEd', 0], ['unknown', 0]],
       [['isEd', 0], ['unknown', 1]],
+      [['is', 0], ['means', 0]],
     ],
     positive: [
       [['is', 0], ['unknown', 0]],
       [['is', 0], ['unknown', 1]],
+      [['isEd', 0], ['means', 0]],
     ]
   },
   bridges: [
@@ -209,7 +211,9 @@ let config = {
     [["is",0],["the",0]],
     [["is",0],["a",0]],
     [["is",1],["is",0]],
+    [["isEd",0],["isEdAble",0]],
     [['is', 0], ['does', 0], ['a', 0]],
+    [['means', 0], ['isEd', 0]],
   ],
   hierarchy: [
     ['unknown', 'notAble'],
@@ -218,8 +222,8 @@ let config = {
     ['it', 'queryable'],
     ['what', 'queryable'],
     ['is', 'canBeQuestion'],
-    ['isEd', 'means'],
-    ['is', 'means'],
+    // ['isEd', 'means'],
+    // ['is', 'means'],
   ],
   debug: false,
   version: '3',

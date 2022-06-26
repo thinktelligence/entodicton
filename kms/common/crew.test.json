@@ -949,6 +949,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -962,6 +963,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -978,7 +980,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -1081,6 +1083,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -1093,6 +1096,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -1109,7 +1113,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -1241,6 +1245,42 @@
     "associations": [
       [
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ],
@@ -1251,11 +1291,29 @@
       ],
       [
         [
-          "unknown",
+          "the",
           0
         ],
         [
           "what",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
           0
         ],
         [
@@ -1265,15 +1323,15 @@
         [
           "is",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
         [
-          "propertyOf",
-          0
-        ],
-        [
-          "what",
+          "the",
           0
         ],
         [
@@ -1281,79 +1339,11 @@
           0
         ],
         [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
           "what",
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
           "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "is",
           0
         ]
       ],
@@ -1674,7 +1664,7 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1702,142 +1692,6 @@
         {
           "op": [
             "phaser",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "phaser",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
             0
           ],
           "ops": [
@@ -1847,6 +1701,46 @@
             ],
             [
               "is",
+              0
+            ],
+            [
+              "phaser",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "phaser",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "phaser",
               0
             ],
             [
@@ -1886,6 +1780,10 @@
               0
             ],
             [
+              "the",
+              0
+            ],
+            [
               "unknown",
               1
             ],
@@ -1897,7 +1795,91 @@
         },
         {
           "op": [
-            "disarm",
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
             0
           ],
           "ops": [
@@ -1922,29 +1904,13 @@
         {
           "op": [
             "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
             1
           ],
           "ops": [
+            [
+              "disarm",
+              0
+            ],
             [
               "is",
               0
@@ -1966,11 +1932,31 @@
           ],
           "ops": [
             [
+              "disarm",
+              0
+            ],
+            [
               "is",
               0
             ],
             [
               "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "disarm",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
               1
             ]
           ]
@@ -3121,6 +3107,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -3134,6 +3121,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -3150,7 +3138,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -3253,6 +3241,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -3265,6 +3254,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -3281,7 +3271,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -4408,6 +4398,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -4421,6 +4412,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -4437,7 +4429,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -4540,6 +4532,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -4552,6 +4545,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -4568,7 +4562,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -4700,8 +4694,26 @@
     "associations": [
       [
         [
+          "propertyOf",
+          1
+        ],
+        [
           "unknown",
           1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
         ],
         [
           "is",
@@ -4732,7 +4744,57 @@
       ],
       [
         [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
           0
         ],
         [
@@ -4742,49 +4804,13 @@
         [
           "is",
           0
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
         ],
         [
           "unknown",
           1
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
         ]
       ],
       [
-        [
-          "propertyOf",
-          0
-        ],
         [
           "unknown",
           1
@@ -4792,20 +4818,6 @@
         [
           "is",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          1
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ]
     ],
@@ -6128,6 +6140,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -6141,6 +6154,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -6157,7 +6171,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -6260,6 +6274,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -6272,6 +6287,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -6288,7 +6304,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -6420,17 +6436,31 @@
     "associations": [
       [
         [
-          "unknown",
-          1
+          "propertyOf",
+          0
         ],
         [
           "is",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
           "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
           0
         ],
         [
@@ -6438,16 +6468,6 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
           "propertyOf",
           0
         ],
@@ -6456,13 +6476,13 @@
           1
         ],
         [
-          "the",
+          "is",
           0
         ]
       ],
       [
         [
-          "propertyOf",
+          "the",
           0
         ],
         [
@@ -6470,7 +6490,29 @@
           0
         ],
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "the",
+          0
+        ],
+        [
+          "is",
           0
         ],
         [
@@ -6480,7 +6522,11 @@
       ],
       [
         [
-          "unknown",
+          "the",
+          0
+        ],
+        [
+          "is",
           0
         ],
         [
@@ -6488,43 +6534,7 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
           "unknown",
-          1
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "is",
           0
         ]
       ],
@@ -7226,7 +7236,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7262,7 +7272,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7293,12 +7303,12 @@
         },
         {
           "op": [
-            "photon",
+            "what",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7325,12 +7335,40 @@
         },
         {
           "op": [
+            "photon",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "photon_torpedo",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7348,38 +7386,6 @@
             [
               "unknown",
               1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
             ]
           ]
         },
@@ -7390,7 +7396,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -8742,6 +8748,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -8755,6 +8762,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -8771,7 +8779,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -8874,6 +8882,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -8886,6 +8895,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -8902,7 +8912,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -9002,6 +9012,10 @@
           0
         ],
         [
+          "is",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -9018,11 +9032,29 @@
       ],
       [
         [
-          "what",
+          "propertyOf",
           0
         ],
         [
           "the",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
           0
         ],
         [
@@ -9034,67 +9066,39 @@
           1
         ],
         [
-          "type",
+          "is",
           0
         ]
       ],
       [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
         [
           "the",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
           0
         ],
         [
           "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
           0
         ],
         [
           "type",
           0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
         ]
       ],
       [
         [
-          "unknown",
+          "the",
           0
         ],
         [
@@ -9102,7 +9106,33 @@
           0
         ],
         [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
           "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "type",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "is",
           0
         ]
       ]
@@ -9365,7 +9395,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9397,7 +9427,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9429,7 +9459,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9457,7 +9487,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9476,12 +9506,12 @@
         },
         {
           "op": [
-            "unknown",
-            1
+            "propertyOf",
+            0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9491,22 +9521,6 @@
             [
               "unknown",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
             ]
           ]
         },
@@ -10623,6 +10637,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -10636,6 +10651,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -10652,7 +10668,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -10755,6 +10771,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -10767,6 +10784,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -10783,7 +10801,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -10915,54 +10933,16 @@
     "associations": [
       [
         [
-          "unknown",
-          1
-        ],
-        [
-          "possession",
-          0
-        ]
-      ],
-      [
-        [
-          "what",
-          0
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
           "is",
           0
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
         ],
         [
-          "what",
-          0
+          "unknown",
+          1
         ],
         [
           "possession",
-          0
+          1
         ]
       ],
       [
@@ -10972,7 +10952,61 @@
         ],
         [
           "possession",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
         ]
       ],
       [
@@ -11172,7 +11206,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -11186,34 +11220,6 @@
             [
               "unknown",
               0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "spock",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "spock",
-              0
-            ],
-            [
-              "unknown",
-              1
             ],
             [
               "what",
@@ -11228,11 +11234,15 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -11247,16 +11257,20 @@
         },
         {
           "op": [
-            "unknown",
-            1
+            "spock",
+            0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -11272,12 +11286,16 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11293,6 +11311,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -12338,6 +12360,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -12351,6 +12374,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -12367,7 +12391,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -12470,6 +12494,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -12482,6 +12507,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -12498,7 +12524,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -12630,54 +12656,16 @@
     "associations": [
       [
         [
-          "unknown",
-          1
-        ],
-        [
-          "possession",
-          0
-        ]
-      ],
-      [
-        [
-          "what",
-          0
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
           "is",
           0
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
         ],
         [
-          "what",
-          0
+          "unknown",
+          1
         ],
         [
           "possession",
-          0
+          1
         ]
       ],
       [
@@ -12687,7 +12675,61 @@
         ],
         [
           "possession",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
         ]
       ],
       [
@@ -12887,7 +12929,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -12901,34 +12943,6 @@
             [
               "unknown",
               0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "spock",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "spock",
-              0
-            ],
-            [
-              "unknown",
-              1
             ],
             [
               "what",
@@ -12943,11 +12957,15 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -12962,16 +12980,20 @@
         },
         {
           "op": [
-            "unknown",
-            1
+            "spock",
+            0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "possession",
+              0
+            ],
+            [
+              "spock",
               0
             ],
             [
@@ -12987,12 +13009,16 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "possession",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -13008,6 +13034,10 @@
             ],
             [
               "possession",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -14053,6 +14083,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -14066,6 +14097,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -14082,7 +14114,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -14185,6 +14217,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -14197,6 +14230,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -14213,7 +14247,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -14345,11 +14379,11 @@
     "associations": [
       [
         [
-          "what",
+          "questionMark",
           0
         ],
         [
-          "possession",
+          "what",
           0
         ],
         [
@@ -14357,7 +14391,39 @@
           1
         ],
         [
+          "possession",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
           "questionMark",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "possession",
+          1
+        ]
+      ],
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "is",
           0
         ]
       ],
@@ -14367,39 +14433,7 @@
           0
         ],
         [
-          "is",
-          0
-        ],
-        [
           "questionMark",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "questionMark",
-          0
-        ]
-      ],
-      [
-        [
-          "what",
-          0
-        ],
-        [
-          "questionMark",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "possession",
           0
         ],
         [
@@ -14409,21 +14443,7 @@
       ],
       [
         [
-          "unknown",
-          1
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "questionMark",
-          0
-        ]
-      ],
-      [
-        [
-          "unknown",
+          "is",
           0
         ],
         [
@@ -14431,35 +14451,57 @@
           0
         ],
         [
-          "is",
+          "unknown",
           0
         ]
       ],
       [
         [
-          "unknown",
+          "is",
           1
+        ],
+        [
+          "questionMark",
+          0
+        ]
+      ],
+      [
+        [
+          "questionMark",
+          0
+        ],
+        [
+          "is",
+          0
         ],
         [
           "possession",
+          0
+        ],
+        [
+          "unknown",
           1
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "questionMark",
-          0
         ]
       ],
       [
         [
-          "is",
-          1
+          "questionMark",
+          0
         ],
         [
-          "questionMark",
+          "what",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
           0
         ]
       ]
@@ -14677,12 +14719,12 @@
         },
         {
           "op": [
-            "spock",
+            "what",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -14709,12 +14751,12 @@
         },
         {
           "op": [
-            "what",
+            "spock",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -14726,12 +14768,12 @@
               0
             ],
             [
-              "unknown",
-              1
+              "spock",
+              0
             ],
             [
-              "what",
-              0
+              "unknown",
+              1
             ]
           ]
         },
@@ -14742,7 +14784,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -15848,6 +15890,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -15861,6 +15904,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -15877,7 +15921,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -15980,6 +16024,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -15992,6 +16037,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -16008,7 +16054,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -16140,6 +16186,42 @@
     "associations": [
       [
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ],
@@ -16150,7 +16232,7 @@
       ],
       [
         [
-          "unknown",
+          "the",
           0
         ],
         [
@@ -16158,7 +16240,11 @@
           0
         ],
         [
-          "the",
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
           0
         ],
         [
@@ -16172,61 +16258,33 @@
           0
         ],
         [
-          "unknown",
-          1
-        ],
-        [
           "the",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "unknown",
           0
         ]
       ],
@@ -16473,7 +16531,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -16491,38 +16549,6 @@
             [
               "unknown",
               0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "kirk",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "kirk",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
             ],
             [
               "what",
@@ -16537,7 +16563,11 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
+              0
+            ],
+            [
+              "kirk",
               0
             ],
             [
@@ -16560,12 +16590,40 @@
         },
         {
           "op": [
+            "kirk",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "kirk",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "the",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -17693,6 +17751,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -17706,6 +17765,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -17722,7 +17782,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -17825,6 +17885,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -17837,6 +17898,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -17853,7 +17915,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -17985,6 +18047,42 @@
     "associations": [
       [
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ],
@@ -17995,7 +18093,7 @@
       ],
       [
         [
-          "unknown",
+          "the",
           0
         ],
         [
@@ -18003,7 +18101,11 @@
           0
         ],
         [
-          "the",
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
           0
         ],
         [
@@ -18017,61 +18119,33 @@
           0
         ],
         [
-          "unknown",
-          1
-        ],
-        [
           "the",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "what",
+          0
+        ],
+        [
+          "unknown",
           0
         ]
       ],
@@ -18318,7 +18392,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -18350,7 +18424,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -18382,7 +18456,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -18410,7 +18484,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -19538,6 +19612,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -19551,6 +19626,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -19567,7 +19643,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -19670,6 +19746,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -19682,6 +19759,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -19698,7 +19776,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -19830,17 +19908,31 @@
     "associations": [
       [
         [
-          "unknown",
-          1
+          "propertyOf",
+          0
         ],
         [
           "is",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
           "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
           0
         ],
         [
@@ -19848,16 +19940,6 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
           "propertyOf",
           0
         ],
@@ -19866,13 +19948,13 @@
           1
         ],
         [
-          "the",
+          "is",
           0
         ]
       ],
       [
         [
-          "propertyOf",
+          "the",
           0
         ],
         [
@@ -19880,7 +19962,29 @@
           0
         ],
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "the",
+          0
+        ],
+        [
+          "is",
           0
         ],
         [
@@ -19890,7 +19994,11 @@
       ],
       [
         [
-          "unknown",
+          "the",
+          0
+        ],
+        [
+          "is",
           0
         ],
         [
@@ -19898,43 +20006,7 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
           "unknown",
-          1
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "is",
           0
         ]
       ],
@@ -20216,7 +20288,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -20234,38 +20306,6 @@
             [
               "unknown",
               0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "phaser",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
             ],
             [
               "what",
@@ -20280,7 +20320,11 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
+              0
+            ],
+            [
+              "phaser",
               0
             ],
             [
@@ -20303,12 +20347,40 @@
         },
         {
           "op": [
+            "phaser",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "phaser",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "the",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -21495,6 +21567,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -21508,6 +21581,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -21524,7 +21598,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -21627,6 +21701,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -21639,6 +21714,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -21655,7 +21731,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -21787,17 +21863,31 @@
     "associations": [
       [
         [
-          "unknown",
-          1
+          "propertyOf",
+          0
         ],
         [
           "is",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
           "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
           0
         ],
         [
@@ -21805,16 +21895,6 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
           "propertyOf",
           0
         ],
@@ -21823,13 +21903,13 @@
           1
         ],
         [
-          "the",
+          "is",
           0
         ]
       ],
       [
         [
-          "propertyOf",
+          "the",
           0
         ],
         [
@@ -21837,7 +21917,29 @@
           0
         ],
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "the",
+          0
+        ],
+        [
+          "is",
           0
         ],
         [
@@ -21847,7 +21949,11 @@
       ],
       [
         [
-          "unknown",
+          "the",
+          0
+        ],
+        [
+          "is",
           0
         ],
         [
@@ -21855,43 +21961,7 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
           "unknown",
-          1
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "is",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "is",
           0
         ]
       ],
@@ -22213,7 +22283,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22249,7 +22319,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22280,12 +22350,12 @@
         },
         {
           "op": [
-            "photon",
+            "what",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22312,12 +22382,40 @@
         },
         {
           "op": [
+            "photon",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "photon",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "photon_torpedo",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22335,38 +22433,6 @@
             [
               "unknown",
               1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
             ]
           ]
         },
@@ -22377,7 +22443,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -23604,6 +23670,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -23617,6 +23684,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -23633,7 +23701,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -23736,6 +23804,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -23748,6 +23817,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -23764,7 +23834,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]
@@ -23896,11 +23966,25 @@
     "associations": [
       [
         [
+          "the",
+          0
+        ],
+        [
+          "is",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
           "what",
           0
         ],
         [
-          "the",
+          "is",
           0
         ]
       ]
@@ -24063,7 +24147,7 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -24091,7 +24175,7 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -24115,7 +24199,7 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -24135,7 +24219,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -24155,7 +24239,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -25158,6 +25242,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -25171,6 +25256,7 @@
               "two": {
                 "marker": "unknown",
                 "negated": true,
+                "response": true,
                 "text": "not armed",
                 "types": [
                   "unknown"
@@ -25187,7 +25273,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "disarm the weapon means the status of the weapon is not armed",
           "responses": [
             ""
           ]
@@ -25290,6 +25376,7 @@
                   }
                 ],
                 "pullFromContext": true,
+                "response": true,
                 "text": "the status of the weapon",
                 "types": [
                   "property"
@@ -25302,6 +25389,7 @@
               "text": "the status of the weapon is armed",
               "two": {
                 "marker": "unknown",
+                "response": true,
                 "text": "armed",
                 "types": [
                   "unknown"
@@ -25318,7 +25406,7 @@
             ],
             "word": "means"
           },
-          "paraphrases": "means",
+          "paraphrases": "arm the weapon means the status of the weapon is armed",
           "responses": [
             ""
           ]

@@ -100,6 +100,7 @@ let config = {
       priority: -1,
     },
     {
+      priority: -1,
       match: ({context}) => context.marker == 'means' && context.paraphrase,
       apply: ({context, g}) => {
         // const before = g({ ...context.from, paraphrase: true, debug: true})
