@@ -114,11 +114,11 @@
     "associations": [
       [
         [
-          "means",
+          "x",
           0
         ],
         [
-          "x",
+          "means",
           0
         ]
       ]
@@ -176,7 +176,7 @@
       "opChoices": [
         {
           "op": [
-            "means",
+            "x",
             0
           ],
           "ops": [
@@ -186,6 +186,18 @@
             ],
             [
               "x",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "means",
+            0
+          ],
+          "ops": [
+            [
+              "means",
               0
             ]
           ]
@@ -253,7 +265,7 @@
           0
         ],
         [
-          "then",
+          "f",
           0
         ],
         [
@@ -261,7 +273,7 @@
           0
         ],
         [
-          "f",
+          "then",
           0
         ]
       ]
@@ -338,60 +350,56 @@
       "opChoices": [
         {
           "op": [
-            "g",
-            0
-          ],
-          "ops": [
-            [
-              "f",
-              0
-            ],
-            [
-              "g",
-              0
-            ],
-            [
-              "if",
-              0
-            ],
-            [
-              "then",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "g",
-            0
-          ],
-          "ops": [
-            [
-              "f",
-              0
-            ],
-            [
-              "g",
-              0
-            ],
-            [
-              "if",
-              0
-            ],
-            [
-              "then",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "f",
             0
           ],
           "ops": [
             [
               "f",
+              0
+            ],
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "g",
+            0
+          ],
+          "ops": [
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "g",
+            0
+          ],
+          "ops": [
+            [
+              "g",
               0
             ],
             [
@@ -504,6 +512,167 @@
     "responses": [
       "",
       "this is f response"
+    ]
+  },
+  "undefined means defined": {
+    "associations": [
+      [
+        [
+          "defined",
+          0
+        ],
+        [
+          "undefined",
+          0
+        ],
+        [
+          "means",
+          0
+        ]
+      ],
+      [
+        [
+          "undefined",
+          0
+        ],
+        [
+          "means",
+          0
+        ]
+      ]
+    ],
+    "config": {
+      "words": {
+        "f": [
+          {
+            "development": true,
+            "id": "f",
+            "initial": "{ value: 'f', word: 'f' }"
+          }
+        ],
+        "gq": [
+          {
+            "development": true,
+            "id": "g",
+            "initial": "{ word: 'gq', query: true }"
+          }
+        ],
+        "x": [
+          {
+            "development": true,
+            "id": "x",
+            "initial": "{ value: 'x', word: 'x' }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "default": true,
+        "from": {
+          "default": true,
+          "marker": "undefined",
+          "text": "undefined",
+          "word": "undefined"
+        },
+        "marker": "means",
+        "metaInfo": "The mapping from from the expression being defined \"undefined\" to the definition phrase \"defined\" is []",
+        "text": "undefined means defined",
+        "to": {
+          "default": true,
+          "marker": "defined",
+          "text": "defined",
+          "word": "defined"
+        },
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "means"
+      }
+    ],
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "defined",
+            0
+          ],
+          "ops": [
+            [
+              "defined",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "undefined",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "means",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "undefined",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "default": true,
+              "marker": "undefined",
+              "text": "undefined",
+              "word": "undefined"
+            },
+            "marker": "means",
+            "metaInfo": "The mapping from from the expression being defined \"undefined\" to the definition phrase \"defined\" is []",
+            "text": "undefined means defined",
+            "to": {
+              "default": true,
+              "marker": "defined",
+              "text": "defined",
+              "word": "defined"
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "means"
+          },
+          "paraphrases": "undefined means defined",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "undefined means defined"
+    ],
+    "responses": [
+      ""
     ]
   }
 }

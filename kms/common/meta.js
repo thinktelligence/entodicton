@@ -30,6 +30,8 @@ let config = {
     { pattern: "([e])", development: true },
     { pattern: "([f])", development: true },
     { pattern: "([g])", development: true },
+    { pattern: "([undefined])", development: true },
+    { pattern: "([defined])", development: true },
 
     /*
     if creating a new word make a motivation to ask if word is plura or singlar of anohter wordA
@@ -73,6 +75,8 @@ let config = {
     { id: "e", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "f", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "g", level: 0, bridge: "{ ...next(operator) }", development: true },
+    { id: "undefined", level: 0, bridge: "{ ...next(operator) }", development: true },
+    { id: "defined", level: 0, bridge: "{ ...next(operator) }", development: true },
 //    { id: "testWord2", level: 0, bridge: "{ ...next(operator) }" },
   ],
   version: '3',
@@ -87,6 +91,16 @@ let config = {
     'gq': [{id: "g", initial: "{ word: 'gq', query: true }", development: true }],
   },
   generators: [
+    {
+      match: ({context}) => context.marker == 'undefined',
+      apply: ({context}) => 'undefined',
+      development: true,
+    },
+    {
+      match: ({context}) => context.marker == 'defined',
+      apply: ({context}) => 'defined',
+      development: true,
+    },
     {
       match: ({context}) => context.response && !context.paraphrase,
       apply: ({context}) => context.response.verbatim,
@@ -245,7 +259,7 @@ let config = {
     {
       notes: 'x means y where x and y have known markers',
       match: ({context}) => context.marker == 'means',
-      apply: ({config, context}) => {
+      apply: ({config, context, g}) => {
         // setup the write semantic
         {
           const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query && !context.objects
@@ -305,6 +319,7 @@ let config = {
           }
           const mappings = translationMapping(context.from, context.to)
           let match = matchByMarker(context)
+          context.metaInfo = `The mapping from from the expression being defined "${g({...context.from, paraphrase: true})}" to the definition phrase "${g({...context.to, paraphrase: true})}" is ${JSON.stringify(mappings)}`
           if (context.from.value) {
             match = matchByValue(context)
           }
