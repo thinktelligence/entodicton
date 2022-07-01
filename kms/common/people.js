@@ -15,7 +15,7 @@ const template = {
       "surname means last name",
       "given modifies name",
       "given name means first name",
-      // "ownee is owned by owner means owner owns ownee",
+      "ownee is owned by owner means owner owns ownee",
     ],
 }
 let config = {
@@ -39,7 +39,7 @@ config.initializer( ({config, context, km}) => {
             operator: 'owns',
             create: ['owns', 'owner', 'ownee'],
             before: [{tag: 'owner', id: 'owner'}],
-            after: [{tag: 'owned', id: 'ownee'}],
+            after: [{tag: 'ownee', id: 'ownee'}],
             relation: true,
             doAble: true,
             config

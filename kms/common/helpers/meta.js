@@ -25,14 +25,22 @@ const translationMapping = (from, to) => {
     return mappings
   }
   for (let fkey of Object.keys(from)) {
+    let matchField;
     if (from[fkey].value) {
+      matchField = 'value'
+    } else if (from[fkey].word) {
+      matchField = 'word'
+    }
+
+    // if (from[fkey][matchField]) {
+    if (matchField) {
       let found = false
       const todo = Object.keys(to).map( (key) => [key] )
       while (!found) {
         const tkey = todo.shift()
         const tvalue = hashIndexesGet(to, tkey);
         const fvalue = hashIndexesGet(from, [fkey]);
-        if (fvalue.value == tvalue.value) {
+        if (fvalue[matchField] == tvalue[matchField]) {
           mappings.push( { from: [fkey], to: tkey } )
           found = true
           break
