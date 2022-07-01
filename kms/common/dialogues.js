@@ -240,6 +240,11 @@ let config = {
       priority: -2,
     },
     {
+      notes: "unknown answer default response",
+      match: ({context}) => context.marker == 'answerNotKnown',
+      apply: ({context}) => `That is not known`,
+    },
+    {
       notes: "be brief or wordy",
       match: ({context}) => context.marker == 'be',
       apply: ({context}) => `be ${context.type.word}`,

@@ -324,6 +324,10 @@ class API {
             value: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
           }
           context.response.isResponse = true
+          if (context.response.value.length == 0) {
+            context.response.marker = 'answerNotKnown';
+            context.response.value = null;
+          }
         }
       })
     }

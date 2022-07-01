@@ -27,6 +27,11 @@ let config = {
 
   generators: [
     {
+      notes: "unknown answer default response for avatar",
+      match: ({context}) => context.marker == 'answerNotKnown',
+      apply: ({context}) => `I don't know`,
+    },
+    {
        notes: 'paraphrase: add possession ending for your/my',
        priority: -1,
        match: ({context}) => !context.isResponse && context.possessive && ['self', 'other'].includes(context.value),
