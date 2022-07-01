@@ -18,15 +18,67 @@
     {
       "hierarchy": [
         [
-          "xfx",
-          "queryable"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -34,32 +86,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "property",
+          "theAble",
           "theAble"
         ],
         [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -70,75 +118,25 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
+          "xfx",
           "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
         ]
       ],
-      "load_cache_time": 0.3239707946777344,
       "logs": [
         "Undefined word 'birds'",
         "Undefined word 'mammals'",
         "Undefined word 'animals'",
-        "Counter == 0. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/0, [Selector(Bridge('{ ...next(operator), unknown: true }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator), unknown: true }')), variables({}) bridge(bridge)), 'word': 'animals', 'text': 'animals', 'value': 'animals'})\n\n\n",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.99 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.51 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  0.02 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]"
+        "Op choices were: [(('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.73 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.64 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -149,7 +147,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -224,7 +222,6 @@
           }
         ]
       },
-      "times": 1.0378963947296143,
       "trace": "undefined",
       "contexts": [
         {
@@ -286,6 +283,10 @@
       "associations": [
         [
           [
+            "is",
+            0
+          ],
+          [
             "list",
             0
           ],
@@ -310,39 +311,134 @@
         ],
         [
           [
-            "unknown",
-            1
+            "is",
+            0
           ],
           [
             "list",
             1
           ],
           [
-            "is",
-            0
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.7,
       "version": "6.22.0",
       "query": "birds and mammals are animals"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -350,36 +446,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -390,107 +478,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 7.435733318328857,
       "logs": [
         "Undefined word 'ears'",
         "Op choices were: [(('unknown', 0), [('have', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('have', 0), ('mammal', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -569,7 +568,6 @@
           }
         ]
       },
-      "times": 0.7010159492492676,
       "trace": "undefined",
       "contexts": [
         {
@@ -625,17 +623,11 @@
             0
           ],
           [
-            "unknown",
+            "mammal",
             0
-          ]
-        ],
-        [
-          [
-            "unknown",
-            1
           ],
           [
-            "have",
+            "unknown",
             0
           ]
         ],
@@ -650,44 +642,145 @@
           ],
           [
             "unknown",
-            0
+            1
           ]
         ],
         [
-          [
-            "unknown",
-            1
-          ],
           [
             "have",
             0
           ],
           [
-            "mammal",
+            "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "mammals have ears"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -695,36 +788,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -735,107 +820,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.0043795108795166016,
       "logs": [
         "Undefined word 'hair'",
         "Op choices were: [(('unknown', 0), [('have', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('have', 0), ('mammal', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -914,7 +910,6 @@
           }
         ]
       },
-      "times": 0.6093747615814209,
       "trace": "undefined",
       "contexts": [
         {
@@ -970,17 +965,11 @@
             0
           ],
           [
-            "unknown",
+            "mammal",
             0
-          ]
-        ],
-        [
-          [
-            "unknown",
-            1
           ],
           [
-            "have",
+            "unknown",
             0
           ]
         ],
@@ -995,44 +984,145 @@
           ],
           [
             "unknown",
-            0
+            1
           ]
         ],
         [
-          [
-            "unknown",
-            1
-          ],
           [
             "have",
             0
           ],
           [
-            "mammal",
+            "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "mammals have hair"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -1040,36 +1130,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -1080,111 +1162,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.0034148693084716797,
       "logs": [
         "Undefined word 'wings'",
-        "Op choices were: [(('unknown', 0), [('doesnt', 0), ('have', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('doesnt', 0), ('have', 0), ('mammal', 0), ('unknown', 1)]), (('doesnt', 0), [('doesnt', 0), ('have', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['doesnt', 0], ['have', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['doesnt', 0], ['have', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator doesnt/0 was [['doesnt', 0], ['have', 0], ['unknown', 1]]\n  Context for choosing the operator have/0 was [['have', 0], ['unknown', 1]]\n  Context for choosing the operator have/1 was [['have', 1]]",
+        "Op choices were: [(('unknown', 0), [('doesnt', 0), ('have', 0), ('mammal', 0), ('unknown', 0)]), (('doesnt', 0), [('doesnt', 0), ('have', 0), ('mammal', 0), ('unknown', 1)]), (('mammal', 0), [('have', 0), ('mammal', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['doesnt', 0], ['have', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator doesnt/0 was [['doesnt', 0], ['have', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator mammal/0 was [['have', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator have/0 was [['have', 0], ['unknown', 1]]\n  Context for choosing the operator have/1 was [['have', 1]]",
         ""
       ],
       "metadata": {
@@ -1215,7 +1208,7 @@
           },
           {
             "op": [
-              "mammal",
+              "doesnt",
               0
             ],
             "ops": [
@@ -1239,16 +1232,16 @@
           },
           {
             "op": [
-              "doesnt",
+              "mammal",
               0
             ],
             "ops": [
               [
-                "doesnt",
+                "have",
                 0
               ],
               [
-                "have",
+                "mammal",
                 0
               ],
               [
@@ -1287,7 +1280,6 @@
           }
         ]
       },
-      "times": 0.8236966133117676,
       "trace": "undefined",
       "contexts": [
         {
@@ -1345,11 +1337,15 @@
             0
           ],
           [
-            "unknown",
-            1
+            "have",
+            0
           ],
           [
-            "have",
+            "mammal",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
@@ -1368,38 +1364,10 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "have",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "unknown",
             1
-          ],
-          [
-            "have",
-            0
           ]
         ],
         [
-          [
-            "doesnt",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ],
           [
             "have",
             0
@@ -1407,29 +1375,148 @@
           [
             "mammal",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "mammals dont have wings"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -1437,36 +1524,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -1477,107 +1556,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.003908872604370117,
       "logs": [
         "Undefined word 'skin'",
         "Op choices were: [(('unknown', 0), [('animal', 0), ('have', 0), ('unknown', 0)]), (('animal', 0), [('animal', 0), ('have', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -1656,7 +1646,6 @@
           }
         ]
       },
-      "times": 0.6450517177581787,
       "trace": "undefined",
       "contexts": [
         {
@@ -1708,6 +1697,10 @@
       "associations": [
         [
           [
+            "animal",
+            0
+          ],
+          [
             "have",
             0
           ],
@@ -1727,54 +1720,145 @@
           ],
           [
             "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "have",
             0
-          ]
-        ],
-        [
+          ],
           [
             "unknown",
             1
-          ],
-          [
-            "animal",
-            0
-          ],
-          [
-            "have",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "animals have skin"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -1782,36 +1866,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -1822,107 +1898,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.003012418746948242,
       "logs": [
         "Undefined word 'eyes'",
         "Op choices were: [(('unknown', 0), [('animal', 0), ('have', 0), ('unknown', 0)]), (('animal', 0), [('animal', 0), ('have', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -2001,7 +1988,6 @@
           }
         ]
       },
-      "times": 0.5764904022216797,
       "trace": "undefined",
       "contexts": [
         {
@@ -2053,6 +2039,10 @@
       "associations": [
         [
           [
+            "animal",
+            0
+          ],
+          [
             "have",
             0
           ],
@@ -2072,54 +2062,145 @@
           ],
           [
             "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "have",
             0
-          ]
-        ],
-        [
+          ],
           [
             "unknown",
             1
-          ],
-          [
-            "animal",
-            0
-          ],
-          [
-            "have",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "animals have eyes"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -2127,36 +2208,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -2167,107 +2240,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.002065896987915039,
       "logs": [
         "Undefined word 'wings'",
         "Op choices were: [(('unknown', 0), [('bird', 0), ('have', 0), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('have', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -2346,7 +2330,6 @@
           }
         ]
       },
-      "times": 0.6470141410827637,
       "trace": "undefined",
       "contexts": [
         {
@@ -2398,6 +2381,10 @@
       "associations": [
         [
           [
+            "bird",
+            0
+          ],
+          [
             "have",
             0
           ],
@@ -2417,54 +2404,145 @@
           ],
           [
             "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
-            "bird",
-            0
-          ],
-          [
             "have",
             0
-          ]
-        ],
-        [
+          ],
           [
             "unknown",
             1
-          ],
-          [
-            "have",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 25,
       "version": "6.22.0",
       "query": "birds have wings"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -2472,36 +2550,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -2512,107 +2582,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.003828287124633789,
       "logs": [
         "Undefined word 'beaks'",
         "Op choices were: [(('unknown', 0), [('bird', 0), ('have', 0), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('have', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -2691,7 +2672,6 @@
           }
         ]
       },
-      "times": 0.5808484554290771,
       "trace": "undefined",
       "contexts": [
         {
@@ -2743,6 +2723,10 @@
       "associations": [
         [
           [
+            "bird",
+            0
+          ],
+          [
             "have",
             0
           ],
@@ -2762,54 +2746,145 @@
           ],
           [
             "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
-            "bird",
-            0
-          ],
-          [
             "have",
             0
-          ]
-        ],
-        [
+          ],
           [
             "unknown",
             1
-          ],
-          [
-            "have",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 25,
       "version": "6.22.0",
       "query": "birds have beaks"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -2817,36 +2892,28 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -2857,115 +2924,26 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 0.003969907760620117,
       "logs": [
         "Undefined word 'humans'",
         "Undefined word 'bats'",
         "Undefined word 'felines'",
         "Undefined word 'canines'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('is', 0), ('mammal', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.99 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 1\n  0.99 - [['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 2\n  1.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.99 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.99 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 5\n  0.99 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 6\n  1.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.99 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]"
+        "Op choices were: [(('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('is', 0), ('mammal', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.79 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3071,8 +3049,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -3082,18 +3060,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },
@@ -3111,7 +3077,6 @@
           }
         ]
       },
-      "times": 1.7264292240142822,
       "trace": "undefined",
       "contexts": [
         {
@@ -3187,89 +3152,244 @@
       "associations": [
         [
           [
+            "is",
+            0
+          ],
+          [
             "list",
-            1
+            0
+          ],
+          [
+            "mammal",
+            0
           ],
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "list",
+            1
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "list",
+            1
+          ],
+          [
+            "mammal",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "list",
+            1
           ],
           [
             "mammal",
             0
           ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
           [
             "unknown",
-            0
-          ],
-          [
-            "list",
-            0
-          ],
-          [
-            "mammal",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "list",
-            1
-          ],
-          [
-            "mammal",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "list",
-            1
-          ],
-          [
-            "is",
             0
           ]
         ]
       ],
-      "memory_free_percent": 25,
       "version": "6.22.0",
       "query": "humans bats felines and canines are mammals"
     },
     {
       "hierarchy": [
         [
-          "human",
+          "animal",
+          "hierarchyAble"
+        ],
+        [
+          "animal",
+          "object"
+        ],
+        [
+          "animal",
+          "queryable"
+        ],
+        [
+          "animal",
           "theAble"
         ],
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "bat",
+          "hierarchyAble"
         ],
         [
-          "mammal",
+          "bat",
+          "object"
+        ],
+        [
+          "bat",
+          "queryable"
+        ],
+        [
+          "bat",
+          "theAble"
+        ],
+        [
+          "bird",
           "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "unknown",
+          "canBeDoQuestion",
+          "canBeDoQuestion"
+        ],
+        [
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "canine",
+          "hierarchyAble"
+        ],
+        [
+          "canine",
+          "object"
+        ],
+        [
+          "canine",
+          "queryable"
+        ],
+        [
+          "canine",
+          "theAble"
+        ],
+        [
+          "feline",
+          "hierarchyAble"
+        ],
+        [
+          "feline",
+          "object"
+        ],
+        [
+          "feline",
+          "queryable"
+        ],
+        [
+          "feline",
+          "theAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "human",
+          "hierarchyAble"
+        ],
+        [
+          "human",
+          "object"
+        ],
+        [
+          "human",
+          "queryable"
+        ],
+        [
+          "human",
+          "theAble"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -3277,51 +3397,27 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "mammal",
+          "theAble",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "bat",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "bat",
-          "object"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "bat",
+          "unknown",
           "hierarchyAble"
         ],
         [
-          "canine",
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
@@ -3333,159 +3429,27 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "canine",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "bat",
-          "theAble"
-        ],
-        [
-          "canine",
-          "hierarchyAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "feline",
-          "queryable"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "canine",
-          "theAble"
-        ],
-        [
-          "human",
-          "queryable"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "feline",
-          "object"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "human",
-          "object"
-        ],
-        [
-          "feline",
-          "hierarchyAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "human",
-          "hierarchyAble"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "feline",
-          "theAble"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 8.419423341751099,
       "logs": [
         "Undefined word 'owls'",
         "Undefined word 'eagles'",
         "Undefined word 'pidgeons'",
         "Undefined word 'parrots'",
-        "Op choices were: [(('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.83 - [['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.83 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 2\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.83 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.83 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 4\n  0.83 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 5\n  0.75 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 6\n  0.83 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]"
+        "Counter == 6. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'value': 'bird', 'number': 'many', 'text': 'birds', 'marker': Operator(bird/1, [Selector(None, []<==>[], bridge(bridge))], evaluator(None), variables({}) bridge(bridge)), 'word': 'birds'})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('isEd', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['isEd', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 1\n  0.67 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['bird', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3580,6 +3544,38 @@
                 0
               ],
               [
+                "isEd",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              1
+            ],
+            "ops": [
+              [
                 "is",
                 0
               ],
@@ -3598,10 +3594,6 @@
               [
                 "is",
                 0
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -3619,7 +3611,6 @@
           }
         ]
       },
-      "times": 1.5076301097869873,
       "trace": "undefined",
       "contexts": [
         {
@@ -3695,37 +3686,51 @@
       "associations": [
         [
           [
-            "unknown",
-            0
-          ],
-          [
             "bird",
             0
           ],
           [
-            "list",
-            1
-          ],
-          [
             "is",
             0
-          ]
-        ],
-        [
+          ],
+          [
+            "list",
+            0
+          ],
           [
             "unknown",
             0
-          ],
-          [
-            "list",
-            0
-          ],
+          ]
+        ],
+        [
           [
             "bird",
             0
           ],
           [
             "is",
+            0
+          ],
+          [
+            "list",
+            1
+          ]
+        ],
+        [
+          [
+            "bird",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "list",
+            1
+          ],
+          [
+            "unknown",
             0
           ]
         ],
@@ -3737,83 +3742,178 @@
           [
             "list",
             1
-          ],
-          [
-            "is",
-            0
           ]
         ],
         [
           [
-            "list",
-            1
-          ],
-          [
             "is",
             0
+          ],
+          [
+            "list",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.8,
       "version": "6.22.0",
       "query": "owls eagles pidgeons and parrots are birds"
     },
     {
       "hierarchy": [
         [
-          "human",
-          "theAble"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "eagle",
+          "animal",
           "object"
         ],
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "queryable"
         ],
         [
-          "mammal",
+          "animal",
+          "theAble"
+        ],
+        [
+          "bat",
           "hierarchyAble"
+        ],
+        [
+          "bat",
+          "object"
+        ],
+        [
+          "bat",
+          "queryable"
+        ],
+        [
+          "bat",
+          "theAble"
+        ],
+        [
+          "bird",
+          "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "owl",
-          "queryable"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "queryable"
+          "canBeQuestion",
+          "canBeQuestion"
         ],
         [
-          "owl",
+          "canine",
+          "hierarchyAble"
+        ],
+        [
+          "canine",
           "object"
+        ],
+        [
+          "canine",
+          "queryable"
+        ],
+        [
+          "canine",
+          "theAble"
         ],
         [
           "eagle",
           "hierarchyAble"
         ],
         [
-          "readonly",
+          "eagle",
+          "object"
+        ],
+        [
+          "eagle",
           "queryable"
         ],
         [
-          "object",
+          "eagle",
+          "theAble"
+        ],
+        [
+          "feline",
+          "hierarchyAble"
+        ],
+        [
+          "feline",
+          "object"
+        ],
+        [
+          "feline",
           "queryable"
         ],
         [
-          "unknown",
-          "notAble"
+          "feline",
+          "theAble"
         ],
         [
-          "parrot",
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
           "queryable"
         ],
         [
-          "pidgeon",
+          "human",
+          "hierarchyAble"
+        ],
+        [
+          "human",
+          "object"
+        ],
+        [
+          "human",
+          "queryable"
+        ],
+        [
+          "human",
+          "theAble"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
           "queryable"
         ],
         [
@@ -3821,67 +3921,111 @@
           "theAble"
         ],
         [
-          "property",
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
           "theAble"
         ],
         [
-          "bat",
-          "queryable"
+          "orAble",
+          "ifAble"
         ],
         [
           "owl",
           "hierarchyAble"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "owl",
+          "object"
         ],
         [
-          "eagle",
+          "owl",
+          "queryable"
+        ],
+        [
+          "owl",
           "theAble"
+        ],
+        [
+          "parrot",
+          "hierarchyAble"
         ],
         [
           "parrot",
           "object"
         ],
         [
+          "parrot",
+          "queryable"
+        ],
+        [
+          "parrot",
+          "theAble"
+        ],
+        [
+          "pidgeon",
+          "hierarchyAble"
+        ],
+        [
           "pidgeon",
           "object"
         ],
         [
-          "it",
+          "pidgeon",
           "queryable"
+        ],
+        [
+          "pidgeon",
+          "theAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
+          "readonly",
+          "queryable"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "bat",
-          "object"
-        ],
-        [
-          "parrot",
+          "unknown",
           "hierarchyAble"
         ],
         [
-          "pidgeon",
-          "hierarchyAble"
+          "unknown",
+          "notAble"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "bat",
-          "hierarchyAble"
-        ],
-        [
-          "owl",
-          "theAble"
-        ],
-        [
-          "canine",
+          "unknown",
           "queryable"
         ],
         [
@@ -3893,168 +4037,23 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "eagle",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "canine",
-          "object"
-        ],
-        [
-          "parrot",
-          "theAble"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "pidgeon",
-          "theAble"
-        ],
-        [
-          "bat",
-          "theAble"
-        ],
-        [
-          "canine",
-          "hierarchyAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "feline",
-          "queryable"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "canine",
-          "theAble"
-        ],
-        [
-          "human",
-          "queryable"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "feline",
-          "object"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "human",
-          "object"
-        ],
-        [
-          "feline",
-          "hierarchyAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "human",
-          "hierarchyAble"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "feline",
-          "theAble"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 9.433457136154175,
       "logs": [
         "Undefined word 'cats'",
-        "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.26 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['feline', 0]]\n  Group 1\n  0.97 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['feline', 0]]"
+        "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['feline', 0]]\n  0.84 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  Group 1\n  0.75 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['feline', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -4100,8 +4099,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -4111,18 +4110,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },
@@ -4140,7 +4127,6 @@
           }
         ]
       },
-      "times": 0.9658753871917725,
       "trace": "undefined",
       "contexts": [
         {
@@ -4189,9 +4175,19 @@
       "associations": [
         [
           [
-            "unknown",
-            1
+            "feline",
+            0
           ],
+          [
+            "is",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
           [
             "feline",
             0
@@ -4199,93 +4195,198 @@
           [
             "is",
             0
-          ]
-        ],
-        [
+          ],
           [
             "unknown",
             1
-          ],
-          [
-            "is",
-            0
           ]
         ],
         [
           [
-            "unknown",
-            0
-          ],
-          [
-            "feline",
-            0
-          ],
-          [
             "is",
             0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.7,
       "version": "6.22.0",
       "query": "cats are felines"
     },
     {
       "hierarchy": [
         [
-          "human",
-          "theAble"
+          "animal",
+          "hierarchyAble"
         ],
         [
-          "eagle",
+          "animal",
           "object"
         ],
         [
-          "canBeQuestion",
-          "canBeQuestion"
+          "animal",
+          "queryable"
         ],
         [
-          "mammal",
+          "animal",
+          "theAble"
+        ],
+        [
+          "bat",
           "hierarchyAble"
+        ],
+        [
+          "bat",
+          "object"
+        ],
+        [
+          "bat",
+          "queryable"
+        ],
+        [
+          "bat",
+          "theAble"
+        ],
+        [
+          "bird",
+          "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
         ],
         [
           "bird",
           "theAble"
         ],
         [
-          "owl",
-          "queryable"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
-          "unknown",
-          "queryable"
+          "canBeQuestion",
+          "canBeQuestion"
         ],
         [
-          "owl",
+          "canine",
+          "hierarchyAble"
+        ],
+        [
+          "canine",
           "object"
+        ],
+        [
+          "canine",
+          "queryable"
+        ],
+        [
+          "canine",
+          "theAble"
+        ],
+        [
+          "cat",
+          "hierarchyAble"
+        ],
+        [
+          "cat",
+          "object"
+        ],
+        [
+          "cat",
+          "queryable"
+        ],
+        [
+          "cat",
+          "theAble"
         ],
         [
           "eagle",
           "hierarchyAble"
         ],
         [
-          "readonly",
+          "eagle",
+          "object"
+        ],
+        [
+          "eagle",
           "queryable"
         ],
         [
-          "object",
+          "eagle",
+          "theAble"
+        ],
+        [
+          "feline",
+          "hierarchyAble"
+        ],
+        [
+          "feline",
+          "object"
+        ],
+        [
+          "feline",
           "queryable"
         ],
         [
-          "unknown",
-          "notAble"
+          "feline",
+          "theAble"
         ],
         [
-          "parrot",
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
           "queryable"
         ],
         [
-          "pidgeon",
+          "human",
+          "hierarchyAble"
+        ],
+        [
+          "human",
+          "object"
+        ],
+        [
+          "human",
+          "queryable"
+        ],
+        [
+          "human",
+          "theAble"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
           "queryable"
         ],
         [
@@ -4293,67 +4394,111 @@
           "theAble"
         ],
         [
-          "property",
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
           "theAble"
         ],
         [
-          "bat",
-          "queryable"
+          "orAble",
+          "ifAble"
         ],
         [
           "owl",
           "hierarchyAble"
         ],
         [
-          "unknown",
-          "hierarchyAble"
+          "owl",
+          "object"
         ],
         [
-          "eagle",
+          "owl",
+          "queryable"
+        ],
+        [
+          "owl",
           "theAble"
+        ],
+        [
+          "parrot",
+          "hierarchyAble"
         ],
         [
           "parrot",
           "object"
         ],
         [
+          "parrot",
+          "queryable"
+        ],
+        [
+          "parrot",
+          "theAble"
+        ],
+        [
+          "pidgeon",
+          "hierarchyAble"
+        ],
+        [
           "pidgeon",
           "object"
         ],
         [
-          "it",
+          "pidgeon",
           "queryable"
+        ],
+        [
+          "pidgeon",
+          "theAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
+          "readonly",
+          "queryable"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "type",
+          "property"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "bat",
-          "object"
-        ],
-        [
-          "parrot",
+          "unknown",
           "hierarchyAble"
         ],
         [
-          "pidgeon",
-          "hierarchyAble"
+          "unknown",
+          "notAble"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "bat",
-          "hierarchyAble"
-        ],
-        [
-          "owl",
-          "theAble"
-        ],
-        [
-          "canine",
+          "unknown",
           "queryable"
         ],
         [
@@ -4365,185 +4510,24 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "animal",
-          "queryable"
-        ],
-        [
-          "eagle",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "animal",
-          "object"
-        ],
-        [
-          "canine",
-          "object"
-        ],
-        [
-          "parrot",
-          "theAble"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "pidgeon",
-          "theAble"
-        ],
-        [
-          "bat",
-          "theAble"
-        ],
-        [
-          "canine",
-          "hierarchyAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "bird",
-          "queryable"
-        ],
-        [
-          "animal",
-          "hierarchyAble"
-        ],
-        [
-          "cat",
-          "theAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "cat",
-          "queryable"
-        ],
-        [
-          "feline",
-          "queryable"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "canine",
-          "theAble"
-        ],
-        [
-          "human",
-          "queryable"
-        ],
-        [
-          "cat",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "feline",
-          "object"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "human",
-          "object"
-        ],
-        [
-          "feline",
-          "hierarchyAble"
-        ],
-        [
-          "cat",
-          "hierarchyAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "human",
-          "hierarchyAble"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "feline",
-          "theAble"
-        ],
-        [
-          "mammal",
-          "object"
         ]
       ],
-      "load_cache_time": 9.728567123413086,
       "logs": [
         "Undefined word 'dogs'",
         "Undefined word 'wolves'",
         "Op choices were: [(('unknown', 0), [('canine', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('canine', 0), ('is', 0), ('unknown', 0)]), (('canine', 0), [('canine', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['canine', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['canine', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator canine/0 was [['canine', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  Group 1\n  0.91 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  0.72 - [['unknown', 0], ['isEd', 0], ['canine', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  0.82 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  Group 1\n  0.78 - [['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 2\n  0.75 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['canine', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -4637,7 +4621,6 @@
           }
         ]
       },
-      "times": 1.0144126415252686,
       "trace": "undefined",
       "contexts": [
         {
@@ -4699,20 +4682,20 @@
       "associations": [
         [
           [
+            "canine",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "list",
+            0
+          ],
+          [
             "unknown",
             0
-          ],
-          [
-            "canine",
-            0
-          ],
-          [
-            "list",
-            0
-          ],
-          [
-            "is",
-            0
           ]
         ],
         [
@@ -4721,325 +4704,44 @@
             0
           ],
           [
-            "list",
-            1
-          ],
-          [
             "is",
             0
+          ],
+          [
+            "list",
+            1
           ]
         ],
         [
           [
-            "list",
-            1
-          ],
-          [
             "is",
             0
+          ],
+          [
+            "list",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.5,
       "version": "6.22.0",
       "query": "dogs and wolves are canines"
     },
     {
       "hierarchy": [
         [
-          "canBeQuestion",
-          "canBeQuestion"
-        ],
-        [
-          "owl",
-          "queryable"
-        ],
-        [
-          "eagle",
-          "hierarchyAble"
-        ],
-        [
-          "object",
-          "queryable"
-        ],
-        [
-          "pidgeon",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "theAble"
-        ],
-        [
-          "pidgeon",
-          "object"
-        ],
-        [
-          "parrot",
-          "hierarchyAble"
-        ],
-        [
-          "canine",
-          "queryable"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "canine",
-          "object"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "bird",
-          "queryable"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "feline",
-          "queryable"
-        ],
-        [
-          "bird",
-          "object"
-        ],
-        [
-          "feline",
-          "object"
-        ],
-        [
-          "animal",
-          "theAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "cat",
-          "hierarchyAble"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "wolf",
-          "queryable"
-        ],
-        [
-          "dog",
-          "queryable"
-        ],
-        [
-          "mammal",
-          "hierarchyAble"
-        ],
-        [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "readonly",
-          "queryable"
-        ],
-        [
-          "dog",
-          "object"
-        ],
-        [
-          "bat",
-          "queryable"
-        ],
-        [
-          "type",
-          "whatAble"
-        ],
-        [
-          "bat",
-          "object"
-        ],
-        [
-          "owl",
-          "theAble"
-        ],
-        [
-          "object",
-          "theAble"
-        ],
-        [
-          "pidgeon",
-          "theAble"
-        ],
-        [
-          "type",
-          "property"
-        ],
-        [
           "animal",
           "hierarchyAble"
-        ],
-        [
-          "canine",
-          "theAble"
-        ],
-        [
-          "human",
-          "queryable"
-        ],
-        [
-          "human",
-          "object"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "xfx",
-          "queryable"
-        ],
-        [
-          "eagle",
-          "queryable"
-        ],
-        [
-          "feline",
-          "theAble"
-        ],
-        [
-          "eagle",
-          "object"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "parrot",
-          "queryable"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "owl",
-          "hierarchyAble"
-        ],
-        [
-          "wolf",
-          "theAble"
-        ],
-        [
-          "parrot",
-          "object"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "pidgeon",
-          "hierarchyAble"
-        ],
-        [
-          "dog",
-          "theAble"
-        ],
-        [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "unknown",
-          "theAble"
         ],
         [
           "animal",
           "object"
         ],
         [
-          "bat",
-          "theAble"
-        ],
-        [
-          "canine",
-          "hierarchyAble"
-        ],
-        [
-          "whose",
-          "object"
-        ],
-        [
-          "cat",
+          "animal",
           "queryable"
         ],
         [
-          "cat",
-          "object"
-        ],
-        [
-          "bird",
-          "hierarchyAble"
-        ],
-        [
-          "feline",
-          "hierarchyAble"
-        ],
-        [
-          "mammal",
-          "queryable"
-        ],
-        [
-          "bird",
-          "theAble"
-        ],
-        [
-          "mammal",
-          "object"
-        ],
-        [
-          "human",
-          "theAble"
-        ],
-        [
-          "wolf",
-          "hierarchyAble"
-        ],
-        [
-          "owl",
-          "object"
-        ],
-        [
-          "dog",
-          "hierarchyAble"
-        ],
-        [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "eagle",
+          "animal",
           "theAble"
         ],
         [
@@ -5047,19 +4749,31 @@
           "hierarchyAble"
         ],
         [
-          "what",
+          "bat",
+          "object"
+        ],
+        [
+          "bat",
           "queryable"
         ],
         [
-          "animal",
-          "queryable"
-        ],
-        [
-          "parrot",
+          "bat",
           "theAble"
         ],
         [
-          "theAble",
+          "bird",
+          "hierarchyAble"
+        ],
+        [
+          "bird",
+          "object"
+        ],
+        [
+          "bird",
+          "queryable"
+        ],
+        [
+          "bird",
           "theAble"
         ],
         [
@@ -5067,23 +4781,290 @@
           "canBeDoQuestion"
         ],
         [
-          "human",
+          "canBeQuestion",
+          "canBeQuestion"
+        ],
+        [
+          "canine",
           "hierarchyAble"
         ],
         [
-          "have",
-          "canBeDoQuestion"
+          "canine",
+          "object"
+        ],
+        [
+          "canine",
+          "queryable"
+        ],
+        [
+          "canine",
+          "theAble"
+        ],
+        [
+          "cat",
+          "hierarchyAble"
+        ],
+        [
+          "cat",
+          "object"
+        ],
+        [
+          "cat",
+          "queryable"
         ],
         [
           "cat",
           "theAble"
         ],
         [
+          "dog",
+          "hierarchyAble"
+        ],
+        [
+          "dog",
+          "object"
+        ],
+        [
+          "dog",
+          "queryable"
+        ],
+        [
+          "dog",
+          "theAble"
+        ],
+        [
+          "eagle",
+          "hierarchyAble"
+        ],
+        [
+          "eagle",
+          "object"
+        ],
+        [
+          "eagle",
+          "queryable"
+        ],
+        [
+          "eagle",
+          "theAble"
+        ],
+        [
+          "feline",
+          "hierarchyAble"
+        ],
+        [
+          "feline",
+          "object"
+        ],
+        [
+          "feline",
+          "queryable"
+        ],
+        [
+          "feline",
+          "theAble"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "human",
+          "hierarchyAble"
+        ],
+        [
+          "human",
+          "object"
+        ],
+        [
+          "human",
+          "queryable"
+        ],
+        [
+          "human",
+          "theAble"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "hierarchyAble"
+        ],
+        [
+          "mammal",
+          "object"
+        ],
+        [
+          "mammal",
+          "queryable"
+        ],
+        [
+          "mammal",
+          "theAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "owl",
+          "hierarchyAble"
+        ],
+        [
+          "owl",
+          "object"
+        ],
+        [
+          "owl",
+          "queryable"
+        ],
+        [
+          "owl",
+          "theAble"
+        ],
+        [
+          "parrot",
+          "hierarchyAble"
+        ],
+        [
+          "parrot",
+          "object"
+        ],
+        [
+          "parrot",
+          "queryable"
+        ],
+        [
+          "parrot",
+          "theAble"
+        ],
+        [
+          "pidgeon",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeon",
+          "object"
+        ],
+        [
+          "pidgeon",
+          "queryable"
+        ],
+        [
+          "pidgeon",
+          "theAble"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
+          "readonly",
+          "queryable"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "type",
+          "property"
+        ],
+        [
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "whatAble",
+          "whatAble"
+        ],
+        [
+          "whose",
+          "object"
+        ],
+        [
+          "wolf",
+          "hierarchyAble"
+        ],
+        [
           "wolf",
           "object"
+        ],
+        [
+          "wolf",
+          "queryable"
+        ],
+        [
+          "wolf",
+          "theAble"
+        ],
+        [
+          "xfx",
+          "queryable"
         ]
       ],
-      "load_cache_time": 10.294039964675903,
       "logs": [
         "Undefined word 'wings'",
         "Op choices were: [(('unknown', 0), [('bat', 0), ('have', 0), ('unknown', 0)]), (('bat', 0), [('bat', 0), ('have', 0), ('unknown', 1)]), (('have', 0), [('have', 0), ('unknown', 1)]), (('have', 1), [('have', 1)])]",
@@ -5162,7 +5143,6 @@
           }
         ]
       },
-      "times": 0.6942493915557861,
       "trace": "undefined",
       "contexts": [
         {
@@ -5214,6 +5194,10 @@
       "associations": [
         [
           [
+            "bat",
+            0
+          ],
+          [
             "have",
             0
           ],
@@ -5223,45 +5207,40 @@
           ]
         ],
         [
-          [
-            "have",
-            0
-          ],
           [
             "bat",
             0
           ],
           [
+            "have",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "have",
+            0
+          ],
+          [
             "unknown",
             0
           ]
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "have",
             0
           ],
           [
-            "bat",
-            0
-          ]
-        ],
-        [
-          [
             "unknown",
             1
-          ],
-          [
-            "have",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 24.3,
       "version": "6.22.0",
       "query": "bats have wings"
     }
@@ -5271,209 +5250,9 @@
   "associations": [
     [
       [
-        "list",
+        "animal",
         0
       ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "list",
-        1
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "list",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ]
-    ],
-    [
-      [
-        "doesnt",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "doesnt",
-        0
-      ],
-      [
-        "have",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "doesnt",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ]
-    ],
-    [
       [
         "have",
         0
@@ -5499,36 +5278,16 @@
     ],
     [
       [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
         "animal",
         0
       ],
       [
         "have",
         0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
       ],
       [
         "unknown",
-        0
+        1
       ]
     ],
     [
@@ -5542,34 +5301,42 @@
       ],
       [
         "unknown",
-        0
+        1
       ]
     ],
     [
       [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "animal",
+        "bat",
         0
       ],
       [
         "have",
         0
+      ],
+      [
+        "unknown",
+        0
       ]
     ],
     [
+      [
+        "bat",
+        0
+      ],
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "bird",
+        0
+      ],
       [
         "have",
         0
@@ -5595,36 +5362,16 @@
     ],
     [
       [
-        "unknown",
-        1
-      ],
-      [
         "bird",
         0
       ],
       [
         "have",
         0
-      ]
-    ],
-    [
+      ],
       [
         "unknown",
         1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "unknown",
-        0
       ]
     ],
     [
@@ -5638,126 +5385,56 @@
       ],
       [
         "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
         1
-      ],
-      [
-        "bird",
-        0
-      ],
-      [
-        "have",
-        0
       ]
     ],
     [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "have",
-        0
-      ]
-    ],
-    [
-      [
-        "list",
-        1
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        0
-      ],
-      [
-        "list",
-        0
-      ],
-      [
-        "mammal",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "list",
-        1
-      ],
-      [
-        "mammal",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "list",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        0
-      ],
-      [
-        "bird",
-        0
-      ],
-      [
-        "list",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        0
-      ],
-      [
-        "list",
-        0
-      ],
       [
         "bird",
         0
       ],
       [
         "is",
+        0
+      ],
+      [
+        "list",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "bird",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ]
+    ],
+    [
+      [
+        "bird",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ],
+      [
+        "unknown",
         0
       ]
     ],
@@ -5769,75 +5446,23 @@
       [
         "list",
         1
-      ],
-      [
-        "is",
-        0
       ]
     ],
     [
-      [
-        "list",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "feline",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        0
-      ],
-      [
-        "feline",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        0
-      ],
       [
         "canine",
         0
       ],
       [
+        "is",
+        0
+      ],
+      [
         "list",
         0
       ],
       [
-        "is",
+        "unknown",
         0
       ]
     ],
@@ -5847,70 +5472,438 @@
         0
       ],
       [
+        "is",
+        0
+      ],
+      [
         "list",
         1
+      ]
+    ],
+    [
+      [
+        "doesnt",
+        0
+      ],
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "doesnt",
+        0
+      ],
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "feline",
+        0
       ],
       [
         "is",
         0
+      ],
+      [
+        "unknown",
+        0
       ]
     ],
     [
+      [
+        "feline",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "have",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        0
+      ],
+      [
+        "mammal",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
       [
         "list",
         1
       ],
       [
+        "mammal",
+        0
+      ]
+    ],
+    [
+      [
         "is",
         0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
       ],
       [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "have",
-        0
-      ],
-      [
-        "bat",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
+        "list",
         1
       ],
       [
-        "have",
+        "mammal",
         0
       ],
       [
-        "bat",
+        "unknown",
         0
       ]
     ],
     [
       [
-        "unknown",
+        "is",
+        0
+      ],
+      [
+        "list",
         1
       ],
       [
-        "have",
+        "unknown",
         0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "unknown",
+        1
       ]
     ]
   ]

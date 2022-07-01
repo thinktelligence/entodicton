@@ -242,7 +242,7 @@ let config = {
     {
       notes: "unknown answer default response",
       match: ({context}) => context.marker == 'answerNotKnown',
-      apply: ({context}) => `That is not known`,
+      apply: ({context}) => `that is not known`,
     },
     {
       notes: "be brief or wordy",
@@ -450,10 +450,11 @@ let config = {
     },
 
     // defaults
-    [
-      ({context}) => context.paraphrase && context.word,
-      ({context}) => `${context.word}` 
-    ],
+    {
+      notes: 'show the input word',
+      match: ({context}) => context.paraphrase && context.word,
+      apply: ({context}) => `${context.word}` 
+    },
 
     [
       ({context}) => context.verbatim,

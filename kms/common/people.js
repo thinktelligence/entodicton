@@ -54,6 +54,26 @@ config.initializer( ({config, context, km}) => {
   config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }"})
   config.addHierarchy('owned', 'isEdAble')
   config.addGenerator({
+    match: ({context}) => {
+      if (context.marker == 'owns' && context.paraphrase) {
+        if (context['do']) {
+          const left = context['do'].left
+          if (context[left]) {
+            // who owns X should not be 'does who own x' but instead 'who owns x'
+            if (context[left].query) {
+              return true;
+            }
+          }
+        }
+      }
+
+      return false;
+    },
+    apply: ({context, g}) => {
+      return `${g(context.owner)} owns ${g(context.ownee)}`
+    }
+  })
+  config.addGenerator({
     // match: ({context}) => context.marker == 'owns' && context.isEd,
     match: ({context}) => context.marker == 'owned' && context.isEd,
     apply: ({context, g}) => {

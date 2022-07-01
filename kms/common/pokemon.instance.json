@@ -18,15 +18,99 @@
     {
       "hierarchy": [
         [
-          "type",
-          "queryable"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -34,23 +118,7 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -58,24 +126,36 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
         ],
         [
-          "it",
+          "type",
+          "property"
+        ],
+        [
+          "type",
           "queryable"
+        ],
+        [
+          "type",
+          "theAble"
         ],
         [
           "type",
           "whatAble"
         ],
         [
-          "have",
-          "canBeQuestion"
+          "unknown",
+          "hierarchyAble"
         ],
         [
-          "type",
-          "theAble"
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
         ],
         [
           "unknown",
@@ -86,99 +166,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
         ]
       ],
-      "load_cache_time": 7.436366081237793,
       "logs": [
         "Undefined word 'pikachu'",
         "Undefined word 'squirtle'",
@@ -189,7 +188,7 @@
         "Counter == 5. Applying Operator(pokemon/0, PASS, [Selector(Bridge('{ ...after, pokemon: operator, marker: operator(concat('pokemon_', after.value)), atomic: true, value: concat('pokemon_', after.value), modifiers: append(['pokemon'], after[0].modifiers)}'), []<==>[Type('type')], bridge(bridge))], evaluator(Bridge('{ ...after, pokemon: operator, marker: operator(concat('pokemon_', after.value)), atomic: true, value: concat('pokemon_', after.value), modifiers: append(['pokemon'], after[0].modifiers)}')), variables({}) bridge(bridge)) failed due the matchers [Type('type')] not being present",
         "Op choices were: [(('unknown', 0), [('is', 0), ('pokemon', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('pokemon', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('pokemon', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('pokemon', 0), ('unknown', 0)]), (('pokemon', 0), [('is', 0), ('pokemon', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator pokemon/0 was [['is', 0], ['pokemon', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.95 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  Group 1\n  0.95 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  Group 2\n  0.95 - [['list', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.95 - [['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.95 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 5\n  0.95 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  Group 6\n  0.25 - [['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  0.54 - [['unknown', 0], ['is', 0], ['pokemon', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.99 - [['list', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.99 - [['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 2\n  0.99 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  Group 3\n  0.95 - [['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.41 - [['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.99 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]\n  0.99 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  Group 6\n  0.99 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['pokemon', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['pokemon', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -323,7 +322,6 @@
           }
         ]
       },
-      "times": 1.5947778224945068,
       "trace": "undefined",
       "contexts": [
         {
@@ -398,19 +396,13 @@
       "associations": [
         [
           [
-            "pokemon",
+            "is",
             0
           ],
           [
             "list",
-            1
-          ],
-          [
-            "is",
             0
-          ]
-        ],
-        [
+          ],
           [
             "pokemon",
             0
@@ -418,23 +410,11 @@
           [
             "unknown",
             0
-          ],
-          [
-            "list",
-            0
-          ],
-          [
-            "is",
-            0
           ]
         ],
         [
           [
-            "pokemon",
-            0
-          ],
-          [
-            "unknown",
+            "is",
             0
           ],
           [
@@ -442,7 +422,25 @@
             1
           ],
           [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
             "is",
+            0
+          ],
+          [
+            "list",
+            1
+          ],
+          [
+            "pokemon",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
@@ -457,127 +455,70 @@
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "pikachu squirtle weedle and pidgeot are pokemon"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
-          "queryable"
-        ],
-        [
-          "readonly",
-          "queryable"
-        ],
-        [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "theAble"
-        ],
-        [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
-          "theAble"
-        ],
-        [
-          "type",
+          "concept",
           "concept"
         ],
         [
-          "unknown",
-          "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
-        ],
-        [
-          "type",
-          "whatAble"
+          "have",
+          "canBeDoQuestion"
         ],
         [
           "have",
           "canBeQuestion"
         ],
         [
-          "type",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "theAble"
-        ],
-        [
-          "what",
+          "hierarchyAble",
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
+          "ifAble",
+          "ifAble"
         ],
         [
           "is",
           "canBeQuestion"
         ],
         [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
           "likes",
           "orAble"
         ],
         [
-          "type",
-          "property"
+          "notAble",
+          "notAble"
         ],
         [
-          "whose",
-          "object"
-        ],
-        [
-          "pidgeot",
+          "object",
           "queryable"
         ],
         [
-          "pokemon_type",
-          "hierarchyAble"
+          "object",
+          "theAble"
         ],
         [
           "orAble",
@@ -585,110 +526,165 @@
         ],
         [
           "pidgeot",
-          "object"
+          "hierarchyAble"
         ],
         [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
+          "pidgeot",
           "object"
         ],
         [
           "pidgeot",
-          "hierarchyAble"
+          "queryable"
         ],
         [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
+          "pidgeot",
           "theAble"
         ],
         [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
+          "pikachu",
           "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
         ],
         [
           "pikachu",
           "queryable"
         ],
         [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
+          "pikachu",
+          "theAble"
         ],
         [
           "pokemon",
           "queryable"
         ],
         [
-          "have",
-          "canBeDoQuestion"
+          "pokemon",
+          "theAble"
         ],
         [
-          "likes",
-          "canBeQuestion"
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
+          "queryable"
+        ],
+        [
+          "readonly",
+          "queryable"
+        ],
+        [
+          "squirtle",
+          "hierarchyAble"
+        ],
+        [
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
+          "theAble"
+        ],
+        [
+          "theAble",
+          "theAble"
+        ],
+        [
+          "type",
+          "concept"
+        ],
+        [
+          "type",
+          "hierarchyAble"
+        ],
+        [
+          "type",
+          "property"
+        ],
+        [
+          "type",
+          "queryable"
+        ],
+        [
+          "type",
+          "theAble"
+        ],
+        [
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
+          "hierarchyAble"
+        ],
+        [
+          "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
+          "theAble"
+        ],
+        [
+          "what",
+          "queryable"
+        ],
+        [
+          "whatAble",
+          "whatAble"
+        ],
+        [
+          "whose",
+          "object"
         ],
         [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
         ]
       ],
-      "load_cache_time": 8.476999521255493,
       "logs": [
         "Undefined word 'fire'",
         "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
@@ -767,7 +763,6 @@
           }
         ]
       },
-      "times": 0.7300496101379395,
       "trace": "undefined",
       "contexts": [
         {
@@ -806,16 +801,6 @@
       "associations": [
         [
           [
-            "unknown",
-            1
-          ],
-          [
-            "modifies",
-            0
-          ]
-        ],
-        [
-          [
             "modifies",
             0
           ],
@@ -830,47 +815,168 @@
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "modifies",
             0
           ],
           [
             "type",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "modifies",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "fire modifies type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -878,27 +984,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -906,31 +1008,55 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
         ],
         [
-          "it",
-          "queryable"
+          "type",
+          "property"
         ],
         [
           "type",
-          "whatAble"
-        ],
-        [
-          "have",
-          "canBeQuestion"
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -938,155 +1064,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
         ]
       ],
-      "load_cache_time": 9.111758708953857,
       "logs": [
         "Undefined word 'water'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['modifies', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['unknown', 1]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['modifies', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0]]",
         ""
       ],
       "metadata": {
@@ -1133,8 +1126,8 @@
           },
           {
             "op": [
-              "modifies",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -1146,10 +1139,21 @@
                 1
               ]
             ]
+          },
+          {
+            "op": [
+              "modifies",
+              0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ]
+            ]
           }
         ]
       },
-      "times": 0.6345975399017334,
       "trace": "undefined",
       "contexts": [
         {
@@ -1188,16 +1192,6 @@
       "associations": [
         [
           [
-            "unknown",
-            1
-          ],
-          [
-            "modifies",
-            0
-          ]
-        ],
-        [
-          [
             "modifies",
             0
           ],
@@ -1212,47 +1206,168 @@
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "modifies",
             0
           ],
           [
             "type",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "modifies",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "water modifies type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -1260,27 +1375,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -1288,35 +1399,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -1324,155 +1463,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
         ]
       ],
-      "load_cache_time": 9.674411296844482,
       "logs": [
         "Undefined word 'earth'",
         "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
@@ -1551,7 +1553,6 @@
           }
         ]
       },
-      "times": 0.6347653865814209,
       "trace": "undefined",
       "contexts": [
         {
@@ -1590,16 +1591,6 @@
       "associations": [
         [
           [
-            "unknown",
-            1
-          ],
-          [
-            "modifies",
-            0
-          ]
-        ],
-        [
-          [
             "modifies",
             0
           ],
@@ -1614,51 +1605,176 @@
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "modifies",
             0
           ],
           [
             "type",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "modifies",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "earth modifies type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -1666,27 +1782,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -1694,35 +1806,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -1730,159 +1870,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
         ]
       ],
-      "load_cache_time": 10.395451307296753,
       "logs": [
         "Undefined word 'electric'",
         "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
@@ -1949,7 +1948,6 @@
           }
         ]
       },
-      "times": 0.6459057331085205,
       "trace": "undefined",
       "contexts": [
         {
@@ -1988,16 +1986,6 @@
       "associations": [
         [
           [
-            "unknown",
-            1
-          ],
-          [
-            "modifies",
-            0
-          ]
-        ],
-        [
-          [
             "modifies",
             0
           ],
@@ -2012,51 +2000,184 @@
         ],
         [
           [
-            "unknown",
-            1
-          ],
-          [
             "modifies",
             0
           ],
           [
             "type",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "modifies",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "electric modifies type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -2064,27 +2185,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -2092,35 +2209,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -2128,167 +2273,18 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 10.718090772628784,
       "logs": [
         "Counter == 2. Applying\n\t\t\t\t\t\t\t\tOperator(pokemon/0, PASS, [Selector(Bridge('{ ...after, pokemon: operator, marker: operator(concat('pokemon_', after.value)), atomic: true, value: concat('pokemon_', after.value), modifiers: append(['pokemon'], after[0].modifiers)}'), []<==>[Type('type')], bridge(bridge))], evaluator(Bridge('{ ...after, pokemon: operator, marker: operator(concat('pokemon_', after.value)), atomic: true, value: concat('pokemon_', after.value), modifiers: append(['pokemon'], after[0].modifiers)}')), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('type')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(modifies/0, [Selector(Bridge('{ ...next(operator), modifier: before[0], concept: after[0] }'), [Any]<==>[Any], bridge(bridge))], evaluator(Bridge('{ ...next(operator), modifier: before[0], concept: after[0] }')), variables({}) bridge(bridge)), 'default': True, 'text': 'modifies', 'word': 'modifies'})\n\n\n",
         "Op choices were: [(('type', 0), [('modifies', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('modifies', 0), ('pokemon', 0)]), (('modifies', 0), [('modifies', 0)])]",
@@ -2347,7 +2343,6 @@
           }
         ]
       },
-      "times": 0.7490992546081543,
       "trace": "undefined",
       "contexts": [
         {
@@ -2385,61 +2380,184 @@
       "associations": [
         [
           [
-            "pokemon",
+            "modifies",
             0
           ],
           [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
             "modifies",
+            0
+          ],
+          [
+            "pokemon",
             0
           ],
           [
             "type",
             0
           ]
-        ],
-        [
-          [
-            "pokemon",
-            0
-          ],
-          [
-            "modifies",
-            0
-          ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "pokemon modifies type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -2447,27 +2565,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -2475,35 +2589,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -2511,171 +2653,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 10.753129482269287,
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon_type', 0)]), (('fire', 0), [('a', 0), ('fire', 0), ('is', 0)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['is', 0]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['fire_type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['fire_type', 0], ['is', 0], ['a', 0]]\n  Group 1\n  0.75 - [['fire_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['fire_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 2\n  0.75 - [['fire', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['fire', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 3\n  1.0 - [['fire_type', 0], ['is', 0], ['pokemon_type', 0]]\n  1.0 - [['fire_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  Group 4\n  0.54 - [['fire', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.31 - [['fire', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 5\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]"
+        "Op choices were: [(('type', 0), [('a', 0), ('fire', 0), ('isEd', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('fire', 0), [('a', 0), ('fire', 0), ('isEd', 0), ('pokemon', 0)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('pokemon', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['isEd', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['isEd', 0], ['pokemon', 0]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['fire_type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['fire_type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 1\n  0.75 - [['fire_type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.75 - [['fire_type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 2\n  0.75 - [['fire_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['fire_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 3\n  0.75 - [['fire', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['fire', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 4\n  0.75 - [['fire_type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['fire_type', 0], ['is', 0], ['a', 0]]\n  Group 5\n  1.0 - [['fire_type', 0], ['is', 0], ['pokemon_type', 0]]\n  1.0 - [['fire_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  Group 6\n  0.68 - [['fire', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.74 - [['fire', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 7\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  Group 8\n  0.74 - [['fire', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  0.68 - [['fire', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -2694,7 +2687,7 @@
                 0
               ],
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -2737,7 +2730,7 @@
           },
           {
             "op": [
-              "pokemon",
+              "fire",
               0
             ],
             "ops": [
@@ -2747,6 +2740,50 @@
               ],
               [
                 "fire",
+                0
+              ],
+              [
+                "isEd",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "fire_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "fire_type",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon",
+              0
+            ],
+            "ops": [
+              [
+                "a",
                 0
               ],
               [
@@ -2770,55 +2807,11 @@
                 0
               ],
               [
-                "fire",
-                0
-              ],
-              [
                 "is",
                 0
               ],
               [
                 "pokemon_type",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "fire",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "fire",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "fire_type",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "fire_type",
-                0
-              ],
-              [
-                "is",
                 0
               ]
             ]
@@ -2865,7 +2858,6 @@
           }
         ]
       },
-      "times": 2.024385690689087,
       "trace": "undefined",
       "contexts": [
         {
@@ -2937,10 +2929,6 @@
       "associations": [
         [
           [
-            "pokemon",
-            0
-          ],
-          [
             "a",
             0
           ],
@@ -2951,49 +2939,67 @@
           [
             "is",
             0
-          ]
-        ],
-        [
-          [
-            "fire_type",
-            0
           ],
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
           [
             "pokemon",
-            0
-          ],
-          [
-            "is",
             0
           ],
           [
             "type",
             0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
           ],
           [
             "fire",
             0
           ],
           [
-            "a",
+            "pokemon",
             0
           ]
         ],
         [
           [
+            "a",
+            0
+          ],
+          [
             "fire",
             0
           ],
+          [
+            "pokemon",
+            0
+          ],
+          [
+            "type",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "fire_type",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
           [
             "a",
             0
@@ -3011,59 +3017,182 @@
           [
             "is",
             0
+          ],
+          [
+            "pokemon",
+            0
           ]
         ],
         [
           [
-            "fire",
+            "a",
             0
           ],
           [
-            "a",
+            "is",
             0
           ],
           [
             "pokemon_type",
             0
-          ],
-          [
-            "is",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "fire type is a pokemon type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -3071,27 +3200,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -3099,35 +3224,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -3135,171 +3288,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 0.004943370819091797,
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('water', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('water', 0)]), (('water_type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('water_type', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator water/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['water', 0]]\n  Context for choosing the operator water_type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['water_type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 1\n  0.75 - [['water_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['water_type', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  0.6 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.41 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 3\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  Group 4\n  0.75 - [['water_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['water_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 5\n  0.41 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.6 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 6\n  0.75 - [['water_type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['water_type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 7\n  0.75 - [['water_type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  0.75 - [['water_type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  Group 8\n  1.0 - [['water_type', 0], ['is', 0], ['pokemon_type', 0]]\n  1.0 - [['water_type', 0], ['isEd', 0], ['pokemon_type', 0]]"
+        "Op choices were: [(('type', 0), [('a', 0), ('isEd', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('pokemon', 0), [('a', 0), ('isEd', 0), ('pokemon', 0), ('water', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0), ('water', 0)]), (('water', 0), [('a', 0), ('is', 0), ('water', 0)]), (('water_type', 0), [('a', 0), ('is', 0), ('water_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['isEd', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['isEd', 0], ['pokemon', 0], ['water', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0], ['water', 0]]\n  Context for choosing the operator water/0 was [['a', 0], ['is', 0], ['water', 0]]\n  Context for choosing the operator water_type/0 was [['a', 0], ['is', 0], ['water_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 1\n  0.75 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 2\n  1.0 - [['water_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  1.0 - [['water_type', 0], ['is', 0], ['pokemon_type', 0]]\n  Group 3\n  0.75 - [['water_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['water_type', 0], ['isEd', 0], ['a', 0]]\n  Group 4\n  0.68 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 5\n  0.75 - [['water_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['water_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 6\n  0.75 - [['water', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  0.68 - [['water', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  Group 7\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3314,7 +3318,7 @@
                 0
               ],
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3351,6 +3355,54 @@
               ],
               [
                 "type",
+                0
+              ],
+              [
+                "water",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "isEd",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ],
+              [
+                "water",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon_type",
                 0
               ],
               [
@@ -3374,10 +3426,6 @@
                 0
               ],
               [
-                "pokemon",
-                0
-              ],
-              [
                 "water",
                 0
               ]
@@ -3398,51 +3446,7 @@
                 0
               ],
               [
-                "pokemon",
-                0
-              ],
-              [
                 "water_type",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "pokemon",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "pokemon",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "pokemon_type",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "pokemon_type",
                 0
               ]
             ]
@@ -3489,7 +3493,6 @@
           }
         ]
       },
-      "times": 2.0970940589904785,
       "trace": "undefined",
       "contexts": [
         {
@@ -3561,10 +3564,6 @@
       "associations": [
         [
           [
-            "pokemon",
-            0
-          ],
-          [
             "a",
             0
           ],
@@ -3579,67 +3578,11 @@
             0
           ],
           [
-            "pokemon_type",
-            0
-          ],
-          [
             "is",
             0
-          ]
-        ],
-        [
+          ],
           [
             "pokemon",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "water_type",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "pokemon",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "water",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "pokemon",
-            0
-          ],
-          [
-            "is",
             0
           ],
           [
@@ -3647,7 +3590,81 @@
             0
           ],
           [
+            "water",
+            0
+          ]
+        ],
+        [
+          [
             "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon_type",
+            0
+          ],
+          [
+            "water",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "water",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "water_type",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ],
+          [
+            "type",
+            0
+          ],
+          [
+            "water",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "pokemon",
             0
           ],
           [
@@ -3656,38 +3673,161 @@
           ]
         ]
       ],
-      "memory_free_percent": 24.2,
       "version": "6.22.0",
       "query": "water type is a pokemon type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -3695,27 +3835,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -3723,35 +3859,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -3759,171 +3923,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 0.003976583480834961,
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon_type', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['electric_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  1.0 - [['electric_type', 0], ['is', 0], ['pokemon_type', 0]]\n  Group 1\n  0.75 - [['electric_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['electric_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 2\n  0.75 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 3\n  0.3 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.27 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 4\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  Group 5\n  0.75 - [['electric_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['electric_type', 0], ['isEd', 0], ['a', 0]]\n  Group 6\n  0.75 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 7\n  0.27 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  0.3 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]"
+        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('isEd', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('isEd', 0), ('pokemon', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0), ('pokemon', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['isEd', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['isEd', 0], ['pokemon', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['electric_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['electric_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 1\n  1.0 - [['electric_type', 0], ['is', 0], ['pokemon_type', 0]]\n  1.0 - [['electric_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  Group 2\n  0.62 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.75 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 3\n  0.75 - [['electric_type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.75 - [['electric_type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 4\n  0.75 - [['electric_type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['electric_type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 5\n  0.75 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 6\n  0.75 - [['electric_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['electric_type', 0], ['isEd', 0], ['a', 0]]\n  Group 7\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  Group 8\n  0.75 - [['electric', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.62 - [['electric', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3942,7 +3957,7 @@
                 0
               ],
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3985,7 +4000,7 @@
           },
           {
             "op": [
-              "pokemon",
+              "electric",
               0
             ],
             "ops": [
@@ -3995,6 +4010,50 @@
               ],
               [
                 "electric",
+                0
+              ],
+              [
+                "isEd",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "electric_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "electric_type",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon",
+              0
+            ],
+            "ops": [
+              [
+                "a",
                 0
               ],
               [
@@ -4018,55 +4077,11 @@
                 0
               ],
               [
-                "electric",
-                0
-              ],
-              [
                 "is",
                 0
               ],
               [
                 "pokemon_type",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "electric",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "electric",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "electric_type",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "electric_type",
-                0
-              ],
-              [
-                "is",
                 0
               ]
             ]
@@ -4113,7 +4128,6 @@
           }
         ]
       },
-      "times": 2.139913320541382,
       "trace": "undefined",
       "contexts": [
         {
@@ -4195,60 +4209,14 @@
           [
             "is",
             0
-          ]
-        ],
-        [
+          ],
           [
             "pokemon",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "electric",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "pokemon",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "electric",
             0
           ],
           [
             "type",
             0
-          ],
-          [
-            "a",
-            0
-          ]
-        ],
-        [
-          [
-            "electric_type",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
           ]
         ],
         [
@@ -4257,7 +4225,11 @@
             0
           ],
           [
-            "is",
+            "electric",
+            0
+          ],
+          [
+            "pokemon",
             0
           ]
         ],
@@ -4271,47 +4243,226 @@
             0
           ],
           [
-            "pokemon_type",
+            "pokemon",
+            0
+          ],
+          [
+            "type",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "electric_type",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
             0
           ],
           [
             "is",
             0
           ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon_type",
+            0
+          ]
         ]
       ],
-      "memory_free_percent": 24.5,
       "version": "6.22.0",
       "query": "electric type is a pokemon type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -4319,27 +4470,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -4347,35 +4494,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -4383,171 +4558,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 0.004887104034423828,
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon_type', 0)]), (('earth', 0), [('a', 0), ('earth', 0), ('is', 0)]), (('earth_type', 0), [('a', 0), ('earth_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator earth/0 was [['a', 0], ['earth', 0], ['is', 0]]\n  Context for choosing the operator earth_type/0 was [['a', 0], ['earth_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 1\n  0.31 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.29 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 2\n  0.75 - [['earth_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['earth_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 3\n  0.31 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.29 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 4\n  0.75 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 5\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  Group 6\n  0.75 - [['earth_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['earth_type', 0], ['isEd', 0], ['a', 0]]\n  Group 7\n  1.0 - [['earth_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  1.0 - [['earth_type', 0], ['is', 0], ['pokemon_type', 0]]"
+        "Op choices were: [(('type', 0), [('a', 0), ('earth', 0), ('isEd', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('earth', 0), ('isEd', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon_type', 0)]), (('earth', 0), [('a', 0), ('earth', 0), ('is', 0)]), (('earth_type', 0), [('a', 0), ('earth_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['isEd', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['earth', 0], ['isEd', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator earth/0 was [['a', 0], ['earth', 0], ['is', 0]]\n  Context for choosing the operator earth_type/0 was [['a', 0], ['earth_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.75 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 1\n  0.7 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0]]\n  0.74 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0]]\n  Group 2\n  1.0 - [['earth_type', 0], ['isEd', 0], ['pokemon_type', 0]]\n  1.0 - [['earth_type', 0], ['is', 0], ['pokemon_type', 0]]\n  Group 3\n  0.75 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 4\n  0.75 - [['earth_type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['earth_type', 0], ['is', 0], ['a', 0]]\n  Group 5\n  0.7 - [['earth', 0], ['type', 0], ['is', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  0.74 - [['earth', 0], ['type', 0], ['isEd', 0], ['a', 0], ['pokemon', 0], ['type', 0]]\n  Group 6\n  0.75 - [['earth_type', 0], ['is', 0], ['a', 0], ['pokemon_type', 0]]\n  0.75 - [['earth_type', 0], ['isEd', 0], ['a', 0], ['pokemon_type', 0]]\n  Group 7\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -4566,7 +4592,7 @@
                 0
               ],
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -4622,7 +4648,7 @@
                 0
               ],
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -4737,7 +4763,6 @@
           }
         ]
       },
-      "times": 2.095973491668701,
       "trace": "undefined",
       "contexts": [
         {
@@ -4809,11 +4834,11 @@
       "associations": [
         [
           [
-            "earth",
+            "a",
             0
           ],
           [
-            "a",
+            "earth",
             0
           ],
           [
@@ -4823,7 +4848,11 @@
         ],
         [
           [
-            "pokemon",
+            "a",
+            0
+          ],
+          [
+            "earth",
             0
           ],
           [
@@ -4831,46 +4860,74 @@
             0
           ],
           [
-            "earth",
+            "pokemon",
             0
           ],
           [
             "type",
             0
-          ],
+          ]
+        ],
+        [
           [
             "a",
+            0
+          ],
+          [
+            "earth",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon_type",
             0
           ]
         ],
         [
+          [
+            "a",
+            0
+          ],
+          [
+            "earth",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "earth",
+            0
+          ],
           [
             "pokemon",
             0
           ],
           [
-            "earth",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
+            "type",
             0
           ]
         ],
         [
+          [
+            "a",
+            0
+          ],
           [
             "earth_type",
             0
           ],
           [
-            "a",
-            0
-          ],
-          [
             "is",
             0
           ]
@@ -4878,24 +4935,6 @@
         [
           [
             "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "earth",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "pokemon_type",
             0
           ],
           [
@@ -4904,38 +4943,161 @@
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "earth type is a pokemon type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -4943,27 +5105,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -4971,35 +5129,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -5007,227 +5193,25 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 0.005796194076538086,
       "logs": [
-        "Counter == 2. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(a/0, PASS, [Selector(Bridge('{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }'), []<==>[Type('theAble')], bridge(bridge))], evaluator(Bridge('{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }')), variables({}) bridge(bridge)), 'default': True, 'word': 'an', 'text': 'an'})\n\n\n",
-        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('isEd', 0), ('pikachu', 0), ('type', 0)]), (('isEd', 0), [('a', 0), ('electric', 0), ('isEd', 0), ('pikachu', 0)]), (('pikachu', 0), [('a', 0), ('electric', 0), ('is', 0), ('pikachu', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['isEd', 0], ['pikachu', 0], ['type', 0]]\n  Context for choosing the operator isEd/0 was [['a', 0], ['electric', 0], ['isEd', 0], ['pikachu', 0]]\n  Context for choosing the operator pikachu/0 was [['a', 0], ['electric', 0], ['is', 0], ['pikachu', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['pikachu', 0], ['is', 0], ['a', 0], ['electric', 0]]\n  0.25 - [['pikachu', 0], ['isEd', 0], ['a', 0], ['electric', 0]]\n  Group 1\n  0.75 - [['pikachu', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['pikachu', 0], ['is', 0], ['a', 0]]\n  Group 2\n  0.72 - [['pikachu', 0], ['is', 0], ['a', 0], ['electric', 0], ['type', 0]]\n  0.75 - [['pikachu', 0], ['isEd', 0], ['a', 0], ['electric', 0], ['type', 0]]"
+        "Op choices were: [(('pikachu', 0), [('a', 0), ('electric', 0), ('is', 0), ('pikachu', 0), ('type', 0)]), (('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('type', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator pikachu/0 was [['a', 0], ['electric', 0], ['is', 0], ['pikachu', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['type', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['pikachu', 0], ['is', 0], ['a', 0], ['electric', 0], ['type', 0]]\n  0.75 - [['pikachu', 0], ['isEd', 0], ['a', 0], ['electric', 0], ['type', 0]]\n  Group 1\n  0.75 - [['pikachu', 0], ['isEd', 0], ['a', 0], ['electric_type', 0]]\n  0.75 - [['pikachu', 0], ['is', 0], ['a', 0], ['electric_type', 0]]\n  Group 2\n  0.25 - [['pikachu', 0], ['isEd', 0], ['a', 0], ['electric', 0]]\n  0.25 - [['pikachu', 0], ['is', 0], ['a', 0], ['electric', 0]]\n  Group 3\n  0.74 - [['pikachu', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['pikachu', 0], ['is', 0], ['a', 0]]\n  Group 4\n  1.0 - [['pikachu', 0], ['is', 0], ['electric_type', 0]]\n  1.0 - [['pikachu', 0], ['isEd', 0], ['electric_type', 0]]"
       ],
       "metadata": {
         "opChoices": [
-          {
-            "op": [
-              "type",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "electric",
-                0
-              ],
-              [
-                "isEd",
-                0
-              ],
-              [
-                "pikachu",
-                0
-              ],
-              [
-                "type",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "isEd",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "electric",
-                0
-              ],
-              [
-                "isEd",
-                0
-              ],
-              [
-                "pikachu",
-                0
-              ]
-            ]
-          },
           {
             "op": [
               "pikachu",
@@ -5248,6 +5232,34 @@
               ],
               [
                 "pikachu",
+                0
+              ],
+              [
+                "type",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "electric",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "type",
                 0
               ]
             ]
@@ -5334,7 +5346,6 @@
           }
         ]
       },
-      "times": 2.023508071899414,
       "trace": "undefined",
       "contexts": [
         {
@@ -5411,7 +5422,7 @@
         ],
         [
           [
-            "pikachu",
+            "a",
             0
           ],
           [
@@ -5419,19 +5430,19 @@
             0
           ],
           [
-            "type",
-            0
-          ],
-          [
             "is",
             0
-          ]
-        ],
-        [
+          ],
           [
             "pikachu",
             0
           ],
+          [
+            "type",
+            0
+          ]
+        ],
+        [
           [
             "a",
             0
@@ -5441,20 +5452,24 @@
             0
           ],
           [
+            "is",
+            0
+          ],
+          [
             "type",
             0
           ]
         ],
         [
+          [
+            "a",
+            0
+          ],
           [
             "electric_type",
             0
           ],
           [
-            "a",
-            0
-          ],
-          [
             "is",
             0
           ]
@@ -5470,14 +5485,6 @@
           ]
         ],
         [
-          [
-            "pikachu",
-            0
-          ],
-          [
-            "a",
-            0
-          ],
           [
             "electric",
             0
@@ -5485,55 +5492,172 @@
           [
             "is",
             0
-          ]
-        ],
-        [
+          ],
           [
             "pikachu",
             0
           ],
           [
-            "a",
-            0
-          ],
-          [
-            "electric",
+            "type",
             0
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "pikachu is an electric type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -5541,27 +5665,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -5569,35 +5689,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -5605,172 +5753,23 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
         ]
       ],
-      "load_cache_time": 0.004720211029052734,
       "logs": [
         "Undefined word 'charmander'",
-        "Op choices were: [(('unknown', 0), [('a', 0), ('fire', 0), ('is', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('type', 0), ('unknown', 1)]), (('fire', 0), [('a', 0), ('fire', 0), ('is', 0), ('unknown', 1)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['fire', 0], ['is', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['unknown', 0], ['isEd', 0], ['fire_type', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['fire_type', 0]]\n  Group 1\n  0.71 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.2 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  0.26 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]"
+        "Op choices were: [(('unknown', 0), [('a', 0), ('fire', 0), ('is', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('type', 0), ('unknown', 1)]), (('fire', 0), [('a', 0), ('fire', 0), ('is', 0), ('unknown', 1)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['fire', 0], ['is', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.74 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.58 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 1\n  0.22 - [['unknown', 0], ['isEd', 0], ['a', 0], ['fire', 0]]\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0], ['fire', 0]]\n  Group 2\n  0.75 - [['unknown', 0], ['isEd', 0], ['fire_type', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['fire_type', 0]]\n  Group 3\n  0.62 - [['unknown', 0], ['is', 0], ['a', 0], ['fire', 0], ['type', 0]]\n  0.62 - [['unknown', 0], ['isEd', 0], ['a', 0], ['fire', 0], ['type', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  0.27 - [['unknown', 0], ['is', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -5900,8 +5899,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -5911,18 +5910,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },
@@ -5940,7 +5927,6 @@
           }
         ]
       },
-      "times": 1.5375866889953613,
       "trace": "undefined",
       "contexts": [
         {
@@ -6003,19 +5989,67 @@
       "associations": [
         [
           [
-            "unknown",
-            1
+            "a",
+            0
+          ],
+          [
+            "fire",
+            0
           ],
           [
             "is",
+            0
+          ],
+          [
+            "type",
+            0
+          ],
+          [
+            "unknown",
             0
           ]
         ],
         [
           [
+            "a",
+            0
+          ],
+          [
+            "fire",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "type",
+            0
+          ],
+          [
             "unknown",
             1
+          ]
+        ],
+        [
+          [
+            "a",
+            0
           ],
+          [
+            "fire",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
           [
             "a",
             0
@@ -6027,6 +6061,24 @@
           [
             "is",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ],
         [
@@ -6037,107 +6089,180 @@
           [
             "unknown",
             1
-          ],
-          [
-            "type",
-            0
-          ],
-          [
-            "fire",
-            0
-          ],
-          [
-            "a",
-            0
-          ]
-        ],
-        [
-          [
-            "unknown",
-            1
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "type",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "fire",
-            0
-          ],
-          [
-            "a",
-            0
-          ]
-        ],
-        [
-          [
-            "unknown",
-            1
-          ],
-          [
-            "a",
-            0
-          ],
-          [
-            "fire",
-            0
-          ],
-          [
-            "is",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 24.6,
       "version": "6.22.0",
       "query": "charmander is a fire type"
     },
     {
       "hierarchy": [
         [
-          "pikachu",
-          "hierarchyAble"
-        ],
-        [
-          "weedle",
-          "theAble"
-        ],
-        [
-          "type",
-          "queryable"
-        ],
-        [
-          "earth_type",
-          "type"
-        ],
-        [
-          "squirtle",
-          "theAble"
+          "canBeDoQuestion",
+          "canBeDoQuestion"
         ],
         [
           "canBeQuestion",
           "canBeQuestion"
         ],
         [
-          "unknown",
+          "charmander",
+          "hierarchyAble"
+        ],
+        [
+          "charmander",
+          "object"
+        ],
+        [
+          "charmander",
+          "queryable"
+        ],
+        [
+          "charmander",
+          "theAble"
+        ],
+        [
+          "concept",
+          "concept"
+        ],
+        [
+          "earth_type",
+          "hierarchyAble"
+        ],
+        [
+          "earth_type",
+          "type"
+        ],
+        [
+          "electric_type",
+          "hierarchyAble"
+        ],
+        [
+          "electric_type",
+          "type"
+        ],
+        [
+          "fire_type",
+          "hierarchyAble"
+        ],
+        [
+          "fire_type",
+          "type"
+        ],
+        [
+          "have",
+          "canBeDoQuestion"
+        ],
+        [
+          "have",
+          "canBeQuestion"
+        ],
+        [
+          "hierarchyAble",
+          "queryable"
+        ],
+        [
+          "ifAble",
+          "ifAble"
+        ],
+        [
+          "is",
+          "canBeQuestion"
+        ],
+        [
+          "it",
+          "queryable"
+        ],
+        [
+          "likes",
+          "canBeQuestion"
+        ],
+        [
+          "likes",
+          "ifAble"
+        ],
+        [
+          "likes",
+          "orAble"
+        ],
+        [
+          "notAble",
+          "notAble"
+        ],
+        [
+          "object",
+          "queryable"
+        ],
+        [
+          "object",
+          "theAble"
+        ],
+        [
+          "orAble",
+          "ifAble"
+        ],
+        [
+          "pidgeot",
+          "hierarchyAble"
+        ],
+        [
+          "pidgeot",
+          "object"
+        ],
+        [
+          "pidgeot",
+          "queryable"
+        ],
+        [
+          "pidgeot",
+          "theAble"
+        ],
+        [
+          "pikachu",
+          "hierarchyAble"
+        ],
+        [
+          "pikachu",
+          "object"
+        ],
+        [
+          "pikachu",
+          "queryable"
+        ],
+        [
+          "pikachu",
+          "theAble"
+        ],
+        [
+          "pokemon",
+          "queryable"
+        ],
+        [
+          "pokemon",
+          "theAble"
+        ],
+        [
+          "pokemon_type",
+          "hierarchyAble"
+        ],
+        [
+          "pokemon_type",
+          "type"
+        ],
+        [
+          "property",
+          "queryable"
+        ],
+        [
+          "property",
+          "theAble"
+        ],
+        [
+          "property",
+          "unknown"
+        ],
+        [
+          "queryable",
           "queryable"
         ],
         [
@@ -6145,31 +6270,23 @@
           "queryable"
         ],
         [
-          "object",
-          "queryable"
-        ],
-        [
-          "charmander",
-          "theAble"
-        ],
-        [
-          "unknown",
-          "notAble"
-        ],
-        [
-          "type",
+          "squirtle",
           "hierarchyAble"
         ],
         [
-          "pikachu",
+          "squirtle",
+          "object"
+        ],
+        [
+          "squirtle",
+          "queryable"
+        ],
+        [
+          "squirtle",
           "theAble"
         ],
         [
-          "property",
-          "theAble"
-        ],
-        [
-          "pokemon",
+          "theAble",
           "theAble"
         ],
         [
@@ -6177,35 +6294,63 @@
           "concept"
         ],
         [
-          "unknown",
+          "type",
           "hierarchyAble"
-        ],
-        [
-          "it",
-          "queryable"
         ],
         [
           "type",
-          "whatAble"
+          "property"
         ],
         [
-          "have",
-          "canBeQuestion"
-        ],
-        [
-          "water_type",
-          "hierarchyAble"
+          "type",
+          "queryable"
         ],
         [
           "type",
           "theAble"
         ],
         [
-          "fire_type",
+          "type",
+          "whatAble"
+        ],
+        [
+          "unknown",
           "hierarchyAble"
         ],
         [
           "unknown",
+          "notAble"
+        ],
+        [
+          "unknown",
+          "queryable"
+        ],
+        [
+          "unknown",
+          "theAble"
+        ],
+        [
+          "water_type",
+          "hierarchyAble"
+        ],
+        [
+          "water_type",
+          "type"
+        ],
+        [
+          "weedle",
+          "hierarchyAble"
+        ],
+        [
+          "weedle",
+          "object"
+        ],
+        [
+          "weedle",
+          "queryable"
+        ],
+        [
+          "weedle",
           "theAble"
         ],
         [
@@ -6213,183 +6358,22 @@
           "queryable"
         ],
         [
-          "object",
-          "theAble"
-        ],
-        [
-          "queryable",
-          "queryable"
-        ],
-        [
-          "is",
-          "canBeQuestion"
-        ],
-        [
-          "likes",
-          "orAble"
-        ],
-        [
-          "type",
-          "property"
+          "whatAble",
+          "whatAble"
         ],
         [
           "whose",
           "object"
         ],
         [
-          "water_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "queryable"
-        ],
-        [
-          "pokemon_type",
-          "hierarchyAble"
-        ],
-        [
-          "orAble",
-          "ifAble"
-        ],
-        [
-          "fire_type",
-          "type"
-        ],
-        [
-          "pidgeot",
-          "object"
-        ],
-        [
-          "weedle",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "queryable"
-        ],
-        [
-          "weedle",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "hierarchyAble"
-        ],
-        [
-          "concept",
-          "concept"
-        ],
-        [
-          "squirtle",
-          "object"
-        ],
-        [
-          "earth_type",
-          "hierarchyAble"
-        ],
-        [
-          "electric_type",
-          "hierarchyAble"
-        ],
-        [
-          "ifAble",
-          "ifAble"
-        ],
-        [
-          "theAble",
-          "theAble"
-        ],
-        [
-          "pokemon_type",
-          "type"
-        ],
-        [
-          "notAble",
-          "notAble"
-        ],
-        [
-          "likes",
-          "ifAble"
-        ],
-        [
-          "charmander",
-          "queryable"
-        ],
-        [
-          "canBeDoQuestion",
-          "canBeDoQuestion"
-        ],
-        [
-          "whatAble",
-          "whatAble"
-        ],
-        [
-          "weedle",
-          "hierarchyAble"
-        ],
-        [
-          "pikachu",
-          "queryable"
-        ],
-        [
-          "property",
-          "unknown"
-        ],
-        [
-          "hierarchyAble",
-          "queryable"
-        ],
-        [
-          "squirtle",
-          "hierarchyAble"
-        ],
-        [
-          "property",
-          "queryable"
-        ],
-        [
-          "pokemon",
-          "queryable"
-        ],
-        [
-          "have",
-          "canBeDoQuestion"
-        ],
-        [
-          "likes",
-          "canBeQuestion"
-        ],
-        [
           "xfx",
           "queryable"
-        ],
-        [
-          "pikachu",
-          "object"
-        ],
-        [
-          "pidgeot",
-          "theAble"
-        ],
-        [
-          "electric_type",
-          "type"
-        ],
-        [
-          "charmander",
-          "hierarchyAble"
-        ],
-        [
-          "charmander",
-          "object"
         ]
       ],
-      "load_cache_time": 11.294013738632202,
       "logs": [
         "Op choices were: [(('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['pokemon', 0], ['type', 0], ['isEd', 0], ['a', 0], ['type', 0]]\n  0.75 - [['pokemon', 0], ['type', 0], ['is', 0], ['a', 0], ['type', 0]]\n  Group 1\n  1.0 - [['pokemon_type', 0], ['is', 0], ['type', 0]]\n  1.0 - [['pokemon_type', 0], ['isEd', 0], ['type', 0]]\n  Group 2\n  0.75 - [['pokemon_type', 0], ['isEd', 0], ['a', 0], ['type', 0]]\n  0.75 - [['pokemon_type', 0], ['is', 0], ['a', 0], ['type', 0]]\n  Group 3\n  0.75 - [['pokemon_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['pokemon_type', 0], ['isEd', 0], ['a', 0]]\n  Group 4\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['pokemon_type', 0], ['is', 0], ['a', 0], ['type', 0]]\n  0.75 - [['pokemon_type', 0], ['isEd', 0], ['a', 0], ['type', 0]]\n  Group 1\n  0.75 - [['pokemon_type', 0], ['is', 0], ['a', 0]]\n  0.75 - [['pokemon_type', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  1.0 - [['pokemon_type', 0], ['is', 0], ['type', 0]]\n  1.0 - [['pokemon_type', 0], ['isEd', 0], ['type', 0]]\n  Group 3\n  0.75 - [['pokemon', 0], ['type', 0], ['isEd', 0], ['a', 0], ['type', 0]]\n  0.75 - [['pokemon', 0], ['type', 0], ['is', 0], ['a', 0], ['type', 0]]\n  Group 4\n  0.75 - [['type', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['type', 0], ['is', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -6523,7 +6507,6 @@
           }
         ]
       },
-      "times": 1.6148133277893066,
       "trace": "undefined",
       "contexts": [
         {
@@ -6587,10 +6570,6 @@
       "associations": [
         [
           [
-            "pokemon",
-            0
-          ],
-          [
             "a",
             0
           ],
@@ -6601,48 +6580,51 @@
         ],
         [
           [
-            "pokemon",
+            "a",
             0
           ],
           [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
             "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
             0
           ],
           [
             "type",
             0
-          ],
-          [
-            "is",
-            0
           ]
         ],
         [
           [
             "a",
+            0
+          ],
+          [
+            "is",
             0
           ],
           [
             "pokemon_type",
             0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
           ]
         ]
       ],
-      "memory_free_percent": 24.7,
       "version": "6.22.0",
       "query": "pokemon type is a type"
     }
@@ -6652,549 +6634,7 @@
   "associations": [
     [
       [
-        "pokemon",
-        0
-      ],
-      [
-        "list",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "list",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "list",
-        1
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ]
-    ],
-    [
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ]
-    ],
-    [
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ]
-    ],
-    [
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ]
-    ],
-    [
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "modifies",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "modifies",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
         "a",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "fire_type",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "a",
-        0
-      ]
-    ],
-    [
-      [
-        "fire",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "fire",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "pokemon_type",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "pokemon_type",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "water_type",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "water",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "water",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "electric",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "electric",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "electric",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "a",
-        0
-      ]
-    ],
-    [
-      [
-        "electric_type",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "electric",
-        0
-      ],
-      [
-        "pokemon_type",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "earth",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "is",
         0
       ],
       [
@@ -7202,17 +6642,13 @@
         0
       ],
       [
-        "type",
-        0
-      ],
-      [
-        "a",
+        "is",
         0
       ]
     ],
     [
       [
-        "pokemon",
+        "a",
         0
       ],
       [
@@ -7220,52 +6656,78 @@
         0
       ],
       [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
         "a",
+        0
+      ],
+      [
+        "earth",
         0
       ],
       [
         "is",
         0
+      ],
+      [
+        "pokemon_type",
+        0
       ]
     ],
     [
+      [
+        "a",
+        0
+      ],
+      [
+        "earth",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "earth",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
       [
         "earth_type",
         0
       ],
       [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "earth",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "pokemon_type",
-        0
-      ],
-      [
         "is",
         0
       ]
@@ -7285,34 +6747,20 @@
       ]
     ],
     [
+      [
+        "a",
+        0
+      ],
+      [
+        "electric",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
       [
         "pikachu",
-        0
-      ],
-      [
-        "electric",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pikachu",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "electric",
         0
       ],
       [
@@ -7321,15 +6769,87 @@
       ]
     ],
     [
+      [
+        "a",
+        0
+      ],
+      [
+        "electric",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "electric",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "electric",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "electric",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
       [
         "electric_type",
         0
       ],
       [
-        "a",
-        0
-      ],
-      [
         "is",
         0
       ]
@@ -7340,57 +6860,135 @@
         0
       ],
       [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "pikachu",
-        0
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "electric",
+        "electric_type",
         0
       ],
       [
         "is",
         0
+      ],
+      [
+        "pokemon",
+        0
       ]
     ],
     [
-      [
-        "pikachu",
-        0
-      ],
       [
         "a",
         0
       ],
       [
-        "electric",
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
         0
       ]
     ],
     [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
       [
         "unknown",
         1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
       ],
       [
         "is",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "pokemon",
         0
       ]
     ],
     [
       [
-        "unknown",
-        1
+        "a",
+        0
       ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
       [
         "a",
         0
@@ -7402,9 +7000,21 @@
       [
         "is",
         0
+      ],
+      [
+        "pokemon",
+        0
       ]
     ],
     [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire_type",
+        0
+      ],
       [
         "is",
         0
@@ -7412,25 +7022,9 @@
       [
         "unknown",
         1
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "a",
-        0
       ]
     ],
     [
-      [
-        "unknown",
-        1
-      ],
       [
         "a",
         0
@@ -7442,37 +7036,7 @@
     ],
     [
       [
-        "is",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
         "a",
-        0
-      ]
-    ],
-    [
-      [
-        "unknown",
-        1
-      ],
-      [
-        "a",
-        0
-      ],
-      [
-        "fire",
         0
       ],
       [
@@ -7481,26 +7045,116 @@
       ]
     ],
     [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
       [
         "pokemon",
         0
       ],
       [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
         "a",
         0
       ],
       [
         "is",
         0
-      ]
-    ],
-    [
-      [
-        "pokemon",
-        0
       ],
       [
-        "a",
+        "pokemon",
         0
       ],
       [
@@ -7508,13 +7162,59 @@
         0
       ],
       [
-        "is",
+        "water",
         0
       ]
     ],
     [
       [
         "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
         0
       ],
       [
@@ -7522,7 +7222,7 @@
         0
       ],
       [
-        "is",
+        "water",
         0
       ]
     ],
@@ -7533,6 +7233,334 @@
       ],
       [
         "is",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "water",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "water_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "water",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "water",
+        0
+      ]
+    ],
+    [
+      [
+        "electric",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pikachu",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "list",
+        1
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "unknown",
         0
       ]
     ]
