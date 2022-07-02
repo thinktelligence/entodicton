@@ -7,6 +7,7 @@ const people_instance = require('./people.instance.json')
 // TODO first name 
 // TODO last name
 // hana is a first name vs hana is a person
+// TODO who is the person that owns cleo
 
 const template = {
     "queries": [
@@ -42,17 +43,21 @@ config.initializer( ({config, context, km}) => {
             after: [{tag: 'ownee', id: 'ownee'}],
             relation: true,
             doAble: true,
+            edAble: { operator: 'owned', word: 'owned' },
             config
           })
-  config.addOperator("(([ownee])? <owned> ([by] ([owner])))")
+  // config.addOperator("(([ownee])? <owned> ([by] ([owner])))")
+  /*
   config.addBridge({
            id: "owned", 
            level: 0,
            bridge: "{ ...before, contraints: [ { property: 'ownee', constraint: { ...next(operator), owner: after[0].object, ownee: before[0] } } ] }",
            deferred: "{ ...next(operator), 'isEd': true, 'ownee': before[0], owner: after[0].object }" })
            // deferred: "{ ...next(operator), 'marker': 'owns', 'isEd': true, 'ownee': before[0], owner: after[0].object }" })
-  config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }"})
-  config.addHierarchy('owned', 'isEdAble')
+  */
+  // config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }"})
+  // config.addHierarchy('owned', 'isEdAble')
+  /*
   config.addGenerator({
     match: ({context}) => {
       if (context.marker == 'owns' && context.paraphrase) {
@@ -73,6 +78,8 @@ config.initializer( ({config, context, km}) => {
       return `${g(context.owner)} owns ${g(context.ownee)}`
     }
   })
+  */
+  /*
   config.addGenerator({
     // match: ({context}) => context.marker == 'owns' && context.isEd,
     match: ({context}) => context.marker == 'owned' && context.isEd,
@@ -80,6 +87,7 @@ config.initializer( ({config, context, km}) => {
       return `${g(context.ownee)} is owned by ${g(context.owner)}`
     }
   })
+  */
   // config.addBridge({ id: "ownee", level: 0, bridge: "{ ...next(operator) }"})
   // config.addBridge({ id: "owner", level: 0, bridge: "{ ...next(operator) }"})
 
