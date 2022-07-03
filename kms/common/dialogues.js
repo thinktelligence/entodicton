@@ -194,7 +194,7 @@ let config = {
   words: {
     "?": [{"id": "questionMark", "initial": "{}" }],
     "the": [{"id": "the", "initial": "{ modifiers: [] }" }],
-    "who": [{"id": "what", "initial": "{ modifiers: [] }" }],
+    "who": [{"id": "what", "initial": "{ modifiers: [], query: true }" }],
     "yes": [{"id": "yesno", "initial": "{ value: true }" }],
     "no": [{"id": "yesno", "initial": "{ value: false }" }],
     "brief": [{"id": "briefOrWordy", "initial": "{ value: 'brief' }" }],
