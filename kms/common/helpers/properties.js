@@ -103,19 +103,20 @@ class API {
     config.addHierarchy(operator, 'canBeQuestion')
   }
 
-  setupEdAble(config) {
-    config.addOperator("(([ownee])? <owned> ([by] ([owner])))")
+  setupEdAble(args) {
+    const { operator, word, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
+
+    config.addOperator(`(([${after[0].tag}])? <${edAble.operator}|${edAble.word}> ([by] ([${before[0].tag}])))`)
     config.addBridge({
-             id: "owned",
+             id: edAble.operator,
              level: 0,
-             bridge: "{ ...before, contraints: [ { property: 'ownee', constraint: { ...next(operator), owner: after[0].object, ownee: before[0] } } ] }",
-             deferred: "{ ...next(operator), 'isEd': true, 'ownee': before[0], owner: after[0].object }" })
-             // deferred: "{ ...next(operator), 'marker': 'owns', 'isEd': true, 'ownee': before[0], owner: after[0].object }" })
-    config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }"})
-    config.addHierarchy('owned', 'isEdAble')
+             bridge: `{ ...before, contraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), ${before[0].tag}: after[0].object, ${after[0].tag}: before[0] } } ] }`,
+             deferred: `{ ...next(operator), 'isEd': true, '${after[0].tag}': before[0], ${before[0].tag}: after[0].object }` })
+    config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", allowDups: true})
+    config.addHierarchy(edAble.operator, 'isEdAble')
     config.addGenerator({
       match: ({context}) => {
-        if (context.marker == 'owns' && context.paraphrase) {
+        if (context.marker == operator && context.paraphrase) {
           if (context['do']) {
             const left = context['do'].left
             if (context[left]) {
@@ -130,14 +131,15 @@ class API {
         return false;
       },
       apply: ({context, g}) => {
-        return `${g(context.owner)} owns ${g(context.ownee)}`
+        // TODO handle singular plural
+        return `${g(context[before[0].tag])} ${word.singular} ${g(context[after[0].tag])}`
       }
     })
     config.addGenerator({
-      // match: ({context}) => context.marker == 'owns' && context.isEd,
-      match: ({context}) => context.marker == 'owned' && context.isEd,
+      match: ({context}) => context.marker == edAble.operator && context.isEd,
       apply: ({context, g}) => {
-        return `${g(context.ownee)} is owned by ${g(context.owner)}`
+        // TODO handle plural singular
+        return `${g(context[after[0].tag])} is ${edAble.word} by ${g(context[before[0].tag])}`
       }
     })
     // config.addBridge({ id: "ownee", level: 0, bridge: "{ ...next(operator) }"})
@@ -151,7 +153,8 @@ class API {
   // doAble : true if the qustion like this work "does b[0] <marker> b[0]" for example does g2reg like bananas
   // relation -> the semantics will be implements using relations
   // edable: "y is owned by x" edable = { operator: 'owned' }
-  createActionPrefix({ operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble }, semanticApply) {
+  createActionPrefix(args, semanticApply) {
+    const { operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
@@ -387,7 +390,7 @@ class API {
       })
     }
     if (doAble && edAble) {
-      this.setupEdAble(config)
+      this.setupEdAble(args)
     }
   }
 
