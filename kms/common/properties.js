@@ -86,7 +86,7 @@ let config = {
     "([readonly])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
-    "(([object|]) [have|has,have] ([property|]))",
+    "(([object|]) [have|] ([property|]))",
     "(<doesnt|doesnt,dont> ([have/0]))",
     "(([xfx]) <([between] (words))>)",
     // "(([have/1]) <questionMark|>)",
@@ -150,7 +150,8 @@ let config = {
   words: {
     "<<possession>>": [{ id: 'possession', initial: "{ value: 'possession' }" }],
     " 's": [{ id: 'possession', initial: "{ value: 'possession' }" }],
-    "have": [{ id: 'have', initial: "{ doesable: true }" }],
+    "have": [{ id: 'have', initial: "{ doesable: true, number: 'many' }" }],
+    "has": [{ id: 'have', initial: "{ doesable: true, number: 'one' }" }],
     // "my": [{ id: 'objectPrefix', initial: "{ value: 'other' }" }],
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },

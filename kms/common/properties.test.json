@@ -412,7 +412,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -518,10 +518,16 @@
             "initial": "{ value: 'chicken' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -634,38 +640,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "modifies",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "modifies",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "modifies",
             0
           ],
@@ -673,6 +647,10 @@
             [
               "modifies",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         }
@@ -1240,7 +1218,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -1346,10 +1324,16 @@
             "initial": "{ value: 'chicken' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -1482,38 +1466,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "modifies",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "modifies",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "modifies",
             0
           ],
@@ -1521,6 +1473,10 @@
             [
               "modifies",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2183,7 +2139,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -2283,10 +2239,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -2332,6 +2294,7 @@
         "is_compound": true,
         "marker": "have",
         "negation": true,
+        "number": "many",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -2601,6 +2564,7 @@
             "is_compound": true,
             "marker": "have",
             "negation": true,
+            "number": "many",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -3106,7 +3070,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -3206,10 +3170,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -3255,6 +3225,7 @@
         "is_compound": true,
         "marker": "have",
         "negation": true,
+        "number": "many",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -3293,6 +3264,7 @@
         "doesable": true,
         "is_compound": true,
         "marker": "have",
+        "number": "many",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -3689,6 +3661,7 @@
             "doesable": true,
             "is_compound": true,
             "marker": "have",
+            "number": "many",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -3739,6 +3712,7 @@
             "is_compound": true,
             "marker": "have",
             "negation": true,
+            "number": "many",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -4169,7 +4143,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -4269,10 +4243,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -4309,13 +4289,14 @@
     },
     "contexts": [
       {
-        "default": true,
         "do": {
           "left": "object",
           "right": "property",
           "text": "greg has eyes"
         },
+        "doesable": true,
         "marker": "have",
+        "number": "one",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -4548,13 +4529,14 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "do": {
               "left": "object",
               "right": "property",
               "text": "greg has eyes"
             },
+            "doesable": true,
             "marker": "have",
+            "number": "one",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -5038,7 +5020,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -5138,10 +5120,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -5178,13 +5166,14 @@
     },
     "contexts": [
       {
-        "default": true,
         "do": {
           "left": "object",
           "right": "property",
           "text": "greg has eyes"
         },
+        "doesable": true,
         "marker": "have",
+        "number": "one",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -5215,13 +5204,14 @@
         "word": "has"
       },
       {
-        "default": true,
         "do": {
           "left": "object",
           "right": "property",
           "text": "greg has eyes"
         },
+        "doesable": true,
         "marker": "have",
+        "number": "one",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -5576,13 +5566,14 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "do": {
               "left": "object",
               "right": "property",
               "text": "greg has eyes"
             },
+            "doesable": true,
             "marker": "have",
+            "number": "one",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -5626,13 +5617,14 @@
         },
         {
           "context": {
-            "default": true,
             "do": {
               "left": "object",
               "right": "property",
               "text": "greg has eyes"
             },
+            "doesable": true,
             "marker": "have",
+            "number": "one",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -6085,7 +6077,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -6185,10 +6177,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -6225,13 +6223,14 @@
     },
     "contexts": [
       {
-        "default": true,
         "do": {
           "left": "object",
           "right": "property",
           "text": "greg has eyes"
         },
+        "doesable": true,
         "marker": "have",
+        "number": "one",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -6489,13 +6488,14 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "do": {
               "left": "object",
               "right": "property",
               "text": "greg has eyes"
             },
+            "doesable": true,
             "marker": "have",
+            "number": "one",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -6983,7 +6983,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -7083,10 +7083,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -7123,13 +7129,14 @@
     },
     "contexts": [
       {
-        "default": true,
         "do": {
           "left": "object",
           "right": "property",
           "text": "greg has toes"
         },
+        "doesable": true,
         "marker": "have",
+        "number": "one",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -7160,13 +7167,14 @@
         "word": "has"
       },
       {
-        "default": true,
         "do": {
           "left": "object",
           "right": "property",
           "text": "greg has eyes"
         },
+        "doesable": true,
         "marker": "have",
+        "number": "one",
         "object": {
           "marker": "unknown",
           "text": "greg",
@@ -7521,13 +7529,14 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "do": {
               "left": "object",
               "right": "property",
               "text": "greg has eyes"
             },
+            "doesable": true,
             "marker": "have",
+            "number": "one",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -7571,13 +7580,14 @@
         },
         {
           "context": {
-            "default": true,
             "do": {
               "left": "object",
               "right": "property",
               "text": "greg has toes"
             },
+            "doesable": true,
             "marker": "have",
+            "number": "one",
             "object": {
               "marker": "unknown",
               "text": "greg",
@@ -8042,7 +8052,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -8142,10 +8152,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -8631,24 +8647,6 @@
         ],
         [
           "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
           1
         ]
       ],
@@ -9048,7 +9046,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -9148,10 +9146,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -10160,7 +10164,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -10260,10 +10264,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -12336,7 +12346,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -12436,10 +12446,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -14544,7 +14560,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -14644,10 +14660,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -15516,7 +15538,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -15616,10 +15638,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -17375,6 +17403,16 @@
           0
         ],
         [
+          "property",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
           "propertyOf",
           0
         ],
@@ -17851,7 +17889,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -17951,10 +17989,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -18461,7 +18505,7 @@
         },
         {
           "op": [
-            "the",
+            "possession",
             0
           ],
           "ops": [
@@ -18489,31 +18533,7 @@
         },
         {
           "op": [
-            "possession",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
+            "the",
             0
           ],
           "ops": [
@@ -18531,6 +18551,10 @@
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -18559,7 +18583,7 @@
             ],
             [
               "propertyOf",
-              1
+              0
             ],
             [
               "unknown",
@@ -18578,16 +18602,32 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "property",
               0
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
             ],
             [
               "unknown",
@@ -18612,26 +18652,6 @@
             [
               "propertyOf",
               1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
             ],
             [
               "unknown",
@@ -18652,6 +18672,22 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ],
+            [
+              "isEd",
+              0
             ]
           ]
         },
@@ -19715,7 +19751,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -19815,10 +19851,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -21555,7 +21597,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -21655,10 +21697,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -22994,6 +23042,16 @@
           "unknown",
           1
         ]
+      ],
+      [
+        [
+          "readonly",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
       ]
     ],
     "config": {
@@ -23343,7 +23401,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -23443,10 +23501,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -23607,6 +23671,10 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
@@ -23632,6 +23700,10 @@
           "ops": [
             [
               "is",
+              0
+            ],
+            [
+              "isEd",
               0
             ],
             [
@@ -24315,6 +24387,16 @@
           "unknown",
           1
         ]
+      ],
+      [
+        [
+          "readonly",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
       ]
     ],
     "config": {
@@ -24664,7 +24746,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -24764,10 +24846,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -25100,6 +25188,10 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "propertyOf",
               0
             ],
@@ -25125,6 +25217,10 @@
           "ops": [
             [
               "is",
+              0
+            ],
+            [
+              "isEd",
               0
             ],
             [
@@ -26413,7 +26509,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -26513,10 +26609,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -27179,7 +27281,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -27279,10 +27381,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -28097,7 +28205,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -28197,10 +28305,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -29097,7 +29211,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -29197,10 +29311,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -30213,7 +30333,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -30313,10 +30433,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -31197,7 +31323,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -31297,10 +31423,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
@@ -31945,7 +32077,7 @@
           "pattern": "(<(([object]) [possession|])> ([property|]))"
         },
         {
-          "pattern": "(([object|]) [have|has,have] ([property|]))"
+          "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
           "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
@@ -32045,10 +32177,16 @@
             "initial": "{ value: 'brief' }"
           }
         ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
         "have": [
           {
             "id": "have",
-            "initial": "{ doesable: true }"
+            "initial": "{ doesable: true, number: 'many' }"
           }
         ],
         "no": [
