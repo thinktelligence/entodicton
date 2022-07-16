@@ -120,9 +120,9 @@ let config = {
     "(([canBeQuestion/1,2]) <questionMark|>)",
     // "(([is/2]) <questionMark|>)",
 
-    "(([what]) [(<does> ([doesAble|]))])",
+    "(([what]) [(<does|> ([doesAble|]))])",
     "([canBeDoQuestion])",
-    "(<does|does,do> ([canBeDoQuestion/0,1]))",
+    "(<does|> ([canBeDoQuestion/0,1]))",
     // make what is it work <<<<<<<<<<<<<<<<<<<<<<<, what is greg
     // joe is a person the age of joe ...
     //"arm them, what, the phasers"
@@ -199,6 +199,8 @@ let config = {
     "no": [{"id": "yesno", "initial": "{ value: false }" }],
     "brief": [{"id": "briefOrWordy", "initial": "{ value: 'brief' }" }],
     "wordy": [{"id": "briefOrWordy", "initial": "{ value: 'wordy' }" }],
+    "does": [{"id": "does", "initial": "{ number: 'one' }" }],
+    "do": [{"id": "does", "initial": "{ number: 'many' }" }],
   },
 
   floaters: ['query'],
