@@ -140,32 +140,6 @@
         [
           "the",
           0
-        ]
-      ],
-      [
-        [
-          "ampm",
-          0
-        ],
-        [
-          "hourUnits",
-          0
-        ],
-        [
-          "info",
-          0
-        ],
-        [
-          "person",
-          0
-        ],
-        [
-          "tell",
-          0
-        ],
-        [
-          "the",
-          0
         ],
         [
           "time",
@@ -192,6 +166,10 @@
         [
           "the",
           0
+        ],
+        [
+          "time",
+          0
         ]
       ],
       [
@@ -209,6 +187,28 @@
         ],
         [
           "tell",
+          0
+        ]
+      ],
+      [
+        [
+          "info",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "person",
+          0
+        ],
+        [
+          "tell",
+          0
+        ],
+        [
+          "the",
           0
         ]
       ],
@@ -242,6 +242,10 @@
         [
           "tell",
           0
+        ],
+        [
+          "the",
+          0
         ]
       ],
       [
@@ -259,6 +263,10 @@
         ],
         [
           "the",
+          0
+        ],
+        [
+          "time",
           0
         ]
       ],
@@ -297,9 +305,10 @@
             "modifiers": [
               "determiner"
             ],
+            "number": "one",
             "pullFromContext": true,
             "response": true,
-            "text": "the time",
+            "text": "the time is 2 pm",
             "types": [
               "time"
             ],
@@ -363,7 +372,7 @@
       "opChoices": [
         {
           "op": [
-            "person",
+            "hourUnits",
             0
           ],
           "ops": [
@@ -403,7 +412,7 @@
         },
         {
           "op": [
-            "time",
+            "ampm",
             0
           ],
           "ops": [
@@ -412,9 +421,69 @@
               0
             ],
             [
-              "hourUnits",
+              "info",
               0
             ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "person",
+              0
+            ],
+            [
+              "tell",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "time",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "person",
+            0
+          ],
+          "ops": [
+            [
+              "info",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "person",
+              0
+            ],
+            [
+              "tell",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "time",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "time",
+            0
+          ],
+          "ops": [
             [
               "info",
               0
@@ -439,18 +508,10 @@
         },
         {
           "op": [
-            "hourUnits",
+            "info",
             0
           ],
           "ops": [
-            [
-              "ampm",
-              0
-            ],
-            [
-              "hourUnits",
-              0
-            ],
             [
               "info",
               0
@@ -471,18 +532,10 @@
         },
         {
           "op": [
-            "ampm",
+            "isEd",
             0
           ],
           "ops": [
-            [
-              "ampm",
-              0
-            ],
-            [
-              "info",
-              0
-            ],
             [
               "isEd",
               0
@@ -504,11 +557,7 @@
           ],
           "ops": [
             [
-              "info",
-              0
-            ],
-            [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -517,42 +566,6 @@
             ],
             [
               "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "info",
-            0
-          ],
-          "ops": [
-            [
-              "info",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "tell",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "tell",
               0
             ]
           ]
@@ -634,9 +647,10 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "pullFromContext": true,
                 "response": true,
-                "text": "the time",
+                "text": "the time is 2 pm",
                 "types": [
                   "time"
                 ],
@@ -828,11 +842,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the time",
           "types": [
             "what"
           ],
@@ -921,7 +936,7 @@
       "opChoices": [
         {
           "op": [
-            "timeUnit",
+            "what",
             0
           ],
           "ops": [
@@ -961,42 +976,6 @@
         },
         {
           "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "count",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "time",
-              0
-            ],
-            [
-              "timeFormat",
-              0
-            ],
-            [
-              "use",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "time",
             0
           ],
@@ -1022,6 +1001,10 @@
               0
             ],
             [
+              "timeUnit",
+              0
+            ],
+            [
               "use",
               0
             ]
@@ -1029,7 +1012,39 @@
         },
         {
           "op": [
-            "count",
+            "timeUnit",
+            0
+          ],
+          "ops": [
+            [
+              "count",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "timeFormat",
+              0
+            ],
+            [
+              "timeUnit",
+              0
+            ],
+            [
+              "use",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
             0
           ],
           "ops": [
@@ -1057,16 +1072,16 @@
         },
         {
           "op": [
-            "the",
+            "count",
             0
           ],
           "ops": [
             [
-              "is",
+              "count",
               0
             ],
             [
-              "the",
+              "is",
               0
             ],
             [
@@ -1158,11 +1173,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the time",
               "types": [
                 "what"
               ],
@@ -1184,11 +1200,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the time",
               "types": [
                 "what"
               ],
@@ -1437,11 +1454,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the time",
           "types": [
             "what"
           ],
@@ -1530,7 +1548,7 @@
       "opChoices": [
         {
           "op": [
-            "timeUnit",
+            "what",
             0
           ],
           "ops": [
@@ -1570,42 +1588,6 @@
         },
         {
           "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "count",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "time",
-              0
-            ],
-            [
-              "timeFormat",
-              0
-            ],
-            [
-              "use",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "time",
             0
           ],
@@ -1631,6 +1613,10 @@
               0
             ],
             [
+              "timeUnit",
+              0
+            ],
+            [
               "use",
               0
             ]
@@ -1638,7 +1624,39 @@
         },
         {
           "op": [
-            "count",
+            "timeUnit",
+            0
+          ],
+          "ops": [
+            [
+              "count",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "timeFormat",
+              0
+            ],
+            [
+              "timeUnit",
+              0
+            ],
+            [
+              "use",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
             0
           ],
           "ops": [
@@ -1666,16 +1684,16 @@
         },
         {
           "op": [
-            "the",
+            "count",
             0
           ],
           "ops": [
             [
-              "is",
+              "count",
               0
             ],
             [
-              "the",
+              "is",
               0
             ],
             [
@@ -1767,11 +1785,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the time",
               "types": [
                 "what"
               ],
@@ -1793,11 +1812,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the time",
               "types": [
                 "what"
               ],
@@ -2138,6 +2158,16 @@
         [
           "the",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
         ],
         [
           "time",
@@ -2161,16 +2191,6 @@
           "what",
           0
         ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
       ]
     ],
     "config": {
@@ -2183,11 +2203,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the time",
           "types": [
             "what"
           ],
@@ -2300,7 +2321,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -2320,7 +2341,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -2329,7 +2350,7 @@
               0
             ],
             [
-              "what",
+              "the",
               0
             ]
           ]
@@ -2373,11 +2394,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the time",
               "types": [
                 "what"
               ],
@@ -2399,11 +2421,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the time",
               "types": [
                 "what"
               ],

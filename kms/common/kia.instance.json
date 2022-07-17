@@ -492,9 +492,9 @@
       ],
       "logs": [
         "Undefined word 'kia'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('self', 0), ('unknown', 0)]), (('self', 0), [('is', 0), ('self', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['self', 0], ['unknown', 0]]\n  Context for choosing the operator self/0 was [['is', 0], ['self', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['self', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['self', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.98 - [['self', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['self', 0], ['is', 0], ['unknown', 0]]"
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('self', 0), ('unknown', 0)]), (('self', 0), [('is', 0), ('self', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['self', 0], ['unknown', 0]]\n  Context for choosing the operator self/0 was [['is', 0], ['self', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['self', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['self', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['self', 0], ['isEd', 0], ['unknown', 0]]\n  0.99 - [['self', 0], ['is', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -505,7 +505,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -540,8 +540,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -551,18 +551,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },
@@ -583,14 +571,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "are",
+          "number": "many",
           "text": "you are kia",
+          "marker": "is",
+          "word": "are",
           "one": {
+            "number": "many",
             "variable": true,
             "value": "self",
-            "text": "you",
+            "text": "you are kia",
             "marker": "self",
             "word": "you",
             "types": [
@@ -636,7 +625,7 @@
           ],
           [
             "unknown",
-            0
+            1
           ]
         ],
         [
@@ -644,23 +633,19 @@
             "is",
             0
           ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
           [
             "self",
             0
           ],
           [
             "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
             0
-          ],
-          [
-            "unknown",
-            1
           ]
         ]
       ],
@@ -682,7 +667,7 @@
       ],
       [
         "unknown",
-        0
+        1
       ]
     ],
     [
@@ -690,23 +675,19 @@
         "is",
         0
       ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
       [
         "self",
         0
       ],
       [
         "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
         0
-      ],
-      [
-        "unknown",
-        1
       ]
     ]
   ]

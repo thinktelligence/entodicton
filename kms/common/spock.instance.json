@@ -513,7 +513,7 @@
       "logs": [
         "Op choices were: [(('spock', 0), [('is', 0), ('self', 0), ('spock', 0)]), (('self', 0), [('is', 0), ('self', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator spock/0 was [['is', 0], ['self', 0], ['spock', 0]]\n  Context for choosing the operator self/0 was [['is', 0], ['self', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['self', 0], ['isEd', 0], ['spock', 0]]\n  1.0 - [['self', 0], ['is', 0], ['spock', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['self', 0], ['is', 0], ['spock', 0]]\n  1.0 - [['self', 0], ['isEd', 0], ['spock', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -582,14 +582,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "are",
+          "number": "many",
           "text": "you are spock",
+          "marker": "is",
+          "word": "are",
           "one": {
+            "number": "many",
             "variable": true,
             "value": "self",
-            "text": "you",
+            "text": "you are spock",
             "marker": "self",
             "word": "you",
             "types": [

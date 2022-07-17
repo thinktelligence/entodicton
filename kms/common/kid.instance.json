@@ -505,10 +505,11 @@
         "Undefined word 'kia'",
         "Undefined word 'sister'",
         "Undefined word 'hana'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.46 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.92 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.46 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.23 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"sister\",\n        \"text\": \"kia 's sister\",\n        \"value\": \"sister\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"sister\",\n            \"text\": \"sister\",\n            \"value\": \"sister\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Counter == 4. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/1, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': 'hana', 'text': 'hana', 'value': 'hana', 'unknown': True})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.94 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.94 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.95 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"sister\",\n        \"text\": \"kia 's sister is hana\",\n        \"value\": \"sister\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"sister\",\n            \"text\": \"sister\",\n            \"value\": \"sister\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -519,7 +520,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -539,7 +540,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -563,7 +564,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -572,6 +573,26 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "possession",
                 0
               ],
               [
@@ -685,14 +706,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "kia 's sister is hana",
+          "marker": "is",
+          "word": "is",
           "one": {
+            "number": "one",
             "marker": "property",
             "word": "sister",
-            "text": "kia 's sister",
+            "text": "kia 's sister is hana",
             "value": "sister",
             "unknown": true,
             "types": [
@@ -772,38 +794,6 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -848,6 +838,40 @@
         [
           [
             "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
             0
           ],
           [
@@ -1349,10 +1373,11 @@
       "logs": [
         "Undefined word 'kia'",
         "Undefined word 'name'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.46 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.92 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.46 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.23 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"kia 's name\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Counter == 4. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/1, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': 'kia', 'text': 'kia', 'value': 'kia', 'unknown': True})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.94 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.94 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.95 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"kia 's name is kia\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -1363,7 +1388,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -1383,7 +1408,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -1407,7 +1432,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -1416,6 +1441,26 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "possession",
                 0
               ],
               [
@@ -1529,14 +1574,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "kia 's name is kia",
+          "marker": "is",
+          "word": "is",
           "one": {
+            "number": "one",
             "marker": "property",
             "word": "name",
-            "text": "kia 's name",
+            "text": "kia 's name is kia",
             "value": "name",
             "unknown": true,
             "types": [
@@ -1616,38 +1662,6 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -1692,6 +1706,40 @@
         [
           [
             "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
             0
           ],
           [
@@ -2194,10 +2242,11 @@
         "Undefined word 'kia'",
         "Undefined word 'age'",
         "Undefined word '27'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.46 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.92 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.46 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.23 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"age\",\n        \"text\": \"kia 's age\",\n        \"value\": \"age\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"age\",\n            \"text\": \"age\",\n            \"value\": \"age\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"27\",\n          \"text\": \"27\",\n          \"value\": \"27\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Counter == 4. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/1, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': '27', 'text': '27', 'value': '27', 'unknown': True})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.94 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.94 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.95 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"age\",\n        \"text\": \"kia 's age is 27\",\n        \"value\": \"age\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"age\",\n            \"text\": \"age\",\n            \"value\": \"age\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"27\",\n          \"text\": \"27\",\n          \"value\": \"27\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -2208,7 +2257,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -2228,7 +2277,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -2252,7 +2301,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -2261,6 +2310,26 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "possession",
                 0
               ],
               [
@@ -2374,14 +2443,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "kia 's age is 27",
+          "marker": "is",
+          "word": "is",
           "one": {
+            "number": "one",
             "marker": "property",
             "word": "age",
-            "text": "kia 's age",
+            "text": "kia 's age is 27",
             "value": "age",
             "unknown": true,
             "types": [
@@ -2461,38 +2531,6 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -2537,6 +2575,40 @@
         [
           [
             "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
             0
           ],
           [
@@ -3039,10 +3111,11 @@
         "Undefined word 'hana'",
         "Undefined word 'sister'",
         "Undefined word 'kia'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.46 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.92 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.46 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.23 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"sister\",\n        \"text\": \"hana 's sister\",\n        \"value\": \"sister\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"sister\",\n            \"text\": \"sister\",\n            \"value\": \"sister\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"hana\",\n            \"text\": \"hana\",\n            \"value\": \"hana\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Counter == 4. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/1, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': 'kia', 'text': 'kia', 'value': 'kia', 'unknown': True})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.94 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.94 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.95 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"sister\",\n        \"text\": \"hana 's sister is kia\",\n        \"value\": \"sister\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"sister\",\n            \"text\": \"sister\",\n            \"value\": \"sister\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"hana\",\n            \"text\": \"hana\",\n            \"value\": \"hana\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -3053,7 +3126,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3073,7 +3146,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3097,7 +3170,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3106,6 +3179,26 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "possession",
                 0
               ],
               [
@@ -3219,14 +3312,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "hana 's sister is kia",
+          "marker": "is",
+          "word": "is",
           "one": {
+            "number": "one",
             "marker": "property",
             "word": "sister",
-            "text": "hana 's sister",
+            "text": "hana 's sister is kia",
             "value": "sister",
             "unknown": true,
             "types": [
@@ -3306,38 +3400,6 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -3382,6 +3444,40 @@
         [
           [
             "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
             0
           ],
           [
@@ -3883,10 +3979,11 @@
       "logs": [
         "Undefined word 'hana'",
         "Undefined word 'name'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.46 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.92 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.46 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.23 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"hana 's name\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"hana\",\n            \"text\": \"hana\",\n            \"value\": \"hana\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Counter == 4. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/1, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': 'hana', 'text': 'hana', 'value': 'hana', 'unknown': True})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.94 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.94 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.95 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"hana 's name is hana\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"hana\",\n            \"text\": \"hana\",\n            \"value\": \"hana\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -3897,7 +3994,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3917,7 +4014,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3941,7 +4038,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -3950,6 +4047,26 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "possession",
                 0
               ],
               [
@@ -4063,14 +4180,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "hana 's name is hana",
+          "marker": "is",
+          "word": "is",
           "one": {
+            "number": "one",
             "marker": "property",
             "word": "name",
-            "text": "hana 's name",
+            "text": "hana 's name is hana",
             "value": "name",
             "unknown": true,
             "types": [
@@ -4150,38 +4268,6 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -4226,6 +4312,40 @@
         [
           [
             "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
             0
           ],
           [
@@ -4728,10 +4848,11 @@
         "Undefined word 'hana'",
         "Undefined word 'age'",
         "Undefined word '21'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.46 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.92 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.46 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.23 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"marker\": \"property\",\n        \"word\": \"age\",\n        \"text\": \"hana 's age\",\n        \"value\": \"age\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"age\",\n            \"text\": \"age\",\n            \"value\": \"age\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"hana\",\n            \"text\": \"hana\",\n            \"value\": \"hana\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"21\",\n          \"text\": \"21\",\n          \"value\": \"21\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Counter == 4. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ ...context }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ ...context }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(unknown/1, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': '21', 'text': '21', 'value': '21', 'unknown': True})\n\n\n",
+        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.94 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.94 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.95 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"age\",\n        \"text\": \"hana 's age is 21\",\n        \"value\": \"age\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"hana\",\n          \"text\": \"hana\",\n          \"value\": \"hana\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"age\",\n            \"text\": \"age\",\n            \"value\": \"age\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"hana\",\n            \"text\": \"hana\",\n            \"value\": \"hana\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"21\",\n          \"text\": \"21\",\n          \"value\": \"21\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -4742,7 +4863,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -4762,7 +4883,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -4786,7 +4907,7 @@
             ],
             "ops": [
               [
-                "is",
+                "isEd",
                 0
               ],
               [
@@ -4795,6 +4916,26 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "isEd",
+              0
+            ],
+            "ops": [
+              [
+                "isEd",
+                0
+              ],
+              [
+                "possession",
                 0
               ],
               [
@@ -4908,14 +5049,15 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "hana 's age is 21",
+          "marker": "is",
+          "word": "is",
           "one": {
+            "number": "one",
             "marker": "property",
             "word": "age",
-            "text": "hana 's age",
+            "text": "hana 's age is 21",
             "value": "age",
             "unknown": true,
             "types": [
@@ -4995,38 +5137,6 @@
           ],
           [
             "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -5071,6 +5181,40 @@
         [
           [
             "is",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "possession",
             0
           ],
           [
@@ -8618,16 +8762,6 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "means",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
       "version": "6.22.0",
@@ -9125,8 +9259,8 @@
         "Undefined word 'cleo'",
         "Op choices were: [(('unknown', 0), [('cat', 0), ('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('cat', 0), ('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('cat', 0), [('cat', 0), ('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['cat', 0], ['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['cat', 0], ['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator cat/0 was [['cat', 0], ['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['possession', 0], ['cat', 0], ['is', 0], ['unknown', 0]]\n  0.98 - [['unknown', 0], ['possession', 0], ['cat', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.48 - [['unknown', 0], ['possession', 0], ['cat', 0], ['isEd', 0], ['unknown', 0]]\n  0.83 - [['unknown', 0], ['possession', 0], ['cat', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['possession', 0], ['cat', 0], ['is', 0], ['unknown', 0]]\n  0.98 - [['possession', 0], ['cat', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  0.44 - [['cat', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['cat', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.98 - [['cat', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['cat', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.25 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.51 - [['property', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"value\": \"cat\",\n        \"number\": \"one\",\n        \"text\": \"kia 's cat\",\n        \"marker\": \"property\",\n        \"word\": \"cat\",\n        \"types\": [\n          \"cat\",\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"value\": \"cat\",\n            \"number\": \"one\",\n            \"text\": \"cat\",\n            \"marker\": \"cat\",\n            \"word\": \"cat\",\n            \"types\": [\n              \"cat\",\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"cleo\",\n          \"text\": \"cleo\",\n          \"value\": \"cleo\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['cat', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['cat', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['possession', 0], ['cat', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['possession', 0], ['cat', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['possession', 0], ['cat', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['cat', 0], ['is', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"value\": \"cat\",\n        \"text\": \"kia 's cat is cleo\",\n        \"marker\": \"property\",\n        \"word\": \"cat\",\n        \"types\": [\n          \"cat\",\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kia\",\n          \"text\": \"kia\",\n          \"value\": \"kia\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"value\": \"cat\",\n            \"number\": \"one\",\n            \"text\": \"cat\",\n            \"marker\": \"cat\",\n            \"word\": \"cat\",\n            \"types\": [\n              \"cat\",\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kia\",\n            \"text\": \"kia\",\n            \"value\": \"kia\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"cleo\",\n          \"text\": \"cleo\",\n          \"value\": \"cleo\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties61\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -9311,14 +9445,14 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
-          "default": true,
-          "word": "is",
+          "number": "one",
           "text": "kia 's cat is cleo",
+          "marker": "is",
+          "word": "is",
           "one": {
-            "value": "cat",
             "number": "one",
-            "text": "kia 's cat",
+            "value": "cat",
+            "text": "kia 's cat is cleo",
             "marker": "property",
             "word": "cat",
             "types": [
@@ -9828,198 +9962,6 @@
       ],
       [
         "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
         1
       ]
     ],
@@ -10489,7 +10431,201 @@
     ],
     [
       [
-        "means",
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "possession",
         0
       ],
       [

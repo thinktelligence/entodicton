@@ -40,21 +40,21 @@
         ],
         [
           "propertyOf",
-          0
-        ],
-        [
-          "what",
-          0
+          1
         ]
       ],
       [
         [
-          "is",
+          "pikachu",
           0
         ],
         [
           "propertyOf",
-          1
+          0
+        ],
+        [
+          "the",
+          0
         ]
       ],
       [
@@ -81,15 +81,15 @@
       ],
       [
         [
+          "pikachu",
+          0
+        ],
+        [
           "propertyOf",
           0
         ],
         [
           "the",
-          0
-        ],
-        [
-          "type",
           0
         ],
         [
@@ -105,10 +105,6 @@
         [
           "the",
           0
-        ],
-        [
-          "what",
-          0
         ]
       ]
     ],
@@ -122,11 +118,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the type of pikachu",
           "types": [
             "what"
           ],
@@ -351,7 +348,7 @@
       "opChoices": [
         {
           "op": [
-            "pikachu",
+            "type",
             0
           ],
           "ops": [
@@ -383,12 +380,16 @@
         },
         {
           "op": [
-            "type",
+            "what",
             0
           ],
           "ops": [
             [
               "isEd",
+              0
+            ],
+            [
+              "pikachu",
               0
             ],
             [
@@ -400,11 +401,31 @@
               0
             ],
             [
-              "type",
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "pikachu",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
               0
             ],
             [
-              "what",
+              "pikachu",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ]
           ]
@@ -425,30 +446,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "what",
               0
             ]
           ]
@@ -812,11 +809,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the type of pikachu",
               "types": [
                 "what"
               ],
@@ -838,11 +836,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the type of pikachu",
               "types": [
                 "what"
               ],
@@ -1069,14 +1068,15 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "marker": "pokemon_type",
               "modifiers": [
                 "pokemon"
               ],
+              "number": "one",
               "pokemon": {
                 "marker": "pokemon",
                 "text": "pokemon",
@@ -1084,7 +1084,7 @@
                 "word": "pokemon"
               },
               "response": true,
-              "text": "pokemon type",
+              "text": "pokemon type is a type",
               "types": [
                 "pokemon_type"
               ],
@@ -1123,12 +1123,13 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "unknown",
+              "number": "one",
               "response": true,
-              "text": "charmander",
+              "text": "charmander is a fire type",
               "types": [
                 "unknown"
               ],
@@ -1176,13 +1177,13 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "pikachu",
               "number": "one",
               "response": true,
-              "text": "pikachu",
+              "text": "pikachu is an electric type",
               "types": [
                 "pikachu"
               ],
@@ -1229,8 +1230,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "earth": {
@@ -1243,8 +1244,9 @@
               "modifiers": [
                 "earth"
               ],
+              "number": "one",
               "response": true,
-              "text": "earth type",
+              "text": "earth type is a pokemon type",
               "types": [
                 "earth_type"
               ],
@@ -1291,8 +1293,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "electric": {
@@ -1305,8 +1307,9 @@
               "modifiers": [
                 "electric"
               ],
+              "number": "one",
               "response": true,
-              "text": "electric type",
+              "text": "electric type is a pokemon type",
               "types": [
                 "electric_type"
               ],
@@ -1416,11 +1419,12 @@
           "modifiers": [
             "what"
           ],
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what type",
+          "text": "what type is pikachu",
           "types": [
             "type"
           ],
@@ -1902,11 +1906,12 @@
               "modifiers": [
                 "what"
               ],
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what type",
+              "text": "what type is pikachu",
               "types": [
                 "type"
               ],
@@ -1992,14 +1997,15 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "marker": "pokemon_type",
               "modifiers": [
                 "pokemon"
               ],
+              "number": "one",
               "pokemon": {
                 "marker": "pokemon",
                 "text": "pokemon",
@@ -2007,7 +2013,7 @@
                 "word": "pokemon"
               },
               "response": true,
-              "text": "pokemon type",
+              "text": "pokemon type is a type",
               "types": [
                 "pokemon_type"
               ],
@@ -2046,12 +2052,13 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "unknown",
+              "number": "one",
               "response": true,
-              "text": "charmander",
+              "text": "charmander is a fire type",
               "types": [
                 "unknown"
               ],
@@ -2099,13 +2106,13 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "pikachu",
               "number": "one",
               "response": true,
-              "text": "pikachu",
+              "text": "pikachu is an electric type",
               "types": [
                 "pikachu"
               ],
@@ -2152,8 +2159,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "earth": {
@@ -2166,8 +2173,9 @@
               "modifiers": [
                 "earth"
               ],
+              "number": "one",
               "response": true,
-              "text": "earth type",
+              "text": "earth type is a pokemon type",
               "types": [
                 "earth_type"
               ],
@@ -2214,8 +2222,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "electric": {
@@ -2228,8 +2236,9 @@
               "modifiers": [
                 "electric"
               ],
+              "number": "one",
               "response": true,
-              "text": "electric type",
+              "text": "electric type is a pokemon type",
               "types": [
                 "electric_type"
               ],
@@ -2315,10 +2324,6 @@
           0
         ],
         [
-          "is",
-          0
-        ],
-        [
           "type",
           0
         ],
@@ -2330,10 +2335,6 @@
       [
         [
           "electric",
-          0
-        ],
-        [
-          "is",
           0
         ],
         [
@@ -2363,11 +2364,12 @@
           "marker": "what",
           "modifiers": [
           ],
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "who",
+          "text": "who is electric type",
           "types": [
             "what"
           ],
@@ -2482,7 +2484,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2506,11 +2508,27 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
               "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "electric",
+              0
+            ],
+            [
+              "isEd",
               0
             ]
           ]
@@ -2875,11 +2893,12 @@
               "marker": "what",
               "modifiers": [
               ],
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "who",
+              "text": "who is electric type",
               "types": [
                 "what"
               ],
@@ -2902,11 +2921,12 @@
               "marker": "what",
               "modifiers": [
               ],
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "who",
+              "text": "who is electric type",
               "types": [
                 "what"
               ],
@@ -3014,14 +3034,15 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "marker": "pokemon_type",
               "modifiers": [
                 "pokemon"
               ],
+              "number": "one",
               "pokemon": {
                 "marker": "pokemon",
                 "text": "pokemon",
@@ -3029,7 +3050,7 @@
                 "word": "pokemon"
               },
               "response": true,
-              "text": "pokemon type",
+              "text": "pokemon type is a type",
               "types": [
                 "pokemon_type"
               ],
@@ -3068,12 +3089,13 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "unknown",
+              "number": "one",
               "response": true,
-              "text": "charmander",
+              "text": "charmander is a fire type",
               "types": [
                 "unknown"
               ],
@@ -3121,13 +3143,13 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "pikachu",
               "number": "one",
               "response": true,
-              "text": "pikachu",
+              "text": "pikachu is an electric type",
               "types": [
                 "pikachu"
               ],
@@ -3174,8 +3196,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "earth": {
@@ -3188,8 +3210,9 @@
               "modifiers": [
                 "earth"
               ],
+              "number": "one",
               "response": true,
-              "text": "earth type",
+              "text": "earth type is a pokemon type",
               "types": [
                 "earth_type"
               ],
@@ -3236,8 +3259,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "electric": {
@@ -3250,8 +3273,9 @@
               "modifiers": [
                 "electric"
               ],
+              "number": "one",
               "response": true,
-              "text": "electric type",
+              "text": "electric type is a pokemon type",
               "types": [
                 "electric_type"
               ],

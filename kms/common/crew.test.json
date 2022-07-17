@@ -897,8 +897,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -906,6 +906,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -961,7 +962,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -1032,8 +1033,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -1041,6 +1042,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -1096,7 +1098,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -1132,14 +1134,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -1170,14 +1172,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -1208,14 +1210,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -1261,6 +1263,36 @@
           0
         ],
         [
+          "phaser",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "phaser",
+          0
+        ],
+        [
           "propertyOf",
           0
         ],
@@ -1271,6 +1303,50 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -1335,84 +1411,8 @@
           0
         ],
         [
-          "propertyOf",
-          0
-        ],
-        [
           "the",
           0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "phaser",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "phaser",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "phaser",
-          0
-        ],
-        [
-          "the",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ]
     ],
@@ -1460,11 +1460,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the status of the phasers",
           "types": [
             "what"
           ],
@@ -1718,7 +1719,7 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1736,6 +1737,78 @@
             [
               "unknown",
               0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "phaser",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "phaser",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "phaser",
+            0
+          ],
+          "ops": [
+            [
+              "disarm",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "phaser",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
             ],
             [
               "what",
@@ -1754,11 +1827,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
+              "is",
               0
             ],
             [
@@ -1781,7 +1850,7 @@
         },
         {
           "op": [
-            "phaser",
+            "the",
             0
           ],
           "ops": [
@@ -1790,43 +1859,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "phaser",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
+              "is",
               0
             ],
             [
@@ -1854,35 +1887,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "disarm",
-              0
-            ],
-            [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1993,8 +1998,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -2004,6 +2009,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -2738,11 +2755,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the phasers",
               "types": [
                 "what"
               ],
@@ -2764,11 +2782,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the phasers",
               "types": [
                 "what"
               ],
@@ -3091,8 +3110,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -3100,6 +3119,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -3155,7 +3175,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -3226,8 +3246,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -3235,6 +3255,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -3290,7 +3311,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -3326,14 +3347,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -3364,14 +3385,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -4416,8 +4437,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -4425,6 +4446,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -4480,7 +4502,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -4551,8 +4573,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -4560,6 +4582,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -4615,7 +4638,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -4651,14 +4674,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -4689,14 +4712,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -4727,14 +4750,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -4789,46 +4812,6 @@
         ],
         [
           "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
           1
         ]
       ],
@@ -4877,6 +4860,58 @@
       [
         [
           "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
           0
         ],
         [
@@ -4898,6 +4933,7 @@
           "modifiers": [
             "determiner"
           ],
+          "number": "one",
           "object": {
             "atomic": true,
             "concept": true,
@@ -4969,7 +5005,7 @@
           ],
           "pullFromContext": true,
           "response": true,
-          "text": "the status of the photon torpedoes",
+          "text": "the status of the photon torpedoes is armed",
           "types": [
             "property"
           ],
@@ -5006,7 +5042,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -5038,7 +5074,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -5205,6 +5241,26 @@
         },
         {
           "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "propertyOf",
             0
           ],
@@ -5245,8 +5301,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -5256,6 +5312,34 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -6003,6 +6087,7 @@
               "modifiers": [
                 "determiner"
               ],
+              "number": "one",
               "object": {
                 "atomic": true,
                 "concept": true,
@@ -6074,7 +6159,7 @@
               ],
               "pullFromContext": true,
               "response": true,
-              "text": "the status of the photon torpedoes",
+              "text": "the status of the photon torpedoes is armed",
               "types": [
                 "property"
               ],
@@ -6142,8 +6227,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -6151,6 +6236,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -6206,7 +6292,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -6277,8 +6363,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -6286,6 +6372,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -6341,7 +6428,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -6377,14 +6464,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -6415,14 +6502,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -6453,14 +6540,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -6515,7 +6602,51 @@
         ],
         [
           "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -6572,56 +6703,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
         ]
       ]
     ],
@@ -6638,6 +6719,7 @@
           "modifiers": [
             "determiner"
           ],
+          "number": "one",
           "object": {
             "atomic": true,
             "concept": true,
@@ -6709,7 +6791,7 @@
           ],
           "pullFromContext": true,
           "response": true,
-          "text": "the status of the photon torpedoes",
+          "text": "the status of the photon torpedoes is armed",
           "types": [
             "property"
           ],
@@ -6743,11 +6825,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the status of the photon torpedoes",
           "types": [
             "what"
           ],
@@ -7036,7 +7119,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -7068,7 +7151,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -7235,6 +7318,26 @@
         },
         {
           "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "propertyOf",
             0
           ],
@@ -7275,8 +7378,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -7286,6 +7389,34 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -7308,7 +7439,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7344,7 +7475,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7380,7 +7511,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7412,7 +7543,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7440,7 +7571,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7468,7 +7599,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -7551,8 +7682,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -7562,6 +7693,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -8294,11 +8437,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the photon torpedoes",
               "types": [
                 "what"
               ],
@@ -8320,11 +8464,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the photon torpedoes",
               "types": [
                 "what"
               ],
@@ -8619,6 +8764,7 @@
               "modifiers": [
                 "determiner"
               ],
+              "number": "one",
               "object": {
                 "atomic": true,
                 "concept": true,
@@ -8690,7 +8836,7 @@
               ],
               "pullFromContext": true,
               "response": true,
-              "text": "the status of the photon torpedoes",
+              "text": "the status of the photon torpedoes is armed",
               "types": [
                 "property"
               ],
@@ -8758,8 +8904,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -8767,6 +8913,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -8822,7 +8969,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -8893,8 +9040,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -8902,6 +9049,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -8957,7 +9105,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -8993,14 +9141,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -9031,14 +9179,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -9090,6 +9238,72 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "type",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -9128,70 +9342,6 @@
       ],
       [
         [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "type",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
           "the",
           0
         ],
@@ -9215,11 +9365,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "many",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what are the types of rank",
           "types": [
             "what"
           ],
@@ -9495,7 +9646,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9527,7 +9678,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9555,7 +9706,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9564,26 +9715,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
               0
             ],
             [
@@ -10358,11 +10489,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "many",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what are the types of rank",
               "types": [
                 "what"
               ],
@@ -10384,11 +10516,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "many",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what are the types of rank",
               "types": [
                 "what"
               ],
@@ -10663,8 +10796,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -10672,6 +10805,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -10727,7 +10861,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -10798,8 +10932,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -10807,6 +10941,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -10862,7 +10997,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -10898,14 +11033,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -10936,14 +11071,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -10974,14 +11109,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -11021,6 +11156,28 @@
   },
   "what is spock's name": {
     "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "spock",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
       [
         [
           "is",
@@ -11116,24 +11273,6 @@
           "what",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "spock",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
       ]
     ],
     "config": {
@@ -11146,11 +11285,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is spock 's name",
           "types": [
             "what"
           ],
@@ -11322,7 +11462,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -12181,11 +12321,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is spock 's name",
               "types": [
                 "what"
               ],
@@ -12207,11 +12348,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is spock 's name",
               "types": [
                 "what"
               ],
@@ -12414,8 +12556,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -12423,6 +12565,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -12478,7 +12621,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -12549,8 +12692,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -12558,6 +12701,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -12613,7 +12757,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -12649,14 +12793,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -12687,14 +12831,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -12725,14 +12869,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -12772,6 +12916,28 @@
   },
   "what is spock's rank": {
     "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "spock",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
       [
         [
           "is",
@@ -12867,24 +13033,6 @@
           "what",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "spock",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
       ]
     ],
     "config": {
@@ -12897,11 +13045,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is spock 's rank",
           "types": [
             "what"
           ],
@@ -13073,7 +13222,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13932,11 +14081,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is spock 's rank",
               "types": [
                 "what"
               ],
@@ -13958,11 +14108,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is spock 's rank",
               "types": [
                 "what"
               ],
@@ -14165,8 +14316,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -14174,6 +14325,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -14229,7 +14381,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -14300,8 +14452,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -14309,6 +14461,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -14364,7 +14517,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -14400,14 +14553,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -14438,14 +14591,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -14476,14 +14629,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -14627,6 +14780,10 @@
         [
           "questionMark",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -14680,30 +14837,6 @@
           "questionMark",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "questionMark",
-          0
-        ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "questionMark",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
       ]
     ],
     "config": {
@@ -14716,11 +14849,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is spock 's rank",
           "types": [
             "what"
           ],
@@ -15003,50 +15137,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "possession",
             1
           ],
@@ -15062,6 +15152,10 @@
             [
               "questionMark",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -15835,11 +15929,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is spock 's rank",
               "types": [
                 "what"
               ],
@@ -15861,11 +15956,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is spock 's rank",
               "types": [
                 "what"
               ],
@@ -16068,8 +16164,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -16077,6 +16173,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -16132,7 +16229,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -16203,8 +16300,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -16212,6 +16309,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -16267,7 +16365,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -16303,14 +16401,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -16341,14 +16439,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -16379,14 +16477,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -16436,6 +16534,54 @@
           0
         ],
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "kirk",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "kirk",
+          0
+        ],
+        [
           "the",
           0
         ],
@@ -16446,6 +16592,24 @@
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -16506,60 +16670,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "kirk",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "kirk",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ]
     ],
@@ -16573,11 +16683,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the name of kirk",
           "types": [
             "what"
           ],
@@ -16823,7 +16934,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -16855,7 +16966,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -16883,7 +16994,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -16942,8 +17053,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -16953,6 +17064,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -17674,11 +17797,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the name of kirk",
               "types": [
                 "what"
               ],
@@ -17700,11 +17824,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the name of kirk",
               "types": [
                 "what"
               ],
@@ -17949,8 +18074,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -17958,6 +18083,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -18013,7 +18139,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -18084,8 +18210,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -18093,6 +18219,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -18148,7 +18275,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -18184,14 +18311,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -18222,14 +18349,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -18260,14 +18387,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -18317,6 +18444,72 @@
           0
         ],
         [
+          "spock",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "spock",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -18387,60 +18580,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "spock",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "spock",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ]
     ],
@@ -18454,11 +18593,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the rank of spock",
           "types": [
             "what"
           ],
@@ -18704,7 +18844,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -18736,7 +18876,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -18764,7 +18904,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -18823,8 +18963,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -18834,6 +18974,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -19555,11 +19707,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the rank of spock",
               "types": [
                 "what"
               ],
@@ -19581,11 +19734,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the rank of spock",
               "types": [
                 "what"
               ],
@@ -19830,8 +19984,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -19839,6 +19993,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -19894,7 +20049,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -19965,8 +20120,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -19974,6 +20129,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -20029,7 +20185,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -20065,14 +20221,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -20103,14 +20259,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -20141,14 +20297,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -20194,76 +20350,6 @@
           0
         ],
         [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
           "phaser",
           0
         ],
@@ -20285,6 +20371,32 @@
         ]
       ],
       [
+        [
+          "is",
+          0
+        ],
+        [
+          "phaser",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
         [
           "phaser",
           0
@@ -20308,6 +20420,10 @@
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
           "propertyOf",
           0
         ],
@@ -20322,7 +20438,35 @@
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
           "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
           0
         ],
         [
@@ -20331,11 +20475,21 @@
         ],
         [
           "unknown",
-          1
+          0
         ],
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ]
     ],
@@ -20349,11 +20503,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the status of the phasers",
           "types": [
             "what"
           ],
@@ -20602,7 +20757,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -20620,38 +20775,6 @@
             [
               "unknown",
               0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "phaser",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "phaser",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
             ],
             [
               "what",
@@ -20666,7 +20789,11 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
+              0
+            ],
+            [
+              "phaser",
               0
             ],
             [
@@ -20689,12 +20816,40 @@
         },
         {
           "op": [
+            "phaser",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "phaser",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
             "the",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -20777,8 +20932,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -20788,6 +20943,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -21509,11 +21676,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the phasers",
               "types": [
                 "what"
               ],
@@ -21535,11 +21703,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the phasers",
               "types": [
                 "what"
               ],
@@ -21819,8 +21988,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -21828,6 +21997,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -21883,7 +22053,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -21954,8 +22124,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -21963,6 +22133,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -22018,7 +22189,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -22054,14 +22225,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -22092,14 +22263,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -22130,14 +22301,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -22192,7 +22363,51 @@
         ],
         [
           "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -22249,56 +22464,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
         ]
       ]
     ],
@@ -22312,11 +22477,12 @@
           "default": true,
           "determined": true,
           "marker": "what",
+          "number": "one",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "what",
+          "text": "what is the status of the photon torpedoes",
           "types": [
             "what"
           ],
@@ -22605,7 +22771,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22641,7 +22807,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22677,7 +22843,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22709,7 +22875,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22737,7 +22903,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22765,7 +22931,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -22848,8 +23014,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -22859,6 +23025,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -23580,11 +23758,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the photon torpedoes",
               "types": [
                 "what"
               ],
@@ -23606,11 +23785,12 @@
               "default": true,
               "determined": true,
               "marker": "what",
+              "number": "one",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "what",
+              "text": "what is the status of the photon torpedoes",
               "types": [
                 "what"
               ],
@@ -23930,8 +24110,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -23939,6 +24119,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -23994,7 +24175,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -24065,8 +24246,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -24074,6 +24255,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -24129,7 +24311,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -24165,14 +24347,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -24203,14 +24385,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -24241,14 +24423,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
@@ -24300,6 +24482,20 @@
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
           "the",
           0
         ],
@@ -24320,11 +24516,12 @@
           "marker": "what",
           "modifiers": [
           ],
+          "number": "many",
           "query": [
             "what"
           ],
           "response": true,
-          "text": "who",
+          "text": "who are the crew members",
           "types": [
             "what"
           ],
@@ -24486,7 +24683,7 @@
         },
         {
           "op": [
-            "what",
+            "crew",
             0
           ],
           "ops": [
@@ -24510,26 +24707,6 @@
         },
         {
           "op": [
-            "crew",
-            0
-          ],
-          "ops": [
-            [
-              "crew",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "crew_member",
             0
           ],
@@ -24539,27 +24716,35 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
         },
         {
           "op": [
-            "isEd",
+            "what",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -25311,11 +25496,12 @@
               "marker": "what",
               "modifiers": [
               ],
+              "number": "many",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "who",
+              "text": "who are the crew members",
               "types": [
                 "what"
               ],
@@ -25338,11 +25524,12 @@
               "marker": "what",
               "modifiers": [
               ],
+              "number": "many",
               "query": [
                 "what"
               ],
               "response": true,
-              "text": "who",
+              "text": "who are the crew members",
               "types": [
                 "what"
               ],
@@ -25512,8 +25699,8 @@
             "metaInfo": "The mapping from from the expression being defined \"disarm the weapon\" to the definition phrase \"the status of the weapon is not armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "disarm the weapon means the status of the weapon is not armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -25521,6 +25708,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -25576,7 +25764,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is not armed",
                 "types": [
                   "property"
                 ],
@@ -25647,8 +25835,8 @@
             "metaInfo": "The mapping from from the expression being defined \"arm the weapon\" to the definition phrase \"the status of the weapon is armed\" is [{\"from\":[\"weapon\"],\"to\":[\"one\",\"object\"]}]",
             "text": "arm the weapon means the status of the weapon is armed",
             "to": {
-              "default": true,
               "marker": "is",
+              "number": "one",
               "one": {
                 "concept": true,
                 "determiner": "the",
@@ -25656,6 +25844,7 @@
                 "modifiers": [
                   "determiner"
                 ],
+                "number": "one",
                 "object": {
                   "concept": true,
                   "determiner": "the",
@@ -25711,7 +25900,7 @@
                 ],
                 "pullFromContext": true,
                 "response": true,
-                "text": "the status of the weapon",
+                "text": "the status of the weapon is armed",
                 "types": [
                   "property"
                 ],
@@ -25747,14 +25936,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "mccoy",
               "number": "one",
               "response": true,
-              "text": "mccoy",
+              "text": "mccoy is readonly",
               "types": [
                 "mccoy"
               ],
@@ -25785,14 +25974,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "spock",
               "number": "one",
               "response": true,
-              "text": "spock",
+              "text": "spock is readonly",
               "types": [
                 "spock"
               ],
@@ -25823,14 +26012,14 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "concept": true,
               "marker": "kirk",
               "number": "one",
               "response": true,
-              "text": "kirk",
+              "text": "kirk is readonly",
               "types": [
                 "kirk"
               ],
