@@ -79,7 +79,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -917,7 +917,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -1899,7 +1899,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -2393,7 +2393,8 @@
         "number": "many",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "many",
+          "text": "greg have wings",
           "types": [
             "object",
             "unknown"
@@ -2663,7 +2664,8 @@
             "number": "many",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "many",
+              "text": "greg have wings",
               "types": [
                 "object",
                 "unknown"
@@ -2862,7 +2864,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -3356,7 +3358,8 @@
         "number": "many",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "many",
+          "text": "greg have wings",
           "types": [
             "object",
             "unknown"
@@ -3395,7 +3398,8 @@
         "number": "many",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "many",
+          "text": "greg have wings",
           "types": [
             "object",
             "unknown"
@@ -3792,7 +3796,8 @@
             "number": "many",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "many",
+              "text": "greg have wings",
               "types": [
                 "object",
                 "unknown"
@@ -3843,7 +3848,8 @@
             "number": "many",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "many",
+              "text": "greg have wings",
               "types": [
                 "object",
                 "unknown"
@@ -3967,7 +3973,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -4459,7 +4465,8 @@
         "number": "one",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "one",
+          "text": "greg has eyes",
           "types": [
             "object",
             "unknown"
@@ -4699,7 +4706,8 @@
             "number": "one",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "one",
+              "text": "greg has eyes",
               "types": [
                 "object",
                 "unknown"
@@ -4876,7 +4884,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -5368,7 +5376,8 @@
         "number": "one",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "one",
+          "text": "greg has eyes",
           "types": [
             "object",
             "unknown"
@@ -5406,7 +5415,8 @@
         "number": "one",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "one",
+          "text": "greg has eyes",
           "types": [
             "object",
             "unknown"
@@ -5580,45 +5590,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -5768,7 +5774,8 @@
             "number": "one",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "one",
+              "text": "greg has eyes",
               "types": [
                 "object",
                 "unknown"
@@ -5819,7 +5826,8 @@
             "number": "one",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "one",
+              "text": "greg has eyes",
               "types": [
                 "object",
                 "unknown"
@@ -5965,7 +5973,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -6457,7 +6465,8 @@
         "number": "one",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "one",
+          "text": "greg has eyes",
           "types": [
             "object",
             "unknown"
@@ -6557,8 +6566,8 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
@@ -6573,13 +6582,13 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
-              "questionMark",
-              0
+              "have",
+              1
             ]
           ]
         }
@@ -6722,7 +6731,8 @@
             "number": "one",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "one",
+              "text": "greg has eyes",
               "types": [
                 "object",
                 "unknown"
@@ -6903,7 +6913,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -7395,7 +7405,8 @@
         "number": "one",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "one",
+          "text": "greg has toes",
           "types": [
             "object",
             "unknown"
@@ -7433,7 +7444,8 @@
         "number": "one",
         "object": {
           "marker": "unknown",
-          "text": "greg",
+          "number": "one",
+          "text": "greg has eyes",
           "types": [
             "object",
             "unknown"
@@ -7607,45 +7619,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -7795,7 +7803,8 @@
             "number": "one",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "one",
+              "text": "greg has eyes",
               "types": [
                 "object",
                 "unknown"
@@ -7846,7 +7855,8 @@
             "number": "one",
             "object": {
               "marker": "unknown",
-              "text": "greg",
+              "number": "one",
+              "text": "greg has toes",
               "types": [
                 "object",
                 "unknown"
@@ -8004,7 +8014,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -9032,7 +9042,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -10202,7 +10212,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -11228,6 +11238,10 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "possession",
               0
             ],
@@ -11249,6 +11263,10 @@
           "ops": [
             [
               "is",
+              0
+            ],
+            [
+              "isEd",
               0
             ],
             [
@@ -12283,19 +12301,13 @@
         [
           "propertyOf",
           0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
         ],
         [
           "propertyOf",
-          0
+          1
         ],
         [
-          "propertyOf",
+          "unknown",
           1
         ]
       ],
@@ -12306,6 +12318,24 @@
         ],
         [
           "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -12325,12 +12355,12 @@
       ],
       [
         [
-          "propertyOf",
+          "is",
           0
         ],
         [
-          "the",
-          0
+          "unknown",
+          1
         ]
       ],
       [
@@ -12399,10 +12429,34 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
         ],
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ]
     ],
@@ -12449,7 +12503,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -13538,6 +13592,10 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "possession",
               0
             ],
@@ -13559,6 +13617,10 @@
           "ops": [
             [
               "is",
+              0
+            ],
+            [
+              "isEd",
               0
             ],
             [
@@ -13837,56 +13899,8 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
+            "the",
+            0
           ],
           "ops": [
             [
@@ -13924,26 +13938,10 @@
             [
               "the",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
             ],
             [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
+              "unknown",
+              1
             ]
           ]
         },
@@ -13960,6 +13958,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -13976,6 +13978,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -13996,21 +14002,9 @@
             [
               "propertyOf",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
             ],
             [
-              "propertyOf",
+              "unknown",
               1
             ]
           ]
@@ -14027,6 +14021,30 @@
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -14040,6 +14058,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -14802,7 +14824,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -15576,15 +15598,9 @@
         [
           "propertyOf",
           0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
         ],
         [
-          "propertyOf",
+          "unknown",
           1
         ]
       ],
@@ -15595,6 +15611,10 @@
         ],
         [
           "propertyOf",
+          1
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -15614,12 +15634,12 @@
       ],
       [
         [
-          "propertyOf",
+          "is",
           0
         ],
         [
-          "the",
-          0
+          "unknown",
+          1
         ]
       ],
       [
@@ -15724,6 +15744,26 @@
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          1
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -15784,7 +15824,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -16930,176 +16970,8 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
+            "the",
+            0
           ],
           "ops": [
             [
@@ -17137,6 +17009,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17157,15 +17033,23 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "propertyOf",
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
@@ -17175,8 +17059,128 @@
               0
             ],
             [
-              "the",
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17187,22 +17191,6 @@
           ],
           "ops": [
             [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
               "is",
               0
             ],
@@ -17211,103 +17199,7 @@
               0
             ],
             [
-              "propertyOf",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
+              "unknown",
               1
             ]
           ]
@@ -17321,6 +17213,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17337,6 +17233,10 @@
             [
               "is",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -17352,6 +17252,10 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -18042,6 +17946,28 @@
         [
           "propertyOf",
           0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -18052,6 +17978,10 @@
         [
           "propertyOf",
           1
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -18084,6 +18014,16 @@
       ],
       [
         [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
           "possession",
           0
         ],
@@ -18156,16 +18096,6 @@
         [
           "the",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
         ],
         [
           "unknown",
@@ -18197,6 +18127,16 @@
         ],
         [
           "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
           0
         ],
         [
@@ -18248,7 +18188,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -19235,6 +19175,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -19286,78 +19230,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "the",
             0
           ],
@@ -19373,6 +19245,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19389,6 +19265,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19409,6 +19289,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19429,6 +19313,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19445,6 +19333,10 @@
             [
               "isEd",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19457,6 +19349,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -19979,6 +19875,32 @@
         [
           "propertyOf",
           0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -19989,6 +19911,10 @@
         [
           "propertyOf",
           1
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -20025,12 +19951,12 @@
       ],
       [
         [
-          "propertyOf",
+          "is",
           0
         ],
         [
-          "the",
-          0
+          "unknown",
+          1
         ]
       ],
       [
@@ -20135,6 +20061,26 @@
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          1
+        ],
+        [
+          "unknown",
+          1
         ]
       ]
     ],
@@ -20181,7 +20127,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -21034,6 +20980,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -21153,104 +21103,8 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
+            "the",
+            0
           ],
           "ops": [
             [
@@ -21288,26 +21142,10 @@
             [
               "the",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
             ],
             [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
+              "unknown",
+              1
             ]
           ]
         },
@@ -21324,6 +21162,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21344,6 +21186,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21367,6 +21213,10 @@
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -21388,6 +21238,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21408,6 +21262,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21424,6 +21282,10 @@
             [
               "isEd",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21436,6 +21298,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -21451,6 +21317,10 @@
             ],
             [
               "is",
+              1
+            ],
+            [
+              "unknown",
               1
             ]
           ]
@@ -22000,6 +21870,10 @@
         [
           "propertyOf",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -22010,6 +21884,10 @@
         [
           "propertyOf",
           1
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -22032,12 +21910,12 @@
       ],
       [
         [
-          "propertyOf",
+          "is",
           0
         ],
         [
-          "the",
-          0
+          "unknown",
+          1
         ]
       ],
       [
@@ -22110,6 +21988,16 @@
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ]
     ],
@@ -22156,7 +22044,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -23024,78 +22912,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "the",
             0
           ],
@@ -23111,6 +22927,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23127,6 +22947,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23143,6 +22967,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23159,6 +22987,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23171,6 +23003,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23276,54 +23112,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "the",
             0
           ],
@@ -23339,6 +23127,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23355,6 +23147,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23371,6 +23167,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23387,6 +23187,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -23399,6 +23203,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -24087,7 +23895,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -25330,42 +25138,6 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
           "unknown",
           1
         ]
@@ -25396,6 +25168,20 @@
         [
           "unknown",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -25552,7 +25338,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -26330,10 +26116,6 @@
           ],
           "ops": [
             [
-              "is",
-              0
-            ],
-            [
               "isEd",
               0
             ],
@@ -26361,10 +26143,6 @@
             0
           ],
           "ops": [
-            [
-              "is",
-              0
-            ],
             [
               "isEd",
               0
@@ -26570,10 +26348,6 @@
           ],
           "ops": [
             [
-              "is",
-              0
-            ],
-            [
               "isEd",
               0
             ],
@@ -26602,10 +26376,6 @@
           ],
           "ops": [
             [
-              "is",
-              0
-            ],
-            [
               "isEd",
               0
             ],
@@ -26629,10 +26399,6 @@
             0
           ],
           "ops": [
-            [
-              "is",
-              0
-            ],
             [
               "isEd",
               0
@@ -27411,7 +27177,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -28215,7 +27981,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -29171,7 +28937,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -30041,6 +29807,10 @@
         [
           "propertyOf",
           0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -30051,6 +29821,10 @@
         [
           "propertyOf",
           1
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -30073,12 +29847,12 @@
       ],
       [
         [
-          "propertyOf",
+          "is",
           0
         ],
         [
-          "the",
-          0
+          "unknown",
+          1
         ]
       ],
       [
@@ -30151,6 +29925,16 @@
         [
           "what",
           0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ]
     ],
@@ -30197,7 +29981,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -30861,54 +30645,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "the",
             0
           ],
@@ -30924,6 +30660,10 @@
             [
               "the",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -30940,6 +30680,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -30956,6 +30700,10 @@
             [
               "propertyOf",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -30972,6 +30720,10 @@
             [
               "propertyOf",
               1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -30984,6 +30736,10 @@
             [
               "is",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -31398,7 +31154,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -32423,7 +32179,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
@@ -33209,7 +32965,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...next(operator), object: before[0], property: after[0], do: { left: 'object', right: 'property' } }",
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
           "id": "have",
           "level": 0
         },
