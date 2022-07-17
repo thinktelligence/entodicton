@@ -3483,6 +3483,7 @@
           },
           "two": {
             "value": "crew_member",
+            "number": "one",
             "text": "a crew member",
             "marker": "crew_member",
             "word": "member",
@@ -3502,7 +3503,6 @@
             ],
             "pullFromContext": false,
             "concept": true,
-            "number": "one",
             "wantsValue": true,
             "determiner": "a",
             "response": true
@@ -7343,6 +7343,7 @@
           },
           "two": {
             "value": "crew_member",
+            "number": "one",
             "text": "a crew member",
             "marker": "crew_member",
             "word": "member",
@@ -7362,7 +7363,6 @@
             ],
             "pullFromContext": false,
             "concept": true,
-            "number": "one",
             "wantsValue": true,
             "determiner": "a",
             "response": true
@@ -10614,6 +10614,7 @@
           },
           "two": {
             "value": "crew_member",
+            "number": "one",
             "text": "a crew member",
             "marker": "crew_member",
             "word": "member",
@@ -10633,7 +10634,6 @@
             ],
             "pullFromContext": false,
             "concept": true,
-            "number": "one",
             "wantsValue": true,
             "determiner": "a",
             "response": true
@@ -12861,7 +12861,7 @@
         "Op choices were: [(('unknown', 0), [('isEd', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 0), ('unknown', 1)]), (('torpedo', 0), [('isEd', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 1)]), (('isEd', 0), [('isEd', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('photon', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('photon_torpedo', 0), [('is', 0), ('photon_torpedo', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator torpedo/0 was [['isEd', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 1]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator photon/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator photon_torpedo/0 was [['is', 0], ['photon_torpedo', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['the', 0], ['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['the', 0], ['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.5 - [['propertyOf', 0], ['the', 0], ['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['propertyOf', 0], ['the', 0], ['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"status\",\n        \"text\": \"the status of the photon torpedoes is armed\",\n        \"value\": \"status\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"value\": \"photon_torpedo\",\n          \"text\": \"the photon torpedoes\",\n          \"marker\": \"photon_torpedo\",\n          \"word\": \"torpedoes\",\n          \"types\": [\n            \"object\",\n            \"photon_torpedo\"\n          ],\n          \"photon\": {\n            \"value\": \"photon\",\n            \"text\": \"photon\",\n            \"marker\": \"photon\",\n            \"word\": \"photon\"\n          },\n          \"atomic\": true,\n          \"modifiers\": [\n            \"determiner\",\n            \"photon\"\n          ],\n          \"pullFromContext\": true,\n          \"concept\": true,\n          \"wantsValue\": true,\n          \"determiner\": \"the\"\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"status\",\n            \"text\": \"the status\",\n            \"value\": \"status\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"value\": \"photon_torpedo\",\n            \"text\": \"the photon torpedoes\",\n            \"marker\": \"photon_torpedo\",\n            \"word\": \"torpedoes\",\n            \"types\": [\n              \"object\",\n              \"photon_torpedo\"\n            ],\n            \"photon\": {\n              \"value\": \"photon\",\n              \"text\": \"photon\",\n              \"marker\": \"photon\",\n              \"word\": \"photon\"\n            },\n            \"atomic\": true,\n            \"modifiers\": [\n              \"determiner\",\n              \"photon\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\"\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"armed\",\n          \"text\": \"armed\",\n          \"value\": \"armed\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"status\",\n        \"text\": \"the status of the photon torpedoes is armed\",\n        \"value\": \"status\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"value\": \"photon_torpedo\",\n          \"number\": \"many\",\n          \"text\": \"the photon torpedoes\",\n          \"marker\": \"photon_torpedo\",\n          \"word\": \"torpedoes\",\n          \"types\": [\n            \"object\",\n            \"photon_torpedo\"\n          ],\n          \"photon\": {\n            \"value\": \"photon\",\n            \"text\": \"photon\",\n            \"marker\": \"photon\",\n            \"word\": \"photon\"\n          },\n          \"atomic\": true,\n          \"modifiers\": [\n            \"determiner\",\n            \"photon\"\n          ],\n          \"pullFromContext\": true,\n          \"concept\": true,\n          \"wantsValue\": true,\n          \"determiner\": \"the\"\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"status\",\n            \"text\": \"the status\",\n            \"value\": \"status\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"value\": \"photon_torpedo\",\n            \"number\": \"many\",\n            \"text\": \"the photon torpedoes\",\n            \"marker\": \"photon_torpedo\",\n            \"word\": \"torpedoes\",\n            \"types\": [\n              \"object\",\n              \"photon_torpedo\"\n            ],\n            \"photon\": {\n              \"value\": \"photon\",\n              \"text\": \"photon\",\n              \"marker\": \"photon\",\n              \"word\": \"photon\"\n            },\n            \"atomic\": true,\n            \"modifiers\": [\n              \"determiner\",\n              \"photon\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\"\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"armed\",\n          \"text\": \"armed\",\n          \"value\": \"armed\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -13221,6 +13221,7 @@
             ],
             "object": {
               "value": "photon_torpedo",
+              "number": "many",
               "text": "the photon torpedoes",
               "marker": "photon_torpedo",
               "word": "torpedoes",
@@ -13264,6 +13265,7 @@
               },
               {
                 "value": "photon_torpedo",
+                "number": "many",
                 "text": "the photon torpedoes",
                 "marker": "photon_torpedo",
                 "word": "torpedoes",

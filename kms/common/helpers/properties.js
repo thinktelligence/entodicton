@@ -410,8 +410,8 @@ class API {
     config.addOperator({ pattern: `(<${modifierId}|> ([${objectId}|]))`, allowDups: true })
     config.addOperator({ pattern: `([${modifierObjectId}|])`, allowDups: true })
 
-    config.addWord(objectSingular, { id: objectId, initial: `{ value: '${objectId}' }`})
-    config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}' }`})
+    config.addWord(objectSingular, { id: objectId, initial: `{ value: '${objectId}', number: 'one' }`})
+    config.addWord(objectPlural, { id: objectId, initial: `{ value: '${objectId}', number: 'many' }`})
     config.addWord(modifierId, { id: modifierId, initial: `{ value: '${modifierId}' }`})
 
     config.addBridge({ id: modifierId, level: 0, bridge: `{ ...after, ${modifierId}: operator, marker: operator(concat('${modifierId}_', after.value)), atomic: true, value: concat('${modifierId}_', after.value), modifiers: append(['${modifierId}'], after[0].modifiers)}`, allowDups: true })
