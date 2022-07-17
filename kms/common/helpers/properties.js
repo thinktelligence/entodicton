@@ -236,8 +236,8 @@ class API {
 
     const operatorSingular = pluralize.singular(operator)
     const operatorPlural = pluralize.plural(operator)
-    config.addWord(operatorSingular, { id: operator, initial: `{ value: '${operator}' }`})
-    config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}' }`})
+    config.addWord(operatorSingular, { id: operator, initial: `{ value: '${operator}', number: 'one' }`})
+    config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}', number: 'many' }`})
 
     if (doAble) {
       config.addHierarchy(operator, 'canBeDoQuestion')
