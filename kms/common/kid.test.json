@@ -120,16 +120,6 @@
           "what",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
       ]
     ],
     "config": {
@@ -155,8 +145,8 @@
         "word": "be"
       },
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "default": true,
           "determined": true,
@@ -405,7 +395,7 @@
         },
         {
           "op": [
-            "what",
+            "briefOrWordy",
             0
           ],
           "ops": [
@@ -437,16 +427,12 @@
         },
         {
           "op": [
-            "briefOrWordy",
+            "what",
             0
           ],
           "ops": [
             [
               "be",
-              0
-            ],
-            [
-              "briefOrWordy",
               0
             ],
             [
@@ -460,6 +446,10 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -480,30 +470,6 @@
             [
               "possession",
               0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "be",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
             ],
             [
               "unknown",
@@ -557,7 +523,7 @@
         },
         {
           "op": [
-            "is",
+            "be",
             0
           ],
           "ops": [
@@ -565,6 +531,30 @@
               "be",
               0
             ],
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
             [
               "is",
               0
@@ -578,24 +568,8 @@
           ],
           "ops": [
             [
-              "be",
-              0
-            ],
-            [
               "is",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "be",
-            0
-          ],
-          "ops": [
-            [
-              "be",
-              0
             ]
           ]
         }
@@ -1433,8 +1407,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "default": true,
               "determined": true,
@@ -1967,24 +1941,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "cat",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "what",
@@ -2011,15 +1967,11 @@
           0
         ],
         [
-          "possession",
+          "is",
           0
         ],
         [
           "unknown",
-          0
-        ],
-        [
-          "what",
           0
         ]
       ],
@@ -2035,6 +1987,24 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -2100,8 +2070,8 @@
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "marker": "property",
           "number": "one",
@@ -2168,8 +2138,8 @@
         "word": "is"
       },
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "determined": true,
           "marker": "what",
@@ -2370,10 +2340,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "possession",
               0
             ],
@@ -2399,10 +2365,6 @@
             ],
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -2443,6 +2405,62 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "cat",
+            0
+          ],
+          "ops": [
+            [
+              "cat",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "cat",
+            0
+          ],
+          "ops": [
+            [
+              "cat",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
               0
             ],
             [
@@ -2462,10 +2480,6 @@
           ],
           "ops": [
             [
-              "cat",
-              0
-            ],
-            [
               "is",
               0
             ],
@@ -2485,54 +2499,6 @@
         },
         {
           "op": [
-            "cat",
-            0
-          ],
-          "ops": [
-            [
-              "cat",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "cat",
-            0
-          ],
-          "ops": [
-            [
-              "cat",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "possession",
             0
           ],
@@ -2544,34 +2510,6 @@
             [
               "possession",
               0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "possession",
-              1
             ],
             [
               "unknown",
@@ -2679,22 +2617,6 @@
             ],
             [
               "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "is",
               0
             ],
             [
@@ -2711,6 +2633,26 @@
           "ops": [
             [
               "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ],
+            [
+              "isEd",
               0
             ]
           ]
@@ -3600,8 +3542,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "determined": true,
               "marker": "what",
@@ -3792,8 +3734,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "marker": "property",
               "number": "one",
@@ -4127,6 +4069,24 @@
         ],
         [
           "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -4185,38 +4145,14 @@
           "what",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
       ]
     ],
     "config": {
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "default": true,
           "determined": true,
@@ -4402,7 +4338,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -4484,26 +4420,6 @@
             [
               "possession",
               0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
             ],
             [
               "unknown",
@@ -5404,8 +5320,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "default": true,
               "determined": true,
@@ -5897,6 +5813,24 @@
         ],
         [
           "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -5951,38 +5885,14 @@
           "unknown",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
       ]
     ],
     "config": {
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "determined": true,
           "marker": "what",
@@ -6169,7 +6079,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -6251,26 +6161,6 @@
             [
               "possession",
               0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
             ],
             [
               "unknown",
@@ -7172,8 +7062,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "determined": true,
               "marker": "what",
@@ -7674,7 +7564,11 @@
         ],
         [
           "unknown",
-          1
+          0
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -7715,7 +7609,25 @@
       ],
       [
         [
-          "cat",
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "possession",
+          1
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
           0
         ],
         [
@@ -7724,43 +7636,25 @@
         ],
         [
           "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
           0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
         ],
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ],
       [
@@ -7802,8 +7696,8 @@
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "determined": true,
           "marker": "what",
@@ -8033,7 +7927,7 @@
               0
             ],
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -8084,7 +7978,7 @@
         },
         {
           "op": [
-            "what",
+            "cat",
             0
           ],
           "ops": [
@@ -8112,14 +8006,10 @@
         },
         {
           "op": [
-            "cat",
+            "what",
             0
           ],
           "ops": [
-            [
-              "cat",
-              0
-            ],
             [
               "is",
               0
@@ -8131,6 +8021,10 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -8174,22 +8068,6 @@
             ],
             [
               "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
               1
             ]
           ]
@@ -9120,8 +8998,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "determined": true,
               "marker": "what",
@@ -9635,7 +9513,11 @@
         ],
         [
           "unknown",
-          1
+          0
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -9676,7 +9558,7 @@
       ],
       [
         [
-          "cat",
+          "is",
           0
         ],
         [
@@ -9685,11 +9567,7 @@
         ],
         [
           "unknown",
-          0
-        ],
-        [
-          "what",
-          0
+          1
         ]
       ],
       [
@@ -9704,6 +9582,10 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -9731,8 +9613,8 @@
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "determined": true,
           "marker": "what",
@@ -9929,34 +9811,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "cat",
-              0
-            ],
-            [
               "is",
               0
             ],
@@ -9966,7 +9820,7 @@
             ],
             [
               "unknown",
-              1
+              0
             ],
             [
               "what",
@@ -9995,6 +9849,34 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -10014,22 +9896,6 @@
             ],
             [
               "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
               1
             ]
           ]
@@ -10924,8 +10790,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "determined": true,
               "marker": "what",
@@ -11424,6 +11290,24 @@
         ],
         [
           "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -11478,38 +11362,14 @@
           "unknown",
           0
         ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
       ]
     ],
     "config": {
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "determined": true,
           "marker": "what",
@@ -11696,7 +11556,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -11778,26 +11638,6 @@
             [
               "possession",
               0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
             ],
             [
               "unknown",
@@ -12699,8 +12539,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "determined": true,
               "marker": "what",

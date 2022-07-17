@@ -93,9 +93,7 @@
       {
         "do": {
           "left": "owner",
-          "query": [
-            "what"
-          ],
+          "query": true,
           "right": "ownee",
           "text": "who owns cleo"
         },
@@ -115,22 +113,17 @@
           "word": "cleo"
         },
         "owner": {
-          "determined": true,
           "marker": "owner",
           "modifiers": [
           ],
-          "query": [
-            "what"
-          ],
+          "query": true,
           "text": "who",
           "types": [
             "owner"
           ],
           "word": "who"
         },
-        "query": [
-          "what"
-        ],
+        "query": true,
         "response": {
           "isResponse": true,
           "marker": "list",
@@ -302,7 +295,7 @@
         },
         {
           "op": [
-            "by",
+            "owns",
             0
           ],
           "ops": [
@@ -334,10 +327,14 @@
         },
         {
           "op": [
-            "what",
-            0
+            "owns",
+            1
           ],
           "ops": [
+            [
+              "by",
+              0
+            ],
             [
               "isEd",
               0
@@ -348,15 +345,35 @@
             ],
             [
               "owns",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "by",
+            0
+          ],
+          "ops": [
+            [
+              "by",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "owned",
               0
             ],
             [
               "unknown",
               1
-            ],
-            [
-              "what",
-              0
             ]
           ]
         },
@@ -373,50 +390,6 @@
             [
               "owned",
               0
-            ],
-            [
-              "owns",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owns",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owns",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owns",
-            1
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owns",
-              1
             ],
             [
               "unknown",
@@ -710,9 +683,7 @@
           "context": {
             "do": {
               "left": "owner",
-              "query": [
-                "what"
-              ],
+              "query": true,
               "right": "ownee",
               "text": "who owns cleo"
             },
@@ -732,22 +703,17 @@
               "word": "cleo"
             },
             "owner": {
-              "determined": true,
               "marker": "owner",
               "modifiers": [
               ],
-              "query": [
-                "what"
-              ],
+              "query": true,
               "text": "who",
               "types": [
                 "owner"
               ],
               "word": "who"
             },
-            "query": [
-              "what"
-            ],
+            "query": true,
             "response": {
               "isResponse": true,
               "marker": "list",
@@ -1118,138 +1084,140 @@
           0
         ],
         [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "first",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "first",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "first",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "first",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "first_name",
-          0
-        ],
-        [
           "given",
           0
         ],
         [
           "means",
           0
+        ],
+        [
+          "name",
+          0
+        ]
+      ],
+      [
+        [
+          "first",
+          0
+        ],
+        [
+          "given_name",
+          0
+        ],
+        [
+          "means",
+          0
+        ]
+      ],
+      [
+        [
+          "first",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "first",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "first",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "first",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "first",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -1272,10 +1240,6 @@
           0
         ],
         [
-          "is",
-          0
-        ],
-        [
           "propertyOf",
           0
         ],
@@ -1332,6 +1296,54 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "given",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "given",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
           "propertyOf",
           0
         ],
@@ -1351,36 +1363,6 @@
       [
         [
           "given",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "given",
-          0
-        ],
-        [
-          "is",
           0
         ],
         [
@@ -1406,10 +1388,6 @@
           0
         ],
         [
-          "is",
-          0
-        ],
-        [
           "propertyOf",
           0
         ],
@@ -1434,9 +1412,15 @@
         [
           "propertyOf",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
         ],
         [
-          "the",
+          "propertyOf",
           0
         ],
         [
@@ -1449,6 +1433,50 @@
           "is",
           0
         ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
         [
           "propertyOf",
           0
@@ -1468,63 +1496,7 @@
       ],
       [
         [
-          "is",
-          0
-        ],
-        [
           "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
           0
         ],
         [
@@ -1586,8 +1558,8 @@
         "word": "means"
       },
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "atomic": true,
           "concept": true,
@@ -1680,8 +1652,8 @@
         "word": "is"
       },
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "default": true,
           "determined": true,
@@ -1966,7 +1938,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2014,6 +1986,10 @@
               0
             ],
             [
+              "isEd",
+              0
+            ],
+            [
               "means",
               0
             ],
@@ -2058,7 +2034,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2106,7 +2082,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2150,7 +2126,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2194,7 +2170,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2238,7 +2214,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2247,170 +2223,6 @@
             ],
             [
               "name",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "first",
-            0
-          ],
-          "ops": [
-            [
-              "first",
-              0
-            ],
-            [
-              "given",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "first_name",
-            0
-          ],
-          "ops": [
-            [
-              "first",
-              0
-            ],
-            [
-              "first_name",
-              0
-            ],
-            [
-              "given",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "first",
-            0
-          ],
-          "ops": [
-            [
-              "first",
-              0
-            ],
-            [
-              "given",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "first_name",
-            0
-          ],
-          "ops": [
-            [
-              "first_name",
-              0
-            ],
-            [
-              "given",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "means",
               0
             ],
             [
@@ -2438,11 +2250,15 @@
           ],
           "ops": [
             [
+              "first",
+              0
+            ],
+            [
               "given",
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2474,6 +2290,10 @@
           ],
           "ops": [
             [
+              "first",
+              0
+            ],
+            [
               "given",
               0
             ],
@@ -2482,7 +2302,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2514,11 +2334,15 @@
           ],
           "ops": [
             [
+              "first",
+              0
+            ],
+            [
               "given",
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2550,75 +2374,15 @@
           ],
           "ops": [
             [
+              "first",
+              0
+            ],
+            [
               "given_name",
               0
             ],
             [
-              "is",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -2650,7 +2414,11 @@
           ],
           "ops": [
             [
-              "is",
+              "first",
+              0
+            ],
+            [
+              "isEd",
               0
             ],
             [
@@ -2659,6 +2427,10 @@
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -2673,8 +2445,272 @@
         },
         {
           "op": [
-            "propertyOf",
+            "first",
             0
+          ],
+          "ops": [
+            [
+              "first",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "first_name",
+            0
+          ],
+          "ops": [
+            [
+              "first",
+              0
+            ],
+            [
+              "first_name",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "first",
+            0
+          ],
+          "ops": [
+            [
+              "first",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "first_name",
+            0
+          ],
+          "ops": [
+            [
+              "first_name",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -2712,13 +2748,29 @@
             [
               "propertyOf",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "means",
+              0
             ],
             [
               "propertyOf",
-              1
+              0
             ],
             [
-              "unknown",
+              "propertyOf",
               1
             ]
           ]
@@ -2740,10 +2792,6 @@
             [
               "propertyOf",
               1
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -2763,10 +2811,6 @@
             ],
             [
               "propertyOf",
-              1
-            ],
-            [
-              "unknown",
               1
             ]
           ]
@@ -2784,10 +2828,6 @@
             [
               "means",
               0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -3120,8 +3160,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "default": true,
               "determined": true,
@@ -3397,8 +3437,8 @@
         },
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "concept": true,
@@ -7226,7 +7266,7 @@
       "opChoices": [
         {
           "op": [
-            "owner",
+            "ownee",
             0
           ],
           "ops": [
@@ -7254,7 +7294,7 @@
         },
         {
           "op": [
-            "by",
+            "owner",
             0
           ],
           "ops": [
@@ -7271,27 +7311,27 @@
               0
             ],
             [
-              "ownee",
+              "owner",
               0
             ]
           ]
         },
         {
           "op": [
-            "ownee",
+            "by",
             0
           ],
           "ops": [
+            [
+              "by",
+              0
+            ],
             [
               "isEd",
               0
             ],
             [
               "owned",
-              0
-            ],
-            [
-              "ownee",
               0
             ]
           ]
@@ -7977,43 +8017,7 @@
       "opChoices": [
         {
           "op": [
-            "ownee",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "ownee",
-              0
-            ],
-            [
-              "owner",
-              0
-            ],
-            [
-              "owns",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "ownee",
+            "owner",
             0
           ],
           "ops": [
@@ -8070,35 +8074,7 @@
               0
             ],
             [
-              "owner",
-              0
-            ],
-            [
-              "owns",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owner",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "owned",
+              "ownee",
               0
             ],
             [
@@ -8134,6 +8110,66 @@
               0
             ],
             [
+              "ownee",
+              0
+            ],
+            [
+              "owns",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "ownee",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "ownee",
+              0
+            ],
+            [
+              "owns",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "ownee",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "ownee",
+              0
+            ],
+            [
               "owns",
               0
             ]
@@ -8155,6 +8191,26 @@
             ],
             [
               "owned",
+              0
+            ],
+            [
+              "owns",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owns",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "means",
               0
             ],
             [
@@ -8179,27 +8235,7 @@
             ],
             [
               "owns",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owns",
-            0
-          ],
-          "ops": [
-            [
-              "means",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              0
+              1
             ]
           ]
         },
@@ -8225,8 +8261,8 @@
         },
         {
           "op": [
-            "owns",
-            1
+            "means",
+            0
           ],
           "ops": [
             [
@@ -8236,18 +8272,6 @@
             [
               "owns",
               1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "means",
-            0
-          ],
-          "ops": [
-            [
-              "means",
-              0
             ]
           ]
         }
@@ -8790,16 +8814,6 @@
   },
   "ownee is owned by owner who is ownee owned by": {
     "associations": [
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ]
     ],
     "config": {
     },
@@ -8838,8 +8852,8 @@
         "word": "owned"
       },
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "determined": true,
           "marker": "what",
@@ -8988,10 +9002,6 @@
               0
             ],
             [
-              "is",
-              0
-            ],
-            [
               "isEd",
               0
             ],
@@ -9024,10 +9034,6 @@
               0
             ],
             [
-              "is",
-              0
-            ],
-            [
               "isEd",
               0
             ],
@@ -9051,16 +9057,12 @@
         },
         {
           "op": [
-            "owner",
+            "what",
             0
           ],
           "ops": [
             [
               "by",
-              0
-            ],
-            [
-              "is",
               0
             ],
             [
@@ -9083,16 +9085,12 @@
         },
         {
           "op": [
-            "what",
+            "owner",
             0
           ],
           "ops": [
             [
               "by",
-              0
-            ],
-            [
-              "is",
               0
             ],
             [
@@ -9104,7 +9102,7 @@
               0
             ],
             [
-              "what",
+              "owner",
               0
             ]
           ]
@@ -9117,10 +9115,6 @@
           "ops": [
             [
               "by",
-              0
-            ],
-            [
-              "is",
               0
             ],
             [
@@ -9537,8 +9531,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "determined": true,
               "marker": "what",
@@ -10460,58 +10454,6 @@
         [
           "unknown",
           0
-        ]
-      ],
-      [
-        [
-          "given",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "given",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "name",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
         ],
         [
           "unknown",
@@ -10546,7 +10488,47 @@
           0
         ],
         [
-          "is",
+          "name",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "given",
+          0
+        ],
+        [
+          "name",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "given",
           0
         ],
         [
@@ -10568,10 +10550,6 @@
           0
         ],
         [
-          "is",
-          0
-        ],
-        [
           "propertyOf",
           0
         ],
@@ -10592,6 +10570,50 @@
         [
           "propertyOf",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
         ],
         [
           "the",
@@ -10604,35 +10626,7 @@
       ],
       [
         [
-          "is",
-          0
-        ],
-        [
           "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
           0
         ],
         [
@@ -10645,8 +10639,8 @@
     },
     "contexts": [
       {
-        "default": true,
         "marker": "is",
+        "number": "one",
         "one": {
           "atomic": true,
           "concept": true,
@@ -10752,7 +10746,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -10820,7 +10814,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -10852,7 +10846,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -10880,7 +10874,7 @@
               0
             ],
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -10904,7 +10898,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -10923,8 +10917,28 @@
         },
         {
           "op": [
-            "propertyOf",
+            "isEd",
             0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -10938,6 +10952,42 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
             ]
           ]
         },
@@ -10954,10 +11004,6 @@
             [
               "propertyOf",
               1
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -10970,10 +11016,6 @@
             [
               "is",
               0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -11240,8 +11282,8 @@
       "processed": [
         {
           "context": {
-            "default": true,
             "marker": "is",
+            "number": "one",
             "one": {
               "atomic": true,
               "concept": true,
@@ -11614,7 +11656,9 @@
       {
         "do": {
           "left": "owner",
-          "query": true,
+          "query": [
+            "what"
+          ],
           "right": "ownee",
           "text": "who owns cleo"
         },
@@ -11634,17 +11678,22 @@
           "word": "cleo"
         },
         "owner": {
+          "determined": true,
           "marker": "owner",
           "modifiers": [
           ],
-          "query": true,
+          "query": [
+            "what"
+          ],
           "text": "who",
           "types": [
             "owner"
           ],
           "word": "who"
         },
-        "query": true,
+        "query": [
+          "what"
+        ],
         "response": {
           "isResponse": true,
           "marker": "answerNotKnown",
@@ -11687,7 +11736,7 @@
         },
         {
           "op": [
-            "owns",
+            "what",
             0
           ],
           "ops": [
@@ -11702,6 +11751,22 @@
             [
               "what",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owns",
+            0
+          ],
+          "ops": [
+            [
+              "owns",
+              0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -11928,7 +11993,9 @@
           "context": {
             "do": {
               "left": "owner",
-              "query": true,
+              "query": [
+                "what"
+              ],
               "right": "ownee",
               "text": "who owns cleo"
             },
@@ -11948,17 +12015,22 @@
               "word": "cleo"
             },
             "owner": {
+              "determined": true,
               "marker": "owner",
               "modifiers": [
               ],
-              "query": true,
+              "query": [
+                "what"
+              ],
               "text": "who",
               "types": [
                 "owner"
               ],
               "word": "who"
             },
-            "query": true,
+            "query": [
+              "what"
+            ],
             "response": {
               "isResponse": true,
               "marker": "answerNotKnown",

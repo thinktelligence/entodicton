@@ -142,6 +142,10 @@ class API {
         return `${g(context[after[0].tag])} is ${edAble.word} by ${g(context[before[0].tag])}`
       }
     })
+    //config.addAssociations({ 
+      //negative: [[['is', 0], [edAble.operator, 0]]],
+      // positive: [[['isEd', 0], [edAble.operator, 0]]],
+    //})
     // config.addBridge({ id: "ownee", level: 0, bridge: "{ ...next(operator) }"})
     // config.addBridge({ id: "owner", level: 0, bridge: "{ ...next(operator) }"})
   }

@@ -102,10 +102,10 @@ const warningSameNotEvaluated = (log, context, one) => {
 let config = {
   name: 'dialogues',
   operators: [
-    "(([queryable]) [is|is,are] ([queryable|]))",
-    "([is:queryBridge|is,are] ([queryable]) ([queryable]))",
+    "(([queryable]) [is|] ([queryable|]))",
+    "([is:queryBridge|] ([queryable]) ([queryable]))",
     // "(([queryable]) [is:isEdBridge|is,are] ([isEdAble|]))",
-    "(([queryable]) [(<isEd|is,are> ([isEdAble|]))])",
+    "(([queryable]) [(<isEd|> ([isEdAble|]))])",
     "([it])",
     "([what] ([whatAble|]))",
     "([what:optional])",
@@ -133,8 +133,8 @@ let config = {
   ],
   associations: {
     negative: [
-      [['isEd', 0], ['unknown', 0]],
-      [['isEd', 0], ['unknown', 1]],
+      // [['isEd', 0], ['unknown', 0]],
+      // [['isEd', 0], ['unknown', 1]],
       [['is', 0], ['means', 0]],
     ],
     positive: [
@@ -201,6 +201,8 @@ let config = {
     "wordy": [{"id": "briefOrWordy", "initial": "{ value: 'wordy' }" }],
     "does": [{"id": "does", "initial": "{ number: 'one' }" }],
     "do": [{"id": "does", "initial": "{ number: 'many' }" }],
+    "is": [{"id": "is", "initial": "{ number: 'one' }" }, {"id": "isEd", "initial": "{}" }],
+    "are": [{"id": "is", "initial": "{ number: 'many' }" }, {"id": "isEd", "initial": "{}" }],
   },
 
   floaters: ['query'],
