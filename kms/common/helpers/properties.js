@@ -2,6 +2,7 @@ const pluralize = require('pluralize')
 const { unflatten, flattens, Digraph } = require('entodicton')
 const _ = require('lodash')
 const deepEqual = require('deep-equal')
+const { chooseNumber } = require('../helpers.js')
 
 class Frankenhash {
   constructor(data) {
@@ -131,15 +132,15 @@ class API {
         return false;
       },
       apply: ({context, g}) => {
-        // TODO handle singular plural
-        return `${g(context[before[0].tag])} ${word.singular} ${g(context[after[0].tag])}`
+        const chosen = chooseNumber(context, word.singular, word.plural)
+        return `${g(context[before[0].tag])} ${chosen} ${g(context[after[0].tag])}`
       }
     })
     config.addGenerator({
       match: ({context}) => context.marker == edAble.operator && context.isEd,
       apply: ({context, g}) => {
-        // TODO handle plural singular
-        return `${g(context[after[0].tag])} is ${edAble.word} by ${g(context[before[0].tag])}`
+        const chosen = chooseNumber(context[after[0].tag], 'is', 'are')
+        return `${g(context[after[0].tag])} ${chosen} ${edAble.word} by ${g(context[before[0].tag])}`
       }
     })
     //config.addAssociations({ 

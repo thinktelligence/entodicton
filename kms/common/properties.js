@@ -4,6 +4,7 @@ const meta = require('./meta')
 const properties_instance = require('./properties.instance.json')
 const properties_tests = require('./properties.test.json')
 const { API } = require('./helpers/properties')
+const { chooseNumber } = require('./helpers.js')
 const pluralize = require('pluralize')
 
 // TODO what is kia's cat's name
@@ -87,7 +88,7 @@ let config = {
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
     "(([object|]) [have|] ([property|]))",
-    "(<doesnt|doesnt,dont> ([have/0]))",
+    "(<doesnt|> ([have/0]))",
     "(([xfx]) <([between] (words))>)",
     // "(([have/1]) <questionMark|>)",
     // the plural of cat is cats what is the plural of cat?
@@ -127,7 +128,11 @@ let config = {
     { id: "modifies", level: 0, bridge: "{ ...next(operator), modifier: before[0], concept: after[0] }" },
     { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "doesnt", level: 0, bridge: "{ ...context, negation: true }*" },
+    // the cars dont have wings
+    // greg doesnt have wings 
+    // { id: "doesnt", level: 0, bridge: "{ ...context, number: operator.number, negation: true }*" },
+    // { id: "doesnt", level: 0, bridge: "{ ...context, number: 'one', negation: true }*" },
+    { id: "doesnt", level: 0, bridge: "{ ...context, number: operator.number, object.number: operator.number, negation: true }*" },
     { id: "have", level: 0, bridge: "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }" },
     { id: "have", level: 1, bridge: "{ ...next(operator) }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
@@ -152,6 +157,8 @@ let config = {
     " 's": [{ id: 'possession', initial: "{ value: 'possession' }" }],
     "have": [{ id: 'have', initial: "{ doesable: true, number: 'many' }" }],
     "has": [{ id: 'have', initial: "{ doesable: true, number: 'one' }" }],
+    "dont": [{ id: 'doesnt', initial: "{ number: 'many' }" }],
+    "doesnt": [{ id: 'doesnt', initial: "{ number: 'one' }" }],
     // "my": [{ id: 'objectPrefix', initial: "{ value: 'other' }" }],
     // "your": [{ id: 'objectPrefix', initial: "{ value: 'self' }" }],
   },
@@ -302,11 +309,11 @@ let config = {
         const right = context['do'].right
         if (context[right].query) {
             const left = context['do'].left
-            return `${g(context[right])} does ${g(context[left])} ${context.word}`
+            return `${g(context[right])} ${chooseNumber(context[right], "does", "do")} ${g(context[left])} ${context.word}`
         } else {
           // return `does ${g(context[context.do.left])} ${pluralize.singular(context.word)} ${g(context[context.do.right])}`
           // the marker is the infinite form
-          return `does ${g(context[context.do.left])} ${context.marker} ${g(context[context.do.right])}`
+          return `${chooseNumber(context[context.do.left], "does", "do")} ${g(context[context.do.left])} ${context.marker} ${g(context[context.do.right])}`
         }
       },
     },

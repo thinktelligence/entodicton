@@ -38,7 +38,7 @@ config.initializer( ({config, context, km}) => {
   const api = km('properties').api
   api.createActionPrefix({
             operator: 'owns',
-            word: { singular: 'owns', plural: 'own' },
+            word: { singular: 'own', plural: 'owns' },
             create: ['owns', 'owner', 'ownee'],
             before: [{tag: 'owner', id: 'owner'}],
             after: [{tag: 'ownee', id: 'ownee'}],

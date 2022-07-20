@@ -31,10 +31,21 @@ const isMany = (context) => {
   if (context.number == 'many') {
     return true
   }
+  if (context.number == 'one') {
+    return false
+  }
   if (context.word && pluralize.isPlural(context.word)) {
     return true
   }
   return false
+}
+
+const chooseNumber = (context, one, many) => {
+  if (isMany(context)) {
+    return many;
+  } else {
+    return one;
+  }
 }
 
 const zip = (...arrays) => {
@@ -74,6 +85,7 @@ module.exports = {
   millisecondsUntilHourOfDay,
   indent,
   isMany,
+  chooseNumber,
   zip,
   focus,
 }

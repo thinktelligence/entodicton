@@ -74,7 +74,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -273,7 +273,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -415,7 +415,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -538,6 +538,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -672,8 +684,8 @@
         },
         {
           "op": [
-            "modifies",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -683,6 +695,34 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "modifies",
+            0
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
             ]
           ]
         }
@@ -912,7 +952,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -1111,7 +1151,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -1253,7 +1293,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -1376,6 +1416,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -1531,8 +1583,8 @@
         },
         {
           "op": [
-            "modifies",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -1542,6 +1594,34 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "modifies",
+            0
+          ],
+          "ops": [
+            [
+              "modifies",
+              0
             ]
           ]
         },
@@ -1896,7 +1976,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -2095,7 +2175,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -2208,7 +2288,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -2327,6 +2407,18 @@
             "initial": "{ number: 'one' }"
           }
         ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
+          }
+        ],
         "has": [
           {
             "id": "have",
@@ -2392,10 +2484,10 @@
         "is_compound": true,
         "marker": "have",
         "negation": true,
-        "number": "many",
+        "number": "one",
         "object": {
           "marker": "unknown",
-          "number": "many",
+          "number": "one",
           "text": "greg have wings",
           "types": [
             "object",
@@ -2663,10 +2755,10 @@
             "is_compound": true,
             "marker": "have",
             "negation": true,
-            "number": "many",
+            "number": "one",
             "object": {
               "marker": "unknown",
-              "number": "many",
+              "number": "one",
               "text": "greg have wings",
               "types": [
                 "object",
@@ -2861,7 +2953,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -3060,7 +3152,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -3173,7 +3265,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -3292,6 +3384,18 @@
             "initial": "{ number: 'one' }"
           }
         ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
+          }
+        ],
         "has": [
           {
             "id": "have",
@@ -3357,10 +3461,10 @@
         "is_compound": true,
         "marker": "have",
         "negation": true,
-        "number": "many",
+        "number": "one",
         "object": {
           "marker": "unknown",
-          "number": "many",
+          "number": "one",
           "text": "greg have wings",
           "types": [
             "object",
@@ -3397,10 +3501,10 @@
         "doesable": true,
         "is_compound": true,
         "marker": "have",
-        "number": "many",
+        "number": "one",
         "object": {
           "marker": "unknown",
-          "number": "many",
+          "number": "one",
           "text": "greg have wings",
           "types": [
             "object",
@@ -3430,6 +3534,7 @@
         "touchedBy": [
           "call10"
         ],
+        "what": "does",
         "word": "have"
       }
     ],
@@ -3795,10 +3900,10 @@
             "doesable": true,
             "is_compound": true,
             "marker": "have",
-            "number": "many",
+            "number": "one",
             "object": {
               "marker": "unknown",
-              "number": "many",
+              "number": "one",
               "text": "greg have wings",
               "types": [
                 "object",
@@ -3828,6 +3933,7 @@
             "touchedBy": [
               "call10"
             ],
+            "what": "does",
             "word": "have"
           },
           "paraphrases": "does greg have wings?",
@@ -3847,10 +3953,10 @@
             "is_compound": true,
             "marker": "have",
             "negation": true,
-            "number": "many",
+            "number": "one",
             "object": {
               "marker": "unknown",
-              "number": "many",
+              "number": "one",
               "text": "greg have wings",
               "types": [
                 "object",
@@ -3970,7 +4076,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -4169,7 +4275,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -4282,7 +4388,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -4399,6 +4505,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -4881,7 +4999,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -5080,7 +5198,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -5193,7 +5311,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -5310,6 +5428,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -5592,8 +5722,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -5615,18 +5745,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -5970,7 +6104,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -6169,7 +6303,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -6282,7 +6416,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -6399,6 +6533,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -6568,8 +6714,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -6584,13 +6730,13 @@
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -6910,7 +7056,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -7109,7 +7255,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -7222,7 +7368,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -7339,6 +7485,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -7621,8 +7779,8 @@
         },
         {
           "op": [
-            "questionMark",
-            0
+            "have",
+            1
           ],
           "ops": [
             [
@@ -7644,18 +7802,22 @@
             [
               "have",
               1
+            ],
+            [
+              "questionMark",
+              0
             ]
           ]
         },
         {
           "op": [
-            "have",
-            1
+            "questionMark",
+            0
           ],
           "ops": [
             [
-              "have",
-              1
+              "questionMark",
+              0
             ]
           ]
         }
@@ -8011,7 +8173,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -8210,7 +8372,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -8323,7 +8485,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -8440,6 +8602,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -9039,7 +9213,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -9238,7 +9412,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -9351,7 +9525,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -9468,6 +9642,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -10063,6 +10249,24 @@
         ],
         [
           "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
           1
         ]
       ],
@@ -10144,16 +10348,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ],
       [
@@ -10209,7 +10403,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -10408,7 +10602,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -10521,7 +10715,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -10638,6 +10832,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -11207,146 +11413,6 @@
         },
         {
           "op": [
-            "possession",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "possession",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "possession",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "property",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "possession",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "property",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "isEd",
             0
           ],
@@ -11360,6 +11426,138 @@
               0
             ],
             [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "property",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ],
+            [
               "unknown",
               1
             ]
@@ -11493,6 +11691,30 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
               0
             ],
             [
@@ -11512,7 +11734,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -11526,26 +11748,6 @@
             [
               "what",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -12323,6 +12525,94 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -12363,92 +12653,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
         ]
       ],
       [
@@ -12500,7 +12704,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -12699,7 +12903,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -12812,7 +13016,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -12929,6 +13133,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -13561,146 +13777,6 @@
         },
         {
           "op": [
-            "possession",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "possession",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "possession",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "property",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "possession",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "possession",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "property",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "isEd",
             0
           ],
@@ -13714,6 +13790,138 @@
               0
             ],
             [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "property",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "property",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "property",
+              0
+            ],
+            [
               "unknown",
               1
             ]
@@ -13786,7 +13994,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13814,7 +14022,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13846,7 +14054,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13878,7 +14086,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13906,7 +14114,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13930,7 +14138,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -14821,7 +15029,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -15020,7 +15228,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -15133,7 +15341,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -15250,6 +15458,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -15602,6 +15822,46 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -15746,26 +16006,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          1
-        ],
-        [
-          "unknown",
-          1
         ]
       ],
       [
@@ -15821,7 +16061,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -16020,7 +16260,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -16133,7 +16373,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -16250,6 +16490,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -16944,7 +17196,7 @@
         },
         {
           "op": [
-            "what",
+            "isEd",
             0
           ],
           "ops": [
@@ -16972,222 +17224,6 @@
         },
         {
           "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "isEd",
             0
           ],
@@ -17199,6 +17235,246 @@
             [
               "isEd",
               0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              1
             ],
             [
               "unknown",
@@ -17946,6 +18222,62 @@
           0
         ],
         [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          1
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "property",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
           "propertyOf",
           0
         ],
@@ -18064,16 +18396,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "what",
@@ -18082,16 +18404,6 @@
       ],
       [
         [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
           "propertyOf",
           0
         ],
@@ -18129,16 +18441,6 @@
         ],
         [
           "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
           0
         ],
         [
@@ -18185,7 +18487,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -18384,7 +18686,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -18497,7 +18799,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -18614,6 +18916,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -19112,7 +19426,7 @@
         },
         {
           "op": [
-            "what",
+            "isEd",
             0
           ],
           "ops": [
@@ -19144,12 +19458,80 @@
         },
         {
           "op": [
-            "possession",
+            "isEd",
             0
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -19173,6 +19555,30 @@
         {
           "op": [
             "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
             1
           ],
           "ops": [
@@ -19181,19 +19587,11 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "possession",
               1
             ],
             [
               "propertyOf",
-              0
-            ],
-            [
-              "the",
               0
             ],
             [
@@ -19209,59 +19607,11 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "property",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
               0
             ],
             [
@@ -19282,10 +19632,6 @@
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -19309,32 +19655,8 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "propertyOf",
               1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
             ],
             [
               "unknown",
@@ -19884,11 +20206,29 @@
         ],
         [
           "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
           0
         ],
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -20063,26 +20403,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          1
-        ],
-        [
-          "unknown",
-          1
         ]
       ]
     ],
@@ -20124,7 +20444,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -20323,7 +20643,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -20436,7 +20756,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -20553,6 +20873,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -20982,6 +21314,38 @@
           ],
           "ops": [
             [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
               "is",
               0
             ],
@@ -21018,6 +21382,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -21045,10 +21413,14 @@
         },
         {
           "op": [
-            "unknown",
+            "isEd",
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
@@ -21063,6 +21435,34 @@
             ],
             [
               "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -21082,7 +21482,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -21110,7 +21510,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -21134,7 +21534,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -21153,12 +21553,12 @@
         },
         {
           "op": [
-            "isEd",
+            "propertyOf",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -21179,34 +21579,6 @@
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -21234,10 +21606,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "propertyOf",
               1
             ],
@@ -21258,32 +21626,8 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "propertyOf",
               1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
             ],
             [
               "unknown",
@@ -21874,6 +22218,68 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -21931,56 +22337,6 @@
         ],
         [
           "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
           0
         ],
         [
@@ -22041,7 +22397,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -22240,7 +22596,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -22353,7 +22709,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -22470,6 +22826,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -23031,7 +23399,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -23091,7 +23459,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -23119,7 +23487,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -23741,12 +24109,26 @@
           0
         ],
         [
-          "readonly",
+          "propertyOf",
           0
         ],
         [
           "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
           0
+        ],
+        [
+          "propertyOf",
+          1
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -23760,6 +24142,20 @@
         ],
         [
           "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -23837,16 +24233,6 @@
         [
           "propertyOf",
           0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          1
         ],
         [
           "unknown",
@@ -23892,7 +24278,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -24091,7 +24477,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -24204,7 +24590,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -24321,6 +24707,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -24636,7 +25034,7 @@
         },
         {
           "op": [
-            "readonly",
+            "the",
             0
           ],
           "ops": [
@@ -24668,7 +25066,7 @@
         },
         {
           "op": [
-            "the",
+            "readonly",
             0
           ],
           "ops": [
@@ -24685,7 +25083,31 @@
               0
             ],
             [
-              "the",
+              "readonly",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
               0
             ],
             [
@@ -24702,10 +25124,6 @@
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -24729,32 +25147,8 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "propertyOf",
               1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
             ],
             [
               "unknown",
@@ -25140,6 +25534,24 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -25178,20 +25590,6 @@
           0
         ],
         [
-          "readonly",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
           "the",
           0
         ],
@@ -25260,16 +25658,6 @@
         [
           "propertyOf",
           0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          1
         ],
         [
           "unknown",
@@ -25335,7 +25723,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -25534,7 +25922,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -25647,7 +26035,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -25764,6 +26152,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -26178,177 +26578,169 @@
           ],
           "ops": [
             [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
               "is",
               0
             ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "readonly",
-            0
-          ],
-          "ops": [
             [
               "isEd",
               0
@@ -26378,6 +26770,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -26386,27 +26782,7 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
+              "readonly",
               0
             ],
             [
@@ -26434,6 +26810,10 @@
               0
             ],
             [
+              "readonly",
+              0
+            ],
+            [
               "unknown",
               1
             ]
@@ -26441,7 +26821,59 @@
         },
         {
           "op": [
-            "propertyOf",
+            "readonly",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
             0
           ],
           "ops": [
@@ -26474,7 +26906,23 @@
               0
             ],
             [
-              "isEd",
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -26502,10 +26950,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "propertyOf",
               1
             ],
@@ -26523,10 +26967,6 @@
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -27174,7 +27614,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -27373,7 +27813,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -27486,7 +27926,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -27603,6 +28043,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -27978,7 +28430,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -28177,7 +28629,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -28290,7 +28742,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -28407,6 +28859,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -28934,7 +29398,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -29133,7 +29597,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -29246,7 +29710,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -29363,6 +29827,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -29811,6 +30287,68 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
           "unknown",
           1
         ]
@@ -29868,56 +30406,6 @@
         ],
         [
           "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
           0
         ],
         [
@@ -29978,7 +30466,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -30177,7 +30665,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -30290,7 +30778,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -30407,6 +30895,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -30564,7 +31064,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -30624,7 +31124,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -30652,7 +31152,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -31045,6 +31545,38 @@
         ],
         [
           "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
           1
         ]
       ],
@@ -31085,16 +31617,6 @@
         ],
         [
           "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
           0
         ]
       ],
@@ -31151,7 +31673,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -31350,7 +31872,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -31463,7 +31985,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -31580,6 +32102,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -31786,7 +32320,7 @@
         },
         {
           "op": [
-            "what",
+            "isEd",
             0
           ],
           "ops": [
@@ -31810,12 +32344,36 @@
         },
         {
           "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
             "the",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -32176,7 +32734,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -32375,7 +32933,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -32488,7 +33046,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -32605,6 +33163,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
@@ -32962,7 +33532,7 @@
           "level": 0
         },
         {
-          "bridge": "{ ...context, negation: true }*",
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
           "id": "doesnt",
           "level": 0
         },
@@ -33161,7 +33731,7 @@
           "level": 1
         },
         {
-          "bridge": "{ query: true, ...context }*",
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
           "id": "does",
           "level": 0
         },
@@ -33274,7 +33844,7 @@
           "pattern": "(([object|]) [have|] ([property|]))"
         },
         {
-          "pattern": "(<doesnt|doesnt,dont> ([have/0]))"
+          "pattern": "(<doesnt|> ([have/0]))"
         },
         {
           "pattern": "(([xfx]) <([between] (words))>)"
@@ -33391,6 +33961,18 @@
           {
             "id": "does",
             "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
           }
         ],
         "has": [
