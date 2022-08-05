@@ -111,10 +111,43 @@ class API {
     config.addBridge({
              id: edAble.operator,
              level: 0,
-             bridge: `{ ...before, contraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), ${before[0].tag}: after[0].object, ${after[0].tag}: before[0] } } ] }`,
+             bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), constrained: true, ${before[0].tag}: default(after[0].object, after[0]), ${after[0].tag}: before[0] } } ] }`,
+             // bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), constrained: true, ${before[0].tag}: after[0].object, ${after[0].tag}: before[0] } } ] }`,
              deferred: `{ ...next(operator), 'isEd': true, '${after[0].tag}': before[0], ${before[0].tag}: after[0].object }` })
     config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", allowDups: true})
     config.addHierarchy(edAble.operator, 'isEdAble')
+    config.addSemantic({
+      notes: 'semantic for setting value with constraint',
+      match: ({context}) => context.marker == after[0].tag && context.evaluate,
+      apply: ({km, context, log, s}) => {
+        debugger;
+        const value = context.constraints[0].constraint;
+        console.log(JSON.stringify(value, null, 2));
+        value.marker = 'owns'
+        value.greg = true
+        value.ownee.query = true
+        value.query = true
+        let instance = km('dialogues').api.evaluate(value, context, log, s)
+        if (instance.verbatim) {
+          context.response = { verbatim: instance.verbatim }
+          return
+        }
+        // context.value = <value>,
+      },
+    })
+    config.addGenerator({
+      notes: 'generator for constraint',
+      match: ({context}) => context.marker == edAble.operator && context.paraphrase && context.constrained,
+      apply: ({context, g}) => {
+        if (context[before[0].tag].marker == 'by') {
+          // the cat kia owned
+          return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} ${g({...context[before[0].tag], paraphrase: true})}`
+        } else {
+          // the cat owned by kia
+          return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} by ${g({...context[before[0].tag], paraphrase: true})}`
+        }
+      },
+    })
     config.addGenerator({
       match: ({context}) => {
         if (context.marker == operator && context.paraphrase) {

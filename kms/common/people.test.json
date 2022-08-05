@@ -9865,7 +9865,7 @@
           "paraphrases": "who is ownee?",
           "responses": [
             "",
-            "ownee is ownee"
+            "bug ownee is ownee"
           ]
         },
         {
@@ -10629,6 +10629,758 @@
     },
     "paraphrases": [
       "people"
+    ],
+    "responses": [
+      ""
+    ]
+  },
+  "the cat owned by kia": {
+    "associations": [
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "concept": true,
+        "constraints": [
+          {
+            "constraint": {
+              "constrained": true,
+              "default": true,
+              "marker": "owned",
+              "ownee": {
+                "concept": true,
+                "determiner": "the",
+                "marker": "unknown",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the cat",
+                "types": [
+                  "unknown",
+                  "ownee",
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "cat",
+                "wantsValue": true,
+                "word": "cat"
+              },
+              "owner": {
+                "marker": "unknown",
+                "text": "kia",
+                "types": [
+                  "owner"
+                ],
+                "unknown": true,
+                "value": "kia",
+                "word": "kia"
+              },
+              "text": "the cat owned by kia",
+              "word": "owned"
+            },
+            "property": "ownee"
+          }
+        ],
+        "determiner": "the",
+        "marker": "ownee",
+        "modifiers": [
+          "determiner"
+        ],
+        "pullFromContext": true,
+        "text": "the cat owned by kia",
+        "topLevel": true,
+        "types": [
+          "ownee"
+        ],
+        "unknown": true,
+        "value": "cat",
+        "wantsValue": true,
+        "word": "cat"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "by",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "by",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "by",
+            0
+          ],
+          "ops": [
+            [
+              "by",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "owned",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owned",
+            0
+          ],
+          "ops": [
+            [
+              "owned",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "unknown",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+        },
+        "2": {
+          "children": {
+            "canBeDoQuestion": [
+              "owns",
+              "have"
+            ],
+            "canBeQuestion": [
+              "owns",
+              "have"
+            ],
+            "ifAble": [
+              "owns"
+            ],
+            "isEdAble": [
+              "owned"
+            ],
+            "orAble": [
+              "owns"
+            ],
+            "property": [
+              "type"
+            ],
+            "unknown": [
+              "person",
+              "owner",
+              "ownee"
+            ],
+            "what": [
+              "owner",
+              "ownee"
+            ],
+            "whatAble": [
+              "type"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "person",
+            "unknown",
+            "owner",
+            "what",
+            "ownee",
+            "owns",
+            "canBeDoQuestion",
+            "canBeQuestion",
+            "ifAble",
+            "orAble",
+            "owned",
+            "isEdAble",
+            "type",
+            "property",
+            "whatAble",
+            "have"
+          ],
+          "parents": {
+            "have": [
+              "canBeQuestion",
+              "canBeDoQuestion"
+            ],
+            "owned": [
+              "isEdAble"
+            ],
+            "ownee": [
+              "unknown",
+              "what"
+            ],
+            "owner": [
+              "unknown",
+              "what"
+            ],
+            "owns": [
+              "canBeDoQuestion",
+              "canBeQuestion",
+              "ifAble",
+              "orAble"
+            ],
+            "person": [
+              "unknown"
+            ],
+            "type": [
+              "property",
+              "whatAble"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "canBeDoQuestion": {
+              },
+              "canBeQuestion": {
+              },
+              "have": {
+              },
+              "ifAble": {
+              },
+              "isEdAble": {
+              },
+              "orAble": {
+              },
+              "owned": {
+              },
+              "ownee": {
+              },
+              "owner": {
+              },
+              "owns": {
+              },
+              "person": {
+              },
+              "property": {
+              },
+              "type": {
+              },
+              "unknown": {
+              },
+              "what": {
+              },
+              "whatAble": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+            "first_name": [
+              {
+                "first": {
+                  "marker": "first",
+                  "value": "first",
+                  "word": "first"
+                },
+                "marker": "first_name",
+                "modifiers": [
+                  "first"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "first_name"
+                ],
+                "value": "first_name",
+                "word": "name"
+              }
+            ],
+            "given_name": [
+              {
+                "given": {
+                  "marker": "given",
+                  "value": "given",
+                  "word": "given"
+                },
+                "marker": "given_name",
+                "modifiers": [
+                  "given"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "given_name"
+                ],
+                "value": "given_name",
+                "word": "name"
+              }
+            ],
+            "last_name": [
+              {
+                "last": {
+                  "marker": "last",
+                  "value": "last",
+                  "word": "last"
+                },
+                "marker": "last_name",
+                "modifiers": [
+                  "last"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "last_name"
+                ],
+                "value": "last_name",
+                "word": "name"
+              }
+            ]
+          }
+        },
+        "3": {
+          "mentioned": [
+          ],
+          "variables": {
+            "surname": "last_name"
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "concept": true,
+            "constraints": [
+              {
+                "constraint": {
+                  "constrained": true,
+                  "default": true,
+                  "marker": "owned",
+                  "ownee": {
+                    "concept": true,
+                    "determiner": "the",
+                    "marker": "unknown",
+                    "modifiers": [
+                      "determiner"
+                    ],
+                    "pullFromContext": true,
+                    "text": "the cat",
+                    "types": [
+                      "unknown",
+                      "ownee",
+                      "unknown"
+                    ],
+                    "unknown": true,
+                    "value": "cat",
+                    "wantsValue": true,
+                    "word": "cat"
+                  },
+                  "owner": {
+                    "marker": "unknown",
+                    "text": "kia",
+                    "types": [
+                      "owner"
+                    ],
+                    "unknown": true,
+                    "value": "kia",
+                    "word": "kia"
+                  },
+                  "text": "the cat owned by kia",
+                  "word": "owned"
+                },
+                "property": "ownee"
+              }
+            ],
+            "determiner": "the",
+            "marker": "ownee",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the cat owned by kia",
+            "topLevel": true,
+            "types": [
+              "ownee"
+            ],
+            "unknown": true,
+            "value": "cat",
+            "wantsValue": true,
+            "word": "cat"
+          },
+          "paraphrases": "the cat owned by kia",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "default": true,
+              "isEd": true,
+              "is_compound": true,
+              "marker": "owned",
+              "ownee": {
+                "default": true,
+                "marker": "ownee",
+                "text": "ownee",
+                "types": [
+                  "ownee"
+                ],
+                "word": "ownee"
+              },
+              "owner": {
+                "default": true,
+                "marker": "owner",
+                "text": "owner",
+                "types": [
+                  "owner"
+                ],
+                "word": "owner"
+              },
+              "text": "ownee owned",
+              "types": [
+                "owned"
+              ],
+              "word": "owned"
+            },
+            "marker": "means",
+            "metaInfo": "The mapping from from the expression being defined \"ownee is owned by owner\" to the definition phrase \"owner owns ownee\" is [{\"from\":[\"ownee\"],\"to\":[\"ownee\"]},{\"from\":[\"owner\"],\"to\":[\"owner\"]}]",
+            "text": "ownee owned means owner owns ownee",
+            "to": {
+              "do": {
+                "left": "owner",
+                "right": "ownee",
+                "text": "owner owns ownee"
+              },
+              "focusable": [
+                "owner",
+                "ownee"
+              ],
+              "marker": "owns",
+              "number": "many",
+              "ownee": {
+                "default": true,
+                "marker": "ownee",
+                "text": "ownee",
+                "types": [
+                  "ownee"
+                ],
+                "word": "ownee"
+              },
+              "owner": {
+                "default": true,
+                "marker": "owner",
+                "text": "owner",
+                "types": [
+                  "owner"
+                ],
+                "word": "owner"
+              },
+              "text": "owner owns ownee",
+              "unflatten": [
+                "owner",
+                "ownee"
+              ],
+              "value": "owns",
+              "word": "owns"
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "means"
+          },
+          "paraphrases": "ownee is owned by owner means owner owns ownee",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "atomic": true,
+              "given": {
+                "marker": "given",
+                "text": "given",
+                "value": "given",
+                "word": "given"
+              },
+              "marker": "given_name",
+              "modifiers": [
+                "given"
+              ],
+              "number": "one",
+              "text": "given name",
+              "types": [
+                "given_name"
+              ],
+              "value": "given_name",
+              "word": "name"
+            },
+            "marker": "means",
+            "metaInfo": "The mapping from from the expression being defined \"given name\" to the definition phrase \"first name\" is []",
+            "text": "given name means first name",
+            "to": {
+              "atomic": true,
+              "first": {
+                "marker": "first",
+                "text": "first",
+                "value": "first",
+                "word": "first"
+              },
+              "marker": "first_name",
+              "modifiers": [
+                "first"
+              ],
+              "number": "one",
+              "text": "first name",
+              "types": [
+                "first_name"
+              ],
+              "value": "first_name",
+              "word": "name"
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "means"
+          },
+          "paraphrases": "given name means first name",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "concept": {
+              "marker": "name",
+              "number": "one",
+              "text": "name",
+              "value": "name",
+              "word": "name"
+            },
+            "default": true,
+            "marker": "modifies",
+            "modifier": {
+              "marker": "unknown",
+              "text": "given",
+              "unknown": true,
+              "value": "given",
+              "word": "given"
+            },
+            "text": "given modifies name",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "modifies"
+          },
+          "paraphrases": "given modifies name",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "text": "surname",
+              "unknown": true,
+              "value": "surname",
+              "word": "surname"
+            },
+            "marker": "means",
+            "text": "surname means last name",
+            "to": {
+              "atomic": true,
+              "last": {
+                "marker": "last",
+                "text": "last",
+                "value": "last",
+                "word": "last"
+              },
+              "marker": "last_name",
+              "modifiers": [
+                "last"
+              ],
+              "number": "one",
+              "text": "last name",
+              "types": [
+                "last_name"
+              ],
+              "value": "last_name",
+              "word": "name"
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "means"
+          },
+          "paraphrases": "surname means last name",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "concept": {
+              "marker": "name",
+              "number": "one",
+              "text": "name",
+              "value": "name",
+              "word": "name"
+            },
+            "default": true,
+            "marker": "modifies",
+            "modifier": {
+              "marker": "unknown",
+              "text": "last",
+              "unknown": true,
+              "value": "last",
+              "word": "last"
+            },
+            "text": "last modifies name",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "modifies"
+          },
+          "paraphrases": "last modifies name",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "the cat owned by kia"
     ],
     "responses": [
       ""

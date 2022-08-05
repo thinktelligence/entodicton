@@ -17,13 +17,13 @@ node people -tva -g
 node scorekeeper -tva -g
 node tell -tva -g
 node time -tva -g
-# -g
+#
 node crew -tva -g
 node kirk -tva -g
 node spock -tva -g
 node stgame -tva -g
 node pokemon -tva -g
-# -g
+#
 node kid -tva -g
 node kia -tva -g
 node hana -tva -g

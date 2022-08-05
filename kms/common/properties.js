@@ -188,6 +188,22 @@ let config = {
   ],
   generators: [
     {
+      notes: 'expression with constraints',
+      match: ({context}) => context.constraints,
+      apply: ({context, g}) => {
+        // TODO assume one constaints deal with more in the future
+        const constraint = context.constraints[0]
+        const constrained = Object.assign({}, constraint.constraint)
+        const property = Object.assign({}, context)
+        delete property.constraints
+        constrained[constraint.property] = property
+        constrained.greg = true
+        debugger;
+        constrained.paraphrase = true
+        return g(constrained)
+      },
+    },
+    {
       match: ({context}) => context.marker == 'xfx',
       apply: ({context, g}) => `${context.word} between ${g(context.arguments)}`
     },
