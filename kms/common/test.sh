@@ -13,7 +13,7 @@ node numbers -tva -g
 node properties -tva -g
 node reports -tva -g
 node ordering -tva -g
-node people -tva -g
+# node people -tva -g
 node scorekeeper -tva -g
 node tell -tva -g
 node time -tva -g
