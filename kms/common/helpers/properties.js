@@ -107,7 +107,7 @@ class API {
   setupEdAble(args) {
     const { operator, word, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
 
-    config.addOperator(`(([${after[0].tag}])? <${edAble.operator}|${edAble.word}> ([by] ([${before[0].tag}])))`)
+    config.addOperator(`(([${after[0].tag}])^ <${edAble.operator}|${edAble.word}> ([by] ([${before[0].tag}])))`)
     config.addBridge({
              id: edAble.operator,
              level: 0,
@@ -174,13 +174,13 @@ class API {
     }
 
     const beforeOperators = before.map( (arg) => `([${arg.id}|])` ).join('')
-    const beforeOperatorsEdable = before.map( (arg) => `([${arg.id}|])?` ).join('')
+    const beforeOperatorsEdable = before.map( (arg) => `([${arg.id}|])^` ).join('')
     const afterOperators = after.map( (arg) => `([${arg.id}|])` ).join('')
     // config.addOperator(`(${beforeOperators} [${operator}|] ${afterOperators})`)
 
     if (doAble) {
       config.addOperator({ 
-        pattern: `([(${beforeOperators} [${operator}|] ${afterOperators}?)])`, 
+        pattern: `([(${beforeOperators} [${operator}|] ${afterOperators}^)])`, 
         allowDups: true,
       })
       // config.addOperator({ id: operator, level: 1, words: [operator] })
