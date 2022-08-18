@@ -444,6 +444,9 @@ let config = {
         return `${g({...context.one, paraphrase: true})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
         */
         // return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true})}`
+        if ((context.two.value || {}).marker == 'answerNotKnown') {
+          return g(context.two.value)
+        }
         if (context.two.focusableForPhrase) {
           return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true})}`
         } else {

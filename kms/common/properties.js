@@ -28,6 +28,7 @@ const pluralize = require('pluralize')
 // TODO macro for verb forms -> arm x | go to y | i like x
 // TODO READONLY
 // TODO pokemon what is the attack/i own a pikachu/ what do i own
+// TODO response == true and isResponse == true are mixed do one and not both
 // own is xfx owner ownee
 /*
 V1
@@ -188,6 +189,22 @@ let config = {
   ],
   generators: [
     {
+      notes: 'expression with constraints',
+      match: ({context}) => context.constraints && context.paraphrase,
+      apply: ({context, g}) => {
+        // TODO assume one constaints deal with more in the future
+        const constraint = context.constraints[0]
+        const constrained = Object.assign({}, constraint.constraint)
+        const property = Object.assign({}, context)
+        delete property.constraints
+        constrained[constraint.property] = property
+        constrained.greg = true
+        debugger;
+        constrained.paraphrase = true
+        return g(constrained)
+      },
+    },
+    {
       match: ({context}) => context.marker == 'xfx',
       apply: ({context, g}) => `${context.word} between ${g(context.arguments)}`
     },
@@ -304,7 +321,7 @@ let config = {
     {
       notes: 'do questions',
       // debug: 'call9',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query && context.do,
       apply: ({context, g}) => {
         const right = context['do'].right
         if (context[right].query) {

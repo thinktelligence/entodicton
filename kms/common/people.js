@@ -52,7 +52,7 @@ config.initializer( ({config, context, km}) => {
   config.addBridge({
            id: "owned", 
            level: 0,
-           bridge: "{ ...before, contraints: [ { property: 'ownee', constraint: { ...next(operator), owner: after[0].object, ownee: before[0] } } ] }",
+           bridge: "{ ...before, constraints: [ { property: 'ownee', constraint: { ...next(operator), owner: after[0].object, ownee: before[0] } } ] }",
            deferred: "{ ...next(operator), 'isEd': true, 'ownee': before[0], owner: after[0].object }" })
            // deferred: "{ ...next(operator), 'marker': 'owns', 'isEd': true, 'ownee': before[0], owner: after[0].object }" })
   */
