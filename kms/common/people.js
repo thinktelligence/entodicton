@@ -10,7 +10,7 @@ const people_instance = require('./people.instance.json')
 // TODO who is the person that owns cleo
 
 const template = {
-    "queries": [
+    queries: [
       "first modifies name",
       "last modifies name",
       "surname means last name",
@@ -38,7 +38,7 @@ config.initializer( ({config, context, km}) => {
   const api = km('properties').api
   api.createActionPrefix({
             operator: 'owns',
-            word: { singular: 'own', plural: 'owns' },
+            word: { singular: 'owns', plural: 'own' },
             create: ['owns', 'owner', 'ownee'],
             before: [{tag: 'owner', id: 'owner'}],
             after: [{tag: 'ownee', id: 'ownee'}],

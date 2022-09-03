@@ -204,26 +204,21 @@
 #node people -q 'fred is a cat kia owns cleo who is the cat owned by kia' -d
 # node people -q 'ownee is owned by owner who is ownee owned by' -d
 
+# two people named jeff talk about one have context resolve it
 # node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d
-node people -q 'kia owns cleo\nwho is cleo owned by' -d
-
-
-# **************************** ERRORS ************************
-# Utterance:  ownee is owned by owner who is ownee owned by
-#   Failure
-# expected paraphrases [ 'ownee is owned by owner', 'who is ownee?' ]
-# actual paraphrases   [ 'ownee is owned by owner', 'who is ownee owned by?' ]
-# expected responses   [ '', 'ownee is ownee' ]
-# actual responses     [ '', 'that is not known' ]
-# 
-# Utterance:  fred is a cat kia owns cleo who is the cat owned by kia
-# expected paraphrases [ 'fred is a cat', 'kia owns cleo', 'who is the cat owned by kia?' ]
-# actual paraphrases   [ 'fred is a cat', 'kia owns cleo', 'who is the cat?', 'owned' ]
-# expected responses   [ '', '', 'that is not known' ]
-# actual responses     [ '', '', 'the cat is cat', '' ]
-# 
-# Utterance:  cleo is a cat kia owns cleo who is the cat owned by kia
-# expected paraphrases [ 'cleo is a cat', 'kia owns cleo', 'who is the cat owned by kia?' ]
-# actual paraphrases   [ 'cleo is a cat', 'kia owns cleo', 'who is the cat?', 'owned' ]
-# expected responses   [ '', '', 'the cat owned by kia is cleo' ]
-# actual responses     [ '', '', 'the cat is cat', '' ]
+# node people -q 'kia owns cleo\nwho is cleo owned by' -d
+# node people -q 'cleo is owned by kia who owns cleo' -d -g
+# node hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -d -g
+# CONFLICT
+# node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
+# node people -q 'fred is a cat kia owns cleo who is the cat owned by kia' -d -g
+# TODO node people -q 'ownee is owned by owner who is ownee owned by' -d -g -r
+# TODO focusable -> make an evaluate for getting focus
+# TODO fix words for disarm the phasers
+# who is ownee owned by
+# the owner that owns ownee
+# owner owns ownee is owner
+# TODO put ids in the sematnics and allow a partial odering def that one goes before another -> make the learnable
+# PARAPHRASE WRONG
+# node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
+node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -d -g 

@@ -57,6 +57,10 @@ class API {
     return instance
   }
 
+  evaluateToWord(value, g) {
+    return g({ ...value, evaluateToWord: true })
+  }
+
   evaluateToConcept(value, context, log, s) {
     value.evaluate = { toConcept: true }
     // const concept = s(value, { debug: { apply: true } }) 
@@ -166,7 +170,14 @@ let config = {
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "questionMark", level: 0, bridge: "{ ...before[0], query: [before.marker] }" },
     // { id: "isEd", level: 0, bridge: "{ ...context, query: true }" },
-    { id: "isEd", level: 0, bridge: "{ ...context }" },
+    // gregbug
+    // context.subject == ['owner'] but could be list of properties
+    // { id: "isEd", level: 0, bridge: "{ number: operator.number, ...context, [subject].number: operator.number }" },
+    // { id: "isEd", level: 0, bridge: "{ number: operator.number, ...context, properties(subject).number: operator.number }" },
+    // NO or symlink subject: link(current.ownee)  // any other operator...
+    // NO { id: "isEd", level: 0, bridge: "{ number: operator.number, ...context, subject.number: operator.number }" },
+    { id: "isEd", level: 0, bridge: "{ number: operator.number, ...context, [context.subject].number: operator.number }" },
+    // { id: "isEd", level: 0, bridge: "{ ...context }" },
     { id: "isEdAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "isEdAble", level: 1, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, 
@@ -201,8 +212,8 @@ let config = {
     "wordy": [{"id": "briefOrWordy", "initial": "{ value: 'wordy' }" }],
     "does": [{"id": "does", "initial": "{ number: 'one' }" }],
     "do": [{"id": "does", "initial": "{ number: 'many' }" }],
-    "is": [{"id": "is", "initial": "{ number: 'one' }" }, {"id": "isEd", "initial": "{}" }],
-    "are": [{"id": "is", "initial": "{ number: 'many' }" }, {"id": "isEd", "initial": "{}" }],
+    "is": [{"id": "is", "initial": "{ number: 'one' }" }, {"id": "isEd", "initial": "{ number: 'one' }" }],
+    "are": [{"id": "is", "initial": "{ number: 'many' }" }, {"id": "isEd", "initial": "{ number: 'many' }" }],
   },
 
   floaters: ['query'],
@@ -242,6 +253,11 @@ let config = {
         return g(focussed)
       },
       priority: -2,
+    },
+    {
+      notes: "unknown ",
+      match: ({context}) => context.marker == 'unknown' && context.implicit,
+      apply: ({context}) => '',
     },
     {
       notes: "unknown answer default response",
@@ -429,31 +445,22 @@ let config = {
       notes: 'x is y (not a response)',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
       apply: ({context, g}) => {
-        // return `${g({ ...context.one, paraphrase: true })} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
-        // response or not response -> paraphrase
-        // the age of greg is the age -> age is 23    -> first only missing paraphrase marker because it is coming from the context
-        // your name is greg --response--> your name is greg // should be my name
-        // return `${g({...context.one, paraphrase: context.paraphrase})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
-        /*
-        let first = context.one
-        let second = context.two
-        if (second.focusInPhrase) {
-          second = context.one
-          first = context.two
-        }
-        return `${g({...context.one, paraphrase: true})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
-        */
-        // return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true})}`
         if ((context.two.value || {}).marker == 'answerNotKnown') {
           return g(context.two.value)
         }
         if (context.two.focusableForPhrase) {
-          return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true})}`
+          return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true}, { assumed: { subphrase: true } })}`
         } else {
-          return `${g({...context.one, paraphrase: true})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
+          return `${g({...context.one, paraphrase: true}, { assumed: {subphrase: true} })} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
         }
         // return `${g({...context.one})} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g(context.two)}`
       },
+    },
+
+    {
+      priority: -3,
+      match: ({context}) => context.evaluateToWord && context.word,
+      apply: ({context}) => context.word,
     },
 
     // defaults

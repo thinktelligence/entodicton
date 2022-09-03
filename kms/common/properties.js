@@ -197,11 +197,18 @@ let config = {
         const constrained = Object.assign({}, constraint.constraint)
         const property = Object.assign({}, context)
         delete property.constraints
+
         constrained[constraint.property] = property
-        constrained.greg = true
-        debugger;
         constrained.paraphrase = true
-        return g(constrained)
+        debugger;
+        const paraphrase = Object.assign({}, constraint.paraphrase)
+        paraphrase.paraphrase = true;
+        paraphrase[constraint.property] = property
+        if (false && context.isResponse) {
+          return g({...constraint.paraphrase, paraphrase: true})
+        } else {
+          return g(constrained)
+        }
       },
     },
     {

@@ -106,15 +106,24 @@ class API {
 
   setupEdAble(args) {
     const { operator, word, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
-
-    config.addOperator(`(([${after[0].tag}])^ <${edAble.operator}|${edAble.word}> ([by] ([${before[0].tag}])))`)
+    config.addOperator(`(([${after[0].tag}])^ <${edAble.operator}|${edAble.word}> ([by] ([${before[0].tag}])?))`)
     config.addBridge({
              id: edAble.operator,
              level: 0,
-             bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), constrained: true, ${before[0].tag}: default(after[0].object, after[0]), ${after[0].tag}: before[0] } } ] }`,
+             bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', properties: ['${after[0].tag}', '${before[0].tag}'], paraphrase: { marker: '${operator}', ${before[0].tag}: { marker: '${before[0].id}', types: ['${before[0].id}'], word: '${before[0].id}' }, ${after[0].tag}: { marker: '${after[0].id}', types: ['${after[0].id}'], word: '${after[0].id}' } }, constraint: { ...next(operator), constrained: true, ${before[0].tag}: default(after[0].object, after[0]), ${after[0].tag}: before[0] } } ] }`,
              // bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), constrained: true, ${before[0].tag}: after[0].object, ${after[0].tag}: before[0] } } ] }`,
-             deferred: `{ ...next(operator), 'isEd': true, '${after[0].tag}': before[0], ${before[0].tag}: after[0].object }` })
-    config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", allowDups: true})
+             deferred: `{ ...next(operator), 'isEd': true, subject: 'ownee', '${after[0].tag}': { operator: operator, number: operator.number, ...before[0] }, ${before[0].tag}: after[0].object }` })
+    // config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", allowDups: true})
+    config.addBridge({
+         id: "by",
+         level: 0,
+         bridge: "{ ...next(operator), object: after[0] }",
+         allowDups: true,
+         optional: {
+           [before[0].tag]: "{ marker: 'unknown', implicit: true, concept: true }",
+         },
+       })
+    config.addPriorities([['is', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
     config.addSemantic({
       notes: 'semantic for setting value with constraint',
@@ -122,8 +131,14 @@ class API {
       apply: ({km, context, log, s}) => {
         const constraint = context.constraints[0];
         const value = constraint.constraint;
-        const property = constraint.property;
-        console.log(JSON.stringify(value, null, 2));
+        let property = constraint.property;
+        const properties = constraint.properties;
+        for (let p of properties) {
+          if (value[p].concept) {
+            property = p
+            constraint.property = p; // set what is used
+          }
+        }
         // value.marker = 'owns'
         // value.greg = true
         // value.ownee.query = true
@@ -152,7 +167,7 @@ class API {
           return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} ${g({...context[before[0].tag], paraphrase: true})}`
         } else {
           // the cat owned by kia
-          return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} by ${g({...context[before[0].tag], paraphrase: true})}`
+          return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} ${['by', g({...context[before[0].tag], paraphrase: true})].filter((t) => t).join(' ')}`
         }
       },
     })
@@ -269,17 +284,30 @@ class API {
             config.addWord(word, { id: operator, initial: `{ value: "${operator}" }` })
           }
         } else {
-          config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
+          // config.addWord(operator, { id: operator, initial: `{ value: "${operator}" }` })
         }
       } else {
         config.addBridge({ id: id, level: 0, bridge: "{ ...next(operator) }", allowDups: true })
       }
     })
 
-    const operatorSingular = pluralize.singular(operator)
-    const operatorPlural = pluralize.plural(operator)
-    config.addWord(operatorSingular, { id: operator, initial: `{ value: '${operator}', number: 'one' }`})
-    config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}', number: 'many' }`})
+    if (words.length == 0) {
+      const operatorPlural = pluralize.singular(operator)
+      const operatorSingular = pluralize.plural(operator)
+      config.addWord(operatorSingular, { id: operator, initial: `{ value: '${operator}', number: 'one' }`})
+      config.addWord(operatorPlural, { id: operator, initial: `{ value: '${operator}', number: 'many' }`})
+
+      config.addGenerator({
+        priority: -3,
+        match: ({context}) => context.evaluateToWord && context.marker == operator && number == 'many',
+        apply: () => operatorPlural
+      });
+      config.addGenerator({
+        priority: -3,
+        match: ({context}) => context.evaluateToWord && context.marker == operator,
+        apply: () => operatorSingular
+      });
+    }
 
     if (doAble) {
       config.addHierarchy(operator, 'canBeDoQuestion')
@@ -295,7 +323,13 @@ class API {
       apply: ({context, g}) => {
         const beforeGenerator = before.map( (arg) => g(context[arg.tag]) )
         const afterGenerator = after.map( (arg) => g(context[arg.tag], { assumed: { paraphrase: true } }) )
-        return beforeGenerator.concat([`${context.word}`]).concat(afterGenerator).join(' ')
+        const word = g({...context, evaluateToWord: true})
+        // return beforeGenerator.concat([`${context.word}`]).concat(afterGenerator).join(' ')
+        const sub = []
+        if (context.subphrase) {
+          sub.push(['that'])
+        }
+        return beforeGenerator.concat(sub).concat([word]).concat(afterGenerator).join(' ')
       }
     })
 
@@ -583,8 +617,18 @@ class API {
 
       if (t.concept) {
         // const api = args.km('properties').api
+        debugger;
+        if (v.unknown && !t.value) {
+          return true;
+        }
         return this.isA(v.value, t.value)
       }
+
+      /* wtf
+      if (!t.value && !v.value) {
+        return this.isA(v.value, t.value);
+      }
+      */
 
       return t.value && v.value && t.value == v.value
     }
