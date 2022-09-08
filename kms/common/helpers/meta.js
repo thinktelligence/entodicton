@@ -54,6 +54,9 @@ const translationMapping = (from, to) => {
       }
     }
   }
+  if (to.number) {
+    mappings.push({"from":["number"],"to":["number"]})
+  }
   return mappings
 }
 

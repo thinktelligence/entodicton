@@ -34,8 +34,9 @@ let config = {
 
 config = new entodicton.Config(config, module)
 config.add(hierarchy)
-config.initializer( ({config, context, km}) => {
+config.initializer( ({config, context, km, isModule}) => {
   const api = km('properties').api
+  // setup paraphrase
   api.createActionPrefix({
             operator: 'owns',
             word: { singular: 'owns', plural: 'own' },
@@ -47,6 +48,9 @@ config.initializer( ({config, context, km}) => {
             edAble: { operator: 'owned', word: 'owned' },
             config
           })
+  // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
+  // get fragments
+  // add generator using fragments
   // config.addOperator("(([ownee])? <owned> ([by] ([owner])))")
   /*
   config.addBridge({

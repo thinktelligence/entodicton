@@ -299,13 +299,15 @@ class API {
 
       config.addGenerator({
         priority: -3,
-        match: ({context}) => context.evaluateToWord && context.marker == operator && number == 'many',
-        apply: () => operatorPlural
+        notes: `one case added by helpers/properties for ${operator}`,
+        match: ({context}) => context.evaluateToWord && context.marker == operator,
+        apply: () => operatorSingular
       });
       config.addGenerator({
         priority: -3,
-        match: ({context}) => context.evaluateToWord && context.marker == operator,
-        apply: () => operatorSingular
+        notes: `many case added by helpers/properties for ${operator}`,
+        match: ({context}) => context.evaluateToWord && context.marker == operator && context.number == 'many',
+        apply: () => operatorPlural
       });
     }
 

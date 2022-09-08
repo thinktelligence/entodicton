@@ -220,5 +220,8 @@
 # owner owns ownee is owner
 # TODO put ids in the sematnics and allow a partial odering def that one goes before another -> make the learnable
 # PARAPHRASE WRONG
-# node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
-node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -d -g 
+node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
+# "ownee23 is owned by owner23" instead of "ownee23 owned by ownee23 is owner23"
+# node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -d -g 
+# node people -q "cleo is owned by kia who owns cleo" -d -g
+# node inspect people -q "cleo is owned by kia" -d -g
