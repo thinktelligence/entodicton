@@ -1,5 +1,5 @@
-# ./rt.sh
-
+npm run test
+./rt.sh
 node animals -tva -g
 node avatar -tva -g
 node characters -tva -g

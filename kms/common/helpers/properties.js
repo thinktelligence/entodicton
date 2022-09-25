@@ -123,7 +123,11 @@ class API {
            [before[0].tag]: "{ marker: 'unknown', implicit: true, concept: true }",
          },
        })
+    // TODO have a prepositions category and underPrep category
     config.addPriorities([['is', 0], ['by', 0]])
+    config.addPriorities([['a', 0], ['by', 0]])
+    config.addPriorities([['the', 0], ['by', 0]])
+    // config.addPriorities([['what', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
     config.addSemantic({
       notes: 'semantic for setting value with constraint',
@@ -619,7 +623,6 @@ class API {
 
       if (t.concept) {
         // const api = args.km('properties').api
-        debugger;
         if (v.unknown && !t.value) {
           return true;
         }

@@ -19,6 +19,35 @@ const hashIndexesSet = (hash, indexes, value) => {
   currentValue[indexes[indexes.length-1]] = value
 }
 
+const isPrefix = (prefix, fix) => {
+  return prefix.every((element, index) => {
+    return prefix[index] === fix[index]
+  })
+  return true
+}
+
+// assumes isPrefix is true
+const replacePrefix = (prefix, prefixPrime, fix) => {
+  return prefixPrime.concat(fix.slice(prefix.length))
+}
+
+const compose = (m1s, m2s) => {
+  return m2s.map( (m2) => { 
+    m1 = m1s.find( (m1) => isPrefix(m1.from, m2.from) )
+    if (m1) {
+      return { ...m2, from: replacePrefix(m1.from, m1.to, m2.from) }
+    } else {
+      return m2
+    }
+  });
+}
+/*
+      const m1 = '[{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]'
+      m1 + m2 -> '[{"from":["one"],"to":["owner"]},{"from":["two"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
+      output
+          '[{"from":["two"],"to":["owner"]},{"from":["one"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
+*/
+
 const translationMapping = (from, to) => {
   const mappings = []
   if (from.atomic) {
@@ -69,6 +98,9 @@ const translationMappings = (froms, to) => {
 }
 
 module.exports = {
+  isPrefix,
+  replacePrefix,
+  compose,
   hashIndexesGet,
   hashIndexesSet,
   translationMapping,

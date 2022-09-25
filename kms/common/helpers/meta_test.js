@@ -1,5 +1,5 @@
 const _ = require('lodash')
-const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./meta')
+const { isPrefix, replacePrefix, compose, hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./meta')
 
 describe('helpersMeta', () => {
   describe('hashIndexGet', () => {
@@ -17,6 +17,59 @@ describe('helpersMeta', () => {
       const hash = { a: { b: 'greg' } }
       const actual = hashIndexesGet(hash, ['a', 'b'])
       expect(actual).toStrictEqual('greg')
+    })
+  })
+
+  describe('isPrefix', () => {
+    it('empty', () => {
+      expect(isPrefix([], [])).toBe(true)
+    })
+
+    it('not prefix', () => {
+      expect(isPrefix(['a'], [])).toBe(false)
+    })
+
+    it('is prefix 1 element', () => {
+      expect(isPrefix(['a'], ['a'])).toBe(true)
+    })
+
+    it('is prefix 1 element with tail', () => {
+      expect(isPrefix(['a'], ['a', 'b'])).toBe(true)
+    })
+  })
+
+  describe('replacePrefix', () => {
+    it('empty', () => {
+      expect(replacePrefix([], [], [])).toStrictEqual([])
+    })
+
+    it('is prefix 1 element', () => {
+      expect(replacePrefix(['a'], ['b'], ['a'])).toStrictEqual(['b'])
+    })
+
+    it('is prefix 1 element with tail', () => {
+      expect(replacePrefix(['a'], ['c'], ['a', 'b'])).toStrictEqual(['c', 'b'])
+    })
+  })
+
+  describe('compose', () => {
+    it('compose empty', () => {
+      const actual = compose([], [])
+      expect(actual).toStrictEqual([])
+    })
+
+    it('compose 1', () => {
+      const m1 = [{"from":["one"],"to":["two"]}]
+      const m2 = [{"from":["one"],"to":["owner"]}]
+      const actual = compose(m1, m2)
+      expect(actual).toStrictEqual([{"from":["two"],"to":["owner"]}])
+    })
+
+    it('compose 2', () => {
+      const m1 = [{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]
+      const m2 = [{"from":["one"],"to":["owner"]},{"from":["two"],"to":["ownee"]},{"from":["number"],"to":["number"]}]
+      const actual = compose(m1, m2)
+      expect(actual).toStrictEqual([{"from":["two"],"to":["owner"]},{"from":["one"],"to":["ownee"]},{"from":["number"],"to":["number"]}])
     })
   })
 

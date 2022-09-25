@@ -200,7 +200,6 @@ let config = {
 
         constrained[constraint.property] = property
         constrained.paraphrase = true
-        debugger;
         const paraphrase = Object.assign({}, constraint.paraphrase)
         paraphrase.paraphrase = true;
         paraphrase[constraint.property] = property

@@ -174,7 +174,6 @@ let config = {
           const apply = (DEFINITIONs, DERIVED) => {
             const mappingss = translationMappings(DEFINITIONs, DERIVED)
             const invertMappings = (mappings) => mappings.map( ({ from, to }) => { return { to: from, from: to } } )
-
             return ({context, s, g, config}) => { 
               DEFINITIONs = _.cloneDeep(DEFINITIONs)
               //const mappings = mappingss[0]
