@@ -57,7 +57,7 @@ describe('helpersOrdering', () => {
       expect(results).toStrictEqual( [less1] )
     })
 
-    it('known comparison - what is slower than b', async () => {
+    it('known comparison - what is slower than c', async () => {
       api = new API()
       apiProperties = new APIProperties()
       km = jest.fn()
@@ -78,7 +78,7 @@ describe('helpersOrdering', () => {
       expect(results).toStrictEqual( [expected_less1, expected_less2] )
     })
 
-    it('known comparison - what is faster than a', async () => {
+    it('known comparison - what is slower than a', async () => {
       api = new API()
       apiProperties = new APIProperties()
       km = jest.fn()

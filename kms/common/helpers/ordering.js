@@ -51,13 +51,13 @@ class API {
       }
     } else if (larger) {
       const edges = []
-      for (let smaller of digraph.ancestors(larger)) {
+      for (let smaller of digraph.descendants(larger)) {
         edges.push({ smaller, context, larger, name })
       }
       return edges;
     } else if (smaller) {
       const edges = []
-      for (let larger of digraph.descendants(smaller)) {
+      for (let larger of digraph.ancestors(smaller)) {
         edges.push({ smaller, context, larger, name })
       }
       return edges;
