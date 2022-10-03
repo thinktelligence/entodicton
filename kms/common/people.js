@@ -23,7 +23,14 @@ const template = {
 let config = {
   name: 'people',
   operators: [
-    "([person|person,people])"
+    "([person|person,people])",
+    /*
+    "([personOp] ([first_name]))",
+    "([personOp] ([last_name]))",
+    "([personOp] ([salutation]) ([last_name]))",
+    "([personOp] ([first_name]) ([last_name]))",
+    "([personOp] ([first_name]) ([middle_name]) ([last_name]))",
+    */
   ],
   bridges: [
     { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
