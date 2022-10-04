@@ -97,6 +97,23 @@ const translationMappings = (froms, to) => {
   return mappingss
 }
 
+const translationMappingToInstantiatorMappings  = (translationMapping, from , to) => {
+  return translationMapping.map( (tm) => {
+    return {
+      // match: ({context}) => context.value == to[tm.to].value,
+      match: ({context}) => context[tm.to],
+      apply: ({context}) => {
+        // Object.assign(context[tm.to], from[tm.from])
+        // debugger;
+        context[tm.to] = from[tm.from]
+        if (context[tm.to]) {
+          context[tm.to].instantiated = true
+        }
+      }
+    }
+  })
+}
+
 module.exports = {
   isPrefix,
   replacePrefix,
@@ -105,4 +122,5 @@ module.exports = {
   hashIndexesSet,
   translationMapping,
   translationMappings,
+  translationMappingToInstantiatorMappings,
 }

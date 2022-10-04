@@ -3,6 +3,8 @@ const { unflatten, flattens, Digraph } = require('entodicton')
 const _ = require('lodash')
 const deepEqual = require('deep-equal')
 const { chooseNumber } = require('../helpers.js')
+const { compose, translationMapping, translationMappingToInstantiatorMappings } = require('./meta.js')
+
 
 class Frankenhash {
   constructor(data) {
@@ -103,6 +105,25 @@ class API {
               })
     config.addHierarchy(operator, 'canBeQuestion')
   }
+
+  /*
+  translationMappingToInstantiatorMappings(translationMapping, from , to) {
+    return translationMapping.map( (tm) => {
+      return {
+        // match: ({context}) => context.value == to[tm.to].value,
+        match: ({context}) => context[tm.to],
+        apply: ({context}) => {
+          // Object.assign(context[tm.to], from[tm.from])
+          // debugger;
+          context[tm.to] = from[tm.from]
+          if (context[tm.to]) {
+            context[tm.to].instantiated = true
+          }
+        }
+      }
+    })
+  }
+  */
 
   setupEdAble(args) {
     const { operator, word, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
@@ -209,6 +230,44 @@ class API {
     //})
     // config.addBridge({ id: "ownee", level: 0, bridge: "{ ...next(operator) }"})
     // config.addBridge({ id: "owner", level: 0, bridge: "{ ...next(operator) }"})
+
+    {
+      const whoIsWhatVerbedBy = `${before[0].tag}Var is ${after[0].tag}Var ${edAble.word} by`
+      const thisIsVerbedByThat = `${after[0].tag}Var is ${edAble.word} by ${before[0].tag}Var`
+
+      config.addFragments([whoIsWhatVerbedBy, thisIsVerbedByThat])
+      // config.addFragments([`${before[0].tag}Var is ${after[0].tag}Var ${edAble.word} by`, `${after[0].tag}Var is ${edAble.word} by ${before[0].tag}Var`])
+      // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
+
+      const generator = {
+        notes: `generator for who/what is X owned by`,
+        // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.one && context.one.marker == 'ownee' && context.one.constraints && context.one.constraints[0] && context.one.constraints[0].constraint.marker == 'owned' && context.one.constraints[0].constraint.owner.implicit,
+        match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.one && context.one.marker == after[0].tag && context.one.constraints && context.one.constraints[0] && context.one.constraints[0].constraint.marker == edAble.operator && context.one.constraints[0].constraint[before[0].tag].implicit,
+        apply: ({context, g, callId}) => {
+          const isToFromM = [{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]
+          const fromF = config.fragment(whoIsWhatVerbedBy).contexts()[0]
+          // const fromF = config.fragment[before[0].tag]"ownerVar is owneeVar owned by").contexts()[0]
+          // const toF = config.fragment("owneeVar is owned by ownerVar")
+          const toF = config.fragment(thisIsVerbedByThat)
+          const to = toF.contexts()[0]
+          const tm = translationMapping(fromF, to)
+          /*
+          some kind of compose
+          const isToFromM = '[{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]'
+          isToFromM + tm -> '[{"from":["one"],"to":["owner"]},{"from":["two"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
+          output
+              '[{"from":["two"],"to":["owner"]},{"from":["one"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
+          */
+          const tmPrime = compose(isToFromM, tm)
+          // const from = context.one.constraints[0].constraint
+          const from = context
+          const im = translationMappingToInstantiatorMappings(tmPrime, from, to)
+          const translation = toF.instantiate(im)
+          return g(translation)
+        }
+      }
+      config.addGenerator(generator)
+    }
   }
   // createActionPrefix({before, operator, words, after, semantic, create})
   //

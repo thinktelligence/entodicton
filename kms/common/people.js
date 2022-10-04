@@ -56,7 +56,7 @@ config.initializer( ({config, context, km, isModule}) => {
             edAble: { operator: 'owned', word: 'owned' },
             config
           })
-  config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
+  // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
 
   // node people -q 'cleo is owned by kia who is cleo owned by' -d -g
   //  who is cleo owned by
@@ -104,6 +104,7 @@ config.initializer( ({config, context, km, isModule}) => {
             ]
 
   */
+  /*
   const translationMappingToInstantiatorMappings = (translationMapping, from , to) => {
     return translationMapping.map( (tm) => {
       return {
@@ -120,6 +121,7 @@ config.initializer( ({config, context, km, isModule}) => {
       }
     })
   }
+  */
 
   /*
   const compose = (m1, m2) => {
@@ -130,33 +132,33 @@ config.initializer( ({config, context, km, isModule}) => {
           '[{"from":["two"],"to":["owner"]},{"from":["one"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
   */
 
-  const generator = {
-    notes: `generator for who/what is X owned by`,
-    // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.one && context.one.marker == 'ownee' && context.one.constraints && context.one.constraints[0] && context.one.constraints[0].constraint.marker == 'owned' && context.two.value && context.two.value.marker !== 'answerNotKnown',
-    match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.one && context.one.marker == 'ownee' && context.one.constraints && context.one.constraints[0] && context.one.constraints[0].constraint.marker == 'owned' && context.one.constraints[0].constraint.owner.implicit,
-    // apply: apply(mappings, _.cloneDeep(context.to)),
-    apply: ({context, g, callId}) => {
-      const isToFromM = [{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]
-      const fromF = config.fragment("ownerVar is owneeVar owned by").contexts()[0]
-      const toF = config.fragment("owneeVar is owned by ownerVar")
-      const to = toF.contexts()[0]
-      const tm = translationMapping(fromF, to)
-      /*
-      some kind of compose
-      const isToFromM = '[{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]'
-      isToFromM + tm -> '[{"from":["one"],"to":["owner"]},{"from":["two"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
-      output
-          '[{"from":["two"],"to":["owner"]},{"from":["one"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
-      */
-      const tmPrime = compose(isToFromM, tm)
-      // const from = context.one.constraints[0].constraint
-      const from = context
-      const im = translationMappingToInstantiatorMappings(tmPrime, from, to) 
-      const translation = toF.instantiate(im)
-      return g(translation)
-    }
-  }
-  config.addGenerator(generator)
+//  const generator = {
+//    notes: `generator for who/what is X owned by`,
+//    // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.one && context.one.marker == 'ownee' && context.one.constraints && context.one.constraints[0] && context.one.constraints[0].constraint.marker == 'owned' && context.two.value && context.two.value.marker !== 'answerNotKnown',
+//    match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.one && context.one.marker == 'ownee' && context.one.constraints && context.one.constraints[0] && context.one.constraints[0].constraint.marker == 'owned' && context.one.constraints[0].constraint.owner.implicit,
+//    // apply: apply(mappings, _.cloneDeep(context.to)),
+//    apply: ({context, g, callId}) => {
+//      const isToFromM = [{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]
+//      const fromF = config.fragment("ownerVar is owneeVar owned by").contexts()[0]
+//      const toF = config.fragment("owneeVar is owned by ownerVar")
+//      const to = toF.contexts()[0]
+//      const tm = translationMapping(fromF, to)
+//      /*
+//      some kind of compose
+//      const isToFromM = '[{"from":["one"],"to":["two"]},{"from":["two"],"to":["one"]}]'
+//      isToFromM + tm -> '[{"from":["one"],"to":["owner"]},{"from":["two"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
+//      output
+//          '[{"from":["two"],"to":["owner"]},{"from":["one"],"to":["ownee"]},{"from":["number"],"to":["number"]}]'
+//      */
+//      const tmPrime = compose(isToFromM, tm)
+//      // const from = context.one.constraints[0].constraint
+//      const from = context
+//      const im = translationMappingToInstantiatorMappings(tmPrime, from, to) 
+//      const translation = toF.instantiate(im)
+//      return g(translation)
+//    }
+//  }
+//  config.addGenerator(generator)
 
   // get fragments
   // add generator using fragments
