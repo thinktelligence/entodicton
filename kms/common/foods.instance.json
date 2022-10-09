@@ -135,8 +135,8 @@
       "logs": [
         "Undefined word 'chicken'",
         "Undefined word 'strips'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('unknown', 0)]), (('unknown', 0), [('modifies', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('unknown', 0)]), (('unknown', 0), [('modifies', 0), ('unknown', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['unknown', 1]]",
         ""
       ],
       "metadata": {
@@ -179,38 +179,6 @@
           },
           {
             "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "unknown",
-                1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "unknown",
-                1
-              ]
-            ]
-          },
-          {
-            "op": [
               "modifies",
               0
             ],
@@ -218,6 +186,10 @@
               [
                 "modifies",
                 0
+              ],
+              [
+                "unknown",
+                1
               ]
             ]
           }
@@ -461,7 +433,7 @@
         "Undefined word 'food'",
         "Op choices were: [(('unknown', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 0)]), (('strip', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 1)]), (('chicken', 0), [('chicken', 0), ('is', 0), ('unknown', 1)]), (('chicken_strip', 0), [('chicken_strip', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 0]]\n  Context for choosing the operator strip/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 1]]\n  Context for choosing the operator chicken/0 was [['chicken', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator chicken_strip/0 was [['chicken_strip', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['strip', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['strip', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['chicken', 0], ['strip', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['chicken', 0], ['strip', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['chicken_strip', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['chicken_strip', 0], ['is', 0], ['unknown', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['strip', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['strip', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['chicken_strip', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['chicken_strip', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['chicken', 0], ['strip', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['chicken', 0], ['strip', 0], ['is', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -904,9 +876,9 @@
       ],
       "logs": [
         "Undefined word 'sushi'",
-        "Op choices were: [(('unknown', 0), [('food', 0), ('is', 0), ('unknown', 0)]), (('food', 0), [('food', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['food', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator food/0 was [['food', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['isEd', 0], ['food', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['food', 0]]"
+        "Op choices were: [(('unknown', 0), [('food', 0), ('is', 0), ('unknown', 0)]), (('food', 0), [('food', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['food', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator food/0 was [['food', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['food', 0]]\n  1.0 - [['unknown', 0], ['isEd', 0], ['food', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -952,8 +924,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -963,18 +935,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },

@@ -146,8 +146,8 @@ class API {
        })
     // TODO have a prepositions category and underPrep category
     config.addPriorities([['is', 0], ['by', 0]])
-    config.addPriorities([['articlePOS', 0], ['by', 0]])
-    config.addPriorities([['articlePOS', 0], [edAble.operator, 0]])
+    config.addPriorities([['by', 0], ['articlePOS', 0]])
+    config.addPriorities([[edAble.operator, 0], ['articlePOS', 0]])
     config.addPriorities([['is', 1], [edAble.operator, 0]])
     // config.addPriorities([['what', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
