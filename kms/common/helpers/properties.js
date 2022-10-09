@@ -146,8 +146,8 @@ class API {
        })
     // TODO have a prepositions category and underPrep category
     config.addPriorities([['is', 0], ['by', 0]])
-    config.addPriorities([['a', 0], ['by', 0]])
-    config.addPriorities([['the', 0], ['by', 0]])
+    config.addPriorities([['articlePOS', 0], ['by', 0]])
+    config.addPriorities([['articlePOS', 0], [edAble.operator, 0]])
     config.addPriorities([['is', 1], [edAble.operator, 0]])
     // config.addPriorities([['what', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
@@ -380,8 +380,7 @@ class API {
     }
 
     config.addPriorities([['means', 0], [operator, 0]])
-    config.addPriorities([[operator, 0], ['the', 0]])
-    config.addPriorities([[operator, 0], ['a', 0]])
+    config.addPriorities([[operator, 0], ['articlePOS', 0]])
 
     config.addGenerator({
       notes: 'ordering generator for paraphrase',
@@ -588,24 +587,8 @@ class API {
       config.addHierarchy(modifierObjectId, 'hierarchyAble')
     }
 
-    // [['a', 0], ['crew', 0], ['is', 0], ['kirk', 0]]
-    /*
-    config.addPriorities([[objectId, 0], [modifierId, 0]])
-    config.addPriorities([['a', 0], ['is', 0], [modifierId, 0]])
-    config.addPriorities([['a', 0], ['is', 0], [objectId, 0]])
-    config.addPriorities([['the', 0], ['is', 0], [modifierId, 0]])
-    config.addPriorities([['the', 0], ['is', 0], [objectId, 0]])
-    */
-    config.addPriorities([['a', 0], [modifierId, 0]])
-    config.addPriorities([['a', 0], [objectId, 0]])
-    config.addPriorities([['the', 0], [modifierId, 0]])
-    config.addPriorities([['the', 0], [objectId, 0]])
-    /*
-    config.addPriorities([['is', 0], [modifierId, 0]])
-    config.addPriorities([['is', 0], [objectId, 0]])
-    config.addPriorities([['is', 0], ['the', 0], ['propertyOf', 0], [modifierId, 0]])
-    config.addPriorities([['is', 0], [modifierId, 0], ['propertyOf', 0], ['the', 0], ['what', 0], ['unknown', 0], [objectId, 0]])
-    */
+    config.addPriorities([['articlePOS', 0], [modifierId, 0]])
+    config.addPriorities([['articlePOS', 0], [objectId, 0]])
   }
 
   /*

@@ -133,6 +133,7 @@ let config = {
     //greg is a first name
     "(([theAble|]) [list|and] ([theAble|]))",
     "([yesno|])",
+    "([articlePOS|])",
     { pattern: "([debug23])" },
   ],
   associations: {
@@ -148,6 +149,7 @@ let config = {
     ]
   },
   bridges: [
+    { id: "articlePOS", level: 0, bridge: "{ ...next(operator) }" },
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
     // { id: "what", level: 0, bridge: "{ ...next(operator), ...after[0], query: ['what'], determined: true }" },
     { id: "what", level: 0, optional: "{ ...next(operator), query: ['what'], determined: true }", bridge: "{ ...after, query: ['what'], modifiers: ['what'], what: operator }" },
@@ -224,14 +226,15 @@ let config = {
     [["does",0],["what",0]],
     [["is",0],["what",0]],
     [["is",1],["what",0]],
-    [["is",0],["the",0]],
-    [["is",0],["a",0]],
+    [["is",0],["articlePOS",0]],
     [["is",1],["is",0]],
     [["isEd",0],["isEdAble",0]],
     [['is', 0], ['does', 0], ['a', 0]],
     [['means', 0], ['isEd', 0]],
   ],
   hierarchy: [
+    ['a', 'articlePOS'],
+    ['the', 'articlePOS'],
     ['unknown', 'notAble'],
     ['unknown', 'theAble'],
     ['unknown', 'queryable'],
