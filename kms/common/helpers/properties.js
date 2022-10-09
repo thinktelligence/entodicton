@@ -148,6 +148,7 @@ class API {
     config.addPriorities([['is', 0], ['by', 0]])
     config.addPriorities([['a', 0], ['by', 0]])
     config.addPriorities([['the', 0], ['by', 0]])
+    config.addPriorities([['is', 1], [edAble.operator, 0]])
     // config.addPriorities([['what', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
     config.addSemantic({
