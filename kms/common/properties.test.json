@@ -132,6 +132,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -473,6 +478,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -982,6 +990,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -1323,6 +1336,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -1978,6 +1994,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -2290,6 +2311,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -2955,6 +2979,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -3267,6 +3296,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -4078,6 +4110,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -4390,6 +4427,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -5001,6 +5041,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -5313,6 +5358,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -6106,6 +6154,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -6418,6 +6471,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -7058,6 +7114,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -7370,6 +7431,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -8175,6 +8239,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -8487,6 +8556,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -9028,6 +9100,48 @@
           0
         ],
         [
+          "possession",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "possession",
+          1
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "property",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
           "unknown",
           0
         ]
@@ -9069,26 +9183,6 @@
       [
         [
           "possession",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "property",
           0
         ],
         [
@@ -9189,6 +9283,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -9507,6 +9606,9 @@
           "pattern": "([yesno|])"
         },
         {
+          "pattern": "([articlePOS|])"
+        },
+        {
           "pattern": "([debug23])"
         },
         {
@@ -9773,12 +9875,32 @@
         },
         {
           "op": [
-            "possession",
+            "isEd",
             0
           ],
           "ops": [
             [
               "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -9798,7 +9920,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -9818,27 +9940,11 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
               0
             ],
             [
@@ -10157,15 +10263,7 @@
         ],
         [
           "unknown",
-          0
-        ],
-        [
-          "unknown",
           1
-        ],
-        [
-          "what",
-          0
         ]
       ],
       [
@@ -10198,6 +10296,20 @@
           0
         ],
         [
+          "possession",
+          1
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
           "property",
           0
         ]
@@ -10266,16 +10378,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
         ]
       ]
     ],
@@ -10371,6 +10473,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -10687,6 +10794,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -11288,6 +11398,50 @@
           ],
           "ops": [
             [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
               "is",
               0
             ],
@@ -11301,10 +11455,6 @@
             ],
             [
               "unknown",
-              0
-            ],
-            [
-              "unknown",
               1
             ]
           ]
@@ -11316,7 +11466,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -11336,7 +11486,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -11360,7 +11510,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -11381,10 +11531,6 @@
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -11412,10 +11558,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "possession",
               1
             ],
@@ -11436,51 +11578,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -11580,7 +11678,7 @@
           ],
           "ops": [
             [
-              "is",
+              "isEd",
               0
             ],
             [
@@ -11655,12 +11753,32 @@
         },
         {
           "op": [
-            "possession",
+            "isEd",
             0
           ],
           "ops": [
             [
               "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
               0
             ],
             [
@@ -11704,7 +11822,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -12521,20 +12639,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "what",
@@ -12549,6 +12653,20 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ]
     ],
@@ -12644,6 +12762,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -12960,6 +13083,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -13624,6 +13750,50 @@
           ],
           "ops": [
             [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
               "is",
               0
             ],
@@ -13637,10 +13807,6 @@
             ],
             [
               "unknown",
-              0
-            ],
-            [
-              "unknown",
               1
             ]
           ]
@@ -13652,7 +13818,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13672,7 +13838,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13696,7 +13862,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -13717,10 +13883,6 @@
           "ops": [
             [
               "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -13748,10 +13910,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "possession",
               1
             ],
@@ -13772,51 +13930,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "property",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -13965,6 +14079,62 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -13992,64 +14162,12 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
               "unknown",
               1
             ],
             [
               "what",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -14985,6 +15103,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -15297,6 +15420,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -15878,6 +16004,20 @@
       ],
       [
         [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
           "the",
           0
         ],
@@ -15983,6 +16123,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -16299,6 +16444,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -17064,7 +17212,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -17111,6 +17259,10 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -17135,12 +17287,16 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -17153,12 +17309,12 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -18098,7 +18254,7 @@
           0
         ],
         [
-          "propertyOf",
+          "possession",
           0
         ],
         [
@@ -18112,12 +18268,22 @@
           0
         ],
         [
-          "propertyOf",
+          "possession",
           1
         ],
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "property",
+          0
         ]
       ],
       [
@@ -18216,16 +18382,6 @@
       ],
       [
         [
-          "possession",
-          1
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
           "propertyOf",
           0
         ],
@@ -18274,6 +18430,16 @@
         [
           "propertyOf",
           0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          1
         ],
         [
           "unknown",
@@ -18373,6 +18539,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -18689,6 +18860,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -19290,7 +19464,7 @@
         },
         {
           "op": [
-            "possession",
+            "the",
             0
           ],
           "ops": [
@@ -19318,7 +19492,31 @@
         },
         {
           "op": [
-            "possession",
+            "propertyOf",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "propertyOf",
             1
           ],
           "ops": [
@@ -19328,15 +19526,95 @@
             ],
             [
               "possession",
-              1
+              0
             ],
             [
               "propertyOf",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
               0
             ],
             [
-              "the",
+              "possession",
               0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "possession",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "possession",
+              1
             ],
             [
               "unknown",
@@ -19351,128 +19629,12 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "property",
               0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "propertyOf",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "propertyOf",
-              1
             ],
             [
               "unknown",
@@ -20035,28 +20197,6 @@
           0
         ],
         [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
           "unknown",
           1
         ]
@@ -20133,6 +20273,24 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
         ],
         [
           "what",
@@ -20197,6 +20355,20 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ]
     ],
@@ -20292,6 +20464,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -20608,6 +20785,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -21080,46 +21260,6 @@
           ],
           "ops": [
             [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
               "isEd",
               0
             ],
@@ -21197,6 +21337,94 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -21224,64 +21452,12 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
               "unknown",
               1
             ],
             [
               "what",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -22094,20 +22270,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "what",
@@ -22122,6 +22284,20 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ]
     ],
@@ -22217,6 +22393,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -22533,6 +22714,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -23048,7 +23232,7 @@
         },
         {
           "op": [
-            "the",
+            "isEd",
             0
           ],
           "ops": [
@@ -23072,16 +23256,20 @@
         },
         {
           "op": [
-            "isEd",
+            "the",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -23206,6 +23394,34 @@
             ],
             [
               "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "the",
               0
             ],
             [
@@ -23233,40 +23449,12 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
               "unknown",
               1
             ],
             [
               "what",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -23917,6 +24105,20 @@
           0
         ],
         [
+          "readonly",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
           "the",
           0
         ],
@@ -23984,26 +24186,6 @@
       [
         [
           "propertyOf",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "readonly",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "readonly",
           0
         ],
         [
@@ -24104,6 +24286,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -24422,6 +24609,9 @@
           "pattern": "([yesno|])"
         },
         {
+          "pattern": "([articlePOS|])"
+        },
+        {
           "pattern": "([debug23])"
         },
         {
@@ -24671,6 +24861,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -24698,6 +24892,10 @@
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
@@ -24731,6 +24929,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -24763,6 +24965,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -24780,34 +24986,6 @@
             ],
             [
               "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "readonly",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "readonly",
-              0
-            ],
-            [
-              "the",
               0
             ],
             [
@@ -24823,11 +25001,19 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "readonly",
               0
             ],
             [
@@ -24842,16 +25028,24 @@
         },
         {
           "op": [
-            "isEd",
+            "readonly",
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
             ],
             [
               "propertyOf",
+              0
+            ],
+            [
+              "readonly",
               0
             ],
             [
@@ -25307,6 +25501,24 @@
         ],
         [
           "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
           1
         ]
       ],
@@ -25350,6 +25562,20 @@
         [
           "unknown",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "readonly",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -25545,6 +25771,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -25861,6 +26092,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -26286,6 +26520,10 @@
           ],
           "ops": [
             [
+              "is",
+              0
+            ],
+            [
               "isEd",
               0
             ],
@@ -26313,6 +26551,118 @@
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "propertyOf",
+              0
+            ],
+            [
+              "readonly",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
@@ -26405,10 +26755,14 @@
         },
         {
           "op": [
-            "unknown",
+            "the",
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
@@ -26423,10 +26777,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ],
             [
@@ -26437,10 +26787,14 @@
         },
         {
           "op": [
-            "unknown",
+            "the",
             0
           ],
           "ops": [
+            [
+              "is",
+              0
+            ],
             [
               "isEd",
               0
@@ -26455,10 +26809,6 @@
             ],
             [
               "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ],
             [
@@ -26469,7 +26819,7 @@
         },
         {
           "op": [
-            "unknown",
+            "isEd",
             0
           ],
           "ops": [
@@ -26483,14 +26833,6 @@
             ],
             [
               "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
               0
             ],
             [
@@ -26519,110 +26861,6 @@
             ],
             [
               "readonly",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
               0
             ],
             [
@@ -27432,6 +27670,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -27744,6 +27987,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -28248,6 +28494,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -28560,6 +28811,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -29216,6 +29470,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -29528,6 +29787,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -30145,20 +30407,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "what",
@@ -30173,6 +30421,20 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ]
     ],
@@ -30268,6 +30530,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -30586,6 +30853,9 @@
           "pattern": "([yesno|])"
         },
         {
+          "pattern": "([articlePOS|])"
+        },
+        {
           "pattern": "([debug23])"
         },
         {
@@ -30867,7 +31137,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -30895,7 +31165,7 @@
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -30908,12 +31178,12 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -31330,20 +31600,6 @@
         [
           "the",
           0
-        ]
-      ],
-      [
-        [
-          "object",
-          0
-        ],
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
         ],
         [
           "what",
@@ -31357,6 +31613,20 @@
         ],
         [
           "the",
+          0
+        ]
+      ],
+      [
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
           0
         ]
       ]
@@ -31453,6 +31723,11 @@
         {
           "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
           "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
           "level": 0
         },
         {
@@ -31771,6 +32046,9 @@
           "pattern": "([yesno|])"
         },
         {
+          "pattern": "([articlePOS|])"
+        },
+        {
           "pattern": "([debug23])"
         },
         {
@@ -32018,7 +32296,7 @@
         },
         {
           "op": [
-            "what",
+            "object",
             0
           ],
           "ops": [
@@ -32046,7 +32324,7 @@
         },
         {
           "op": [
-            "object",
+            "what",
             0
           ],
           "ops": [
@@ -32055,15 +32333,15 @@
               0
             ],
             [
-              "object",
-              0
-            ],
-            [
               "propertyOf",
               0
             ],
             [
               "the",
+              0
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -32494,6 +32772,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -32806,6 +33089,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
@@ -33292,6 +33578,11 @@
         },
         {
           "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
           "id": "debug23",
           "level": 0
         },
@@ -33604,6 +33895,9 @@
         },
         {
           "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
         },
         {
           "pattern": "([debug23])"
