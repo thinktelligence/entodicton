@@ -228,4 +228,5 @@
 # node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -d -g 
 # node people -q "cleo is owned by kia who owns cleo" -d -g
 # node inspect people -q "cleo is owned by kia" -d -g
-node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d -g
+# node hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -d 
+node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d 
