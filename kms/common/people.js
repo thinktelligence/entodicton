@@ -38,18 +38,19 @@ let config = {
   hierarchy: [
     ['person', 'unknown'],
   ],
-  /*
   associations: {
     negative: [
       // [['isEd', 0], ['unknown', 0]],
       // [['isEd', 0], ['unknown', 1]],
+      // TODO auto generate these in properties helper
       [['is', 0], ['owned', 0]],
+      [['unknown', 0], ['is', 0], ['owned', 0]],
     ],
     positive: [
       [['isEd', 0], ['owned', 0]],
+      [['unknown', 1], ['isEd', 0]],
     ]
   },
-  */
 };
 
 config = new entodicton.Config(config, module)
