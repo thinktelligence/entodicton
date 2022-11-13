@@ -1,4 +1,23 @@
 {
+  "version": "6.24.0-beta.0",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "name": "ekms",
+  "scripts": {
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test:watch": "npm run test -- --watch",
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE"
+  },
+  "license": "ISC",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -60,42 +79,23 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "dependencies": {
-    "base-64": "^1.0.0",
-    "object-path": "^0.11.8",
-    "table": "^6.7.1",
-    "lodash": "^4.17.21",
-    "node-fetch": "^2.6.1",
-    "underscore": "^1.12.0",
-    "argparse": "^2.0.1",
-    "scriptjs": "^2.5.9",
-    "deep-equal": "^2.0.5",
-    "entodicton": "6.24.0",
-    "pluralize": "^8.0.0"
-  },
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "scripts": {
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "test": "jest --config ./jest.config.json",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
-  },
-  "name": "ekms",
-  "license": "ISC",
-  "author": "dev@thinktelligence.com",
-  "version": "6.24.0",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "main": "main.js"
+  "main": "main.js",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "dependencies": {
+    "object-path": "^0.11.8",
+    "table": "^6.7.1",
+    "deep-equal": "^2.0.5",
+    "node-fetch": "^2.6.1",
+    "underscore": "^1.12.0",
+    "pluralize": "^8.0.0",
+    "lodash": "^4.17.21",
+    "entodicton": "6.24.0-beta.0",
+    "argparse": "^2.0.1",
+    "scriptjs": "^2.5.9",
+    "base-64": "^1.0.0"
+  },
+  "author": "dev@thinktelligence.com"
 }
