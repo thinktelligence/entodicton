@@ -20,6 +20,7 @@ const template ={
     "bats have wings",
     // TODO "all kinds of animals are readonly"
     // TODO "is a dog a type of mammal"
+    // TODO "x is not a y"
   ],
 }
 
