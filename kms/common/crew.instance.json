@@ -437,9 +437,9 @@
         "Undefined word 'kirk'",
         "Undefined word 'name'",
         "Undefined word 'jim'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"kirk 's name is jim\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kirk\",\n          \"text\": \"kirk\",\n          \"value\": \"kirk\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kirk\",\n            \"text\": \"kirk\",\n            \"value\": \"kirk\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"jim\",\n          \"text\": \"jim\",\n          \"value\": \"jim\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -451,7 +451,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -471,7 +471,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -706,6 +706,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -773,33 +787,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "kirk's name is jim"
     },
     {
@@ -1213,9 +1203,9 @@
         "Undefined word 'kirk'",
         "Undefined word 'rank'",
         "Undefined word 'captain'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"rank\",\n        \"text\": \"kirk 's rank is captain\",\n        \"value\": \"rank\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kirk\",\n          \"text\": \"kirk\",\n          \"value\": \"kirk\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"rank\",\n            \"text\": \"rank\",\n            \"value\": \"rank\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kirk\",\n            \"text\": \"kirk\",\n            \"value\": \"kirk\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"captain\",\n          \"text\": \"captain\",\n          \"value\": \"captain\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -1227,7 +1217,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -1247,7 +1237,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -1482,6 +1472,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -1549,33 +1553,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "kirk's rank is captain"
     },
     {
@@ -1989,9 +1969,9 @@
         "Undefined word 'kirk'",
         "Undefined word 'eyes'",
         "Undefined word 'blue'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"many\",\n        \"marker\": \"property\",\n        \"word\": \"eyes\",\n        \"text\": \"kirk 's eyes are blue\",\n        \"value\": \"eyes\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"kirk\",\n          \"text\": \"kirk\",\n          \"value\": \"kirk\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"eyes\",\n            \"text\": \"eyes\",\n            \"value\": \"eyes\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"kirk\",\n            \"text\": \"kirk\",\n            \"value\": \"kirk\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"blue\",\n          \"text\": \"blue\",\n          \"value\": \"blue\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -2003,7 +1983,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -2023,7 +2003,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -2258,6 +2238,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -2315,33 +2309,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "kirk's eyes are blue"
     },
     {
@@ -2756,7 +2726,7 @@
         "Undefined word 'captain'",
         "Op choices were: [(('unknown', 0), [('a', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('a', 0), ('is', 0), ('unknown', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  0.59 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.48 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 3\n  0.48 - [['unknown', 0], ['isEd', 0], ['a', 0], ['unknown', 0]]\n  0.59 - [['unknown', 0], ['is', 0], ['a', 0], ['unknown', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 1\n  0.3333333333333333 - [['unknown', 0], ['isEd', 0], ['a', 0], ['unknown', 0]]\n  0.3333333333333333 - [['unknown', 0], ['is', 0], ['a', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -2993,7 +2963,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "kirk is a captain"
     },
     {
@@ -3436,10 +3406,9 @@
         ]
       ],
       "logs": [
-        "Counter == 5. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ number: operator.number, ...context, [context.subject].number: operator.number }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ number: operator.number, ...context, [context.subject].number: operator.number }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'marker': Operator(a/0, PASS, [Selector(Bridge('{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }'), []<==>[Type('theAble')], bridge(bridge))], evaluator(Bridge('{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }')), variables({}) bridge(bridge)), 'default': True, 'word': 'a', 'text': 'a'})\n\n\n",
-        "Op choices were: [(('member', 0), [('a', 0), ('crew', 0), ('isEd', 0), ('kirk', 0), ('member', 0)]), (('kirk', 0), [('a', 0), ('crew', 0), ('isEd', 0), ('kirk', 0)]), (('crew', 0), [('a', 0), ('crew', 0), ('isEd', 0)]), (('crew_member', 0), [('a', 0), ('crew_member', 0), ('isEd', 0)]), (('isEd', 0), [('a', 0), ('isEd', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator member/0 was [['a', 0], ['crew', 0], ['isEd', 0], ['kirk', 0], ['member', 0]]\n  Context for choosing the operator kirk/0 was [['a', 0], ['crew', 0], ['isEd', 0], ['kirk', 0]]\n  Context for choosing the operator crew/0 was [['a', 0], ['crew', 0], ['isEd', 0]]\n  Context for choosing the operator crew_member/0 was [['a', 0], ['crew_member', 0], ['isEd', 0]]\n  Context for choosing the operator isEd/0 was [['a', 0], ['isEd', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['kirk', 0], ['isEd', 0], ['a', 0]]\n  0.25 - [['kirk', 0], ['is', 0], ['a', 0]]"
+        "Op choices were: [(('member', 0), [('a', 0), ('crew', 0), ('is', 0), ('kirk', 0), ('member', 0)]), (('kirk', 0), [('a', 0), ('crew', 0), ('is', 0), ('kirk', 0)]), (('crew', 0), [('a', 0), ('crew', 0), ('is', 0)]), (('crew_member', 0), [('a', 0), ('crew_member', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator member/0 was [['a', 0], ['crew', 0], ['is', 0], ['kirk', 0], ['member', 0]]\n  Context for choosing the operator kirk/0 was [['a', 0], ['crew', 0], ['is', 0], ['kirk', 0]]\n  Context for choosing the operator crew/0 was [['a', 0], ['crew', 0], ['is', 0]]\n  Context for choosing the operator crew_member/0 was [['a', 0], ['crew_member', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.3333333333333333 - [['kirk', 0], ['isEd', 0], ['a', 0], ['crew', 0], ['member', 0]]\n  0.3333333333333333 - [['kirk', 0], ['is', 0], ['a', 0], ['crew', 0], ['member', 0]]\n  Group 1\n  0.3333333333333333 - [['kirk', 0], ['isEd', 0], ['a', 0], ['crew', 0]]\n  0.3333333333333333 - [['kirk', 0], ['is', 0], ['a', 0], ['crew', 0]]\n  Group 2\n  0.0 - [['kirk', 0], ['isEd', 0], ['crew_member', 0]]\n  0.0 - [['kirk', 0], ['is', 0], ['crew_member', 0]]\n  Group 3\n  0.3333333333333333 - [['kirk', 0], ['isEd', 0], ['a', 0], ['crew_member', 0]]\n  0.3333333333333333 - [['kirk', 0], ['is', 0], ['a', 0], ['crew_member', 0]]\n  Group 4\n  0.0 - [['kirk', 0], ['is', 0], ['a', 0]]\n  0.0 - [['kirk', 0], ['isEd', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3458,7 +3427,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -3486,7 +3455,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -3510,7 +3479,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ]
             ]
@@ -3530,23 +3499,7 @@
                 0
               ],
               [
-                "isEd",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "isEd",
-              0
-            ],
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "isEd",
+                "is",
                 0
               ]
             ]
@@ -3661,6 +3614,10 @@
           [
             "crew",
             0
+          ],
+          [
+            "is",
+            0
           ]
         ],
         [
@@ -3679,10 +3636,6 @@
           [
             "kirk",
             0
-          ],
-          [
-            "member",
-            0
           ]
         ],
         [
@@ -3695,17 +3648,7 @@
             0
           ],
           [
-            "kirk",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "crew",
+            "is",
             0
           ],
           [
@@ -3725,6 +3668,10 @@
           [
             "crew_member",
             0
+          ],
+          [
+            "is",
+            0
           ]
         ],
         [
@@ -3738,7 +3685,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "kirk is a crew member"
     },
     {
@@ -4184,9 +4131,9 @@
         "Undefined word 'spock'",
         "Undefined word 'rank'",
         "Undefined word 'second'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.28 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  0.55 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 6\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"rank\",\n        \"text\": \"spock 's rank is second\",\n        \"value\": \"rank\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"spock\",\n          \"text\": \"spock\",\n          \"value\": \"spock\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"rank\",\n            \"text\": \"rank\",\n            \"value\": \"rank\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"spock\",\n            \"text\": \"spock\",\n            \"value\": \"spock\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"second\",\n          \"text\": \"second\",\n          \"value\": \"second\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -4198,7 +4145,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -4441,6 +4388,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -4508,19 +4469,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "spock's rank is second"
     },
     {
@@ -4965,9 +4916,9 @@
       "logs": [
         "Undefined word 'spock'",
         "Undefined word 'name'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.28 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  0.55 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 6\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"spock 's name is spock\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"spock\",\n          \"text\": \"spock\",\n          \"value\": \"spock\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"spock\",\n            \"text\": \"spock\",\n            \"value\": \"spock\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"spock\",\n          \"text\": \"spock\",\n          \"value\": \"spock\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -4979,7 +4930,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -5222,6 +5173,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -5289,19 +5254,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "spock's name is spock"
     },
     {
@@ -5747,9 +5702,9 @@
         "Undefined word 'spock'",
         "Undefined word 'eyes'",
         "Undefined word 'brown'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.28 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  0.55 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 6\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"many\",\n        \"marker\": \"property\",\n        \"word\": \"eyes\",\n        \"text\": \"spock 's eyes are brown\",\n        \"value\": \"eyes\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"spock\",\n          \"text\": \"spock\",\n          \"value\": \"spock\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"eyes\",\n            \"text\": \"eyes\",\n            \"value\": \"eyes\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"spock\",\n            \"text\": \"spock\",\n            \"value\": \"spock\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"brown\",\n          \"text\": \"brown\",\n          \"value\": \"brown\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -5761,7 +5716,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -6004,6 +5959,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -6061,19 +6030,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "spock's eyes are brown"
     },
     {
@@ -6520,7 +6479,7 @@
         "Undefined word 'doctor'",
         "Op choices were: [(('unknown', 0), [('a', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('a', 0), ('is', 0), ('unknown', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  0.75 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.25 - [['unknown', 0], ['isEd', 0], ['a', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 1\n  0.3333333333333333 - [['unknown', 0], ['isEd', 0], ['a', 0], ['unknown', 0]]\n  0.3333333333333333 - [['unknown', 0], ['is', 0], ['a', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -6729,7 +6688,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "spock is a doctor"
     },
     {
@@ -7204,15 +7163,15 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('spock', 0), [('a', 0), ('crew', 0), ('is', 0), ('member', 0), ('spock', 0)]), (('member', 0), [('a', 0), ('crew', 0), ('is', 0), ('member', 0)]), (('crew', 0), [('a', 0), ('crew', 0), ('is', 0)]), (('crew_member', 0), [('a', 0), ('crew_member', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator spock/0 was [['a', 0], ['crew', 0], ['is', 0], ['member', 0], ['spock', 0]]\n  Context for choosing the operator member/0 was [['a', 0], ['crew', 0], ['is', 0], ['member', 0]]\n  Context for choosing the operator crew/0 was [['a', 0], ['crew', 0], ['is', 0]]\n  Context for choosing the operator crew_member/0 was [['a', 0], ['crew_member', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['spock', 0], ['is', 0], ['crew_member', 0]]\n  1.0 - [['spock', 0], ['isEd', 0], ['crew_member', 0]]\n  Group 1\n  0.5 - [['spock', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['spock', 0], ['is', 0], ['a', 0]]"
+        "Op choices were: [(('member', 0), [('a', 0), ('crew', 0), ('is', 0), ('member', 0), ('spock', 0)]), (('spock', 0), [('a', 0), ('crew', 0), ('is', 0), ('spock', 0)]), (('crew', 0), [('a', 0), ('crew', 0), ('is', 0)]), (('crew_member', 0), [('a', 0), ('crew_member', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator member/0 was [['a', 0], ['crew', 0], ['is', 0], ['member', 0], ['spock', 0]]\n  Context for choosing the operator spock/0 was [['a', 0], ['crew', 0], ['is', 0], ['spock', 0]]\n  Context for choosing the operator crew/0 was [['a', 0], ['crew', 0], ['is', 0]]\n  Context for choosing the operator crew_member/0 was [['a', 0], ['crew_member', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.3333333333333333 - [['spock', 0], ['is', 0], ['a', 0], ['crew', 0], ['member', 0]]\n  0.3333333333333333 - [['spock', 0], ['isEd', 0], ['a', 0], ['crew', 0], ['member', 0]]\n  Group 1\n  0.3333333333333333 - [['spock', 0], ['is', 0], ['a', 0], ['crew_member', 0]]\n  0.3333333333333333 - [['spock', 0], ['isEd', 0], ['a', 0], ['crew_member', 0]]\n  Group 2\n  0.3333333333333333 - [['spock', 0], ['isEd', 0], ['a', 0], ['crew', 0]]\n  0.3333333333333333 - [['spock', 0], ['is', 0], ['a', 0], ['crew', 0]]\n  Group 3\n  0.0 - [['spock', 0], ['is', 0], ['crew_member', 0]]\n  0.0 - [['spock', 0], ['isEd', 0], ['crew_member', 0]]\n  Group 4\n  0.0 - [['spock', 0], ['isEd', 0], ['a', 0]]\n  0.0 - [['spock', 0], ['is', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "spock",
+              "member",
               0
             ],
             "ops": [
@@ -7240,7 +7199,7 @@
           },
           {
             "op": [
-              "member",
+              "spock",
               0
             ],
             "ops": [
@@ -7257,7 +7216,7 @@
                 0
               ],
               [
-                "member",
+                "spock",
                 0
               ]
             ]
@@ -7434,6 +7393,10 @@
           [
             "member",
             0
+          ],
+          [
+            "spock",
+            0
           ]
         ],
         [
@@ -7447,10 +7410,6 @@
           ],
           [
             "is",
-            0
-          ],
-          [
-            "member",
             0
           ],
           [
@@ -7483,7 +7442,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "spock is a crew member"
     },
     {
@@ -7960,10 +7919,9 @@
       "logs": [
         "Undefined word 'mccoy'",
         "Undefined word 'rank'",
-        "Counter == 7. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ number: operator.number, ...context, [context.subject].number: operator.number }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ number: operator.number, ...context, [context.subject].number: operator.number }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'value': 'doctor', 'number': 'one', 'text': 'doctor', 'marker': Operator(doctor/1, [Selector(None, []<==>[], bridge(bridge))], evaluator(None), variables({}) bridge(bridge)), 'word': 'doctor'})\n\n\n",
-        "Op choices were: [(('unknown', 0), [('doctor', 0), ('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('doctor', 0), ('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('doctor', 0), [('doctor', 0), ('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('isEd', 0), ('property', 0)]), (('isEd', 0), [('isEd', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['doctor', 0], ['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['doctor', 0], ['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator doctor/0 was [['doctor', 0], ['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['isEd', 0], ['property', 0]]\n  Context for choosing the operator isEd/0 was [['isEd', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['doctor', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  Group 1\n  1.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['doctor', 0]]\n  1.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  Group 2\n  1.0 - [['property', 0], ['is', 0], ['doctor', 0]]\n  1.0 - [['property', 0], ['isEd', 0], ['doctor', 0]]\n  Group 3\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['doctor', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['doctor', 0]]\n  1.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['is', 0], ['doctor', 0]]\n  1.0 - [['unknown', 0], ['isEd', 0], ['doctor', 0]]",
+        "Op choices were: [(('unknown', 0), [('doctor', 0), ('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('doctor', 0), ('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('doctor', 0), [('doctor', 0), ('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['doctor', 0], ['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['doctor', 0], ['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator doctor/0 was [['doctor', 0], ['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['doctor', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['doctor', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['doctor', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['doctor', 0]]\n  Group 3\n  0.0 - [['property', 0], ['isEd', 0], ['doctor', 0]]\n  0.0 - [['property', 0], ['is', 0], ['doctor', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"rank\",\n        \"text\": \"mccoy 's rank is doctor\",\n        \"value\": \"rank\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"mccoy\",\n          \"text\": \"mccoy\",\n          \"value\": \"mccoy\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"rank\",\n            \"text\": \"rank\",\n            \"value\": \"rank\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"mccoy\",\n            \"text\": \"mccoy\",\n            \"value\": \"mccoy\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"value\": \"doctor\",\n          \"number\": \"one\",\n          \"text\": \"doctor\",\n          \"marker\": \"doctor\",\n          \"word\": \"doctor\",\n          \"types\": [\n            \"doctor\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -7979,7 +7937,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -8091,23 +8049,11 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
                 "property",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "isEd",
-              0
-            ],
-            "ops": [
-              [
-                "isEd",
                 0
               ]
             ]
@@ -8234,6 +8180,24 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "doctor",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -8274,20 +8238,6 @@
         ],
         [
           [
-            "doctor",
-            0
-          ],
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
             "is",
             0
           ],
@@ -8312,10 +8262,20 @@
           [
             "unknown",
             1
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "property",
+            0
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "mccoy's rank is doctor"
     },
     {
@@ -8792,9 +8752,9 @@
       "logs": [
         "Undefined word 'mccoy'",
         "Undefined word 'name'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"name\",\n        \"text\": \"mccoy 's name is mccoy\",\n        \"value\": \"name\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"mccoy\",\n          \"text\": \"mccoy\",\n          \"value\": \"mccoy\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"name\",\n            \"text\": \"name\",\n            \"value\": \"name\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"mccoy\",\n            \"text\": \"mccoy\",\n            \"value\": \"mccoy\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"mccoy\",\n          \"text\": \"mccoy\",\n          \"value\": \"mccoy\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -8806,7 +8766,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -8826,7 +8786,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -9049,6 +9009,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -9116,33 +9090,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "mccoy's name is mccoy"
     },
     {
@@ -9620,9 +9570,9 @@
         "Undefined word 'mccoy'",
         "Undefined word 'eyes'",
         "Undefined word 'brown'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.5 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('possession', 0), ('unknown', 0), ('unknown', 1)]), (('possession', 0), [('is', 0), ('possession', 0), ('unknown', 1)]), (('possession', 1), [('is', 0), ('possession', 1), ('unknown', 1)]), (('property', 0), [('is', 0), ('property', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['possession', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator possession/0 was [['is', 0], ['possession', 0], ['unknown', 1]]\n  Context for choosing the operator possession/1 was [['is', 0], ['possession', 1], ['unknown', 1]]\n  Context for choosing the operator property/0 was [['is', 0], ['property', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['property', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['property', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['possession', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"many\",\n        \"marker\": \"property\",\n        \"word\": \"eyes\",\n        \"text\": \"mccoy 's eyes are brown\",\n        \"value\": \"eyes\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"mccoy\",\n          \"text\": \"mccoy\",\n          \"value\": \"mccoy\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"eyes\",\n            \"text\": \"eyes\",\n            \"value\": \"eyes\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"mccoy\",\n            \"text\": \"mccoy\",\n            \"value\": \"mccoy\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"brown\",\n          \"text\": \"brown\",\n          \"value\": \"brown\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -9634,7 +9584,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -9654,7 +9604,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -9877,6 +9827,20 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "possession",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -9934,33 +9898,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "possession",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "mccoy's eyes are brown"
     },
     {
@@ -10436,9 +10376,9 @@
       ],
       "logs": [
         "Undefined word 'mccoy'",
-        "Op choices were: [(('unknown', 0), [('a', 0), ('crew', 0), ('isEd', 0), ('member', 0), ('unknown', 0)]), (('member', 0), [('a', 0), ('crew', 0), ('is', 0), ('member', 0), ('unknown', 1)]), (('crew', 0), [('a', 0), ('crew', 0), ('is', 0), ('unknown', 1)]), (('crew_member', 0), [('a', 0), ('crew_member', 0), ('is', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['crew', 0], ['isEd', 0], ['member', 0], ['unknown', 0]]\n  Context for choosing the operator member/0 was [['a', 0], ['crew', 0], ['is', 0], ['member', 0], ['unknown', 1]]\n  Context for choosing the operator crew/0 was [['a', 0], ['crew', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator crew_member/0 was [['a', 0], ['crew_member', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['crew_member', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['crew_member', 0]]\n  Group 2\n  0.26 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.66 - [['unknown', 0], ['isEd', 0], ['a', 0]]"
+        "Op choices were: [(('unknown', 0), [('a', 0), ('crew', 0), ('is', 0), ('member', 0), ('unknown', 0)]), (('member', 0), [('a', 0), ('crew', 0), ('is', 0), ('member', 0), ('unknown', 1)]), (('crew', 0), [('a', 0), ('crew', 0), ('is', 0), ('unknown', 1)]), (('crew_member', 0), [('a', 0), ('crew_member', 0), ('is', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['crew', 0], ['is', 0], ['member', 0], ['unknown', 0]]\n  Context for choosing the operator member/0 was [['a', 0], ['crew', 0], ['is', 0], ['member', 0], ['unknown', 1]]\n  Context for choosing the operator crew/0 was [['a', 0], ['crew', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator crew_member/0 was [['a', 0], ['crew_member', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.3333333333333333 - [['unknown', 0], ['is', 0], ['a', 0], ['crew', 0], ['member', 0]]\n  0.3333333333333333 - [['unknown', 0], ['isEd', 0], ['a', 0], ['crew', 0], ['member', 0]]\n  Group 1\n  0.3333333333333333 - [['unknown', 0], ['isEd', 0], ['a', 0], ['crew_member', 0]]\n  0.3333333333333333 - [['unknown', 0], ['is', 0], ['a', 0], ['crew_member', 0]]\n  Group 2\n  0.3333333333333333 - [['unknown', 0], ['isEd', 0], ['a', 0], ['crew', 0]]\n  0.3333333333333333 - [['unknown', 0], ['is', 0], ['a', 0], ['crew', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['isEd', 0], ['crew_member', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['crew_member', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -10457,7 +10397,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -10725,24 +10665,6 @@
             0
           ],
           [
-            "crew",
-            0
-          ],
-          [
-            "member",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
             "crew_member",
             0
           ],
@@ -10780,7 +10702,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "mccoy is a crew member"
     },
     {
@@ -11271,15 +11193,15 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('mccoy', 0), [('a', 0), ('doctor', 0), ('is', 0), ('mccoy', 0)]), (('doctor', 0), [('a', 0), ('doctor', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator mccoy/0 was [['a', 0], ['doctor', 0], ['is', 0], ['mccoy', 0]]\n  Context for choosing the operator doctor/0 was [['a', 0], ['doctor', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['mccoy', 0], ['is', 0], ['a', 0]]\n  0.75 - [['mccoy', 0], ['isEd', 0], ['a', 0]]\n  Group 1\n  0.75 - [['mccoy', 0], ['is', 0], ['a', 0], ['doctor', 0]]\n  0.75 - [['mccoy', 0], ['isEd', 0], ['a', 0], ['doctor', 0]]\n  Group 2\n  1.0 - [['mccoy', 0], ['is', 0], ['doctor', 0]]\n  1.0 - [['mccoy', 0], ['isEd', 0], ['doctor', 0]]"
+        "Op choices were: [(('doctor', 0), [('a', 0), ('doctor', 0), ('is', 0), ('mccoy', 0)]), (('mccoy', 0), [('a', 0), ('is', 0), ('mccoy', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator doctor/0 was [['a', 0], ['doctor', 0], ['is', 0], ['mccoy', 0]]\n  Context for choosing the operator mccoy/0 was [['a', 0], ['is', 0], ['mccoy', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['mccoy', 0], ['isEd', 0], ['a', 0]]\n  0.0 - [['mccoy', 0], ['is', 0], ['a', 0]]\n  Group 1\n  0.0 - [['mccoy', 0], ['is', 0], ['doctor', 0]]\n  0.0 - [['mccoy', 0], ['isEd', 0], ['doctor', 0]]\n  Group 2\n  0.3333333333333333 - [['mccoy', 0], ['is', 0], ['a', 0], ['doctor', 0]]\n  0.3333333333333333 - [['mccoy', 0], ['isEd', 0], ['a', 0], ['doctor', 0]]"
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "mccoy",
+              "doctor",
               0
             ],
             "ops": [
@@ -11303,7 +11225,7 @@
           },
           {
             "op": [
-              "doctor",
+              "mccoy",
               0
             ],
             "ops": [
@@ -11312,11 +11234,11 @@
                 0
               ],
               [
-                "doctor",
+                "is",
                 0
               ],
               [
-                "is",
+                "mccoy",
                 0
               ]
             ]
@@ -11427,20 +11349,6 @@
           [
             "is",
             0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "doctor",
-            0
-          ],
-          [
-            "is",
-            0
           ],
           [
             "mccoy",
@@ -11456,9 +11364,23 @@
             "is",
             0
           ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "mccoy",
+            0
+          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "mccoy is a doctor"
     },
     {
@@ -11952,9 +11874,9 @@
         "Undefined word 'status'",
         "Undefined word 'phasers'",
         "Undefined word 'armed'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.27 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.5 - [['propertyOf', 0], ['the', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['propertyOf', 0], ['the', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.25 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  0.77 - [['the', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.75 - [['the', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 6\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.5 - [['propertyOf', 0], ['the', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['propertyOf', 0], ['the', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.3333333333333333 - [['the', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['the', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  0.0 - [['propertyOf', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 5\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 6\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 7\n  0.4 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.4 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"status\",\n        \"text\": \"the status of the phasers is armed\",\n        \"value\": \"status\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"phasers\",\n          \"text\": \"the phasers\",\n          \"value\": \"phasers\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ],\n          \"pullFromContext\": true,\n          \"concept\": true,\n          \"wantsValue\": true,\n          \"determiner\": \"the\",\n          \"modifiers\": [\n            \"determiner\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"status\",\n            \"text\": \"the status\",\n            \"value\": \"status\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"phasers\",\n            \"text\": \"the phasers\",\n            \"value\": \"phasers\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"armed\",\n          \"text\": \"armed\",\n          \"value\": \"armed\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -11966,7 +11888,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -11990,7 +11912,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -12281,6 +12203,24 @@
           [
             "unknown",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "unknown",
+            0
           ],
           [
             "unknown",
@@ -12350,38 +12290,6 @@
         [
           [
             "is",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "unknown",
             0
           ],
           [
@@ -12390,7 +12298,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "the status of the phasers is armed"
     },
     {
@@ -12883,9 +12791,9 @@
       "logs": [
         "Undefined word 'status'",
         "Undefined word 'armed'",
-        "Op choices were: [(('unknown', 0), [('isEd', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 0), ('unknown', 1)]), (('torpedo', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 1)]), (('photon', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('photon_torpedo', 0), [('is', 0), ('photon_torpedo', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['isEd', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator torpedo/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 1]]\n  Context for choosing the operator photon/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator photon_torpedo/0 was [['is', 0], ['photon_torpedo', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.75 - [['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.75 - [['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.25 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  1.0 - [['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['torpedo', 0], ['is', 0], ['unknown', 0]]",
+        "Op choices were: [(('unknown', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 0), ('unknown', 1)]), (('torpedo', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('torpedo', 0), ('unknown', 1)]), (('photon', 0), [('is', 0), ('photon', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('photon_torpedo', 0), [('is', 0), ('photon_torpedo', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator torpedo/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['torpedo', 0], ['unknown', 1]]\n  Context for choosing the operator photon/0 was [['is', 0], ['photon', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator photon_torpedo/0 was [['is', 0], ['photon_torpedo', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.3333333333333333 - [['the', 0], ['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['the', 0], ['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['propertyOf', 0], ['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.3333333333333333 - [['the', 0], ['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['the', 0], ['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 6\n  0.25 - [['propertyOf', 0], ['the', 0], ['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.25 - [['propertyOf', 0], ['the', 0], ['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 7\n  0.5 - [['propertyOf', 0], ['the', 0], ['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  0.5 - [['propertyOf', 0], ['the', 0], ['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  Group 8\n  0.0 - [['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 9\n  0.4 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['photon_torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.4 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['photon_torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 10\n  0.3333333333333333 - [['photon', 0], ['torpedo', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['photon', 0], ['torpedo', 0], ['isEd', 0], ['unknown', 0]]\n  Group 11\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 12\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]",
         "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"status\",\n        \"text\": \"the status of the photon torpedoes is armed\",\n        \"value\": \"status\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"value\": \"photon_torpedo\",\n          \"number\": \"many\",\n          \"text\": \"the photon torpedoes\",\n          \"marker\": \"photon_torpedo\",\n          \"word\": \"torpedoes\",\n          \"types\": [\n            \"object\",\n            \"photon_torpedo\"\n          ],\n          \"photon\": {\n            \"value\": \"photon\",\n            \"text\": \"photon\",\n            \"marker\": \"photon\",\n            \"word\": \"photon\"\n          },\n          \"atomic\": true,\n          \"modifiers\": [\n            \"determiner\",\n            \"photon\"\n          ],\n          \"pullFromContext\": true,\n          \"concept\": true,\n          \"wantsValue\": true,\n          \"determiner\": \"the\"\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"status\",\n            \"text\": \"the status\",\n            \"value\": \"status\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"value\": \"photon_torpedo\",\n            \"number\": \"many\",\n            \"text\": \"the photon torpedoes\",\n            \"marker\": \"photon_torpedo\",\n            \"word\": \"torpedoes\",\n            \"types\": [\n              \"object\",\n              \"photon_torpedo\"\n            ],\n            \"photon\": {\n              \"value\": \"photon\",\n              \"text\": \"photon\",\n              \"marker\": \"photon\",\n              \"word\": \"photon\"\n            },\n            \"atomic\": true,\n            \"modifiers\": [\n              \"determiner\",\n              \"photon\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\"\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"armed\",\n          \"text\": \"armed\",\n          \"value\": \"armed\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties43\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
@@ -12897,7 +12805,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -12929,7 +12837,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -13311,6 +13219,62 @@
           ],
           [
             "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "photon",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "torpedo",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "photon",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "torpedo",
+            0
+          ],
+          [
+            "unknown",
             1
           ]
         ],
@@ -13431,57 +13395,9 @@
             "unknown",
             1
           ]
-        ],
-        [
-          [
-            "photon",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "torpedo",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "photon",
-            0
-          ],
-          [
-            "propertyOf",
-            0
-          ],
-          [
-            "the",
-            0
-          ],
-          [
-            "torpedo",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "the status of the photon torpedoes is armed"
     },
     {
@@ -13976,7 +13892,7 @@
         "Undefined word 'weapons'",
         "Op choices were: [(('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.27 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -14128,7 +14044,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "phasers are weapons"
     },
     {
@@ -14653,7 +14569,7 @@
       "logs": [
         "Op choices were: [(('torpedo', 0), [('is', 0), ('torpedo', 0), ('weapon', 0)]), (('weapon', 0), [('is', 0), ('weapon', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator torpedo/0 was [['is', 0], ['torpedo', 0], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['is', 0], ['weapon', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['torpedo', 0], ['is', 0], ['weapon', 0]]\n  1.0 - [['torpedo', 0], ['isEd', 0], ['weapon', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['torpedo', 0], ['isEd', 0], ['weapon', 0]]\n  0.0 - [['torpedo', 0], ['is', 0], ['weapon', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -14790,7 +14706,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "torpedoes are weapons"
     },
     {
@@ -15313,16 +15229,16 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('kirk', 0), [('is', 0), ('kirk', 0), ('readonly', 0)]), (('readonly', 0), [('is', 0), ('readonly', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator kirk/0 was [['is', 0], ['kirk', 0], ['readonly', 0]]\n  Context for choosing the operator readonly/0 was [['is', 0], ['readonly', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['kirk', 0], ['is', 0], ['readonly', 0]]\n  1.0 - [['kirk', 0], ['isEd', 0], ['readonly', 0]]",
+        "Op choices were: [(('readonly', 0), [('is', 0), ('kirk', 0), ('readonly', 0)]), (('kirk', 0), [('is', 0), ('kirk', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator readonly/0 was [['is', 0], ['kirk', 0], ['readonly', 0]]\n  Context for choosing the operator kirk/0 was [['is', 0], ['kirk', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['kirk', 0], ['is', 0], ['readonly', 0]]\n  0.0 - [['kirk', 0], ['isEd', 0], ['readonly', 0]]",
         "    WARNING from Dialogues KM: For the \"X is Y\" type phrase implement a same handler.\n    The semantic would be\n      match: ({context}) => context.marker == 'kirk' && context.same && <other conditions as you like>\n      apply: ({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"value\": \"kirk\",\n        \"text\": \"kirk is readonly\",\n        \"marker\": \"kirk\",\n        \"word\": \"kirk\",\n        \"types\": [\n          \"kirk\"\n        ],\n        \"same\": {\n          \"marker\": \"readonly\",\n          \"default\": true,\n          \"text\": \"readonly\",\n          \"word\": \"readonly\",\n          \"types\": [\n            \"readonly\"\n          ],\n          \"response\": null\n        },\n        \"response\": null\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "kirk",
+              "readonly",
               0
             ],
             "ops": [
@@ -15342,7 +15258,7 @@
           },
           {
             "op": [
-              "readonly",
+              "kirk",
               0
             ],
             "ops": [
@@ -15351,7 +15267,7 @@
                 0
               ],
               [
-                "readonly",
+                "kirk",
                 0
               ]
             ]
@@ -15435,10 +15351,6 @@
           [
             "kirk",
             0
-          ],
-          [
-            "readonly",
-            0
           ]
         ],
         [
@@ -15447,12 +15359,16 @@
             0
           ],
           [
+            "kirk",
+            0
+          ],
+          [
             "readonly",
             0
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "kirk is readonly"
     },
     {
@@ -15977,7 +15893,7 @@
       "logs": [
         "Op choices were: [(('spock', 0), [('is', 0), ('readonly', 0), ('spock', 0)]), (('readonly', 0), [('is', 0), ('readonly', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator spock/0 was [['is', 0], ['readonly', 0], ['spock', 0]]\n  Context for choosing the operator readonly/0 was [['is', 0], ['readonly', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['spock', 0], ['is', 0], ['readonly', 0]]\n  1.0 - [['spock', 0], ['isEd', 0], ['readonly', 0]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['spock', 0], ['isEd', 0], ['readonly', 0]]\n  0.0 - [['spock', 0], ['is', 0], ['readonly', 0]]",
         "    WARNING from Dialogues KM: For the \"X is Y\" type phrase implement a same handler.\n    The semantic would be\n      match: ({context}) => context.marker == 'spock' && context.same && <other conditions as you like>\n      apply: ({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"value\": \"spock\",\n        \"text\": \"spock is readonly\",\n        \"marker\": \"spock\",\n        \"word\": \"spock\",\n        \"types\": [\n          \"spock\"\n        ],\n        \"same\": {\n          \"marker\": \"readonly\",\n          \"default\": true,\n          \"text\": \"readonly\",\n          \"word\": \"readonly\",\n          \"types\": [\n            \"readonly\"\n          ],\n          \"response\": null\n        },\n        \"response\": null\n      }\n    "
       ],
       "metadata": {
@@ -16114,7 +16030,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "spock is readonly"
     },
     {
@@ -16639,7 +16555,7 @@
       "logs": [
         "Op choices were: [(('mccoy', 0), [('is', 0), ('mccoy', 0), ('readonly', 0)]), (('readonly', 0), [('is', 0), ('readonly', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator mccoy/0 was [['is', 0], ['mccoy', 0], ['readonly', 0]]\n  Context for choosing the operator readonly/0 was [['is', 0], ['readonly', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['mccoy', 0], ['is', 0], ['readonly', 0]]\n  1.0 - [['mccoy', 0], ['isEd', 0], ['readonly', 0]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['mccoy', 0], ['isEd', 0], ['readonly', 0]]\n  0.0 - [['mccoy', 0], ['is', 0], ['readonly', 0]]",
         "    WARNING from Dialogues KM: For the \"X is Y\" type phrase implement a same handler.\n    The semantic would be\n      match: ({context}) => context.marker == 'mccoy' && context.same && <other conditions as you like>\n      apply: ({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"value\": \"mccoy\",\n        \"text\": \"mccoy is readonly\",\n        \"marker\": \"mccoy\",\n        \"word\": \"mccoy\",\n        \"types\": [\n          \"mccoy\"\n        ],\n        \"same\": {\n          \"marker\": \"readonly\",\n          \"default\": true,\n          \"text\": \"readonly\",\n          \"word\": \"readonly\",\n          \"types\": [\n            \"readonly\"\n          ],\n          \"response\": null\n        },\n        \"response\": null\n      }\n    "
       ],
       "metadata": {
@@ -16776,7 +16692,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "mccoy is readonly"
     },
     {
@@ -17301,9 +17217,9 @@
       "logs": [
         "Undefined word 'status'",
         "Undefined word 'armed'",
-        "Op choices were: [(('unknown', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('weapon', 0)]), (('unknown', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('the', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('arm', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('means', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('means', 0), ('unknown', 1)]), (('is', 1), [('is', 1), ('means', 0)]), (('means', 0), [('means', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['weapon', 0]]\n  Context for choosing the operator unknown/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator the/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator arm/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['means', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['means', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1], ['means', 0]]\n  Context for choosing the operator means/0 was [['means', 0]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.52 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.25 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.75 - [['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 4\n  1.0 - [['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.99 - [['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  1.0 - [['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 6\n  0.5 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  0.56 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 7\n  0.52 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.5 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]"
+        "Op choices were: [(('unknown', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('weapon', 0)]), (('unknown', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('the', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('arm', 0), [('arm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('means', 0), ('propertyOf', 0)]), (('propertyOf', 1), [('is', 0), ('means', 0), ('propertyOf', 1)]), (('is', 0), [('is', 0), ('means', 0)]), (('is', 1), [('is', 1), ('means', 0)]), (('means', 0), [('means', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['weapon', 0]]\n  Context for choosing the operator unknown/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator the/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator arm/0 was [['arm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['means', 0], ['propertyOf', 0]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['means', 0], ['propertyOf', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['means', 0]]\n  Context for choosing the operator is/1 was [['is', 1], ['means', 0]]\n  Context for choosing the operator means/0 was [['means', 0]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['arm', 0], ['means', 0], ['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['arm', 0], ['means', 0], ['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['arm', 0], ['means', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['arm', 0], ['means', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  0.2 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.2 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 6\n  0.0 - [['means', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['means', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 7\n  0.3333333333333333 - [['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 8\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 9\n  0.3333333333333333 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 10\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 11\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 12\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 13\n  0.3333333333333333 - [['propertyOf', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['propertyOf', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -17581,8 +17497,8 @@
           },
           {
             "op": [
-              "propertyOf",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -17600,6 +17516,50 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "means",
+                0
+              ],
+              [
+                "propertyOf",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "propertyOf",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "means",
+                0
+              ],
+              [
+                "propertyOf",
+                0
               ]
             ]
           },
@@ -17620,10 +17580,6 @@
               [
                 "propertyOf",
                 1
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -17640,10 +17596,6 @@
               [
                 "means",
                 0
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -17958,6 +17910,36 @@
             0
           ],
           [
+            "the",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ],
+          [
+            "weapon",
+            0
+          ]
+        ],
+        [
+          [
+            "arm",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
             "unknown",
             1
           ],
@@ -18000,6 +17982,30 @@
           [
             "means",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
           ],
           [
             "propertyOf",
@@ -18021,24 +18027,6 @@
           ],
           [
             "propertyOf",
-            1
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "means",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -18053,7 +18041,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "arm the weapon means the status of the weapon is armed"
     },
     {
@@ -18578,9 +18566,9 @@
       "logs": [
         "Undefined word 'status'",
         "Undefined word 'armed'",
-        "Op choices were: [(('unknown', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('weapon', 0)]), (('unknown', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1), ('weapon', 0)]), (('not', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('the', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('disarm', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('means', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('means', 0), ('unknown', 1)]), (('is', 1), [('is', 1), ('means', 0)]), (('means', 0), [('means', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['weapon', 0]]\n  Context for choosing the operator unknown/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator not/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator the/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator disarm/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['means', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['means', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1], ['means', 0]]\n  Context for choosing the operator means/0 was [['means', 0]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.69 - [['weapon', 0], ['is', 0], ['not', 0]]\n  0.25 - [['weapon', 0], ['isEd', 0], ['not', 0]]\n  Group 1\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.25 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.75 - [['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]"
+        "Op choices were: [(('unknown', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('weapon', 0)]), (('unknown', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('weapon', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1), ('weapon', 0)]), (('not', 0), [('disarm', 0), ('is', 0), ('means', 0), ('not', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('the', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('disarm', 0), [('disarm', 0), ('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('means', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('means', 0), ('propertyOf', 0)]), (('propertyOf', 1), [('is', 0), ('means', 0), ('propertyOf', 1)]), (('is', 0), [('is', 0), ('means', 0)]), (('is', 1), [('is', 1), ('means', 0)]), (('means', 0), [('means', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['weapon', 0]]\n  Context for choosing the operator unknown/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator weapon/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1], ['weapon', 0]]\n  Context for choosing the operator not/0 was [['disarm', 0], ['is', 0], ['means', 0], ['not', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator disarm/0 was [['disarm', 0], ['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['means', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['means', 0], ['propertyOf', 0]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['means', 0], ['propertyOf', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['means', 0]]\n  Context for choosing the operator is/1 was [['is', 1], ['means', 0]]\n  Context for choosing the operator means/0 was [['means', 0]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.2 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['not', 0], ['unknown', 0]]\n  0.2 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['not', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['weapon', 0], ['isEd', 0], ['not', 0]]\n  0.0 - [['weapon', 0], ['is', 0], ['not', 0]]\n  Group 2\n  0.0 - [['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 3\n  0.0 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 4\n  0.2 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.2 - [['means', 0], ['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 5\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 6\n  0.0 - [['disarm', 0], ['means', 0], ['unknown', 0], ['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['disarm', 0], ['means', 0], ['unknown', 0], ['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 7\n  0.5 - [['the', 0], ['weapon', 0], ['isEd', 0], ['not', 0], ['unknown', 0]]\n  0.5 - [['the', 0], ['weapon', 0], ['is', 0], ['not', 0], ['unknown', 0]]\n  Group 8\n  0.3333333333333333 - [['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 9\n  0.25 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['not', 0], ['unknown', 0]]\n  0.25 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['not', 0], ['unknown', 0]]\n  Group 10\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 11\n  0.3333333333333333 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 12\n  0.0 - [['means', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['means', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 13\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['the', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  Group 14\n  0.0 - [['disarm', 0], ['means', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['disarm', 0], ['means', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 15\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 16\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]\n  0.25 - [['unknown', 0], ['propertyOf', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  Group 17\n  0.3333333333333333 - [['propertyOf', 0], ['weapon', 0], ['is', 0], ['unknown', 0]]\n  0.3333333333333333 - [['propertyOf', 0], ['weapon', 0], ['isEd', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -18670,7 +18658,7 @@
           },
           {
             "op": [
-              "not",
+              "weapon",
               0
             ],
             "ops": [
@@ -18727,6 +18715,10 @@
                 0
               ],
               [
+                "not",
+                0
+              ],
+              [
                 "propertyOf",
                 0
               ],
@@ -18746,7 +18738,7 @@
           },
           {
             "op": [
-              "weapon",
+              "not",
               0
             ],
             "ops": [
@@ -18763,6 +18755,10 @@
                 0
               ],
               [
+                "not",
+                0
+              ],
+              [
                 "propertyOf",
                 0
               ],
@@ -18773,10 +18769,6 @@
               [
                 "unknown",
                 1
-              ],
-              [
-                "weapon",
-                0
               ]
             ]
           },
@@ -18906,8 +18898,8 @@
           },
           {
             "op": [
-              "propertyOf",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -18925,6 +18917,50 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "means",
+                0
+              ],
+              [
+                "propertyOf",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "propertyOf",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "means",
+                0
+              ],
+              [
+                "propertyOf",
+                0
               ]
             ]
           },
@@ -18945,10 +18981,6 @@
               [
                 "propertyOf",
                 1
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -18965,10 +18997,6 @@
               [
                 "means",
                 0
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -19246,6 +19274,70 @@
           [
             "unknown",
             1
+          ]
+        ],
+        [
+          [
+            "disarm",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
+          ],
+          [
+            "not",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ],
+          [
+            "weapon",
+            0
+          ]
+        ],
+        [
+          [
+            "disarm",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
+          ],
+          [
+            "not",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ],
+          [
+            "the",
+            0
+          ],
+          [
+            "unknown",
+            1
           ],
           [
             "weapon",
@@ -19372,6 +19464,30 @@
           [
             "means",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
+          ],
+          [
+            "propertyOf",
+            0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "means",
+            0
           ],
           [
             "propertyOf",
@@ -19393,24 +19509,6 @@
           ],
           [
             "propertyOf",
-            1
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "means",
-            0
-          ],
-          [
-            "unknown",
             1
           ]
         ],
@@ -19425,7 +19523,7 @@
           ]
         ]
       ],
-      "version": "6.24.0",
+      "version": "6.25.0",
       "query": "disarm the weapon means the status of the weapon is not armed"
     }
   ],
@@ -19439,6 +19537,10 @@
       ],
       [
         "crew",
+        0
+      ],
+      [
+        "is",
         0
       ]
     ],
@@ -19472,10 +19574,6 @@
       [
         "kirk",
         0
-      ],
-      [
-        "member",
-        0
       ]
     ],
     [
@@ -19489,6 +19587,10 @@
       ],
       [
         "is",
+        0
+      ],
+      [
+        "kirk",
         0
       ],
       [
@@ -19576,6 +19678,24 @@
         0
       ],
       [
+        "spock",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "crew",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
         "unknown",
         1
       ]
@@ -19586,57 +19706,11 @@
         0
       ],
       [
-        "crew",
-        0
-      ],
-      [
-        "kirk",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "crew",
-        0
-      ],
-      [
-        "kirk",
-        0
-      ],
-      [
-        "member",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "crew",
-        0
-      ],
-      [
-        "member",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
         "crew_member",
+        0
+      ],
+      [
+        "is",
         0
       ]
     ],
@@ -19670,20 +19744,6 @@
       [
         "unknown",
         1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "doctor",
-        0
-      ],
-      [
-        "is",
-        0
       ]
     ],
     [
@@ -19744,6 +19804,20 @@
         0
       ],
       [
+        "mccoy",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
         "unknown",
         0
       ]
@@ -19928,6 +20002,36 @@
       [
         "unknown",
         1
+      ]
+    ],
+    [
+      [
+        "arm",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ],
+      [
+        "the",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ],
+      [
+        "weapon",
+        0
       ]
     ],
     [
@@ -20078,6 +20182,70 @@
       [
         "unknown",
         0
+      ],
+      [
+        "weapon",
+        0
+      ]
+    ],
+    [
+      [
+        "disarm",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
+      ],
+      [
+        "not",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ],
+      [
+        "the",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "disarm",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
+      ],
+      [
+        "not",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ],
+      [
+        "the",
+        0
+      ],
+      [
+        "unknown",
+        1
       ],
       [
         "weapon",
@@ -20246,6 +20414,24 @@
       [
         "unknown",
         0
+      ]
+    ],
+    [
+      [
+        "doctor",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
       ],
       [
         "unknown",
@@ -20286,15 +20472,11 @@
     ],
     [
       [
-        "doctor",
+        "is",
         0
       ],
       [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
+        "kirk",
         0
       ]
     ],
@@ -20334,6 +20516,54 @@
       [
         "means",
         0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "means",
+        0
       ],
       [
         "propertyOf",
@@ -20374,10 +20604,6 @@
       [
         "propertyOf",
         1
-      ],
-      [
-        "unknown",
-        1
       ]
     ],
     [
@@ -20392,10 +20618,6 @@
       [
         "propertyOf",
         1
-      ],
-      [
-        "unknown",
-        1
       ]
     ],
     [
@@ -20404,12 +20626,24 @@
         0
       ],
       [
-        "means",
+        "photon",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ],
+      [
+        "the",
+        0
+      ],
+      [
+        "torpedo",
         0
       ],
       [
         "unknown",
-        1
+        0
       ]
     ],
     [
@@ -20418,7 +20652,23 @@
         0
       ],
       [
-        "means",
+        "photon",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ],
+      [
+        "the",
+        0
+      ],
+      [
+        "torpedo",
+        0
+      ],
+      [
+        "unknown",
         0
       ],
       [
@@ -20526,10 +20776,104 @@
       [
         "unknown",
         0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
       ],
       [
         "unknown",
-        1
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
+      ],
+      [
+        "unknown",
+        0
       ]
     ],
     [
@@ -20669,16 +21013,6 @@
       ],
       [
         "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "possession",
         0
       ],
       [
@@ -20791,7 +21125,21 @@
       ],
       [
         "possession",
+        0
+      ],
+      [
+        "unknown",
         1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        0
       ],
       [
         "unknown",
@@ -20908,6 +21256,30 @@
       [
         "unknown",
         1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "possession",
+        1
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "property",
+        0
       ]
     ],
     [
@@ -21038,6 +21410,24 @@
       [
         "unknown",
         0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "propertyOf",
+        0
+      ],
+      [
+        "the",
+        0
+      ],
+      [
+        "unknown",
+        0
       ],
       [
         "unknown",
@@ -21134,16 +21524,6 @@
       [
         "unknown",
         1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "readonly",
-        0
       ]
     ],
     [
@@ -21450,236 +21830,6 @@
       [
         "means",
         0
-      ]
-    ],
-    [
-      [
-        "photon",
-        0
-      ],
-      [
-        "propertyOf",
-        0
-      ],
-      [
-        "the",
-        0
-      ],
-      [
-        "torpedo",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "photon",
-        0
-      ],
-      [
-        "propertyOf",
-        0
-      ],
-      [
-        "the",
-        0
-      ],
-      [
-        "torpedo",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "possession",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "propertyOf",
-        0
-      ],
-      [
-        "the",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "propertyOf",
-        0
-      ],
-      [
-        "the",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ],
-      [
-        "unknown",
-        1
       ]
     ]
   ]

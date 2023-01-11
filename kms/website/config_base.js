@@ -97,8 +97,8 @@ module.exports =
     [["equal", 0], ["property", 1]],
   ],
   "associations": {
-    "negative": [[["tankConcept", 0], ["french", 0], ["aEnglish", 0], ["buildingConcept", 0]], [["conj", 0], ["count", 0], ["plus", 0]], [["equal", 0], ["count", 0], ["plus", 0]]],
-    "positive": [[["tankConcept", 0], ["french", 0], ["aFrench", 0], ["buildingConcept", 0]], [["conj", 0], ["number", 0], ["plus", 0]], [["the", 0], ["propertyConcept", 0], ["property", 0]], [["equal", 0], ["number", 0], ["plus", 0]]],
+    "negative": [],
+    "positive": [],
   },
   "words": {
     "+": [{"id": "plus"}],

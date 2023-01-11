@@ -122,8 +122,8 @@ module.exports =
     [["earn", 0], ["every", 0], ["worked", 0]],
   ],
   "associations": {
-    "negative": [[["tankConcept", 0], ["french", 0], ["aEnglish", 0], ["buildingConcept", 0]], [["conj", 0], ["count", 0], ["plus", 0]], [["equal", 0], ["count", 0], ["plus", 0]], [["wantMcDonalds", 0], ["number", 0], ["food", 0]], [["wantWhitespot", 0], ["number", 0], ["food", 0]], [["conj", 0], ["aFrench", 0], ["food", 0]], [["i", 0], ["wantMcDonalds", 0], ["food", 0], ["fromW", 0]], [["i", 0], ["wantWhitespot", 0], ["food", 0], ["fromM", 0]], [["food", 0], ["fromM", 0], ["whitespot", 0]], [["conj", 0], ["aEnglish", 0], ["food", 0], ["fromW", 0], ["mcdonalds", 0]], [["conj", 0], ["food", 0], ["fromW", 0], ["mcdonalds", 0]], [["food", 0], ["fromW", 0], ["mcdonalds", 0]]],
-    "positive": [[["tankConcept", 0], ["french", 0], ["aFrench", 0], ["buildingConcept", 0]], [["conj", 0], ["number", 0], ["plus", 0]], [["the", 0], ["propertyConcept", 0], ["property", 0]], [["equal", 0], ["number", 0], ["plus", 0]], [["i", 0], ["wantWhitespot", 0], ["aEnglish", 0]], [["i", 0], ["wantMcDonalds", 0], ["aEnglish", 0]], [["wantMcDonalds", 0], ["count", 0], ["food", 0]], [["wantWhitespot", 0], ["count", 0], ["food", 0]], [["conj", 0], ["aEnglish", 0], ["food", 0]], [["i", 0], ["wantWhitespot", 0], ["food", 0], ["fromW", 0]], [["food", 0], ["fromW", 0], ["whitespot", 0]], [["conj", 0], ["aEnglish", 0], ["food", 0], ["fromM", 0], ["mcdonalds", 0]], [["conj", 0], ["food", 0], ["fromM", 0], ["mcdonalds", 0]], [["food", 0], ["fromM", 0], ["mcdonalds", 0]]],
+    "negative": [],
+    "positive": [],
   },
   "words": {
     "+": [{"id": "plus"}],
