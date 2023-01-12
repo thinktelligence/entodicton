@@ -5,30 +5,72 @@ const { table } = require('table')
 const _ = require('lodash')
 const reports_tests = require('./reports.test.json')
 
+/* START USER DEFINED: this part could be calling your backend db */
+
+const compareValue = (property, v1, v2) => {
+  return v1[property] < v2[property] ? -1 :
+         v1[property] > v2[property] ? 1 :
+         0;
+}
+
+const compareObject = (ordering) => (v1, v2) => {
+  for (let order of ordering) {
+    c = compareValue(order[0], v1, v2)
+    if (c == 0) {
+      continue
+    }
+    if (order[1] == 'descending') {
+      c *= -1
+    }
+    return c
+  }
+  return 0
+}
+
+const sort = ({ ordering, list }) => {
+  return list.sort(compareObject(ordering))
+}
+
 const testData = {
   name: 'clothes',
   types: [ 'pants', 'shorts' ],
   products: [
     { marker: 'clothes', isInstance: true, type: 'pants', name: 'pants1', price: 9, id: 1 },
     { marker: 'clothes', isInstance: true, type: 'shirt', name: 'shirt1', price: 15, id: 2 },
+  ],
+}
+
+const testData2 = {
+  name: 'models',
+  types: [ 'tanks', 'planes' ],
+  products: [
+    { marker: 'models', isInstance: true, type: 'tanks', name: 'tiger', price: 9, id: 1 },
+    { marker: 'models', isInstance: true, type: 'planes', name: 'spitfire', price: 15, id: 2 },
   ]
 }
 
-const api = {
-  getName: () => testData.name,
-  getTypes: () => testData.types,
-  getAllProducts: () => testData.products,
-  getByTypeAndCost: ({type, cost, comparison}) => {
-    results = []
-    testData.forEach( (product) => {
-      if (product.type == type && comparison(product.cost)) {
-        results.push(product)
-      }
-    })
-    return results
-  },
-  productGenerator: [({context}) => context.marker == 'clothes' && context.isInstance, ({g, context}) => `${context.name}`]
+const apiTemplate = (marker, testData) => { 
+  return {
+    getName: () => testData.name,
+    getTypes: () => testData.types,
+    getAllProducts: ({ colunms, ordering }) => sort({ ordering, list: testData.products }),
+    getByTypeAndCost: ({type, cost, comparison}) => {
+      results = []
+      testData.forEach( (product) => {
+        if (product.type == type && comparison(product.cost)) {
+          results.push(product)
+        }
+      })
+      return results
+    },
+    productGenerator: [({context}) => context.marker == marker && context.isInstance, ({g, context}) => `${context.name}`]
+  }
 }
+
+/* END USER DEFINED: this part could be calling your backend db */
+
+const api = apiTemplate('clothes', testData)
+const api2 = apiTemplate('models', testData2)
 
 let config = {
   name: 'reports',
@@ -42,7 +84,19 @@ let config = {
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
     "([show] (<the> ([price])))",
+    // "([call] ([this]) (rest))",
+    "(([price]) <ascending>)",
+    "(([price]) <descending>)",
+    "([ordering])",
+    /*
+       call this the banana report
+       show the banana report
+       price descending
+       price ascending
+    */
+    // show price and quantity
     // save this as report1 / show report1
+    // list the products with the price descending
     // move price before name
     // move price to the far right
     // show the price in euros
@@ -53,6 +107,11 @@ let config = {
     // call this report report1
   ],
   bridges: [
+    { "id": "ordering", "level": 0, "bridge": "{ ...next(operator) }" },
+
+    { "id": "ascending", "level": 0, "bridge": "{ ...before[0], ordering: 'ascending' }" },
+    { "id": "descending", "level": 0, "bridge": "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
+
     { "id": "product", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "listAction", "level": 0, "bridge": "{ ...next(operator), what: after}" },
 
@@ -72,6 +131,8 @@ let config = {
     { "id": "show", "level": 0, "bridge": "{ ...next(operator), properties: after[0] }" },
   ],
   hierarchy: [
+    ['ascending', 'ordering'],
+    ['descending', 'ordering'],
   ],
   associations: {
   },
@@ -87,14 +148,15 @@ let config = {
   },
 
   priorities: [
+    [['the', 0], ['ordering', 0]],
     [['listAction', 0], ['cost', 1]],
     [['answer', 0], ['listAction', 0], ['the', 0]],
-    [['answer', 0], ['listAction', 0], ['the', 0], ['with', 0]]
+    [['answer', 0], ['listAction', 0], ['the', 0], ['with', 0]],
   ],
   generators: [
     [ 
       ({context, objects}) => context.marker == 'show',
-      ({gs, api}) => `the properties being shown are ${gs(api.listing.columns)}` 
+      ({gs, api}) => `the properties being shown are ${gs(api.listing.columns, ', ', ' and ')}` 
     ],
     [ ({context}) => context.marker == 'reportAction' && context.response, ({context, g}) => `reporting on ${context.report.word}` ],
     [ ({context}) => context.marker == 'reportAction' && context.paraphrase, ({context, g}) => `report on ${context.report.word}` ],
@@ -143,6 +205,7 @@ let config = {
       ({context, objects}) => context.marker == 'show',
       ({api, context}) => {
         api.listing.columns.push(context.properties.marker)
+        api.listing.ordering.push([context.properties.marker, context.properties.ordering])
         api.listing.columns = _.uniq(api.listing.columns)
       }
     ],
@@ -150,9 +213,9 @@ let config = {
       ({context}) => context.marker == 'listAction', 
       ({context, api, config}) => {
         if (context.api) {
-          context.listing = config._api.apis[context.api].getAllProducts()
+          context.listing = config._api.apis[context.api].getAllProducts(api.listing)
         } else {
-          context.listing = config._api.apis[config._api.current].getAllProducts()
+          context.listing = config._api.apis[config._api.current].getAllProducts(api.listing)
         }
         context.response = true
       },
@@ -167,42 +230,13 @@ let config = {
   ],
 };
 
-const testData2 = {
-  name: 'models',
-  types: [ 'tanks', 'planes' ],
-  products: [
-    { marker: 'models', isInstance: true, type: 'tanks', name: 'tiger', price: 9, id: 1 },
-    { marker: 'models', isInstance: true, type: 'planes', name: 'spitfire', price: 15, id: 2 },
-  ]
-}
-
-const api2 = {
-  getName: () => testData2.name,
-  getTypes: () => testData2.types,
-  getAllProducts: () => testData2.products,
-  getByTypeAndCost: ({type, cost, comparison}) => {
-    results = []
-    testData2.forEach( (product) => {
-      if (product.type == type && comparison(product.cost)) {
-        results.push(product)
-      }
-    })
-    return results
-  },
-  productGenerator: [
-    ({context}) => {
-      return context.marker == 'models' && context.isInstance
-    },
-    ({g, context}) => `${context.name}`
-  ]
-}
-
 const initializeApi = (config, api) => {
   const type = api.getName();
   config.addWord(type, {"id": "product", "initial": "{ value: '" + type + `', api: '${type}'}` })
   api.listing = { 
     type: 'tables',
     columns: ['name'],
+    ordering: [],
   }
   config.addGenerator( ...api.productGenerator )
   const open = '{'
@@ -213,8 +247,8 @@ const initializeApi = (config, api) => {
 config = new entodicton.Config(config, module).add(currencyKM).add(helpKM)
 config.multiApi = initializeApi
 // mode this to non-module init only
-config.api = api2
-config.api = api
+config.addAPI(api2)
+config.addAPI(api)
 entodicton.knowledgeModule({
   module,
   description: 'this module is for getting info about a concept with properties',
