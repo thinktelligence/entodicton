@@ -955,7 +955,7 @@ class API {
   }
 
   children(parent) {
-    return this.objects.children[parent]
+    return this.objects.children[parent] || []
   }
 
   conceptExists(concept) {

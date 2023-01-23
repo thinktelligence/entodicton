@@ -108,6 +108,8 @@ let config = {
   */
   hierarchy: [
     ['unknown', 'hierarchyAble'],
+    ['unknown', 'object'],
+    ['what', 'object'],
     ['hierarchyAble', 'queryable'],
     ['readonly', 'queryable'],
     ['property', 'queryable'],

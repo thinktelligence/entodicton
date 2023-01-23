@@ -205,11 +205,11 @@ let config = {
           return;
         }
 
-        if (context.same && pluralize.isPlural(context.same.word)) {
+        if (context.same && context.same.word && pluralize.isPlural(context.same.word)) {
           context.same.concept = true;
         }
         
-        if (context.same && pluralize.isSingular(context.same.word)) {
+        if (context.same && context.same.word && pluralize.isSingular(context.same.word)) {
           context.same.concept = true;
         }
        

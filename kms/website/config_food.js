@@ -22,6 +22,7 @@ module.exports =
   "hierarchy": [
   ],
   "priorities": [
+    [["conj", 0], ["plus", 0]],
   ],
   "associations": {
     "negative": [],
@@ -30,7 +31,7 @@ module.exports =
   "words": {
     "cheeseburger": [{"id": "food", "initial": {"name": "cheeseburger"}}],
     "cheeseburgers": [{"id": "food", "initial": {"name": "cheeseburger"}}],
-    "fries": [{"id": "food", "initial": {"name": "fries"}}],
+    "fries": [{"id": "food", "initial": {"name": "fries", "number": "many"}}],
   },
   "floaters": [
     "isQuery",

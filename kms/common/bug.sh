@@ -232,4 +232,12 @@
 # node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d 
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g -r
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -s -g
-node properties -q 'the age of greg is 23 what is the age of greg' -g
+# node properties -q 'greg has toes greg has eyes?' -g -d
+# node properties -q 'greg has toes' -g -d
+# node hierarchy -q 'cats and dogs are animals what are the types of animals' -g -d -s
+# node inspect hierarchy -q 'what are the types of animals' -g -d
+# node hierarchy -q 'cats and dogs are animals' -g -d
+# node properties -q 'xfx between a1 and a2' -g -d
+node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -g -d
+# node people -q 'ownee23 is owned by owner23' -g -d
+# node people -q 'who is ownee23 owned by' -g -d

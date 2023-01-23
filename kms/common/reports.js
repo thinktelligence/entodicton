@@ -42,6 +42,7 @@ let config = {
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
     "([show] (<the> ([price])))",
+    // call this report a  show report a show report a for products that code more than 10 dollars
     // save this as report1 / show report1
     // move price before name
     // move price to the far right
