@@ -95,6 +95,7 @@ let config = {
        price ascending
     */
     // show price and quantity
+    // call this report a  show report a show report a for products that code more than 10 dollars
     // save this as report1 / show report1
     // list the products with the price descending
     // move price before name

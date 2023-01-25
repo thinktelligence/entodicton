@@ -47,9 +47,9 @@ module.exports =
     {"id": "property", "level": 1, "bridge": "{ value: objects.tanks[operator.object['id']][before[0].name], marker: operator(objects.types[before[0].name].id, objects.types[before[0].name].level), propertyName: before[0].name, object:operator.object.id, isProperty: true }"},
     {"id": "equal", "level": 0, "bridge": "{ objects: after[0], ...next(operator) }"},
     {"id": "equal", "level": 1, "bridge": "{ ...next(operator), objects: append(before, [operator.objects]) }"},
-    {"id": "plus", "level": 0, "bridge": "{ ...next(operator), value: add(before, after), marker: before[0].marker }"},
-    {"id": "conj", "level": 0, "selector": {"match": "same", "type": "infix", "passthrough": true}, "bridge": "{ ...next(operator), value: append(before, after) }"},
-    {"id": "conj", "level": 1, "selector": {"match": "same", "type": "postfix", "passthrough": true}, "bridge": "{ ...operator, value: append(before, operator.value) }"},
+    {"id": "plus", "level": 0, "selector": {"match": "same", "left": [{"marker": "number"}], "right": [{"marker": "number"}], "passthrough": true}, "bridge": "{ ...next(operator), value: add(before, after), marker: before[0].marker }"},
+    {"id": "conj", "level": 0, "selector": {"match": "same", "left": [{"sentinals": ["number"], "variable": "v", "no_match": ["nameableConcept", "anyConcept"]}], "right": [{"sentinals": ["number"], "variable": "v"}], "passthrough": true}, "bridge": "{ ...next(operator), value: append(before, after) }"},
+    {"id": "conj", "level": 1, "selector": {"match": "same", "left": [{"sentinals": ["number"], "variable": "v"}], "passthrough": true}, "bridge": "{ ...operator, value: append(before, operator.value) }"},
     {"id": "propertyConcept", "level": 0, "bridge": "{ ...next(operator) }"},
     {"id": "tankConcept", "level": 0, "bridge": "{ ...next(operator) }"},
     {"id": "buildingConcept", "level": 0, "bridge": "{ ...next(operator) }"},
@@ -97,8 +97,8 @@ module.exports =
     [["equal", 0], ["property", 1]],
   ],
   "associations": {
-    "negative": [[["tankConcept", 0], ["french", 0], ["aEnglish", 0], ["buildingConcept", 0]], [["conj", 0], ["count", 0], ["plus", 0]], [["equal", 0], ["count", 0], ["plus", 0]]],
-    "positive": [[["tankConcept", 0], ["french", 0], ["aFrench", 0], ["buildingConcept", 0]], [["conj", 0], ["number", 0], ["plus", 0]], [["the", 0], ["propertyConcept", 0], ["property", 0]], [["equal", 0], ["number", 0], ["plus", 0]]],
+    "negative": [],
+    "positive": [],
   },
   "words": {
     "+": [{"id": "plus"}],

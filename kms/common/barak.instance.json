@@ -4,7 +4,54 @@
     "republicans are a political party",
     "democrats are a political party",
     "barak modifies obama",
-    "barak obama is a democrat"
+    "barak obama is a democrat",
+    {
+      "words": {
+        "barak": [
+          {
+            "id": "barak_obama",
+            "pseudo": true,
+            "initial": "{}"
+          }
+        ]
+      },
+      "associations": {
+        "negative": [
+          [
+            [
+              "barak_obama",
+              0
+            ],
+            [
+              "obama",
+              0
+            ]
+          ],
+          [
+            [
+              "barak_obama",
+              0
+            ],
+            [
+              "barak",
+              0
+            ]
+          ]
+        ],
+        "positive": [
+          [
+            [
+              "barak",
+              0
+            ],
+            [
+              "obama",
+              0
+            ]
+          ]
+        ]
+      }
+    }
   ],
   "resultss": [
     {
@@ -137,8 +184,8 @@
       "logs": [
         "Undefined word 'political'",
         "Undefined word 'parties'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('unknown', 0)]), (('unknown', 0), [('modifies', 0), ('unknown', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['unknown', 1]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('unknown', 0)]), (('unknown', 0), [('modifies', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0]]",
         ""
       ],
       "metadata": {
@@ -181,8 +228,8 @@
           },
           {
             "op": [
-              "modifies",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -192,6 +239,34 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              1
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "modifies",
+              0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
               ]
             ]
           }
@@ -269,7 +344,7 @@
           ]
         ]
       ],
-      "version": "6.23.1",
+      "version": "6.23.5-beta.0",
       "query": "political modifies parties"
     },
     {
@@ -433,9 +508,9 @@
       ],
       "logs": [
         "Undefined word 'republicans'",
-        "Op choices were: [(('unknown', 0), [('a', 0), ('isEd', 0), ('party', 0), ('political', 0), ('unknown', 0)]), (('party', 0), [('a', 0), ('isEd', 0), ('party', 0), ('political', 0), ('unknown', 1)]), (('political', 0), [('a', 0), ('isEd', 0), ('political', 0), ('unknown', 1)]), (('political_party', 0), [('a', 0), ('isEd', 0), ('political_party', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('isEd', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['isEd', 0], ['party', 0], ['political', 0], ['unknown', 0]]\n  Context for choosing the operator party/0 was [['a', 0], ['isEd', 0], ['party', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political/0 was [['a', 0], ['isEd', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political_party/0 was [['a', 0], ['isEd', 0], ['political_party', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['isEd', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['isEd', 0], ['political_party', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['political_party', 0]]\n  Group 1\n  0.29 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['a', 0]]"
+        "Op choices were: [(('unknown', 0), [('a', 0), ('isEd', 0), ('party', 0), ('political', 0), ('unknown', 0)]), (('party', 0), [('a', 0), ('is', 0), ('party', 0), ('political', 0), ('unknown', 1)]), (('political', 0), [('a', 0), ('is', 0), ('political', 0), ('unknown', 1)]), (('political_party', 0), [('a', 0), ('is', 0), ('political_party', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['isEd', 0], ['party', 0], ['political', 0], ['unknown', 0]]\n  Context for choosing the operator party/0 was [['a', 0], ['is', 0], ['party', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political/0 was [['a', 0], ['is', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political_party/0 was [['a', 0], ['is', 0], ['political_party', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['political_party', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['political_party', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0], ['political', 0]]\n  0.25 - [['unknown', 0], ['isEd', 0], ['a', 0], ['political', 0]]\n  Group 3\n  0.27 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.45 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 4\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0], ['political', 0], ['party', 0]]\n  0.28 - [['unknown', 0], ['isEd', 0], ['a', 0], ['political', 0], ['party', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -478,7 +553,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -506,7 +581,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -530,7 +605,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -554,7 +629,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -672,21 +747,7 @@
             0
           ],
           [
-            "party",
-            0
-          ],
-          [
-            "political",
-            0
-          ],
-          [
-            "unknown",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
+            "is",
             0
           ],
           [
@@ -708,6 +769,10 @@
             0
           ],
           [
+            "is",
+            0
+          ],
+          [
             "political",
             0
           ],
@@ -719,6 +784,10 @@
         [
           [
             "a",
+            0
+          ],
+          [
+            "is",
             0
           ],
           [
@@ -736,8 +805,30 @@
             0
           ],
           [
+            "is",
+            0
+          ],
+          [
             "unknown",
             1
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "party",
+            0
+          ],
+          [
+            "political",
+            0
+          ],
+          [
+            "unknown",
+            0
           ]
         ],
         [
@@ -751,7 +842,7 @@
           ]
         ]
       ],
-      "version": "6.23.1",
+      "version": "6.23.5-beta.0",
       "query": "republicans are a political party"
     },
     {
@@ -931,9 +1022,9 @@
       ],
       "logs": [
         "Undefined word 'democrats'",
-        "Op choices were: [(('unknown', 0), [('a', 0), ('isEd', 0), ('party', 0), ('political', 0), ('unknown', 0)]), (('party', 0), [('a', 0), ('isEd', 0), ('party', 0), ('political', 0), ('unknown', 1)]), (('political', 0), [('a', 0), ('isEd', 0), ('political', 0), ('unknown', 1)]), (('political_party', 0), [('a', 0), ('is', 0), ('political_party', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['isEd', 0], ['party', 0], ['political', 0], ['unknown', 0]]\n  Context for choosing the operator party/0 was [['a', 0], ['isEd', 0], ['party', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political/0 was [['a', 0], ['isEd', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political_party/0 was [['a', 0], ['is', 0], ['political_party', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['unknown', 0], ['isEd', 0], ['a', 0], ['political', 0], ['party', 0]]\n  0.29 - [['unknown', 0], ['is', 0], ['a', 0], ['political', 0], ['party', 0]]\n  Group 1\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.34 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 2\n  0.37 - [['unknown', 0], ['is', 0], ['a', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['political_party', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['political_party', 0]]\n  Group 4\n  0.25 - [['unknown', 0], ['isEd', 0], ['a', 0], ['political', 0]]\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0], ['political', 0]]\n  Group 5\n  0.75 - [['unknown', 0], ['isEd', 0], ['a', 0], ['political_party', 0]]\n  0.75 - [['unknown', 0], ['is', 0], ['a', 0], ['political_party', 0]]"
+        "Op choices were: [(('unknown', 0), [('a', 0), ('is', 0), ('party', 0), ('political', 0), ('unknown', 0)]), (('party', 0), [('a', 0), ('is', 0), ('party', 0), ('political', 0), ('unknown', 1)]), (('political', 0), [('a', 0), ('is', 0), ('political', 0), ('unknown', 1)]), (('political_party', 0), [('a', 0), ('is', 0), ('political_party', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['is', 0], ['party', 0], ['political', 0], ['unknown', 0]]\n  Context for choosing the operator party/0 was [['a', 0], ['is', 0], ['party', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political/0 was [['a', 0], ['is', 0], ['political', 0], ['unknown', 1]]\n  Context for choosing the operator political_party/0 was [['a', 0], ['is', 0], ['political_party', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  0.25 - [['unknown', 0], ['is', 0], ['a', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['political_party', 0]]\n  0.73 - [['unknown', 0], ['isEd', 0], ['political_party', 0]]\n  Group 2\n  0.25 - [['unknown', 0], ['isEd', 0], ['a', 0]]\n  0.61 - [['unknown', 0], ['is', 0], ['a', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -948,7 +1039,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -976,7 +1067,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -1004,7 +1095,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -1162,6 +1253,68 @@
             0
           ],
           [
+            "party",
+            0
+          ],
+          [
+            "political",
+            0
+          ],
+          [
+            "unknown",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "party",
+            0
+          ],
+          [
+            "political",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "political",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
             "political_party",
             0
           ],
@@ -1204,38 +1357,6 @@
         ],
         [
           [
-            "a",
-            0
-          ],
-          [
-            "party",
-            0
-          ],
-          [
-            "political",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "political",
-            0
-          ],
-          [
-            "unknown",
-            1
-          ]
-        ],
-        [
-          [
             "is",
             0
           ],
@@ -1245,7 +1366,7 @@
           ]
         ]
       ],
-      "version": "6.23.1",
+      "version": "6.23.5-beta.0",
       "query": "democrats are a political party"
     },
     {
@@ -1574,7 +1695,7 @@
           ]
         ]
       ],
-      "version": "6.23.1",
+      "version": "6.23.5-beta.0",
       "query": "barak modifies obama"
     },
     {
@@ -1799,7 +1920,7 @@
       "logs": [
         "Op choices were: [(('obama', 0), [('a', 0), ('barak', 0), ('democrat', 0), ('isEd', 0), ('obama', 0)]), (('democrat', 0), [('a', 0), ('barak', 0), ('democrat', 0), ('isEd', 0)]), (('barak', 0), [('a', 0), ('barak', 0), ('isEd', 0)]), (('barak_obama', 0), [('a', 0), ('barak_obama', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator obama/0 was [['a', 0], ['barak', 0], ['democrat', 0], ['isEd', 0], ['obama', 0]]\n  Context for choosing the operator democrat/0 was [['a', 0], ['barak', 0], ['democrat', 0], ['isEd', 0]]\n  Context for choosing the operator barak/0 was [['a', 0], ['barak', 0], ['isEd', 0]]\n  Context for choosing the operator barak_obama/0 was [['a', 0], ['barak_obama', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['barak_obama', 0], ['isEd', 0], ['democrat', 0]]\n  1.0 - [['barak_obama', 0], ['is', 0], ['democrat', 0]]\n  Group 1\n  0.75 - [['obama', 0], ['isEd', 0], ['a', 0]]\n  0.46 - [['obama', 0], ['is', 0], ['a', 0]]\n  Group 2\n  0.75 - [['barak_obama', 0], ['isEd', 0], ['a', 0]]\n  0.57 - [['barak_obama', 0], ['is', 0], ['a', 0]]\n  Group 3\n  0.75 - [['barak_obama', 0], ['isEd', 0], ['a', 0], ['democrat', 0]]\n  0.75 - [['barak_obama', 0], ['is', 0], ['a', 0], ['democrat', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.75 - [['barak_obama', 0], ['is', 0], ['a', 0]]\n  0.75 - [['barak_obama', 0], ['isEd', 0], ['a', 0]]\n  Group 1\n  0.56 - [['barak', 0], ['obama', 0], ['is', 0], ['a', 0], ['democrat', 0]]\n  0.71 - [['barak', 0], ['obama', 0], ['isEd', 0], ['a', 0], ['democrat', 0]]\n  Group 2\n  0.75 - [['obama', 0], ['isEd', 0], ['a', 0]]\n  0.75 - [['obama', 0], ['is', 0], ['a', 0]]\n  Group 3\n  1.0 - [['barak_obama', 0], ['is', 0], ['democrat', 0]]\n  1.0 - [['barak_obama', 0], ['isEd', 0], ['democrat', 0]]\n  Group 4\n  0.75 - [['barak_obama', 0], ['is', 0], ['a', 0], ['democrat', 0]]\n  0.75 - [['barak_obama', 0], ['isEd', 0], ['a', 0], ['democrat', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -2088,8 +2209,56 @@
           ]
         ]
       ],
-      "version": "6.23.1",
+      "version": "6.23.5-beta.0",
       "query": "barak obama is a democrat"
+    },
+    {
+      "extraConfig": true,
+      "words": {
+        "barak": [
+          {
+            "id": "barak_obama",
+            "pseudo": true,
+            "initial": "{}"
+          }
+        ]
+      },
+      "associations": {
+        "negative": [
+          [
+            [
+              "barak_obama",
+              0
+            ],
+            [
+              "obama",
+              0
+            ]
+          ],
+          [
+            [
+              "barak_obama",
+              0
+            ],
+            [
+              "barak",
+              0
+            ]
+          ]
+        ],
+        "positive": [
+          [
+            [
+              "barak",
+              0
+            ],
+            [
+              "obama",
+              0
+            ]
+          ]
+        ]
+      }
     }
   ],
   "fragments": [],
@@ -2193,7 +2362,141 @@
         0
       ],
       [
+        "party",
+        0
+      ],
+      [
+        "political",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "party",
+        0
+      ],
+      [
+        "political",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "party",
+        0
+      ],
+      [
+        "political",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "political",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "political",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
         "political_party",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "political_party",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
         0
       ],
       [
@@ -2249,94 +2552,6 @@
       [
         "unknown",
         0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "party",
-        0
-      ],
-      [
-        "political",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "party",
-        0
-      ],
-      [
-        "political",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "political",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "political",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "political_party",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "unknown",
-        1
       ]
     ],
     [

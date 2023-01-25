@@ -5,34 +5,32 @@ const barak_instance = require('./barak.instance.json')
 
 const template ={
   "queries": [
+    // TODO polical should not map plural over only singular
     "political modifies parties",
     "republicans are a political party",
     "democrats are a political party",
     "barak modifies obama",
     "barak obama is a democrat",
+    {
+      words: {
+        "barak": [{id: "barak_obama", pseudo: true, initial: "{}" }],
+      },
+      associations: {
+        negative: [
+          [['barak_obama', 0], ['obama', 0]],
+          [['barak_obama', 0], ['barak', 0]],
+        ],
+        positive: [
+          [['barak', 0], ['obama', 0]],
+        ]
+      },
+    },
   ],
 }
 
 // two bugs: hierarchy has barak_obama isA obama
 //           negative associations are missing
-const config = new entodicton.Config({ 
-  name: 'barak',
-  words: {
-    "barak": [{id: "barak_obama", pseudo: true, initial: "{}" }],
-  },
-  /*
-  associations: {
-    negative: [
-      [['barak_obama', 0], ['obama', 0]],
-      [['barak_obama', 0], ['barak', 0]],
-    ],
-    positive: [
-      [['barak', 0], ['obama', 0]],
-    ]
-  },
-  */
-
-}, module)
+const config = new entodicton.Config({ name: 'barak', }, module)
 config.add(hierarchy)
 
 entodicton.knowledgeModule( {

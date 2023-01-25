@@ -22,15 +22,16 @@ module.exports =
   "hierarchy": [
   ],
   "priorities": [
+    [["conj", 0], ["plus", 0]],
   ],
   "associations": {
-    "negative": [[["wantMcDonalds", 0], ["number", 0], ["food", 0]], [["wantWhitespot", 0], ["number", 0], ["food", 0]], [["conj", 0], ["aFrench", 0], ["food", 0]], [["i", 0], ["wantMcDonalds", 0], ["food", 0], ["fromW", 0]], [["i", 0], ["wantWhitespot", 0], ["food", 0], ["fromM", 0]], [["food", 0], ["fromM", 0], ["whitespot", 0]], [["conj", 0], ["aEnglish", 0], ["food", 0], ["fromW", 0], ["mcdonalds", 0]], [["conj", 0], ["food", 0], ["fromW", 0], ["mcdonalds", 0]], [["food", 0], ["fromW", 0], ["mcdonalds", 0]]],
-    "positive": [[["i", 0], ["wantWhitespot", 0], ["aEnglish", 0]], [["i", 0], ["wantMcDonalds", 0], ["aEnglish", 0]], [["wantMcDonalds", 0], ["count", 0], ["food", 0]], [["wantWhitespot", 0], ["count", 0], ["food", 0]], [["conj", 0], ["aEnglish", 0], ["food", 0]], [["i", 0], ["wantWhitespot", 0], ["food", 0], ["fromW", 0]], [["food", 0], ["fromW", 0], ["whitespot", 0]], [["conj", 0], ["aEnglish", 0], ["food", 0], ["fromM", 0], ["mcdonalds", 0]], [["conj", 0], ["food", 0], ["fromM", 0], ["mcdonalds", 0]], [["food", 0], ["fromM", 0], ["mcdonalds", 0]]],
+    "negative": [],
+    "positive": [],
   },
   "words": {
     "cheeseburger": [{"id": "food", "initial": {"name": "cheeseburger"}}],
     "cheeseburgers": [{"id": "food", "initial": {"name": "cheeseburger"}}],
-    "fries": [{"id": "food", "initial": {"name": "fries"}}],
+    "fries": [{"id": "food", "initial": {"name": "fries", "number": "many"}}],
   },
   "floaters": [
     "isQuery",

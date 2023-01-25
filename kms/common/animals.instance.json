@@ -146,9 +146,9 @@
         "Undefined word 'birds'",
         "Undefined word 'mammals'",
         "Undefined word 'animals'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('isEd', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['isEd', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.66 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.74 - [['list', 0], ['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]"
+        "Op choices were: [(('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -175,7 +175,7 @@
             ],
             "ops": [
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -196,38 +196,6 @@
               ],
               [
                 "unknown",
-                0
-              ],
-              [
-                "unknown",
-                1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "is",
-                0
-              ],
-              [
-                "unknown",
-                1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "is",
                 0
               ],
               [
@@ -245,6 +213,10 @@
               [
                 "is",
                 0
+              ],
+              [
+                "unknown",
+                1
               ]
             ]
           },
@@ -345,16 +317,6 @@
           [
             "list",
             1
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "list",
-            1
           ],
           [
             "unknown",
@@ -373,20 +335,10 @@
           [
             "unknown",
             1
-          ]
-        ],
-        [
-          [
-            "list",
-            1
-          ],
-          [
-            "unknown",
-            0
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "birds and mammals are animals"
     },
     {
@@ -741,7 +693,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "mammals have ears"
     },
     {
@@ -1096,7 +1048,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "mammals have hair"
     },
     {
@@ -1503,7 +1455,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "mammals dont have wings"
     },
     {
@@ -1858,7 +1810,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "animals have skin"
     },
     {
@@ -2213,7 +2165,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "animals have eyes"
     },
     {
@@ -2568,7 +2520,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "birds have wings"
     },
     {
@@ -2923,7 +2875,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "birds have beaks"
     },
     {
@@ -3106,9 +3058,9 @@
         "Undefined word 'bats'",
         "Undefined word 'felines'",
         "Undefined word 'canines'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('is', 0), ('mammal', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.75 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 2\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 4\n  1.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 5\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 6\n  1.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  1.0 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]"
+        "Op choices were: [(('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('is', 0), ('mammal', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 3\n  0.0 - [['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 5\n  0.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3214,8 +3166,8 @@
           },
           {
             "op": [
-              "is",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -3225,6 +3177,18 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
               ]
             ]
           },
@@ -3378,7 +3342,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "humans bats felines and canines are mammals"
     },
     {
@@ -3627,7 +3591,7 @@
         "Undefined word 'parrots'",
         "Op choices were: [(('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 2\n  1.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 4\n  1.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 5\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 6\n  0.75 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['bird', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 5\n  0.0 - [['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -3909,7 +3873,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "owls eagles pidgeons and parrots are birds"
     },
     {
@@ -4219,7 +4183,7 @@
         "Undefined word 'cats'",
         "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['feline', 0]]\n  Group 1\n  0.75 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['feline', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['is', 0], ['feline', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['feline', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -4379,7 +4343,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "cats are felines"
     },
     {
@@ -4704,10 +4668,9 @@
       "logs": [
         "Undefined word 'dogs'",
         "Undefined word 'wolves'",
-        "Counter == 0. Applying\n\t\t\t\t\t\t\t\tOperator(isEd/0, PASS, [Selector(Bridge('{ number: operator.number, ...context, [context.subject].number: operator.number }', COMPOUNDING), []<==>[Type('isEdAble')], bridge(bridge))], evaluator(Bridge('{ number: operator.number, ...context, [context.subject].number: operator.number }', COMPOUNDING)), variables({}) bridge(bridge))\n\t\t\t\tfailed due to the expected type\n\n\t\t\t\t\t\t\t\tType('isEdAble')\n\n\t\t\t\tnot matching the found type\n\n\t\t\t\t\t\t\t\tContext({'value': 'canine', 'number': 'many', 'text': 'canines', 'marker': Operator(canine/0, [Selector(Bridge('{ ...next(operator) }'), []<==>[], bridge(bridge))], evaluator(Bridge('{ ...next(operator) }')), variables({}) bridge(bridge)), 'word': 'canines'})\n\n\n",
-        "Op choices were: [(('unknown', 0), [('canine', 0), ('isEd', 0), ('unknown', 0)]), (('unknown', 0), [('canine', 0), ('isEd', 0), ('unknown', 0)]), (('canine', 0), [('canine', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['canine', 0], ['isEd', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['canine', 0], ['isEd', 0], ['unknown', 0]]\n  Context for choosing the operator canine/0 was [['canine', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  1.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  Group 1\n  0.75 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.99 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 2\n  1.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  1.0 - [['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 3\n  1.0 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  1.0 - [['unknown', 0], ['isEd', 0], ['canine', 0]]"
+        "Op choices were: [(('unknown', 0), [('canine', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('canine', 0), ('is', 0), ('unknown', 0)]), (('canine', 0), [('canine', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['canine', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['canine', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator canine/0 was [['canine', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.0 - [['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -4722,7 +4685,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -4742,7 +4705,7 @@
                 0
               ],
               [
-                "isEd",
+                "is",
                 0
               ],
               [
@@ -4773,8 +4736,8 @@
           },
           {
             "op": [
-              "is",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -4784,6 +4747,18 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
               ]
             ]
           },
@@ -4873,16 +4848,6 @@
           ],
           [
             "list",
-            1
-          ]
-        ],
-        [
-          [
-            "canine",
-            0
-          ],
-          [
-            "list",
             0
           ],
           [
@@ -4893,6 +4858,10 @@
         [
           [
             "canine",
+            0
+          ],
+          [
+            "is",
             0
           ],
           [
@@ -4911,7 +4880,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "dogs and wolves are canines"
     },
     {
@@ -5442,7 +5411,7 @@
           ]
         ]
       ],
-      "version": "6.23.5",
+      "version": "6.25.0",
       "query": "bats have wings"
     }
   ],
@@ -5650,16 +5619,6 @@
       ],
       [
         "list",
-        1
-      ]
-    ],
-    [
-      [
-        "canine",
-        0
-      ],
-      [
-        "list",
         0
       ],
       [
@@ -5670,6 +5629,10 @@
     [
       [
         "canine",
+        0
+      ],
+      [
+        "is",
         0
       ],
       [
@@ -6041,16 +6004,6 @@
       [
         "list",
         1
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "list",
-        1
       ],
       [
         "mammal",
@@ -6111,16 +6064,6 @@
       [
         "unknown",
         1
-      ]
-    ],
-    [
-      [
-        "list",
-        1
-      ],
-      [
-        "unknown",
-        0
       ]
     ]
   ]
