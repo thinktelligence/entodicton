@@ -140,12 +140,15 @@ let config = {
     negative: [
       // [['isEd', 0], ['unknown', 0]],
       // [['isEd', 0], ['unknown', 1]],
-      [['is', 0], ['means', 0]],
+      // [['is', 0], ['means', 0]],
     ],
     positive: [
-      [['is', 0], ['unknown', 0]],
-      [['is', 0], ['unknown', 1]],
-      [['isEd', 0], ['means', 0]],
+      // [['is', 0], ['unknown', 0]],
+      // [['is', 0], ['unknown', 1]],
+      // [['isEd', 0], ['means', 0]],
+      [['isEd', 0], ['unknown', 0], ['isEdAble', 0], ['by', 0]],
+      [['isEd', 0], ['unknown', 1], ['isEdAble', 0], ['by', 0]],
+      [['isEd', 0], ['what', 0], ['isEdAble', 0], ['by', 0]],
     ]
   },
   bridges: [
