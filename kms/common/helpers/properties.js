@@ -226,6 +226,11 @@ class API {
         return `${g(context[after[0].tag])} ${chosen} ${edAble.word} by ${g(context[before[0].tag])}`
       }
     })
+    config.addAssociations([
+      [['isEd', 0], ['unknown', 0], ['isEdAble', 0], ['by', 0]],
+      [['isEd', 0], ['unknown', 1], ['isEdAble', 0], ['by', 0]],
+      [['isEd', 0], ['what', 0], ['isEdAble', 0], ['by', 0]],
+    ])
     //config.addAssociations({ 
       //negative: [[['is', 0], [edAble.operator, 0]]],
       // positive: [[['isEd', 0], [edAble.operator, 0]]],
@@ -950,8 +955,21 @@ class API {
       this.objects.concepts.push(parent)
     }
 
+    if (this.isOperator(child) && this.isOperator(parent)) {
+      this.config().addHierarchy(child, parent)
+    }
+
     this.propertiesFH.ensureValue([child], {})
     this.propertiesFH.ensureValue([parent], {})
+  }
+
+  isOperator(id) {
+    for (let bridge of this.config().config.bridges) {
+      if (bridge.id == id) {
+        return true
+      }
+    }
+    return false
   }
 
   children(parent) {
@@ -1026,8 +1044,19 @@ class API {
 
   set config(config) {
     this._config = config
-    for (const tuple of config().config.hierarchy) {
-      this.rememberIsA(tuple[0], tuple[1])
+    const toJSON = (h) => {
+      if (h.child && h.parent) {
+        return h
+      } else {
+        return { child: h[0], parent: h[1] }
+      }
+    }
+    for (const tuple of [...config().config.hierarchy]) {
+      const h = toJSON(tuple);
+      // TODO should this notice development flag?
+      if (this.isOperator(h.child) && this.isOperator(h.parent)) {
+        this.rememberIsA(h.child, h.parent)
+      }
     }
   }
 

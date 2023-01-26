@@ -238,6 +238,7 @@
 # node inspect hierarchy -q 'what are the types of animals' -g -d
 # node hierarchy -q 'cats and dogs are animals' -g -d
 # node properties -q 'xfx between a1 and a2' -g -d
-node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -g -d
+# node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -g -d
 # node people -q 'ownee23 is owned by owner23' -g -d
 # node people -q 'who is ownee23 owned by' -g -d
+node crew -q 'disarm the phasers' -g
