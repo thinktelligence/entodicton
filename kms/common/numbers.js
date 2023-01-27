@@ -25,6 +25,10 @@ let config = {
     "ten": [{"id": "number", "initial": "{ value: 10 }" }],
   },
 
+  hierarchy: [
+    ['number', 'queryable'],
+  ],
+
   generators: [
     [ ({context}) => context.marker == 'number', ({context}) => `${context.value}` ],
   ],

@@ -11739,2947 +11739,6 @@
       ],
       [
         [
-          "is",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "list",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "number",
-          0
-        ],
-        [
-          "player",
-          0
-        ],
-        [
-          "point",
-          0
-        ],
-        [
-          "scored",
-          0
-        ]
-      ],
-      [
-        [
-          "number",
-          0
-        ],
-        [
-          "point",
-          0
-        ]
-      ],
-      [
-        [
-          "number",
-          0
-        ],
-        [
-          "point",
-          0
-        ],
-        [
-          "scored",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "player",
-          0
-        ],
-        [
-          "point",
-          0
-        ],
-        [
-          "scored",
-          0
-        ]
-      ]
-    ],
-    "config": {
-    },
-    "contexts": [
-      {
-        "arg": {
-          "concept": true,
-          "default": true,
-          "determiner": "a",
-          "marker": "game",
-          "modifiers": [
-            "determiner",
-            "new"
-          ],
-          "new": "new",
-          "number": "one",
-          "pullFromContext": false,
-          "text": "a new game",
-          "types": [
-            "game"
-          ],
-          "wantsValue": true,
-          "word": "game"
-        },
-        "default": true,
-        "marker": "start",
-        "text": "start a new game",
-        "topLevel": true,
-        "touchedBy": [
-          "call179"
-        ],
-        "word": "start"
-      },
-      {
-        "controlKeepMotivation": true,
-        "marker": "controlBetween",
-        "motivationKeep": true,
-        "response": true,
-        "topLevel": true,
-        "verbatim": "what is the winning score?"
-      },
-      {
-        "amount": {
-          "marker": "number",
-          "text": "100",
-          "types": [
-            "number"
-          ],
-          "value": 100,
-          "word": "100"
-        },
-        "default": true,
-        "marker": "point",
-        "modifiers": [
-          "amount"
-        ],
-        "response": true,
-        "text": "100 points",
-        "topLevel": true,
-        "verbatim": "The winning score is 100",
-        "word": "points"
-      },
-      {
-        "controlKeepMotivation": true,
-        "marker": "controlBetween",
-        "motivationKeep": true,
-        "response": true,
-        "topLevel": true,
-        "verbatim": "who are the players?"
-      },
-      {
-        "marker": "list",
-        "response": true,
-        "topLevel": true,
-        "value": [
-          {
-            "marker": "unknown",
-            "text": "greg",
-            "unknown": true,
-            "value": "greg",
-            "word": "greg"
-          },
-          {
-            "marker": "unknown",
-            "text": "joe",
-            "unknown": true,
-            "value": "joe",
-            "word": "joe"
-          }
-        ],
-        "verbatim": "The players are greg and joe"
-      },
-      {
-        "default": true,
-        "marker": "scored",
-        "player": {
-          "marker": "player",
-          "text": "greg",
-          "types": [
-            "player"
-          ],
-          "unknown": true,
-          "value": "greg",
-          "word": "greg"
-        },
-        "points": {
-          "amount": {
-            "marker": "number",
-            "text": "12",
-            "types": [
-              "number"
-            ],
-            "value": 12,
-            "word": "12"
-          },
-          "default": true,
-          "marker": "point",
-          "modifiers": [
-            "amount"
-          ],
-          "text": "12 points",
-          "types": [
-            "point"
-          ],
-          "word": "points"
-        },
-        "text": "greg got 12 points",
-        "topLevel": true,
-        "touchedBy": [
-          "call194"
-        ],
-        "word": "got"
-      },
-      {
-        "marker": "is",
-        "number": "one",
-        "one": {
-          "default": true,
-          "determined": true,
-          "marker": "what",
-          "number": "one",
-          "query": [
-            "what"
-          ],
-          "response": true,
-          "text": "what is the scores",
-          "types": [
-            "what"
-          ],
-          "word": "what"
-        },
-        "query": [
-          "what"
-        ],
-        "response": {
-          "default": true,
-          "focusable": [
-            "two",
-            "one"
-          ],
-          "marker": "is",
-          "number": "many",
-          "one": {
-            "concept": true,
-            "default": true,
-            "determiner": "the",
-            "evaluate": true,
-            "marker": "score",
-            "modifiers": [
-              "determiner"
-            ],
-            "pullFromContext": true,
-            "text": "the scores",
-            "types": [
-              "score"
-            ],
-            "wantsValue": true,
-            "word": "scores"
-          },
-          "two": {
-            "concept": true,
-            "default": true,
-            "determiner": "the",
-            "evaluateWasProcessed": true,
-            "focus": true,
-            "instance": true,
-            "marker": "score",
-            "modifiers": [
-              "determiner"
-            ],
-            "number": "many",
-            "pullFromContext": true,
-            "text": "the scores",
-            "touchedBy": [
-              "call202"
-            ],
-            "types": [
-              "score"
-            ],
-            "value": "greg has 12 points",
-            "wantsValue": true,
-            "word": "scores"
-          },
-          "word": "are"
-        },
-        "text": "what is the scores",
-        "topLevel": true,
-        "touchedBy": [
-          "call201"
-        ],
-        "two": {
-          "concept": true,
-          "default": true,
-          "determiner": "the",
-          "marker": "score",
-          "modifiers": [
-            "determiner"
-          ],
-          "pullFromContext": true,
-          "response": true,
-          "text": "the scores",
-          "types": [
-            "score"
-          ],
-          "wantsValue": true,
-          "word": "scores"
-        },
-        "word": "is"
-      }
-    ],
-    "metadata": {
-      "opChoices": [
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "number",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "number",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "score",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "score",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "game",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "new",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "a",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "point",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "point",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "start",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "the",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "the",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "is",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "is",
-            1
-          ],
-          "ops": [
-            [
-              "is",
-              1
-            ],
-            [
-              "scored",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "scored",
-            0
-          ],
-          "ops": [
-            [
-              "scored",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "unknown",
-              1
-            ]
-          ]
-        }
-      ]
-    },
-    "objects": {
-      "namespaced": {
-        "0": {
-          "allPlayersAreKnown": true,
-          "nextPlayer": 1,
-          "players": [
-            "greg",
-            "joe"
-          ],
-          "scores": {
-            "greg": 12
-          },
-          "winningScore": 100
-        },
-        "1": {
-        },
-        "2": {
-          "children": {
-            "property": [
-              "turn"
-            ],
-            "queryable": [
-              "score",
-              "point",
-              "next"
-            ],
-            "score": [
-              "point"
-            ],
-            "theAble": [
-              "game",
-              "player",
-              "score"
-            ],
-            "unknown": [
-              "player"
-            ],
-            "what": [
-              "player"
-            ]
-          },
-          "concepts": [
-            "properties",
-            "point",
-            "score",
-            "game",
-            "theAble",
-            "player",
-            "what",
-            "unknown",
-            "queryable",
-            "next",
-            "turn",
-            "property"
-          ],
-          "parents": {
-            "game": [
-              "theAble"
-            ],
-            "next": [
-              "queryable"
-            ],
-            "player": [
-              "theAble",
-              "what",
-              "unknown"
-            ],
-            "point": [
-              "score",
-              "queryable"
-            ],
-            "score": [
-              "theAble",
-              "queryable"
-            ],
-            "turn": [
-              "property"
-            ]
-          },
-          "properties": {
-            "handlers": {
-            },
-            "initHandlers": [
-            ],
-            "root": {
-              "game": {
-              },
-              "next": {
-              },
-              "player": {
-              },
-              "point": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "score": {
-              },
-              "theAble": {
-              },
-              "turn": {
-              },
-              "unknown": {
-              },
-              "what": {
-              }
-            }
-          },
-          "property": {
-          },
-          "relations": [
-          ],
-          "valueToWords": {
-          }
-        },
-        "3": {
-          "mentioned": [
-            {
-              "default": true,
-              "determined": true,
-              "marker": "what",
-              "number": "one",
-              "query": [
-                "what"
-              ],
-              "response": true,
-              "text": "what is the scores",
-              "types": [
-                "what"
-              ],
-              "word": "what"
-            }
-          ],
-          "variables": {
-          }
-        },
-        "4": {
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "marker": "is",
-            "number": "one",
-            "one": {
-              "default": true,
-              "determined": true,
-              "marker": "what",
-              "number": "one",
-              "query": [
-                "what"
-              ],
-              "response": true,
-              "text": "what is the scores",
-              "types": [
-                "what"
-              ],
-              "word": "what"
-            },
-            "query": [
-              "what"
-            ],
-            "response": {
-              "default": true,
-              "focusable": [
-                "two",
-                "one"
-              ],
-              "marker": "is",
-              "number": "many",
-              "one": {
-                "concept": true,
-                "default": true,
-                "determiner": "the",
-                "evaluate": true,
-                "marker": "score",
-                "modifiers": [
-                  "determiner"
-                ],
-                "pullFromContext": true,
-                "text": "the scores",
-                "types": [
-                  "score"
-                ],
-                "wantsValue": true,
-                "word": "scores"
-              },
-              "two": {
-                "concept": true,
-                "default": true,
-                "determiner": "the",
-                "evaluateWasProcessed": true,
-                "focus": true,
-                "instance": true,
-                "marker": "score",
-                "modifiers": [
-                  "determiner"
-                ],
-                "number": "many",
-                "pullFromContext": true,
-                "text": "the scores",
-                "touchedBy": [
-                  "call202"
-                ],
-                "types": [
-                  "score"
-                ],
-                "value": "greg has 12 points",
-                "wantsValue": true,
-                "word": "scores"
-              },
-              "word": "are"
-            },
-            "text": "what is the scores",
-            "topLevel": true,
-            "touchedBy": [
-              "call201"
-            ],
-            "two": {
-              "concept": true,
-              "default": true,
-              "determiner": "the",
-              "marker": "score",
-              "modifiers": [
-                "determiner"
-              ],
-              "pullFromContext": true,
-              "response": true,
-              "text": "the scores",
-              "types": [
-                "score"
-              ],
-              "wantsValue": true,
-              "word": "scores"
-            },
-            "word": "is"
-          },
-          "paraphrases": "what is the scores?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 100",
-            "who are the players?",
-            "The players are greg and joe",
-            "",
-            "the scores are greg has 12 points"
-          ]
-        },
-        {
-          "context": {
-            "default": true,
-            "marker": "scored",
-            "player": {
-              "marker": "player",
-              "text": "greg",
-              "types": [
-                "player"
-              ],
-              "unknown": true,
-              "value": "greg",
-              "word": "greg"
-            },
-            "points": {
-              "amount": {
-                "marker": "number",
-                "text": "12",
-                "types": [
-                  "number"
-                ],
-                "value": 12,
-                "word": "12"
-              },
-              "default": true,
-              "marker": "point",
-              "modifiers": [
-                "amount"
-              ],
-              "text": "12 points",
-              "types": [
-                "point"
-              ],
-              "word": "points"
-            },
-            "text": "greg got 12 points",
-            "topLevel": true,
-            "touchedBy": [
-              "call194"
-            ],
-            "word": "got"
-          },
-          "paraphrases": "greg got 12 points",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 100",
-            "who are the players?",
-            "The players are greg and joe",
-            "",
-            "the scores are greg has 12 points"
-          ]
-        },
-        {
-          "context": {
-            "marker": "list",
-            "response": true,
-            "topLevel": true,
-            "value": [
-              {
-                "marker": "unknown",
-                "text": "greg",
-                "unknown": true,
-                "value": "greg",
-                "word": "greg"
-              },
-              {
-                "marker": "unknown",
-                "text": "joe",
-                "unknown": true,
-                "value": "joe",
-                "word": "joe"
-              }
-            ],
-            "verbatim": "The players are greg and joe"
-          },
-          "paraphrases": "greg and joe",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 100",
-            "who are the players?",
-            "The players are greg and joe",
-            "",
-            "the scores are greg has 12 points"
-          ]
-        },
-        {
-          "context": {
-            "controlKeepMotivation": true,
-            "marker": "controlBetween",
-            "motivationKeep": true,
-            "response": true,
-            "topLevel": true,
-            "verbatim": "who are the players?"
-          },
-          "paraphrases": "who are the players?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 100",
-            "who are the players?",
-            "The players are greg and joe",
-            "",
-            "the scores are greg has 12 points"
-          ]
-        },
-        {
-          "context": {
-            "amount": {
-              "marker": "number",
-              "text": "100",
-              "types": [
-                "number"
-              ],
-              "value": 100,
-              "word": "100"
-            },
-            "default": true,
-            "marker": "point",
-            "modifiers": [
-              "amount"
-            ],
-            "response": true,
-            "text": "100 points",
-            "topLevel": true,
-            "verbatim": "The winning score is 100",
-            "word": "points"
-          },
-          "paraphrases": "100 points",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 100",
-            "who are the players?",
-            "The players are greg and joe",
-            "",
-            "the scores are greg has 12 points"
-          ]
-        },
-        {
-          "context": {
-            "controlKeepMotivation": true,
-            "marker": "controlBetween",
-            "motivationKeep": true,
-            "response": true,
-            "topLevel": true,
-            "verbatim": "what is the winning score?"
-          },
-          "paraphrases": "what is the winning score?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 100",
-            "who are the players?",
-            "The players are greg and joe",
-            "",
-            "the scores are greg has 12 points"
-          ]
-        }
-      ]
-    },
-    "paraphrases": [
-      "start a new game",
-      "what is the winning score?",
-      "100 points",
-      "who are the players?",
-      "greg and joe",
-      "greg got 12 points",
-      "what is the scores?"
-    ],
-    "query": "start a new game 100 points greg and joe greg got 12 points what is the scores",
-    "responses": [
-      "",
-      "what is the winning score?",
-      "The winning score is 100",
-      "who are the players?",
-      "The players are greg and joe",
-      "",
-      "the scores are greg has 12 points"
-    ]
-  },
-  {
-    "associations": [
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "game",
-          0
-        ],
-        [
-          "new",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "new",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "game",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "list",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "number",
-          0
-        ],
-        [
-          "point",
-          0
-        ]
-      ]
-    ],
-    "config": {
-    },
-    "contexts": [
-      {
-        "arg": {
-          "concept": true,
-          "default": true,
-          "determiner": "a",
-          "marker": "game",
-          "modifiers": [
-            "determiner",
-            "new"
-          ],
-          "new": "new",
-          "number": "one",
-          "pullFromContext": false,
-          "text": "a new game",
-          "types": [
-            "game"
-          ],
-          "wantsValue": true,
-          "word": "game"
-        },
-        "default": true,
-        "marker": "start",
-        "text": "start a new game",
-        "topLevel": true,
-        "touchedBy": [
-          "call163"
-        ],
-        "word": "start"
-      },
-      {
-        "controlKeepMotivation": true,
-        "marker": "controlBetween",
-        "motivationKeep": true,
-        "response": true,
-        "topLevel": true,
-        "verbatim": "what is the winning score?"
-      },
-      {
-        "amount": {
-          "marker": "number",
-          "text": "20",
-          "types": [
-            "number"
-          ],
-          "value": 20,
-          "word": "20"
-        },
-        "default": true,
-        "marker": "point",
-        "modifiers": [
-          "amount"
-        ],
-        "response": true,
-        "text": "20 points",
-        "topLevel": true,
-        "verbatim": "The winning score is 20",
-        "word": "points"
-      },
-      {
-        "controlKeepMotivation": true,
-        "marker": "controlBetween",
-        "motivationKeep": true,
-        "response": true,
-        "topLevel": true,
-        "verbatim": "who are the players?"
-      },
-      {
-        "marker": "list",
-        "response": true,
-        "topLevel": true,
-        "value": [
-          {
-            "marker": "unknown",
-            "text": "greg",
-            "unknown": true,
-            "value": "greg",
-            "word": "greg"
-          },
-          {
-            "marker": "unknown",
-            "text": "jah",
-            "unknown": true,
-            "value": "jah",
-            "word": "jah"
-          }
-        ],
-        "verbatim": "The players are greg and jah"
-      }
-    ],
-    "metadata": {
-      "opChoices": [
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "game",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "number",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "point",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "new",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "a",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "start",
-            0
-          ],
-          "ops": [
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "unknown",
-              1
-            ]
-          ]
-        }
-      ]
-    },
-    "objects": {
-      "namespaced": {
-        "0": {
-          "allPlayersAreKnown": true,
-          "nextPlayer": 0,
-          "players": [
-            "greg",
-            "jah"
-          ],
-          "scores": {
-          },
-          "winningScore": 20
-        },
-        "1": {
-        },
-        "2": {
-          "children": {
-            "property": [
-              "turn"
-            ],
-            "queryable": [
-              "score",
-              "point",
-              "next"
-            ],
-            "score": [
-              "point"
-            ],
-            "theAble": [
-              "game",
-              "player",
-              "score"
-            ],
-            "unknown": [
-              "player"
-            ],
-            "what": [
-              "player"
-            ]
-          },
-          "concepts": [
-            "properties",
-            "point",
-            "score",
-            "game",
-            "theAble",
-            "player",
-            "what",
-            "unknown",
-            "queryable",
-            "next",
-            "turn",
-            "property"
-          ],
-          "parents": {
-            "game": [
-              "theAble"
-            ],
-            "next": [
-              "queryable"
-            ],
-            "player": [
-              "theAble",
-              "what",
-              "unknown"
-            ],
-            "point": [
-              "score",
-              "queryable"
-            ],
-            "score": [
-              "theAble",
-              "queryable"
-            ],
-            "turn": [
-              "property"
-            ]
-          },
-          "properties": {
-            "handlers": {
-            },
-            "initHandlers": [
-            ],
-            "root": {
-              "game": {
-              },
-              "next": {
-              },
-              "player": {
-              },
-              "point": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "score": {
-              },
-              "theAble": {
-              },
-              "turn": {
-              },
-              "unknown": {
-              },
-              "what": {
-              }
-            }
-          },
-          "property": {
-          },
-          "relations": [
-          ],
-          "valueToWords": {
-          }
-        },
-        "3": {
-          "mentioned": [
-          ],
-          "variables": {
-          }
-        },
-        "4": {
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "marker": "list",
-            "response": true,
-            "topLevel": true,
-            "value": [
-              {
-                "marker": "unknown",
-                "text": "greg",
-                "unknown": true,
-                "value": "greg",
-                "word": "greg"
-              },
-              {
-                "marker": "unknown",
-                "text": "jah",
-                "unknown": true,
-                "value": "jah",
-                "word": "jah"
-              }
-            ],
-            "verbatim": "The players are greg and jah"
-          },
-          "paraphrases": "greg and jah",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 20",
-            "who are the players?",
-            "The players are greg and jah"
-          ]
-        },
-        {
-          "context": {
-            "controlKeepMotivation": true,
-            "marker": "controlBetween",
-            "motivationKeep": true,
-            "response": true,
-            "topLevel": true,
-            "verbatim": "who are the players?"
-          },
-          "paraphrases": "who are the players?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 20",
-            "who are the players?",
-            "The players are greg and jah"
-          ]
-        },
-        {
-          "context": {
-            "amount": {
-              "marker": "number",
-              "text": "20",
-              "types": [
-                "number"
-              ],
-              "value": 20,
-              "word": "20"
-            },
-            "default": true,
-            "marker": "point",
-            "modifiers": [
-              "amount"
-            ],
-            "response": true,
-            "text": "20 points",
-            "topLevel": true,
-            "verbatim": "The winning score is 20",
-            "word": "points"
-          },
-          "paraphrases": "20 points",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 20",
-            "who are the players?",
-            "The players are greg and jah"
-          ]
-        },
-        {
-          "context": {
-            "controlKeepMotivation": true,
-            "marker": "controlBetween",
-            "motivationKeep": true,
-            "response": true,
-            "topLevel": true,
-            "verbatim": "what is the winning score?"
-          },
-          "paraphrases": "what is the winning score?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 20",
-            "who are the players?",
-            "The players are greg and jah"
-          ]
-        },
-        {
-          "context": {
-            "arg": {
-              "concept": true,
-              "default": true,
-              "determiner": "a",
-              "marker": "game",
-              "modifiers": [
-                "determiner",
-                "new"
-              ],
-              "new": "new",
-              "number": "one",
-              "pullFromContext": false,
-              "text": "a new game",
-              "types": [
-                "game"
-              ],
-              "wantsValue": true,
-              "word": "game"
-            },
-            "default": true,
-            "marker": "start",
-            "text": "start a new game",
-            "topLevel": true,
-            "touchedBy": [
-              "call163"
-            ],
-            "word": "start"
-          },
-          "paraphrases": "start a new game",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The winning score is 20",
-            "who are the players?",
-            "The players are greg and jah"
-          ]
-        }
-      ]
-    },
-    "paraphrases": [
-      "start a new game",
-      "what is the winning score?",
-      "20 points",
-      "who are the players?",
-      "greg and jah"
-    ],
-    "query": "start a new game 20 points greg and jah",
-    "responses": [
-      "",
-      "what is the winning score?",
-      "The winning score is 20",
-      "who are the players?",
-      "The players are greg and jah"
-    ]
-  },
-  {
-    "associations": [
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "game",
-          0
-        ],
-        [
-          "new",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "new",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "game",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "list",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "number",
-          0
-        ],
-        [
-          "point",
-          0
-        ]
-      ]
-    ],
-    "config": {
-    },
-    "contexts": [
-      {
-        "arg": {
-          "concept": true,
-          "default": true,
-          "determiner": "a",
-          "marker": "game",
-          "modifiers": [
-            "determiner",
-            "new"
-          ],
-          "new": "new",
-          "number": "one",
-          "pullFromContext": false,
-          "text": "a new game",
-          "types": [
-            "game"
-          ],
-          "wantsValue": true,
-          "word": "game"
-        },
-        "default": true,
-        "marker": "start",
-        "text": "start a new game",
-        "topLevel": true,
-        "touchedBy": [
-          "call147"
-        ],
-        "word": "start"
-      },
-      {
-        "controlKeepMotivation": true,
-        "marker": "controlBetween",
-        "motivationKeep": true,
-        "response": true,
-        "topLevel": true,
-        "verbatim": "what is the winning score?"
-      },
-      {
-        "marker": "list",
-        "response": true,
-        "topLevel": true,
-        "value": [
-          {
-            "marker": "unknown",
-            "text": "greg",
-            "unknown": true,
-            "value": "greg",
-            "word": "greg"
-          },
-          {
-            "marker": "unknown",
-            "text": "jah",
-            "unknown": true,
-            "value": "jah",
-            "word": "jah"
-          }
-        ],
-        "verbatim": "The players are greg and jah"
-      },
-      {
-        "controlKeepMotivation": true,
-        "marker": "controlBetween",
-        "motivationKeep": true,
-        "response": true,
-        "topLevel": true,
-        "verbatim": "what is the winning score?"
-      },
-      {
-        "amount": {
-          "marker": "number",
-          "text": "20",
-          "types": [
-            "number"
-          ],
-          "value": 20,
-          "word": "20"
-        },
-        "default": true,
-        "marker": "point",
-        "modifiers": [
-          "amount"
-        ],
-        "response": true,
-        "text": "20 points",
-        "topLevel": true,
-        "verbatim": "The winning score is 20",
-        "word": "points"
-      }
-    ],
-    "metadata": {
-      "opChoices": [
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "game",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "game",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "number",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "number",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "point",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "point",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "new",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "new",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "a",
-            0
-          ],
-          "ops": [
-            [
-              "a",
-              0
-            ],
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "start",
-            0
-          ],
-          "ops": [
-            [
-              "start",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "unknown",
-              1
-            ]
-          ]
-        }
-      ]
-    },
-    "objects": {
-      "namespaced": {
-        "0": {
-          "allPlayersAreKnown": true,
-          "nextPlayer": 0,
-          "players": [
-            "greg",
-            "jah"
-          ],
-          "scores": {
-          },
-          "winningScore": 20
-        },
-        "1": {
-        },
-        "2": {
-          "children": {
-            "property": [
-              "turn"
-            ],
-            "queryable": [
-              "score",
-              "point",
-              "next"
-            ],
-            "score": [
-              "point"
-            ],
-            "theAble": [
-              "game",
-              "player",
-              "score"
-            ],
-            "unknown": [
-              "player"
-            ],
-            "what": [
-              "player"
-            ]
-          },
-          "concepts": [
-            "properties",
-            "point",
-            "score",
-            "game",
-            "theAble",
-            "player",
-            "what",
-            "unknown",
-            "queryable",
-            "next",
-            "turn",
-            "property"
-          ],
-          "parents": {
-            "game": [
-              "theAble"
-            ],
-            "next": [
-              "queryable"
-            ],
-            "player": [
-              "theAble",
-              "what",
-              "unknown"
-            ],
-            "point": [
-              "score",
-              "queryable"
-            ],
-            "score": [
-              "theAble",
-              "queryable"
-            ],
-            "turn": [
-              "property"
-            ]
-          },
-          "properties": {
-            "handlers": {
-            },
-            "initHandlers": [
-            ],
-            "root": {
-              "game": {
-              },
-              "next": {
-              },
-              "player": {
-              },
-              "point": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "score": {
-              },
-              "theAble": {
-              },
-              "turn": {
-              },
-              "unknown": {
-              },
-              "what": {
-              }
-            }
-          },
-          "property": {
-          },
-          "relations": [
-          ],
-          "valueToWords": {
-          }
-        },
-        "3": {
-          "mentioned": [
-          ],
-          "variables": {
-          }
-        },
-        "4": {
-        }
-      },
-      "processed": [
-        {
-          "context": {
-            "amount": {
-              "marker": "number",
-              "text": "20",
-              "types": [
-                "number"
-              ],
-              "value": 20,
-              "word": "20"
-            },
-            "default": true,
-            "marker": "point",
-            "modifiers": [
-              "amount"
-            ],
-            "response": true,
-            "text": "20 points",
-            "topLevel": true,
-            "verbatim": "The winning score is 20",
-            "word": "points"
-          },
-          "paraphrases": "20 points",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The players are greg and jah",
-            "what is the winning score?",
-            "The winning score is 20"
-          ]
-        },
-        {
-          "context": {
-            "controlKeepMotivation": true,
-            "marker": "controlBetween",
-            "motivationKeep": true,
-            "response": true,
-            "topLevel": true,
-            "verbatim": "what is the winning score?"
-          },
-          "paraphrases": "what is the winning score?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The players are greg and jah",
-            "what is the winning score?",
-            "The winning score is 20"
-          ]
-        },
-        {
-          "context": {
-            "marker": "list",
-            "response": true,
-            "topLevel": true,
-            "value": [
-              {
-                "marker": "unknown",
-                "text": "greg",
-                "unknown": true,
-                "value": "greg",
-                "word": "greg"
-              },
-              {
-                "marker": "unknown",
-                "text": "jah",
-                "unknown": true,
-                "value": "jah",
-                "word": "jah"
-              }
-            ],
-            "verbatim": "The players are greg and jah"
-          },
-          "paraphrases": "greg and jah",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The players are greg and jah",
-            "what is the winning score?",
-            "The winning score is 20"
-          ]
-        },
-        {
-          "context": {
-            "controlKeepMotivation": true,
-            "marker": "controlBetween",
-            "motivationKeep": true,
-            "response": true,
-            "topLevel": true,
-            "verbatim": "what is the winning score?"
-          },
-          "paraphrases": "what is the winning score?",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The players are greg and jah",
-            "what is the winning score?",
-            "The winning score is 20"
-          ]
-        },
-        {
-          "context": {
-            "arg": {
-              "concept": true,
-              "default": true,
-              "determiner": "a",
-              "marker": "game",
-              "modifiers": [
-                "determiner",
-                "new"
-              ],
-              "new": "new",
-              "number": "one",
-              "pullFromContext": false,
-              "text": "a new game",
-              "types": [
-                "game"
-              ],
-              "wantsValue": true,
-              "word": "game"
-            },
-            "default": true,
-            "marker": "start",
-            "text": "start a new game",
-            "topLevel": true,
-            "touchedBy": [
-              "call147"
-            ],
-            "word": "start"
-          },
-          "paraphrases": "start a new game",
-          "responses": [
-            "",
-            "what is the winning score?",
-            "The players are greg and jah",
-            "what is the winning score?",
-            "The winning score is 20"
-          ]
-        }
-      ]
-    },
-    "paraphrases": [
-      "start a new game",
-      "what is the winning score?",
-      "greg and jah",
-      "what is the winning score?",
-      "20 points"
-    ],
-    "query": "start a new game greg and jah 20 points",
-    "responses": [
-      "",
-      "what is the winning score?",
-      "The players are greg and jah",
-      "what is the winning score?",
-      "The winning score is 20"
-    ]
-  },
-  {
-    "associations": [
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "game",
-          0
-        ],
-        [
-          "new",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "new",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "a",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "game",
-          0
-        ],
-        [
-          "start",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "score",
-          0
-        ],
-        [
-          "the",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "score",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "is",
-          0
-        ],
-        [
-          "the",
-          0
-        ]
-      ],
-      [
-        [
           "number",
           0
         ],
@@ -19338,7 +16397,7 @@
             "pullFromContext": true,
             "text": "the winning score",
             "touchedBy": [
-              "call25"
+              "call3"
             ],
             "types": [
               "score"
@@ -19367,7 +16426,7 @@
         "text": "what is the winning score",
         "topLevel": true,
         "touchedBy": [
-          "call24"
+          "call2"
         ],
         "two": {
           "concept": true,
@@ -19391,6 +16450,7 @@
         "word": "is"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -19467,22 +16527,6 @@
         },
         {
           "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "the",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "the",
             0
           ],
@@ -19537,65 +16581,18 @@
         },
         "2": {
           "children": {
-            "property": [
-              "turn"
-            ],
-            "queryable": [
-              "score",
-              "point",
-              "next"
-            ],
             "score": [
               "point"
-            ],
-            "theAble": [
-              "game",
-              "player",
-              "score"
-            ],
-            "unknown": [
-              "player"
-            ],
-            "what": [
-              "player"
             ]
           },
           "concepts": [
             "properties",
             "point",
-            "score",
-            "game",
-            "theAble",
-            "player",
-            "what",
-            "unknown",
-            "queryable",
-            "next",
-            "turn",
-            "property"
+            "score"
           ],
           "parents": {
-            "game": [
-              "theAble"
-            ],
-            "next": [
-              "queryable"
-            ],
-            "player": [
-              "theAble",
-              "what",
-              "unknown"
-            ],
             "point": [
-              "score",
-              "queryable"
-            ],
-            "score": [
-              "theAble",
-              "queryable"
-            ],
-            "turn": [
-              "property"
+              "score"
             ]
           },
           "properties": {
@@ -19604,27 +16601,9 @@
             "initHandlers": [
             ],
             "root": {
-              "game": {
-              },
-              "next": {
-              },
-              "player": {
-              },
               "point": {
               },
-              "property": {
-              },
-              "queryable": {
-              },
               "score": {
-              },
-              "theAble": {
-              },
-              "turn": {
-              },
-              "unknown": {
-              },
-              "what": {
               }
             }
           },
@@ -19723,7 +16702,7 @@
                 "pullFromContext": true,
                 "text": "the winning score",
                 "touchedBy": [
-                  "call25"
+                  "call3"
                 ],
                 "types": [
                   "score"
@@ -19752,7 +16731,7 @@
             "text": "what is the winning score",
             "topLevel": true,
             "touchedBy": [
-              "call24"
+              "call2"
             ],
             "two": {
               "concept": true,
@@ -20637,6 +17616,2226 @@
     "query": "whose turn is it",
     "responses": [
       "it is no one's turn"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "arg": {
+          "concept": true,
+          "default": true,
+          "determiner": "a",
+          "marker": "game",
+          "modifiers": [
+            "determiner",
+            "new"
+          ],
+          "new": "new",
+          "number": "one",
+          "pullFromContext": false,
+          "text": "a new game",
+          "types": [
+            "game"
+          ],
+          "wantsValue": true,
+          "word": "game"
+        },
+        "default": true,
+        "marker": "start",
+        "text": "start a new game",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "start"
+      },
+      {
+        "controlKeepMotivation": true,
+        "marker": "controlBetween",
+        "motivationKeep": true,
+        "response": true,
+        "topLevel": true,
+        "verbatim": "what is the winning score?"
+      },
+      {
+        "amount": {
+          "marker": "number",
+          "text": "20",
+          "types": [
+            "number"
+          ],
+          "value": 20,
+          "word": "20"
+        },
+        "default": true,
+        "marker": "point",
+        "modifiers": [
+          "amount"
+        ],
+        "response": true,
+        "text": "20 points",
+        "topLevel": true,
+        "verbatim": "The winning score is 20",
+        "word": "points"
+      },
+      {
+        "controlKeepMotivation": true,
+        "marker": "controlEnd",
+        "motivationKeep": true,
+        "response": true,
+        "topLevel": true,
+        "verbatim": "who are the players?"
+      },
+      {
+        "dead": true,
+        "marker": "list",
+        "response": true,
+        "topLevel": true,
+        "value": [
+          {
+            "marker": "unknown",
+            "text": "greg",
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          {
+            "marker": "unknown",
+            "text": "jah",
+            "unknown": true,
+            "value": "jah",
+            "word": "jah"
+          }
+        ],
+        "verbatim": "The players are greg and jah"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "game",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "game",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "new",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "point",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "a",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "start",
+            0
+          ],
+          "ops": [
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            0
+          ],
+          "ops": [
+            [
+              "list",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "allPlayersAreKnown": true,
+          "nextPlayer": 0,
+          "players": [
+            "greg",
+            "jah"
+          ],
+          "scores": {
+          },
+          "winningScore": 20
+        },
+        "1": {
+        },
+        "2": {
+          "children": {
+            "score": [
+              "point"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "point",
+            "score"
+          ],
+          "parents": {
+            "point": [
+              "score"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "point": {
+              },
+              "score": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "3": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "dead": true,
+            "marker": "list",
+            "response": true,
+            "topLevel": true,
+            "value": [
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              },
+              {
+                "marker": "unknown",
+                "text": "jah",
+                "unknown": true,
+                "value": "jah",
+                "word": "jah"
+              }
+            ],
+            "verbatim": "The players are greg and jah"
+          },
+          "paraphrases": "greg and jah",
+          "responses": [
+            "The players are greg and jah"
+          ]
+        },
+        {
+          "context": {
+            "controlKeepMotivation": true,
+            "marker": "controlEnd",
+            "motivationKeep": true,
+            "response": true,
+            "topLevel": true,
+            "verbatim": "who are the players?"
+          },
+          "paraphrases": "who are the players?",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 20",
+            "who are the players?"
+          ]
+        },
+        {
+          "context": {
+            "amount": {
+              "marker": "number",
+              "text": "20",
+              "types": [
+                "number"
+              ],
+              "value": 20,
+              "word": "20"
+            },
+            "default": true,
+            "marker": "point",
+            "modifiers": [
+              "amount"
+            ],
+            "response": true,
+            "text": "20 points",
+            "topLevel": true,
+            "verbatim": "The winning score is 20",
+            "word": "points"
+          },
+          "paraphrases": "20 points",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 20",
+            "who are the players?"
+          ]
+        },
+        {
+          "context": {
+            "controlKeepMotivation": true,
+            "marker": "controlBetween",
+            "motivationKeep": true,
+            "response": true,
+            "topLevel": true,
+            "verbatim": "what is the winning score?"
+          },
+          "paraphrases": "what is the winning score?",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 20",
+            "who are the players?"
+          ]
+        },
+        {
+          "context": {
+            "arg": {
+              "concept": true,
+              "default": true,
+              "determiner": "a",
+              "marker": "game",
+              "modifiers": [
+                "determiner",
+                "new"
+              ],
+              "new": "new",
+              "number": "one",
+              "pullFromContext": false,
+              "text": "a new game",
+              "types": [
+                "game"
+              ],
+              "wantsValue": true,
+              "word": "game"
+            },
+            "default": true,
+            "marker": "start",
+            "text": "start a new game",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "start"
+          },
+          "paraphrases": "start a new game",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 20",
+            "who are the players?"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "start a new game",
+      "what is the winning score?",
+      "20 points",
+      "who are the players?",
+      "greg and jah"
+    ],
+    "query": "start a new game 20 points\\ngreg and jah",
+    "responses": [
+      "",
+      "what is the winning score?",
+      "The winning score is 20",
+      "who are the players?",
+      "The players are greg and jah"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "score",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "number",
+          0
+        ],
+        [
+          "player",
+          0
+        ],
+        [
+          "point",
+          0
+        ],
+        [
+          "scored",
+          0
+        ]
+      ],
+      [
+        [
+          "number",
+          0
+        ],
+        [
+          "point",
+          0
+        ],
+        [
+          "scored",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "player",
+          0
+        ],
+        [
+          "point",
+          0
+        ],
+        [
+          "scored",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "arg": {
+          "concept": true,
+          "default": true,
+          "determiner": "a",
+          "marker": "game",
+          "modifiers": [
+            "determiner",
+            "new"
+          ],
+          "new": "new",
+          "number": "one",
+          "pullFromContext": false,
+          "text": "a new game",
+          "types": [
+            "game"
+          ],
+          "wantsValue": true,
+          "word": "game"
+        },
+        "default": true,
+        "marker": "start",
+        "text": "start a new game",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "start"
+      },
+      {
+        "controlKeepMotivation": true,
+        "marker": "controlBetween",
+        "motivationKeep": true,
+        "response": true,
+        "topLevel": true,
+        "verbatim": "what is the winning score?"
+      },
+      {
+        "amount": {
+          "marker": "number",
+          "text": "100",
+          "types": [
+            "number"
+          ],
+          "value": 100,
+          "word": "100"
+        },
+        "default": true,
+        "marker": "point",
+        "modifiers": [
+          "amount"
+        ],
+        "response": true,
+        "text": "100 points",
+        "topLevel": true,
+        "verbatim": "The winning score is 100",
+        "word": "points"
+      },
+      {
+        "controlKeepMotivation": true,
+        "marker": "controlEnd",
+        "motivationKeep": true,
+        "response": true,
+        "topLevel": true,
+        "verbatim": "who are the players?"
+      },
+      {
+        "dead": true,
+        "marker": "list",
+        "response": true,
+        "topLevel": true,
+        "value": [
+          {
+            "marker": "unknown",
+            "text": "greg",
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          {
+            "marker": "unknown",
+            "text": "joe",
+            "unknown": true,
+            "value": "joe",
+            "word": "joe"
+          }
+        ],
+        "verbatim": "The players are greg and joe"
+      },
+      {
+        "default": true,
+        "marker": "scored",
+        "player": {
+          "marker": "player",
+          "text": "greg",
+          "types": [
+            "player"
+          ],
+          "unknown": true,
+          "value": "greg",
+          "word": "greg"
+        },
+        "points": {
+          "amount": {
+            "marker": "number",
+            "text": "12",
+            "types": [
+              "number"
+            ],
+            "value": 12,
+            "word": "12"
+          },
+          "default": true,
+          "marker": "point",
+          "modifiers": [
+            "amount"
+          ],
+          "text": "12 points",
+          "types": [
+            "point"
+          ],
+          "word": "points"
+        },
+        "text": "greg got 12 points",
+        "topLevel": true,
+        "touchedBy": [
+          "call18"
+        ],
+        "word": "got"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "number": "one",
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "what is the scores",
+          "types": [
+            "what"
+          ],
+          "word": "what"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "focusable": [
+            "two",
+            "one"
+          ],
+          "marker": "is",
+          "number": "many",
+          "one": {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "evaluate": true,
+            "marker": "score",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the scores",
+            "types": [
+              "score"
+            ],
+            "wantsValue": true,
+            "word": "scores"
+          },
+          "two": {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "evaluateWasProcessed": true,
+            "focus": true,
+            "instance": true,
+            "marker": "score",
+            "modifiers": [
+              "determiner"
+            ],
+            "number": "many",
+            "pullFromContext": true,
+            "text": "the scores",
+            "touchedBy": [
+              "call26"
+            ],
+            "types": [
+              "score"
+            ],
+            "value": "greg has 12 points",
+            "wantsValue": true,
+            "word": "scores"
+          },
+          "word": "are"
+        },
+        "text": "what is the scores",
+        "topLevel": true,
+        "touchedBy": [
+          "call25"
+        ],
+        "two": {
+          "concept": true,
+          "default": true,
+          "determiner": "the",
+          "marker": "score",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "response": true,
+          "text": "the scores",
+          "types": [
+            "score"
+          ],
+          "wantsValue": true,
+          "word": "scores"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "game",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "game",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "new",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "point",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "a",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "start",
+            0
+          ],
+          "ops": [
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "score",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "score",
+              0
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "point",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "scored",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "scored",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ],
+            [
+              "list",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "allPlayersAreKnown": true,
+          "nextPlayer": 1,
+          "players": [
+            "greg",
+            "joe"
+          ],
+          "scores": {
+            "greg": 12
+          },
+          "winningScore": 100
+        },
+        "1": {
+        },
+        "2": {
+          "children": {
+            "score": [
+              "point"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "point",
+            "score"
+          ],
+          "parents": {
+            "point": [
+              "score"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "point": {
+              },
+              "score": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "3": {
+          "mentioned": [
+            {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is the scores",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            }
+          ],
+          "variables": {
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is the scores",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "focusable": [
+                "two",
+                "one"
+              ],
+              "marker": "is",
+              "number": "many",
+              "one": {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "evaluate": true,
+                "marker": "score",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the scores",
+                "types": [
+                  "score"
+                ],
+                "wantsValue": true,
+                "word": "scores"
+              },
+              "two": {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "evaluateWasProcessed": true,
+                "focus": true,
+                "instance": true,
+                "marker": "score",
+                "modifiers": [
+                  "determiner"
+                ],
+                "number": "many",
+                "pullFromContext": true,
+                "text": "the scores",
+                "touchedBy": [
+                  "call26"
+                ],
+                "types": [
+                  "score"
+                ],
+                "value": "greg has 12 points",
+                "wantsValue": true,
+                "word": "scores"
+              },
+              "word": "are"
+            },
+            "text": "what is the scores",
+            "topLevel": true,
+            "touchedBy": [
+              "call25"
+            ],
+            "two": {
+              "concept": true,
+              "default": true,
+              "determiner": "the",
+              "marker": "score",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "response": true,
+              "text": "the scores",
+              "types": [
+                "score"
+              ],
+              "wantsValue": true,
+              "word": "scores"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is the scores?",
+          "responses": [
+            "The players are greg and joe",
+            "",
+            "the scores are greg has 12 points"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "scored",
+            "player": {
+              "marker": "player",
+              "text": "greg",
+              "types": [
+                "player"
+              ],
+              "unknown": true,
+              "value": "greg",
+              "word": "greg"
+            },
+            "points": {
+              "amount": {
+                "marker": "number",
+                "text": "12",
+                "types": [
+                  "number"
+                ],
+                "value": 12,
+                "word": "12"
+              },
+              "default": true,
+              "marker": "point",
+              "modifiers": [
+                "amount"
+              ],
+              "text": "12 points",
+              "types": [
+                "point"
+              ],
+              "word": "points"
+            },
+            "text": "greg got 12 points",
+            "topLevel": true,
+            "touchedBy": [
+              "call18"
+            ],
+            "word": "got"
+          },
+          "paraphrases": "greg got 12 points",
+          "responses": [
+            "The players are greg and joe",
+            "",
+            "the scores are greg has 12 points"
+          ]
+        },
+        {
+          "context": {
+            "dead": true,
+            "marker": "list",
+            "response": true,
+            "topLevel": true,
+            "value": [
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              },
+              {
+                "marker": "unknown",
+                "text": "joe",
+                "unknown": true,
+                "value": "joe",
+                "word": "joe"
+              }
+            ],
+            "verbatim": "The players are greg and joe"
+          },
+          "paraphrases": "greg and joe",
+          "responses": [
+            "The players are greg and joe",
+            "",
+            "the scores are greg has 12 points"
+          ]
+        },
+        {
+          "context": {
+            "controlKeepMotivation": true,
+            "marker": "controlEnd",
+            "motivationKeep": true,
+            "response": true,
+            "topLevel": true,
+            "verbatim": "who are the players?"
+          },
+          "paraphrases": "who are the players?",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 100",
+            "who are the players?"
+          ]
+        },
+        {
+          "context": {
+            "amount": {
+              "marker": "number",
+              "text": "100",
+              "types": [
+                "number"
+              ],
+              "value": 100,
+              "word": "100"
+            },
+            "default": true,
+            "marker": "point",
+            "modifiers": [
+              "amount"
+            ],
+            "response": true,
+            "text": "100 points",
+            "topLevel": true,
+            "verbatim": "The winning score is 100",
+            "word": "points"
+          },
+          "paraphrases": "100 points",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 100",
+            "who are the players?"
+          ]
+        },
+        {
+          "context": {
+            "controlKeepMotivation": true,
+            "marker": "controlBetween",
+            "motivationKeep": true,
+            "response": true,
+            "topLevel": true,
+            "verbatim": "what is the winning score?"
+          },
+          "paraphrases": "what is the winning score?",
+          "responses": [
+            "",
+            "what is the winning score?",
+            "The winning score is 100",
+            "who are the players?"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "start a new game",
+      "what is the winning score?",
+      "100 points",
+      "who are the players?",
+      "greg and joe",
+      "greg got 12 points",
+      "what is the scores?"
+    ],
+    "query": "start a new game 100 points\\ngreg and joe greg got 12 points what is the scores",
+    "responses": [
+      "",
+      "what is the winning score?",
+      "The winning score is 100",
+      "who are the players?",
+      "The players are greg and joe",
+      "",
+      "the scores are greg has 12 points"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "number",
+          0
+        ],
+        [
+          "point",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "arg": {
+          "concept": true,
+          "default": true,
+          "determiner": "a",
+          "marker": "game",
+          "modifiers": [
+            "determiner",
+            "new"
+          ],
+          "new": "new",
+          "number": "one",
+          "pullFromContext": false,
+          "text": "a new game",
+          "types": [
+            "game"
+          ],
+          "wantsValue": true,
+          "word": "game"
+        },
+        "default": true,
+        "marker": "start",
+        "text": "start a new game",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "start"
+      },
+      {
+        "controlKeepMotivation": true,
+        "marker": "controlEnd",
+        "motivationKeep": true,
+        "response": true,
+        "topLevel": true,
+        "verbatim": "what is the winning score?"
+      },
+      {
+        "dead": true,
+        "marker": "list",
+        "response": true,
+        "topLevel": true,
+        "value": [
+          {
+            "marker": "unknown",
+            "text": "greg",
+            "unknown": true,
+            "value": "greg",
+            "word": "greg"
+          },
+          {
+            "marker": "unknown",
+            "text": "jah",
+            "unknown": true,
+            "value": "jah",
+            "word": "jah"
+          }
+        ],
+        "verbatim": "The players are greg and jah"
+      },
+      {
+        "controlKeepMotivation": true,
+        "marker": "controlBetween",
+        "motivationKeep": true,
+        "response": true,
+        "topLevel": true,
+        "verbatim": "what is the winning score?"
+      },
+      {
+        "amount": {
+          "marker": "number",
+          "text": "20",
+          "types": [
+            "number"
+          ],
+          "value": 20,
+          "word": "20"
+        },
+        "default": true,
+        "marker": "point",
+        "modifiers": [
+          "amount"
+        ],
+        "response": true,
+        "text": "20 points",
+        "topLevel": true,
+        "verbatim": "The winning score is 20",
+        "word": "points"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "game",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "game",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "new",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "new",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "a",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "start",
+            0
+          ],
+          "ops": [
+            [
+              "start",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            0
+          ],
+          "ops": [
+            [
+              "list",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "point",
+            0
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "point",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "allPlayersAreKnown": true,
+          "nextPlayer": 0,
+          "players": [
+            "greg",
+            "jah"
+          ],
+          "scores": {
+          },
+          "winningScore": 20
+        },
+        "1": {
+        },
+        "2": {
+          "children": {
+            "score": [
+              "point"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "point",
+            "score"
+          ],
+          "parents": {
+            "point": [
+              "score"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "point": {
+              },
+              "score": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "3": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "amount": {
+              "marker": "number",
+              "text": "20",
+              "types": [
+                "number"
+              ],
+              "value": 20,
+              "word": "20"
+            },
+            "default": true,
+            "marker": "point",
+            "modifiers": [
+              "amount"
+            ],
+            "response": true,
+            "text": "20 points",
+            "topLevel": true,
+            "verbatim": "The winning score is 20",
+            "word": "points"
+          },
+          "paraphrases": "20 points",
+          "responses": [
+            "The players are greg and jah",
+            "what is the winning score?",
+            "The winning score is 20"
+          ]
+        },
+        {
+          "context": {
+            "controlKeepMotivation": true,
+            "marker": "controlBetween",
+            "motivationKeep": true,
+            "response": true,
+            "topLevel": true,
+            "verbatim": "what is the winning score?"
+          },
+          "paraphrases": "what is the winning score?",
+          "responses": [
+            "The players are greg and jah",
+            "what is the winning score?",
+            "The winning score is 20"
+          ]
+        },
+        {
+          "context": {
+            "dead": true,
+            "marker": "list",
+            "response": true,
+            "topLevel": true,
+            "value": [
+              {
+                "marker": "unknown",
+                "text": "greg",
+                "unknown": true,
+                "value": "greg",
+                "word": "greg"
+              },
+              {
+                "marker": "unknown",
+                "text": "jah",
+                "unknown": true,
+                "value": "jah",
+                "word": "jah"
+              }
+            ],
+            "verbatim": "The players are greg and jah"
+          },
+          "paraphrases": "greg and jah",
+          "responses": [
+            "The players are greg and jah",
+            "what is the winning score?",
+            "The winning score is 20"
+          ]
+        },
+        {
+          "context": {
+            "controlKeepMotivation": true,
+            "marker": "controlEnd",
+            "motivationKeep": true,
+            "response": true,
+            "topLevel": true,
+            "verbatim": "what is the winning score?"
+          },
+          "paraphrases": "what is the winning score?",
+          "responses": [
+            "",
+            "what is the winning score?"
+          ]
+        },
+        {
+          "context": {
+            "arg": {
+              "concept": true,
+              "default": true,
+              "determiner": "a",
+              "marker": "game",
+              "modifiers": [
+                "determiner",
+                "new"
+              ],
+              "new": "new",
+              "number": "one",
+              "pullFromContext": false,
+              "text": "a new game",
+              "types": [
+                "game"
+              ],
+              "wantsValue": true,
+              "word": "game"
+            },
+            "default": true,
+            "marker": "start",
+            "text": "start a new game",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "start"
+          },
+          "paraphrases": "start a new game",
+          "responses": [
+            "",
+            "what is the winning score?"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "start a new game",
+      "what is the winning score?",
+      "greg and jah",
+      "what is the winning score?",
+      "20 points"
+    ],
+    "query": "start a new game\\ngreg and jah 20 points",
+    "responses": [
+      "",
+      "what is the winning score?",
+      "The players are greg and jah",
+      "what is the winning score?",
+      "The winning score is 20"
     ]
   }
 ]

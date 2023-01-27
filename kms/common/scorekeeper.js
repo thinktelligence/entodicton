@@ -5,6 +5,7 @@ const pluralize = require('pluralize')
 //const people = require('./people')
 const properties = require('./properties')
 const scorekeeper_tests = require('./scorekeeper.test.json')
+const scorekeeper_instance = require('./scorekeeper.instance.json')
 
 /*
 const game = {
@@ -17,6 +18,13 @@ api = {
   _motivations: []
 }
 */
+
+const template = {
+  queries: [
+    // { query: "start a new game", development: true },
+    // { query: "the winning score is 20", development: true },
+  ],
+}
 
 const setPlayers = (objects, config, players) => {
   for (let player of players) {
@@ -241,7 +249,8 @@ let config = {
     {
       match: ({context}) => context.marker == 'score' && context.same && context.winning,
       apply: ({context, objects}) => {
-        objects.winningScore = context.same.amount.value
+        // objects.winningScore = context.same.amount.value
+        objects.winningScore = context.same.value
       }
     },
     {
@@ -373,4 +382,9 @@ entodicton.knowledgeModule( {
     name: './scorekeeper.test.json',
     contents: scorekeeper_tests
   },
+  template: {
+    template,
+    instance: scorekeeper_instance
+  },
+
 })
