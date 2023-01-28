@@ -119,11 +119,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -146,21 +154,48 @@
         "Undefined word 'birds'",
         "Undefined word 'mammals'",
         "Undefined word 'animals'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('unknown', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]"
+        "Counter == 2. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 3. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 4. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Op choices were: [(('list', 0), [('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('list', 1), ('unknown', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['list', 1], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "unknown",
+              "list",
               0
             ],
             "ops": [
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "list",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -179,20 +214,8 @@
                 0
               ],
               [
-                "unknown",
-                0
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -213,6 +236,10 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -338,7 +365,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "birds and mammals are animals"
     },
     {
@@ -366,6 +393,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -414,6 +445,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -493,11 +528,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -693,7 +736,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "mammals have ears"
     },
     {
@@ -721,6 +764,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -769,6 +816,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -848,11 +899,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -1048,7 +1107,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "mammals have hair"
     },
     {
@@ -1076,6 +1135,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -1124,6 +1187,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -1203,11 +1270,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -1341,6 +1416,7 @@
           "marker": "have",
           "word": "have",
           "is_compound": true,
+          "dead": false,
           "object": {
             "number": "many",
             "value": "mammal",
@@ -1455,7 +1531,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "mammals dont have wings"
     },
     {
@@ -1483,6 +1559,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -1531,6 +1611,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -1610,11 +1694,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -1810,7 +1902,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "animals have skin"
     },
     {
@@ -1838,6 +1930,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -1886,6 +1982,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -1965,11 +2065,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -2165,7 +2273,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "animals have eyes"
     },
     {
@@ -2193,6 +2301,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -2241,6 +2353,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -2320,11 +2436,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -2520,7 +2644,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "birds have wings"
     },
     {
@@ -2548,6 +2672,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -2596,6 +2724,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -2675,11 +2807,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -2875,7 +3015,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "birds have beaks"
     },
     {
@@ -2903,6 +3043,10 @@
         [
           "articlePOS",
           "articlePOS"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -2951,6 +3095,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -3030,11 +3178,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -3058,20 +3214,27 @@
         "Undefined word 'bats'",
         "Undefined word 'felines'",
         "Undefined word 'canines'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('is', 0), ('mammal', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 3\n  0.0 - [['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 5\n  0.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]"
+        "Counter == 4. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 5. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 6. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Op choices were: [(('list', 0), [('is', 0), ('list', 0), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('mammal', 0), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['is', 0], ['list', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.25 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  0.25 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 4\n  0.3333333333333333 - [['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.3333333333333333 - [['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]\n  Group 5\n  0.3333333333333333 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['mammal', 0]]\n  0.3333333333333333 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['mammal', 0]]"
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "unknown",
+              "list",
               0
             ],
             "ops": [
               [
                 "is",
+                0
+              ],
+              [
+                "list",
                 0
               ],
               [
@@ -3086,13 +3249,17 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "mammal",
@@ -3106,13 +3273,17 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "mammal",
@@ -3126,13 +3297,17 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "mammal",
@@ -3155,23 +3330,11 @@
                 0
               ],
               [
-                "mammal",
-                0
+                "list",
+                1
               ],
               [
-                "unknown",
-                1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "is",
+                "mammal",
                 0
               ],
               [
@@ -3189,6 +3352,14 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
               ]
             ]
           },
@@ -3342,7 +3513,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "humans bats felines and canines are mammals"
     },
     {
@@ -3377,6 +3548,10 @@
         ],
         [
           "bat",
+          "mammal"
+        ],
+        [
+          "bat",
           "object"
         ],
         [
@@ -3386,6 +3561,10 @@
         [
           "bat",
           "theAble"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -3417,6 +3596,10 @@
         ],
         [
           "canine",
+          "mammal"
+        ],
+        [
+          "canine",
           "object"
         ],
         [
@@ -3430,6 +3613,10 @@
         [
           "feline",
           "hierarchyAble"
+        ],
+        [
+          "feline",
+          "mammal"
         ],
         [
           "feline",
@@ -3461,6 +3648,10 @@
         ],
         [
           "human",
+          "mammal"
+        ],
+        [
+          "human",
           "object"
         ],
         [
@@ -3482,6 +3673,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -3561,11 +3756,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -3589,15 +3792,18 @@
         "Undefined word 'eagles'",
         "Undefined word 'pidgeons'",
         "Undefined word 'parrots'",
-        "Op choices were: [(('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('bird', 0), ('is', 0), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['bird', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 3\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 5\n  0.0 - [['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]"
+        "Counter == 4. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 5. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 6. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Op choices were: [(('list', 0), [('bird', 0), ('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('bird', 0), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['bird', 0], ['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.3333333333333333 - [['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.3333333333333333 - [['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['bird', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 3\n  0.3333333333333333 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.3333333333333333 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 4\n  0.0 - [['unknown', 0], ['unknown', 0], ['is', 0], ['bird', 0]]\n  0.0 - [['unknown', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  Group 5\n  0.25 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['bird', 0]]\n  0.25 - [['unknown', 0], ['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['bird', 0]]"
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "unknown",
+              "list",
               0
             ],
             "ops": [
@@ -3607,6 +3813,10 @@
               ],
               [
                 "is",
+                0
+              ],
+              [
+                "list",
                 0
               ],
               [
@@ -3617,8 +3827,8 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
@@ -3628,6 +3838,10 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -3637,8 +3851,8 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
@@ -3648,6 +3862,10 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -3657,8 +3875,8 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
@@ -3668,6 +3886,10 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -3690,20 +3912,8 @@
                 0
               ],
               [
-                "unknown",
+                "list",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ],
               [
                 "unknown",
@@ -3720,6 +3930,14 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
               ]
             ]
           },
@@ -3873,7 +4091,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "owls eagles pidgeons and parrots are birds"
     },
     {
@@ -3908,6 +4126,10 @@
         ],
         [
           "bat",
+          "mammal"
+        ],
+        [
+          "bat",
           "object"
         ],
         [
@@ -3917,6 +4139,10 @@
         [
           "bat",
           "theAble"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -3948,6 +4174,10 @@
         ],
         [
           "canine",
+          "mammal"
+        ],
+        [
+          "canine",
           "object"
         ],
         [
@@ -3957,6 +4187,10 @@
         [
           "canine",
           "theAble"
+        ],
+        [
+          "eagle",
+          "bird"
         ],
         [
           "eagle",
@@ -3977,6 +4211,10 @@
         [
           "feline",
           "hierarchyAble"
+        ],
+        [
+          "feline",
+          "mammal"
         ],
         [
           "feline",
@@ -4008,6 +4246,10 @@
         ],
         [
           "human",
+          "mammal"
+        ],
+        [
+          "human",
           "object"
         ],
         [
@@ -4029,6 +4271,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -4064,6 +4310,10 @@
         ],
         [
           "owl",
+          "bird"
+        ],
+        [
+          "owl",
           "hierarchyAble"
         ],
         [
@@ -4080,6 +4330,10 @@
         ],
         [
           "parrot",
+          "bird"
+        ],
+        [
+          "parrot",
           "hierarchyAble"
         ],
         [
@@ -4093,6 +4347,10 @@
         [
           "parrot",
           "theAble"
+        ],
+        [
+          "pidgeon",
+          "bird"
         ],
         [
           "pidgeon",
@@ -4156,11 +4414,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -4181,9 +4447,9 @@
       ],
       "logs": [
         "Undefined word 'cats'",
-        "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['is', 0], ['feline', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['feline', 0]]"
+        "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['isEd', 0], ['feline', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['feline', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -4229,8 +4495,8 @@
           },
           {
             "op": [
-              "is",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -4240,6 +4506,18 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
               ]
             ]
           },
@@ -4343,7 +4621,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "cats are felines"
     },
     {
@@ -4378,6 +4656,10 @@
         ],
         [
           "bat",
+          "mammal"
+        ],
+        [
+          "bat",
           "object"
         ],
         [
@@ -4387,6 +4669,10 @@
         [
           "bat",
           "theAble"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -4418,6 +4704,10 @@
         ],
         [
           "canine",
+          "mammal"
+        ],
+        [
+          "canine",
           "object"
         ],
         [
@@ -4427,6 +4717,10 @@
         [
           "canine",
           "theAble"
+        ],
+        [
+          "cat",
+          "feline"
         ],
         [
           "cat",
@@ -4443,6 +4737,10 @@
         [
           "cat",
           "theAble"
+        ],
+        [
+          "eagle",
+          "bird"
         ],
         [
           "eagle",
@@ -4463,6 +4761,10 @@
         [
           "feline",
           "hierarchyAble"
+        ],
+        [
+          "feline",
+          "mammal"
         ],
         [
           "feline",
@@ -4494,6 +4796,10 @@
         ],
         [
           "human",
+          "mammal"
+        ],
+        [
+          "human",
           "object"
         ],
         [
@@ -4515,6 +4821,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -4550,6 +4860,10 @@
         ],
         [
           "owl",
+          "bird"
+        ],
+        [
+          "owl",
           "hierarchyAble"
         ],
         [
@@ -4566,6 +4880,10 @@
         ],
         [
           "parrot",
+          "bird"
+        ],
+        [
+          "parrot",
           "hierarchyAble"
         ],
         [
@@ -4579,6 +4897,10 @@
         [
           "parrot",
           "theAble"
+        ],
+        [
+          "pidgeon",
+          "bird"
         ],
         [
           "pidgeon",
@@ -4642,11 +4964,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -4668,15 +4998,18 @@
       "logs": [
         "Undefined word 'dogs'",
         "Undefined word 'wolves'",
-        "Op choices were: [(('unknown', 0), [('canine', 0), ('is', 0), ('unknown', 0)]), (('unknown', 0), [('canine', 0), ('is', 0), ('unknown', 0)]), (('canine', 0), [('canine', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['canine', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['canine', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator canine/0 was [['canine', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.0 - [['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 2\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  0.0 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]"
+        "Counter == 2. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 3. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 4. Applying Operator(list/1, PASS, [Selector(Bridge('{ ...operator, value: append(before, operator.value) }'), , same/(), [Type(variable: 'type')]<==>[], bridge(bridge))], evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['queryable', 'theAble', 'unknown', 'hierarchyAble', 'object', 'notAble']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Op choices were: [(('list', 0), [('canine', 0), ('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('canine', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('canine', 0), [('canine', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['canine', 0], ['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['canine', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator canine/0 was [['canine', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.3333333333333333 - [['unknown', 0], ['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]\n  0.3333333333333333 - [['unknown', 0], ['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['canine', 0]]\n  Group 2\n  0.3333333333333333 - [['list', 0], ['unknown', 0], ['isEd', 0], ['canine', 0]]\n  0.3333333333333333 - [['list', 0], ['unknown', 0], ['is', 0], ['canine', 0]]"
       ],
       "metadata": {
         "opChoices": [
           {
             "op": [
-              "unknown",
+              "list",
               0
             ],
             "ops": [
@@ -4686,6 +5019,10 @@
               ],
               [
                 "is",
+                0
+              ],
+              [
+                "list",
                 0
               ],
               [
@@ -4696,8 +5033,8 @@
           },
           {
             "op": [
-              "unknown",
-              0
+              "list",
+              1
             ],
             "ops": [
               [
@@ -4707,6 +5044,10 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
               ],
               [
                 "unknown",
@@ -4729,20 +5070,8 @@
                 0
               ],
               [
-                "unknown",
+                "list",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "unknown",
-              1
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ],
               [
                 "unknown",
@@ -4759,6 +5088,14 @@
               [
                 "is",
                 0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
               ]
             ]
           },
@@ -4880,7 +5217,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "dogs and wolves are canines"
     },
     {
@@ -4915,6 +5252,10 @@
         ],
         [
           "bat",
+          "mammal"
+        ],
+        [
+          "bat",
           "object"
         ],
         [
@@ -4924,6 +5265,10 @@
         [
           "bat",
           "theAble"
+        ],
+        [
+          "bird",
+          "animal"
         ],
         [
           "bird",
@@ -4955,6 +5300,10 @@
         ],
         [
           "canine",
+          "mammal"
+        ],
+        [
+          "canine",
           "object"
         ],
         [
@@ -4964,6 +5313,10 @@
         [
           "canine",
           "theAble"
+        ],
+        [
+          "cat",
+          "feline"
         ],
         [
           "cat",
@@ -4983,6 +5336,10 @@
         ],
         [
           "dog",
+          "canine"
+        ],
+        [
+          "dog",
           "hierarchyAble"
         ],
         [
@@ -4996,6 +5353,10 @@
         [
           "dog",
           "theAble"
+        ],
+        [
+          "eagle",
+          "bird"
         ],
         [
           "eagle",
@@ -5016,6 +5377,10 @@
         [
           "feline",
           "hierarchyAble"
+        ],
+        [
+          "feline",
+          "mammal"
         ],
         [
           "feline",
@@ -5047,6 +5412,10 @@
         ],
         [
           "human",
+          "mammal"
+        ],
+        [
+          "human",
           "object"
         ],
         [
@@ -5068,6 +5437,10 @@
         [
           "it",
           "queryable"
+        ],
+        [
+          "mammal",
+          "animal"
         ],
         [
           "mammal",
@@ -5103,6 +5476,10 @@
         ],
         [
           "owl",
+          "bird"
+        ],
+        [
+          "owl",
           "hierarchyAble"
         ],
         [
@@ -5119,6 +5496,10 @@
         ],
         [
           "parrot",
+          "bird"
+        ],
+        [
+          "parrot",
           "hierarchyAble"
         ],
         [
@@ -5132,6 +5513,10 @@
         [
           "parrot",
           "theAble"
+        ],
+        [
+          "pidgeon",
+          "bird"
         ],
         [
           "pidgeon",
@@ -5195,11 +5580,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -5212,6 +5605,10 @@
         [
           "whose",
           "object"
+        ],
+        [
+          "wolf",
+          "canine"
         ],
         [
           "wolf",
@@ -5411,7 +5808,7 @@
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "bats have wings"
     }
   ],

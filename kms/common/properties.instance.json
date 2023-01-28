@@ -98,11 +98,19 @@
         ],
         [
           "unknown",
+          "object"
+        ],
+        [
+          "unknown",
           "queryable"
         ],
         [
           "unknown",
           "theAble"
+        ],
+        [
+          "what",
+          "object"
         ],
         [
           "what",
@@ -121,10 +129,10 @@
         "Undefined word 'property1'",
         "Undefined word 'object1'",
         "Undefined word 'value1'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  1.0 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  Group 1\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]",
-        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"property1\",\n        \"text\": \"the property1 of object1 is value1\",\n        \"value\": \"property1\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"object1\",\n          \"text\": \"object1\",\n          \"value\": \"object1\",\n          \"unknown\": true,\n          \"types\": [\n            \"object\",\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"property1\",\n            \"text\": \"the property1\",\n            \"value\": \"property1\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"object1\",\n            \"text\": \"object1\",\n            \"value\": \"object1\",\n            \"unknown\": true,\n            \"types\": [\n              \"object\",\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"value1\",\n          \"text\": \"value1\",\n          \"value\": \"value1\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties5\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
+        "Op choices were: [(('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 0), ('unknown', 1)]), (('the', 0), [('is', 0), ('propertyOf', 0), ('the', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('propertyOf', 0), ('unknown', 1)]), (('propertyOf', 0), [('is', 0), ('propertyOf', 0)]), (('propertyOf', 1), [('is', 0), ('propertyOf', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator the/0 was [['is', 0], ['propertyOf', 0], ['the', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['propertyOf', 0], ['unknown', 1]]\n  Context for choosing the operator propertyOf/0 was [['is', 0], ['propertyOf', 0]]\n  Context for choosing the operator propertyOf/1 was [['is', 0], ['propertyOf', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['propertyOf', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['propertyOf', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['unknown', 0], ['isEd', 0], ['unknown', 0]]\n  1.0 - [['unknown', 0], ['is', 0], ['unknown', 0]]",
+        "    WARNING from Dialogues KM: For semantics, implement an evaluations handler, set \"value\" property of the operator to the value.\n    The semantic would be\n      match: ({context}) => context.marker == 'property' && context.evaluate && <other conditions as you like>\n      apply: ({context}) => <do stuff...>; context.value = <value>\n    The input context would be:\n      {\n        \"number\": \"one\",\n        \"marker\": \"property\",\n        \"word\": \"property1\",\n        \"text\": \"the property1 of object1 is value1\",\n        \"value\": \"property1\",\n        \"unknown\": true,\n        \"types\": [\n          \"property\"\n        ],\n        \"pullFromContext\": true,\n        \"concept\": true,\n        \"wantsValue\": true,\n        \"determiner\": \"the\",\n        \"modifiers\": [\n          \"determiner\"\n        ],\n        \"object\": {\n          \"marker\": \"unknown\",\n          \"word\": \"object1\",\n          \"text\": \"object1\",\n          \"value\": \"object1\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ]\n        },\n        \"objects\": [\n          {\n            \"marker\": \"property\",\n            \"word\": \"property1\",\n            \"text\": \"the property1\",\n            \"value\": \"property1\",\n            \"unknown\": true,\n            \"types\": [\n              \"property\"\n            ],\n            \"pullFromContext\": true,\n            \"concept\": true,\n            \"wantsValue\": true,\n            \"determiner\": \"the\",\n            \"modifiers\": [\n              \"determiner\"\n            ]\n          },\n          {\n            \"marker\": \"unknown\",\n            \"word\": \"object1\",\n            \"text\": \"object1\",\n            \"value\": \"object1\",\n            \"unknown\": true,\n            \"types\": [\n              \"unknown\"\n            ]\n          }\n        ],\n        \"same\": {\n          \"marker\": \"unknown\",\n          \"word\": \"value1\",\n          \"text\": \"value1\",\n          \"value\": \"value1\",\n          \"unknown\": true,\n          \"types\": [\n            \"unknown\"\n          ],\n          \"response\": null\n        },\n        \"response\": null,\n        \"disableproperties5\": true,\n        \"evaluate\": {\n          \"toConcept\": true\n        }\n      }\n    "
       ],
       "metadata": {
         "opChoices": [
@@ -234,8 +242,8 @@
           },
           {
             "op": [
-              "propertyOf",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -249,6 +257,62 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "propertyOf",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "unknown",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "propertyOf",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "propertyOf",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "propertyOf",
+                0
               ]
             ]
           },
@@ -265,10 +329,6 @@
               [
                 "propertyOf",
                 1
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -281,10 +341,6 @@
               [
                 "is",
                 0
-              ],
-              [
-                "unknown",
-                1
               ]
             ]
           },
@@ -333,7 +389,6 @@
               "value": "object1",
               "unknown": true,
               "types": [
-                "object",
                 "unknown"
               ]
             },
@@ -362,7 +417,6 @@
                 "value": "object1",
                 "unknown": true,
                 "types": [
-                  "object",
                   "unknown"
                 ]
               }
@@ -404,6 +458,16 @@
           [
             "propertyOf",
             0
+          ]
+        ],
+        [
+          [
+            "is",
+            0
+          ],
+          [
+            "propertyOf",
+            0
           ],
           [
             "the",
@@ -476,10 +540,6 @@
           [
             "propertyOf",
             1
-          ],
-          [
-            "unknown",
-            1
           ]
         ],
         [
@@ -494,20 +554,10 @@
           [
             "unknown",
             0
-          ]
-        ],
-        [
-          [
-            "is",
-            0
-          ],
-          [
-            "unknown",
-            1
           ]
         ]
       ],
-      "version": "6.25.0",
+      "version": "6.25.0-beta.1",
       "query": "the property1 of object1 is value1"
     }
   ],
@@ -521,6 +571,16 @@
       [
         "propertyOf",
         0
+      ]
+    ],
+    [
+      [
+        "is",
+        0
+      ],
+      [
+        "propertyOf",
+        0
       ],
       [
         "the",
@@ -593,10 +653,6 @@
       [
         "propertyOf",
         1
-      ],
-      [
-        "unknown",
-        1
       ]
     ],
     [
@@ -611,16 +667,6 @@
       [
         "unknown",
         0
-      ]
-    ],
-    [
-      [
-        "is",
-        0
-      ],
-      [
-        "unknown",
-        1
       ]
     ]
   ]
