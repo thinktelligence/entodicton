@@ -31,9 +31,15 @@ const template = {
 const config = new entodicton.Config({ 
   name: 'pokemon',
   hierarchy: [
-    ['pokemon', 'theAble'],
-    ['pokemon', 'queryable'],
+    // ['pokemon', 'theAble'],
+    // ['pokemon', 'queryable'],
+    // ['pokemon', 'whatAble'],
   ],
+  /*
+  associations: {
+   positive: [[['what', 0], ['type', 0], ['is', 0], ['pokemon', 0]]]
+  },
+  */
 })
 config.add(hierarchy)
 config.initializer( ({config, km}) => {
