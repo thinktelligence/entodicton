@@ -47,10 +47,13 @@ let config = {
       // [['unknown', 0], ['is', 0], ['owned', 0]],
     ],
     positive: [
+      [['ownee', 0], ['isEd', 0], ['owned', 0]],
+      // [['isEd', 0], ['owned', 0], ['by', 0]],
+      // [['isEd', 0], ['owned', 0]],
       // [['isEd', 0], ['owned', 0]],
       // [['unknown', 1], ['isEd', 0]],
       // [['isEd', 0], ['unknown', 0], ['owned', 0], ['by', 0]],
-      //  [['isEd', 0], ['unknown', 1], ['owned', 0], ['by', 0]],
+      //  [['isEd', 1], ['unknown', 1], ['owned', 0], ['by', 0]],
     ]
   },
 };
