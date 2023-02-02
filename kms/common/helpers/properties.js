@@ -135,6 +135,7 @@ class API {
              // bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), constrained: true, ${before[0].tag}: after[0].object, ${after[0].tag}: before[0] } } ] }`,
              deferred: `{ ...next(operator), 'isEd': true, subject: 'ownee', '${after[0].tag}': { operator: operator, number: operator.number, ...before[0] }, ${before[0].tag}: after[0].object }` })
     // config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", allowDups: true})
+    /*
     config.addBridge({
          id: "by",
          level: 0,
@@ -144,6 +145,7 @@ class API {
            [before[0].tag]: "{ marker: 'unknown', implicit: true, concept: true }",
          },
        })
+    */
     // TODO have a prepositions category and underPrep category
     config.addPriorities([['is', 0], ['by', 0]])
     config.addPriorities([['by', 0], ['articlePOS', 0]])

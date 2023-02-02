@@ -156,6 +156,8 @@ let config = {
     ]
   },
   bridges: [
+    { id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", optional: { 'isEder': "{ marker: 'unknown', implicit: true, concept: true }", }, },
+
     { id: "articlePOS", level: 0, bridge: "{ ...next(operator) }" },
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
     // { id: "what", level: 0, bridge: "{ ...next(operator), ...after[0], query: ['what'], determined: true }" },
