@@ -146,6 +146,10 @@ let config = {
       // [['is', 0], ['unknown', 0]],
       // [['is', 0], ['unknown', 1]],
       // [['isEd', 0], ['means', 0]],
+      [['queryable', 0], ['isEd', 0], ['queryable', 0], ['by', 0]],
+      [['queryable', 0], ['isEd', 0], ['isEdAble', 0]],
+      [['unknown', 1], ['isEd', 0], ['isEdAble', 0]],
+
     ]
   },
   bridges: [
