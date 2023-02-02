@@ -47,7 +47,9 @@ let config = {
       // [['unknown', 0], ['is', 0], ['owned', 0]],
     ],
     positive: [
-      [['ownee', 0], ['isEd', 0], ['owned', 0]],
+      // [['queryable', 0], ['isEd', 0], ['queryable', 0], ['by', 0]],
+      // [['queryable', 0], ['isEd', 0], ['isEdAble', 0]],
+      // [['unknown', 1], ['isEd', 0], ['isEdAble', 0]],
       // [['isEd', 0], ['owned', 0], ['by', 0]],
       // [['isEd', 0], ['owned', 0]],
       // [['isEd', 0], ['owned', 0]],

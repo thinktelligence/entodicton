@@ -152,6 +152,8 @@ class API {
     config.addPriorities([['is', 1], [edAble.operator, 0]])
     // config.addPriorities([['what', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
+    config.addHierarchy(before[0].id, 'isEder')
+    config.addHierarchy(after[0].id, 'isEdee')
     config.addSemantic({
       notes: 'semantic for setting value with constraint',
       match: ({context}) => context.marker == after[0].tag && context.evaluate,
@@ -242,7 +244,9 @@ class API {
       const whoIsWhatVerbedBy = `${before[0].tag}Var is ${after[0].tag}Var ${edAble.word} by`
       const thisIsVerbedByThat = `${after[0].tag}Var is ${edAble.word} by ${before[0].tag}Var`
 
-      config.addFragments([whoIsWhatVerbedBy, thisIsVerbedByThat])
+      // greg32 check this out
+      config.addFragments([whoIsWhatVerbedBy])
+      // config.addFragments([whoIsWhatVerbedBy, thisIsVerbedByThat])
       // config.addFragments([`${before[0].tag}Var is ${after[0].tag}Var ${edAble.word} by`, `${after[0].tag}Var is ${edAble.word} by ${before[0].tag}Var`])
       // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
 

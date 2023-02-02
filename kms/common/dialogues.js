@@ -134,6 +134,9 @@ let config = {
     "(([theAble|]) [list|and] ([theAble|]))",
     "([yesno|])",
     "([articlePOS|])",
+    "(([isEdee])^ <isEdAble|> ([by] ([isEder])?))",
+    "([isEdee|])",
+    "([isEder|])",
     { pattern: "([debug23])" },
   ],
   associations: {
@@ -146,8 +149,8 @@ let config = {
       // [['is', 0], ['unknown', 0]],
       // [['is', 0], ['unknown', 1]],
       // [['isEd', 0], ['means', 0]],
-      [['queryable', 0], ['isEd', 0], ['queryable', 0], ['by', 0]],
-      [['queryable', 0], ['isEd', 0], ['isEdAble', 0]],
+      [['isEdee', 0], ['isEd', 0], ['isEder', 0], ['by', 0]],
+      [['isEdee', 0], ['isEd', 0], ['isEdAble', 0]],
       [['unknown', 1], ['isEd', 0], ['isEdAble', 0]],
 
     ]
@@ -186,6 +189,8 @@ let config = {
     // { id: "isEd", level: 0, bridge: "{ ...context }" },
     { id: "isEdAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "isEdAble", level: 1, bridge: "{ ...next(operator) }" },
+    { id: "isEdee", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "isEder", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, 
             bridge: "{ ...next(operator), one: { number: operator.number, ...before[0] }, two: after[0] }", 
             queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" ,
