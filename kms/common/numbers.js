@@ -26,7 +26,7 @@ let config = {
   },
 
   hierarchy: [
-    ['number', 'queryable'],
+    { child: 'number', parent: 'queryable', maybe: true },
   ],
 
   generators: [
