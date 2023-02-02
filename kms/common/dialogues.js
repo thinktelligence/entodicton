@@ -242,6 +242,12 @@ let config = {
     [["isEd",0],["isEdAble",0]],
     [['is', 0], ['does', 0], ['a', 0]],
     [['means', 0], ['isEd', 0]],
+    [['is', 0], ['by', 0]],
+    [['by', 0], ['articlePOS', 0]],
+    [['isEdAble', 0], ['articlePOS', 0]],
+    [['is', 0], ['isEdAble', 0]],
+    [['is', 1], ['isEdAble', 0]],
+
   ],
   hierarchy: [
     ['a', 'articlePOS'],

@@ -147,11 +147,13 @@ class API {
        })
     */
     // TODO have a prepositions category and underPrep category
+    /*
     config.addPriorities([['is', 0], ['by', 0]])
     config.addPriorities([['by', 0], ['articlePOS', 0]])
     config.addPriorities([[edAble.operator, 0], ['articlePOS', 0]])
     config.addPriorities([['is', 0], [edAble.operator, 0]])
     config.addPriorities([['is', 1], [edAble.operator, 0]])
+    */
     // config.addPriorities([['what', 0], ['by', 0]])
     config.addHierarchy(edAble.operator, 'isEdAble')
     config.addHierarchy(before[0].id, 'isEder')
@@ -230,11 +232,13 @@ class API {
         return `${g(context[after[0].tag])} ${chosen} ${edAble.word} by ${g(context[before[0].tag])}`
       }
     })
+    /*
     config.addAssociations([
       [['isEd', 0], ['unknown', 0], ['isEdAble', 0], ['by', 0]],
       [['isEd', 0], ['unknown', 1], ['isEdAble', 0], ['by', 0]],
       [['isEd', 0], ['what', 0], ['isEdAble', 0], ['by', 0]],
     ])
+    */
     //config.addAssociations({ 
       //negative: [[['is', 0], [edAble.operator, 0]]],
       // positive: [[['isEd', 0], [edAble.operator, 0]]],
