@@ -131,7 +131,22 @@ class API {
     config.addBridge({
              id: edAble.operator,
              level: 0,
-             bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', properties: ['${after[0].tag}', '${before[0].tag}'], paraphrase: { marker: '${operator}', ${before[0].tag}: { marker: '${before[0].id}', types: ['${before[0].id}'], word: '${before[0].id}' }, ${after[0].tag}: { marker: '${after[0].id}', types: ['${after[0].id}'], word: '${after[0].id}' } }, constraint: { ...next(operator), constrained: true, ${before[0].tag}: default(after[0].object, after[0]), ${after[0].tag}: before[0] } } ] }`,
+             bridge: `{ 
+               ...before, 
+               constraints: [ 
+                    { 
+                       property: '${after[0].tag}', 
+                       properties: ['${after[0].tag}', '${before[0].tag}'], 
+                       paraphrase: { marker: '${operator}', ${before[0].tag}: { marker: '${before[0].id}', types: ['${before[0].id}'], word: '${before[0].id}' }, ${after[0].tag}: { marker: '${after[0].id}', types: ['${after[0].id}'], word: '${after[0].id}' } }, 
+                       constraint: 
+                          { 
+                            ...next(operator), 
+                            constrained: true, 
+                            ${before[0].tag}: default(after[0].object, after[0]), 
+                            ${after[0].tag}: { greg: true, ...before[0] }
+                          } 
+                    }
+               ] }`,
              // bridge: `{ ...before, constraints: [ { property: '${after[0].tag}', constraint: { ...next(operator), constrained: true, ${before[0].tag}: after[0].object, ${after[0].tag}: before[0] } } ] }`,
              deferred: `{ ...next(operator), 'isEd': true, subject: 'ownee', '${after[0].tag}': { operator: operator, number: operator.number, ...before[0] }, ${before[0].tag}: after[0].object }` })
     // config.addBridge({ id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", allowDups: true})
@@ -251,8 +266,19 @@ class API {
       const thisIsVerbedByThat = `${after[0].tag}Var is ${edAble.word} by ${before[0].tag}Var`
 
       // greg32 check this out
-      config.addFragments([whoIsWhatVerbedBy])
-      // config.addFragments([whoIsWhatVerbedBy, thisIsVerbedByThat])
+      // config.addFragments([whoIsWhatVerbedBy])
+      config.addFragments([
+          whoIsWhatVerbedBy, 
+          {
+            hierarchy: [
+              ['owneevar', 'ownee']
+            ],
+            query: thisIsVerbedByThat
+          },
+      ])
+      
+      // config.addHierarchy({ child: 'owneeVar', parent: 'isEdee', maybe: true})
+      // config.addHierarchy({ child: 'ownerVar', parent: 'isEder', maybe: true})
       // config.addFragments([`${before[0].tag}Var is ${after[0].tag}Var ${edAble.word} by`, `${after[0].tag}Var is ${edAble.word} by ${before[0].tag}Var`])
       // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
 
@@ -630,6 +656,8 @@ class API {
       config.addHierarchy(concept, 'queryable')
       config.addHierarchy(concept, 'hierarchyAble')
       config.addHierarchy(concept, 'object')
+      config.addHierarchy(concept, 'isEdee')
+      config.addHierarchy(concept, 'isEder')
       /*
       config.addGenerator({
           notes: 'generator for added concept',

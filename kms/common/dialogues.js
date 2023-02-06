@@ -152,6 +152,8 @@ let config = {
       [['isEdee', 0], ['isEd', 0], ['isEder', 0], ['by', 0]],
       [['isEdee', 0], ['isEd', 0], ['isEdAble', 0]],
       [['unknown', 1], ['isEd', 0], ['isEdAble', 0]],
+      [['unknown', 0], ['isEd', 0], ['isEdAble', 0]],
+      [["isEd",0],["unknown",1],["isEdAble",0]],
 
     ]
   },
@@ -255,6 +257,10 @@ let config = {
     ['unknown', 'notAble'],
     ['unknown', 'theAble'],
     ['unknown', 'queryable'],
+    // ['unknown', 'isEdee'],
+    // ['unknown', 'isEder'],
+    // ['isEdee', 'unknown'],
+    // ['isEder', 'unknown'],
     ['it', 'queryable'],
     ['what', 'queryable'],
     ['whatAble', 'queryable'],
