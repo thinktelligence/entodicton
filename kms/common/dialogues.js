@@ -252,6 +252,7 @@ let config = {
 
   ],
   hierarchy: [
+    ['questionMark', 'isEd'],
     ['a', 'articlePOS'],
     ['the', 'articlePOS'],
     ['unknown', 'notAble'],

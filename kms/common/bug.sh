@@ -247,4 +247,5 @@
 # node people -q "owneevar is owned by ownervar" -g -d
 # node people -q 'who is ownee23 owned by' -g -d
 # node kid -q "who is kia's cat" -g -d -s
-node kid -q "kia's cat is cleo" -d -g
+# node kid -q "kia's cat is cleo" -d -g
+node dialogues -q 'x is y?' -d -g
