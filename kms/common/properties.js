@@ -574,7 +574,8 @@ let config = {
     },
     {
       notes: 'evaluate a property',
-      match: ({context}) => context.marker == 'property' && context.evaluate && !context.evaluate.toConcept,
+      // match: ({context, hierarchy}) => context.marker == 'property' && context.evaluate && !context.evaluate.toConcept,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.evaluate && !context.evaluate.toConcept,
       // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.evaluate,
       apply: ({context, api, km, objects, g, s, log}) => {
         try{  

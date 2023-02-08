@@ -243,5 +243,8 @@
 # node people -q 'who is ownee23 owned by' -g -d
 # node crew -q 'disarm the phasers' -g
 # node inspect people -da '[["by",0],["is",0],["owned",0]]'
-node people -q "ownee23 is owned by owner23 who is ownee23 owned by" -g -d
+# node people -q "ownee23 is owned by owner23 who is ownee23 owned by" -g -d
 # node people -q "owneevar is owned by ownervar" -g -d
+# node people -q 'who is ownee23 owned by' -g -d
+# node kid -q "who is kia's cat" -g -d -s
+node kid -q "kia's cat is cleo" -d -g

@@ -244,6 +244,9 @@ class API {
       match: ({context}) => context.marker == edAble.operator && context.isEd,
       apply: ({context, g}) => {
         const chosen = chooseNumber(context[after[0].tag], 'is', 'are')
+        if (context[before[0].tag].response && context[before[0].tag].response.marker == 'answerNotKnown') {
+          return g(context[before[0].tag])
+        }
         return `${g(context[after[0].tag])} ${chosen} ${edAble.word} by ${g(context[before[0].tag])}`
       }
     })
@@ -658,6 +661,7 @@ class API {
       config.addHierarchy(concept, 'object')
       config.addHierarchy(concept, 'isEdee')
       config.addHierarchy(concept, 'isEder')
+      config.addHierarchy(concept, 'property')
       /*
       config.addGenerator({
           notes: 'generator for added concept',
