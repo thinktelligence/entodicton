@@ -2,11 +2,6 @@
 
 module.exports = 
 {
-  "hierarchy": [
-  ],
-  "priorities": [
-    [["conj", 0], ["plus", 0]],
-  ],
   "operators": [
     "(([i]) [wantMcDonalds|want] ([food]) ([fromM|from] ([mcdonalds])))",
     "(([i]) [wantWhitespot|want] ([food]) ([fromW|from] ([whitespot])))",
@@ -14,16 +9,16 @@ module.exports =
     "(<aEnglish> ([food]))",
     "(([food]) [conj] ([food]))",
   ],
-  "words": {
-    "cheeseburger": [{"id": "food", "initial": {"name": "cheeseburger"}}],
-    "fries": [{"id": "food", "initial": {"name": "fries", "number": "many"}}],
-    "cheeseburgers": [{"id": "food", "initial": {"name": "cheeseburger"}}],
-  },
   "flatten": [
     "conj",
   ],
-  "implicits": [
-    "language",
+  "generators": [
+    [({context}) => context.marker == 'wantWhitespot', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
+    [({context}) => context.marker == 'wantMcDonalds', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
+    [({context}) => context.marker == 'food' && context.number > 0, ({g, context}) => `${g(context.number)} ${g(context.name)}`],
+    [({context}) => context.marker == 'food' && !('number' in context), ({g, context}) => `${g(context.name)}`],
+    [({context}) => context.marker == 'whitespot', ({g, context}) => 'Whitespot'],
+    [({context}) => context.marker == 'mcdonalds', ({g, context}) => 'McDonalds'],
   ],
   "floaters": [
     "isQuery",
@@ -38,15 +33,24 @@ module.exports =
     {"level": 0, "id": "fromM", "bridge": "{ ...next(operator), from: after[0] }"},
     {"level": 0, "id": "fromW", "bridge": "{ ...next(operator), from: after[0] }"},
   ],
+  "priorities": [
+    [["conj", 0], ["plus", 0]],
+  ],
+  "associations": {
+    "negative": [],
+    "positive": [],
+  },
+  "implicits": [
+    "language",
+  ],
   "semantics": [
   ],
-  "generators": [
-    [({context}) => context.marker == 'wantWhitespot', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
-    [({context}) => context.marker == 'wantMcDonalds', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
-    [({context}) => context.marker == 'food' && context.number > 0, ({g, context}) => `${g(context.number)} ${g(context.name)}`],
-    [({context}) => context.marker == 'food' && !('number' in context), ({g, context}) => `${g(context.name)}`],
-    [({context}) => context.marker == 'whitespot', ({g, context}) => 'Whitespot'],
-    [({context}) => context.marker == 'mcdonalds', ({g, context}) => 'McDonalds'],
+  "words": {
+    "fries": [{"id": "food", "initial": {"name": "fries", "number": "many"}}],
+    "cheeseburger": [{"id": "food", "initial": {"name": "cheeseburger"}}],
+    "cheeseburgers": [{"id": "food", "initial": {"name": "cheeseburger"}}],
+  },
+  "hierarchy": [
   ],
   "utterances": [
     "i want 2 fries and a cheeseburger from mcdonalds",
@@ -60,8 +64,4 @@ module.exports =
     "i want fries from mcdonalds",
     "i want cheeseburger and fries from whitespot",
   ],
-  "associations": {
-    "positive": [],
-    "negative": [],
-  },
 };

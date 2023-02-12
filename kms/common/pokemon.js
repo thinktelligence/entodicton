@@ -6,19 +6,19 @@ const pluralize = require('pluralize')
 
 const template = {
   queries: [
+    "pokemon modifies type",
+    "pokemon type is a type",
     "pikachu squirtle weedle and pidgeot are pokemon",
     "fire modifies type",
     "water modifies type",
     "earth modifies type",
     "electric modifies type",
-    "pokemon modifies type",
     "fire type is a pokemon type",
     "water type is a pokemon type",
     "electric type is a pokemon type",
     "earth type is a pokemon type",
     "pikachu is an electric type",
     "charmander is a fire type",
-    "pokemon type is a type",
   ],
 };
 
@@ -32,6 +32,7 @@ const config = new entodicton.Config({
   name: 'pokemon',
   hierarchy: [
     // ['pokemon', 'theAble'],
+    // ['pokemon', 'theAble'],
     // ['pokemon', 'queryable'],
     // ['pokemon', 'whatAble'],
   ],
@@ -44,7 +45,7 @@ const config = new entodicton.Config({
 config.add(hierarchy)
 config.initializer( ({config, km}) => {
   const api = km('properties').api
-  api.kindOfConcept({ config, modifier: 'pokemon', object: 'type' })
+  // api.kindOfConcept({ config, modifier: 'pokemon', object: 'type' })
   /*
   api.createActionPrefix({
               operator: 'owns',

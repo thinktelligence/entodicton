@@ -622,11 +622,14 @@ class API {
       }
       this.addWord(word)
     }
-    config.addHierarchy(objectId, 'theAble')
-    config.addHierarchy(objectId, 'queryable')
-    config.addHierarchy(objectId, 'property')
-    config.addHierarchy(modifierObjectId, objectId)
-    config.addHierarchy(objectId, 'concept')
+    // config.addHierarchy(objectId, 'theAble')
+    // config.addHierarchy(objectId, 'queryable')
+    // config.addHierarchy(objectId, 'property')
+    // config.addHierarchy(modifierObjectId, objectId)
+    // config.addHierarchy(objectId, 'concept')
+    this.setupObjectHierarchy(config, objectId);
+    this.setupObjectHierarchy(config, modifierId, { include_concept: false });
+    this.setupObjectHierarchy(config, modifierObjectId);
     if (config.config.bridges.find( (bridge) => bridge.id === 'hierarchyAble' )) {
       config.addHierarchy(objectId, 'hierarchyAble')
       config.addHierarchy(modifierObjectId, 'hierarchyAble')
@@ -643,6 +646,19 @@ class API {
   }
   */
 
+  setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
+    config.addHierarchy(id, 'theAble')
+    config.addHierarchy(id, 'queryable')
+    config.addHierarchy(id, 'hierarchyAble')
+    config.addHierarchy(id, 'object')
+    if (include_concept) {
+      config.addHierarchy(id, 'concept')
+    }
+    config.addHierarchy(id, 'isEdee')
+    config.addHierarchy(id, 'isEder')
+    config.addHierarchy(id, 'property')
+  }
+
   // word is for one or many
   makeObject({config, context, doPluralize=true}) {
     if (!context.unknown) {
@@ -655,6 +671,7 @@ class API {
 
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
+      /*
       config.addHierarchy(concept, 'theAble')
       config.addHierarchy(concept, 'queryable')
       config.addHierarchy(concept, 'hierarchyAble')
@@ -662,6 +679,8 @@ class API {
       config.addHierarchy(concept, 'isEdee')
       config.addHierarchy(concept, 'isEder')
       config.addHierarchy(concept, 'property')
+      */
+      this.setupObjectHierarchy(config, concept);
       /*
       config.addGenerator({
           notes: 'generator for added concept',

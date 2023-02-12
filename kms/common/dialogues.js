@@ -236,6 +236,7 @@ let config = {
     [['means', 0], ['is', 0]],
     [['questionMark', 0], ['is', 0]],
     [['questionMark', 0], ['is', 1]],
+    [['questionMark', 0], ['isEd', 0]],
     [["does",0],["what",0]],
     [["is",0],["what",0]],
     [["is",1],["what",0]],

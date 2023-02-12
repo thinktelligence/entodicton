@@ -2,30 +2,20 @@
 
 module.exports = 
 {
-  "hierarchy": [
-  ],
-  "priorities": [
-    [["earn", 0], ["worked", 0], ["every", 0], ["query", 0]],
-    [["earn", 0], ["worked", 0], ["query", 0], ["count", 0]],
-    [["earn", 0], ["every", 0], ["worked", 0]],
-  ],
   "operators": [
     "(([personConcept]) [earn|earns] ((<count> ([dollarConcept])) [every] ([week])))",
     "(([personConcept]) [earn] ([query|what]))",
     "(([personConcept]) [worked] (<count> ([week|weeks])))",
   ],
-  "words": {
-    "per": [{"id": "every"}],
-    "joe": [{"id": "personConcept", "initial": {"id": "joe"}}],
-    "week": [{"id": "week", "initial": {"language": "english"}}],
-    "dollars": [{"id": "dollarConcept", "initial": {"language": "english"}}],
-    "sally": [{"id": "personConcept", "initial": {"id": "sally"}}],
-  },
   "flatten": [
     "conj",
   ],
-  "implicits": [
-    "language",
+  "generators": [
+    [({context}) => context.marker == 'week' && context.duration == 1, ({g, context}) => `${context.duration} week`],
+    [({context}) => context.marker == 'week' && context.duration > 1, ({g, context}) => `${context.duration} weeks`],
+    [({context}) => context.marker == 'earn', ({g, context}) => `${g(context.who)} earns ${g(context.amount)} ${g(context.units)} per ${context.period}`],
+    [({context}) => context.marker == 'worked', ({g, context}) => `${g(context.who)} worked ${ g({ marker: context.units, duration: context.duration}) }`],
+    [({context}) => context.marker == 'response', ({g, context}) => `${context.who} earned ${context.earnings} ${context.units}`],
   ],
   "floaters": [
     "isQuery",
@@ -37,6 +27,18 @@ module.exports =
     {"level": 0, "id": "every", "bridge": "{ marker: 'dollarConcept', units: 'dollars', amount: before.value, duration: 'week' }"},
     {"level": 0, "id": "earn", "bridge": "{ marker: 'earn', units: 'dollars', amount: after.amount, who: before.id, period: after.duration }"},
     {"level": 0, "id": "worked", "bridge": "{ marker: 'worked', who: before.id, duration: after.number, units: after.marker }"},
+  ],
+  "priorities": [
+    [["earn", 0], ["worked", 0], ["every", 0], ["query", 0]],
+    [["earn", 0], ["worked", 0], ["query", 0], ["count", 0]],
+    [["earn", 0], ["every", 0], ["worked", 0]],
+  ],
+  "associations": {
+    "negative": [],
+    "positive": [],
+  },
+  "implicits": [
+    "language",
   ],
   "semantics": [
     [({objects, context}) => context.marker == 'earn' && context.isQuery, ({objects, context}) => { 
@@ -70,18 +72,16 @@ module.exports =
     delete context.pullFromContext
      }],
   ],
-  "generators": [
-    [({context}) => context.marker == 'week' && context.duration == 1, ({g, context}) => `${context.duration} week`],
-    [({context}) => context.marker == 'week' && context.duration > 1, ({g, context}) => `${context.duration} weeks`],
-    [({context}) => context.marker == 'earn', ({g, context}) => `${g(context.who)} earns ${g(context.amount)} ${g(context.units)} per ${context.period}`],
-    [({context}) => context.marker == 'worked', ({g, context}) => `${g(context.who)} worked ${ g({ marker: context.units, duration: context.duration}) }`],
-    [({context}) => context.marker == 'response', ({g, context}) => `${context.who} earned ${context.earnings} ${context.units}`],
+  "words": {
+    "joe": [{"id": "personConcept", "initial": {"id": "joe"}}],
+    "per": [{"id": "every"}],
+    "sally": [{"id": "personConcept", "initial": {"id": "sally"}}],
+    "dollars": [{"id": "dollarConcept", "initial": {"language": "english"}}],
+    "week": [{"id": "week", "initial": {"language": "english"}}],
+  },
+  "hierarchy": [
   ],
   "utterances": [
     "joe earns 10 dollars every week sally earns 25 dollars per week sally worked 10 weeks joe worked 15 weeks joe earns what sally earns what",
   ],
-  "associations": {
-    "positive": [],
-    "negative": [],
-  },
 };

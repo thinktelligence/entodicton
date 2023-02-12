@@ -34750,5 +34750,918 @@
     "responses": [
       ""
     ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "a",
+          0
+        ],
+        [
+          "concept",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "a",
+          0
+        ],
+        [
+          "concept",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "a",
+          0
+        ],
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ]
+    ],
+    "config": {
+      "bridges": [
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "xfx",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), arguments: after[0] }",
+          "id": "between",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], arguments: operator.arguments }",
+          "id": "between",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "hierarchyAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), modifier: before[0], concept: after[0] }",
+          "id": "modifies",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "readonly",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "concept",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...context, number: operator.number, object.number: operator.number, negation: true }*",
+          "id": "doesnt",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }",
+          "id": "have",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "have",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "property",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "object",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: before[0], objects: before }",
+          "id": "possession",
+          "inverted": true,
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }",
+          "id": "possession",
+          "inverted": true,
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0], objects: after }",
+          "id": "propertyOf",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }",
+          "id": "propertyOf",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...after[0], query: true, whose: \"whose\", modifiers: append([\"whose\"], after[0].modifiers)}",
+          "id": "whose",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], object: operator, objects: [after[0], operator] }",
+          "id": "objectPrefix",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), object: after[0] }",
+          "id": "by",
+          "level": 0,
+          "optional": {
+            "isEder": "{ marker: 'unknown', implicit: true, concept: true }"
+          }
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "articlePOS",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "debug23",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, query: ['what'], modifiers: ['what'], what: operator }",
+          "id": "what",
+          "level": 0,
+          "optional": "{ ...next(operator), query: ['what'], determined: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "whatAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "list",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "variable": "type"
+              }
+            ],
+            "match": "same",
+            "passthrough": true,
+            "right": [
+              {
+                "variable": "type"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "list",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "variable": "type"
+              }
+            ],
+            "match": "same",
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), type: after[0] }",
+          "id": "be",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "briefOrWordy",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "notAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after, negated: true }",
+          "id": "not",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "yesno",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator), unknown: true }",
+          "id": "unknown",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "unknown",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "queryable",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...before[0], query: [before.marker] }",
+          "id": "questionMark",
+          "level": 0
+        },
+        {
+          "bridge": "{ number: operator.number, ...context, [context.subject].number: operator.number }",
+          "id": "isEd",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEdee",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "isEder",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), one: { number: operator.number, ...before[0] }, two: after[0] }",
+          "id": "is",
+          "level": 0,
+          "queryBridge": "{ ...next(operator), one: after[0], two: after[1], query: true }"
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "is",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 1
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "canBeDoQuestion",
+          "level": 2
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "doesAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), before: before[0] }",
+          "id": "doesAble",
+          "level": 1
+        },
+        {
+          "bridge": "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*",
+          "id": "does",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: \"the\", modifiers: append([\"determiner\"], after[0].modifiers)}",
+          "id": "the",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }",
+          "id": "a",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "theAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), pullFromContext: true, determined: true }",
+          "hierarchy": [
+            "queryable"
+          ],
+          "id": "it",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), value: append(before, after) }",
+          "id": "orList",
+          "level": 0,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true,
+            "right": [
+              {
+                "marker": "orAble"
+              }
+            ]
+          }
+        },
+        {
+          "bridge": "{ ...operator, value: append(before, operator.value) }",
+          "id": "orList",
+          "level": 1,
+          "selector": {
+            "left": [
+              {
+                "marker": "orAble"
+              }
+            ],
+            "passthrough": true
+          }
+        },
+        {
+          "bridge": "{ ...next(operator), from: before[0], to: after[0] }",
+          "id": "means",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), antecedant: after[0], consequence: after[1].consequence }",
+          "id": "if",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator), consequence: after[0] }",
+          "id": "then",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "ifAble",
+          "level": 0
+        },
+        {
+          "bridge": "{ ...next(operator) }",
+          "id": "orAble",
+          "level": 0
+        },
+        {
+          "allowDups": true,
+          "bridge": "{ ...next(operator) }",
+          "id": "pokemon",
+          "level": 0,
+          "transitoryMode": true
+        }
+      ],
+      "operators": [
+        {
+          "allowDups": true,
+          "pattern": "([pokemon])"
+        },
+        {
+          "pattern": "([hierarchyAble|])"
+        },
+        {
+          "pattern": "(([property]) <([propertyOf|of] ([object]))>)"
+        },
+        {
+          "pattern": "(<whose> ([property]))"
+        },
+        {
+          "pattern": "((modifier) [modifies] (concept))"
+        },
+        {
+          "pattern": "([concept])"
+        },
+        {
+          "pattern": "([readonly])"
+        },
+        {
+          "pattern": "(<objectPrefix|> ([property]))"
+        },
+        {
+          "pattern": "(<(([object]) [possession|])> ([property|]))"
+        },
+        {
+          "pattern": "(([object|]) [have|] ([property|]))"
+        },
+        {
+          "pattern": "(<doesnt|> ([have/0]))"
+        },
+        {
+          "pattern": "(([xfx]) <([between] (words))>)"
+        },
+        {
+          "pattern": "(([queryable]) [is|] ([queryable|]))"
+        },
+        {
+          "pattern": "([is:queryBridge|] ([queryable]) ([queryable]))"
+        },
+        {
+          "pattern": "(([queryable]) [(<isEd|> ([isEdAble|]))])"
+        },
+        {
+          "pattern": "([it])"
+        },
+        {
+          "pattern": "(<what> ([whatAble|]))"
+        },
+        {
+          "pattern": "([what:optional])"
+        },
+        {
+          "pattern": "(<the|> ([theAble|]))"
+        },
+        {
+          "pattern": "(<a|a,an> ([theAble|]))"
+        },
+        {
+          "pattern": "([unknown])"
+        },
+        {
+          "pattern": "([not] ([notAble|]))"
+        },
+        {
+          "pattern": "([be] ([briefOrWordy|]))"
+        },
+        {
+          "pattern": "([([canBeQuestion])])"
+        },
+        {
+          "pattern": "(([canBeQuestion/1,2]) <questionMark|>)"
+        },
+        {
+          "pattern": "(([what]) [(<does|> ([doesAble|]))])"
+        },
+        {
+          "pattern": "([canBeDoQuestion])"
+        },
+        {
+          "pattern": "(<does|> ([canBeDoQuestion/0,1]))"
+        },
+        {
+          "pattern": "(([theAble|]) [list|and] ([theAble|]))"
+        },
+        {
+          "pattern": "([yesno|])"
+        },
+        {
+          "pattern": "([articlePOS|])"
+        },
+        {
+          "pattern": "(([isEdee])^ <isEdAble|> ([by] ([isEder])?))"
+        },
+        {
+          "pattern": "([isEdee|])"
+        },
+        {
+          "pattern": "([isEder|])"
+        },
+        {
+          "pattern": "([debug23])"
+        },
+        {
+          "pattern": "((phrase) [means] (phrase))"
+        },
+        {
+          "pattern": "([if] ([ifAble]) ([then] ([ifAble])))"
+        },
+        {
+          "pattern": "(([orAble|]) [orList|or] ([orAble|]))"
+        }
+      ],
+      "words": {
+        " 's": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "<<possession>>": [
+          {
+            "id": "possession",
+            "initial": "{ value: 'possession' }"
+          }
+        ],
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "are": [
+          {
+            "id": "is",
+            "initial": "{ number: 'many' }"
+          },
+          {
+            "id": "isEd",
+            "initial": "{ number: 'many' }"
+          }
+        ],
+        "brief": [
+          {
+            "id": "briefOrWordy",
+            "initial": "{ value: 'brief' }"
+          }
+        ],
+        "do": [
+          {
+            "id": "does",
+            "initial": "{ number: 'many' }"
+          }
+        ],
+        "does": [
+          {
+            "id": "does",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "doesnt": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "dont": [
+          {
+            "id": "doesnt",
+            "initial": "{ number: 'many' }"
+          }
+        ],
+        "has": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'one' }"
+          }
+        ],
+        "have": [
+          {
+            "id": "have",
+            "initial": "{ doesable: true, number: 'many' }"
+          }
+        ],
+        "is": [
+          {
+            "id": "is",
+            "initial": "{ number: 'one' }"
+          },
+          {
+            "id": "isEd",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "pokemon": [
+          {
+            "id": "pokemon",
+            "initial": "{ value: \"pokemon\", number: \"many\" }"
+          },
+          {
+            "id": "pokemon",
+            "initial": "{ value: \"pokemon\", number: \"one\" }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [], query: true }"
+          }
+        ],
+        "wordy": [
+          {
+            "id": "briefOrWordy",
+            "initial": "{ value: 'wordy' }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "marker": "unknown",
+          "number": "one",
+          "response": true,
+          "text": "pokemon is a concept",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "pokemon",
+          "word": "pokemon"
+        },
+        "text": "pokemon is a concept",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "two": {
+          "concept": true,
+          "default": true,
+          "determiner": "a",
+          "marker": "concept",
+          "modifiers": [
+            "determiner"
+          ],
+          "number": "one",
+          "pullFromContext": false,
+          "response": true,
+          "text": "a concept",
+          "types": [
+            "concept"
+          ],
+          "wantsValue": true,
+          "word": "concept"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "concept",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "concept",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "concept",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "a",
+            0
+          ],
+          "ops": [
+            [
+              "a",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "children": {
+            "object": [
+              "whose"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "whose",
+            "object"
+          ],
+          "parents": {
+            "whose": [
+              "object"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "object": {
+              },
+              "whose": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "1": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "2": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "marker": "unknown",
+              "number": "one",
+              "response": true,
+              "text": "pokemon is a concept",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "pokemon",
+              "word": "pokemon"
+            },
+            "text": "pokemon is a concept",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "default": true,
+              "determiner": "a",
+              "marker": "concept",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": false,
+              "response": true,
+              "text": "a concept",
+              "types": [
+                "concept"
+              ],
+              "wantsValue": true,
+              "word": "concept"
+            },
+            "word": "is"
+          },
+          "paraphrases": "pokemon is a concept",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "pokemon is a concept"
+    ],
+    "query": "pokemon is a concept",
+    "responses": [
+      ""
+    ]
   }
 ]

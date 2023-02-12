@@ -24,6 +24,14 @@
           "canBeQuestion"
         ],
         [
+          "concept",
+          "queryable"
+        ],
+        [
+          "concept",
+          "theAble"
+        ],
+        [
           "have",
           "canBeDoQuestion"
         ],
@@ -42,6 +50,10 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "isEd",
+          "isEd"
         ],
         [
           "it",
@@ -78,6 +90,10 @@
         [
           "queryable",
           "queryable"
+        ],
+        [
+          "questionMark",
+          "isEd"
         ],
         [
           "readonly",
@@ -129,7 +145,7 @@
         ],
         [
           "whatAble",
-          "whatAble"
+          "queryable"
         ],
         [
           "whose",
@@ -206,24 +222,24 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "modifies",
-          "default": true,
-          "text": "chicken modifies strips",
-          "word": "modifies",
           "modifier": {
-            "marker": "unknown",
+            "value": "chicken",
+            "unknown": true,
             "word": "chicken",
             "text": "chicken",
-            "value": "chicken",
-            "unknown": true
+            "marker": "unknown"
           },
+          "default": true,
+          "word": "modifies",
+          "text": "chicken modifies strips",
           "concept": {
-            "marker": "unknown",
+            "value": "strips",
+            "unknown": true,
             "word": "strips",
             "text": "strips",
-            "value": "strips",
-            "unknown": true
+            "marker": "unknown"
           },
+          "marker": "modifies",
           "topLevel": true,
           "touchedBy": [
             "call2"
@@ -275,8 +291,11 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.1",
-      "query": "chicken modifies strips"
+      "version": "6.25.0-beta.5",
+      "query": "chicken modifies strips",
+      "key": {
+        "query": "chicken modifies strips"
+      }
     },
     {
       "hierarchy": [
@@ -297,16 +316,72 @@
           "canBeQuestion"
         ],
         [
+          "chicken",
+          "hierarchyAble"
+        ],
+        [
+          "chicken",
+          "isEdee"
+        ],
+        [
+          "chicken",
+          "isEder"
+        ],
+        [
+          "chicken",
+          "object"
+        ],
+        [
+          "chicken",
+          "property"
+        ],
+        [
+          "chicken",
+          "queryable"
+        ],
+        [
+          "chicken",
+          "theAble"
+        ],
+        [
+          "chicken_strip",
+          "concept"
+        ],
+        [
           "chicken_strip",
           "hierarchyAble"
         ],
         [
           "chicken_strip",
-          "strip"
+          "isEdee"
+        ],
+        [
+          "chicken_strip",
+          "isEder"
+        ],
+        [
+          "chicken_strip",
+          "object"
+        ],
+        [
+          "chicken_strip",
+          "property"
+        ],
+        [
+          "chicken_strip",
+          "queryable"
+        ],
+        [
+          "chicken_strip",
+          "theAble"
         ],
         [
           "concept",
-          "concept"
+          "queryable"
+        ],
+        [
+          "concept",
+          "theAble"
         ],
         [
           "have",
@@ -327,6 +402,18 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "isEd",
+          "isEd"
+        ],
+        [
+          "isEdee",
+          "isEdee"
+        ],
+        [
+          "isEder",
+          "isEder"
         ],
         [
           "it",
@@ -365,6 +452,10 @@
           "queryable"
         ],
         [
+          "questionMark",
+          "isEd"
+        ],
+        [
           "readonly",
           "queryable"
         ],
@@ -375,6 +466,18 @@
         [
           "strip",
           "hierarchyAble"
+        ],
+        [
+          "strip",
+          "isEdee"
+        ],
+        [
+          "strip",
+          "isEder"
+        ],
+        [
+          "strip",
+          "object"
         ],
         [
           "strip",
@@ -434,7 +537,7 @@
         ],
         [
           "whatAble",
-          "whatAble"
+          "queryable"
         ],
         [
           "whose",
@@ -447,9 +550,9 @@
       ],
       "logs": [
         "Undefined word 'food'",
-        "Op choices were: [(('unknown', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 0)]), (('strip', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 1)]), (('chicken', 0), [('chicken', 0), ('is', 0), ('unknown', 1)]), (('chicken_strip', 0), [('chicken_strip', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 0]]\n  Context for choosing the operator strip/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 1]]\n  Context for choosing the operator chicken/0 was [['chicken', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator chicken_strip/0 was [['chicken_strip', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.3333333333333333 - [['chicken', 0], ['strip', 0], ['isEd', 0], ['unknown', 0]]\n  0.3333333333333333 - [['chicken', 0], ['strip', 0], ['is', 0], ['unknown', 0]]\n  Group 1\n  0.0 - [['chicken_strip', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['chicken_strip', 0], ['is', 0], ['unknown', 0]]\n  Group 2\n  0.0 - [['strip', 0], ['isEd', 0], ['unknown', 0]]\n  0.0 - [['strip', 0], ['is', 0], ['unknown', 0]]"
+        "Op choices were: [(('unknown', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 0)]), (('strip', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 1)]), (('chicken', 0), [('chicken', 0), ('is', 0), ('unknown', 1)]), (('chicken_strip', 0), [('chicken_strip', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 0]]\n  Context for choosing the operator strip/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 1]]\n  Context for choosing the operator chicken/0 was [['chicken', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator chicken_strip/0 was [['chicken_strip', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n  Group 1\n    0.0 - [['strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n  Group 2\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n  Group 3\n    0.0 - [['strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n  Group 4\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n  Group 5\n    0.0 - [['strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n  Group 6\n    0.0 - [['chicken_strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['chicken_strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n  Group 7\n    0.0 - [['chicken_strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['chicken_strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]"
       ],
       "metadata": {
         "opChoices": [
@@ -543,8 +646,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -554,18 +657,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },
@@ -586,43 +677,44 @@
       "trace": "undefined",
       "contexts": [
         {
-          "number": "many",
-          "text": "chicken strips are food",
-          "marker": "is",
           "word": "are",
-          "one": {
-            "number": "many",
-            "value": "chicken_strip",
-            "text": "chicken strips are food",
-            "marker": "chicken_strip",
-            "word": "strips",
-            "types": [
-              "chicken_strip"
-            ],
-            "chicken": {
-              "value": "chicken",
-              "text": "chicken",
-              "marker": "chicken",
-              "word": "chicken"
-            },
-            "atomic": true,
-            "modifiers": [
-              "chicken"
-            ],
-            "response": true
-          },
           "two": {
-            "marker": "unknown",
-            "word": "food",
-            "text": "food",
-            "value": "food",
-            "unknown": true,
             "types": [
               "unknown"
             ],
+            "value": "food",
+            "unknown": true,
+            "word": "food",
+            "text": "food",
+            "marker": "unknown",
             "response": true,
             "concept": true
           },
+          "text": "chicken strips are food",
+          "number": "many",
+          "one": {
+            "chicken": {
+              "value": "chicken",
+              "word": "chicken",
+              "text": "chicken",
+              "marker": "chicken"
+            },
+            "modifiers": [
+              "chicken"
+            ],
+            "number": "many",
+            "types": [
+              "chicken_strip",
+              "strip"
+            ],
+            "value": "chicken_strip",
+            "word": "strips",
+            "text": "chicken strips are food",
+            "atomic": true,
+            "marker": "chicken_strip",
+            "response": true
+          },
+          "marker": "is",
           "topLevel": true,
           "touchedBy": [
             "call7"
@@ -724,8 +816,11 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.1",
-      "query": "chicken strips are food"
+      "version": "6.25.0-beta.5",
+      "query": "chicken strips are food",
+      "key": {
+        "query": "chicken strips are food"
+      }
     },
     {
       "hierarchy": [
@@ -746,6 +841,38 @@
           "canBeQuestion"
         ],
         [
+          "chicken",
+          "hierarchyAble"
+        ],
+        [
+          "chicken",
+          "isEdee"
+        ],
+        [
+          "chicken",
+          "isEder"
+        ],
+        [
+          "chicken",
+          "object"
+        ],
+        [
+          "chicken",
+          "property"
+        ],
+        [
+          "chicken",
+          "queryable"
+        ],
+        [
+          "chicken",
+          "theAble"
+        ],
+        [
+          "chicken_strip",
+          "concept"
+        ],
+        [
           "chicken_strip",
           "food"
         ],
@@ -755,10 +882,38 @@
         ],
         [
           "chicken_strip",
-          "strip"
+          "isEdee"
+        ],
+        [
+          "chicken_strip",
+          "isEder"
+        ],
+        [
+          "chicken_strip",
+          "object"
+        ],
+        [
+          "chicken_strip",
+          "property"
+        ],
+        [
+          "chicken_strip",
+          "queryable"
+        ],
+        [
+          "chicken_strip",
+          "theAble"
         ],
         [
           "concept",
+          "queryable"
+        ],
+        [
+          "concept",
+          "theAble"
+        ],
+        [
+          "food",
           "concept"
         ],
         [
@@ -767,7 +922,19 @@
         ],
         [
           "food",
+          "isEdee"
+        ],
+        [
+          "food",
+          "isEder"
+        ],
+        [
+          "food",
           "object"
+        ],
+        [
+          "food",
+          "property"
         ],
         [
           "food",
@@ -796,6 +963,18 @@
         [
           "is",
           "canBeQuestion"
+        ],
+        [
+          "isEd",
+          "isEd"
+        ],
+        [
+          "isEdee",
+          "isEdee"
+        ],
+        [
+          "isEder",
+          "isEder"
         ],
         [
           "it",
@@ -834,6 +1013,10 @@
           "queryable"
         ],
         [
+          "questionMark",
+          "isEd"
+        ],
+        [
           "readonly",
           "queryable"
         ],
@@ -844,6 +1027,18 @@
         [
           "strip",
           "hierarchyAble"
+        ],
+        [
+          "strip",
+          "isEdee"
+        ],
+        [
+          "strip",
+          "isEder"
+        ],
+        [
+          "strip",
+          "object"
         ],
         [
           "strip",
@@ -903,7 +1098,7 @@
         ],
         [
           "whatAble",
-          "whatAble"
+          "queryable"
         ],
         [
           "whose",
@@ -916,9 +1111,9 @@
       ],
       "logs": [
         "Undefined word 'sushi'",
-        "Op choices were: [(('unknown', 0), [('food', 0), ('is', 0), ('unknown', 0)]), (('food', 0), [('food', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['food', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator food/0 was [['food', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the negative or positive associations list): \n  Group 0\n  0.0 - [['unknown', 0], ['isEd', 0], ['food', 0]]\n  0.0 - [['unknown', 0], ['is', 0], ['food', 0]]"
+        "Op choices were: [(('unknown', 0), [('food', 0), ('is', 0), ('unknown', 0)]), (('food', 0), [('food', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['food', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator food/0 was [['food', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['food', 0]]\n      (('unknown', 0), ('is', 0), ('food', 0))\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['food', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('food', 0))\n  Group 1\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['food', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('food', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['food', 0]]\n      (('unknown', 1), ('is', 0), ('food', 0))\n  Group 2\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['food', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('food', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['food', 0]]\n      (('unknown', 1), ('is', 0), ('food', 0))\n  Group 3\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['food', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('food', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['food', 0]]\n      (('unknown', 1), ('is', 0), ('food', 0))"
       ],
       "metadata": {
         "opChoices": [
@@ -964,8 +1159,8 @@
           },
           {
             "op": [
-              "is",
-              0
+              "unknown",
+              1
             ],
             "ops": [
               [
@@ -975,6 +1170,18 @@
               [
                 "unknown",
                 1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
               ]
             ]
           },
@@ -995,34 +1202,34 @@
       "trace": "undefined",
       "contexts": [
         {
-          "number": "one",
-          "text": "sushi is food",
-          "marker": "is",
           "word": "is",
-          "one": {
-            "number": "one",
-            "marker": "unknown",
-            "word": "sushi",
-            "text": "sushi is food",
-            "value": "sushi",
-            "unknown": true,
-            "types": [
-              "unknown"
-            ],
-            "response": true
-          },
           "two": {
-            "value": "food",
-            "number": "one",
-            "text": "food",
-            "marker": "food",
             "word": "food",
             "types": [
               "food"
             ],
+            "value": "food",
+            "number": "one",
+            "text": "food",
+            "marker": "food",
             "response": true,
             "concept": true
           },
+          "text": "sushi is food",
+          "number": "one",
+          "one": {
+            "word": "sushi",
+            "types": [
+              "unknown"
+            ],
+            "value": "sushi",
+            "unknown": true,
+            "number": "one",
+            "text": "sushi is food",
+            "marker": "unknown",
+            "response": true
+          },
+          "marker": "is",
           "topLevel": true,
           "touchedBy": [
             "call19"
@@ -1078,8 +1285,11 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.1",
-      "query": "sushi is food"
+      "version": "6.25.0-beta.5",
+      "query": "sushi is food",
+      "key": {
+        "query": "sushi is food"
+      }
     }
   ],
   "fragments": [],

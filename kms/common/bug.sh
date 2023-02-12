@@ -246,6 +246,8 @@
 # node people -q "ownee23 is owned by owner23 who is ownee23 owned by" -g -d
 # node people -q "owneevar is owned by ownervar" -g -d
 # node people -q 'who is ownee23 owned by' -g -d
-# node kid -q "who is kia's cat" -g -d -s
+# node dialogues -q 'x is y?' -d -g
+# node pokemon -q 'pikachu squirtle weedle and pidgeot are pokemon' -d -g
 # node kid -q "kia's cat is cleo" -d -g
-node dialogues -q 'x is y?' -d -g
+# node kid -q "who is kia's cat" -g -d -s
+node crew -q 'kirk is a crew member' -g -d -daa

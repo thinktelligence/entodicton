@@ -83,8 +83,8 @@ let config = {
     "([hierarchyAble|])",
     "(([property]) <([propertyOf|of] ([object]))>)",
     "(<whose> ([property]))",
-    "([concept])", 
     "((modifier) [modifies] (concept))", 
+    "([concept])",
     "([readonly])", 
     "(<objectPrefix|> ([property]))",
     "(<(([object]) [possession|])> ([property|]))",
@@ -107,6 +107,8 @@ let config = {
     "(([property]) <([propertyOf|of] ([object]))>)",
   */
   hierarchy: [
+    ['concept', 'theAble'],
+    ['concept', 'queryable'],
     ['unknown', 'hierarchyAble'],
     ['unknown', 'object'],
     ['what', 'object'],
@@ -403,6 +405,14 @@ let config = {
   ],
   semantics: [
     {
+      match: ({context}) => context.marker == 'concept' && context.same,
+      apply: ({context, km, config}) => {
+        const api = km('properties').api
+        api.makeObject({ config, context: context.same })
+        context.sameWasProcessed = true
+      }
+    },
+    {
       // TODO maybe use the dialogue management to get params
       notes: 'wants is xfx between wanter and wantee',
       match: ({context}) => context.same && context.same.marker == 'xfx',
@@ -423,7 +433,7 @@ let config = {
       ],
       match: ({context}) => context.marker == 'modifies',
       apply: ({config, km, context}) => {
-        km('properties').api.kindOfConcept({ config, modifier: context.modifier.value, object: context.concept.value })
+        km('properties').api.kindOfConcept({ config, modifier: context.modifier.value, object: context.concept.value || context.concept.marker })
       }
     },
     {
@@ -451,7 +461,11 @@ let config = {
     */
     {
       notes: 'crew members. evaluate a concepts to get instances',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'concept') && context.evaluate && !context.evaluate.toConcept,
+      match: ({context, hierarchy}) => 
+                          hierarchy.isA(context.marker, 'concept') && 
+                          context.evaluate &&
+                          !context.types.includes('property') &&
+                          !context.evaluate.toConcept,
       apply: ({context, objects, api}) => {
         const values = api.objects.children[context.marker]
         const phrases = values.map( (value) => api.getWordForValue(value) )
