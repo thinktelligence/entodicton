@@ -166,10 +166,6 @@
       "metadata": {
         "opChoices": [
           {
-            "op": [
-              "unknown",
-              0
-            ],
             "ops": [
               [
                 "modifies",
@@ -179,13 +175,13 @@
                 "unknown",
                 0
               ]
-            ]
-          },
-          {
+            ],
             "op": [
               "unknown",
               0
-            ],
+            ]
+          },
+          {
             "ops": [
               [
                 "modifies",
@@ -199,22 +195,26 @@
                 "unknown",
                 1
               ]
+            ],
+            "op": [
+              "unknown",
+              0
             ]
           },
           {
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ],
             "op": [
               "modifies",
               0
-            ],
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "unknown",
-                1
-              ]
             ]
           }
         ]
@@ -222,25 +222,26 @@
       "trace": "undefined",
       "contexts": [
         {
-          "modifier": {
-            "value": "chicken",
-            "unknown": true,
-            "word": "chicken",
-            "text": "chicken",
-            "marker": "unknown"
-          },
-          "default": true,
-          "word": "modifies",
           "text": "chicken modifies strips",
           "concept": {
-            "value": "strips",
-            "unknown": true,
             "word": "strips",
+            "unknown": true,
+            "value": "strips",
             "text": "strips",
             "marker": "unknown"
           },
+          "default": true,
+          "modifier": {
+            "word": "chicken",
+            "unknown": true,
+            "value": "chicken",
+            "text": "chicken",
+            "marker": "unknown"
+          },
+          "word": "modifies",
           "marker": "modifies",
           "topLevel": true,
+          "calls": "Context#2: call2",
           "touchedBy": [
             "call2"
           ]
@@ -552,15 +553,35 @@
         "Undefined word 'food'",
         "Op choices were: [(('unknown', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 0)]), (('strip', 0), [('chicken', 0), ('is', 0), ('strip', 0), ('unknown', 1)]), (('chicken', 0), [('chicken', 0), ('is', 0), ('unknown', 1)]), (('chicken_strip', 0), [('chicken_strip', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 0]]\n  Context for choosing the operator strip/0 was [['chicken', 0], ['is', 0], ['strip', 0], ['unknown', 1]]\n  Context for choosing the operator chicken/0 was [['chicken', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator chicken_strip/0 was [['chicken_strip', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n  Group 1\n    0.0 - [['strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n  Group 2\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n  Group 3\n    0.0 - [['strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n  Group 4\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n    0.0 - [['chicken', 0], ['strip', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n  Group 5\n    0.0 - [['strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n  Group 6\n    0.0 - [['chicken_strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['chicken_strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n  Group 7\n    0.0 - [['chicken_strip', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n    0.0 - [['chicken_strip', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): "
       ],
       "metadata": {
         "opChoices": [
           {
+            "ops": [
+              [
+                "chicken",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "strip",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
+            ],
             "op": [
               "unknown",
               0
-            ],
+            ]
+          },
+          {
             "ops": [
               [
                 "chicken",
@@ -576,15 +597,15 @@
               ],
               [
                 "unknown",
-                0
+                1
               ]
-            ]
-          },
-          {
+            ],
             "op": [
               "strip",
               0
-            ],
+            ]
+          },
+          {
             "ops": [
               [
                 "chicken",
@@ -595,40 +616,16 @@
                 0
               ],
               [
-                "strip",
-                0
-              ],
-              [
                 "unknown",
                 1
               ]
-            ]
-          },
-          {
+            ],
             "op": [
               "chicken",
               0
-            ],
-            "ops": [
-              [
-                "chicken",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "unknown",
-                1
-              ]
             ]
           },
           {
-            "op": [
-              "chicken_strip",
-              0
-            ],
             "ops": [
               [
                 "chicken_strip",
@@ -642,13 +639,13 @@
                 "unknown",
                 1
               ]
+            ],
+            "op": [
+              "chicken_strip",
+              0
             ]
           },
           {
-            "op": [
-              "is",
-              0
-            ],
             "ops": [
               [
                 "is",
@@ -658,18 +655,22 @@
                 "unknown",
                 1
               ]
+            ],
+            "op": [
+              "is",
+              0
             ]
           },
           {
-            "op": [
-              "is",
-              1
-            ],
             "ops": [
               [
                 "is",
                 1
               ]
+            ],
+            "op": [
+              "is",
+              1
             ]
           }
         ]
@@ -677,45 +678,46 @@
       "trace": "undefined",
       "contexts": [
         {
+          "text": "chicken strips are food",
+          "marker": "is",
+          "number": "many",
           "word": "are",
           "two": {
+            "unknown": true,
+            "text": "food",
+            "word": "food",
             "types": [
               "unknown"
             ],
             "value": "food",
-            "unknown": true,
-            "word": "food",
-            "text": "food",
             "marker": "unknown",
             "response": true,
             "concept": true
           },
-          "text": "chicken strips are food",
-          "number": "many",
           "one": {
+            "text": "chicken strips are food",
             "chicken": {
-              "value": "chicken",
               "word": "chicken",
+              "value": "chicken",
               "text": "chicken",
               "marker": "chicken"
             },
-            "modifiers": [
-              "chicken"
-            ],
-            "number": "many",
             "types": [
               "chicken_strip",
               "strip"
             ],
-            "value": "chicken_strip",
+            "number": "many",
             "word": "strips",
-            "text": "chicken strips are food",
             "atomic": true,
+            "value": "chicken_strip",
             "marker": "chicken_strip",
+            "modifiers": [
+              "chicken"
+            ],
             "response": true
           },
-          "marker": "is",
           "topLevel": true,
+          "calls": "Context#5: call7",
           "touchedBy": [
             "call7"
           ]
@@ -1118,10 +1120,6 @@
       "metadata": {
         "opChoices": [
           {
-            "op": [
-              "unknown",
-              0
-            ],
             "ops": [
               [
                 "food",
@@ -1135,18 +1133,34 @@
                 "unknown",
                 0
               ]
+            ],
+            "op": [
+              "unknown",
+              0
             ]
           },
           {
+            "ops": [
+              [
+                "food",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ],
             "op": [
               "food",
               0
-            ],
+            ]
+          },
+          {
             "ops": [
-              [
-                "food",
-                0
-              ],
               [
                 "is",
                 0
@@ -1155,46 +1169,34 @@
                 "unknown",
                 1
               ]
-            ]
-          },
-          {
+            ],
             "op": [
               "unknown",
               1
-            ],
+            ]
+          },
+          {
             "ops": [
               [
                 "is",
                 0
-              ],
-              [
-                "unknown",
-                1
               ]
-            ]
-          },
-          {
+            ],
             "op": [
               "is",
               0
-            ],
-            "ops": [
-              [
-                "is",
-                0
-              ]
             ]
           },
           {
-            "op": [
-              "is",
-              1
-            ],
             "ops": [
               [
                 "is",
                 1
               ]
+            ],
+            "op": [
+              "is",
+              1
             ]
           }
         ]
@@ -1202,35 +1204,36 @@
       "trace": "undefined",
       "contexts": [
         {
+          "text": "sushi is food",
+          "marker": "is",
+          "number": "one",
           "word": "is",
           "two": {
+            "text": "food",
+            "number": "one",
             "word": "food",
             "types": [
               "food"
             ],
             "value": "food",
-            "number": "one",
-            "text": "food",
             "marker": "food",
             "response": true,
             "concept": true
           },
-          "text": "sushi is food",
-          "number": "one",
           "one": {
-            "word": "sushi",
+            "text": "sushi is food",
+            "marker": "unknown",
+            "number": "one",
+            "unknown": true,
             "types": [
               "unknown"
             ],
             "value": "sushi",
-            "unknown": true,
-            "number": "one",
-            "text": "sushi is food",
-            "marker": "unknown",
+            "word": "sushi",
             "response": true
           },
-          "marker": "is",
           "topLevel": true,
+          "calls": "Context#8: call19",
           "touchedBy": [
             "call19"
           ]

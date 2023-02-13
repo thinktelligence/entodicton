@@ -12,7 +12,43 @@
         ],
         [
           "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -37,44 +73,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
         ]
       ]
     ],
@@ -82,6 +80,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#818: call3236",
         "marker": "is",
         "number": "one",
         "one": {
@@ -110,7 +109,6 @@
           ],
           "marker": "is",
           "one": {
-            "evaluate": true,
             "marker": "property",
             "object": {
               "marker": "objectPrefix",
@@ -124,7 +122,8 @@
                 "marker": "property",
                 "text": "name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
@@ -140,18 +139,21 @@
             ],
             "text": "your name",
             "types": [
-              "property"
+              "property",
+              "unknown"
             ],
             "unknown": true,
             "value": "name",
             "word": "name"
           },
           "two": {
+            "calls": "Context#818: call3236,call3237",
             "evaluateWasProcessed": true,
             "focus": true,
             "focusable": [
               "object[0]"
             ],
+            "greg": "greg44",
             "instance": true,
             "marker": "property",
             "objects": [
@@ -159,7 +161,8 @@
                 "marker": "property",
                 "text": "name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
@@ -178,7 +181,8 @@
               "call3237"
             ],
             "types": [
-              "property"
+              "property",
+              "unknown"
             ],
             "unknown": true,
             "value": {
@@ -215,7 +219,8 @@
               "marker": "property",
               "text": "name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -232,7 +237,8 @@
           "response": true,
           "text": "your name",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "name",
@@ -250,7 +256,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -274,7 +280,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -288,26 +294,6 @@
             [
               "what",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "objectPrefix",
-              0
-            ],
-            [
-              "unknown",
-              1
             ]
           ]
         },
@@ -423,20 +409,6 @@
               "pidgeon",
               "parrot"
             ],
-            "canBeDoQuestion": [
-              "love",
-              "like",
-              "dislike",
-              "hate",
-              "have"
-            ],
-            "canBeQuestion": [
-              "love",
-              "like",
-              "dislike",
-              "hate",
-              "have"
-            ],
             "canine": [
               "dog",
               "wolf"
@@ -451,12 +423,6 @@
               "chicken_strip",
               "sushi"
             ],
-            "ifAble": [
-              "love",
-              "like",
-              "dislike",
-              "hate"
-            ],
             "mammal": [
               "human",
               "bat",
@@ -467,42 +433,13 @@
               "kia",
               "hana"
             ],
-            "orAble": [
-              "love",
-              "like",
-              "dislike",
-              "hate"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
             "sister": [
               "hana",
               "kia"
-            ],
-            "whatAble": [
-              "type"
             ]
           },
           "concepts": [
             "properties",
-            "self",
-            "queryable",
-            "love",
-            "canBeDoQuestion",
-            "canBeQuestion",
-            "ifAble",
-            "orAble",
-            "like",
-            "dislike",
-            "hate",
-            "type",
-            "property",
-            "whatAble",
-            "have",
             "chicken_strip",
             "food",
             "sushi",
@@ -554,12 +491,6 @@
             "cleo": [
               "cat"
             ],
-            "dislike": [
-              "canBeDoQuestion",
-              "canBeQuestion",
-              "ifAble",
-              "orAble"
-            ],
             "dog": [
               "canine"
             ],
@@ -573,34 +504,12 @@
               "sister",
               "name"
             ],
-            "hate": [
-              "canBeDoQuestion",
-              "canBeQuestion",
-              "ifAble",
-              "orAble"
-            ],
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
             "human": [
               "mammal"
             ],
             "kia": [
               "name",
               "sister"
-            ],
-            "like": [
-              "canBeDoQuestion",
-              "canBeQuestion",
-              "ifAble",
-              "orAble"
-            ],
-            "love": [
-              "canBeDoQuestion",
-              "canBeQuestion",
-              "ifAble",
-              "orAble"
             ],
             "mammal": [
               "animal"
@@ -614,15 +523,8 @@
             "pidgeon": [
               "bird"
             ],
-            "self": [
-              "queryable"
-            ],
             "sushi": [
               "food"
-            ],
-            "type": [
-              "property",
-              "whatAble"
             ],
             "wolf": [
               "canine"
@@ -666,10 +568,6 @@
                   "value": null
                 }
               },
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
               "canine": {
               },
               "cat": {
@@ -677,8 +575,6 @@
               "chicken_strip": {
               },
               "cleo": {
-              },
-              "dislike": {
               },
               "dog": {
               },
@@ -732,13 +628,7 @@
                   }
                 }
               },
-              "hate": {
-              },
-              "have": {
-              },
               "human": {
-              },
-              "ifAble": {
               },
               "kia": {
                 "age": {
@@ -798,10 +688,6 @@
                   }
                 }
               },
-              "like": {
-              },
-              "love": {
-              },
               "mammal": {
                 "ear": {
                   "has": true,
@@ -818,27 +704,15 @@
               },
               "name": {
               },
-              "orAble": {
-              },
               "owl": {
               },
               "parrot": {
               },
               "pidgeon": {
               },
-              "property": {
-              },
-              "queryable": {
-              },
-              "self": {
-              },
               "sister": {
               },
               "sushi": {
-              },
-              "type": {
-              },
-              "whatAble": {
               },
               "wolf": {
               }
@@ -933,6 +807,7 @@
           },
           "relations": [
             {
+              "calls": "Context#269: call1047",
               "do": {
                 "left": "lover",
                 "right": "lovee",
@@ -959,7 +834,7 @@
                 "text": "chicken strips",
                 "types": [
                   "chicken_strip",
-                  "object"
+                  "strip"
                 ],
                 "value": "chicken_strip",
                 "word": "strips"
@@ -969,7 +844,6 @@
                 "paraphrase": true,
                 "text": "kia",
                 "types": [
-                  "object",
                   "unknown"
                 ],
                 "unknown": true,
@@ -996,6 +870,7 @@
               "word": "loves"
             },
             {
+              "calls": "Context#272: call1056",
               "do": {
                 "left": "hater",
                 "right": "hatee",
@@ -1021,7 +896,6 @@
                 "paraphrase": true,
                 "text": "kia",
                 "types": [
-                  "object",
                   "unknown"
                 ],
                 "unknown": true,
@@ -1048,6 +922,7 @@
               "word": "hates"
             },
             {
+              "calls": "Context#275: call1064",
               "do": {
                 "left": "liker",
                 "right": "likee",
@@ -1074,7 +949,7 @@
                 "text": "chicken strips",
                 "types": [
                   "chicken_strip",
-                  "object"
+                  "strip"
                 ],
                 "value": "chicken_strip",
                 "word": "strips"
@@ -1084,7 +959,6 @@
                 "paraphrase": true,
                 "text": "hana",
                 "types": [
-                  "object",
                   "unknown"
                 ],
                 "unknown": true,
@@ -1111,6 +985,7 @@
               "word": "likes"
             },
             {
+              "calls": "Context#278: call1073",
               "dislikee": {
                 "marker": "sushi",
                 "number": "one",
@@ -1127,7 +1002,6 @@
                 "paraphrase": true,
                 "text": "hana",
                 "types": [
-                  "object",
                   "unknown"
                 ],
                 "unknown": true,
@@ -1214,6 +1088,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#818: call3236",
             "marker": "is",
             "number": "one",
             "one": {
@@ -1242,7 +1117,6 @@
               ],
               "marker": "is",
               "one": {
-                "evaluate": true,
                 "marker": "property",
                 "object": {
                   "marker": "objectPrefix",
@@ -1256,7 +1130,8 @@
                     "marker": "property",
                     "text": "name",
                     "types": [
-                      "property"
+                      "property",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "name",
@@ -1272,18 +1147,21 @@
                 ],
                 "text": "your name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
                 "word": "name"
               },
               "two": {
+                "calls": "Context#818: call3236,call3237",
                 "evaluateWasProcessed": true,
                 "focus": true,
                 "focusable": [
                   "object[0]"
                 ],
+                "greg": "greg44",
                 "instance": true,
                 "marker": "property",
                 "objects": [
@@ -1291,7 +1169,8 @@
                     "marker": "property",
                     "text": "name",
                     "types": [
-                      "property"
+                      "property",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "name",
@@ -1310,7 +1189,8 @@
                   "call3237"
                 ],
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": {
@@ -1347,7 +1227,8 @@
                   "marker": "property",
                   "text": "name",
                   "types": [
-                    "property"
+                    "property",
+                    "unknown"
                   ],
                   "unknown": true,
                   "value": "name",
@@ -1364,7 +1245,8 @@
               "response": true,
               "text": "your name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -1379,6 +1261,7 @@
         },
         {
           "context": {
+            "calls": "Context#815: call3226",
             "marker": "is",
             "number": "many",
             "one": {
@@ -1420,16 +1303,16 @@
         },
         {
           "context": {
+            "calls": "Context#812: call3209",
             "marker": "is",
             "number": "one",
             "one": {
-              "marker": "property",
+              "marker": "cat",
               "number": "one",
               "object": {
                 "marker": "unknown",
                 "text": "kia",
                 "types": [
-                  "object",
                   "unknown"
                 ],
                 "unknown": true,
@@ -1452,7 +1335,6 @@
                   "marker": "unknown",
                   "text": "kia",
                   "types": [
-                    "object",
                     "unknown"
                   ],
                   "unknown": true,
@@ -1498,6 +1380,7 @@
         },
         {
           "context": {
+            "calls": "Context#809: call3201",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -1532,6 +1415,7 @@
         },
         {
           "context": {
+            "calls": "Context#806: call3193",
             "dislikee": {
               "marker": "sushi",
               "number": "one",
@@ -1546,7 +1430,6 @@
               "marker": "unknown",
               "text": "hana",
               "types": [
-                "object",
                 "unknown"
               ],
               "unknown": true,
@@ -1588,6 +1471,7 @@
         },
         {
           "context": {
+            "calls": "Context#803: call3184",
             "do": {
               "left": "liker",
               "right": "likee",
@@ -1613,7 +1497,7 @@
               "text": "chicken strips",
               "types": [
                 "chicken_strip",
-                "object"
+                "strip"
               ],
               "value": "chicken_strip",
               "word": "strips"
@@ -1622,7 +1506,6 @@
               "marker": "unknown",
               "text": "hana",
               "types": [
-                "object",
                 "unknown"
               ],
               "unknown": true,

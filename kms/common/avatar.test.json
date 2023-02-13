@@ -96,6 +96,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#21: call98",
         "do": {
           "left": "object",
           "right": "property",
@@ -109,7 +110,6 @@
           "number": "one",
           "text": "greg has eyes",
           "types": [
-            "object",
             "unknown"
           ],
           "unknown": true,
@@ -120,7 +120,8 @@
           "marker": "property",
           "text": "eyes",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "eyes",
@@ -135,6 +136,7 @@
         "word": "has"
       },
       {
+        "calls": "Context#23: call106",
         "do": {
           "left": "object",
           "right": "property",
@@ -148,7 +150,6 @@
           "number": "one",
           "text": "greg has eyes",
           "types": [
-            "object",
             "unknown"
           ],
           "unknown": true,
@@ -159,7 +160,8 @@
           "marker": "property",
           "text": "eyes",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "eyes",
@@ -320,45 +322,41 @@
         },
         {
           "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "have",
-            1
-          ],
-          "ops": [
-            [
-              "have",
-              1
-            ],
-            [
-              "questionMark",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "questionMark",
             0
           ],
           "ops": [
             [
+              "have",
+              1
+            ],
+            [
               "questionMark",
               0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "have",
+            1
+          ],
+          "ops": [
+            [
+              "have",
+              1
             ]
           ]
         }
@@ -372,46 +370,12 @@
         },
         "2": {
           "children": {
-            "canBeDoQuestion": [
-              "have"
-            ],
-            "canBeQuestion": [
-              "have"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
-            "whatAble": [
-              "type"
-            ]
           },
           "concepts": [
             "properties",
-            "self",
-            "queryable",
-            "type",
-            "property",
-            "whatAble",
-            "have",
-            "canBeQuestion",
-            "canBeDoQuestion",
             "greg"
           ],
           "parents": {
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
-            "self": [
-              "queryable"
-            ],
-            "type": [
-              "property",
-              "whatAble"
-            ]
           },
           "properties": {
             "handlers": {
@@ -419,27 +383,11 @@
             "initHandlers": [
             ],
             "root": {
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
               "greg": {
                 "eye": {
                   "has": true,
                   "value": null
                 }
-              },
-              "have": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "self": {
-              },
-              "type": {
-              },
-              "whatAble": {
               }
             }
           },
@@ -462,6 +410,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#23: call106",
             "do": {
               "left": "object",
               "right": "property",
@@ -475,7 +424,6 @@
               "number": "one",
               "text": "greg has eyes",
               "types": [
-                "object",
                 "unknown"
               ],
               "unknown": true,
@@ -486,7 +434,8 @@
               "marker": "property",
               "text": "eyes",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "eyes",
@@ -514,6 +463,7 @@
         },
         {
           "context": {
+            "calls": "Context#21: call98",
             "do": {
               "left": "object",
               "right": "property",
@@ -527,7 +477,6 @@
               "number": "one",
               "text": "greg has eyes",
               "types": [
-                "object",
                 "unknown"
               ],
               "unknown": true,
@@ -538,7 +487,8 @@
               "marker": "property",
               "text": "eyes",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "eyes",
@@ -584,10 +534,74 @@
         [
           "unknown",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          0
         ],
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -622,54 +636,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
         ]
       ]
     ],
@@ -677,6 +643,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#16: call67",
         "marker": "is",
         "number": "one",
         "one": {
@@ -694,7 +661,8 @@
               "marker": "property",
               "text": "name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -711,7 +679,8 @@
           "response": true,
           "text": "my name is greg",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "name",
@@ -736,6 +705,7 @@
         "word": "is"
       },
       {
+        "calls": "Context#18: call81",
         "marker": "is",
         "number": "one",
         "one": {
@@ -764,7 +734,6 @@
           ],
           "marker": "is",
           "one": {
-            "evaluate": true,
             "marker": "property",
             "object": {
               "marker": "objectPrefix",
@@ -778,7 +747,8 @@
                 "marker": "property",
                 "text": "name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
@@ -794,18 +764,21 @@
             ],
             "text": "my name",
             "types": [
-              "property"
+              "property",
+              "unknown"
             ],
             "unknown": true,
             "value": "name",
             "word": "name"
           },
           "two": {
+            "calls": "Context#18: call81,call82",
             "evaluateWasProcessed": true,
             "focus": true,
             "focusable": [
               "object[0]"
             ],
+            "greg": "greg44",
             "instance": true,
             "marker": "property",
             "objects": [
@@ -813,7 +786,8 @@
                 "marker": "property",
                 "text": "name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
@@ -832,7 +806,8 @@
               "call82"
             ],
             "types": [
-              "property"
+              "property",
+              "unknown"
             ],
             "unknown": true,
             "value": {
@@ -869,7 +844,8 @@
               "marker": "property",
               "text": "name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -886,7 +862,8 @@
           "response": true,
           "text": "my name",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "name",
@@ -904,7 +881,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -932,10 +909,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "objectPrefix",
               0
             ],
@@ -960,7 +933,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -988,7 +961,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1012,7 +985,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1036,47 +1009,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "objectPrefix",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -1155,35 +1088,12 @@
         },
         "2": {
           "children": {
-            "canBeDoQuestion": [
-              "have"
-            ],
-            "canBeQuestion": [
-              "have"
-            ],
             "name": [
               "greg"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
-            "whatAble": [
-              "type"
             ]
           },
           "concepts": [
             "properties",
-            "self",
-            "queryable",
-            "type",
-            "property",
-            "whatAble",
-            "have",
-            "canBeQuestion",
-            "canBeDoQuestion",
             "greg",
             "name",
             "other"
@@ -1191,17 +1101,6 @@
           "parents": {
             "greg": [
               "name"
-            ],
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
-            "self": [
-              "queryable"
-            ],
-            "type": [
-              "property",
-              "whatAble"
             ]
           },
           "properties": {
@@ -1210,13 +1109,7 @@
             "initHandlers": [
             ],
             "root": {
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
               "greg": {
-              },
-              "have": {
               },
               "name": {
               },
@@ -1235,16 +1128,6 @@
                     "word": "greg"
                   }
                 }
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "self": {
-              },
-              "type": {
-              },
-              "whatAble": {
               }
             }
           },
@@ -1295,6 +1178,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#18: call81",
             "marker": "is",
             "number": "one",
             "one": {
@@ -1323,7 +1207,6 @@
               ],
               "marker": "is",
               "one": {
-                "evaluate": true,
                 "marker": "property",
                 "object": {
                   "marker": "objectPrefix",
@@ -1337,7 +1220,8 @@
                     "marker": "property",
                     "text": "name",
                     "types": [
-                      "property"
+                      "property",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "name",
@@ -1353,18 +1237,21 @@
                 ],
                 "text": "my name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
                 "word": "name"
               },
               "two": {
+                "calls": "Context#18: call81,call82",
                 "evaluateWasProcessed": true,
                 "focus": true,
                 "focusable": [
                   "object[0]"
                 ],
+                "greg": "greg44",
                 "instance": true,
                 "marker": "property",
                 "objects": [
@@ -1372,7 +1259,8 @@
                     "marker": "property",
                     "text": "name",
                     "types": [
-                      "property"
+                      "property",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "name",
@@ -1391,7 +1279,8 @@
                   "call82"
                 ],
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": {
@@ -1428,7 +1317,8 @@
                   "marker": "property",
                   "text": "name",
                   "types": [
-                    "property"
+                    "property",
+                    "unknown"
                   ],
                   "unknown": true,
                   "value": "name",
@@ -1445,7 +1335,8 @@
               "response": true,
               "text": "my name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -1461,6 +1352,7 @@
         },
         {
           "context": {
+            "calls": "Context#16: call67",
             "marker": "is",
             "number": "one",
             "one": {
@@ -1478,7 +1370,8 @@
                   "marker": "property",
                   "text": "name",
                   "types": [
-                    "property"
+                    "property",
+                    "unknown"
                   ],
                   "unknown": true,
                   "value": "name",
@@ -1495,7 +1388,8 @@
               "response": true,
               "text": "my name is greg",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -1549,8 +1443,96 @@
           0
         ],
         [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -1588,88 +1570,6 @@
       [
         [
           "is",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "propertyOf",
-          0
-        ],
-        [
-          "the",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "propertyOf",
           0
         ],
         [
@@ -1682,6 +1582,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#13: call53",
         "marker": "is",
         "number": "one",
         "one": {
@@ -1721,7 +1622,6 @@
             "marker": "unknown",
             "text": "mccoy",
             "types": [
-              "object",
               "unknown"
             ],
             "unknown": true,
@@ -1739,7 +1639,8 @@
               "pullFromContext": true,
               "text": "the rank",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "rank",
@@ -1750,7 +1651,6 @@
               "marker": "unknown",
               "text": "mccoy",
               "types": [
-                "object",
                 "unknown"
               ],
               "unknown": true,
@@ -1762,7 +1662,8 @@
           "response": true,
           "text": "the rank of mccoy",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "rank",
@@ -1781,7 +1682,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1809,7 +1710,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1822,34 +1723,6 @@
             ],
             [
               "unknown",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ],
-            [
-              "what",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "what",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "propertyOf",
-              0
-            ],
-            [
-              "the",
               0
             ],
             [
@@ -1869,7 +1742,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1883,17 +1756,21 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "isEd",
+            "what",
             0
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -1903,6 +1780,10 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -1984,45 +1865,11 @@
         },
         "2": {
           "children": {
-            "canBeDoQuestion": [
-              "have"
-            ],
-            "canBeQuestion": [
-              "have"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
-            "whatAble": [
-              "type"
-            ]
           },
           "concepts": [
-            "properties",
-            "self",
-            "queryable",
-            "type",
-            "property",
-            "whatAble",
-            "have",
-            "canBeQuestion",
-            "canBeDoQuestion"
+            "properties"
           ],
           "parents": {
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
-            "self": [
-              "queryable"
-            ],
-            "type": [
-              "property",
-              "whatAble"
-            ]
           },
           "properties": {
             "handlers": {
@@ -2030,22 +1877,6 @@
             "initHandlers": [
             ],
             "root": {
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
-              "have": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "self": {
-              },
-              "type": {
-              },
-              "whatAble": {
-              }
             }
           },
           "property": {
@@ -2082,6 +1913,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#13: call53",
             "marker": "is",
             "number": "one",
             "one": {
@@ -2121,7 +1953,6 @@
                 "marker": "unknown",
                 "text": "mccoy",
                 "types": [
-                  "object",
                   "unknown"
                 ],
                 "unknown": true,
@@ -2139,7 +1970,8 @@
                   "pullFromContext": true,
                   "text": "the rank",
                   "types": [
-                    "property"
+                    "property",
+                    "unknown"
                   ],
                   "unknown": true,
                   "value": "rank",
@@ -2150,7 +1982,6 @@
                   "marker": "unknown",
                   "text": "mccoy",
                   "types": [
-                    "object",
                     "unknown"
                   ],
                   "unknown": true,
@@ -2162,7 +1993,8 @@
               "response": true,
               "text": "the rank of mccoy",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "rank",
@@ -2231,6 +2063,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#10: call43",
         "marker": "is",
         "number": "many",
         "one": {
@@ -2344,45 +2177,11 @@
         },
         "2": {
           "children": {
-            "canBeDoQuestion": [
-              "have"
-            ],
-            "canBeQuestion": [
-              "have"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
-            "whatAble": [
-              "type"
-            ]
           },
           "concepts": [
-            "properties",
-            "self",
-            "queryable",
-            "type",
-            "property",
-            "whatAble",
-            "have",
-            "canBeQuestion",
-            "canBeDoQuestion"
+            "properties"
           ],
           "parents": {
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
-            "self": [
-              "queryable"
-            ],
-            "type": [
-              "property",
-              "whatAble"
-            ]
           },
           "properties": {
             "handlers": {
@@ -2390,22 +2189,6 @@
             "initHandlers": [
             ],
             "root": {
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
-              "have": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "self": {
-              },
-              "type": {
-              },
-              "whatAble": {
-              }
             }
           },
           "property": {
@@ -2428,6 +2211,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#10: call43",
             "marker": "is",
             "number": "many",
             "one": {
@@ -2520,6 +2304,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#7: call33",
         "marker": "is",
         "number": "many",
         "one": {
@@ -2633,45 +2418,11 @@
         },
         "2": {
           "children": {
-            "canBeDoQuestion": [
-              "have"
-            ],
-            "canBeQuestion": [
-              "have"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
-            "whatAble": [
-              "type"
-            ]
           },
           "concepts": [
-            "properties",
-            "self",
-            "queryable",
-            "type",
-            "property",
-            "whatAble",
-            "have",
-            "canBeQuestion",
-            "canBeDoQuestion"
+            "properties"
           ],
           "parents": {
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
-            "self": [
-              "queryable"
-            ],
-            "type": [
-              "property",
-              "whatAble"
-            ]
           },
           "properties": {
             "handlers": {
@@ -2679,22 +2430,6 @@
             "initHandlers": [
             ],
             "root": {
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
-              "have": {
-              },
-              "property": {
-              },
-              "queryable": {
-              },
-              "self": {
-              },
-              "type": {
-              },
-              "whatAble": {
-              }
             }
           },
           "property": {
@@ -2717,6 +2452,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#7: call33",
             "marker": "is",
             "number": "many",
             "one": {
@@ -2778,10 +2514,74 @@
         [
           "unknown",
           0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          0
         ],
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "objectPrefix",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -2816,54 +2616,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "what",
-          0
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "objectPrefix",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ],
-        [
-          "what",
-          0
         ]
       ]
     ],
@@ -2871,6 +2623,7 @@
     },
     "contexts": [
       {
+        "calls": "Context#2: call2",
         "marker": "is",
         "number": "one",
         "one": {
@@ -2888,7 +2641,8 @@
               "marker": "property",
               "text": "name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -2905,7 +2659,8 @@
           "response": true,
           "text": "your name is greg",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "name",
@@ -2930,6 +2685,7 @@
         "word": "is"
       },
       {
+        "calls": "Context#4: call16",
         "marker": "is",
         "number": "one",
         "one": {
@@ -2958,7 +2714,6 @@
           ],
           "marker": "is",
           "one": {
-            "evaluate": true,
             "marker": "property",
             "object": {
               "marker": "objectPrefix",
@@ -2972,7 +2727,8 @@
                 "marker": "property",
                 "text": "name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
@@ -2988,18 +2744,21 @@
             ],
             "text": "your name",
             "types": [
-              "property"
+              "property",
+              "unknown"
             ],
             "unknown": true,
             "value": "name",
             "word": "name"
           },
           "two": {
+            "calls": "Context#4: call16,call17",
             "evaluateWasProcessed": true,
             "focus": true,
             "focusable": [
               "object[0]"
             ],
+            "greg": "greg44",
             "instance": true,
             "marker": "property",
             "objects": [
@@ -3007,7 +2766,8 @@
                 "marker": "property",
                 "text": "name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
@@ -3026,7 +2786,8 @@
               "call17"
             ],
             "types": [
-              "property"
+              "property",
+              "unknown"
             ],
             "unknown": true,
             "value": {
@@ -3063,7 +2824,8 @@
               "marker": "property",
               "text": "name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -3080,7 +2842,8 @@
           "response": true,
           "text": "your name",
           "types": [
-            "property"
+            "property",
+            "unknown"
           ],
           "unknown": true,
           "value": "name",
@@ -3098,7 +2861,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -3126,10 +2889,6 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "objectPrefix",
               0
             ],
@@ -3154,7 +2913,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -3182,7 +2941,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -3206,7 +2965,7 @@
           ],
           "ops": [
             [
-              "isEd",
+              "is",
               0
             ],
             [
@@ -3230,47 +2989,7 @@
               0
             ],
             [
-              "isEd",
-              0
-            ],
-            [
               "objectPrefix",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "isEd",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "isEd",
-            0
-          ],
-          "ops": [
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
               0
             ],
             [
@@ -3349,52 +3068,19 @@
         },
         "2": {
           "children": {
-            "canBeDoQuestion": [
-              "have"
-            ],
-            "canBeQuestion": [
-              "have"
-            ],
             "name": [
               "greg"
-            ],
-            "property": [
-              "type"
-            ],
-            "queryable": [
-              "self"
-            ],
-            "whatAble": [
-              "type"
             ]
           },
           "concepts": [
             "properties",
-            "self",
-            "queryable",
-            "type",
-            "property",
-            "whatAble",
-            "have",
-            "canBeQuestion",
-            "canBeDoQuestion",
             "greg",
-            "name"
+            "name",
+            "self"
           ],
           "parents": {
             "greg": [
               "name"
-            ],
-            "have": [
-              "canBeQuestion",
-              "canBeDoQuestion"
-            ],
-            "self": [
-              "queryable"
-            ],
-            "type": [
-              "property",
-              "whatAble"
             ]
           },
           "properties": {
@@ -3403,19 +3089,9 @@
             "initHandlers": [
             ],
             "root": {
-              "canBeDoQuestion": {
-              },
-              "canBeQuestion": {
-              },
               "greg": {
               },
-              "have": {
-              },
               "name": {
-              },
-              "property": {
-              },
-              "queryable": {
               },
               "self": {
                 "name": {
@@ -3432,10 +3108,6 @@
                     "word": "greg"
                   }
                 }
-              },
-              "type": {
-              },
-              "whatAble": {
               }
             }
           },
@@ -3486,6 +3158,7 @@
       "processed": [
         {
           "context": {
+            "calls": "Context#4: call16",
             "marker": "is",
             "number": "one",
             "one": {
@@ -3514,7 +3187,6 @@
               ],
               "marker": "is",
               "one": {
-                "evaluate": true,
                 "marker": "property",
                 "object": {
                   "marker": "objectPrefix",
@@ -3528,7 +3200,8 @@
                     "marker": "property",
                     "text": "name",
                     "types": [
-                      "property"
+                      "property",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "name",
@@ -3544,18 +3217,21 @@
                 ],
                 "text": "your name",
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": "name",
                 "word": "name"
               },
               "two": {
+                "calls": "Context#4: call16,call17",
                 "evaluateWasProcessed": true,
                 "focus": true,
                 "focusable": [
                   "object[0]"
                 ],
+                "greg": "greg44",
                 "instance": true,
                 "marker": "property",
                 "objects": [
@@ -3563,7 +3239,8 @@
                     "marker": "property",
                     "text": "name",
                     "types": [
-                      "property"
+                      "property",
+                      "unknown"
                     ],
                     "unknown": true,
                     "value": "name",
@@ -3582,7 +3259,8 @@
                   "call17"
                 ],
                 "types": [
-                  "property"
+                  "property",
+                  "unknown"
                 ],
                 "unknown": true,
                 "value": {
@@ -3619,7 +3297,8 @@
                   "marker": "property",
                   "text": "name",
                   "types": [
-                    "property"
+                    "property",
+                    "unknown"
                   ],
                   "unknown": true,
                   "value": "name",
@@ -3636,7 +3315,8 @@
               "response": true,
               "text": "your name",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
@@ -3652,6 +3332,7 @@
         },
         {
           "context": {
+            "calls": "Context#2: call2",
             "marker": "is",
             "number": "one",
             "one": {
@@ -3669,7 +3350,8 @@
                   "marker": "property",
                   "text": "name",
                   "types": [
-                    "property"
+                    "property",
+                    "unknown"
                   ],
                   "unknown": true,
                   "value": "name",
@@ -3686,7 +3368,8 @@
               "response": true,
               "text": "your name is greg",
               "types": [
-                "property"
+                "property",
+                "unknown"
               ],
               "unknown": true,
               "value": "name",
