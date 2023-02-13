@@ -461,10 +461,12 @@ let config = {
     */
     {
       notes: 'crew members. evaluate a concepts to get instances',
-      match: ({context, hierarchy}) => 
+      match: ({context, hierarchy, api}) => 
                           hierarchy.isA(context.marker, 'concept') && 
                           context.evaluate &&
                           !context.types.includes('property') &&
+                          // !context.value &&  // greghere
+                          (api.objects && api.objects.children && api.objects.children[context.marker]) &&
                           !context.evaluate.toConcept,
       apply: ({context, objects, api}) => {
         const values = api.objects.children[context.marker]
@@ -589,15 +591,14 @@ let config = {
     {
       notes: 'evaluate a property',
       // match: ({context, hierarchy}) => context.marker == 'property' && context.evaluate && !context.evaluate.toConcept,
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.evaluate && !context.evaluate.toConcept,
+      match: ({context, hierarchy}) => 
+                      hierarchy.isA(context.marker, 'property') && 
+                      context.evaluate && 
+                      context.objects &&
+                      !context.evaluate.toConcept, // && !context.value,
+                      // greghere
       // match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.evaluate,
       apply: ({context, api, km, objects, g, s, log}) => {
-        try{  
-          [ ...context.objects ]
-        } catch( e ) {
-          debugger;
-          debugger;
-        }
         const toDo = [ ...context.objects ]
 
         const toValue = (objectContext) => {

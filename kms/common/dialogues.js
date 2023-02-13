@@ -408,8 +408,10 @@ let config = {
       ({context}) => {
         if (typeof context.marker === 'string') {
           return context.value
-        } else {
+        } else if (context.value) {
           JSON.stringify(context.value)
+        } else {
+          return context.word
         }
       }
     ],
@@ -577,7 +579,17 @@ let config = {
         // TODO wtf is the next line?
         value = JSON.parse(JSON.stringify(value))
         // const instance = api.evaluate(value, context, log, s)
-        const instance = km('dialogues').api.evaluate(value, context, log, s)
+        // value.value = undefined // greghere
+        let instance
+        if (false && !value.wantsValue) {
+          instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44', value: undefined }, context, log, s)
+        } else {
+          instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44' }, context, log, s)
+        }
+        // instance.greg = 23
+        if (!instance.value) {
+          instance.value = value.value
+        }
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           return

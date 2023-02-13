@@ -250,4 +250,8 @@
 # node pokemon -q 'pikachu squirtle weedle and pidgeot are pokemon' -d -g
 # node kid -q "kia's cat is cleo" -d -g
 # node kid -q "who is kia's cat" -g -d -s
-node crew -q 'kirk is a crew member' -g -d -daa
+# node crew -q 'kirk is a crew member' -g -d -daa
+node pokemon -q 'what type is pikachu' -d -g
+# node dialogues.js -q 'x is y?' -d -g
+# node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d -g 
+# node crew -q 'who are the crew members' -g -d
