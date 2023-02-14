@@ -29,7 +29,6 @@
     },
     "contexts": [
       {
-        "calls": "Context#13: call34",
         "default": true,
         "from": {
           "marker": "unknown",
@@ -47,7 +46,7 @@
         },
         "topLevel": true,
         "touchedBy": [
-          "call34"
+          "call2"
         ],
         "word": "means"
       }
@@ -76,7 +75,6 @@
       "processed": [
         {
           "context": {
-            "calls": "Context#13: call34",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -94,7 +92,7 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call34"
+              "call2"
             ],
             "word": "means"
           },
@@ -153,7 +151,6 @@
     },
     "contexts": [
       {
-        "calls": "Context#10: call26",
         "default": true,
         "from": {
           "marker": "unknown",
@@ -171,7 +168,7 @@
         },
         "topLevel": true,
         "touchedBy": [
-          "call26"
+          "call2"
         ],
         "word": "means"
       }
@@ -204,7 +201,6 @@
       "processed": [
         {
           "context": {
-            "calls": "Context#10: call26",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -222,7 +218,7 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26"
+              "call2"
             ],
             "word": "means"
           },
@@ -308,7 +304,6 @@
           "value": "f",
           "word": "f"
         },
-        "calls": "Context#5: call12",
         "consequence": {
           "default": true,
           "marker": "g",
@@ -323,12 +318,11 @@
         "text": "if f then g",
         "topLevel": true,
         "touchedBy": [
-          "call12"
+          "call2"
         ],
         "word": "if"
       },
       {
-        "calls": "Context#7: call20",
         "marker": "g",
         "query": true,
         "response": {
@@ -337,7 +331,7 @@
         "text": "gq",
         "topLevel": true,
         "touchedBy": [
-          "call20"
+          "call10"
         ],
         "word": "gq"
       }
@@ -346,60 +340,56 @@
       "opChoices": [
         {
           "op": [
-            "g",
-            0
-          ],
-          "ops": [
-            [
-              "f",
-              0
-            ],
-            [
-              "g",
-              0
-            ],
-            [
-              "if",
-              0
-            ],
-            [
-              "then",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "g",
-            0
-          ],
-          "ops": [
-            [
-              "f",
-              0
-            ],
-            [
-              "g",
-              0
-            ],
-            [
-              "if",
-              0
-            ],
-            [
-              "then",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "f",
             0
           ],
           "ops": [
             [
               "f",
+              0
+            ],
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "g",
+            0
+          ],
+          "ops": [
+            [
+              "g",
+              0
+            ],
+            [
+              "if",
+              0
+            ],
+            [
+              "then",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "g",
+            0
+          ],
+          "ops": [
+            [
+              "g",
               0
             ],
             [
@@ -450,7 +440,6 @@
       "processed": [
         {
           "context": {
-            "calls": "Context#7: call20",
             "marker": "g",
             "query": true,
             "response": {
@@ -459,7 +448,7 @@
             "text": "gq",
             "topLevel": true,
             "touchedBy": [
-              "call20"
+              "call10"
             ],
             "word": "gq"
           },
@@ -480,7 +469,6 @@
               "value": "f",
               "word": "f"
             },
-            "calls": "Context#5: call12",
             "consequence": {
               "default": true,
               "marker": "g",
@@ -495,7 +483,7 @@
             "text": "if f then g",
             "topLevel": true,
             "touchedBy": [
-              "call12"
+              "call2"
             ],
             "word": "if"
           },
@@ -519,6 +507,16 @@
   },
   {
     "associations": [
+      [
+        [
+          "defined",
+          0
+        ],
+        [
+          "means",
+          0
+        ]
+      ],
       [
         [
           "defined",
@@ -561,7 +559,6 @@
     },
     "contexts": [
       {
-        "calls": "Context#2: call2",
         "default": true,
         "from": {
           "default": true,
@@ -589,7 +586,7 @@
       "opChoices": [
         {
           "op": [
-            "means",
+            "undefined",
             0
           ],
           "ops": [
@@ -606,6 +603,34 @@
               0
             ]
           ]
+        },
+        {
+          "op": [
+            "defined",
+            0
+          ],
+          "ops": [
+            [
+              "defined",
+              0
+            ],
+            [
+              "means",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "means",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ]
+          ]
         }
       ]
     },
@@ -617,7 +642,6 @@
       "processed": [
         {
           "context": {
-            "calls": "Context#2: call2",
             "default": true,
             "from": {
               "default": true,
