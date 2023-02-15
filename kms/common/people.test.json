@@ -167,13 +167,13 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
-        [
-          "by",
-          0
-        ],
         [
           "is",
           0
@@ -197,10 +197,6 @@
           0
         ],
         [
-          "owned",
-          0
-        ],
-        [
           "unknown",
           1
         ]
@@ -213,6 +209,10 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -403,8 +403,8 @@
                     "marker": "unknown",
                     "text": "kia",
                     "types": [
-                      "isEder",
-                      "owner"
+                      "owner",
+                      "isEder"
                     ],
                     "unknown": true,
                     "value": "kia",
@@ -536,8 +536,8 @@
                   "marker": "unknown",
                   "text": "kia",
                   "types": [
-                    "isEder",
-                    "owner"
+                    "owner",
+                    "isEder"
                   ],
                   "unknown": true,
                   "value": "kia",
@@ -933,7 +933,7 @@
         },
         {
           "op": [
-            "owns",
+            "by",
             0
           ],
           "ops": [
@@ -941,6 +941,34 @@
               "by",
               0
             ],
+            [
+              "is",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "owns",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owned",
+            0
+          ],
+          "ops": [
             [
               "is",
               0
@@ -970,20 +998,12 @@
           ],
           "ops": [
             [
-              "by",
-              0
-            ],
-            [
               "is",
               0
             ],
             [
-              "owned",
-              0
-            ],
-            [
               "owns",
-              1
+              0
             ],
             [
               "unknown",
@@ -997,35 +1017,7 @@
         },
         {
           "op": [
-            "by",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owned",
+            "owns",
             0
           ],
           "ops": [
@@ -1034,12 +1026,8 @@
               0
             ],
             [
-              "owned",
-              0
-            ],
-            [
               "owns",
-              1
+              0
             ],
             [
               "unknown",
@@ -1424,8 +1412,8 @@
                         "marker": "unknown",
                         "text": "kia",
                         "types": [
-                          "isEder",
-                          "owner"
+                          "owner",
+                          "isEder"
                         ],
                         "unknown": true,
                         "value": "kia",
@@ -1557,8 +1545,8 @@
                       "marker": "unknown",
                       "text": "kia",
                       "types": [
-                        "isEder",
-                        "owner"
+                        "owner",
+                        "isEder"
                       ],
                       "unknown": true,
                       "value": "kia",
@@ -1725,7 +1713,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -1814,7 +1801,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -1826,7 +1812,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -1875,7 +1860,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -1887,7 +1871,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -1907,7 +1890,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -1963,20 +1945,6 @@
         [
           "owned",
           0
-        ]
-      ],
-      [
-        [
-          "by",
-          0
-        ],
-        [
-          "isEd",
-          0
-        ],
-        [
-          "owned",
-          0
         ],
         [
           "unknown",
@@ -2031,6 +1999,20 @@
         [
           "owned",
           0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "owned",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ],
       [
@@ -2055,16 +2037,6 @@
         [
           "what",
           0
-        ]
-      ],
-      [
-        [
-          "owns",
-          0
-        ],
-        [
-          "unknown",
-          1
         ]
       ],
       [
@@ -2141,9 +2113,7 @@
       {
         "do": {
           "left": "owner",
-          "query": [
-            "what"
-          ],
+          "query": true,
           "right": "ownee",
           "text": "who owns cleo"
         },
@@ -2165,13 +2135,10 @@
           "word": "cleo"
         },
         "owner": {
-          "determined": true,
           "marker": "owner",
           "modifiers": [
           ],
-          "query": [
-            "what"
-          ],
+          "query": true,
           "text": "who",
           "types": [
             "owner",
@@ -2179,9 +2146,7 @@
           ],
           "word": "who"
         },
-        "query": [
-          "what"
-        ],
+        "query": true,
         "response": {
           "isResponse": true,
           "marker": "list",
@@ -2369,7 +2334,7 @@
         },
         {
           "op": [
-            "what",
+            "owns",
             0
           ],
           "ops": [
@@ -2401,114 +2366,6 @@
         },
         {
           "op": [
-            "owns",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owns",
-            1
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "by",
             0
           ],
@@ -2524,6 +2381,14 @@
             [
               "owned",
               0
+            ],
+            [
+              "owns",
+              1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2540,6 +2405,14 @@
             [
               "owned",
               0
+            ],
+            [
+              "owns",
+              1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2552,6 +2425,34 @@
             [
               "isEd",
               0
+            ],
+            [
+              "owns",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "owned",
+              0
+            ],
+            [
+              "owns",
+              1
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -2564,6 +2465,22 @@
             [
               "owned",
               0
+            ],
+            [
+              "owns",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owns",
+            1
+          ],
+          "ops": [
+            [
+              "owns",
+              1
             ]
           ]
         }
@@ -2729,9 +2646,7 @@
           "context": {
             "do": {
               "left": "owner",
-              "query": [
-                "what"
-              ],
+              "query": true,
               "right": "ownee",
               "text": "who owns cleo"
             },
@@ -2753,13 +2668,10 @@
               "word": "cleo"
             },
             "owner": {
-              "determined": true,
               "marker": "owner",
               "modifiers": [
               ],
-              "query": [
-                "what"
-              ],
+              "query": true,
               "text": "who",
               "types": [
                 "owner",
@@ -2767,9 +2679,7 @@
               ],
               "word": "who"
             },
-            "query": [
-              "what"
-            ],
+            "query": true,
             "response": {
               "isResponse": true,
               "marker": "list",
@@ -2916,7 +2826,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -3005,7 +2914,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -3017,7 +2925,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -3066,7 +2973,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -3078,7 +2984,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -3098,7 +3003,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -3110,7 +3014,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -3144,7 +3047,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -3334,13 +3236,13 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
-        [
-          "by",
-          0
-        ],
         [
           "is",
           0
@@ -3364,10 +3266,6 @@
           0
         ],
         [
-          "owned",
-          0
-        ],
-        [
           "unknown",
           1
         ]
@@ -3380,6 +3278,10 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -3570,8 +3472,8 @@
                     "marker": "unknown",
                     "text": "kia",
                     "types": [
-                      "isEder",
-                      "owner"
+                      "owner",
+                      "isEder"
                     ],
                     "unknown": true,
                     "value": "kia",
@@ -3658,8 +3560,8 @@
                     "marker": "unknown",
                     "text": "kia",
                     "types": [
-                      "isEder",
-                      "owner"
+                      "owner",
+                      "isEder"
                     ],
                     "unknown": true,
                     "value": "kia",
@@ -3769,8 +3671,8 @@
                   "marker": "unknown",
                   "text": "kia",
                   "types": [
-                    "isEder",
-                    "owner"
+                    "owner",
+                    "isEder"
                   ],
                   "unknown": true,
                   "value": "kia",
@@ -4166,7 +4068,7 @@
         },
         {
           "op": [
-            "owns",
+            "by",
             0
           ],
           "ops": [
@@ -4174,6 +4076,34 @@
               "by",
               0
             ],
+            [
+              "is",
+              0
+            ],
+            [
+              "owned",
+              0
+            ],
+            [
+              "owns",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owned",
+            0
+          ],
+          "ops": [
             [
               "is",
               0
@@ -4203,20 +4133,12 @@
           ],
           "ops": [
             [
-              "by",
-              0
-            ],
-            [
               "is",
               0
             ],
             [
-              "owned",
-              0
-            ],
-            [
               "owns",
-              1
+              0
             ],
             [
               "unknown",
@@ -4230,35 +4152,7 @@
         },
         {
           "op": [
-            "by",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "owns",
-              1
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "owned",
+            "owns",
             0
           ],
           "ops": [
@@ -4267,12 +4161,8 @@
               0
             ],
             [
-              "owned",
-              0
-            ],
-            [
               "owns",
-              1
+              0
             ],
             [
               "unknown",
@@ -4657,8 +4547,8 @@
                         "marker": "unknown",
                         "text": "kia",
                         "types": [
-                          "isEder",
-                          "owner"
+                          "owner",
+                          "isEder"
                         ],
                         "unknown": true,
                         "value": "kia",
@@ -4745,8 +4635,8 @@
                         "marker": "unknown",
                         "text": "kia",
                         "types": [
-                          "isEder",
-                          "owner"
+                          "owner",
+                          "isEder"
                         ],
                         "unknown": true,
                         "value": "kia",
@@ -4856,8 +4746,8 @@
                       "marker": "unknown",
                       "text": "kia",
                       "types": [
-                        "isEder",
-                        "owner"
+                        "owner",
+                        "isEder"
                       ],
                       "unknown": true,
                       "value": "kia",
@@ -5024,7 +4914,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -5113,7 +5002,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -5125,7 +5013,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -5174,7 +5061,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -5186,7 +5072,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -5206,7 +5091,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -5636,6 +5520,24 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "propertyOf",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -6734,7 +6636,7 @@
         },
         {
           "op": [
-            "what",
+            "the",
             0
           ],
           "ops": [
@@ -6789,12 +6691,16 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
         {
           "op": [
-            "the",
+            "what",
             0
           ],
           "ops": [
@@ -6811,12 +6717,12 @@
               0
             ],
             [
-              "the",
-              0
-            ],
-            [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -7611,7 +7517,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -7700,7 +7605,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -7712,7 +7616,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -7761,7 +7664,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -7773,7 +7675,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -7793,7 +7694,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -8628,7 +8528,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -8717,7 +8616,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -8729,7 +8627,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -8778,7 +8675,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -8790,7 +8686,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -8810,7 +8705,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -8822,7 +8716,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -8856,7 +8749,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -10052,7 +9944,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -10141,7 +10032,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -10153,7 +10043,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -10202,7 +10091,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -10214,7 +10102,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -10234,7 +10121,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -11069,7 +10955,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -11158,7 +11043,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -11170,7 +11054,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -11219,7 +11102,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -11231,7 +11113,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -11251,7 +11132,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -11263,7 +11143,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -11297,7 +11176,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -11782,7 +11660,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -11871,7 +11748,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -11883,7 +11759,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -11932,7 +11807,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -11944,7 +11818,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -11964,7 +11837,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -11976,7 +11848,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -12010,7 +11881,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -12022,7 +11892,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -12042,7 +11911,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
@@ -12091,24 +11959,6 @@
         ],
         [
           "owns",
-          0
-        ]
-      ],
-      [
-        [
-          "by",
-          0
-        ],
-        [
-          "isEd",
-          0
-        ],
-        [
-          "means",
-          0
-        ],
-        [
-          "owned",
           0
         ]
       ],
@@ -12224,6 +12074,28 @@
         [
           "owned",
           0
+        ],
+        [
+          "owns",
+          1
+        ]
+      ],
+      [
+        [
+          "isEd",
+          0
+        ],
+        [
+          "means",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "owns",
+          1
         ]
       ],
       [
@@ -12234,6 +12106,34 @@
         [
           "owned",
           0
+        ]
+      ],
+      [
+        [
+          "means",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "owns",
+          1
+        ]
+      ],
+      [
+        [
+          "means",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "owns",
+          1
         ]
       ]
     ],
@@ -12287,7 +12187,7 @@
           "word": "owned"
         },
         "marker": "means",
-        "metaInfo": "The mapping from from the expression being defined \"ownee is owned by owner\" to the definition phrase \"owner owns ownee\" is [{\"from\":[\"owner\"],\"to\":[\"owner\"]},{\"from\":[\"ownee\"],\"to\":[\"ownee\"]},{\"from\":[\"number\"],\"to\":[\"number\"]}]",
+        "metaInfo": "The mapping from from the expression being defined \"ownee is owned by owner\" to the definition phrase \"owner owns ownee\" is [{\"from\":[\"ownee\"],\"to\":[\"ownee\"]},{\"from\":[\"owner\"],\"to\":[\"owner\"]},{\"from\":[\"number\"],\"to\":[\"number\"]}]",
         "text": "ownee owned means owner owns ownee",
         "to": {
           "do": {
@@ -12502,8 +12402,8 @@
         },
         {
           "op": [
-            "owns",
-            1
+            "by",
+            0
           ],
           "ops": [
             [
@@ -12530,30 +12430,6 @@
         },
         {
           "op": [
-            "by",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "means",
-              0
-            ],
-            [
-              "owned",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
             "owned",
             0
           ],
@@ -12569,6 +12445,10 @@
             [
               "owned",
               0
+            ],
+            [
+              "owns",
+              1
             ]
           ]
         },
@@ -12585,6 +12465,10 @@
             [
               "means",
               0
+            ],
+            [
+              "owns",
+              1
             ]
           ]
         },
@@ -12601,6 +12485,26 @@
             [
               "owned",
               0
+            ],
+            [
+              "owns",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "owns",
+            1
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "owns",
+              1
             ]
           ]
         },
@@ -12763,7 +12667,7 @@
               "word": "owned"
             },
             "marker": "means",
-            "metaInfo": "The mapping from from the expression being defined \"ownee is owned by owner\" to the definition phrase \"owner owns ownee\" is [{\"from\":[\"owner\"],\"to\":[\"owner\"]},{\"from\":[\"ownee\"],\"to\":[\"ownee\"]},{\"from\":[\"number\"],\"to\":[\"number\"]}]",
+            "metaInfo": "The mapping from from the expression being defined \"ownee is owned by owner\" to the definition phrase \"owner owns ownee\" is [{\"from\":[\"ownee\"],\"to\":[\"ownee\"]},{\"from\":[\"owner\"],\"to\":[\"owner\"]},{\"from\":[\"number\"],\"to\":[\"number\"]}]",
             "text": "ownee owned means owner owns ownee",
             "to": {
               "do": {
@@ -12816,7 +12720,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -12905,7 +12808,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -12917,7 +12819,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -12966,7 +12867,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -12978,7 +12878,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -12998,7 +12897,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -13010,7 +12908,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -13044,7 +12941,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -13056,7 +12952,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -13076,7 +12971,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
@@ -13110,6 +13004,10 @@
         [
           "owned",
           0
+        ],
+        [
+          "unknown",
+          0
         ]
       ],
       [
@@ -13168,6 +13066,10 @@
         [
           "unknown",
           1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -13175,6 +13077,60 @@
           "by",
           0
         ],
+        [
+          "isEd",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "by",
+          0
+        ],
+        [
+          "isEd",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "by",
+          0
+        ],
+        [
+          "isEd",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
         [
           "is",
           0
@@ -13194,69 +13150,7 @@
       ],
       [
         [
-          "by",
-          0
-        ],
-        [
-          "isEd",
-          0
-        ],
-        [
-          "owned",
-          0
-        ]
-      ],
-      [
-        [
-          "by",
-          0
-        ],
-        [
-          "isEd",
-          0
-        ],
-        [
-          "owned",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ]
-      ],
-      [
-        [
-          "by",
-          0
-        ],
-        [
-          "isEd",
-          0
-        ],
-        [
-          "owned",
-          0
-        ],
-        [
-          "unknown",
-          0
-        ],
-        [
-          "unknown",
-          1
-        ]
-      ],
-      [
-        [
-          "by",
-          0
-        ],
-        [
-          "isEd",
-          0
-        ],
-        [
-          "owned",
+          "is",
           0
         ],
         [
@@ -13270,7 +13164,11 @@
           0
         ],
         [
-          "owned",
+          "unknown",
+          1
+        ],
+        [
+          "what",
           0
         ]
       ],
@@ -13282,6 +13180,20 @@
         [
           "owned",
           0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "owned",
+          0
+        ],
+        [
+          "unknown",
+          1
         ]
       ]
     ],
@@ -13658,7 +13570,7 @@
         },
         {
           "op": [
-            "what",
+            "by",
             0
           ],
           "ops": [
@@ -13690,90 +13602,6 @@
         },
         {
           "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
-            "unknown",
-            1
-          ],
-          "ops": [
-            [
-              "by",
-              0
-            ],
-            [
-              "is",
-              0
-            ],
-            [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
-              0
-            ],
-            [
-              "unknown",
-              1
-            ]
-          ]
-        },
-        {
-          "op": [
             "by",
             0
           ],
@@ -13793,29 +13621,13 @@
             [
               "owned",
               0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "by",
-            0
-          ],
-          "ops": [
-            [
-              "by",
-              0
             ],
             [
-              "is",
-              0
+              "unknown",
+              1
             ],
             [
-              "isEd",
-              0
-            ],
-            [
-              "owned",
+              "what",
               0
             ]
           ]
@@ -13837,6 +13649,14 @@
             [
               "owned",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -13857,6 +13677,14 @@
             [
               "owned",
               0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -13876,6 +13704,38 @@
             ],
             [
               "owned",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
               0
             ]
           ]
@@ -13893,6 +13753,10 @@
             [
               "isEd",
               0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -13909,6 +13773,26 @@
             [
               "owned",
               0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -14386,7 +14270,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -14475,7 +14358,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -14487,7 +14369,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -14536,7 +14417,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -14548,7 +14428,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -14568,7 +14447,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -14580,7 +14458,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -14614,7 +14491,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -14778,7 +14654,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -14867,7 +14742,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -14879,7 +14753,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -14928,7 +14801,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -14940,7 +14812,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -14960,7 +14831,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -14972,7 +14842,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -15006,7 +14875,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -15018,7 +14886,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -15038,7 +14905,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
@@ -15178,8 +15044,8 @@
                 "marker": "unknown",
                 "text": "kia",
                 "types": [
-                  "isEder",
-                  "owner"
+                  "owner",
+                  "isEder"
                 ],
                 "unknown": true,
                 "value": "kia",
@@ -15491,8 +15357,8 @@
                     "marker": "unknown",
                     "text": "kia",
                     "types": [
-                      "isEder",
-                      "owner"
+                      "owner",
+                      "isEder"
                     ],
                     "unknown": true,
                     "value": "kia",
@@ -15552,7 +15418,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -15641,7 +15506,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -15653,7 +15517,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -15702,7 +15565,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -15714,7 +15576,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -15734,7 +15595,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -15746,7 +15606,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -15780,7 +15639,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -15792,7 +15650,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -15812,7 +15669,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
@@ -16363,8 +16219,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -16374,6 +16230,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -16634,7 +16502,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -16723,7 +16590,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -16735,7 +16601,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -16784,7 +16649,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -16796,7 +16660,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -16816,7 +16679,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -16828,7 +16690,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -16862,7 +16723,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -16874,7 +16734,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -16894,7 +16753,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
@@ -17270,7 +17128,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -17359,7 +17216,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -17371,7 +17227,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -17420,7 +17275,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -17432,7 +17286,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -17452,7 +17305,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -17464,7 +17316,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -17498,7 +17349,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -17510,7 +17360,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -17530,7 +17379,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
@@ -17608,24 +17456,6 @@
         [
           "unknown",
           1
-        ]
-      ],
-      [
-        [
-          "by",
-          0
-        ],
-        [
-          "is",
-          0
-        ],
-        [
-          "owned",
-          0
-        ],
-        [
-          "unknown",
-          1
         ],
         [
           "what",
@@ -17644,6 +17474,24 @@
         [
           "unknown",
           1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "owned",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
         ]
       ],
       [
@@ -17953,7 +17801,7 @@
         },
         {
           "op": [
-            "what",
+            "by",
             0
           ],
           "ops": [
@@ -17981,14 +17829,10 @@
         },
         {
           "op": [
-            "by",
+            "what",
             0
           ],
           "ops": [
-            [
-              "by",
-              0
-            ],
             [
               "is",
               0
@@ -18000,6 +17844,10 @@
             [
               "unknown",
               1
+            ],
+            [
+              "what",
+              0
             ]
           ]
         },
@@ -18025,8 +17873,8 @@
         },
         {
           "op": [
-            "is",
-            0
+            "unknown",
+            1
           ],
           "ops": [
             [
@@ -18036,6 +17884,18 @@
             [
               "unknown",
               1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
             ]
           ]
         },
@@ -18434,7 +18294,6 @@
         },
         {
           "context": {
-            "calls": "Context#17: call41",
             "default": true,
             "from": {
               "dead": false,
@@ -18523,7 +18382,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call41",
               "call2"
             ],
             "word": "means"
@@ -18535,7 +18393,6 @@
         },
         {
           "context": {
-            "calls": "Context#14: call26",
             "default": true,
             "from": {
               "atomic": true,
@@ -18584,7 +18441,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call26",
               "call2"
             ],
             "word": "means"
@@ -18596,7 +18452,6 @@
         },
         {
           "context": {
-            "calls": "Context#11: call21",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -18616,7 +18471,6 @@
             "text": "given modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call21",
               "call2"
             ],
             "word": "modifies"
@@ -18628,7 +18482,6 @@
         },
         {
           "context": {
-            "calls": "Context#8: call12",
             "default": true,
             "from": {
               "marker": "unknown",
@@ -18662,7 +18515,6 @@
             },
             "topLevel": true,
             "touchedBy": [
-              "call12",
               "call2"
             ],
             "word": "means"
@@ -18674,7 +18526,6 @@
         },
         {
           "context": {
-            "calls": "Context#5: call7",
             "concept": {
               "marker": "name",
               "number": "one",
@@ -18694,7 +18545,6 @@
             "text": "last modifies name",
             "topLevel": true,
             "touchedBy": [
-              "call7",
               "call2"
             ],
             "word": "modifies"
