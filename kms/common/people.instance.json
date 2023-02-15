@@ -222,8 +222,8 @@
       "logs": [
         "Undefined word 'first'",
         "Undefined word 'name'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('unknown', 0)]), (('unknown', 0), [('modifies', 0), ('unknown', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['unknown', 1]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('unknown', 0)]), (('unknown', 0), [('modifies', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['modifies', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0]]",
         ""
       ],
       "metadata": {
@@ -276,6 +276,34 @@
               ]
             ],
             "op": [
+              "unknown",
+              1
+            ]
+          },
+          {
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ],
+            "op": [
+              "unknown",
+              1
+            ]
+          },
+          {
+            "ops": [
+              [
+                "modifies",
+                0
+              ]
+            ],
+            "op": [
               "modifies",
               0
             ]
@@ -285,26 +313,25 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "first modifies name",
-          "concept": {
-            "word": "name",
+          "modifier": {
+            "marker": "unknown",
             "unknown": true,
-            "value": "name",
-            "text": "name",
-            "marker": "unknown"
+            "text": "first",
+            "value": "first",
+            "word": "first"
           },
           "default": true,
-          "modifier": {
-            "word": "first",
+          "concept": {
+            "marker": "unknown",
             "unknown": true,
-            "value": "first",
-            "text": "first",
-            "marker": "unknown"
+            "text": "name",
+            "value": "name",
+            "word": "name"
           },
-          "word": "modifies",
+          "text": "first modifies name",
           "marker": "modifies",
+          "word": "modifies",
           "topLevel": true,
-          "calls": "Context#2: call2",
           "touchedBy": [
             "call2"
           ]
@@ -355,7 +382,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "first modifies name",
       "key": {
         "query": "first modifies name"
@@ -666,8 +693,8 @@
       ],
       "logs": [
         "Undefined word 'last'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('name', 0), ('unknown', 0)]), (('unknown', 1), [('modifies', 0), ('name', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('name', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['name', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['name', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['name', 0]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('name', 0), ('unknown', 0)]), (('name', 0), [('modifies', 0), ('name', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['name', 0], ['unknown', 0]]\n  Context for choosing the operator name/0 was [['modifies', 0], ['name', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['unknown', 1]]",
         ""
       ],
       "metadata": {
@@ -708,8 +735,8 @@
               ]
             ],
             "op": [
-              "unknown",
-              1
+              "name",
+              0
             ]
           },
           {
@@ -719,8 +746,8 @@
                 0
               ],
               [
-                "name",
-                0
+                "unknown",
+                1
               ]
             ],
             "op": [
@@ -733,28 +760,27 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "last modifies name",
+          "modifier": {
+            "unknown": true,
+            "marker": "unknown",
+            "text": "last",
+            "value": "last",
+            "word": "last"
+          },
+          "default": true,
           "concept": {
-            "number": "one",
             "text": "name",
+            "number": "one",
             "word": "name",
             "value": "name",
             "marker": "name"
           },
-          "default": true,
-          "modifier": {
-            "text": "last",
-            "unknown": true,
-            "value": "last",
-            "word": "last",
-            "marker": "unknown"
-          },
-          "word": "modifies",
+          "text": "last modifies name",
           "marker": "modifies",
+          "word": "modifies",
           "topLevel": true,
-          "calls": "Context#5: call7",
           "touchedBy": [
-            "call7"
+            "call2"
           ]
         }
       ],
@@ -768,16 +794,6 @@
         ""
       ],
       "associations": [
-        [
-          [
-            "modifies",
-            0
-          ],
-          [
-            "name",
-            0
-          ]
-        ],
         [
           [
             "modifies",
@@ -805,9 +821,19 @@
             "unknown",
             1
           ]
+        ],
+        [
+          [
+            "modifies",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "last modifies name",
       "key": {
         "query": "last modifies name"
@@ -1178,8 +1204,8 @@
       ],
       "logs": [
         "Undefined word 'surname'",
-        "Op choices were: [(('unknown', 0), [('last', 0), ('means', 0), ('name', 0), ('unknown', 0)]), (('name', 0), [('last', 0), ('means', 0), ('name', 0), ('unknown', 1)]), (('unknown', 1), [('last', 0), ('means', 0), ('unknown', 1)]), (('last', 0), [('last', 0), ('means', 0)]), (('last_name', 0), [('last_name', 0), ('means', 0)]), (('means', 0), [('means', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['last', 0], ['means', 0], ['name', 0], ['unknown', 0]]\n  Context for choosing the operator name/0 was [['last', 0], ['means', 0], ['name', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['last', 0], ['means', 0], ['unknown', 1]]\n  Context for choosing the operator last/0 was [['last', 0], ['means', 0]]\n  Context for choosing the operator last_name/0 was [['last_name', 0], ['means', 0]]\n  Context for choosing the operator means/0 was [['means', 0]]",
+        "Op choices were: [(('unknown', 0), [('last', 0), ('means', 0), ('name', 0), ('unknown', 0)]), (('name', 0), [('last', 0), ('means', 0), ('name', 0), ('unknown', 1)]), (('last', 0), [('last', 0), ('means', 0), ('unknown', 1)]), (('last_name', 0), [('last_name', 0), ('means', 0), ('unknown', 1)]), (('unknown', 1), [('means', 0), ('unknown', 1)]), (('means', 0), [('means', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['last', 0], ['means', 0], ['name', 0], ['unknown', 0]]\n  Context for choosing the operator name/0 was [['last', 0], ['means', 0], ['name', 0], ['unknown', 1]]\n  Context for choosing the operator last/0 was [['last', 0], ['means', 0], ['unknown', 1]]\n  Context for choosing the operator last_name/0 was [['last_name', 0], ['means', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['means', 0], ['unknown', 1]]\n  Context for choosing the operator means/0 was [['means', 0]]",
         ""
       ],
       "metadata": {
@@ -1248,22 +1274,6 @@
               ]
             ],
             "op": [
-              "unknown",
-              1
-            ]
-          },
-          {
-            "ops": [
-              [
-                "last",
-                0
-              ],
-              [
-                "means",
-                0
-              ]
-            ],
-            "op": [
               "last",
               0
             ]
@@ -1277,11 +1287,31 @@
               [
                 "means",
                 0
+              ],
+              [
+                "unknown",
+                1
               ]
             ],
             "op": [
               "last_name",
               0
+            ]
+          },
+          {
+            "ops": [
+              [
+                "means",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ],
+            "op": [
+              "unknown",
+              1
             ]
           },
           {
@@ -1301,42 +1331,41 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "surname means last name",
           "to": {
-            "number": "one",
-            "word": "name",
-            "atomic": true,
-            "marker": "last_name",
-            "text": "last name",
-            "last": {
-              "word": "last",
-              "value": "last",
-              "text": "last",
-              "marker": "last"
-            },
+            "modifiers": [
+              "last"
+            ],
             "types": [
               "last_name",
               "name"
             ],
+            "last": {
+              "text": "last",
+              "marker": "last",
+              "value": "last",
+              "word": "last"
+            },
+            "number": "one",
+            "text": "last name",
+            "marker": "last_name",
+            "atomic": true,
             "value": "last_name",
-            "modifiers": [
-              "last"
-            ]
+            "word": "name"
           },
           "default": true,
-          "word": "means",
-          "marker": "means",
           "from": {
-            "text": "surname",
+            "marker": "unknown",
             "unknown": true,
+            "text": "surname",
             "value": "surname",
-            "word": "surname",
-            "marker": "unknown"
+            "word": "surname"
           },
+          "text": "surname means last name",
+          "marker": "means",
+          "word": "means",
           "topLevel": true,
-          "calls": "Context#8: call12",
           "touchedBy": [
-            "call12"
+            "call2"
           ]
         }
       ],
@@ -1350,16 +1379,6 @@
         ""
       ],
       "associations": [
-        [
-          [
-            "last",
-            0
-          ],
-          [
-            "means",
-            0
-          ]
-        ],
         [
           [
             "last",
@@ -1418,10 +1437,24 @@
           [
             "means",
             0
+          ],
+          [
+            "unknown",
+            1
+          ]
+        ],
+        [
+          [
+            "means",
+            0
+          ],
+          [
+            "unknown",
+            1
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "surname means last name",
       "key": {
         "query": "surname means last name"
@@ -1792,8 +1825,8 @@
       ],
       "logs": [
         "Undefined word 'given'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('name', 0), ('unknown', 0)]), (('modifies', 0), [('modifies', 0), ('name', 0), ('unknown', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['name', 0], ['unknown', 0]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['name', 0], ['unknown', 1]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('name', 0), ('unknown', 0)]), (('name', 0), [('modifies', 0), ('name', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['name', 0], ['unknown', 0]]\n  Context for choosing the operator name/0 was [['modifies', 0], ['name', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0]]",
         ""
       ],
       "metadata": {
@@ -1834,6 +1867,34 @@
               ]
             ],
             "op": [
+              "name",
+              0
+            ]
+          },
+          {
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ],
+            "op": [
+              "unknown",
+              1
+            ]
+          },
+          {
+            "ops": [
+              [
+                "modifies",
+                0
+              ]
+            ],
+            "op": [
               "modifies",
               0
             ]
@@ -1843,28 +1904,27 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "given modifies name",
+          "modifier": {
+            "marker": "unknown",
+            "unknown": true,
+            "text": "given",
+            "value": "given",
+            "word": "given"
+          },
+          "default": true,
           "concept": {
-            "number": "one",
             "text": "name",
+            "number": "one",
             "word": "name",
             "value": "name",
             "marker": "name"
           },
-          "default": true,
-          "modifier": {
-            "word": "given",
-            "unknown": true,
-            "value": "given",
-            "text": "given",
-            "marker": "unknown"
-          },
-          "word": "modifies",
+          "text": "given modifies name",
           "marker": "modifies",
+          "word": "modifies",
           "topLevel": true,
-          "calls": "Context#11: call21",
           "touchedBy": [
-            "call21"
+            "call2"
           ]
         }
       ],
@@ -1905,9 +1965,19 @@
             "unknown",
             1
           ]
+        ],
+        [
+          [
+            "modifies",
+            0
+          ],
+          [
+            "unknown",
+            1
+          ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "given modifies name",
       "key": {
         "query": "given modifies name"
@@ -2480,57 +2550,56 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "given name means first name",
           "to": {
-            "number": "one",
-            "word": "name",
-            "atomic": true,
-            "marker": "first_name",
-            "text": "first name",
+            "first": {
+              "text": "first",
+              "marker": "first",
+              "value": "first",
+              "word": "first"
+            },
+            "modifiers": [
+              "first"
+            ],
             "types": [
               "first_name",
               "name"
             ],
+            "number": "one",
+            "text": "first name",
+            "marker": "first_name",
+            "atomic": true,
             "value": "first_name",
-            "first": {
-              "word": "first",
-              "value": "first",
-              "text": "first",
-              "marker": "first"
-            },
-            "modifiers": [
-              "first"
-            ]
+            "word": "name"
           },
           "default": true,
-          "word": "means",
-          "marker": "means",
           "from": {
-            "number": "one",
-            "word": "name",
-            "atomic": true,
-            "marker": "given_name",
-            "text": "given name",
+            "modifiers": [
+              "given"
+            ],
             "types": [
               "given_name",
               "name"
             ],
-            "value": "given_name",
             "given": {
-              "word": "given",
-              "value": "given",
               "text": "given",
-              "marker": "given"
+              "marker": "given",
+              "value": "given",
+              "word": "given"
             },
-            "modifiers": [
-              "given"
-            ]
+            "number": "one",
+            "text": "given name",
+            "marker": "given_name",
+            "atomic": true,
+            "value": "given_name",
+            "word": "name"
           },
+          "text": "given name means first name",
+          "marker": "means",
+          "word": "means",
           "topLevel": true,
           "metaInfo": "The mapping from from the expression being defined \"given name\" to the definition phrase \"first name\" is []",
-          "calls": "Context#14: call26",
           "touchedBy": [
-            "call26"
+            "call2"
           ]
         }
       ],
@@ -2611,7 +2680,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "given name means first name",
       "key": {
         "query": "given name means first name"
@@ -3041,9 +3110,9 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('ownee', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('ownee', 0), ('owner', 0), ('owns', 0)]), (('ownee', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('ownee', 0), ('owner', 0), ('owns', 0)]), (('owner', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owner', 0), ('owns', 0)]), (('owner', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owner', 0), ('owns', 0)]), (('owns', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owns', 0)]), (('owns', 1), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owns', 1)]), (('by', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0)]), (('owned', 0), [('isEd', 0), ('means', 0), ('owned', 0)]), (('isEd', 0), [('isEd', 0), ('means', 0)]), (('owned', 0), [('means', 0), ('owned', 0)]), (('means', 0), [('means', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator ownee/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['ownee', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator ownee/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['ownee', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator owner/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator owner/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator owns/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owns', 0]]\n  Context for choosing the operator owns/1 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owns', 1]]\n  Context for choosing the operator by/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0]]\n  Context for choosing the operator owned/0 was [['isEd', 0], ['means', 0], ['owned', 0]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['means', 0]]\n  Context for choosing the operator owned/0 was [['means', 0], ['owned', 0]]\n  Context for choosing the operator means/0 was [['means', 0]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 1\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 2\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 3\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 4\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 5\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 6\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 7\n    0.48 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.30000000000000004 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n  Group 8\n    0.2857142857142857 - [['ownee', 0], ['isEd', 0], ['owned', 0], \">>>>3 ['by', 0] <<<<3\", ['means', 0], ['owns', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n    0.19999999999999998 - [['ownee', 0], ['is', 0], ['owned', 0], \">>>>3 ['by', 0] <<<<3\", ['means', 0], ['owns', 0]]\n      (('owned', 0), ('by', 0))\n  Group 9\n    0.30000000000000004 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['means', 0], ['owns', 0]]\n      (('ownee', 0), ('is', 0))\n    0.48 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['means', 0], ['owns', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))"
+        "Op choices were: [(('ownee', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('ownee', 0), ('owner', 0), ('owns', 0)]), (('ownee', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('ownee', 0), ('owner', 0), ('owns', 0)]), (('owner', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owner', 0), ('owns', 0)]), (('owner', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owner', 0), ('owns', 0)]), (('by', 0), [('by', 0), ('isEd', 0), ('means', 0), ('owned', 0), ('owns', 0)]), (('owned', 0), [('isEd', 0), ('means', 0), ('owned', 0), ('owns', 0)]), (('isEd', 0), [('isEd', 0), ('means', 0), ('owns', 0)]), (('owned', 0), [('means', 0), ('owned', 0), ('owns', 0)]), (('owns', 0), [('means', 0), ('owns', 0)]), (('means', 0), [('means', 0), ('owns', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator ownee/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['ownee', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator ownee/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['ownee', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator owner/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator owner/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owner', 0], ['owns', 0]]\n  Context for choosing the operator by/0 was [['by', 0], ['isEd', 0], ['means', 0], ['owned', 0], ['owns', 0]]\n  Context for choosing the operator owned/0 was [['isEd', 0], ['means', 0], ['owned', 0], ['owns', 0]]\n  Context for choosing the operator isEd/0 was [['isEd', 0], ['means', 0], ['owns', 0]]\n  Context for choosing the operator owned/0 was [['means', 0], ['owned', 0], ['owns', 0]]\n  Context for choosing the operator owns/0 was [['means', 0], ['owns', 0]]\n  Context for choosing the operator means/0 was [['means', 0], ['owns', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n  Group 1\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n  Group 2\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n  Group 3\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n  Group 4\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('is', 0))\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['owner', 0], ['means', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n  Group 5\n    0.25 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0], ['means', 0], ['owner', 0]]\n      (('ownee', 0), ('is', 0))\n    0.4 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0], ['means', 0], ['owner', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))\n  Group 6\n    0.24 - [['is', 0], ['owned', 0], \">>>>2 ['by', 0] <<<<2\", ['means', 0], ['owner', 0]]\n      (('owned', 0), ('by', 0))\n    0.32000000000000006 - [['isEd', 0], ['owned', 0], \">>>>2 ['by', 0] <<<<2\", ['means', 0], ['owner', 0]]\n      (('isEd', 0), ('owned', 0))\n      (('owned', 0), ('by', 0))\n  Group 7\n    0.30000000000000004 - [['ownee', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['means', 0], ['owner', 0]]\n      (('ownee', 0), ('is', 0))\n    0.48 - [['ownee', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['means', 0], ['owner', 0]]\n      (('ownee', 0), ('isEd', 0), ('owned', 0))"
       ],
       "metadata": {
         "opChoices": [
@@ -3207,58 +3276,6 @@
               ]
             ],
             "op": [
-              "owns",
-              0
-            ]
-          },
-          {
-            "ops": [
-              [
-                "by",
-                0
-              ],
-              [
-                "isEd",
-                0
-              ],
-              [
-                "means",
-                0
-              ],
-              [
-                "owned",
-                0
-              ],
-              [
-                "owns",
-                1
-              ]
-            ],
-            "op": [
-              "owns",
-              1
-            ]
-          },
-          {
-            "ops": [
-              [
-                "by",
-                0
-              ],
-              [
-                "isEd",
-                0
-              ],
-              [
-                "means",
-                0
-              ],
-              [
-                "owned",
-                0
-              ]
-            ],
-            "op": [
               "by",
               0
             ]
@@ -3276,6 +3293,10 @@
               [
                 "owned",
                 0
+              ],
+              [
+                "owns",
+                0
               ]
             ],
             "op": [
@@ -3291,6 +3312,10 @@
               ],
               [
                 "means",
+                0
+              ],
+              [
+                "owns",
                 0
               ]
             ],
@@ -3308,6 +3333,10 @@
               [
                 "owned",
                 0
+              ],
+              [
+                "owns",
+                0
               ]
             ],
             "op": [
@@ -3320,6 +3349,26 @@
               [
                 "means",
                 0
+              ],
+              [
+                "owns",
+                0
+              ]
+            ],
+            "op": [
+              "owns",
+              0
+            ]
+          },
+          {
+            "ops": [
+              [
+                "means",
+                0
+              ],
+              [
+                "owns",
+                1
               ]
             ],
             "op": [
@@ -3332,97 +3381,96 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "ownee owned means owner owns ownee",
           "to": {
             "owner": {
-              "default": true,
-              "text": "owner",
               "types": [
                 "owner"
               ],
+              "marker": "owner",
               "word": "owner",
-              "marker": "owner"
+              "default": true,
+              "text": "owner"
             },
             "number": "one",
-            "do": {
-              "left": "owner",
-              "text": "owner owns ownee",
-              "right": "ownee"
-            },
-            "word": "owns",
             "marker": "owns",
             "text": "owner owns ownee",
-            "focusable": [
-              "owner",
-              "ownee"
-            ],
-            "value": "owns",
             "unflatten": [
               "owner",
               "ownee"
             ],
             "ownee": {
-              "default": true,
-              "text": "ownee",
               "types": [
                 "ownee"
               ],
+              "marker": "ownee",
               "word": "ownee",
-              "marker": "ownee"
-            }
+              "default": true,
+              "text": "ownee"
+            },
+            "do": {
+              "text": "owner owns ownee",
+              "right": "ownee",
+              "left": "owner"
+            },
+            "value": "owns",
+            "focusable": [
+              "owner",
+              "ownee"
+            ],
+            "word": "owns"
           },
           "default": true,
-          "word": "means",
-          "marker": "means",
           "from": {
+            "is_compound": true,
             "owner": {
-              "default": true,
-              "text": "owner",
               "types": [
                 "owner"
               ],
+              "text": "owner",
               "word": "owner",
+              "default": true,
               "marker": "owner"
             },
-            "dead": false,
-            "isEd": true,
-            "number": "one",
-            "word": "owned",
-            "marker": "owned",
-            "is_compound": true,
             "subject": "ownee",
-            "text": "ownee owned",
+            "isEd": true,
+            "dead": false,
+            "number": "one",
             "default": true,
+            "text": "ownee owned",
+            "marker": "owned",
+            "word": "owned",
             "types": [
               "owned"
             ],
             "ownee": {
-              "default": true,
-              "text": "ownee owned by owner",
-              "types": [
-                "ownee"
-              ],
-              "number": "one",
-              "word": "ownee",
               "operator": {
-                "text": "owned",
-                "dead": false,
+                "is_compound": true,
                 "default": true,
-                "word": "owned",
+                "text": "owned",
                 "types": [
                   "owned"
                 ],
                 "marker": "owned",
-                "is_compound": true
+                "dead": false,
+                "word": "owned"
               },
-              "marker": "ownee"
+              "text": "ownee owned by owner",
+              "number": "one",
+              "default": true,
+              "marker": "ownee",
+              "types": [
+                "ownee"
+              ],
+              "word": "ownee"
             }
           },
+          "text": "ownee owned means owner owns ownee",
+          "marker": "means",
+          "word": "means",
           "topLevel": true,
           "metaInfo": "The mapping from from the expression being defined \"ownee is owned by owner\" to the definition phrase \"owner owns ownee\" is [{\"from\":[\"owner\"],\"to\":[\"owner\"]},{\"from\":[\"ownee\"],\"to\":[\"ownee\"]},{\"from\":[\"number\"],\"to\":[\"number\"]}]",
-          "calls": "Context#17: call41",
           "touchedBy": [
-            "call41"
+            "call2"
           ]
         }
       ],
@@ -3482,13 +3530,21 @@
           [
             "owned",
             0
+          ],
+          [
+            "ownee",
+            0
+          ],
+          [
+            "owner",
+            0
+          ],
+          [
+            "owns",
+            0
           ]
         ],
         [
-          [
-            "by",
-            0
-          ],
           [
             "isEd",
             0
@@ -3516,19 +3572,15 @@
         ],
         [
           [
-            "by",
-            0
-          ],
-          [
-            "isEd",
-            0
-          ],
-          [
             "means",
             0
           ],
           [
             "owned",
+            0
+          ],
+          [
+            "ownee",
             0
           ],
           [
@@ -3542,14 +3594,6 @@
         ],
         [
           [
-            "by",
-            0
-          ],
-          [
-            "isEd",
-            0
-          ],
-          [
             "means",
             0
           ],
@@ -3558,19 +3602,19 @@
             0
           ],
           [
+            "ownee",
+            0
+          ],
+          [
+            "owner",
+            0
+          ],
+          [
             "owns",
             0
           ]
         ],
         [
-          [
-            "by",
-            0
-          ],
-          [
-            "isEd",
-            0
-          ],
           [
             "means",
             0
@@ -3583,47 +3627,9 @@
             "owns",
             1
           ]
-        ],
-        [
-          [
-            "isEd",
-            0
-          ],
-          [
-            "means",
-            0
-          ],
-          [
-            "owned",
-            0
-          ]
-        ],
-        [
-          [
-            "isEd",
-            0
-          ],
-          [
-            "means",
-            0
-          ],
-          [
-            "owned",
-            0
-          ]
-        ],
-        [
-          [
-            "means",
-            0
-          ],
-          [
-            "owned",
-            0
-          ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "ownee is owned by owner means owner owns ownee",
       "key": {
         "query": "ownee is owned by owner means owner owns ownee"
@@ -4059,7 +4065,7 @@
         "Undefined word 'owneevar'",
         "Op choices were: [(('unknown', 0), [('by', 0), ('is', 0), ('owned', 0), ('unknown', 0)]), (('unknown', 0), [('by', 0), ('is', 0), ('owned', 0), ('unknown', 0), ('unknown', 1)]), (('unknown', 1), [('by', 0), ('is', 0), ('owned', 0), ('unknown', 1)]), (('unknown', 1), [('by', 0), ('is', 0), ('owned', 0), ('unknown', 1)]), (('by', 0), [('by', 0), ('is', 0), ('owned', 0)]), (('owned', 0), [('is', 0), ('owned', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['by', 0], ['is', 0], ['owned', 0], ['unknown', 0]]\n  Context for choosing the operator unknown/0 was [['by', 0], ['is', 0], ['owned', 0], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['by', 0], ['is', 0], ['owned', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['by', 0], ['is', 0], ['owned', 0], ['unknown', 1]]\n  Context for choosing the operator by/0 was [['by', 0], ['is', 0], ['owned', 0]]\n  Context for choosing the operator owned/0 was [['is', 0], ['owned', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('is', 0), ('unknown', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('isEd', 0))\n  Group 1\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 2\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 3\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 4\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 5\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 6\n    0.6000000000000001 - [['isEd', 0], ['unknown', 0], ['owned', 0], \">>>>3 ['by', 0] <<<<3\"]\n      (('isEd', 0), ('unknown', 1), ('owned', 0))\n    0.5 - [['is', 0], ['unknown', 0], ['owned', 0], \">>>>3 ['by', 0] <<<<3\"]\n      (('unknown', 1), ('owned', 0))\n      (('owned', 0), ('by', 0))\n  Group 7\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('isEd', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('is', 0), ('unknown', 0))\n  Group 1\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 2\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 3\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 4\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 5\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n  Group 6\n    0.5 - [['is', 0], ['unknown', 0], ['owned', 0], \">>>>3 ['by', 0] <<<<3\"]\n      (('unknown', 1), ('owned', 0))\n      (('owned', 0), ('by', 0))\n    0.6000000000000001 - [['isEd', 0], ['unknown', 0], ['owned', 0], \">>>>3 ['by', 0] <<<<3\"]\n      (('isEd', 0), ('unknown', 1), ('owned', 0))\n  Group 7\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))"
       ],
       "metadata": {
         "opChoices": [
@@ -4228,94 +4234,93 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "ownervar is owneevar owned by ",
-          "marker": "is",
           "number": "one",
-          "word": "is",
-          "two": {
-            "text": "owneevar owned by ",
-            "marker": "ownee",
-            "value": "owneevar",
+          "marker": "is",
+          "text": "ownervar is owneevar owned by ",
+          "one": {
             "unknown": true,
+            "number": "one",
+            "text": "ownervar is owneevar owned by ",
+            "types": [
+              "unknown"
+            ],
+            "marker": "unknown",
+            "value": "ownervar",
+            "word": "ownervar",
+            "response": true
+          },
+          "two": {
+            "unknown": true,
+            "text": "owneevar owned by ",
             "types": [
               "ownee",
               "unknown"
             ],
+            "marker": "ownee",
+            "word": "owneevar",
             "constraints": [
               {
+                "property": "ownee",
                 "properties": [
                   "ownee",
                   "owner"
                 ],
-                "property": "ownee",
                 "paraphrase": {
+                  "marker": "owns",
                   "owner": {
-                    "text": "owneevar owned by ",
                     "types": [
                       "owner"
                     ],
+                    "marker": "owner",
                     "word": "owner",
-                    "marker": "owner"
+                    "text": "owneevar owned by "
                   },
-                  "marker": "owns",
-                  "text": "owneevar owned by ",
                   "ownee": {
-                    "text": "owneevar owned by ",
                     "types": [
                       "ownee"
                     ],
+                    "marker": "ownee",
                     "word": "ownee",
-                    "marker": "ownee"
-                  }
+                    "text": "owneevar owned by "
+                  },
+                  "text": "owneevar owned by "
                 },
                 "constraint": {
-                  "constrained": true,
-                  "text": "owneevar owned by ",
                   "owner": {
-                    "implicit": true,
                     "marker": "unknown",
-                    "text": "",
-                    "concept": true
+                    "implicit": true,
+                    "concept": true,
+                    "text": ""
                   },
                   "default": true,
-                  "word": "owned",
                   "marker": "owned",
+                  "text": "owneevar owned by ",
+                  "word": "owned",
+                  "constrained": true,
                   "ownee": {
-                    "text": "owneevar owned by ",
+                    "unknown": true,
                     "greg": true,
-                    "marker": "unknown",
-                    "word": "owneevar",
+                    "text": "owneevar owned by ",
                     "types": [
                       "ownee",
                       "unknown",
                       "unknown"
                     ],
+                    "marker": "unknown",
                     "value": "owneevar",
-                    "unknown": true
+                    "word": "owneevar"
                   }
                 }
               }
             ],
-            "word": "owneevar",
+            "value": "owneevar",
             "response": true,
             "concept": true
           },
-          "one": {
-            "text": "ownervar is owneevar owned by ",
-            "marker": "unknown",
-            "number": "one",
-            "unknown": true,
-            "types": [
-              "unknown"
-            ],
-            "value": "ownervar",
-            "word": "ownervar",
-            "response": true
-          },
+          "word": "is",
           "topLevel": true,
-          "calls": "Context#20: call63",
           "touchedBy": [
-            "call63"
+            "call2"
           ]
         }
       ],
@@ -4412,7 +4417,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "ownerVar is owneeVar owned by",
       "key": {
         "query": "ownerVar is owneeVar owned by"
@@ -4914,8 +4919,8 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('owneevar', 0), [('by', 0), ('isEd', 0), ('owned', 0), ('owneevar', 0), ('ownervar', 0)]), (('ownervar', 0), [('by', 0), ('isEd', 0), ('owned', 0), ('ownervar', 0)]), (('by', 0), [('by', 0), ('isEd', 0), ('owned', 0)]), (('owned', 0), [('isEd', 0), ('owned', 0)]), (('isEd', 0), [('isEd', 0)]), (('owned', 0), [('owned', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator owneevar/0 was [['by', 0], ['isEd', 0], ['owned', 0], ['owneevar', 0], ['ownervar', 0]]\n  Context for choosing the operator ownervar/0 was [['by', 0], ['isEd', 0], ['owned', 0], ['ownervar', 0]]\n  Context for choosing the operator by/0 was [['by', 0], ['isEd', 0], ['owned', 0]]\n  Context for choosing the operator owned/0 was [['isEd', 0], ['owned', 0]]\n  Context for choosing the operator isEd/0 was [['isEd', 0]]\n  Context for choosing the operator owned/0 was [['owned', 0]]",
+        "Op choices were: [(('ownervar', 0), [('by', 0), ('isEd', 0), ('owned', 0), ('owneevar', 0), ('ownervar', 0)]), (('owneevar', 0), [('by', 0), ('isEd', 0), ('owned', 0), ('owneevar', 0)]), (('by', 0), [('by', 0), ('isEd', 0), ('owned', 0)]), (('owned', 0), [('isEd', 0), ('owned', 0)]), (('isEd', 0), [('isEd', 0)]), (('owned', 0), [('owned', 0)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator ownervar/0 was [['by', 0], ['isEd', 0], ['owned', 0], ['owneevar', 0], ['ownervar', 0]]\n  Context for choosing the operator owneevar/0 was [['by', 0], ['isEd', 0], ['owned', 0], ['owneevar', 0]]\n  Context for choosing the operator by/0 was [['by', 0], ['isEd', 0], ['owned', 0]]\n  Context for choosing the operator owned/0 was [['isEd', 0], ['owned', 0]]\n  Context for choosing the operator isEd/0 was [['isEd', 0]]\n  Context for choosing the operator owned/0 was [['owned', 0]]",
         "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.6000000000000001 - [['owneevar', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('isEd', 0), ('owned', 0))\n    0.375 - [['owneevar', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('is', 0))\n  Group 1\n    0.6000000000000001 - [['owneevar', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('isEd', 0), ('owned', 0))\n    0.375 - [['owneevar', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('is', 0))\n  Group 2\n    0.6000000000000001 - [['owneevar', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('isEd', 0), ('owned', 0))\n    0.375 - [['owneevar', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('is', 0))\n  Group 3\n    0.6000000000000001 - [['owneevar', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('isEd', 0), ('owned', 0))\n    0.375 - [['owneevar', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0], ['by', 0]]\n      (('owneevar', 0), ('is', 0))\n  Group 4\n    0.5 - [['owneevar', 0], \">>>>1 ['is', 0] <<<<1\", ['owned', 0]]\n      (('owneevar', 0), ('is', 0))\n    1.0 - [['owneevar', 0], \">>>>1 ['isEd', 0] <<<<1\", ['owned', 0]]\n      (('owneevar', 0), ('isEd', 0), ('owned', 0))"
       ],
       "metadata": {
@@ -4944,7 +4949,7 @@
               ]
             ],
             "op": [
-              "owneevar",
+              "ownervar",
               0
             ]
           },
@@ -4963,12 +4968,12 @@
                 0
               ],
               [
-                "ownervar",
+                "owneevar",
                 0
               ]
             ],
             "op": [
-              "ownervar",
+              "owneevar",
               0
             ]
           },
@@ -5037,25 +5042,25 @@
       "trace": "undefined",
       "contexts": [
         {
+          "is_compound": true,
           "owner": {
-            "text": "ownervar",
             "number": "one",
-            "word": "ownervar",
+            "text": "ownervar",
             "types": [
               "ownervar"
             ],
+            "marker": "ownervar",
             "value": "ownervar",
-            "marker": "ownervar"
+            "word": "ownervar"
           },
-          "dead": false,
-          "isEd": true,
-          "number": "one",
-          "word": "owned",
-          "marker": "owned",
-          "is_compound": true,
           "subject": "ownee",
-          "text": "owneevar owned",
+          "isEd": true,
+          "dead": false,
+          "number": "one",
           "default": true,
+          "text": "owneevar owned",
+          "marker": "owned",
+          "word": "owned",
           "types": [
             "owned"
           ],
@@ -5063,27 +5068,26 @@
             "types": [
               "owneevar"
             ],
-            "number": "one",
-            "word": "owneevar",
-            "marker": "owneevar",
-            "text": "owneevar owned by ownervar",
             "operator": {
-              "text": "owned",
-              "dead": false,
+              "is_compound": true,
               "default": true,
-              "word": "owned",
+              "text": "owned",
               "types": [
                 "owned"
               ],
               "marker": "owned",
-              "is_compound": true
+              "dead": false,
+              "word": "owned"
             },
-            "value": "owneevar"
+            "number": "one",
+            "text": "owneevar owned by ownervar",
+            "marker": "owneevar",
+            "value": "owneevar",
+            "word": "owneevar"
           },
           "topLevel": true,
-          "calls": "Context#23: call76",
           "touchedBy": [
-            "call76"
+            "call2"
           ]
         }
       ],
@@ -5136,7 +5140,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.25.0-beta.7",
       "query": "owneeVar is owned by ownerVar",
       "key": {
         "query": "owneeVar is owned by ownerVar",
@@ -5283,24 +5287,6 @@
       [
         "owned",
         0
-      ]
-    ],
-    [
-      [
-        "by",
-        0
-      ],
-      [
-        "isEd",
-        0
-      ],
-      [
-        "means",
-        0
-      ],
-      [
-        "owned",
-        0
       ],
       [
         "ownee",
@@ -5313,76 +5299,6 @@
       [
         "owns",
         0
-      ]
-    ],
-    [
-      [
-        "by",
-        0
-      ],
-      [
-        "isEd",
-        0
-      ],
-      [
-        "means",
-        0
-      ],
-      [
-        "owned",
-        0
-      ],
-      [
-        "owner",
-        0
-      ],
-      [
-        "owns",
-        0
-      ]
-    ],
-    [
-      [
-        "by",
-        0
-      ],
-      [
-        "isEd",
-        0
-      ],
-      [
-        "means",
-        0
-      ],
-      [
-        "owned",
-        0
-      ],
-      [
-        "owns",
-        0
-      ]
-    ],
-    [
-      [
-        "by",
-        0
-      ],
-      [
-        "isEd",
-        0
-      ],
-      [
-        "means",
-        0
-      ],
-      [
-        "owned",
-        0
-      ],
-      [
-        "owns",
-        1
       ]
     ],
     [
@@ -5487,19 +5403,17 @@
       [
         "owned",
         0
-      ]
-    ],
-    [
+      ],
       [
-        "isEd",
+        "ownee",
         0
       ],
       [
-        "means",
+        "owner",
         0
       ],
       [
-        "owned",
+        "owns",
         0
       ]
     ],
@@ -5510,16 +5424,6 @@
       ],
       [
         "owned",
-        0
-      ]
-    ],
-    [
-      [
-        "last",
-        0
-      ],
-      [
-        "means",
         0
       ]
     ],
@@ -5581,6 +5485,10 @@
       [
         "means",
         0
+      ],
+      [
+        "unknown",
+        1
       ]
     ],
     [
@@ -5591,16 +5499,64 @@
       [
         "owned",
         0
+      ],
+      [
+        "ownee",
+        0
+      ],
+      [
+        "owner",
+        0
+      ],
+      [
+        "owns",
+        0
       ]
     ],
     [
       [
-        "modifies",
+        "means",
         0
       ],
       [
-        "name",
+        "owned",
         0
+      ],
+      [
+        "ownee",
+        0
+      ],
+      [
+        "owner",
+        0
+      ],
+      [
+        "owns",
+        0
+      ]
+    ],
+    [
+      [
+        "means",
+        0
+      ],
+      [
+        "owned",
+        0
+      ],
+      [
+        "owns",
+        1
+      ]
+    ],
+    [
+      [
+        "means",
+        0
+      ],
+      [
+        "unknown",
+        1
       ]
     ],
     [
@@ -5676,6 +5632,26 @@
       ],
       [
         "unknown",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "modifies",
         0
       ],
       [
