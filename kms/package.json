@@ -1,34 +1,6 @@
 {
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "author": "dev@thinktelligence.com",
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
   "license": "ISC",
-  "dependencies": {
-    "pluralize": "^8.0.0",
-    "argparse": "^2.0.1",
-    "deep-equal": "^2.0.5",
-    "table": "^6.7.1",
-    "scriptjs": "^2.5.9",
-    "entodicton": "6.26.0",
-    "object-path": "^0.11.8",
-    "base-64": "^1.0.0",
-    "node-fetch": "^2.6.1",
-    "lodash": "^4.17.21",
-    "underscore": "^1.12.0"
-  },
   "name": "ekms",
-  "version": "6.26.0",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -90,12 +62,40 @@
     "common/time.js",
     "common/time.test.json"
   ],
+  "author": "dev@thinktelligence.com",
   "main": "main.js",
+  "dependencies": {
+    "pluralize": "^8.0.0",
+    "node-fetch": "^2.6.1",
+    "underscore": "^1.12.0",
+    "entodicton": "6.27.0",
+    "lodash": "^4.17.21",
+    "argparse": "^2.0.1",
+    "base-64": "^1.0.0",
+    "deep-equal": "^2.0.5",
+    "object-path": "^0.11.8",
+    "table": "^6.7.1",
+    "scriptjs": "^2.5.9"
+  },
+  "version": "6.27.0",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
   "scripts": {
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
     "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
     "test:watch": "npm run test -- --watch",
-    "test": "jest --config ./jest.config.json",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE"
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test": "jest --config ./jest.config.json"
+  },
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
