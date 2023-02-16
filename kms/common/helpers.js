@@ -81,6 +81,15 @@ const focus = (context) => {
   return helper(context) || context
 }
 
+// if property is a list make array of elements of the list, if not return an array with the property value
+const propertyToArray = (value) => {
+  if (value.marker == 'list') {
+    return value.value
+  } else {
+    return [value]
+  }
+}
+
 module.exports = {
   millisecondsUntilHourOfDay,
   indent,
@@ -88,4 +97,5 @@ module.exports = {
   chooseNumber,
   zip,
   focus,
+  propertyToArray,
 }

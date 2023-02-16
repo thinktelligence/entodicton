@@ -12,6 +12,7 @@ let config = {
   debug: false,
   version: '3',
   words: {
+    // start with a space for regular expressions
     " ([0-9]+)": [{"id": "number", "initial": "{ value: int(group[0]) }" }],
     "one": [{"id": "number", "initial": "{ value: 1 }" }],
     "two": [{"id": "number", "initial": "{ value: 2 }" }],

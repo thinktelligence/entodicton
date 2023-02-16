@@ -138,6 +138,8 @@ let config = {
     "([isEdee|])",
     "([isEder|])",
     { pattern: "([debug23])" },
+
+    "([this])",
   ],
   associations: {
     negative: [
@@ -169,6 +171,7 @@ let config = {
     {id: "list", level: 0, selector: {match: "same", left: [ { variable: 'type' } ], right: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", left: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
+    { id: "this", level: 0, bridge: "{ ...next(operator) }" },
     { id: "be", level: 0, bridge: "{ ...next(operator), type: after[0] }" },
     { id: "briefOrWordy", level: 0, bridge: "{ ...next(operator) }" },
 

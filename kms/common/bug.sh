@@ -255,4 +255,7 @@
 # node dialogues.js -q 'x is y?' -d -g
 # node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d -g 
 # node crew -q 'who are the crew members' -g -d
-node crew -q 'the status of the photon torpedoes is armed\nwhat is the status of the photon torpedoes' -g -d
+# node crew -q 'the status of the photon torpedoes is armed\nwhat is the status of the photon torpedoes' -g -d
+# node reports -q 'show the quantity descending and the price ascending' -g -d
+node reports -q 'call this report1\nshow report1' -g -d -s
+# node inspect reports -q 'call this report1' -g -d

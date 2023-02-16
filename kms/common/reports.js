@@ -1,6 +1,7 @@
 const entodicton = require('entodicton')
 const currencyKM = require('./currency.js')
 const helpKM = require('./help.js')
+const { propertyToArray } = require('./helpers')
 const { table } = require('table')
 const _ = require('lodash')
 const reports_tests = require('./reports.test.json')
@@ -35,8 +36,8 @@ const testData = {
   name: 'clothes',
   types: [ 'pants', 'shorts' ],
   products: [
-    { marker: 'clothes', isInstance: true, type: 'pants', name: 'pants1', price: 9, id: 1 },
-    { marker: 'clothes', isInstance: true, type: 'shirt', name: 'shirt1', price: 15, id: 2 },
+    { marker: 'clothes', isInstance: true, type: 'pants', name: 'pants1', price: 9, id: 1, quantity: 4 },
+    { marker: 'clothes', isInstance: true, type: 'shirt', name: 'shirt1', price: 15, id: 2, quantity: 6 },
   ],
 }
 
@@ -44,8 +45,8 @@ const testData2 = {
   name: 'models',
   types: [ 'tanks', 'planes' ],
   products: [
-    { marker: 'models', isInstance: true, type: 'tanks', name: 'tiger', price: 9, id: 1 },
-    { marker: 'models', isInstance: true, type: 'planes', name: 'spitfire', price: 15, id: 2 },
+    { marker: 'models', isInstance: true, type: 'tanks', name: 'tiger', price: 9, id: 1, quantity: 3 },
+    { marker: 'models', isInstance: true, type: 'planes', name: 'spitfire', price: 15, id: 2, quantity: 7 },
   ]
 }
 
@@ -83,22 +84,28 @@ let config = {
     "([reportAction|report] ([on] ([reportObject|])))",
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
-    "([show] (<the> ([price])))",
-    // "([call] ([this]) (rest))",
-    "(([price]) <ascending>)",
-    "(([price]) <descending>)",
+    "([show] (<the> ([property])))",
+    "([call] ([this]) (rest))",
+    "(([property]) <ascending>)",
+    "(([property]) <descending>)",
+    "([price])",
+    "([quantity])",
     "([ordering])",
+    "([show:reportBridge] ([report]))",
     /*
        call this the banana report
        show the banana report
        price descending
        price ascending
     */
-    // show price and quantity
+    // DONE show price and quantity
+    // describe report1
+    // -> multi word report names
     // call this report a  show report a show report a for products that code more than 10 dollars
     // save this as report1 / show report1
     // list the products with the price descending
     // move price before name
+    // worth means quanity times price
     // move price to the far right
     // show the price in euros
     // show the cost <-> price
@@ -109,6 +116,7 @@ let config = {
   ],
   bridges: [
     { "id": "ordering", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "report", "level": 0, "bridge": "{ ...next(operator) }" },
 
     { "id": "ascending", "level": 0, "bridge": "{ ...before[0], ordering: 'ascending' }" },
     { "id": "descending", "level": 0, "bridge": "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
@@ -123,17 +131,37 @@ let config = {
     { "id": "that", "level": 0, "bridge": "{ ...*, constraint: context }" },
     { "id": "cost", "level": 0, "bridge": "{ ...next(operator), price: after[0] }" },
     { "id": "cost", "level": 1, "bridge": "{ ...squish(operator), thing*: before[0] }" },
+    { "id": "property", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
+    { "id": "quantity", "level": 0, "bridge": "{ ...next(operator) }" },
 
     { "id": "listingType", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "with", "level": 0, "bridge": "{ ...next(operator), type: after[0].value }" },
     { "id": "answer", "level": 0, "bridge": "{ ...next(operator), type: after[0].type }" },
 
-    { "id": "show", "level": 0, "bridge": "{ ...next(operator), properties: after[0] }" },
+    { "id": "show", "level": 0, 
+            "bridge": "{ ...next(operator), properties: after[0] }",
+            "reportBridge": "{ ...next(operator), report: after[0] }" 
+    },
+
+    { 
+      "id": "call", 
+      "level": 0, 
+      "bridge": "{ ...next(operator), namee: after[0], name: after[1] }",
+      "generator": ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
+      "semantic": ({g, context, api, config}) => {
+                    const name = context.name.text
+                    api.listings[name] = api.listing
+                    config.addWord(` ${name}`,  { id: 'report', initial: `{ value: "${name}" }` })
+                  }
+    },
   ],
   hierarchy: [
     ['ascending', 'ordering'],
     ['descending', 'ordering'],
+    ['price', 'property'],
+    ['quantity', 'property'],
+    ['property', 'theAble'],
   ],
   associations: {
   },
@@ -155,10 +183,17 @@ let config = {
     [['answer', 0], ['listAction', 0], ['the', 0], ['with', 0]],
   ],
   generators: [
-    [ 
-      ({context, objects}) => context.marker == 'show',
-      ({gs, api}) => `the properties being shown are ${gs(api.listing.columns, ', ', ' and ')}` 
-    ],
+    { 
+      notes: 'paraphrase show',
+      match: ({context, objects}) => context.marker == 'show' && context.paraphrase,
+      apply: ({gs, g, api, context}) => {
+        if (context.report) {
+          return `show ${g({...context.report, paraphrase: true })}`
+        } else {
+          return `the properties being shown are ${gs(api.listing.columns, ', ', ' and ')}`
+        }
+      }
+    },
     [ ({context}) => context.marker == 'reportAction' && context.response, ({context, g}) => `reporting on ${context.report.word}` ],
     [ ({context}) => context.marker == 'reportAction' && context.paraphrase, ({context, g}) => `report on ${context.report.word}` ],
     [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
@@ -202,17 +237,35 @@ let config = {
         api.current = context.report.marker
       }
     ],
-    [ 
-      ({context, objects}) => context.marker == 'show',
-      ({api, context}) => {
-        api.listing.columns.push(context.properties.marker)
-        api.listing.ordering.push([context.properties.marker, context.properties.ordering])
-        api.listing.columns = _.uniq(api.listing.columns)
+    { 
+      notes: 'handle show semantic',
+      match: ({context, objects}) => context.marker == 'show',
+      apply: ({api, context}) => {
+        if (context.report) {
+          const values = propertyToArray(context.report)
+          for (let value of values) {
+            if (api) {
+              context.response = {
+                marker: 'listAction', 
+                listing: config._api.apis[config._api.current].getAllProducts(api.listings[value.value]),
+                response: true,
+              }
+            }
+          }
+        } else {
+          const values = propertyToArray(context.properties)
+          for (let value of values) {
+            api.listing.columns.push(value.marker)
+            api.listing.ordering.push([value.marker, value.ordering])
+            api.listing.columns = _.uniq(api.listing.columns)
+          }
+        }
       }
-    ],
-    [
-      ({context}) => context.marker == 'listAction', 
-      ({context, api, config}) => {
+    },
+    {
+      notes: 'get the report data',
+      match: ({context}) => context.marker == 'listAction', 
+      apply: ({context, api, config}) => {
         if (context.api) {
           context.listing = config._api.apis[context.api].getAllProducts(api.listing)
         } else {
@@ -220,7 +273,7 @@ let config = {
         }
         context.response = true
       },
-    ],
+    },
     [
       ({context}) => context.marker == 'answer', 
       ({api, context}) => {
@@ -238,6 +291,9 @@ const initializeApi = (config, api) => {
     type: 'tables',
     columns: ['name'],
     ordering: [],
+  }
+  // name to listing
+  api.listings = {
   }
   config.addGenerator( ...api.productGenerator )
   const open = '{'
