@@ -90,6 +90,14 @@ const propertyToArray = (value) => {
   }
 }
 
+wordNumber = (word, toPlural) => {
+  if (toPlural) {
+    return pluralize.plural(word)
+  } else {
+    return pluralize.singular(word)
+  }
+}
+
 module.exports = {
   millisecondsUntilHourOfDay,
   indent,
@@ -98,4 +106,5 @@ module.exports = {
   zip,
   focus,
   propertyToArray,
+  wordNumber,
 }

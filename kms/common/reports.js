@@ -1,7 +1,7 @@
 const entodicton = require('entodicton')
 const currencyKM = require('./currency.js')
 const helpKM = require('./help.js')
-const { propertyToArray } = require('./helpers')
+const { propertyToArray, wordNumber } = require('./helpers')
 const { table } = require('table')
 const _ = require('lodash')
 const reports_tests = require('./reports.test.json')
@@ -88,6 +88,7 @@ let config = {
     "([call] ([this]) (rest))",
     "(([property]) <ascending>)",
     "(([property]) <descending>)",
+    "([describe] ([report]))",
     "([price])",
     "([quantity])",
     "([ordering])",
@@ -116,7 +117,10 @@ let config = {
   ],
   bridges: [
     { "id": "ordering", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "report", "level": 0, "bridge": "{ ...next(operator) }" },
+    { id: "report", level: 0, 
+            isA: ['theAble'], 
+            words: [{word: "reports", number: "many"}], 
+            bridge: "{ ...next(operator) }" },
 
     { "id": "ascending", "level": 0, "bridge": "{ ...before[0], ordering: 'ascending' }" },
     { "id": "descending", "level": 0, "bridge": "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
@@ -142,6 +146,36 @@ let config = {
     { "id": "show", "level": 0, 
             "bridge": "{ ...next(operator), properties: after[0] }",
             "reportBridge": "{ ...next(operator), report: after[0] }" 
+    },
+
+    {
+      "id": "describe",
+      "level": 0,
+      "bridge": "{ ...next(operator), report: after[0] }",
+      "generatorp": ({g, context}) => `describe ${g(context.report)}`,
+      "generatorr": ({gp, context, api, config}) => {
+                    const describe = (report) => {
+                      const config = api.listings[report]
+                      // {"type":"tables","columns":["name"],"ordering":[]}
+                      let description = `showing the ${wordNumber('property', config.columns.length > 1)} ${config.columns} as ${config.type}`
+                      return description
+                    }
+                    const reports = propertyToArray(context.report)
+                    let response = ''
+                    for (let report of reports) {
+                      if (report.number == 'many') {
+                        for (let r of Object.keys(api.listings)) {
+                          response += `${r}: ${describe(r)}\n`
+                        }
+                      } else {
+                        response += `${gp(report)}: ${describe(report.value)}\n`
+                      }
+                    }
+                    return response
+                  },
+      "semantic": ({context}) => {
+        context.response = true
+      }
     },
 
     { 
@@ -186,9 +220,9 @@ let config = {
     { 
       notes: 'paraphrase show',
       match: ({context, objects}) => context.marker == 'show' && context.paraphrase,
-      apply: ({gs, g, api, context}) => {
+      apply: ({gs, gsp, gp, api, context}) => {
         if (context.report) {
-          return `show ${g({...context.report, paraphrase: true })}`
+          return `show ${gp(context.report)}`
         } else {
           return `the properties being shown are ${gs(api.listing.columns, ', ', ' and ')}`
         }
