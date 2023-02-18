@@ -100,11 +100,13 @@ let config = {
        price ascending
     */
     // DONE show price and quantity
-    // describe report1
+    // DONEdescribe report1
     // -> multi word report names
     // call this report a  show report a show report a for products that code more than 10 dollars
+    // DONE show the models
     // save this as report1 / show report1
     // list the products with the price descending
+    // show report1 with price descending
     // move price before name
     // worth means quanity times price
     // move price to the far right
@@ -157,7 +159,7 @@ let config = {
                     const describe = (report) => {
                       const config = api.listings[report]
                       // {"type":"tables","columns":["name"],"ordering":[]}
-                      let description = `showing the ${wordNumber('property', config.columns.length > 1)} ${config.columns} as ${config.type}`
+                      let description = `for ${config.api}, showing the ${wordNumber('property', config.columns.length > 1)} ${config.columns} as ${config.type}`
                       return description
                     }
                     const reports = propertyToArray(context.report)
@@ -185,7 +187,7 @@ let config = {
       "generator": ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
       "semantic": ({g, context, api, config}) => {
                     const name = context.name.text
-                    api.listings[name] = api.listing
+                    api.listings[name] = { ...api.listing }
                     config.addWord(` ${name}`,  { id: 'report', initial: `{ value: "${name}" }` })
                   }
     },
@@ -246,6 +248,7 @@ let config = {
         let report = '';
         const products = context.listing
         const columns = api.listing.columns
+        api.listing.api = context.api
         const data = products.map( (product) => {
                 const row = []
                 for (property of columns) {
@@ -275,16 +278,24 @@ let config = {
       notes: 'handle show semantic',
       match: ({context, objects}) => context.marker == 'show',
       apply: ({api, context}) => {
+        debugger;
         if (context.report) {
           const values = propertyToArray(context.report)
+          const responses = []
           for (let value of values) {
+            const reportAPI = api.listings[value.value].api
             if (api) {
-              context.response = {
+              responses.push({
                 marker: 'listAction', 
-                listing: config._api.apis[config._api.current].getAllProducts(api.listings[value.value]),
+                listing: config._api.apis[reportAPI].getAllProducts(api.listings[value.value]),
                 response: true,
-              }
+              })
             }
+          }
+          context.response = {
+            marker: 'list', 
+            newLinesOnly: true,
+            value: responses,
           }
         } else {
           const values = propertyToArray(context.properties)
@@ -322,6 +333,7 @@ const initializeApi = (config, api) => {
   const type = api.getName();
   config.addWord(type, {"id": "product", "initial": "{ value: '" + type + `', api: '${type}'}` })
   api.listing = { 
+    api: type,
     type: 'tables',
     columns: ['name'],
     ordering: [],

@@ -354,9 +354,13 @@ let config = {
       notes: 'handle lists',
       // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
-      match: ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
+      match: ({context, hierarchy}) => context.marker == 'list' && context.value,
       apply: ({context, gs}) => {
-        return gs(context.value, ', ', ' and ')
+        if (context.newLinesOnly) {
+          return gs(context.value, '\n')
+        } else {
+          return gs(context.value, ', ', ' and ')
+        }
       }
     },
 

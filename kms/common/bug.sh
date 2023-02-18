@@ -259,4 +259,6 @@
 # node reports -q 'show the quantity descending and the price ascending' -g -d
 # node reports -q 'call this report1\nshow report1' -g -d -s
 # node inspect reports -q 'call this report1' -g -d
-node inspect reports -q 'call this report1\ndescribe report1' -g -d
+# node inspect reports -q 'call this report1\ndescribe report1' -g -d
+# node inspect reports -q 'call this report1\nlist the models\ncall this report2\ndescribe the reports' -g -d
+node reports -g -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -s
