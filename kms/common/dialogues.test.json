@@ -911,7 +911,6 @@
         "one": {
           "default": true,
           "determined": true,
-          "evaluate": true,
           "marker": "what",
           "number": "one",
           "query": [
@@ -961,20 +960,7 @@
               "it"
             ],
             "value": {
-              "default": true,
-              "determined": true,
-              "evaluate": true,
-              "marker": "what",
-              "number": "one",
-              "query": [
-                "what"
-              ],
-              "response": true,
-              "text": "what is it",
-              "types": [
-                "what"
-              ],
-              "word": "what"
+              "marker": "answerNotKnown"
             },
             "word": "it"
           },
@@ -1000,6 +986,7 @@
         "word": "is"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -1071,18 +1058,13 @@
             {
               "default": true,
               "determined": true,
-              "evaluate": true,
-              "marker": "what",
-              "number": "one",
-              "query": [
-                "what"
-              ],
-              "response": true,
-              "text": "what is it",
+              "marker": "it",
+              "pullFromContext": true,
+              "text": "it",
               "types": [
-                "what"
+                "it"
               ],
-              "word": "what"
+              "word": "it"
             }
           ],
           "variables": {
@@ -1099,7 +1081,6 @@
             "one": {
               "default": true,
               "determined": true,
-              "evaluate": true,
               "marker": "what",
               "number": "one",
               "query": [
@@ -1149,20 +1130,7 @@
                   "it"
                 ],
                 "value": {
-                  "default": true,
-                  "determined": true,
-                  "evaluate": true,
-                  "marker": "what",
-                  "number": "one",
-                  "query": [
-                    "what"
-                  ],
-                  "response": true,
-                  "text": "what is it",
-                  "types": [
-                    "what"
-                  ],
-                  "word": "what"
+                  "marker": "answerNotKnown"
                 },
                 "word": "it"
               },
@@ -1189,7 +1157,7 @@
           },
           "paraphrases": "what is it?",
           "responses": [
-            "it is what"
+            "that is not known"
           ]
         }
       ]
@@ -1199,7 +1167,7 @@
     ],
     "query": "what is it",
     "responses": [
-      "it is what"
+      "that is not known"
     ]
   },
   {
@@ -1643,6 +1611,2571 @@
     "query": "yes",
     "responses": [
       ""
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "marker": "unknown",
+          "number": "one",
+          "response": true,
+          "text": "x is 3",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "text": "x is 3",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "3",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "3",
+          "word": "3"
+        },
+        "word": "is"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "number": "one",
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "what is x",
+          "types": [
+            "what"
+          ],
+          "word": "what"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "focusable": [
+            "two",
+            "one"
+          ],
+          "marker": "is",
+          "one": {
+            "marker": "unknown",
+            "text": "x",
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "x",
+            "word": "x"
+          },
+          "two": {
+            "focus": true,
+            "greg": "greg44",
+            "instance": true,
+            "marker": "unknown",
+            "text": "x",
+            "touchedBy": [
+              "call13"
+            ],
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "x"
+          },
+          "word": "is"
+        },
+        "text": "what is x",
+        "topLevel": true,
+        "touchedBy": [
+          "call12"
+        ],
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "x",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "mentioned": [
+            {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is x",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            }
+          ],
+          "variables": {
+            "x": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            }
+          }
+        },
+        "1": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is x",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "focusable": [
+                "two",
+                "one"
+              ],
+              "marker": "is",
+              "one": {
+                "marker": "unknown",
+                "text": "x",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "two": {
+                "focus": true,
+                "greg": "greg44",
+                "instance": true,
+                "marker": "unknown",
+                "text": "x",
+                "touchedBy": [
+                  "call13"
+                ],
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "3",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "3",
+                  "word": "3"
+                },
+                "word": "x"
+              },
+              "word": "is"
+            },
+            "text": "what is x",
+            "topLevel": true,
+            "touchedBy": [
+              "call12"
+            ],
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "x",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is x?",
+          "responses": [
+            "",
+            "x is 3"
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "marker": "unknown",
+              "number": "one",
+              "response": true,
+              "text": "x is 3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "text": "x is 3",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "is"
+          },
+          "paraphrases": "x is 3",
+          "responses": [
+            "",
+            "x is 3"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "x is 3",
+      "what is x?"
+    ],
+    "query": "x is 3 what is x",
+    "responses": [
+      "",
+      "x is 3"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "it",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "it",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "marker": "unknown",
+          "number": "one",
+          "response": true,
+          "text": "x is 3",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "text": "x is 3",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "3",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "3",
+          "word": "3"
+        },
+        "word": "is"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "number": "one",
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "what is x",
+          "types": [
+            "what"
+          ],
+          "word": "what"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "focusable": [
+            "two",
+            "one"
+          ],
+          "marker": "is",
+          "one": {
+            "marker": "unknown",
+            "text": "x",
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "x",
+            "word": "x"
+          },
+          "two": {
+            "focus": true,
+            "greg": "greg44",
+            "instance": true,
+            "marker": "unknown",
+            "text": "x",
+            "touchedBy": [
+              "call13"
+            ],
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "x"
+          },
+          "word": "is"
+        },
+        "text": "what is x",
+        "topLevel": true,
+        "touchedBy": [
+          "call12"
+        ],
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "x",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "word": "is"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "number": "one",
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "what is it",
+          "types": [
+            "what"
+          ],
+          "word": "what"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "focusable": [
+            "two",
+            "one"
+          ],
+          "marker": "is",
+          "one": {
+            "default": true,
+            "determined": true,
+            "marker": "it",
+            "pullFromContext": true,
+            "text": "it",
+            "types": [
+              "it"
+            ],
+            "word": "it"
+          },
+          "two": {
+            "default": true,
+            "determined": true,
+            "focus": true,
+            "greg": "greg44",
+            "instance": true,
+            "marker": "it",
+            "pullFromContext": true,
+            "text": "it",
+            "touchedBy": [
+              "call25"
+            ],
+            "types": [
+              "it"
+            ],
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "it"
+          },
+          "word": "is"
+        },
+        "text": "what is it",
+        "topLevel": true,
+        "touchedBy": [
+          "call24"
+        ],
+        "two": {
+          "default": true,
+          "determined": true,
+          "marker": "it",
+          "pullFromContext": true,
+          "response": true,
+          "text": "it",
+          "types": [
+            "it"
+          ],
+          "word": "it"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "it",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "mentioned": [
+            {
+              "evaluate": true,
+              "marker": "unknown",
+              "text": "x",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            {
+              "default": true,
+              "determined": true,
+              "marker": "it",
+              "pullFromContext": true,
+              "text": "it",
+              "types": [
+                "it"
+              ],
+              "word": "it"
+            }
+          ],
+          "variables": {
+            "x": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            }
+          }
+        },
+        "1": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is it",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "focusable": [
+                "two",
+                "one"
+              ],
+              "marker": "is",
+              "one": {
+                "default": true,
+                "determined": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "text": "it",
+                "types": [
+                  "it"
+                ],
+                "word": "it"
+              },
+              "two": {
+                "default": true,
+                "determined": true,
+                "focus": true,
+                "greg": "greg44",
+                "instance": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "text": "it",
+                "touchedBy": [
+                  "call25"
+                ],
+                "types": [
+                  "it"
+                ],
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "3",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "3",
+                  "word": "3"
+                },
+                "word": "it"
+              },
+              "word": "is"
+            },
+            "text": "what is it",
+            "topLevel": true,
+            "touchedBy": [
+              "call24"
+            ],
+            "two": {
+              "default": true,
+              "determined": true,
+              "marker": "it",
+              "pullFromContext": true,
+              "response": true,
+              "text": "it",
+              "types": [
+                "it"
+              ],
+              "word": "it"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is it?",
+          "responses": [
+            "",
+            "x is 3",
+            "it is 3"
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is x",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "focusable": [
+                "two",
+                "one"
+              ],
+              "marker": "is",
+              "one": {
+                "marker": "unknown",
+                "text": "x",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "two": {
+                "focus": true,
+                "greg": "greg44",
+                "instance": true,
+                "marker": "unknown",
+                "text": "x",
+                "touchedBy": [
+                  "call13"
+                ],
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "3",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "3",
+                  "word": "3"
+                },
+                "word": "x"
+              },
+              "word": "is"
+            },
+            "text": "what is x",
+            "topLevel": true,
+            "touchedBy": [
+              "call12"
+            ],
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "x",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is x?",
+          "responses": [
+            "",
+            "x is 3",
+            "it is 3"
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "marker": "unknown",
+              "number": "one",
+              "response": true,
+              "text": "x is 3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "text": "x is 3",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "is"
+          },
+          "paraphrases": "x is 3",
+          "responses": [
+            "",
+            "x is 3",
+            "it is 3"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "x is 3",
+      "what is x?",
+      "what is it?"
+    ],
+    "query": "x is 3 what is x what is it",
+    "responses": [
+      "",
+      "x is 3",
+      "it is 3"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "be",
+          0
+        ],
+        [
+          "briefOrWordy",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "it",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "it",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ],
+        [
+          "what",
+          0
+        ]
+      ],
+      [
+        [
+          "is",
+          0
+        ],
+        [
+          "what",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "be",
+        "text": "be brief",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "type": {
+          "marker": "briefOrWordy",
+          "text": "brief",
+          "types": [
+            "briefOrWordy"
+          ],
+          "value": "brief",
+          "word": "brief"
+        },
+        "word": "be"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "marker": "unknown",
+          "number": "one",
+          "response": true,
+          "text": "x is 3",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "text": "x is 3",
+        "topLevel": true,
+        "touchedBy": [
+          "call8"
+        ],
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "3",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "3",
+          "word": "3"
+        },
+        "word": "is"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "number": "one",
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "what is x",
+          "types": [
+            "what"
+          ],
+          "word": "what"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "focusable": [
+            "two",
+            "one"
+          ],
+          "marker": "is",
+          "one": {
+            "marker": "unknown",
+            "text": "x",
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": "x",
+            "word": "x"
+          },
+          "two": {
+            "focus": true,
+            "greg": "greg44",
+            "instance": true,
+            "marker": "unknown",
+            "text": "x",
+            "touchedBy": [
+              "call23"
+            ],
+            "types": [
+              "unknown"
+            ],
+            "unknown": true,
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "x"
+          },
+          "word": "is"
+        },
+        "text": "what is x",
+        "topLevel": true,
+        "touchedBy": [
+          "call22"
+        ],
+        "two": {
+          "marker": "unknown",
+          "response": true,
+          "text": "x",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "x",
+          "word": "x"
+        },
+        "word": "is"
+      },
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "default": true,
+          "determined": true,
+          "marker": "what",
+          "number": "one",
+          "query": [
+            "what"
+          ],
+          "response": true,
+          "text": "what is it",
+          "types": [
+            "what"
+          ],
+          "word": "what"
+        },
+        "query": [
+          "what"
+        ],
+        "response": {
+          "default": true,
+          "focusable": [
+            "two",
+            "one"
+          ],
+          "marker": "is",
+          "one": {
+            "default": true,
+            "determined": true,
+            "marker": "it",
+            "pullFromContext": true,
+            "text": "it",
+            "types": [
+              "it"
+            ],
+            "word": "it"
+          },
+          "two": {
+            "default": true,
+            "determined": true,
+            "focus": true,
+            "greg": "greg44",
+            "instance": true,
+            "marker": "it",
+            "pullFromContext": true,
+            "text": "it",
+            "touchedBy": [
+              "call37"
+            ],
+            "types": [
+              "it"
+            ],
+            "value": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "it"
+          },
+          "word": "is"
+        },
+        "text": "what is it",
+        "topLevel": true,
+        "touchedBy": [
+          "call36"
+        ],
+        "two": {
+          "default": true,
+          "determined": true,
+          "marker": "it",
+          "pullFromContext": true,
+          "response": true,
+          "text": "it",
+          "types": [
+            "it"
+          ],
+          "word": "it"
+        },
+        "word": "is"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "briefOrWordy",
+            0
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "briefOrWordy",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "be",
+            0
+          ],
+          "ops": [
+            [
+              "be",
+              0
+            ],
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "what",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ],
+            [
+              "what",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "isEd",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "isEd",
+              0
+            ],
+            [
+              "it",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "it",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "it",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "brief": true,
+          "mentioned": [
+            {
+              "evaluate": true,
+              "marker": "unknown",
+              "text": "x",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            {
+              "default": true,
+              "determined": true,
+              "marker": "it",
+              "pullFromContext": true,
+              "text": "it",
+              "types": [
+                "it"
+              ],
+              "word": "it"
+            }
+          ],
+          "variables": {
+            "x": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            }
+          }
+        },
+        "1": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is it",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "focusable": [
+                "two",
+                "one"
+              ],
+              "marker": "is",
+              "one": {
+                "default": true,
+                "determined": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "text": "it",
+                "types": [
+                  "it"
+                ],
+                "word": "it"
+              },
+              "two": {
+                "default": true,
+                "determined": true,
+                "focus": true,
+                "greg": "greg44",
+                "instance": true,
+                "marker": "it",
+                "pullFromContext": true,
+                "text": "it",
+                "touchedBy": [
+                  "call37"
+                ],
+                "types": [
+                  "it"
+                ],
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "3",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "3",
+                  "word": "3"
+                },
+                "word": "it"
+              },
+              "word": "is"
+            },
+            "text": "what is it",
+            "topLevel": true,
+            "touchedBy": [
+              "call36"
+            ],
+            "two": {
+              "default": true,
+              "determined": true,
+              "marker": "it",
+              "pullFromContext": true,
+              "response": true,
+              "text": "it",
+              "types": [
+                "it"
+              ],
+              "word": "it"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is it?",
+          "responses": [
+            "",
+            "",
+            "3",
+            "3"
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "default": true,
+              "determined": true,
+              "marker": "what",
+              "number": "one",
+              "query": [
+                "what"
+              ],
+              "response": true,
+              "text": "what is x",
+              "types": [
+                "what"
+              ],
+              "word": "what"
+            },
+            "query": [
+              "what"
+            ],
+            "response": {
+              "default": true,
+              "focusable": [
+                "two",
+                "one"
+              ],
+              "marker": "is",
+              "one": {
+                "marker": "unknown",
+                "text": "x",
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": "x",
+                "word": "x"
+              },
+              "two": {
+                "focus": true,
+                "greg": "greg44",
+                "instance": true,
+                "marker": "unknown",
+                "text": "x",
+                "touchedBy": [
+                  "call23"
+                ],
+                "types": [
+                  "unknown"
+                ],
+                "unknown": true,
+                "value": {
+                  "marker": "unknown",
+                  "response": true,
+                  "text": "3",
+                  "types": [
+                    "unknown"
+                  ],
+                  "unknown": true,
+                  "value": "3",
+                  "word": "3"
+                },
+                "word": "x"
+              },
+              "word": "is"
+            },
+            "text": "what is x",
+            "topLevel": true,
+            "touchedBy": [
+              "call22"
+            ],
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "x",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "word": "is"
+          },
+          "paraphrases": "what is x?",
+          "responses": [
+            "",
+            "",
+            "3",
+            "3"
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "marker": "unknown",
+              "number": "one",
+              "response": true,
+              "text": "x is 3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "x",
+              "word": "x"
+            },
+            "text": "x is 3",
+            "topLevel": true,
+            "touchedBy": [
+              "call8"
+            ],
+            "two": {
+              "marker": "unknown",
+              "response": true,
+              "text": "3",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "3",
+              "word": "3"
+            },
+            "word": "is"
+          },
+          "paraphrases": "x is 3",
+          "responses": [
+            "",
+            "",
+            "3",
+            "3"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "be",
+            "text": "be brief",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "type": {
+              "marker": "briefOrWordy",
+              "text": "brief",
+              "types": [
+                "briefOrWordy"
+              ],
+              "value": "brief",
+              "word": "brief"
+            },
+            "word": "be"
+          },
+          "paraphrases": "be brief",
+          "responses": [
+            "",
+            "",
+            "3",
+            "3"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "be brief",
+      "x is 3",
+      "what is x?",
+      "what is it?"
+    ],
+    "query": "be brief x is 3 what is x what is it",
+    "responses": [
+      "",
+      "",
+      "3",
+      "3"
     ]
   }
 ]

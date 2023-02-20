@@ -33,6 +33,21 @@ const setPlayers = (objects, config, players) => {
   objects.players = players;
 }
 
+const setNextPlayer = (km, objects) => {
+  const turn = {
+        marker: "turn",
+        default: true,
+        modifiers: [ "whose" ],
+        number: "one",
+        text: "whose turn is it",
+        types: [ "turn" ],
+        whose: objects.players[objects.nextPlayer] || "nobody's",
+        word: "turn"
+      }
+  const api = km('dialogues').api
+  api.mentioned(turn)
+}
+
 const addPlayer = (objects, config, player) => {
   config.addWord(player, { "id": "player", "initial": `{ value: "${player}" }` })
   objects.players.push(player);
@@ -145,7 +160,7 @@ let config = {
   semantics: [
     {
       match: ({context}) => context.marker == 'player' && context.same,
-      apply: ({context, objects, config}) => {
+      apply: ({context, objects, config, km}) => {
         //objects.players = context.same.value.map( (props) => props.value )
         const players = context.same.value.map( (props) => props.value )
         setPlayers(objects, config, players)
@@ -153,15 +168,17 @@ let config = {
           objects.scores[player] = 0
         }
         objects.nextPlayer = 0;
+        setNextPlayer(km, objects);
         objects.allPlayersAreKnown = true;
         context.sameWasProcessed = true
       }
     },
     {
       match: ({context}) => context.marker == 'start' && context.topLevel, 
-      apply: ({context, objects, config}) => {
+      apply: ({context, objects, km, config}) => {
         objects.scores = {}
         objects.nextPlayer = 0
+        setNextPlayer(km, objects);
         for (let player of objects.players) {
           objects.scores[player] = 0;
         }
@@ -301,7 +318,7 @@ let config = {
     },
     {
       match: ({context}) => context.marker == 'scored',
-      apply: ({context, objects}) => {
+      apply: ({context, objects, km}) => {
         const player = context.player.value;
         const points = context.points.amount.value;
         // add names to the known words
@@ -316,6 +333,7 @@ let config = {
             }
             objects.scores[player] += points
             objects.nextPlayer = (objects.nextPlayer + 1) % objects.players.length
+            setNextPlayer(km, objects);
           }
         }
         else if (objects.players.includes(context.player.value)) {
@@ -324,6 +342,7 @@ let config = {
               // some error about not playing order
             } else {
               objects.nextPlayer = 1 % objects.players.length;
+              setNextPlayer(km, objects);
               objects.scores[player] += points;
             }
         } else {
@@ -344,9 +363,10 @@ config = new entodicton.Config(config, module)
 config.add(dialogues)
 config.add(numbers)
 config.add(properties)
-config.initializer( ({objects, isModule}) => {
+config.initializer( ({objects, km, isModule}) => {
   objects.players = []
   objects.nextPlayer = undefined;
+  setNextPlayer(km, objects);
   objects.scores = {};
   objects.winningScore = null
   objects.allPlayersAreKnown = false;

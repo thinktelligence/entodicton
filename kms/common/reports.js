@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const currencyKM = require('./currency.js')
+const math = require('./math.js')
 const helpKM = require('./help.js')
 const { propertyToArray, wordNumber } = require('./helpers')
 const { table } = require('table')
@@ -118,42 +119,46 @@ let config = {
     // call this report report1
   ],
   bridges: [
-    { "id": "ordering", "level": 0, "bridge": "{ ...next(operator) }" },
+    { id: "ordering", level: 0, bridge: "{ ...next(operator) }" },
     { id: "report", level: 0, 
             isA: ['theAble'], 
             words: [{word: "reports", number: "many"}], 
             bridge: "{ ...next(operator) }" },
 
-    { "id": "ascending", "level": 0, "bridge": "{ ...before[0], ordering: 'ascending' }" },
-    { "id": "descending", "level": 0, "bridge": "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
+    { id: "ascending", level: 0, bridge: "{ ...before[0], ordering: 'ascending' }" },
+    { id: "descending", level: 0, bridge: "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
 
-    { "id": "product", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "listAction", "level": 0, "bridge": "{ ...next(operator), what: after}" },
+    { id: "product", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "listAction", level: 0, bridge: "{ ...next(operator), what: after}" },
 
-    { "id": "reportObject", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "on", "level": 0, "bridge": "{ ...next(operator), report: after[0] }" },
-    { "id": "reportAction", "level": 0, "bridge": "{ ...next(operator), report: after[0].report }" },
+    { id: "reportObject", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "on", level: 0, bridge: "{ ...next(operator), report: after[0] }" },
+    { id: "reportAction", level: 0, bridge: "{ ...next(operator), report: after[0].report }" },
 
-    { "id": "that", "level": 0, "bridge": "{ ...*, constraint: context }" },
-    { "id": "cost", "level": 0, "bridge": "{ ...next(operator), price: after[0] }" },
-    { "id": "cost", "level": 1, "bridge": "{ ...squish(operator), thing*: before[0] }" },
-    { "id": "property", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "price", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "quantity", "level": 0, "bridge": "{ ...next(operator) }" },
+    { id: "that", level: 0, bridge: "{ ...*, constraint: context }" },
+    { id: "cost", level: 0, bridge: "{ ...next(operator), price: after[0] }" },
+    { id: "cost", level: 1, bridge: "{ ...squish(operator), thing*: before[0] }" },
+    { id: "property", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "price", level: 0,
+        isA: ['number', 'property'],
+        bridge: "{ ...next(operator) }" },
+    { id: "quantity", level: 0, 
+        isA: ['number', 'property'],
+        bridge: "{ ...next(operator) }" },
 
-    { "id": "listingType", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "with", "level": 0, "bridge": "{ ...next(operator), type: after[0].value }" },
-    { "id": "answer", "level": 0, "bridge": "{ ...next(operator), type: after[0].type }" },
+    { id: "listingType", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "with", level: 0, bridge: "{ ...next(operator), type: after[0].value }" },
+    { id: "answer", level: 0, bridge: "{ ...next(operator), type: after[0].type }" },
 
-    { "id": "show", "level": 0, 
-            "bridge": "{ ...next(operator), properties: after[0] }",
+    { id: "show", level: 0, 
+            bridge: "{ ...next(operator), properties: after[0] }",
             "reportBridge": "{ ...next(operator), report: after[0] }" 
     },
 
     {
-      "id": "describe",
-      "level": 0,
-      "bridge": "{ ...next(operator), report: after[0] }",
+      id: "describe",
+      level: 0,
+      bridge: "{ ...next(operator), report: after[0] }",
       "generatorp": ({g, context}) => `describe ${g(context.report)}`,
       "generatorr": ({gp, context, api, config}) => {
                     const describe = (report) => {
@@ -175,17 +180,17 @@ let config = {
                     }
                     return response
                   },
-      "semantic": ({context}) => {
+      semantic: ({context}) => {
         context.response = true
       }
     },
 
     { 
-      "id": "call", 
-      "level": 0, 
-      "bridge": "{ ...next(operator), namee: after[0], name: after[1] }",
-      "generator": ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
-      "semantic": ({g, context, api, config}) => {
+      id: "call", 
+      level: 0, 
+      bridge: "{ ...next(operator), namee: after[0], name: after[1] }",
+      generator: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
+      semantic: ({g, context, api, config}) => {
                     const name = context.name.text
                     api.listings[name] = { ...api.listing }
                     config.addWord(` ${name}`,  { id: 'report', initial: `{ value: "${name}" }` })
@@ -195,8 +200,6 @@ let config = {
   hierarchy: [
     ['ascending', 'ordering'],
     ['descending', 'ordering'],
-    ['price', 'property'],
-    ['quantity', 'property'],
     ['property', 'theAble'],
   ],
   associations: {
@@ -347,7 +350,7 @@ const initializeApi = (config, api) => {
   config.addWord(type, {"id": "reportObject", "initial": `${open} value: '${type}' ${close}` })
  }
 
-config = new entodicton.Config(config, module).add(currencyKM).add(helpKM)
+config = new entodicton.Config(config, module).add(currencyKM).add(helpKM).add(math)
 config.multiApi = initializeApi
 // mode this to non-module init only
 config.addAPI(api2)

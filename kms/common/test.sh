@@ -12,6 +12,7 @@ node hierarchy -tva -g
 node javascript -tva -g
 node meta -tva -g
 node numbers -tva -g
+node math -tva -g
 node properties -tva -g
 node reports -tva -g
 node ordering -tva -g

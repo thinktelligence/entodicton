@@ -12,7 +12,8 @@ let config = {
     "(([number|]) [minus] ([number|]))",
   ],
   bridges: [
-    { id: "plus", level: 0, 
+    { 
+        id: "plus", level: 0, 
         bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one' }" ,
         isA: ['queryable', 'number'],
         words: ['+'],
@@ -21,7 +22,8 @@ let config = {
           context.value = e(context.x).value + e(context.y).value
         }
     },
-    { id: "minus", level: 0, 
+    {   
+        id: "minus", level: 0, 
         bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one' }" ,
         isA: ['queryable', 'number'],
         words: ['-'],
@@ -30,9 +32,11 @@ let config = {
           context.value = e(context.x).value - e(context.y).value
         }
     },
-    { id: "times", level: 0, 
+    {   
+        id: "times", level: 0, 
         bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one' }" ,
         isA: ['queryable', 'number'],
+        before: [['plus', 0], ['minus', 0]],
         words: ['*'],
         generatorp: ({gp, context}) => `${gp(context.x)} times ${gp(context.y)}`,
         evaluator: ({e, context}) => {

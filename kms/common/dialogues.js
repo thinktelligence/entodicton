@@ -553,9 +553,13 @@ let config = {
       },
     },
     [ 
-      ({context}) => context.marker == 'it' && context.pullFromContext,
+      ({context}) => context.marker == 'it' && context.pullFromContext, // && context.value,
       ({context, s, api, log}) => {
         context.value = api.mentions()[0]
+        if (!context.value) {
+          context.value = { marker: 'answerNotKnown' }
+          return
+        }
         const instance = api.evaluate(context.value, context, log, s)
         if (instance.value) {
           context.value = instance.value
@@ -582,7 +586,7 @@ let config = {
           concept = two;
           value = one;
         }
-        km('dialogues').api.mentioned(concept)
+        // km('dialogues').api.mentioned(concept)
         // TODO wtf is the next line?
         value = JSON.parse(JSON.stringify(value))
         // const instance = api.evaluate(value, context, log, s)
@@ -594,8 +598,11 @@ let config = {
           instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44' }, context, log, s)
         }
         // instance.greg = 23
-        if (!instance.value) {
+        if (!instance.value && false) {
           instance.value = value.value
+        }
+        if (instance.value) {
+          km('dialogues').api.mentioned(value)
         }
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
@@ -643,7 +650,7 @@ let config = {
     { 
       notes: 'x is y',
       match: ({context}) => context.marker == 'is' && !context.query && context.one && context.two,
-      apply: ({context, s, log}) => {
+      apply: ({context, s, log, api}) => {
         const one = context.one;
         const two = context.two;
         one.same = two;
@@ -671,6 +678,16 @@ let config = {
           }
           two.same = undefined
         }
+        if (!onePrime.sameWasProcessed && !twoPrime.sameWasProcessed) {
+            api.setVariable(one.value, two)
+        }
+      }
+    },
+    {
+      notes: 'default handle evaluate',
+      match: ({context}) => context.evaluate,
+      apply: ({context, api}) => {
+        context.value = api.getVariable(context.value)
       }
     },
   ],

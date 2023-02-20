@@ -64,8 +64,8 @@ let config = {
     { id: 'help', level: 0, bridge: "{ ...next(operator)  }" },
   ],
   "words": {
-    "sally": [{"id": "character", "initial": "{ value: 'sally' }" }],
-    "bob": [{"id": "character", "initial": "{ value: 'bob' }" }],
+    "sally": [{"id": "character", development: true, "initial": "{ value: 'sally' }" }],
+    "bob": [{"id": "character", development: true, "initial": "{ value: 'bob' }" }],
     //"product1": [{"id": "reportObject", "initial": "{ value: 'api1' }" }],
     //"api2": [{"id": "reportObject", "initial": "{ value: 'api2' }" }],
     //" ([0-9]+)": [{"id": "amount", "initial": "{ value: int(group[0]) }" }],

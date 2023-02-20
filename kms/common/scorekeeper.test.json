@@ -16117,7 +16117,6 @@
         "number": "one",
         "one": {
           "default": true,
-          "evaluate": true,
           "marker": "turn",
           "modifiers": [
             "whose"
@@ -16166,7 +16165,9 @@
             "types": [
               "it"
             ],
-            "value": "no one's turn",
+            "value": {
+              "marker": "answerNotKnown"
+            },
             "word": "it"
           },
           "word": "is"
@@ -16191,6 +16192,7 @@
         "word": "is"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -16330,20 +16332,14 @@
           "mentioned": [
             {
               "default": true,
-              "evaluate": true,
-              "marker": "turn",
-              "modifiers": [
-                "whose"
-              ],
-              "number": "one",
-              "query": true,
-              "response": true,
-              "text": "whose turn is it",
+              "determined": true,
+              "marker": "it",
+              "pullFromContext": true,
+              "text": "it",
               "types": [
-                "turn"
+                "it"
               ],
-              "whose": "whose",
-              "word": "turn"
+              "word": "it"
             }
           ],
           "variables": {
@@ -16359,7 +16355,6 @@
             "number": "one",
             "one": {
               "default": true,
-              "evaluate": true,
               "marker": "turn",
               "modifiers": [
                 "whose"
@@ -16408,7 +16403,9 @@
                 "types": [
                   "it"
                 ],
-                "value": "no one's turn",
+                "value": {
+                  "marker": "answerNotKnown"
+                },
                 "word": "it"
               },
               "word": "is"
@@ -16434,7 +16431,7 @@
           },
           "paraphrases": "whose turn is it?",
           "responses": [
-            "it is no one's turn"
+            "that is not known"
           ]
         }
       ]
@@ -16444,7 +16441,7 @@
     ],
     "query": "whose turn is it",
     "responses": [
-      "it is no one's turn"
+      "that is not known"
     ]
   },
   {

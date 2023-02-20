@@ -41,8 +41,14 @@ const spockAPI = {
 }
 characters.api = spockAPI;
 
-const config = new entodicton.Config({ name: 'stgame', }, module)
+const config = new entodicton.Config({ 
+    name: 'stgame', 
+    operators: [ "([a])" ],
+    bridges: [ { id: 'a', level: 0, bridge: "{ ...next(operator) }" } ],
+    words: {"?": [{"id": "a", "initial": "{}" }]},
+}, module)
 config.api = api
+debugger;
 config.add(characters)
 
 entodicton.knowledgeModule( {

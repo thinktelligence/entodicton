@@ -261,4 +261,10 @@
 # node inspect reports -q 'call this report1' -g -d
 # node inspect reports -q 'call this report1\ndescribe report1' -g -d
 # node inspect reports -q 'call this report1\nlist the models\ncall this report2\ndescribe the reports' -g -d
-node reports -g -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -s
+# node reports -g -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -s
+# node reports -q 'worth means price times quantity the price is 10 the quantity is 5 what is the worth' -g -d
+# node inspect dialogues -q 'x is 3 what is x' -d -g -s
+# node dialogues -q 'be brief x is 3 what is x what is it' -d -g
+#  node dialogues -q 'what is it' -d -g
+# node scorekeeper -q 'whose turn is it' -d -g
+node scorekeeper -q 'greg got 10 points sara got 3 points greg got 2 points whose turn is it' -d -g
