@@ -82,7 +82,7 @@ let config = {
     "([listAction|list] (<the> ([product|products])))",
     //"what can you report on",
     //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
-    "([reportAction|report] ([on] ([reportObject|])))",
+    "([reportAction|report] ([on] ([report|])))",
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
     "([show] (<the> ([property])))",
@@ -123,15 +123,23 @@ let config = {
     { id: "report", level: 0, 
             isA: ['theAble'], 
             words: [{word: "reports", number: "many"}], 
-            bridge: "{ ...next(operator) }" },
+            bridge: "{ ...next(operator) }",
+            generator: {
+              match: ({context}) => context.marker == 'report' && context.describe,
+              apply: ({context, gp}) => {
+                const config = api.listings[context.value]
+                // {"type":"tables","columns":["name"],"ordering":[]}
+                return `for ${config.api}, showing the ${wordNumber('property', config.columns.length > 1)} ${config.columns} as ${config.type}`
+              }
+            },
+    },
 
     { id: "ascending", level: 0, bridge: "{ ...before[0], ordering: 'ascending' }" },
     { id: "descending", level: 0, bridge: "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
 
     { id: "product", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "listAction", level: 0, bridge: "{ ...next(operator), what: after}" },
+    { id: "listAction", level: 0, bridge: "{ ...next(operator), what: after[0]}" },
 
-    { id: "reportObject", level: 0, bridge: "{ ...next(operator) }" },
     { id: "on", level: 0, bridge: "{ ...next(operator), report: after[0] }" },
     { id: "reportAction", level: 0, bridge: "{ ...next(operator), report: after[0].report }" },
 
@@ -172,10 +180,14 @@ let config = {
                     for (let report of reports) {
                       if (report.number == 'many') {
                         for (let r of Object.keys(api.listings)) {
-                          response += `${r}: ${describe(r)}\n`
+                          // response += `${r}: ${gp({...r, describe: true})}\n`
+                          // debugger;
+                          const report = {describe: true, word: r, types:["report"], value: r, text: r, marker: "report"}
+                          response += `${r}: ${gp(report)}\n`
                         }
                       } else {
-                        response += `${gp(report)}: ${describe(report.value)}\n`
+                        // response += `${gp(report)}: ${describe(report.value)}\n`
+                        response += `${gp(report)}: ${gp({ ...report, greg: 28, describe: true })}\n`
                       }
                     }
                     return response
@@ -189,7 +201,7 @@ let config = {
       id: "call", 
       level: 0, 
       bridge: "{ ...next(operator), namee: after[0], name: after[1] }",
-      generator: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
+      generatorp: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
       semantic: ({g, context, api, config}) => {
                     const name = context.name.text
                     api.listings[name] = { ...api.listing }
@@ -201,6 +213,7 @@ let config = {
     ['ascending', 'ordering'],
     ['descending', 'ordering'],
     ['property', 'theAble'],
+  //  ['report', 'product'],
   ],
   associations: {
   },
@@ -251,7 +264,8 @@ let config = {
         let report = '';
         const products = context.listing
         const columns = api.listing.columns
-        api.listing.api = context.api
+        // debugger;
+        // api.listing.api = context.what.api
         const data = products.map( (product) => {
                 const row = []
                 for (property of columns) {
@@ -281,7 +295,6 @@ let config = {
       notes: 'handle show semantic',
       match: ({context, objects}) => context.marker == 'show',
       apply: ({api, context}) => {
-        debugger;
         if (context.report) {
           const values = propertyToArray(context.report)
           const responses = []
@@ -315,6 +328,7 @@ let config = {
       match: ({context}) => context.marker == 'listAction', 
       apply: ({context, api, config}) => {
         if (context.api) {
+          api.listing.api = context.api
           context.listing = config._api.apis[context.api].getAllProducts(api.listing)
         } else {
           context.listing = config._api.apis[config._api.current].getAllProducts(api.listing)
@@ -347,7 +361,7 @@ const initializeApi = (config, api) => {
   config.addGenerator( ...api.productGenerator )
   const open = '{'
   const close = '}'
-  config.addWord(type, {"id": "reportObject", "initial": `${open} value: '${type}' ${close}` })
+  // config.addWord(type, {"id": "report", "initial": `${open} value: '${type}' ${close}` })
  }
 
 config = new entodicton.Config(config, module).add(currencyKM).add(helpKM).add(math)

@@ -7739,5 +7739,919 @@
     "responses": [
       ""
     ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "report",
+          0
+        ],
+        [
+          "show",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "api": "clothes",
+        "default": true,
+        "listing": [
+          {
+            "id": 1,
+            "isInstance": true,
+            "marker": "clothes",
+            "name": "pants1",
+            "price": 9,
+            "quantity": 4,
+            "type": "pants"
+          },
+          {
+            "id": 2,
+            "isInstance": true,
+            "marker": "clothes",
+            "name": "shirt1",
+            "price": 15,
+            "quantity": 6,
+            "type": "shirt"
+          }
+        ],
+        "marker": "listAction",
+        "response": true,
+        "text": "list the clothes",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "what": {
+          "api": "clothes",
+          "concept": true,
+          "determiner": "the",
+          "marker": "product",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "text": "the clothes",
+          "types": [
+            "product"
+          ],
+          "value": "clothes",
+          "wantsValue": true,
+          "word": "clothes"
+        },
+        "word": "list"
+      },
+      {
+        "default": true,
+        "marker": "call",
+        "name": {
+          "marker": "unknown",
+          "text": "report1",
+          "unknown": true,
+          "value": "report1",
+          "word": "report1"
+        },
+        "namee": {
+          "default": true,
+          "marker": "this",
+          "text": "this",
+          "types": [
+            "this"
+          ],
+          "word": "this"
+        },
+        "text": "call this report1",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "call"
+      },
+      {
+        "default": true,
+        "marker": "show",
+        "report": {
+          "marker": "report",
+          "text": "report1",
+          "types": [
+            "report"
+          ],
+          "value": "report1",
+          "word": "report1"
+        },
+        "response": {
+          "marker": "list",
+          "newLinesOnly": true,
+          "value": [
+            {
+              "listing": [
+                {
+                  "id": 1,
+                  "isInstance": true,
+                  "marker": "clothes",
+                  "name": "pants1",
+                  "price": 9,
+                  "quantity": 4,
+                  "type": "pants"
+                },
+                {
+                  "id": 2,
+                  "isInstance": true,
+                  "marker": "clothes",
+                  "name": "shirt1",
+                  "price": 15,
+                  "quantity": 6,
+                  "type": "shirt"
+                }
+              ],
+              "marker": "listAction",
+              "response": true
+            }
+          ]
+        },
+        "text": "show report1",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "show"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "product",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "listAction",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "this",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "this",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "this",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "call",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "report",
+            0
+          ],
+          "ops": [
+            [
+              "report",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "show",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "6": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "report": {
+              "marker": "report",
+              "text": "report1",
+              "types": [
+                "report"
+              ],
+              "value": "report1",
+              "word": "report1"
+            },
+            "response": {
+              "marker": "list",
+              "newLinesOnly": true,
+              "value": [
+                {
+                  "listing": [
+                    {
+                      "id": 1,
+                      "isInstance": true,
+                      "marker": "clothes",
+                      "name": "pants1",
+                      "price": 9,
+                      "quantity": 4,
+                      "type": "pants"
+                    },
+                    {
+                      "id": 2,
+                      "isInstance": true,
+                      "marker": "clothes",
+                      "name": "shirt1",
+                      "price": 15,
+                      "quantity": 6,
+                      "type": "shirt"
+                    }
+                  ],
+                  "marker": "listAction",
+                  "response": true
+                }
+              ]
+            },
+            "text": "show report1",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "show"
+          },
+          "paraphrases": "show report1",
+          "responses": [
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "call",
+            "name": {
+              "marker": "unknown",
+              "text": "report1",
+              "unknown": true,
+              "value": "report1",
+              "word": "report1"
+            },
+            "namee": {
+              "default": true,
+              "marker": "this",
+              "text": "this",
+              "types": [
+                "this"
+              ],
+              "word": "this"
+            },
+            "text": "call this report1",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "call"
+          },
+          "paraphrases": "call this report1",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "api": "clothes",
+            "default": true,
+            "listing": [
+              {
+                "id": 1,
+                "isInstance": true,
+                "marker": "clothes",
+                "name": "pants1",
+                "price": 9,
+                "quantity": 4,
+                "type": "pants"
+              },
+              {
+                "id": 2,
+                "isInstance": true,
+                "marker": "clothes",
+                "name": "shirt1",
+                "price": 15,
+                "quantity": 6,
+                "type": "shirt"
+              }
+            ],
+            "marker": "listAction",
+            "response": true,
+            "text": "list the clothes",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "what": {
+              "api": "clothes",
+              "concept": true,
+              "determiner": "the",
+              "marker": "product",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the clothes",
+              "types": [
+                "product"
+              ],
+              "value": "clothes",
+              "wantsValue": true,
+              "word": "clothes"
+            },
+            "word": "list"
+          },
+          "paraphrases": "list the clothes",
+          "responses": [
+            "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "list the clothes",
+      "call this report1",
+      "show report1"
+    ],
+    "query": "list the clothes\\ncall this report1\\nshow report1",
+    "responses": [
+      "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n",
+      "",
+      "╔════════╗\n║ name   ║\n╟────────╢\n║ pants1 ║\n╟────────╢\n║ shirt1 ║\n╚════════╝\n"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "report",
+          0
+        ],
+        [
+          "show",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "api": "models",
+        "default": true,
+        "listing": [
+          {
+            "id": 1,
+            "isInstance": true,
+            "marker": "models",
+            "name": "tiger",
+            "price": 9,
+            "quantity": 3,
+            "type": "tanks"
+          },
+          {
+            "id": 2,
+            "isInstance": true,
+            "marker": "models",
+            "name": "spitfire",
+            "price": 15,
+            "quantity": 7,
+            "type": "planes"
+          }
+        ],
+        "marker": "listAction",
+        "response": true,
+        "text": "list the models",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "what": {
+          "api": "models",
+          "concept": true,
+          "determiner": "the",
+          "marker": "product",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "text": "the models",
+          "types": [
+            "product"
+          ],
+          "value": "models",
+          "wantsValue": true,
+          "word": "models"
+        },
+        "word": "list"
+      },
+      {
+        "default": true,
+        "marker": "call",
+        "name": {
+          "marker": "report",
+          "text": "report1",
+          "value": "report1",
+          "word": "report1"
+        },
+        "namee": {
+          "default": true,
+          "marker": "this",
+          "text": "this",
+          "types": [
+            "this"
+          ],
+          "word": "this"
+        },
+        "text": "call this report1",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "call"
+      },
+      {
+        "default": true,
+        "marker": "show",
+        "report": {
+          "marker": "report",
+          "text": "report1",
+          "types": [
+            "report"
+          ],
+          "value": "report1",
+          "word": "report1"
+        },
+        "response": {
+          "marker": "list",
+          "newLinesOnly": true,
+          "value": [
+            {
+              "listing": [
+                {
+                  "id": 1,
+                  "isInstance": true,
+                  "marker": "models",
+                  "name": "tiger",
+                  "price": 9,
+                  "quantity": 3,
+                  "type": "tanks"
+                },
+                {
+                  "id": 2,
+                  "isInstance": true,
+                  "marker": "models",
+                  "name": "spitfire",
+                  "price": 15,
+                  "quantity": 7,
+                  "type": "planes"
+                }
+              ],
+              "marker": "listAction",
+              "response": true
+            }
+          ]
+        },
+        "text": "show report1",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "show"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "product",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "listAction",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "report",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "report",
+              0
+            ],
+            [
+              "this",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "this",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "this",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "call",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "report",
+            0
+          ],
+          "ops": [
+            [
+              "report",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "show",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "6": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "report": {
+              "marker": "report",
+              "text": "report1",
+              "types": [
+                "report"
+              ],
+              "value": "report1",
+              "word": "report1"
+            },
+            "response": {
+              "marker": "list",
+              "newLinesOnly": true,
+              "value": [
+                {
+                  "listing": [
+                    {
+                      "id": 1,
+                      "isInstance": true,
+                      "marker": "models",
+                      "name": "tiger",
+                      "price": 9,
+                      "quantity": 3,
+                      "type": "tanks"
+                    },
+                    {
+                      "id": 2,
+                      "isInstance": true,
+                      "marker": "models",
+                      "name": "spitfire",
+                      "price": 15,
+                      "quantity": 7,
+                      "type": "planes"
+                    }
+                  ],
+                  "marker": "listAction",
+                  "response": true
+                }
+              ]
+            },
+            "text": "show report1",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "show"
+          },
+          "paraphrases": "show report1",
+          "responses": [
+            "╔══════════╗\n║ name     ║\n╟──────────╢\n║ tiger    ║\n╟──────────╢\n║ spitfire ║\n╚══════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "call",
+            "name": {
+              "marker": "report",
+              "text": "report1",
+              "value": "report1",
+              "word": "report1"
+            },
+            "namee": {
+              "default": true,
+              "marker": "this",
+              "text": "this",
+              "types": [
+                "this"
+              ],
+              "word": "this"
+            },
+            "text": "call this report1",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "call"
+          },
+          "paraphrases": "call this report1",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "api": "models",
+            "default": true,
+            "listing": [
+              {
+                "id": 1,
+                "isInstance": true,
+                "marker": "models",
+                "name": "tiger",
+                "price": 9,
+                "quantity": 3,
+                "type": "tanks"
+              },
+              {
+                "id": 2,
+                "isInstance": true,
+                "marker": "models",
+                "name": "spitfire",
+                "price": 15,
+                "quantity": 7,
+                "type": "planes"
+              }
+            ],
+            "marker": "listAction",
+            "response": true,
+            "text": "list the models",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "what": {
+              "api": "models",
+              "concept": true,
+              "determiner": "the",
+              "marker": "product",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the models",
+              "types": [
+                "product"
+              ],
+              "value": "models",
+              "wantsValue": true,
+              "word": "models"
+            },
+            "word": "list"
+          },
+          "paraphrases": "list the models",
+          "responses": [
+            "╔══════════╗\n║ name     ║\n╟──────────╢\n║ tiger    ║\n╟──────────╢\n║ spitfire ║\n╚══════════╝\n"
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "list the models",
+      "call this report1",
+      "show report1"
+    ],
+    "query": "list the models\\ncall this report1\\nshow report1",
+    "responses": [
+      "╔══════════╗\n║ name     ║\n╟──────────╢\n║ tiger    ║\n╟──────────╢\n║ spitfire ║\n╚══════════╝\n",
+      "",
+      "╔══════════╗\n║ name     ║\n╟──────────╢\n║ tiger    ║\n╟──────────╢\n║ spitfire ║\n╚══════════╝\n"
+    ]
   }
 ]

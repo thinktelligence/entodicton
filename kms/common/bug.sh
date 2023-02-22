@@ -270,5 +270,5 @@
 # node scorekeeper -q 'greg got 10 points sara got 3 points greg got 2 points whose turn is it' -d -g
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report2' -g -d
-node reports -q 'list the clothes\ncall this report1\nshow report1' -g -d
-
+# node inspect reports -q 'call this report1\ndescribe the reports' -g -d
+node reports -q 'list the models\ncall this report1\nshow report1' -g -d -s
