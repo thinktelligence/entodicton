@@ -267,4 +267,8 @@
 # node dialogues -q 'be brief x is 3 what is x what is it' -d -g
 #  node dialogues -q 'what is it' -d -g
 # node scorekeeper -q 'whose turn is it' -d -g
-node scorekeeper -q 'greg got 10 points sara got 3 points greg got 2 points whose turn is it' -d -g
+# node scorekeeper -q 'greg got 10 points sara got 3 points greg got 2 points whose turn is it' -d -g
+# node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
+# node reports -q 'call this report1\nlist the models\ncall this report2\nshow report2' -g -d
+node reports -q 'list the clothes\ncall this report1\nshow report1' -g -d
+

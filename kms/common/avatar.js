@@ -1,11 +1,13 @@
 const entodicton = require('entodicton')
 const dialogues = require('./dialogues')
 const hierarchy = require('./hierarchy')
+const emotions = require('./emotions')
 const avatar_tests = require('./avatar.test.json')
  
 let config = {
   name: 'avatar',
 
+  // TODO make different response for answerNotKnown based on emotions
   operators: [
     "([self])",
   ],
@@ -60,6 +62,7 @@ let config = {
 
 config = new entodicton.Config(config, module)
 config.add(hierarchy)
+config.add(emotions)
 
 entodicton.knowledgeModule( { 
   module,
