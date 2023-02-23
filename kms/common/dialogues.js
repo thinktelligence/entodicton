@@ -140,6 +140,7 @@ let config = {
     { pattern: "([debug23])" },
 
     "([this])",
+    "([to] ([toAble|]))",
   ],
   associations: {
     negative: [
@@ -170,6 +171,14 @@ let config = {
 
     {id: "list", level: 0, selector: {match: "same", left: [ { variable: 'type' } ], right: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
     {id: "list", level: 1, selector: {match: "same", left: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+
+    { id: "to", level: 0, 
+        bridge: "{ ...next(operator), object: after[0] }",
+        generatorp: ({context, gp}) => {
+          return `to ${gp(context.object)}`
+        },
+    },
+    { id: "toAble", level: 0, bridge: "{ ...next(operator) }" },
 
     { id: "this", level: 0, bridge: "{ ...next(operator) }" },
     { id: "be", level: 0, bridge: "{ ...next(operator), type: after[0] }" },
@@ -270,6 +279,7 @@ let config = {
     ['what', 'queryable'],
     ['whatAble', 'queryable'],
     ['is', 'canBeQuestion'],
+    ['it', 'toAble'],
     // ['isEd', 'means'],
     // ['is', 'means'],
   ],

@@ -37,8 +37,8 @@ const testData = {
   name: 'clothes',
   types: [ 'pants', 'shorts' ],
   products: [
-    { marker: 'clothes', isInstance: true, type: 'pants', name: 'pants1', price: 9, id: 1, quantity: 4 },
-    { marker: 'clothes', isInstance: true, type: 'shirt', name: 'shirt1', price: 15, id: 2, quantity: 6 },
+    { marker: 'clothes', supplier: "x industries", isInstance: true, type: 'pants', name: 'pants1', price: 9, id: 1, quantity: 4 },
+    { marker: 'clothes', supplier: "y industries", isInstance: true, type: 'shirt', name: 'shirt1', price: 15, id: 2, quantity: 6 },
   ],
 }
 
@@ -46,8 +46,8 @@ const testData2 = {
   name: 'models',
   types: [ 'tanks', 'planes' ],
   products: [
-    { marker: 'models', isInstance: true, type: 'tanks', name: 'tiger', price: 9, id: 1, quantity: 3 },
-    { marker: 'models', isInstance: true, type: 'planes', name: 'spitfire', price: 15, id: 2, quantity: 7 },
+    { marker: 'models', supplier: "tamiya", isInstance: true, type: 'tanks', name: 'tiger', price: 9, id: 1, quantity: 3 },
+    { marker: 'models', supplier: "dragon", isInstance: true, type: 'planes', name: 'spitfire', price: 15, id: 2, quantity: 7 },
   ]
 }
 
@@ -94,6 +94,8 @@ let config = {
     "([quantity])",
     "([ordering])",
     "([show:reportBridge] ([report]))",
+    "([column] ([number]))",
+    "([move] ([column]) ([to] ([column])))",
     /*
        call this the banana report
        show the banana report
@@ -101,24 +103,53 @@ let config = {
        price ascending
     */
     // DONE show price and quantity
-    // DONEdescribe report1
+    // DONE describe report1
     // -> multi word report names
     // call this report a  show report a show report a for products that code more than 10 dollars
     // DONE show the models
     // save this as report1 / show report1
     // list the products with the price descending
     // show report1 with price descending
+
+    // column 2 / the price column
+    // left / left 2 / to the left / to the left 2
+    // move [column] to [column]
+    // move [column] [direction]
+    // move [column] to [direction]
+    // move [column] before/after [column]
+    // move the price column before the name column
+    // move column 2 left
+    // move column 2 left 2
+    // move column 2 to 1
     // move price before name
-    // worth means quanity times price
     // move price to the far right
+    // move column 2 to column 3
+    // call it report1 move column 2 to column 3 show it
+
+    // worth means quanity times price
     // show the price in euros
     // show the cost <-> price
-    // move column 2 to column 3
     // the price columns two to the left / to the far rigth
     // show price as column 3
     // call this report report1
   ],
   bridges: [
+    { id: "move", level: 0, 
+        bridge: "{ ...next(operator), from: after[0], to: after[1] }",
+        generatorp: ({context, gp}) => `move ${gp(context.from)} ${gp(context.to)}`,
+        semantic: ({context, api}) => {
+          const from = context.from.index.value;
+          const to = context.to.object.index.value;
+          const listing = api.listing
+          const old = api.listing.columns[from-1]
+          api.listing.columns[from-1] = api.listing.columns[to-1]
+          api.listing.columns[to-1] = old
+        }
+    },
+    { id: "column", level: 0, 
+        bridge: "{ ...next(operator), index: after[0] }",
+        generatorp: ({context, gp}) => `column ${gp(context.index)}`,
+    },
     { id: "ordering", level: 0, bridge: "{ ...next(operator) }" },
     { id: "report", level: 0, 
             isA: ['theAble'], 
@@ -202,8 +233,15 @@ let config = {
       level: 0, 
       bridge: "{ ...next(operator), namee: after[0], name: after[1] }",
       generatorp: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
-      semantic: ({g, context, api, config}) => {
+      semantic: ({g, context, api, config, km}) => {
                     const name = context.name.text
+                    km('dialogues').api.mentioned({
+                              marker: "report",
+                              text: name,
+                              types: [ "report" ],
+                              value: name,
+                              word: name
+                           })
                     api.listings[name] = { ...api.listing }
                     config.addWord(` ${name}`,  { id: 'report', initial: `{ value: "${name}" }` })
                   }
@@ -213,6 +251,8 @@ let config = {
     ['ascending', 'ordering'],
     ['descending', 'ordering'],
     ['property', 'theAble'],
+    ['column', 'toAble'],
+    ['it', 'report'],
   //  ['report', 'product'],
   ],
   associations: {
@@ -294,11 +334,14 @@ let config = {
     { 
       notes: 'handle show semantic',
       match: ({context, objects}) => context.marker == 'show',
-      apply: ({api, context}) => {
+      apply: ({api, context, e}) => {
         if (context.report) {
           const values = propertyToArray(context.report)
           const responses = []
           for (let value of values) {
+            if (!value.value) {
+              value = e(value)
+            }
             const reportAPI = api.listings[value.value].api
             if (api) {
               responses.push({
@@ -327,6 +370,8 @@ let config = {
       notes: 'get the report data',
       match: ({context}) => context.marker == 'listAction', 
       apply: ({context, api, config}) => {
+        //const name = '***current***'
+        //km('dialogues').api.mentioned({ marker: "report", text: name, types: [ "report" ], value: name, word: name })
         if (context.api) {
           api.listing.api = context.api
           context.listing = config._api.apis[context.api].getAllProducts(api.listing)
@@ -346,21 +391,22 @@ let config = {
   ],
 };
 
-const initializeApi = (config, api) => {
+const initializeApi = (config, api, km) => {
   const type = api.getName();
+
   config.addWord(type, {"id": "product", "initial": "{ value: '" + type + `', api: '${type}'}` })
   api.listing = { 
     api: type,
     type: 'tables',
-    columns: ['name'],
+    columns: ['name', 'supplier'],
     ordering: [],
   }
   // name to listing
   api.listings = {
   }
   config.addGenerator( ...api.productGenerator )
-  const open = '{'
-  const close = '}'
+  // const open = '{'
+  // const close = '}'
   // config.addWord(type, {"id": "report", "initial": `${open} value: '${type}' ${close}` })
  }
 
