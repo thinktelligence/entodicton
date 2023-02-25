@@ -271,4 +271,7 @@
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report2' -g -d
 # node inspect reports -q 'call this report1\ndescribe the reports' -g -d
-node reports -q 'list the models\ncall this report1\nshow report1' -g -d -s
+# node reports -q 'list the models\ncall this report1\nshow report1' -g -d -s
+# node reports -q 'show price and supplier' -g -d
+# node emotions -q 'greg feels angry what is the emotion of greg' -g -d
+node inspect properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d

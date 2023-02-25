@@ -562,11 +562,14 @@ let config = {
         api.setBrief( context.type.value == 'brief' )
       },
     },
-    [ 
-      ({context}) => context.marker == 'it' && context.pullFromContext, // && context.value,
-      ({context, s, api, log}) => {
+    { 
+      notes: 'pull from context',
+      // match: ({context}) => context.marker == 'it' && context.pullFromContext, // && context.value,
+      match: ({context}) => context.pullFromContext && !context.same, // && context.value,
+      apply: ({context, s, api, log, retry}) => {
         context.value = api.mentions()[0]
         if (!context.value) {
+          // retry()
           context.value = { marker: 'answerNotKnown' }
           return
         }
@@ -575,7 +578,7 @@ let config = {
           context.value = instance.value
         }
       },
-    ],
+    },
     { 
       notes: 'what x is y?',
       /*
