@@ -28,7 +28,7 @@ class API {
   }
 
   mentioned(concept) {
-    this.objects.mentioned.push(concept)
+    this.objects.mentioned.unshift(concept)
   }
 
   mentions() {
@@ -140,6 +140,7 @@ let config = {
     { pattern: "([debug23])" },
 
     "([this])",
+    "([verby])",
     "([to] ([toAble|]))",
   ],
   associations: {
@@ -163,6 +164,7 @@ let config = {
   bridges: [
     { id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", optional: { 'isEder': "{ marker: 'unknown', implicit: true, concept: true }", }, },
 
+    { id: "verby", level: 0, bridge: "{ ...next(operator) }" },
     { id: "articlePOS", level: 0, bridge: "{ ...next(operator) }" },
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
     // { id: "what", level: 0, bridge: "{ ...next(operator), ...after[0], query: ['what'], determined: true }" },
@@ -180,7 +182,7 @@ let config = {
     },
     { id: "toAble", level: 0, bridge: "{ ...next(operator) }" },
 
-    { id: "this", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "this", level: 0, bridge: "{ ...next(operator), pullFromContext: true }" },
     { id: "be", level: 0, bridge: "{ ...next(operator), type: after[0] }" },
     { id: "briefOrWordy", level: 0, bridge: "{ ...next(operator) }" },
 
@@ -266,6 +268,7 @@ let config = {
   ],
   hierarchy: [
     ['questionMark', 'isEd'],
+    ['articlePOS', 'verby'],
     ['a', 'articlePOS'],
     ['the', 'articlePOS'],
     ['unknown', 'notAble'],

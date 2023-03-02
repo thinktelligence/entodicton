@@ -468,7 +468,9 @@
         "word": "answer"
       },
       {
+        "api": "clothes",
         "default": true,
+        "id": "tempReport4",
         "listing": [
           {
             "id": 1,
@@ -496,7 +498,7 @@
         "text": "list the products",
         "topLevel": true,
         "touchedBy": [
-          "call6"
+          "call8"
         ],
         "what": {
           "concept": true,
@@ -517,6 +519,7 @@
         "word": "list"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -667,6 +670,33 @@
         },
         "5": {
           "mentioned": [
+            {
+              "api": "clothes",
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReport4",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "tempReport4"
+            },
+            {
+              "api": "models",
+              "marker": "report",
+              "text": "tempReport3",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "tempReport3"
+              },
+              "word": "tempReport3"
+            }
           ],
           "variables": {
           }
@@ -677,7 +707,9 @@
       "processed": [
         {
           "context": {
+            "api": "clothes",
             "default": true,
+            "id": "tempReport4",
             "listing": [
               {
                 "id": 1,
@@ -705,7 +737,7 @@
             "text": "list the products",
             "topLevel": true,
             "touchedBy": [
-              "call6"
+              "call8"
             ],
             "what": {
               "concept": true,
@@ -1848,7 +1880,9 @@
     },
     "contexts": [
       {
+        "api": "clothes",
         "default": true,
+        "id": "tempReport4",
         "listing": [
           {
             "id": 1,
@@ -1897,6 +1931,7 @@
         "word": "list"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -1963,6 +1998,33 @@
         },
         "5": {
           "mentioned": [
+            {
+              "api": "clothes",
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReport4",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "tempReport4"
+            },
+            {
+              "api": "models",
+              "marker": "report",
+              "text": "tempReport3",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "tempReport3"
+              },
+              "word": "tempReport3"
+            }
           ],
           "variables": {
           }
@@ -1973,7 +2035,9 @@
       "processed": [
         {
           "context": {
+            "api": "clothes",
             "default": true,
+            "id": "tempReport4",
             "listing": [
               {
                 "id": 1,
@@ -5490,14 +5554,16 @@
         "default": true,
         "marker": "call",
         "name": {
-          "marker": "report",
+          "marker": "unknown",
           "text": "report1",
+          "unknown": true,
           "value": "report1",
           "word": "report1"
         },
         "namee": {
           "default": true,
           "marker": "this",
+          "pullFromContext": true,
           "text": "this",
           "types": [
             "this"
@@ -5520,7 +5586,11 @@
           "types": [
             "report"
           ],
-          "value": "report1",
+          "value": {
+            "api": "clothes",
+            "id": "report1",
+            "text": ""
+          },
           "word": "report1"
         },
         "response": true,
@@ -5532,11 +5602,12 @@
         "word": "describe"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
           "op": [
-            "report",
+            "unknown",
             0
           ],
           "ops": [
@@ -5545,11 +5616,11 @@
               0
             ],
             [
-              "report",
+              "this",
               0
             ],
             [
-              "this",
+              "unknown",
               0
             ]
           ]
@@ -5567,6 +5638,26 @@
             [
               "this",
               0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -5626,6 +5717,45 @@
         },
         "5": {
           "mentioned": [
+            {
+              "marker": "report",
+              "text": "report1",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "report1"
+            },
+            {
+              "api": "clothes",
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReport4",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "tempReport4"
+            },
+            {
+              "api": "models",
+              "marker": "report",
+              "text": "tempReport3",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "tempReport3"
+              },
+              "word": "tempReport3"
+            }
           ],
           "variables": {
           }
@@ -5644,7 +5774,11 @@
               "types": [
                 "report"
               ],
-              "value": "report1",
+              "value": {
+                "api": "clothes",
+                "id": "report1",
+                "text": ""
+              },
               "word": "report1"
             },
             "response": true,
@@ -5657,7 +5791,7 @@
           },
           "paraphrases": "describe report1",
           "responses": [
-            "report1: for clothes, showing the properties name,supplier as tables\n"
+            "report1: for clothes, showing the properties name and supplier as tables\n"
           ]
         },
         {
@@ -5665,14 +5799,16 @@
             "default": true,
             "marker": "call",
             "name": {
-              "marker": "report",
+              "marker": "unknown",
               "text": "report1",
+              "unknown": true,
               "value": "report1",
               "word": "report1"
             },
             "namee": {
               "default": true,
               "marker": "this",
+              "pullFromContext": true,
               "text": "this",
               "types": [
                 "this"
@@ -5700,7 +5836,7 @@
     "query": "call this report1\\ndescribe report1",
     "responses": [
       "",
-      "report1: for clothes, showing the properties name,supplier as tables\n"
+      "report1: for clothes, showing the properties name and supplier as tables\n"
     ]
   },
   {
@@ -5747,14 +5883,16 @@
         "default": true,
         "marker": "call",
         "name": {
-          "marker": "report",
+          "marker": "unknown",
           "text": "report1",
+          "unknown": true,
           "value": "report1",
           "word": "report1"
         },
         "namee": {
           "default": true,
           "marker": "this",
+          "pullFromContext": true,
           "text": "this",
           "types": [
             "this"
@@ -5796,11 +5934,12 @@
         "word": "describe"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
           "op": [
-            "report",
+            "unknown",
             0
           ],
           "ops": [
@@ -5809,11 +5948,11 @@
               0
             ],
             [
-              "report",
+              "this",
               0
             ],
             [
-              "this",
+              "unknown",
               0
             ]
           ]
@@ -5831,6 +5970,26 @@
             [
               "this",
               0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "unknown",
+              1
             ]
           ]
         },
@@ -5910,6 +6069,45 @@
         },
         "5": {
           "mentioned": [
+            {
+              "marker": "report",
+              "text": "report1",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "report1"
+            },
+            {
+              "api": "clothes",
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReport4",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "tempReport4"
+            },
+            {
+              "api": "models",
+              "marker": "report",
+              "text": "tempReport3",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "tempReport3"
+              },
+              "word": "tempReport3"
+            }
           ],
           "variables": {
           }
@@ -5948,7 +6146,7 @@
           },
           "paraphrases": "describe the reports",
           "responses": [
-            "report1: for clothes, showing the properties name,supplier as tables\n"
+            "report1: for clothes, showing the properties name and supplier as tables\n"
           ]
         },
         {
@@ -5956,14 +6154,16 @@
             "default": true,
             "marker": "call",
             "name": {
-              "marker": "report",
+              "marker": "unknown",
               "text": "report1",
+              "unknown": true,
               "value": "report1",
               "word": "report1"
             },
             "namee": {
               "default": true,
               "marker": "this",
+              "pullFromContext": true,
               "text": "this",
               "types": [
                 "this"
@@ -5991,7 +6191,7 @@
     "query": "call this report1\\ndescribe the reports",
     "responses": [
       "",
-      "report1: for clothes, showing the properties name,supplier as tables\n"
+      "report1: for clothes, showing the properties name and supplier as tables\n"
     ]
   },
   {
@@ -8231,6 +8431,7 @@
       {
         "api": "models",
         "default": true,
+        "id": "tempReport5",
         "listing": [
           {
             "id": 1,
@@ -8264,6 +8465,7 @@
           "api": "models",
           "concept": true,
           "determiner": "the",
+          "greg": true,
           "marker": "product",
           "modifiers": [
             "determiner"
@@ -8292,6 +8494,7 @@
         "namee": {
           "default": true,
           "marker": "this",
+          "pullFromContext": true,
           "text": "this",
           "types": [
             "this"
@@ -8314,7 +8517,11 @@
           "types": [
             "report"
           ],
-          "value": "report1",
+          "value": {
+            "api": "models",
+            "id": "report1",
+            "text": ""
+          },
           "word": "report1"
         },
         "response": {
@@ -8322,6 +8529,8 @@
           "newLinesOnly": true,
           "value": [
             {
+              "api": "models",
+              "id": "report1",
               "listing": [
                 {
                   "id": 1,
@@ -8357,6 +8566,7 @@
         "word": "show"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
@@ -8519,6 +8729,55 @@
         },
         "5": {
           "mentioned": [
+            {
+              "api": "models",
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReport3",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "tempReport3"
+              },
+              "word": "tempReport3"
+            },
+            {
+              "api": "clothes",
+              "marker": "report",
+              "text": "tempReport4",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "tempReport4"
+              },
+              "word": "tempReport4"
+            },
+            {
+              "api": "models",
+              "marker": "report",
+              "text": "tempReport5",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "tempReport5"
+              },
+              "word": "tempReport5"
+            },
+            {
+              "marker": "report",
+              "text": "report1",
+              "types": [
+                "report"
+              ],
+              "value": "report1",
+              "word": "report1"
+            }
           ],
           "variables": {
           }
@@ -8537,7 +8796,11 @@
               "types": [
                 "report"
               ],
-              "value": "report1",
+              "value": {
+                "api": "models",
+                "id": "report1",
+                "text": ""
+              },
               "word": "report1"
             },
             "response": {
@@ -8545,6 +8808,8 @@
               "newLinesOnly": true,
               "value": [
                 {
+                  "api": "models",
+                  "id": "report1",
                   "listing": [
                     {
                       "id": 1,
@@ -8598,6 +8863,7 @@
             "namee": {
               "default": true,
               "marker": "this",
+              "pullFromContext": true,
               "text": "this",
               "types": [
                 "this"
@@ -8620,6 +8886,7 @@
           "context": {
             "api": "models",
             "default": true,
+            "id": "tempReport5",
             "listing": [
               {
                 "id": 1,
@@ -8653,6 +8920,7 @@
               "api": "models",
               "concept": true,
               "determiner": "the",
+              "greg": true,
               "marker": "product",
               "modifiers": [
                 "determiner"
@@ -9534,6 +9802,502 @@
     "responses": [
       "",
       "╔════════╤══════════════╗\n║ name   │ supplier     ║\n╟────────┼──────────────╢\n║ pants1 │ x industries ║\n╟────────┼──────────────╢\n║ shirt1 │ y industries ║\n╚════════╧══════════════╝\n"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "price",
+          0
+        ],
+        [
+          "show",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "list",
+          1
+        ],
+        [
+          "show",
+          0
+        ]
+      ],
+      [
+        [
+          "price",
+          0
+        ],
+        [
+          "show",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "show",
+        "properties": {
+          "marker": "list",
+          "types": [
+            "list",
+            "price"
+          ],
+          "value": [
+            {
+              "default": true,
+              "marker": "price",
+              "text": "price",
+              "word": "price"
+            },
+            {
+              "marker": "unknown",
+              "text": "supplier",
+              "value": "supplier",
+              "word": "supplier"
+            }
+          ]
+        },
+        "text": "show",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "show"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "list",
+            0
+          ],
+          "ops": [
+            [
+              "list",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "list",
+            1
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "list",
+              1
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "6": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "properties": {
+              "marker": "list",
+              "types": [
+                "list",
+                "price"
+              ],
+              "value": [
+                {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "word": "price"
+                },
+                {
+                  "marker": "unknown",
+                  "text": "supplier",
+                  "value": "supplier",
+                  "word": "supplier"
+                }
+              ]
+            },
+            "text": "show",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "show"
+          },
+          "paraphrases": "the properties being shown are name, supplier and price",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "the properties being shown are name, supplier and price"
+    ],
+    "query": "show price and supplier",
+    "responses": [
+      ""
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "call",
+          0
+        ],
+        [
+          "this",
+          0
+        ]
+      ],
+      [
+        [
+          "call",
+          0
+        ],
+        [
+          "this",
+          0
+        ],
+        [
+          "unknown",
+          0
+        ]
+      ],
+      [
+        [
+          "call",
+          0
+        ],
+        [
+          "this",
+          0
+        ],
+        [
+          "unknown",
+          1
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "call",
+        "name": {
+          "marker": "unknown",
+          "text": "report1",
+          "unknown": true,
+          "value": "report1",
+          "word": "report1"
+        },
+        "namee": {
+          "default": true,
+          "marker": "this",
+          "pullFromContext": true,
+          "text": "this",
+          "types": [
+            "this"
+          ],
+          "word": "this"
+        },
+        "text": "call this report1",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "call"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "this",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "this",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "this",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "call",
+            0
+          ],
+          "ops": [
+            [
+              "call",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+          "mentioned": [
+            {
+              "api": "models",
+              "evaluate": true,
+              "marker": "report",
+              "text": "02002e31-1dce-4b30-8ace-af5e1c97a60e",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "models",
+                "id": "02002e31-1dce-4b30-8ace-af5e1c97a60e"
+              },
+              "word": "02002e31-1dce-4b30-8ace-af5e1c97a60e"
+            },
+            {
+              "api": "clothes",
+              "marker": "report",
+              "text": "17fd1bae-0e29-4983-83df-06c1b04ed2b3",
+              "types": [
+                "report"
+              ],
+              "value": {
+                "api": "clothes",
+                "id": "17fd1bae-0e29-4983-83df-06c1b04ed2b3"
+              },
+              "word": "17fd1bae-0e29-4983-83df-06c1b04ed2b3"
+            },
+            {
+              "marker": "report",
+              "text": "report1",
+              "types": [
+                "report"
+              ],
+              "value": "report1",
+              "word": "report1"
+            }
+          ],
+          "variables": {
+          }
+        },
+        "6": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "call",
+            "name": {
+              "marker": "unknown",
+              "text": "report1",
+              "unknown": true,
+              "value": "report1",
+              "word": "report1"
+            },
+            "namee": {
+              "default": true,
+              "marker": "this",
+              "pullFromContext": true,
+              "text": "this",
+              "types": [
+                "this"
+              ],
+              "word": "this"
+            },
+            "text": "call this report1",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "call"
+          },
+          "paraphrases": "call this report1",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "call this report1"
+    ],
+    "query": "call this report1",
+    "responses": [
+      ""
     ]
   }
 ]

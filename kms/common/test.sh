@@ -14,7 +14,7 @@ node meta -tva -g
 node numbers -tva -g
 node math -tva -g
 node properties -tva -g
-# node reports -tva -g
+node reports -tva -g
 node ordering -tva -g
 node people -tva -g
 node scorekeeper -tva -g

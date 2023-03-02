@@ -62,7 +62,7 @@ let config = {
 
 config = new entodicton.Config(config, module)
 config.add(hierarchy)
-config.initializer( ({config, context, km, isModule}) => {
+config.initializer( ({config, context, km, isAfterApi, isModule}) => {
   const api = km('properties').api
   // setup paraphrase
   api.createActionPrefix({

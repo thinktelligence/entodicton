@@ -175,7 +175,7 @@ let config = {
     },
     {
       match: ({context}) => context.marker == 'start' && context.topLevel, 
-      apply: ({context, objects, km, config}) => {
+      apply: ({context, objects, km, config, ask}) => {
         objects.scores = {}
         objects.nextPlayer = 0
         setNextPlayer(km, objects);
@@ -187,6 +187,7 @@ let config = {
           context.verbatim = `New game the winning score is ${objects.winningScore}. The players are ${objects.players}`
           context.response = true;
         } else {
+          /*
           config.addMotivation({
             match: ({context}) => context.marker == 'point',
             apply: ({context, objects}) => { 
@@ -225,6 +226,57 @@ let config = {
                 }
               }
           })
+          */
+
+          /*
+          const ask = (asks) => {
+            for (let ask of asks) {
+              config.addMotivation({
+                match: (args) => ask.matchr(args),
+                apply: (args) => ask.applyr(args)
+              })
+            }
+            config.addMotivation({
+                match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
+                apply: (args) => {
+                  for (let ask of asks) {
+                    if (ask.matchq(args)) {
+                      args.context.motivationKeep = true
+                      args.context.verbatim = ask.applyq(args)
+                      args.context.response = true;
+                      delete args.context.controlRemove;
+                      args.context.controlKeepMotivation = true;
+                      break
+                    }
+                  }
+            })
+          }
+          */
+
+          ask([
+            {
+              matchq: ({objects}) => !objects.winningScore,
+              applyq: () => 'what is the winning score?',
+              matchr: ({context}) => context.marker == 'point',
+              applyr: ({context, objects}) => {
+                          objects.winningScore = context.amount.value
+                          context.verbatim = `The winning score is ${objects.winningScore}`
+                          context.response = true;
+                      }
+            },
+            {
+              matchq: ({objects}) => objects.players.length == 0,
+              applyq: () => 'who are the players?',
+              matchr: ({context}) => context.marker == 'list',
+              applyr: ({context, gs, objects, config}) => {
+                        const players = context.value.map( (player) => player.value )
+                        setPlayers(objects, config, players)
+                        objects.allPlayersAreKnown = true;
+                        context.verbatim = `The players are ${gs(objects.players, ' ', ' and ')}`
+                        context.response = true;
+                      }
+            }
+          ])
         }
       }
     },
