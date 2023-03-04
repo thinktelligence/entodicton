@@ -6,6 +6,7 @@ node characters -tva -g
 node currency -tva -g
 node dialogues -tva -g
 node emotions -tva -g
+node events -tva -g
 node foods -tva -g
 node help -tva -g
 node hierarchy -tva -g

@@ -291,4 +291,5 @@
 # node inspect reports -q 'answer with sentences list the models' -g
 # node reports -q 'call this report1\nshow report1' -g
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
-node inspect reports -q 'call this report1\ndescribe the reports' -g -d
+# node inspect reports -q 'call this report1\ndescribe the reports' -g -d
+node events -q 'after event1 action1 event1 event1' -g -d -s

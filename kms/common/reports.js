@@ -125,6 +125,11 @@ let config = {
     */
     // DONE show price and quantity
     // DONE describe report1
+    // after the report changes show it
+    // after changing a report show it -> event IDEA OF EVENT
+    // after changing report 1
+    // after changing the columns
+    // after move show the report -> marker
     // -> multi word report names
     // call this report a  show report a show report a for products that code more than 10 dollars
     // DONE show the models
@@ -221,7 +226,7 @@ let config = {
     {
       id: "describe",
       level: 0,
-      // isA: ['verby'],
+      isA: ['verby'],
       bridge: "{ ...next(operator), report: after[0] }",
       "generatorp": ({g, context}) => `describe ${g(context.report)}`,
       "generatorr": ({gp, context, apis, objects, config}) => {
