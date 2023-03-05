@@ -9104,24 +9104,6 @@
           0
         ],
         [
-          "number",
-          0
-        ],
-        [
-          "to",
-          0
-        ]
-      ],
-      [
-        [
-          "column",
-          0
-        ],
-        [
-          "move",
-          0
-        ],
-        [
           "to",
           0
         ]
@@ -9151,6 +9133,10 @@
           "word": "column"
         },
         "marker": "move",
+        "on": {
+          "marker": "report",
+          "pullFromContext": true
+        },
         "text": "move column 2 to column 1",
         "to": {
           "default": true,
@@ -9184,6 +9170,22 @@
           "call2"
         ],
         "word": "move"
+      },
+      {
+        "changeable": {
+          "instance": true,
+          "marker": "report",
+          "pullFromContext": true,
+          "touchedBy": [
+            "call3"
+          ],
+          "value": "tempReportNaN"
+        },
+        "event": true,
+        "hidden": true,
+        "inserted": true,
+        "marker": "changes",
+        "topLevel": true
       }
     ],
     "developerTest": false,
@@ -9310,6 +9312,19 @@
     "objects": {
       "namespaced": {
         "0": {
+          "listings": {
+            "tempReportNaN": {
+              "api": "clothes",
+              "columns": [
+                "supplier",
+                "name"
+              ],
+              "ordering": [
+              ],
+              "type": "tables"
+            }
+          },
+          "tempReportId": 0
         },
         "1": {
         },
@@ -9320,15 +9335,50 @@
         "4": {
         },
         "5": {
+        },
+        "6": {
           "mentioned": [
+            {
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReportNaN",
+              "types": [
+                "report"
+              ],
+              "value": "tempReportNaN",
+              "word": "tempReportNaN"
+            }
           ],
           "variables": {
           }
         },
-        "6": {
+        "7": {
         }
       },
       "processed": [
+        {
+          "context": {
+            "changeable": {
+              "instance": true,
+              "marker": "report",
+              "pullFromContext": true,
+              "touchedBy": [
+                "call3"
+              ],
+              "value": "tempReportNaN"
+            },
+            "event": true,
+            "hidden": true,
+            "inserted": true,
+            "marker": "changes",
+            "topLevel": true
+          },
+          "paraphrases": "{\"pullFromContext\":true,\"marker\":\"report\",\"value\":\"tempReportNaN\",\"touchedBy\":[\"call3\"],\"instance\":true,\"paraphrase\":true} changes",
+          "responses": [
+            "",
+            ""
+          ]
+        },
         {
           "context": {
             "default": true,
@@ -9351,6 +9401,10 @@
               "word": "column"
             },
             "marker": "move",
+            "on": {
+              "marker": "report",
+              "pullFromContext": true
+            },
             "text": "move column 2 to column 1",
             "to": {
               "default": true,
@@ -9387,16 +9441,19 @@
           },
           "paraphrases": "move column 2 to column 1",
           "responses": [
+            "",
             ""
           ]
         }
       ]
     },
     "paraphrases": [
-      "move column 2 to column 1"
+      "move column 2 to column 1",
+      "{\"pullFromContext\":true,\"marker\":\"report\",\"value\":\"tempReportNaN\",\"touchedBy\":[\"call3\"],\"instance\":true,\"paraphrase\":true} changes"
     ],
     "query": "move column 2 to column 1",
     "responses": [
+      "",
       ""
     ]
   },
@@ -10298,6 +10355,807 @@
     "query": "call this report1",
     "responses": [
       ""
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "column",
+          0
+        ],
+        [
+          "move",
+          0
+        ],
+        [
+          "number",
+          0
+        ],
+        [
+          "to",
+          0
+        ]
+      ],
+      [
+        [
+          "column",
+          0
+        ],
+        [
+          "move",
+          0
+        ],
+        [
+          "to",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "action": {
+          "default": true,
+          "marker": "show",
+          "report": {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "marker": "report",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the report",
+            "types": [
+              "report"
+            ],
+            "wantsValue": true,
+            "word": "report"
+          },
+          "text": "show the report",
+          "topLevel": true,
+          "types": [
+            "show"
+          ],
+          "word": "show"
+        },
+        "default": true,
+        "event": {
+          "changeable": {
+            "concept": true,
+            "default": true,
+            "determiner": "the",
+            "marker": "report",
+            "modifiers": [
+              "determiner"
+            ],
+            "pullFromContext": true,
+            "text": "the report",
+            "types": [
+              "report"
+            ],
+            "wantsValue": true,
+            "word": "report"
+          },
+          "default": true,
+          "marker": "changes",
+          "text": "the report changes",
+          "types": [
+            "changes"
+          ],
+          "word": "changes"
+        },
+        "marker": "after",
+        "text": "after the report changes show the report",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "after"
+      },
+      {
+        "default": true,
+        "from": {
+          "default": true,
+          "index": {
+            "marker": "number",
+            "text": "2",
+            "types": [
+              "number"
+            ],
+            "value": 2,
+            "word": "2"
+          },
+          "marker": "column",
+          "text": "column 2",
+          "types": [
+            "column"
+          ],
+          "word": "column"
+        },
+        "marker": "move",
+        "on": {
+          "marker": "report",
+          "pullFromContext": true
+        },
+        "text": "move column 2 to column 1",
+        "to": {
+          "default": true,
+          "marker": "to",
+          "object": {
+            "default": true,
+            "index": {
+              "marker": "number",
+              "text": "1",
+              "types": [
+                "number"
+              ],
+              "value": 1,
+              "word": "1"
+            },
+            "marker": "column",
+            "text": "column 1",
+            "types": [
+              "column"
+            ],
+            "word": "column"
+          },
+          "text": "to column 1",
+          "types": [
+            "to"
+          ],
+          "word": "to"
+        },
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "move"
+      },
+      {
+        "changeable": {
+          "instance": true,
+          "marker": "report",
+          "pullFromContext": true,
+          "touchedBy": [
+            "call3"
+          ],
+          "value": "tempReportNaN"
+        },
+        "event": true,
+        "hidden": true,
+        "inserted": true,
+        "marker": "changes",
+        "topLevel": true
+      },
+      {
+        "default": true,
+        "marker": "show",
+        "report": {
+          "concept": true,
+          "default": true,
+          "determiner": "the",
+          "marker": "report",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "text": "the report",
+          "types": [
+            "report"
+          ],
+          "wantsValue": true,
+          "word": "report"
+        },
+        "response": {
+          "marker": "list",
+          "newLinesOnly": true,
+          "value": [
+            {
+              "id": "tempReportNaN",
+              "listing": [
+                {
+                  "id": 1,
+                  "isInstance": true,
+                  "marker": "clothes",
+                  "name": "pants1",
+                  "price": 9,
+                  "quantity": 4,
+                  "supplier": "x industries",
+                  "type": "pants"
+                },
+                {
+                  "id": 2,
+                  "isInstance": true,
+                  "marker": "clothes",
+                  "name": "shirt1",
+                  "price": 15,
+                  "quantity": 6,
+                  "supplier": "y industries",
+                  "type": "shirt"
+                }
+              ],
+              "marker": "listAction",
+              "response": true
+            }
+          ]
+        },
+        "text": "show the report",
+        "topLevel": true,
+        "touchedBy": [
+          "call15"
+        ],
+        "types": [
+          "show"
+        ],
+        "word": "show"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "report",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "changes",
+              0
+            ],
+            [
+              "report",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "report",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "changes",
+              0
+            ],
+            [
+              "report",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "changes",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "changes",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "changes",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "changes",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "changes",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "after",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "column",
+              0
+            ],
+            [
+              "move",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "to",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "column",
+              0
+            ],
+            [
+              "move",
+              0
+            ],
+            [
+              "number",
+              0
+            ],
+            [
+              "to",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "column",
+            0
+          ],
+          "ops": [
+            [
+              "column",
+              0
+            ],
+            [
+              "move",
+              0
+            ],
+            [
+              "to",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "column",
+            0
+          ],
+          "ops": [
+            [
+              "column",
+              0
+            ],
+            [
+              "move",
+              0
+            ],
+            [
+              "to",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "to",
+            0
+          ],
+          "ops": [
+            [
+              "move",
+              0
+            ],
+            [
+              "to",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "move",
+            0
+          ],
+          "ops": [
+            [
+              "move",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "listings": {
+            "tempReportNaN": {
+              "api": "clothes",
+              "columns": [
+                "supplier",
+                "name"
+              ],
+              "ordering": [
+              ],
+              "type": "tables"
+            }
+          },
+          "tempReportId": 0
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        },
+        "6": {
+          "mentioned": [
+            {
+              "evaluate": true,
+              "marker": "report",
+              "text": "tempReportNaN",
+              "types": [
+                "report"
+              ],
+              "value": "tempReportNaN",
+              "word": "tempReportNaN"
+            }
+          ],
+          "variables": {
+          }
+        },
+        "7": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "report": {
+              "concept": true,
+              "default": true,
+              "determiner": "the",
+              "marker": "report",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the report",
+              "types": [
+                "report"
+              ],
+              "wantsValue": true,
+              "word": "report"
+            },
+            "response": {
+              "marker": "list",
+              "newLinesOnly": true,
+              "value": [
+                {
+                  "id": "tempReportNaN",
+                  "listing": [
+                    {
+                      "id": 1,
+                      "isInstance": true,
+                      "marker": "clothes",
+                      "name": "pants1",
+                      "price": 9,
+                      "quantity": 4,
+                      "supplier": "x industries",
+                      "type": "pants"
+                    },
+                    {
+                      "id": 2,
+                      "isInstance": true,
+                      "marker": "clothes",
+                      "name": "shirt1",
+                      "price": 15,
+                      "quantity": 6,
+                      "supplier": "y industries",
+                      "type": "shirt"
+                    }
+                  ],
+                  "marker": "listAction",
+                  "response": true
+                }
+              ]
+            },
+            "text": "show the report",
+            "topLevel": true,
+            "touchedBy": [
+              "call15"
+            ],
+            "types": [
+              "show"
+            ],
+            "word": "show"
+          },
+          "paraphrases": "show the report",
+          "responses": [
+            "",
+            "",
+            "╔══════════════╤════════╗\n║ supplier     │ name   ║\n╟──────────────┼────────╢\n║ x industries │ pants1 ║\n╟──────────────┼────────╢\n║ y industries │ shirt1 ║\n╚══════════════╧════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "changeable": {
+              "instance": true,
+              "marker": "report",
+              "pullFromContext": true,
+              "touchedBy": [
+                "call3"
+              ],
+              "value": "tempReportNaN"
+            },
+            "event": true,
+            "hidden": true,
+            "inserted": true,
+            "marker": "changes",
+            "topLevel": true
+          },
+          "paraphrases": "{\"pullFromContext\":true,\"marker\":\"report\",\"value\":\"tempReportNaN\",\"touchedBy\":[\"call3\"],\"instance\":true,\"paraphrase\":true} changes",
+          "responses": [
+            "",
+            "",
+            "╔══════════════╤════════╗\n║ supplier     │ name   ║\n╟──────────────┼────────╢\n║ x industries │ pants1 ║\n╟──────────────┼────────╢\n║ y industries │ shirt1 ║\n╚══════════════╧════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "default": true,
+              "index": {
+                "marker": "number",
+                "text": "2",
+                "types": [
+                  "number"
+                ],
+                "value": 2,
+                "word": "2"
+              },
+              "marker": "column",
+              "text": "column 2",
+              "types": [
+                "column"
+              ],
+              "word": "column"
+            },
+            "marker": "move",
+            "on": {
+              "marker": "report",
+              "pullFromContext": true
+            },
+            "text": "move column 2 to column 1",
+            "to": {
+              "default": true,
+              "marker": "to",
+              "object": {
+                "default": true,
+                "index": {
+                  "marker": "number",
+                  "text": "1",
+                  "types": [
+                    "number"
+                  ],
+                  "value": 1,
+                  "word": "1"
+                },
+                "marker": "column",
+                "text": "column 1",
+                "types": [
+                  "column"
+                ],
+                "word": "column"
+              },
+              "text": "to column 1",
+              "types": [
+                "to"
+              ],
+              "word": "to"
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "move"
+          },
+          "paraphrases": "move column 2 to column 1",
+          "responses": [
+            "",
+            "",
+            "╔══════════════╤════════╗\n║ supplier     │ name   ║\n╟──────────────┼────────╢\n║ x industries │ pants1 ║\n╟──────────────┼────────╢\n║ y industries │ shirt1 ║\n╚══════════════╧════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "action": {
+              "default": true,
+              "marker": "show",
+              "report": {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "marker": "report",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the report",
+                "types": [
+                  "report"
+                ],
+                "wantsValue": true,
+                "word": "report"
+              },
+              "text": "show the report",
+              "topLevel": true,
+              "types": [
+                "show"
+              ],
+              "word": "show"
+            },
+            "default": true,
+            "event": {
+              "changeable": {
+                "concept": true,
+                "default": true,
+                "determiner": "the",
+                "marker": "report",
+                "modifiers": [
+                  "determiner"
+                ],
+                "pullFromContext": true,
+                "text": "the report",
+                "types": [
+                  "report"
+                ],
+                "wantsValue": true,
+                "word": "report"
+              },
+              "default": true,
+              "marker": "changes",
+              "text": "the report changes",
+              "types": [
+                "changes"
+              ],
+              "word": "changes"
+            },
+            "marker": "after",
+            "text": "after the report changes show the report",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "after"
+          },
+          "paraphrases": "after the report changes show the report",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "after the report changes show the report",
+      "move column 2 to column 1",
+      "{\"pullFromContext\":true,\"marker\":\"report\",\"value\":\"tempReportNaN\",\"touchedBy\":[\"call3\"],\"instance\":true,\"paraphrase\":true} changes",
+      "show the report"
+    ],
+    "query": "after the report changes show the report\\nmove column 2 to column 1",
+    "responses": [
+      "",
+      "",
+      "",
+      "╔══════════════╤════════╗\n║ supplier     │ name   ║\n╟──────────────┼────────╢\n║ x industries │ pants1 ║\n╟──────────────┼────────╢\n║ y industries │ shirt1 ║\n╚══════════════╧════════╝\n"
     ]
   }
 ]

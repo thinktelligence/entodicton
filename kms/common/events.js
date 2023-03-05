@@ -6,8 +6,9 @@ const events_tests = require('./events.test.json')
 
 class API {
   happens (context) {
-    this.args.insert({ ...context, event: true, inserted: true })
+    this.args.insert({ ...context, event: true, hidden: true, inserted: true })
   }
+
   happened(context, event) {
     return context.event && context.marker == event.marker
   }
@@ -17,6 +18,7 @@ let config = {
   name: 'events',
   operators: [
     "([after] ([event]) ([action]))",
+    "(([changeable]) [changes])",
     { pattern: "([event1])", development: true },
     { pattern: "([action1])", development: true },
   ],
@@ -27,12 +29,18 @@ let config = {
     },
     { id: "event", level: 0, bridge: "{ ...next(operator) }" },
     { id: "action", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "changeable", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "changes", level: 0, 
+            bridge: "{ ...next(operator), changeable: before[0] }",
+            generatorp: ({context, g}) => `${g(context.changeable)} changes`,
+    },
     { id: "event1", level: 0, bridge: "{ ...next(operator) }", development: true },
     { id: "action1", level: 0, bridge: "{ ...next(operator) }", development: true },
   ],
   hierarchy: [
     { child: 'event1', parent: 'event', development: true },
     { child: 'action1', parent: 'action', development: true },
+    ['changes', 'event'],
   ],
   generators: [
     {
@@ -63,7 +71,6 @@ let config = {
       match: ({context}) => context.marker == 'after',
       apply: ({context, motivation}) => {
           // add motivation that watches for event
-          debugger;
           const event = context.event
           const action = context.action
           motivation({

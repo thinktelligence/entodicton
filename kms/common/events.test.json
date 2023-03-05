@@ -136,6 +136,7 @@
       },
       {
         "event": true,
+        "hidden": true,
         "inserted": true,
         "marker": "event1",
         "topLevel": true
@@ -166,6 +167,7 @@
       },
       {
         "event": true,
+        "hidden": true,
         "inserted": true,
         "marker": "event1",
         "topLevel": true
@@ -185,69 +187,8 @@
         "word": "action1"
       }
     ],
-    "developerTest": false,
     "metadata": {
       "opChoices": [
-        {
-          "op": [
-            "event1",
-            0
-          ],
-          "ops": [
-            [
-              "action1",
-              0
-            ],
-            [
-              "after",
-              0
-            ],
-            [
-              "event1",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "event1",
-            0
-          ],
-          "ops": [
-            [
-              "action1",
-              0
-            ],
-            [
-              "after",
-              0
-            ],
-            [
-              "event1",
-              0
-            ]
-          ]
-        },
-        {
-          "op": [
-            "event1",
-            0
-          ],
-          "ops": [
-            [
-              "action1",
-              0
-            ],
-            [
-              "after",
-              0
-            ],
-            [
-              "event1",
-              0
-            ]
-          ]
-        },
         {
           "op": [
             "action1",
@@ -260,6 +201,58 @@
             ],
             [
               "after",
+              0
+            ],
+            [
+              "event1",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "event1",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "event1",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "event1",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "event1",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "event1",
+            0
+          ],
+          "ops": [
+            [
+              "after",
+              0
+            ],
+            [
+              "event1",
               0
             ]
           ]
@@ -321,11 +314,12 @@
         {
           "context": {
             "event": true,
+            "hidden": true,
             "inserted": true,
             "marker": "event1",
             "topLevel": true
           },
-          "paraphrases": "event happened: {\"marker\":\"event1\",\"event\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
+          "paraphrases": "event happened: {\"marker\":\"event1\",\"event\":true,\"hidden\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
           "responses": [
             "",
             "",
@@ -387,11 +381,12 @@
         {
           "context": {
             "event": true,
+            "hidden": true,
             "inserted": true,
             "marker": "event1",
             "topLevel": true
           },
-          "paraphrases": "event happened: {\"marker\":\"event1\",\"event\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
+          "paraphrases": "event happened: {\"marker\":\"event1\",\"event\":true,\"hidden\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
           "responses": [
             "",
             "",
@@ -429,10 +424,10 @@
     "paraphrases": [
       "after event1 action1",
       "event1",
-      "event happened: {\"marker\":\"event1\",\"event\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
+      "event happened: {\"marker\":\"event1\",\"event\":true,\"hidden\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
       "action1",
       "event1",
-      "event happened: {\"marker\":\"event1\",\"event\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
+      "event happened: {\"marker\":\"event1\",\"event\":true,\"hidden\":true,\"inserted\":true,\"topLevel\":true,\"paraphrase\":true}",
       "action1"
     ],
     "query": "after event1 action1 event1 event1",
@@ -442,6 +437,209 @@
       "",
       "",
       "",
+      "",
+      ""
+    ]
+  },
+  {
+    "associations": [
+    ],
+    "config": {
+      "words": {
+        "?": [
+          {
+            "id": "questionMark",
+            "initial": "{}"
+          }
+        ],
+        "are": [
+          {
+            "id": "is",
+            "initial": "{ number: 'many' }"
+          },
+          {
+            "id": "isEd",
+            "initial": "{ number: 'many' }"
+          }
+        ],
+        "brief": [
+          {
+            "id": "briefOrWordy",
+            "initial": "{ value: 'brief' }"
+          }
+        ],
+        "do": [
+          {
+            "id": "does",
+            "initial": "{ number: 'many' }"
+          }
+        ],
+        "does": [
+          {
+            "id": "does",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "is": [
+          {
+            "id": "is",
+            "initial": "{ number: 'one' }"
+          },
+          {
+            "id": "isEd",
+            "initial": "{ number: 'one' }"
+          }
+        ],
+        "no": [
+          {
+            "id": "yesno",
+            "initial": "{ value: false }"
+          }
+        ],
+        "the": [
+          {
+            "id": "the",
+            "initial": "{ modifiers: [] }"
+          }
+        ],
+        "who": [
+          {
+            "id": "what",
+            "initial": "{ modifiers: [], query: true }"
+          }
+        ],
+        "wordy": [
+          {
+            "id": "briefOrWordy",
+            "initial": "{ value: 'wordy' }"
+          }
+        ],
+        "yes": [
+          {
+            "id": "yesno",
+            "initial": "{ value: true }"
+          }
+        ]
+      }
+    },
+    "contexts": [
+      {
+        "marker": "unknown",
+        "text": "changable",
+        "topLevel": true,
+        "unknown": true,
+        "value": "changable",
+        "word": "changable"
+      },
+      {
+        "dead": true,
+        "default": true,
+        "marker": "changes",
+        "text": "changes",
+        "topLevel": true,
+        "word": "changes"
+      }
+    ],
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "changes",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "changes",
+            0
+          ],
+          "ops": [
+            [
+              "changes",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "unknown",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+        },
+        "1": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "2": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "dead": true,
+            "default": true,
+            "marker": "changes",
+            "text": "changes",
+            "topLevel": true,
+            "word": "changes"
+          },
+          "paraphrases": "undefined changes",
+          "responses": [
+            "",
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "unknown",
+            "text": "changable",
+            "topLevel": true,
+            "unknown": true,
+            "value": "changable",
+            "word": "changable"
+          },
+          "paraphrases": "changable",
+          "responses": [
+            "",
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "changable",
+      "undefined changes"
+    ],
+    "query": "changable changes",
+    "responses": [
       "",
       ""
     ]

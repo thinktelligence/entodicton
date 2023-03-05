@@ -1,5 +1,6 @@
 const entodicton = require('entodicton')
 const currencyKM = require('./currency.js')
+const events = require('./events.js')
 const math = require('./math.js')
 const helpKM = require('./help.js')
 const { propertyToArray, wordNumber } = require('./helpers')
@@ -21,11 +22,9 @@ const compareValue = (property, v1, v2) => {
          0;
 }
 
-let tempReportId = 0
-
 const newReport = ({km, objects}) => {
-  tempReportId += 1
-  const reportId = `tempReport${tempReportId}`
+  objects.tempReportId += 1
+  const reportId = `tempReport${objects.tempReportId}`
   km('dialogues').api.mentioned({ marker: "report", text: reportId, types: [ "report" ], value: reportId, word: reportId })
   // name to listing
   objects.listings[reportId] = {
@@ -164,7 +163,7 @@ let config = {
     { id: "move", level: 0, 
         bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, from: after[0], to: after[1] }",
         generatorp: ({context, gp}) => `move ${gp(context.from)} ${gp(context.to)}`,
-        semantic: ({context, e, objects, apis}) => {
+        semantic: ({context, e, objects, kms}) => {
           const report = e(context.on)
           const listing = objects.listings[report.value]
 
@@ -173,6 +172,7 @@ let config = {
           const old = listing.columns[from-1]
           listing.columns[from-1] = listing.columns[to-1]
           listing.columns[to-1] = old
+          kms.events.api.happens({ marker: "changes", changeable: report })
         }
     },
     { id: "column", level: 0, 
@@ -281,6 +281,8 @@ let config = {
     ['column', 'toAble'],
     ['it', 'report'],
     ['describe', 'verby'],
+    ['report', 'changeable'],
+    ['show', 'action'],
   //  ['report', 'product'],
   ],
   associations: {
@@ -488,7 +490,7 @@ const initializeApi = (config, api, km) => {
   // config.addWord(type, {"id": "report", "initial": `${open} value: '${type}' ${close}` })
  }
 
-config = new entodicton.Config(config, module).add(currencyKM).add(helpKM).add(math)
+config = new entodicton.Config(config, module).add(currencyKM).add(helpKM).add(math).add(events)
 config.multiApi = initializeApi
 // mode this to non-module init only
 config.addAPI(api1)
@@ -501,6 +503,7 @@ config.initializer(({config, objects, km, isModule, isAfterApi}) => {
     if (!isModule) {
       objects.listings[id].api = 'clothes'
     }
+    objects.tempReportId = 0
   }
 }, { initAfterApi: true })
 entodicton.knowledgeModule({

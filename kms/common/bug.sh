@@ -286,10 +286,12 @@
 # node reports -q 'answer with sentences list the models' -g
 # node reports -q 'list the models\ncall this report1\nshow report1' -g
 # node inspect reports -q 'list the models' -g
-# node inspect reports -q 'call this report1\ndescribe report1' -g
 # node inspect reports -q 'show the quantity descending and the price ascending list the products' -g
 # node inspect reports -q 'answer with sentences list the models' -g
 # node reports -q 'call this report1\nshow report1' -g
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
 # node inspect reports -q 'call this report1\ndescribe the reports' -g -d
-node events -q 'after event1 action1 event1 event1' -g -d -s
+# node events -q 'after event1 action1 event1 event1' -g -d -s
+# node reports -q 'after the report changes show the report\nmove column 2 to column 1' -g -d
+# node reports -q 'move column 2 to column 1' -g -d
+node reports -q 'call this report1\ndescribe report1' -g -r
