@@ -5,6 +5,7 @@ const { isMany } = require('./helpers')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent, focus } = require('./helpers')
 const pluralize = require('pluralize')
+const sortJson = require('sort-json')
 
 class API {
   //
@@ -27,20 +28,64 @@ class API {
     return this.objects.brief
   }
 
-  mentioned(concept) {
+  mentioned(concept, value = undefined) {
+    if (value) {
+      concept = { ...concept }
+      if (concept.marker == 'unknown') {
+        if (concept.value) {
+          concept.marker = concept.value
+        }
+      }
+      concept.value = value
+    }
     this.objects.mentioned.unshift(concept)
   }
 
-  mentions() {
-    return this.objects.mentioned
+  mentions(context) {
+    for (let m of this.objects.mentioned) {
+      if (m.marker == context.marker) {
+        return m
+      }
+      if (context.types && context.types.includes(m.marker)) {
+        return m
+      }
+    }
+    for (let m of this.objects.mentioned) {
+      if (context.unknown) {
+        return m
+      }
+    }
   }
 
   getVariable(name) {
-    return this.objects.variables[name] || name
+    const value = this.objects.variables[name] || name
+    if (false) {
+      let valueNew = this.getVariableNew(name)
+      if (valueNew && valueNew.value) {
+        valueNew = valueNew.value
+      }
+      if (value !== valueNew) {
+        debugger;
+      }
+    }
+    return value
   }
 
   setVariable(name, value) {
     this.objects.variables[name] = value
+    // console.log('setVariable', name, value)
+    this.setVariableNew(name, value)
+  }
+
+  getVariableNew(name) {
+    if (!name) {
+      return
+    }
+    return this.mentions({ marker: name }) || name
+  }
+
+  setVariableNew(name, value) {
+    this.mentioned({ marker: name }, value)
   }
 
   // value is in response field
@@ -141,6 +186,7 @@ let config = {
 
     "([this])",
     "([verby])",
+    "([pronoun])",
     "([to] ([toAble|]))",
   ],
   associations: {
@@ -164,6 +210,7 @@ let config = {
   bridges: [
     { id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", optional: { 'isEder': "{ marker: 'unknown', implicit: true, concept: true }", }, },
 
+    { id: "pronoun", level: 0, bridge: "{ ...next(operator) }" },
     { id: "verby", level: 0, bridge: "{ ...next(operator) }" },
     { id: "articlePOS", level: 0, bridge: "{ ...next(operator) }" },
     { id: "debug23", level: 0, bridge: "{ ...next(operator) }" },
@@ -182,7 +229,7 @@ let config = {
     },
     { id: "toAble", level: 0, bridge: "{ ...next(operator) }" },
 
-    { id: "this", level: 0, bridge: "{ ...next(operator), pullFromContext: true }" },
+    { id: "this", level: 0, bridge: "{ ...next(operator), unknown: true, pullFromContext: true }" },
     { id: "be", level: 0, bridge: "{ ...next(operator), type: after[0] }" },
     { id: "briefOrWordy", level: 0, bridge: "{ ...next(operator) }" },
 
@@ -229,7 +276,7 @@ let config = {
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
-    { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true, determined: true }" },
+    { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true, unknown: true, determined: true }" },
   ],
   words: {
     "?": [{"id": "questionMark", "initial": "{}" }],
@@ -264,11 +311,13 @@ let config = {
     [['isEdAble', 0], ['articlePOS', 0]],
     [['is', 0], ['isEdAble', 0]],
     [['is', 1], ['isEdAble', 0]],
-
+    [['verby', 0], ['pronoun', 0]],
+    [['verby', 0], ['articlePOS', 0]],
   ],
   hierarchy: [
+    ['it', 'pronoun'],
+    ['this', 'pronoun'],
     ['questionMark', 'isEd'],
-    ['articlePOS', 'verby'],
     ['a', 'articlePOS'],
     ['the', 'articlePOS'],
     ['unknown', 'notAble'],
@@ -283,6 +332,7 @@ let config = {
     ['whatAble', 'queryable'],
     ['is', 'canBeQuestion'],
     ['it', 'toAble'],
+    ['this', 'queryable'],
     // ['isEd', 'means'],
     // ['is', 'means'],
   ],
@@ -545,7 +595,7 @@ let config = {
     {
       notes: 'show json',
       match: () => true,
-      apply: ({context}) => JSON.stringify(context)
+      apply: ({context}) => JSON.stringify(sortJson(context, { depth: 5 }))
     }
   ],
 
@@ -570,7 +620,7 @@ let config = {
       // match: ({context}) => context.marker == 'it' && context.pullFromContext, // && context.value,
       match: ({context}) => context.pullFromContext && !context.same, // && context.value,
       apply: ({context, s, api, log, retry}) => {
-        context.value = api.mentions()[0]
+        context.value = api.mentions(context)
         if (!context.value) {
           // retry()
           context.value = { marker: 'answerNotKnown' }
@@ -696,6 +746,7 @@ let config = {
         }
         if (!onePrime.sameWasProcessed && !twoPrime.sameWasProcessed) {
             api.setVariable(one.value, two)
+            api.mentioned(one, two)
         }
       }
     },
@@ -704,6 +755,17 @@ let config = {
       match: ({context}) => context.evaluate,
       apply: ({context, api}) => {
         context.value = api.getVariable(context.value)
+      }
+    },
+    {
+      priority: 2,
+      notes: 'evaluate top level not already done',
+      match: ({context}) => context.topLevel && !context.value && !context.response,
+      apply: ({context, e}) => {
+        const instance = e({ ...context, topLevel: undefined })
+        if (instance.evaluateWasProcessed) {
+          context.response = instance
+        }
       }
     },
   ],

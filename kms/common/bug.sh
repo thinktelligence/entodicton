@@ -294,4 +294,21 @@
 # node events -q 'after event1 action1 event1 event1' -g -d -s
 # node reports -q 'after the report changes show the report\nmove column 2 to column 1' -g -d
 # node reports -q 'move column 2 to column 1' -g -d
-node reports -q 'call this report1\ndescribe report1' -g -r
+# node reports -q 'call this report1\ndescribe report1' -g -r
+# node inspect reports -q 'after the report changes show the report\nanswer with sentences' -g -d -r
+# node reports -q 'after the report changes show the report' -g -d -r
+# node math -q 'x times y' -g -d
+# node reports -q 'x is 20 show the report' -g -d -s
+# node inspect dialogues -q 'x is 20 what is it' -g -d
+# node inspect reports -q 'call this report1 show it' -g -d
+# TODO node reports -q "worth means price times quantity show the worth show the report" -g -d
+# TODO node reports -q 'delete the columns means remove the column
+# node math -q '4 times 5' -g -d -s 
+# TODO node inspect math -q 'x is 3 y is 4 x times y' -g -d
+# TODO node math -q 'x is 3 y is 4 what is x' -g -d
+# TODO node inspect reports -q 'call this report1 show it' -g -d
+# node inspect reports -q 'call it report1 show it' -g -d
+# TODO node inspect reports -q 'call this report report1 show it' -g -d
+# node inspect reports -q 'list the models\ncall this report1' -g -d 
+# node reports -q 'call this report1 show it' -g -d
+node reports -q 'show the quantity descending and the price ascending' -g -d

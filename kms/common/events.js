@@ -3,6 +3,7 @@ const dialogues = require('./dialogues')
 const _ = require('lodash')
 entodicton.ensureTestFile(module, 'events', 'test')
 const events_tests = require('./events.test.json')
+const sortJson = require('sort-json')
 
 class API {
   happens (context) {
@@ -31,6 +32,7 @@ let config = {
     { id: "action", level: 0, bridge: "{ ...next(operator) }" },
     { id: "changeable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "changes", level: 0, 
+            isA: ['verby'],
             bridge: "{ ...next(operator), changeable: before[0] }",
             generatorp: ({context, g}) => `${g(context.changeable)} changes`,
     },
@@ -46,7 +48,7 @@ let config = {
     {
       notes: 'paraphrase for events',
       match: ({context, isA}) => isA(context.marker, 'event') && context.event,
-      apply: ({context}) => `event happened: ${JSON.stringify(context)}`
+      apply: ({context}) => `event happened: ${JSON.stringify(sortJson(context, { depth: 5 }))}`
     },
   ],
   semantics: [
@@ -72,6 +74,9 @@ let config = {
       apply: ({context, motivation}) => {
           // add motivation that watches for event
           const event = context.event
+          if (!event) {
+            debugger;
+          }
           const action = context.action
           motivation({
             repeat: true,

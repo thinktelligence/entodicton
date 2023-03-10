@@ -7,11 +7,22 @@ const { propertyToArray, wordNumber } = require('./helpers')
 const { table } = require('table')
 const _ = require('lodash')
 const reports_tests = require('./reports.test.json')
+const reports_instance = require('./reports.instance.json')
 const { v4 : uuidv4, validate : validatev4 } = require('uuid');
+
+const template ={
+  "queries": [
+      "worth means price times quantity",
+  ],
+}
 
 /*
   show supplier on report1
   show supplier (on current report)
+
+  NEXT reportAction on report where remove/move etc are reportActions
+  delete means remove remove column 2 show it
+  show the worth
 */
 
 /* START USER DEFINED: this part could be calling your backend db */
@@ -102,11 +113,11 @@ let config = {
     "([listAction|list] (<the> ([product|products])))",
     //"what can you report on",
     //"([list] ((<the> (([product|products]))) <(<that> ([cost] ([price])))>)) )"
-    "([reportAction|report] ([on] ([report|])))",
+    "([reportAction|] ([on] ([report|])))",
     "(([product]) <(<that> ([cost] ([price])))>)",
     "([answer] ([with] ([listingType|])))",
     "([show] (<the> ([property])))",
-    "([call] ([this]) (rest))",
+    "([call] ([report|]) (rest))",
     "(([property]) <ascending>)",
     "(([property]) <descending>)",
     "([describe] ([report]))",
@@ -116,6 +127,10 @@ let config = {
     "([show:reportBridge] ([report]))",
     "([column] ([number]))",
     "([move] ([column]) ([to] ([column])))",
+    "([move:directionBridge] ([column]) ([direction]))",
+    "([left])",
+    "([right])",
+    "([remove] ([column]))",
     /*
        call this the banana report
        show the banana report
@@ -124,8 +139,8 @@ let config = {
     */
     // DONE show price and quantity
     // DONE describe report1
-    // after the report changes show it
-    // after changing a report show it -> event IDEA OF EVENT
+    // DONE after the report changes show it
+    // DONE after changing a report show it -> event IDEA OF EVENT
     // after changing report 1
     // after changing the columns
     // after move show the report -> marker
@@ -162,17 +177,39 @@ let config = {
   bridges: [
     { id: "move", level: 0, 
         bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, from: after[0], to: after[1] }",
+        directionBridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, directionBridge: true, from: after[0], to: after[1] }",
+
         generatorp: ({context, gp}) => `move ${gp(context.from)} ${gp(context.to)}`,
         semantic: ({context, e, objects, kms}) => {
           const report = e(context.on)
           const listing = objects.listings[report.value]
 
           const from = context.from.index.value;
-          const to = context.to.object.index.value;
+          let to;
+          if (context.directionBridge) {
+            if (context.to.marker == 'left') {
+              to = from - 1
+            }
+            if (context.to.marker == 'right') {
+              to = from + 1
+            }
+          } else {
+            to = context.to.object.index.value;
+          }
           const old = listing.columns[from-1]
           listing.columns[from-1] = listing.columns[to-1]
           listing.columns[to-1] = old
           kms.events.api.happens({ marker: "changes", changeable: report })
+        }
+    },
+    { id: "remove", level: 0, 
+        bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, removee: after[0] }",
+        generatorp: ({context, gp}) => `remove ${gp(context.removee)}`,
+        semantic: ({context, e, objects}) => {
+          const report = e(context.on)
+          const listing = objects.listings[report.value]
+          const column = context.removee.index.value
+          listing.columns.splice(column-1, 1)
         }
     },
     { id: "column", level: 0, 
@@ -180,6 +217,9 @@ let config = {
         generatorp: ({context, gp}) => `column ${gp(context.index)}`,
     },
     { id: "ordering", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "direction", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "left", isA: ['direction'], level: 0, bridge: "{ ...next(operator) }" },
+    { id: "right", isA: ['direction'], level: 0, bridge: "{ ...next(operator) }" },
     { id: "report", level: 0, 
             isA: ['theAble'], 
             words: [{word: "reports", number: "many"}], 
@@ -201,7 +241,7 @@ let config = {
     { id: "listAction", level: 0, bridge: "{ ...next(operator), what: after[0]}" },
 
     { id: "on", level: 0, bridge: "{ ...next(operator), report: after[0] }" },
-    { id: "reportAction", level: 0, bridge: "{ ...next(operator), report: after[0].report }" },
+    { id: "reportAction", level: 0, bridge: "{ ...next(operator), on: after[0].report }" },
 
     { id: "that", level: 0, bridge: "{ ...*, constraint: context }" },
     { id: "cost", level: 0, bridge: "{ ...next(operator), price: after[0] }" },
@@ -220,7 +260,7 @@ let config = {
 
     { id: "show", level: 0, 
             bridge: "{ ...next(operator), on: { 'marker': 'report', types: ['report'], pullFromContext: true }, properties: after[0] }",
-            "reportBridge": "{ ...next(operator), report: after[0] }" 
+            reportBridge: "{ ...next(operator), report: after[0] }" 
     },
 
     {
@@ -260,6 +300,7 @@ let config = {
       generatorp: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
       semantic: ({g, context, objects, e, config, km}) => {
         const namee = e(context.namee)
+        debugger;
         const listing = objects.listings[namee.value]
         const name = context.name.text
         objects.listings[name] = {...listing}
@@ -279,10 +320,15 @@ let config = {
     ['descending', 'ordering'],
     ['property', 'theAble'],
     ['column', 'toAble'],
-    ['it', 'report'],
+    ['report', 'it'],
+    ['report', 'this'],
     ['describe', 'verby'],
+    ['call', 'verby'],
+    ['show', 'verby'],
     ['report', 'changeable'],
     ['show', 'action'],
+    ['move', 'reportAction'],
+    ['remove', 'reportAction'],
   //  ['report', 'product'],
   ],
   associations: {
@@ -299,10 +345,13 @@ let config = {
   },
 
   priorities: [
+    [['articlePOS', 0], ['ordering', 0]],
+  /*
     [['the', 0], ['ordering', 0]],
     [['listAction', 0], ['cost', 1]],
     [['answer', 0], ['listAction', 0], ['the', 0]],
     [['answer', 0], ['listAction', 0], ['the', 0], ['with', 0]],
+  */
   ],
   generators: [
     { 
@@ -318,8 +367,8 @@ let config = {
         }
       }
     },
-    [ ({context}) => context.marker == 'reportAction' && context.response, ({context, g}) => `reporting on ${context.report.word}` ],
-    [ ({context}) => context.marker == 'reportAction' && context.paraphrase, ({context, g}) => `report on ${context.report.word}` ],
+    [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.response, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
+    [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.paraphrase, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
     [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
     [ ({context}) => context.marker == 'listAction' && context.paraphrase, ({g, context}) => `list ${g(context.what)}` ],
     { 
@@ -332,9 +381,9 @@ let config = {
           return true
         }
       },
-      apply: ({g, gs, context}) => {
-        gs(context.listing) 
-        return `${g(context.what)} are ${gs(context.listing, ' ', ' and ')}` 
+      apply: ({g, gs, context, objects}) => {
+        const listing = objects.listings[context.id]
+        return `the ${g(listing.api)} are ${gs(context.listing, ' ', ' and ')}` 
       }
     },
     { 
@@ -364,12 +413,17 @@ let config = {
       }
     },
     [ 
-      ({context}) => context.marker == 'answer', 
+      ({context}) => context.marker == 'answer' && context.paraphrase, 
+      ({g, context}) => `answer with ${context.type}` 
+    ],
+    [ 
+      ({context}) => context.marker == 'answer' && !context.paraphrase, 
       ({g, context}) => `answering with ${context.type}` 
     ],
   ],
 
   semantics: [
+    /*
     [ 
       ({context, objects}) => context.marker == 'reportAction',
       ({objects, context, api}) => {
@@ -377,6 +431,7 @@ let config = {
         api.current = context.report.marker
       }
     ],
+    */
     { 
       notes: 'handle show semantic',
       match: ({context}) => context.marker == 'show',
@@ -463,10 +518,11 @@ let config = {
     },
     [
       ({context}) => context.marker == 'answer', 
-      ({e, context, objects}) => {
+      ({e, context, objects, kms}) => {
         const report = e({ marker: 'report', pullFromContext: true })
         const listing = objects.listings[report.value]
         listing.type = context.type
+        kms.events.api.happens({ marker: "changes", changeable: { marker: 'report', pullFromContext: true } })
       }
     ],
   ],
@@ -497,13 +553,13 @@ config.addAPI(api1)
 config.addAPI(api2)
 config.initializer(({config, objects, km, isModule, isAfterApi}) => {
   if (isAfterApi) {
+    objects.tempReportId = 0
     objects.listings = {
     }
     const id = newReport({km, objects})
     if (!isModule) {
       objects.listings[id].api = 'clothes'
     }
-    objects.tempReportId = 0
   }
 }, { initAfterApi: true })
 entodicton.knowledgeModule({
@@ -513,5 +569,9 @@ entodicton.knowledgeModule({
   test: {
     name: './reports.test.json',
     contents: reports_tests
+  },
+  template: {
+    template,
+    instance: reports_instance
   },
 })

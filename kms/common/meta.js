@@ -247,11 +247,16 @@ let config = {
     {
       notes: 'from means to where from is unknown',
       match: ({context}) => context.marker == 'means' && context.from.marker == 'unknown',
-      apply: ({config, context, km, isTest}) => {
+      apply: ({config, context, kms, isTest}) => {
         if (isTest) {
           return
         } else {
-          km("dialogues").api.setVariable(context.from.value, context.to.value)
+          if (context.to.value) {
+            kms.dialogues.api.setVariable(context.from.value, context.to.value)
+          } else {
+            // config.addWord(context.from.word, 
+            kms.dialogues.api.setVariable(context.from.value, context.to)
+          }
         }
       }
     },
