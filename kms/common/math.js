@@ -45,7 +45,8 @@ let config = {
     },
     {   
         id: "times", level: 0, 
-        bridge: "{ ...next(operator), types: lub(append(type(before[0]), type(after[0]))), x: before[0], y: after[0], number: 'one' }" ,
+        // bridge: "{ ...next(operator), types: lub(append(type(before[0]), type(after[0]))), x: before[0], y: after[0], number: 'one' }" ,
+        bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one' }" ,
         isA: ['queryable', 'number'],
         before: [['plus', 0], ['minus', 0]],
         words: ['*'],

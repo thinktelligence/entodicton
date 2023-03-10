@@ -44,47 +44,34 @@ class API {
   mentions(context) {
     for (let m of this.objects.mentioned) {
       if (m.marker == context.marker) {
+        debugger
         return m
       }
       if (context.types && context.types.includes(m.marker)) {
+        debugger
         return m
       }
     }
     for (let m of this.objects.mentioned) {
       if (context.unknown) {
+        debugger
         return m
       }
     }
   }
 
   getVariable(name) {
-    const value = this.objects.variables[name] || name
-    if (false) {
-      let valueNew = this.getVariableNew(name)
-      if (valueNew && valueNew.value) {
-        valueNew = valueNew.value
-      }
-      if (value !== valueNew) {
-        debugger;
-      }
-    }
-    return value
-  }
-
-  setVariable(name, value) {
-    this.objects.variables[name] = value
-    // console.log('setVariable', name, value)
-    this.setVariableNew(name, value)
-  }
-
-  getVariableNew(name) {
     if (!name) {
       return
     }
-    return this.mentions({ marker: name }) || name
+    let valueNew = this.mentions({ marker: name }) || name
+    if (valueNew && valueNew.value) {
+      valueNew = valueNew.value
+    }
+    return valueNew
   }
 
-  setVariableNew(name, value) {
+  setVariable(name, value) {
     this.mentioned({ marker: name }, value)
   }
 

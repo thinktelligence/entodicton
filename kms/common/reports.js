@@ -149,6 +149,7 @@ let config = {
     // DONE show the models
     // save this as report1 / show report1
     // list the products with the price descending
+    // call this report report1
     // show the report before
     // show report1 with price descending
 
