@@ -147,8 +147,8 @@ let config = {
     // { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
     // { id: "possession", level: 1, bridge: "{ ...after[0], object: operator.object, marker: operator('property', 0) }" },
 
-    { id: "possession", level: 0, inverted: true, bridge: "{ ...next(operator), object: before[0], objects: before }" },
-    { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: operator.object, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
+    { id: "possession", level: 0, inverted: true, bridge: "{ ...next(operator), possession: true, object: before[0], objects: before }" },
+    { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: operator.object, possession: true, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
     // TODO make object be after[0] that makes more sense
     // { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: after[0], objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
 
@@ -350,13 +350,6 @@ let config = {
         return `${g(context.object)} ${context.word} ${g(context.property)}`
       }
     ],
-    [
-      ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value && !context.evaluate,
-      ({context, g}) => {
-        const property = Object.assign({}, context, { object: undefined })
-        return `${g(property)} of ${g({ ...context.object, paraphrase: true })}`
-      }
-    ],
     {
       notes: 'the property of object',
       match: ({context}) => context.paraphrase && context.modifiers && context.object, 
@@ -375,6 +368,14 @@ let config = {
                }
              },
     },
+    [
+      // ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.value && !context.evaluate,
+      ({context, hierarchy}) => hierarchy.isA(context.marker, 'property') && context.object && !context.possession && !context.evaluate && !context.object.marker == 'objectPrefix',
+      ({context, g}) => {
+        const property = Object.assign({}, context, { object: undefined })
+        return `${g(property)} of ${g({ ...context.object, paraphrase: true })}`
+      }
+    ],
     {
       notes: "object's property",
       // match: ({context}) => context.paraphrase && !context.modifiers && context.object, 

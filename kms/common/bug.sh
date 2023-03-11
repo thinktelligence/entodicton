@@ -322,4 +322,7 @@
 # TODO node properties -q 'property of object' -g -d
 # node inspect properties -q 'the age of greg is 23 the profession of greg is programmer what are the properties of greg' -g -d
 # node properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d
-node properties -q 'what is the property of object' -g -d
+# node properties -q 'what is the property of object' -g -d
+# node properties -q 'property of object' -g -d
+# node properties -q 'the cat of the sister of hana' -g -d
+node avatar -q 'your name' -g -d
