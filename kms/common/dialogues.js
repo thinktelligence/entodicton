@@ -44,17 +44,14 @@ class API {
   mentions(context) {
     for (let m of this.objects.mentioned) {
       if (m.marker == context.marker) {
-        debugger
         return m
       }
       if (context.types && context.types.includes(m.marker)) {
-        debugger
         return m
       }
     }
     for (let m of this.objects.mentioned) {
       if (context.unknown) {
-        debugger
         return m
       }
     }
@@ -426,6 +423,13 @@ let config = {
     },
 
     {
+      notes: 'paraphrase a queryable response',
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && !context.paraphrase,
+      apply: ({context, g}) => {
+        return g(context.response)
+      }
+    },
+    {
       notes: 'paraphrase a queryable',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       apply: ({context, g}) => {
@@ -507,10 +511,10 @@ let config = {
     { 
       notes: "x is y",
       match: ({context, hierarchy}) => { return hierarchy.isA(context.marker, 'is') && context.paraphrase },
-      apply: ({context, g}) => {
+      apply: ({context, g, gp}) => {
         context.one.response = true
         context.two.response = true
-        return `${g({ ...context.one, paraphrase: true })} ${context.word} ${g(context.two)}` 
+        return `${g({ ...context.one, paraphrase: true })} ${context.word} ${gp(context.two)}` 
       }
     },
     { 
@@ -747,11 +751,16 @@ let config = {
     {
       priority: 2,
       notes: 'evaluate top level not already done',
-      match: ({context}) => context.topLevel && !context.value && !context.response,
+      // match: ({context}) => context.topLevel && !context.value && !context.response,
+      // greg44
+      match: ({context}) => context.topLevel && !context.response,
       apply: ({context, e}) => {
-        const instance = e({ ...context, topLevel: undefined })
+        const instance = e({ ...context, value: undefined, topLevel: undefined })
         if (instance.evaluateWasProcessed) {
           context.response = instance
+          //context.response.isResponse = true
+          //context.isResponse = true
+          //context.greg88 = true
         }
       }
     },

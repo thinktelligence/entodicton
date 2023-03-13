@@ -436,12 +436,12 @@ let config = {
     { 
       notes: 'handle show semantic',
       match: ({context}) => context.marker == 'show',
-      apply: ({context, e, km, apis, config, objects}) => {
+      apply: ({context, e, km, kms, apis, config, objects}) => {
         if (context.report) {
           const values = propertyToArray(context.report)
           const responses = []
           for (let value of values) {
-            if (!value.value) {
+            if (!value.value || value.pullFromContext) {
               value = e(value)
             }
             // JSON.stringify(config.config.objects.namespaced.dialogues29.mentioned[0])

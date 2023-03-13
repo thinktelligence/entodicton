@@ -53,7 +53,10 @@ let config = {
     { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
     { "id": "count", "level": 0, "bridge": "{ ...after, count: operator.value }" },
     { "id": "timeUnit", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "use", "level": 0, "bridge": "{ ...next(operator), format: after[0] }" },
+    { "id": "use", "level": 0, 
+            bridge: "{ ...next(operator), format: after[0] }",
+            generatorp: ({g, context}) => `use ${context.format.count} hour time` 
+    },
   ],
   hierarchy: [
     ['time', 'queryable'],
@@ -110,10 +113,6 @@ let config = {
 
         return `${context.value.getHours()}:${pad(context.value.getMinutes(), 2)}` 
       }
-    ],
-    [ 
-      ({context}) => context.marker == 'use' && !context.value, 
-      ({g, context}) => `use ${context.format.count} hour time` 
     ],
     [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
   ],

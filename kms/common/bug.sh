@@ -304,11 +304,22 @@
 # TODO node reports -q "worth means price times quantity show the worth show the report" -g -d
 # TODO node reports -q 'delete the columns means remove the column
 # node math -q '4 times 5' -g -d -s 
-# TODO node inspect math -q 'x is 3 y is 4 x times y' -g -d
 # node inspect reports -q 'call this report1 show it' -g -d
 # node inspect reports -q 'call it report1 show it' -g -d
 # node inspect reports -q 'list the models\ncall this report1' -g -d 
 # node reports -q 'call this report1 show it' -g -d
 # node reports -q 'show the quantity descending and the price ascending' -g -d
+# node math -q 'x is 3 y is 4 what is x' -g -d -s
+# node inspect math -q 'what is 10 plus 2' -g -d
+# node dialogues -q 'x is 3 what is x' -g -d
+# node math -q 'x is 3 what is x' -g -d
+# node inspect math -q 'x is 3 y is 4 what is x what is y' -g -d
+# node inspect math -q 'x is 3 y is 4 what is x and y' -g -d
+# node reports -q 'x is 20 show the report' -g -d
 # TODO node reports -q 'call this report report1 show it' -g -d
-node inspect math -q 'x is 3 y is 4 what is x' -g -d
+# node math -q 'x is 3 y is 4 x times y' -g -d
+# node time -q 'use 24 hour format' -g -d
+# TODO node properties -q 'property of object' -g -d
+# node inspect properties -q 'the age of greg is 23 the profession of greg is programmer what are the properties of greg' -g -d
+# node properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d
+node properties -q 'what is the property of object' -g -d

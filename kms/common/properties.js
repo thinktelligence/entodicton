@@ -589,7 +589,7 @@ let config = {
       }
     },
     {
-      notes: 'evaluate a property',
+      notes: 'get/evaluate a property',
       // match: ({context, hierarchy}) => context.marker == 'property' && context.evaluate && !context.evaluate.toConcept,
       match: ({context, hierarchy}) => 
                       hierarchy.isA(context.marker, 'property') && 

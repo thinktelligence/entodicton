@@ -9,6 +9,16 @@ const math_tests = require('./math.test.json')
     contact the company using gpt chat for robots
     10 dollars * quantity
 */
+
+const toValue = (context) => {
+  while( true ) { 
+    if (typeof context == 'number' || !context) {
+      return context
+    }
+    context = context.value
+  }
+}
+
 let config = {
   name: 'math',
   operators: [
@@ -23,12 +33,13 @@ let config = {
     { id: "y", isA: ['number'], level: 0, bridge: '{ ...next(operator) }', development: true},
     { 
         id: "plus", level: 0, 
-        bridge: "{ ...next(operator), types: append(type(before[0]), type(after[0])), x: before[0], y: after[0], number: 'one' }" ,
+        // bridge: "{ ...next(operator), types: append(type(before[0]), type(after[0])), x: before[0], y: after[0], number: 'one' }" ,
+        bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one' }" ,
         isA: ['queryable', 'number'],
         words: ['+'],
         generatorp: ({gp, context}) => `${gp(context.x)} plus ${gp(context.y)}`,
         evaluator: ({e, context}) => {
-          context.value = e(context.x).value + e(context.y).value
+          context.value = toValue(e(context.x)) + toValue(e(context.y))
           context.evaluateWasProcessed = true
         }
     },
@@ -39,7 +50,7 @@ let config = {
         words: ['-'],
         generatorp: ({gp, context}) => `${gp(context.x)} minus ${gp(context.y)}`,
         evaluator: ({e, context}) => {
-          context.value = e(context.x).value - e(context.y).value
+          context.value = toValue(e(context.x)) - toValue(e(context.y))
           context.evaluateWasProcessed = true
         }
     },
@@ -52,8 +63,7 @@ let config = {
         words: ['*'],
         generatorp: ({gp, context}) => `${gp(context.x)} times ${gp(context.y)}`,
         evaluator: ({e, context}) => {
-          debugger;
-          context.value = e(context.x).value * e(context.y).value
+          context.value = toValue(e(context.x)) * toValue(e(context.y))
           context.evaluateWasProcessed = true
         }
     },

@@ -842,7 +842,8 @@ class API {
       const values = []
       for (let key of Object.keys(objectProps)) {
         if (objectProps[key].has) {
-          values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
+          // values.push(`${g(key)}: ${g({ ...objectProps[key].value, evaluate: true })}`)
+          values.push(`${g(key)}: ${g({ ...objectProps[key].value, paraphrase: true })}`)
         }
       }
       return { marker: 'list', value: values }
