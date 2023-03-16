@@ -25,7 +25,7 @@ let config = {
   ],
   bridges: [
     { id: "after", level: 0, 
-        bridge: "{ ...next(operator), event: after[0], action: after[1] }",
+        bridge: "{ ...next(operator), event: after[0], action: after[1], value: null }",
         generatorp: ({context, gp}) => `after ${gp(context.event)} ${gp(context.action)}`,
     },
     { id: "event", level: 0, bridge: "{ ...next(operator) }" },
@@ -33,7 +33,7 @@ let config = {
     { id: "changeable", level: 0, bridge: "{ ...next(operator) }" },
     { id: "changes", level: 0, 
             isA: ['verby'],
-            bridge: "{ ...next(operator), changeable: before[0] }",
+            bridge: "{ ...next(operator), changeable: before[0], value: null }",
             generatorp: ({context, g}) => `${g(context.changeable)} changes`,
     },
     { id: "event1", level: 0, bridge: "{ ...next(operator) }", development: true },

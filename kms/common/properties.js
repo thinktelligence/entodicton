@@ -126,19 +126,19 @@ let config = {
   ],
   bridges: [
     { id: 'xfx', level: 0, bridge: "{ ...next(operator) }" },
-    { id: 'between', level: 0, bridge: "{ ...next(operator), arguments: after[0] }" },
-    { id: 'between', level: 1, bridge: "{ ...before[0], arguments: operator.arguments }" },
+    { id: 'between', level: 0, bridge: "{ ...next(operator), arguments: after[0], value: null }" },
+    { id: 'between', level: 1, bridge: "{ ...before[0], arguments: operator.arguments, value: null }" },
 
     { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
-    { id: "modifies", level: 0, bridge: "{ ...next(operator), modifier: before[0], concept: after[0] }" },
+    { id: "modifies", level: 0, bridge: "{ ...next(operator), modifier: before[0], concept: after[0], value: null }" },
     { id: "readonly", level: 0, bridge: "{ ...next(operator) }" },
     { id: "concept", level: 0, bridge: "{ ...next(operator) }" },
     // the cars dont have wings
     // greg doesnt have wings 
     // { id: "doesnt", level: 0, bridge: "{ ...context, number: operator.number, negation: true }*" },
     // { id: "doesnt", level: 0, bridge: "{ ...context, number: 'one', negation: true }*" },
-    { id: "doesnt", level: 0, bridge: "{ ...context, number: operator.number, object.number: operator.number, negation: true }*" },
-    { id: "have", level: 0, bridge: "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' } }" },
+    { id: "doesnt", level: 0, bridge: "{ ...context, number: operator.number, object.number: operator.number, negation: true, value: null }*" },
+    { id: "have", level: 0, bridge: "{ ...next(operator), object: { number: operator.number, ...before }, property: after[0], do: { left: 'object', right: 'property' }, value: null }" },
     { id: "have", level: 1, bridge: "{ ...next(operator) }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "object", level: 0, bridge: "{ ...next(operator) }" },
@@ -147,14 +147,14 @@ let config = {
     // { id: "possession", level: 0, bridge: "{ ...next(operator), object: before[0] }" },
     // { id: "possession", level: 1, bridge: "{ ...after[0], object: operator.object, marker: operator('property', 0) }" },
 
-    { id: "possession", level: 0, inverted: true, bridge: "{ ...next(operator), possession: true, object: before[0], objects: before }" },
+    { id: "possession", level: 0, inverted: true, bridge: "{ ...next(operator), possession: true, object: before[0], objects: before, value: null }" },
     { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: operator.object, possession: true, objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
     // TODO make object be after[0] that makes more sense
     // { id: "possession", level: 1, inverted: true, bridge: "{ ...after[0], object: after[0], objects: append(default(after[0].objects, after), operator.objects), marker: operator('property', 0) }" },
 
     { id: "propertyOf", level: 0, bridge: "{ ...next(operator), object: after[0], objects: after }" },
     { id: "propertyOf", level: 1, bridge: "{ ...before[0], object: operator.object, objects: append(default(before[0].objects, before), operator.objects) }" },
-    { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers)}' },
+    { id: "whose", level: 0, bridge: '{ ...after[0], query: true, whose: "whose", modifiers: append(["whose"], after[0].modifiers), value: null }' },
     { id: "objectPrefix", level: 0, bridge: '{ ...after[0], object: operator, objects: [after[0], operator] }' },
   ],
   words: {

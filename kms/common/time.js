@@ -48,13 +48,13 @@ let config = {
     { "id": "time", "level": 0, "bridge": "{ ...next(operator) }" },
 
     { "id": "hourUnits", "level": 0, "bridge": "{ ...next(operator) }" },
-    { "id": "ampm", "level": 0, "bridge": "{ ...next(operator), hour: before[0] }" },
+    { "id": "ampm", "level": 0, "bridge": "{ ...next(operator), hour: before[0], value: null }" },
 
-    { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator) }" },
-    { "id": "count", "level": 0, "bridge": "{ ...after, count: operator.value }" },
+    { "id": "timeFormat", "level": 0, "bridge": "{ ...before[0], ...next(operator), value: null }" },
+    { "id": "count", "level": 0, "bridge": "{ ...after, count: operator.value, value: null }" },
     { "id": "timeUnit", "level": 0, "bridge": "{ ...next(operator) }" },
     { "id": "use", "level": 0, 
-            bridge: "{ ...next(operator), format: after[0] }",
+            bridge: "{ ...next(operator), format: after[0], value: null }",
             generatorp: ({g, context}) => `use ${context.format.count} hour time` 
     },
   ],

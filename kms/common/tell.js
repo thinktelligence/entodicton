@@ -45,7 +45,7 @@ let config = {
     { id: 'event', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'info', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'person', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'tell', level: 0, bridge: '{ ...next(operator), target: after[0], info: after[1], event: after[2] }' },
+    { id: 'tell', level: 0, bridge: '{ ...next(operator), target: after[0], info: after[1], event: after[2], value: null }' },
   ],
   words: {
     "when": [{ id: 'info', level: 0, initial: "{ info: 'when' }" }],

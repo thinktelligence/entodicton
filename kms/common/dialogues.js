@@ -192,7 +192,7 @@ let config = {
     ]
   },
   bridges: [
-    { id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", optional: { 'isEder': "{ marker: 'unknown', implicit: true, concept: true }", }, },
+    { id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", optional: { 'isEder': "{ marker: 'unknown', implicit: true, concept: true, value: null }", }, },
 
     { id: "pronoun", level: 0, bridge: "{ ...next(operator) }" },
     { id: "verby", level: 0, bridge: "{ ...next(operator) }" },
@@ -206,7 +206,7 @@ let config = {
     {id: "list", level: 1, selector: {match: "same", left: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
 
     { id: "to", level: 0, 
-        bridge: "{ ...next(operator), object: after[0] }",
+        bridge: "{ ...next(operator), object: after[0], value: null }",
         generatorp: ({context, gp}) => {
           return `to ${gp(context.object)}`
         },
@@ -241,8 +241,8 @@ let config = {
     { id: "isEdee", level: 0, bridge: "{ ...next(operator) }" },
     { id: "isEder", level: 0, bridge: "{ ...next(operator) }" },
     { id: "is", level: 0, 
-            bridge: "{ ...next(operator), one: { number: operator.number, ...before[0] }, two: after[0] }", 
-            queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true }" ,
+            bridge: "{ ...next(operator), one: { number: operator.number, ...before[0] }, two: after[0], value: null }", 
+            queryBridge: "{ ...next(operator), one: after[0], two: after[1], query: true, value: null }" ,
     },
     { id: "is", level: 1, bridge: "{ ...next(operator) }" },
 
@@ -251,7 +251,7 @@ let config = {
     { id: "canBeDoQuestion", level: 2, bridge: "{ ...next(operator) }" },
     { id: "doesAble", level: 0, bridge: "{ ...next(operator) }" },
     { id: "doesAble", level: 1, bridge: "{ ...next(operator), before: before[0] }" },
-    { id: "does", level: 0, bridge: "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*" },
+    { id: "does", level: 0, bridge: "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number, value: null }*" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
     { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
