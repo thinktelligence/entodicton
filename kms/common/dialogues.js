@@ -434,7 +434,9 @@ let config = {
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
       apply: ({context, g}) => {
         const oldValue = context.value.paraphrase
-        context.value.paraphrase = true
+        // greg33
+        // context.value.paraphrase = true
+        // context.value.response = null
         const result = g(context.value)
         context.value.paraphrase = oldValue
         return result
@@ -512,8 +514,9 @@ let config = {
       notes: "x is y",
       match: ({context, hierarchy}) => { return hierarchy.isA(context.marker, 'is') && context.paraphrase },
       apply: ({context, g, gp}) => {
-        context.one.response = true
-        context.two.response = true
+        // greg33
+        //context.one.response = true
+        //context.two.response = true
         return `${g({ ...context.one, paraphrase: true })} ${context.word} ${gp(context.two)}` 
       }
     },
@@ -744,8 +747,15 @@ let config = {
     {
       notes: 'default handle evaluate',
       match: ({context}) => context.evaluate,
-      apply: ({context, api}) => {
+      apply: ({context, api, e}) => {
+        if (context.marker == 'worth') {
+          debugger
+        }
         context.value = api.getVariable(context.value)
+        if (context.value && context.value.marker) {
+          context.value = e(context.value)
+          context.evaluateWasProcessed  = true
+        }
       }
     },
     {

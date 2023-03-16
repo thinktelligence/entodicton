@@ -302,7 +302,6 @@
 # node inspect dialogues -q 'x is 20 what is it' -g -d
 # node inspect reports -q 'call this report1 show it' -g -d
 # TODO node reports -q "worth means price times quantity show the worth show the report" -g -d
-# TODO node reports -q 'delete the columns means remove the column
 # node math -q '4 times 5' -g -d -s 
 # node inspect reports -q 'call this report1 show it' -g -d
 # node inspect reports -q 'call it report1 show it' -g -d
@@ -325,4 +324,11 @@
 # node properties -q 'what is the property of object' -g -d
 # node properties -q 'property of object' -g -d
 # node properties -q 'the cat of the sister of hana' -g -d
-node avatar -q 'your name' -g -d
+# node avatar -q 'your name' -g -d
+# node dialogues -q 'x is 3 what is x' -g -d
+# node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -g -d -s
+# TODO node reports -q 'delete the columns means remove the column
+# TODO node math -q 'worth is price times quantity what does worth mean?' -g -d
+# TODO node math -q 'worth is price times quantity what is the meaning of worth?' -g -d
+# TODO node math -q '20 dollars times 10' -g -d
+node scorekeeper -q 'what is the winning score' -g -d
