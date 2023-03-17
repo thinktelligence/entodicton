@@ -202,8 +202,8 @@ let config = {
     { id: "what", level: 0, optional: "{ ...next(operator), query: ['what'], determined: true }", bridge: "{ ...after, query: ['what'], modifiers: ['what'], what: operator }" },
     { id: "whatAble", level: 0, bridge: "{ ...next(operator) }" },
 
-    {id: "list", level: 0, selector: {match: "same", left: [ { variable: 'type' } ], right: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...next(operator), value: append(before, after) }"},
-    {id: "list", level: 1, selector: {match: "same", left: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...operator, value: append(before, operator.value) }"},
+    {id: "list", level: 0, selector: {match: "same", left: [ { variable: 'type' } ], right: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...next(operator), list: append(before, after) }"},
+    {id: "list", level: 1, selector: {match: "same", left: [ { variable: 'type' } ], passthrough: true}, bridge: "{ ...operator, list: append(before, operator.list) }"},
 
     { id: "to", level: 0, 
         bridge: "{ ...next(operator), object: after[0], value: null }",
@@ -393,7 +393,7 @@ let config = {
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
       match: ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value && context.value.length > 0 && context.value[0].marker == 'yesno',
       apply: ({context, g, gs}) => {
-        return `${g(context.value[0])} ${gs(context.value.slice(1), ', ', ' and ')}`
+        return `${g(context.list[0])} ${gs(context.list.slice(1), ', ', ' and ')}`
       }
     },
 
@@ -401,12 +401,12 @@ let config = {
       notes: 'handle lists',
       // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
-      match: ({context, hierarchy}) => context.marker == 'list' && context.value,
+      match: ({context, hierarchy}) => context.marker == 'list' && context.list,
       apply: ({context, gs}) => {
         if (context.newLinesOnly) {
-          return gs(context.value, '\n')
+          return gs(context.list, '\n')
         } else {
-          return gs(context.value, ', ', ' and ')
+          return gs(context.list, ', ', ' and ')
         }
       }
     },

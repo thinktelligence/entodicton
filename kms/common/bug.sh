@@ -334,4 +334,6 @@
 # node scorekeeper -q 'what is the winning score' -g -d
 # node inspect properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d
 # node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -g -d
-node people -q 'ownee is owned by owner means owner owns ownee' -g -d 
+# node people -q 'ownee is owned by owner means owner owns ownee' -g -d 
+# node hierarchy -q 'cats and dogs are animals what are the types of animals' -g -d
+node hierarchy -q 'cats and dogs are animals' -g -d

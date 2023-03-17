@@ -203,7 +203,7 @@ class API {
         }
         const selected = instance.response.value.map( (r) => r[property] )
         context.constraints = undefined;
-        context.value = { marker: 'list', value: selected }
+        context.value = { marker: 'list', list: selected }
       },
     })
     config.addGenerator({
@@ -506,9 +506,9 @@ class API {
               const response = _.clone(context)
               response.isResponse = true
               response.query = undefined
-              context.response = { marker: 'list', value: [response] }
+              context.response = { marker: 'list', list: [response] }
             } else {
-              context.response = { marker: 'list', value: unflatten(matches) }
+              context.response = { marker: 'list', list: unflatten(matches) }
               context.response.isResponse = true
             }
             context.response.truthValue = matches.length > 0
@@ -531,7 +531,7 @@ class API {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
               context.response = { marker: 'idontknow', query: _.clone(context), isResponse: true }
             } else {
-              context.response = { marker: 'list', value: matches, isResponse: true }
+              context.response = { marker: 'list', list: matches, isResponse: true }
             }
             context.response.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
           }
@@ -561,7 +561,7 @@ class API {
           const api = km('properties').api
           context.response = {
             marker: 'list',
-            value: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
+            list: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
           }
           context.response.isResponse = true
           if (context.response.value.length == 0) {
@@ -846,7 +846,7 @@ class API {
           values.push(`${g(key)}: ${g({ ...objectProps[key].value, paraphrase: true })}`)
         }
       }
-      return { marker: 'list', value: values }
+      return { marker: 'list', list: values }
     } else {
       return this.propertiesFH.getValue([object, property]).value
     }

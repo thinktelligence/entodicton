@@ -216,7 +216,7 @@ let config = {
                       valuesPrime.push(valuePrime)
                     }
                   }
-                  response = { marker: 'list', truthValue: valuesPrime.length > 0, value: unflatten(valuesPrime, context.flatten || []) }
+                  response = { marker: 'list', truthValue: valuesPrime.length > 0, list: unflatten(valuesPrime, context.flatten || []) }
                 } else {
                   const toPrime = toPrimes[0][0]
                   response = toPrime.response
