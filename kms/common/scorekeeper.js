@@ -76,21 +76,21 @@ let config = {
   */
   ],
   bridges: [
-    { id: 'start', level: 0, bridge: '{ ...next(operator), arg: after[0], value: null }' },
+    { id: 'start', level: 0, bridge: '{ ...next(operator), arg: after[0] }' },
     { id: 'next', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'game', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'turn', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'new', level: 0, bridge: '{ ...operator, ...after, new: "new", modifiers: append(["new"], operator.modifiers), value: null }' },
-    { id: 'winning', level: 0, bridge: '{ ...after, winning: "winning", modifiers: append(["winning"], operator.modifiers), value: null }' },
+    { id: 'new', level: 0, bridge: '{ ...operator, ...after, new: "new", modifiers: append(["new"], operator.modifiers)}' },
+    { id: 'winning', level: 0, bridge: '{ ...after, winning: "winning", modifiers: append(["winning"], operator.modifiers)}' },
     //{ id: 'winning', level: 0, bridge: '{ ...after, winning23: "winning24"}' },
     { id: 'score', level: 0, bridge: '{ ...next(operator) }' },
     { id: 'player', level: 0, bridge: '{ ...next(operator) }' },
     //{ id: 'person', level: 0, bridge: '{ ...next(operator) }' },
-    { id: 'scored', level: 0, bridge: '{ ...next(operator), player: before[0], points: after[0], value: null }' },
+    { id: 'scored', level: 0, bridge: '{ ...next(operator), player: before[0], points: after[0] }' },
 
     // append will default undefineds to empty list
     //{ id: "point", level: 0, bridge: "{ ...next(operator), amount: before[0], modifiers: append(operator.modifiers, ['amount']) }" },
-    { id: "point", level: 0, bridge: "{ ...next(operator), amount: before[0], modifiers: append(['amount']), value: null }" },
+    { id: "point", level: 0, bridge: "{ ...next(operator), amount: before[0], modifiers: append(['amount']) }" },
   ],
   words: {
     "winning": [{"id": "winning", "initial": "{ modifiers: [] }" }],

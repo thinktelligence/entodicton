@@ -38,7 +38,7 @@ let config = {
   ],
   bridges: [
     // // { id: 'hierarchyAble', level: 0, bridge: "{ ...next(operator) }" },
-    { id: 'type', level: 0, bridge: "{ ...next(operator) }" },
+    { id: 'type', level: 0, bridge: "{ ...next(operator), value: 'type' }" },
   ],
   hierarchy: [
     // ['unknown', 'hierarchyAble'],

@@ -177,8 +177,8 @@ let config = {
   ],
   bridges: [
     { id: "move", level: 0, 
-        bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, from: after[0], to: after[1], value: null }",
-        directionBridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, directionBridge: true, from: after[0], to: after[1], value: null }",
+        bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, from: after[0], to: after[1] }",
+        directionBridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, directionBridge: true, from: after[0], to: after[1] }",
 
         generatorp: ({context, gp}) => `move ${gp(context.from)} ${gp(context.to)}`,
         semantic: ({context, e, objects, kms}) => {
@@ -204,7 +204,7 @@ let config = {
         }
     },
     { id: "remove", level: 0, 
-        bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, removee: after[0], value: null }",
+        bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, removee: after[0] }",
         generatorp: ({context, gp}) => `remove ${gp(context.removee)}`,
         semantic: ({context, e, objects}) => {
           const report = e(context.on)
@@ -214,7 +214,7 @@ let config = {
         }
     },
     { id: "column", level: 0, 
-        bridge: "{ ...next(operator), index: after[0], value: null }",
+        bridge: "{ ...next(operator), index: after[0] }",
         generatorp: ({context, gp}) => `column ${gp(context.index)}`,
     },
     { id: "ordering", level: 0, bridge: "{ ...next(operator) }" },
@@ -236,17 +236,17 @@ let config = {
     },
 
     { id: "ascending", level: 0, bridge: "{ ...before[0], ordering: 'ascending' }" },
-    { id: "descending", level: 0, bridge: "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers), value: null }" },
+    { id: "descending", level: 0, bridge: "{ ...before[0], ordering: 'descending', modifiers: append(['ordering'], before[0].modifiers) }" },
 
     { id: "product", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "listAction", level: 0, bridge: "{ ...next(operator), what: after[0], value: null }" },
+    { id: "listAction", level: 0, bridge: "{ ...next(operator), what: after[0]}" },
 
-    { id: "on", level: 0, bridge: "{ ...next(operator), report: after[0], value: null }" },
-    { id: "reportAction", level: 0, bridge: "{ ...next(operator), on: after[0].report, value: null }" },
+    { id: "on", level: 0, bridge: "{ ...next(operator), report: after[0] }" },
+    { id: "reportAction", level: 0, bridge: "{ ...next(operator), on: after[0].report }" },
 
     { id: "that", level: 0, bridge: "{ ...*, constraint: context }" },
-    { id: "cost", level: 0, bridge: "{ ...next(operator), price: after[0], value: null }" },
-    { id: "cost", level: 1, bridge: "{ ...squish(operator), thing*: before[0], value: null }" },
+    { id: "cost", level: 0, bridge: "{ ...next(operator), price: after[0] }" },
+    { id: "cost", level: 1, bridge: "{ ...squish(operator), thing*: before[0] }" },
     { id: "property", level: 0, bridge: "{ ...next(operator) }" },
     { id: "price", level: 0,
         isA: ['number', 'property'],
@@ -256,19 +256,19 @@ let config = {
         bridge: "{ ...next(operator) }" },
 
     { id: "listingType", level: 0, bridge: "{ ...next(operator) }" },
-    { id: "with", level: 0, bridge: "{ ...next(operator), type: after[0].value, value: null }" },
-    { id: "answer", level: 0, bridge: "{ ...next(operator), type: after[0].type, value: null }" },
+    { id: "with", level: 0, bridge: "{ ...next(operator), type: after[0].value }" },
+    { id: "answer", level: 0, bridge: "{ ...next(operator), type: after[0].type }" },
 
     { id: "show", level: 0, 
-            bridge: "{ ...next(operator), on: { 'marker': 'report', types: ['report'], pullFromContext: true }, properties: after[0], value: null }",
-            reportBridge: "{ ...next(operator), report: after[0], value: null }" 
+            bridge: "{ ...next(operator), on: { 'marker': 'report', types: ['report'], pullFromContext: true }, properties: after[0] }",
+            reportBridge: "{ ...next(operator), report: after[0] }" 
     },
 
     {
       id: "describe",
       level: 0,
       isA: ['verby'],
-      bridge: "{ ...next(operator), report: after[0], value: null }",
+      bridge: "{ ...next(operator), report: after[0] }",
       "generatorp": ({g, context}) => `describe ${g(context.report)}`,
       "generatorr": ({gp, context, apis, objects, config}) => {
                     const reports = propertyToArray(context.report)
@@ -297,7 +297,7 @@ let config = {
     { 
       id: "call", 
       level: 0, 
-      bridge: "{ ...next(operator), namee: after[0], name: after[1], value: null }",
+      bridge: "{ ...next(operator), namee: after[0], name: after[1] }",
       generatorp: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
       semantic: ({g, context, objects, e, config, km}) => {
         const namee = e(context.namee)

@@ -331,7 +331,4 @@
 # TODO node math -q 'worth is price times quantity what does worth mean?' -g -d
 # TODO node math -q 'worth is price times quantity what is the meaning of worth?' -g -d
 # TODO node math -q '20 dollars times 10' -g -d
-# node scorekeeper -q 'what is the winning score' -g -d
-# node inspect properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d
-# node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -g -d
-node people -q 'ownee is owned by owner means owner owns ownee' -g -d 
+node scorekeeper -q 'what is the winning score' -g -d
