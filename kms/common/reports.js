@@ -458,7 +458,7 @@ let config = {
           context.response = {
             marker: 'list', 
             newLinesOnly: true,
-            list: responses,
+            value: responses,
           }
         } else {
           const report = e(context.on)

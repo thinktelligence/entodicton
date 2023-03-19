@@ -21,7 +21,7 @@ const getTypes = ( km, concept, instance ) => {
   }
   instance = {
     marker: 'list', 
-    list: words,
+    value: words,
     paraphrase: true,
   }
   instance.focus = true
@@ -242,7 +242,7 @@ let config = {
         const values = children.map( (t) => api.getWordForValue(t, { number: 'many'}))
         context.value = {
           marker: 'list',
-          list: values,
+          value: values,
         }
         if (children.length > 1) {
           context.number = 'many'

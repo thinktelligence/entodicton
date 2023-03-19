@@ -250,15 +250,15 @@ let config = {
         if (context.marker !== 'list') {
           return
         }
-        if ((context.list || []).length < 2) {
+        if ((context.value || []).length < 2) {
           return
         }
-        if (!context.list[0].word) {
+        if (!context.value[0].word) {
           return
         }
-        const word = context.list[0].word
+        const word = context.value[0].word
 
-        for (let value of context.list) {
+        for (let value of context.value) {
           if (!(value.modifiers && value.modifiers.length == 1 && value.word == word)) {
             return
           }
@@ -266,14 +266,14 @@ let config = {
         return true
       },
       apply: ({g, context}) => {
-        const modifiers = context.list.map( (p) => p[p.modifiers[0]] )
-        context.word = context.list[0].word
-        context.list = null
+        const modifiers = context.value.map( (p) => p[p.modifiers[0]] )
+        context.word = context.value[0].word
+        context.value = null
         context.modifiers = ['modifier']
         context.modifier = {
           marker: 'list',
           paraphrase: true,
-          list: modifiers
+          value: modifiers
         }
         context.paraphrase = true
         return g(context)
@@ -476,7 +476,7 @@ let config = {
         context.value = { 
           marker: 'list', 
           // value: api.objects.children[context.marker]
-          list: phrases,
+          value: phrases,
         }
         context.evaluateWasProcessed = true
       }
