@@ -136,7 +136,7 @@ let config = {
                 const concept = response.two;
                 concept.paraphrase = true
                 concept.isSelf = true
-                const instance = g(concept.value)
+                const instance = g(concept.evalue)
                 return instance
              }
     },
@@ -284,22 +284,20 @@ let config = {
       match: ({context}) => context.marker == 'turn' && context.evaluate && context.whose,
       apply: ({context, objects}) => {
         if (Number.isInteger(objects.nextPlayer)) {
-          context.value = `${objects.players[objects.nextPlayer]}'s turn`
+          context.evalue = `${objects.players[objects.nextPlayer]}'s turn`
         } else {
-          context.value = "no one's turn"
+          context.evalue = "no one's turn"
         }
-        context.evaluateWasProcessed = true
       }
     },
     {
       match: ({context}) => context.marker == 'next' && context.evaluate,
       apply: ({context, objects}) => {
         if (Number.isInteger(objects.nextPlayer)) {
-          context.value = objects.players[objects.nextPlayer]
+          context.evalue = objects.players[objects.nextPlayer]
         } else {
-          context.value = 'no one'
+          context.evalue = 'no one'
         }
-        context.evaluateWasProcessed = true
       }
     },
     {
@@ -307,11 +305,10 @@ let config = {
       apply: ({context, objects}) => {
         const players = Object.keys(objects.scores)
         if (players.length == 0) {
-          context.value = 'no one'
+          context.evalue = 'no one'
         } else {
-          context.value = players.join(' ')
+          context.evalue = players.join(' ')
         }
-        context.evaluateWasProcessed = true
       }
     },
       // same
@@ -327,7 +324,7 @@ let config = {
       apply: ({context, objects}) => {
         //context.value = { marker: 'point', value: objects.winningScore }
         // i got the value by running -q '20 points'
-        context.value = {
+        context.evalue = {
             "amount": {
               "marker": "number",
               "types": [
@@ -342,7 +339,6 @@ let config = {
             ],
             "word": "points",
           }
-        context.evaluateWasProcessed = true
       }
     },
     {
@@ -360,12 +356,11 @@ let config = {
           context.number = 'many'
         }
         if (allScoresAreZero) {
-          context.value = 'nothing for everyone'
+          context.evalue = 'nothing for everyone'
         } else {
           const scores = players.map( (player) => `${player} has ${objects.scores[player]} points` )
-          context.value = scores.join(' ')
+          context.evalue = scores.join(' ')
         }
-        context.evaluateWasProcessed = true
       }
     },
     {

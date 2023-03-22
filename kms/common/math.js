@@ -15,7 +15,7 @@ const toValue = (context) => {
     if (typeof context == 'number' || !context) {
       return context
     }
-    context = context.value
+    context = context.evalue
   }
 }
 
@@ -39,8 +39,7 @@ let config = {
         words: ['+'],
         generatorp: ({gp, context}) => `${gp(context.x)} plus ${gp(context.y)}`,
         evaluator: ({e, context}) => {
-          context.value = toValue(e(context.x)) + toValue(e(context.y))
-          context.evaluateWasProcessed = true
+          context.evalue = toValue(e(context.x)) + toValue(e(context.y))
         }
     },
     {   
@@ -50,8 +49,7 @@ let config = {
         words: ['-'],
         generatorp: ({gp, context}) => `${gp(context.x)} minus ${gp(context.y)}`,
         evaluator: ({e, context}) => {
-          context.value = toValue(e(context.x)) - toValue(e(context.y))
-          context.evaluateWasProcessed = true
+          context.evalue = toValue(e(context.x)) - toValue(e(context.y))
         }
     },
     {   
@@ -63,8 +61,7 @@ let config = {
         words: ['*'],
         generatorp: ({gp, context}) => `${gp(context.x)} times ${gp(context.y)}`,
         evaluator: ({e, context}) => {
-          context.value = toValue(e(context.x)) * toValue(e(context.y))
-          context.evaluateWasProcessed = true
+          context.evalue = toValue(e(context.x)) * toValue(e(context.y))
         }
     },
   ],

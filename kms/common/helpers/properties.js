@@ -197,13 +197,13 @@ class API {
           return
         }
         if (instance.response.marker == 'answerNotKnown') {
-          context.value = instance.response
+          context.evalue = instance.response
           context.response = instance.response
           return
         }
         const selected = instance.response.value.map( (r) => r[property] )
         context.constraints = undefined;
-        context.value = { marker: 'list', value: selected }
+        context.evalue = { marker: 'list', value: selected }
       },
     })
     config.addGenerator({

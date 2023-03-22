@@ -74,12 +74,17 @@ class API {
 
   // value is in response field
   // TODO maybe generalize out query+evaluate along the lines of set value and set reference
+  // TODO Ugh this is duped in config.js
   evaluate(value, context, log, s) {
     value.evaluate = true;
     // const instance = s(value, { debug: { apply: true } }) 
     const instance = s(value)
-    if (!instance.evaluateWasProcessed && !instance.verbatim) {
+    if (!instance.evalue && !instance.verbatim) {
       warningNotEvaluated(log, context, value);
+    }
+    if (!instance.evalue) {
+      instance.evalue = instance.value
+      instance.edefault = true
     }
     delete instance.evaluate
     instance.instance = true;
@@ -94,8 +99,9 @@ class API {
     value.evaluate = { toConcept: true }
     // const concept = s(value, { debug: { apply: true } }) 
     const concept = s(value)
-    if (!concept.evaluateWasProcessed && !concept.verbatim) {
+    if (!concept.evalue && !concept.verbatim) {
       warningNotEvaluated(log, context, value);
+      concept.evalue = concept.value
     }
     delete concept.evaluate
     return concept
@@ -223,6 +229,7 @@ let config = {
     { id: "yesno", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 0, bridge: "{ ...next(operator) }" },
     { id: "canBeQuestion", level: 1, bridge: "{ ...next(operator) }" },
+    // greg101
     { id: "unknown", level: 0, bridge: "{ ...next(operator), unknown: true }" },
     { id: "unknown", level: 1, bridge: "{ ...next(operator) }" },
     { id: "queryable", level: 0, bridge: "{ ...next(operator) }" },
@@ -431,14 +438,14 @@ let config = {
     },
     {
       notes: 'paraphrase a queryable',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.value,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.evalue,
       apply: ({context, g}) => {
-        const oldValue = context.value.paraphrase
+        const oldValue = context.evalue.paraphrase
         // greg33
         // context.value.paraphrase = true
         // context.value.response = null
-        const result = g(context.value)
-        context.value.paraphrase = oldValue
+        const result = g(context.evalue)
+        context.evalue.paraphrase = oldValue
         return result
       }
     },
@@ -540,8 +547,8 @@ let config = {
       notes: 'x is y (not a response)',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
       apply: ({context, g}) => {
-        if ((context.two.value || {}).marker == 'answerNotKnown') {
-          return g(context.two.value)
+        if ((context.two.evalue || {}).marker == 'answerNotKnown') {
+          return g(context.two.evalue)
         }
         if (context.two.focusableForPhrase) {
           return `${g(context.two)} ${isMany(context.one) || isMany(context.two) || isMany(context) ? "are" : "is"} ${g({...context.one, paraphrase: true}, { assumed: { subphrase: true } })}`
@@ -621,8 +628,8 @@ let config = {
           return
         }
         const instance = api.evaluate(context.value, context, log, s)
-        if (instance.value) {
-          context.value = instance.value
+        if (instance.evalue && !instance.edefault) {
+          context.value = instance.evalue
         }
       },
     },
@@ -649,19 +656,8 @@ let config = {
         // km('dialogues').api.mentioned(concept)
         // TODO wtf is the next line?
         value = JSON.parse(JSON.stringify(value))
-        // const instance = api.evaluate(value, context, log, s)
-        // value.value = undefined // greghere
-        let instance
-        if (false && !value.wantsValue) {
-          instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44', value: undefined }, context, log, s)
-        } else {
-          instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44' }, context, log, s)
-        }
-        // instance.greg = 23
-        if (!instance.value && false) {
-          instance.value = value.value
-        }
-        if (instance.value) {
+        let instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44' }, context, log, s)
+        if (instance.evalue) {
           km('dialogues').api.mentioned(value)
         }
         if (instance.verbatim) {
@@ -674,25 +670,17 @@ let config = {
         concept = _.cloneDeep(value) 
         concept.isQuery = undefined
 
-        if (true) {
-          const many = isMany(concept) || isMany(instance)
-          const response = {
-            "default": true,
-            "marker": "is",
-            "one": concept,
-            "two": instance,
-            "focusable": ['two', 'one'],
-            "word": many ? "are" : "is",
-            "number": many ? "many" : undefined,
-          }
-          context.response = response
-        } else {
-          context.response = {
-            isResponse: true,
-            instance,
-            concept,
-          }
+        const many = isMany(concept) || isMany(instance)
+        const response = {
+          "default": true,
+          "marker": "is",
+          "one": concept,
+          "two": instance,
+          "focusable": ['two', 'one'],
+          "word": many ? "are" : "is",
+          "number": many ? "many" : undefined,
         }
+        context.response = response
       }
     },
     { 
@@ -748,13 +736,21 @@ let config = {
       notes: 'default handle evaluate',
       match: ({context}) => context.evaluate,
       apply: ({context, api, e}) => {
-        if (context.marker == 'worth') {
-          debugger
+        // greg101
+        if (true) {
+          context.value = api.getVariable(context.value)
+          if (!context.value && context.marker !== 'unknown') {
+            context.value = api.getVariable(context.marker)
+          }
+        } else {
+          let value = api.getVariable(context.value || context.marker)
+          if (value.marker == context.marker && value.value == context.value && value.evalue == context.evalue) {
+            return
+          }
+          context.value = value
         }
-        context.value = api.getVariable(context.value)
         if (context.value && context.value.marker) {
-          context.value = e(context.value)
-          context.evaluateWasProcessed  = true
+          context.evalue = e(context.value)
         }
       }
     },
@@ -766,11 +762,8 @@ let config = {
       match: ({context}) => context.topLevel && !context.response,
       apply: ({context, e}) => {
         const instance = e({ ...context, value: undefined, topLevel: undefined })
-        if (instance.evaluateWasProcessed) {
+        if (instance.evalue && !instance.edefault) {
           context.response = instance
-          //context.response.isResponse = true
-          //context.isResponse = true
-          //context.greg88 = true
         }
       }
     },

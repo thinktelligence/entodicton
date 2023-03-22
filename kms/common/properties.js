@@ -473,12 +473,11 @@ let config = {
         const values = api.objects.children[context.marker]
         const phrases = values.map( (value) => api.getWordForValue(value) )
         context.focusableForPhrase = true
-        context.value = { 
+        context.evalue = { 
           marker: 'list', 
           // value: api.objects.children[context.marker]
           value: phrases,
         }
-        context.evaluateWasProcessed = true
       }
     },
     {
@@ -540,7 +539,7 @@ let config = {
         */
         // debugger;
         propertyContext[`disable${uuid}`] = true
-        const propertyId = km("dialogues").api.evaluateToConcept(propertyContext, context, log, s).value;
+        const propertyId = km("dialogues").api.evaluateToConcept(propertyContext, context, log, s).evalue;
         try{
           // greg
           // api.makeObject({config, context: objectContext, doPluralize: false})
@@ -615,6 +614,7 @@ let config = {
         }
 
         let currentContext = toDo.pop()
+        debugger;
         let currentValue = toValue(currentContext)
         while (toDo.length > 0) {
           const nextContext = toDo.pop()
@@ -645,8 +645,7 @@ let config = {
           currentValue = currentContext.value
         }
         context.focusable = ['object[0]']
-        context.value = currentContext
-        context.evaluateWasProcessed = true;
+        context.evalue = currentContext
         context.object = undefined;
        
         /* 

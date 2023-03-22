@@ -183,7 +183,8 @@ let config = {
         generatorp: ({context, gp}) => `move ${gp(context.from)} ${gp(context.to)}`,
         semantic: ({context, e, objects, kms}) => {
           const report = e(context.on)
-          const listing = objects.listings[report.value]
+          const id = report.value.value
+          const listing = objects.listings[id]
 
           const from = context.from.index.value;
           let to;
@@ -208,7 +209,8 @@ let config = {
         generatorp: ({context, gp}) => `remove ${gp(context.removee)}`,
         semantic: ({context, e, objects}) => {
           const report = e(context.on)
-          const listing = objects.listings[report.value]
+          const id = report.value.value
+          const listing = objects.listings[id]
           const column = context.removee.index.value
           listing.columns.splice(column-1, 1)
         }
@@ -225,14 +227,20 @@ let config = {
             isA: ['theAble'], 
             words: [{word: "reports", number: "many"}], 
             bridge: "{ ...next(operator) }",
-            generator: {
-              match: ({context}) => context.marker == 'report' && context.describe,
-              apply: ({context, apis, gp, gs, objects}) => {
-                const listings = objects.listings[context.value]
-                // {"type":"tables","columns":["name"],"ordering":[]}
-                return `for ${listings.api}, showing the ${wordNumber('property', listings.columns.length > 1)} ${gs(listings.columns, ' ', ' and ')} as ${listings.type}`
+            generators: [
+              {
+                match: ({context}) => context.marker == 'report' && context.describe,
+                apply: ({context, apis, gp, gs, objects}) => {
+                  const listings = objects.listings[context.value]
+                  // {"type":"tables","columns":["name"],"ordering":[]}
+                  return `for ${listings.api}, showing the ${wordNumber('property', listings.columns.length > 1)} ${gs(listings.columns, ' ', ' and ')} as ${listings.type}`
+                }
+              },
+              {
+                match: ({context}) => context.marker == 'report' && context.evalue,
+                apply: ({context}) => context.evalue.value
               }
-            },
+            ],
     },
 
     { id: "ascending", level: 0, bridge: "{ ...before[0], ordering: 'ascending' }" },
@@ -301,8 +309,8 @@ let config = {
       generatorp: ({g, context}) => `call ${g(context.namee)} ${g(context.name)}`,
       semantic: ({g, context, objects, e, config, km}) => {
         const namee = e(context.namee)
-        debugger;
-        const listing = objects.listings[namee.value]
+        const id = namee.value.value
+        const listing = objects.listings[id]
         const name = context.name.text
         objects.listings[name] = {...listing}
         config.addWord(` ${name}`,  { id: 'report', initial: `{ value: "${name}" }` })
@@ -310,7 +318,7 @@ let config = {
                   marker: "report",
                   text: name,
                   types: [ "report" ],
-                  value: namee.value,
+                  value: id,
                   word: name
                })
       }
@@ -363,7 +371,8 @@ let config = {
           return `show ${gp(context.report)}`
         } else {
           const report = e(context.on)
-          const listing = objects.listings[report.value]
+          const id = report.value.value
+          const listing = objects.listings[id]
           return `the properties being shown are ${gs(listing.columns, ', ', ' and ')}`
         }
       }
@@ -445,13 +454,17 @@ let config = {
               value = e(value)
             }
             // JSON.stringify(config.config.objects.namespaced.dialogues29.mentioned[0])
-            const listing = objects.listings[value.value]
+            let id = value.value
+            if (value.evalue) {
+              id = value.evalue.value
+            }
+            const listing = objects.listings[id]
             const api = apis[listing.api]
             responses.push({
               marker: 'listAction', 
               // listing: config._api.apis[value.value.api].getAllProducts(api.listings[value.value.id]),
               listing: api.getAllProducts(listing),
-              id: value.value,
+              id,
               response: true,
             })
           }
@@ -462,7 +475,8 @@ let config = {
           }
         } else {
           const report = e(context.on)
-          const listing = objects.listings[report.value]
+          const id = report.value.value
+          const listing = objects.listings[id]
           const values = propertyToArray(context.properties)
           for (let value of values) {
             let column = value.marker
@@ -487,7 +501,7 @@ let config = {
         if (context.api) {
           // id = newReport({km, objects})
           const report = e({ marker: 'report', pullFromContext: true })
-          const id = report.value
+          const id = report.value.value
           const listing = objects.listings[id]
           listing.api = context.api
           // TODO change this to context.data
@@ -495,10 +509,11 @@ let config = {
           context.listing = apis[listing.api].getAllProducts(listing)
         } else {
           const report = e({ marker: 'report', pullFromContext: true })
-          const listing = objects.listings[report.value]
+          const id = report.evalue.value
+          const listing = objects.listings[id]
           const api = apis[listing.api]
           context.listing = api.getAllProducts(listing)
-          context.id = report.value
+          context.id = id
           /*
           ask([
                 {
@@ -521,7 +536,8 @@ let config = {
       ({context}) => context.marker == 'answer', 
       ({e, context, objects, kms}) => {
         const report = e({ marker: 'report', pullFromContext: true })
-        const listing = objects.listings[report.value]
+        const id = report.value.value
+        const listing = objects.listings[id]
         listing.type = context.type
         kms.events.api.happens({ marker: "changes", changeable: { marker: 'report', pullFromContext: true } })
       }

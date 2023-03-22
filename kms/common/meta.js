@@ -267,8 +267,9 @@ let config = {
         // setup the write semantic
         {
           const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query && !context.objects
-          const matchByValue = (defContext) => ({context}) => context.value == defContext.from.value && !context.query && !context.objects
+          const matchByValue = (defContext) => ({context}) => context.evalue == defContext.from.value && !context.query && !context.objects
           const apply = (mappings, TO) => ({context, s}) => {
+            debugger
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))
@@ -278,7 +279,7 @@ let config = {
           }
           const mappings = translationMapping(context.from, context.to)
           let match = matchByMarker(context)
-          if (context.from.value) {
+          if (context.from.evalue) {
             match = matchByValue(context)
           }
           const semantic = { 
@@ -316,9 +317,7 @@ let config = {
                 context.response = toPrime
               }
             } else {
-              context.value = toPrime.value
-              // context.marker = toPrime.marker
-              // context.evaluateWasProcessed = true
+              context.evalue = toPrime.evalue
             }
           }
           const mappings = translationMapping(context.from, context.to)

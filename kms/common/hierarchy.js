@@ -12,7 +12,7 @@ const getTypes = ( km, concept, instance ) => {
     return new Set([...set1].filter(x => set2.has(x)))
   }
   const descendants = digraph.descendants(concept.value)
-  const ancestors = digraph.ancestors(instance.value)
+  const ancestors = digraph.ancestors(instance.evalue)
   const common = intersect(ancestors, descendants)
   const answer = Array.from(digraph.minima(common))
   const words = answer.map( (value) => propertiesAPI.getWordForValue(value) )
@@ -73,7 +73,7 @@ let config = {
           context.response = { verbatim: instance.verbatim }
           return
         }
-        instance = getTypes(km, concept, instance )
+        instance = getTypes(km, concept, instance)
 
         // instance.focusable = ['one', 'two']
         // concept = JSON.parse(JSON.stringify(value)) 
@@ -81,25 +81,17 @@ let config = {
         concept = _.cloneDeep(value)
         concept.isQuery = undefined
 
-        if (true) {
-          const many = isMany(concept) || isMany(instance)
-          const response = {
-            "default": true,
-            "marker": "is",
-            "one": concept,
-            "two": instance,
-            "focusable": ['two', 'one'],
-            "word": many ? "are" : "is",
-            "number": many ? "many" : undefined,
-          }
-          context.response = response
-        } else {
-          context.response = {
-            isResponse: true,
-            instance,
-            concept,
-          }
+        const many = isMany(concept) || isMany(instance)
+        const response = {
+          "default": true,
+          "marker": "is",
+          "one": concept,
+          "two": instance,
+          "focusable": ['two', 'one'],
+          "word": many ? "are" : "is",
+          "number": many ? "many" : undefined,
         }
+        context.response = response
       },
     },
     {
@@ -117,9 +109,8 @@ let config = {
           return
         }
         instance = getTypes(km, concept, instance)
-        context.value = instance
-        context.evaluateWasProcessed = true
-        if (context.value.value.length > 1) {
+        context.evalue = instance
+        if (context.evalue.value.length > 1) {
           context.number = 'many'
         }
       }
@@ -240,14 +231,13 @@ let config = {
         const type = pluralize.singular(context.object.value);
         const children = api.children(type)
         const values = children.map( (t) => api.getWordForValue(t, { number: 'many'}))
-        context.value = {
+        context.evalue = {
           marker: 'list',
           value: values,
         }
         if (children.length > 1) {
           context.number = 'many'
         }
-        context.evaluateWasProcessed = true
       }
     },
   ]

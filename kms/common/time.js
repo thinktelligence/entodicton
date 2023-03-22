@@ -91,27 +91,27 @@ let config = {
       ({context}) => context.marker == 'ampm' && context.paraphrase, 
       ({g, context}) => `${context.hour.hour} ${context.ampm}` 
     ],
-    [ ({context}) => context.marker == 'time' && context.value && context.format == 12, ({g, context}) => {
-      console.log('-------------------', context.value)
-          let hh = context.value.getHours();
+    [ ({context}) => context.marker == 'time' && context.evalue && context.format == 12, ({g, context}) => {
+      console.log('-------------------', context.evalue)
+          let hh = context.evalue.getHours();
           let ampm = 'am'
           if (hh > 12) {
             hh -= 12;
             ampm = 'pm'
           }
-          let ss = context.value.getMinutes()
+          let ss = context.evalue.getMinutes()
           ss = pad(ss, 2)
           return `${hh}:${ss} ${ampm}` 
-        }
+      }
     ],
-    [ ({context}) => context.marker == 'time' && context.value && context.format == 24, ({g, context}) => {
+    [ ({context}) => context.marker == 'time' && context.evalue && context.format == 24, ({g, context}) => {
       const pad = (num, size) => {
         num = num.toString();
         while (num.length < size) num = "0" + num;
         return num;
       }
 
-        return `${context.value.getHours()}:${pad(context.value.getMinutes(), 2)}` 
+        return `${context.evalue.getHours()}:${pad(context.evalue.getMinutes(), 2)}` 
       }
     ],
     [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
@@ -122,8 +122,7 @@ let config = {
       notes: 'evaluate time',
       match: ({objects, context, api}) => context.marker == 'time' && context.evaluate, 
       apply: ({objects, context, api}) => {
-        context.value = api.newDate()
-        context.evaluateWasProcessed = true
+        context.evalue = api.newDate()
         context.format = objects.format
       }
     },
