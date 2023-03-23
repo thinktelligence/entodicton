@@ -194,11 +194,12 @@ class API {
         let instance = km('dialogues').api.evaluate(value, context, log, s)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
+          context.evalue = { verbatim: instance.verbatim }
           return
         }
         if (instance.response.marker == 'answerNotKnown') {
-          context.evalue = instance.response
           context.response = instance.response
+          context.evalue = instance.response
           return
         }
         const selected = instance.response.value.map( (r) => r[property] )
@@ -507,8 +508,10 @@ class API {
               response.isResponse = true
               response.query = undefined
               context.response = { marker: 'list', value: [response] }
+              context.evalue = { marker: 'list', value: [response] }
             } else {
               context.response = { marker: 'list', value: unflatten(matches) }
+              context.evalue = { marker: 'list', value: unflatten(matches) }
               context.response.isResponse = true
             }
             context.response.truthValue = matches.length > 0
@@ -530,8 +533,10 @@ class API {
             if (matches.length == 0) {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
               context.response = { marker: 'idontknow', query: _.clone(context), isResponse: true }
+              context.evalue = { marker: 'idontknow', query: _.clone(context), isResponse: true }
             } else {
               context.response = { marker: 'list', value: matches, isResponse: true }
+              context.evalue = { marker: 'list', value: matches, isResponse: true }
             }
             context.response.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
           }
@@ -563,10 +568,13 @@ class API {
             marker: 'list',
             value: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
           }
+          context.evalue = context.response
           context.response.isResponse = true
           if (context.response.value.length == 0) {
             context.response.marker = 'answerNotKnown';
             context.response.value = [];
+            context.evalue.marker = 'answerNotKnown';
+            context.evalue.value = [];
           }
         }
       })

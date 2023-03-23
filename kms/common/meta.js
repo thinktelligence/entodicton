@@ -148,6 +148,7 @@ let config = {
         context.response = {
           verbatim: `this is ${context.marker} response`
         }
+        context.evalue = context.response
       },
       development: true,
     },
@@ -162,6 +163,7 @@ let config = {
           marker: 'orList', 
           value: response
         }
+        context.evalue = context.response
       },
     },
     {
@@ -227,6 +229,7 @@ let config = {
               }
 
               context.response = response
+              context.evalue = response
             }
           }
 
@@ -313,8 +316,10 @@ let config = {
             if (context.query) {
               if (toPrime.response) {
                 context.response = toPrime.response
+                context.evalue = toPrime.response
               } else {
                 context.response = toPrime
+                context.evalue = toPrime
               }
             } else {
               context.evalue = toPrime.evalue

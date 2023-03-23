@@ -185,7 +185,7 @@ let config = {
         if (objects.winningScore) {
           context.value = `${objects.players[objects.nextPlayer]}'s turn`
           context.verbatim = `New game the winning score is ${objects.winningScore}. The players are ${objects.players}`
-          context.response = true;
+          context.isResponse = true;
         } else {
           /*
           config.addMotivation({
@@ -261,7 +261,7 @@ let config = {
               applyr: ({context, objects}) => {
                           objects.winningScore = context.amount.value
                           context.verbatim = `The winning score is ${objects.winningScore}`
-                          context.response = true;
+                          context.isResponse = true;
                       }
             },
             {
@@ -273,7 +273,7 @@ let config = {
                         setPlayers(objects, config, players)
                         objects.allPlayersAreKnown = true;
                         context.verbatim = `The players are ${gs(objects.players, ' ', ' and ')}`
-                        context.response = true;
+                        context.isResponse = true;
                       }
             }
           ])
@@ -373,7 +373,7 @@ let config = {
           if (player != objects.players[objects.nextPlayer]) {
             // some error about playing in the wrong order
             context.verbatim = `The next player is ${objects.players[objects.nextPlayer]} not ${player}`
-            context.response = true;
+            context.isResponse = true;
           } else {
             if (!objects.scores[player]) {
               objects.scores[player] = 0
@@ -399,7 +399,7 @@ let config = {
         }
         if (objects.scores[player] >= objects.winningScore) {
           context.verbatim = `${player} won with ${objects.scores[player]} points`
-          context.response = true;
+          context.isResponse = true;
         }
       }
     },

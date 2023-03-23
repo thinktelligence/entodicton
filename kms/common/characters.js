@@ -77,7 +77,7 @@ let config = {
       ({context}) => context.value + ", " + context.utterance
     ],
     [
-      ({context}) => context.marker == 'character' && context.response,
+      ({context}) => context.marker == 'character' && context.isResponse,
       ({context}) => 'Asked ' + context.value + " '" + context.utterance + "'"
     ],
     [
@@ -123,7 +123,7 @@ let config = {
           }
         })
         context.utterance = utterance
-        context.response = true
+        context.isResponse = true
       }
     ]
   ]

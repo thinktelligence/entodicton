@@ -31,7 +31,7 @@ let config = {
 
   generators: [
     [ ({context}) => context.marker == 'assignment' && context.paraphrase, ({context, g}) => `let ${g(context.variable)} = ${g(context.value)}` ],
-    [ ({context}) => context.marker == 'assignment' && context.response, ({context, g}) => {
+    [ ({context}) => context.marker == 'assignment' && context.isResponse, ({context, g}) => {
       const value = g(context.variable)
       return `${g(context.variable)} == ${g(context.value)}` 
     }],
@@ -42,7 +42,7 @@ let config = {
       ({context}) => context.marker == 'assignment',
       ({context, objects}) => {
         objects.variables[context.variable.value] = context.value.value
-        context.response = true
+        context.isResponse = true
       }
     ]
   ],

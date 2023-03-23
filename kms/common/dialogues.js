@@ -662,6 +662,7 @@ let config = {
         }
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
+          context.evalue = { verbatim: instance.verbatim }
           return
         }
         // instance.focusable = ['one', 'two']
@@ -681,6 +682,7 @@ let config = {
           "number": many ? "many" : undefined,
         }
         context.response = response
+        context.evalue = response
       }
     },
     { 
@@ -691,6 +693,7 @@ let config = {
         context.response = {
           verbatim: "I don't know"
         }
+        context.evalue = context.response
       }
     },
 
@@ -710,6 +713,7 @@ let config = {
         } else {
           if (onePrime.response) {
             context.response = onePrime.response
+            context.evalue = onePrime.response
           }
         }
         one.same = undefined
@@ -722,6 +726,7 @@ let config = {
           } else {
             if (twoPrime.response) {
               context.response = twoPrime.response
+              context.evalue = twoPrime.response
             }
           }
           two.same = undefined
@@ -764,6 +769,7 @@ let config = {
         const instance = e({ ...context, value: undefined, topLevel: undefined })
         if (instance.evalue && !instance.edefault) {
           context.response = instance
+          context.evalue = instance
         }
       }
     },

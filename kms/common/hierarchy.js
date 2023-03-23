@@ -71,6 +71,7 @@ let config = {
         let instance = km('dialogues').api.evaluate(value, context, log, s)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
+          context.evalue = { verbatim: instance.verbatim }
           return
         }
         instance = getTypes(km, concept, instance)
@@ -92,6 +93,7 @@ let config = {
           "number": many ? "many" : undefined,
         }
         context.response = response
+        context.evalue = response
       },
     },
     {
@@ -106,6 +108,7 @@ let config = {
         let instance = km('dialogues').api.evaluate(value, context, log, s)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
+          context.evalue = { verbatim: instance.verbatim }
           return
         }
         instance = getTypes(km, concept, instance)
@@ -129,6 +132,7 @@ let config = {
           context.response = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
+          context.evalue = context.response
           return
         }
         const twoId = pluralize.singular(two.value);
@@ -136,12 +140,14 @@ let config = {
           context.response = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
           }
+          context.evalue = context.response
           return
         }
         context.response = {
           marker: 'yesno',
           value: api.isA(oneId, twoId)
         }
+        context.evalue = context.response
       }
     },
     {

@@ -498,7 +498,7 @@ let config = {
       apply: ({context, g, api, objects}) => {
         const object = pluralize.singular(context.object.value);
         const property = pluralize.singular(context.property.value);
-        context.response = true
+        context.isResponse = true
         if (!api.knownObject(object)) {
           context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
           return
@@ -508,11 +508,13 @@ let config = {
             marker: 'yesno', 
             value: false,
           }
+          context.evalue = context.response
         } else {
           context.response = {
             marker: 'yesno', 
             value: true,
           }
+          context.evalue = context.response
           return
         }
       }
@@ -556,6 +558,7 @@ let config = {
             context.response = [
               { marker: 'yesno', value: true, paraphrase: true },
             ]
+            context.evalue = context.response
             context.sameWasProcessed = true
           } else {
             const mappings = [
@@ -575,14 +578,17 @@ let config = {
               },
             ]
             // run the query 'the property of object' then copy that here and template it
+            /*
             context.response = { 
               verbatim: "no way hose" 
             }
+            */
             context.response = [
               { marker: 'yesno', value: false, paraphrase: true },
             ]
             context.response = context.response.concat(fragment.instantiate(mappings))
             context.response.forEach( (r) => r.paraphrase = true )
+            context.evalue = context.response
             context.sameWasProcessed = true
           }
         }

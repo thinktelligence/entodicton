@@ -298,7 +298,7 @@ let config = {
                     return response
                   },
       semantic: ({context}) => {
-        context.response = true
+        context.isResponse = true
       }
     },
 
@@ -377,14 +377,14 @@ let config = {
         }
       }
     },
-    [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.response, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
+    [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.isResponse, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
     [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.paraphrase, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
     [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
     [ ({context}) => context.marker == 'listAction' && context.paraphrase, ({g, context}) => `list ${g(context.what)}` ],
     { 
       notes: 'show the results as a sentence',
       match: ({context, objects, apis}) => {
-        if (!(context.marker == 'listAction' && context.response)) {
+        if (!(context.marker == 'listAction' && context.isResponse)) {
           return false
         }
         if (objects.listings[context.id].type == 'sentences') {
@@ -399,7 +399,7 @@ let config = {
     { 
       notes: 'show the results as a table',
       match: ({context, objects, apis}) => {
-        if (!(context.marker == 'listAction' && context.response && !context.paraphrase)) {
+        if (!(context.marker == 'listAction' && context.isResponse && !context.paraphrase)) {
           return false
         }
         if (objects.listings[context.id].type == 'tables') {
@@ -433,15 +433,6 @@ let config = {
   ],
 
   semantics: [
-    /*
-    [ 
-      ({context, objects}) => context.marker == 'reportAction',
-      ({objects, context, api}) => {
-        context.response = true;
-        api.current = context.report.marker
-      }
-    ],
-    */
     { 
       notes: 'handle show semantic',
       match: ({context}) => context.marker == 'show',
@@ -465,7 +456,7 @@ let config = {
               // listing: config._api.apis[value.value.api].getAllProducts(api.listings[value.value.id]),
               listing: api.getAllProducts(listing),
               id,
-              response: true,
+              isResponse: true,
             })
           }
           context.response = {
@@ -473,6 +464,7 @@ let config = {
             newLinesOnly: true,
             value: responses,
           }
+          context.evalue = context.response
         } else {
           const report = e(context.on)
           const id = report.value.value
@@ -529,7 +521,7 @@ let config = {
              ])
            */
         }
-        context.response = true
+        context.isResponse = true
       },
     },
     [
