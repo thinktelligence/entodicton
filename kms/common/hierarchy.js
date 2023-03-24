@@ -57,7 +57,7 @@ let config = {
     {
       notes: 'what type is pikachu',
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && !['what'].includes(context.one.marker) && !['what'].includes(context.two.marker) && (context.one.query || context.two.query),
-      apply: ({context, hierarchy, km, log, s}) => {
+      apply: ({context, hierarchy, km, log, e, s}) => {
         const one = context.one;
         const two = context.two;
         let concept, value;
@@ -68,10 +68,11 @@ let config = {
           concept = two;
           value = one;
         }
-        let instance = km('dialogues').api.evaluate(value, context, log, s)
+        let instance = e(value)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
+          context.isResponse = true
           return
         }
         instance = getTypes(km, concept, instance)
@@ -94,6 +95,7 @@ let config = {
         }
         context.response = response
         context.evalue = response
+        context.isResponse = true
       },
     },
     {
@@ -102,10 +104,10 @@ let config = {
       // types of job           what are the types of animals -> next one
       notes: 'type of pikachu',  // the types of type is the next one
       match: ({context}) => context.marker == 'type' && context.evaluate && context.object && context.objects[context.objects.length-1].number == 'one' && pluralize.isSingular(context.objects[0].word),
-      apply: ({context, objects, gs, km, log, s}) => {
+      apply: ({context, objects, e, gs, km, log, s}) => {
         const concept = context.objects[0];
         const value = context.objects[1];
-        let instance = km('dialogues').api.evaluate(value, context, log, s)
+        let instance = e(value)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
@@ -133,6 +135,7 @@ let config = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
           context.evalue = context.response
+          context.isResponse = true
           return
         }
         const twoId = pluralize.singular(two.value);
@@ -141,6 +144,7 @@ let config = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
           }
           context.evalue = context.response
+          context.isResponse = true
           return
         }
         context.response = {
@@ -148,6 +152,7 @@ let config = {
           value: api.isA(oneId, twoId)
         }
         context.evalue = context.response
+        context.isResponse = true
       }
     },
     {

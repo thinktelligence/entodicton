@@ -176,7 +176,7 @@ class API {
     config.addSemantic({
       notes: 'semantic for setting value with constraint',
       match: ({context}) => context.marker == after[0].tag && context.evaluate,
-      apply: ({km, context, log, s}) => {
+      apply: ({km, context, e, log, s}) => {
         const constraint = context.constraints[0];
         const value = constraint.constraint;
         let property = constraint.property;
@@ -191,7 +191,7 @@ class API {
         // value.greg = true
         // value.ownee.query = true
         value.query = true
-        let instance = km('dialogues').api.evaluate(value, context, log, s)
+        let instance = e(value)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
@@ -538,6 +538,7 @@ class API {
               context.response = { marker: 'list', value: matches, isResponse: true }
               context.evalue = { marker: 'list', value: matches, isResponse: true }
             }
+            context.isResponse = true
             context.response.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
           }
         }
@@ -570,6 +571,7 @@ class API {
           }
           context.evalue = context.response
           context.response.isResponse = true
+          context.isResponse = true
           if (context.response.value.length == 0) {
             context.response.marker = 'answerNotKnown';
             context.response.value = [];

@@ -149,6 +149,7 @@ let config = {
           verbatim: `this is ${context.marker} response`
         }
         context.evalue = context.response
+        context.isResponse = true
       },
       development: true,
     },
@@ -164,6 +165,7 @@ let config = {
           value: response
         }
         context.evalue = context.response
+        context.isResponse = true
       },
     },
     {
@@ -230,6 +232,7 @@ let config = {
 
               context.response = response
               context.evalue = response
+              context.isResponse = true
             }
           }
 

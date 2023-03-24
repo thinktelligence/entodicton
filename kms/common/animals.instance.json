@@ -67,7 +67,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "notAble",
@@ -84,6 +92,10 @@
         [
           "orAble",
           "ifAble"
+        ],
+        [
+          "pronoun",
+          "pronoun"
         ],
         [
           "property",
@@ -116,6 +128,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -170,36 +194,20 @@
         "Undefined word 'birds'",
         "Undefined word 'mammals'",
         "Undefined word 'animals'",
-        "Counter == 2. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 3. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 2. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 3. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
         "Op choices were: [(('list', 0), [('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 0), ('unknown', 1)]), (('unknown', 0), [('is', 0), ('list', 1), ('unknown', 0), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/0 was [['is', 0], ['list', 1], ['unknown', 0], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.6000000000000001 - [['list', 0], ['unknown', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n      (('unknown', 0), ('is', 0), ('unknown', 0))\n    0.4 - [['list', 0], ['unknown', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n      (('list', 0), ('unknown', 0))\n      (('unknown', 0), ('isEd', 0))\n  Group 1\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('is', 0), ('unknown', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('isEd', 0))\n  Group 2\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 3\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.4 - [['list', 0], ['unknown', 0], \">>>>2 ['isEd', 0] <<<<2\", ['unknown', 0]]\n      (('list', 0), ('unknown', 0))\n      (('unknown', 0), ('isEd', 0))\n    0.6000000000000001 - [['list', 0], ['unknown', 0], \">>>>2 ['is', 0] <<<<2\", ['unknown', 0]]\n      (('unknown', 0), ('is', 0), ('unknown', 0))\n  Group 1\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('isEd', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 0), ('is', 0), ('unknown', 0))\n  Group 2\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 3\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('is', 0), ('unknown', 1))\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('unknown', 1))"
       ],
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "is",
-                0
-              ],
-              [
-                "list",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "list",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -207,19 +215,19 @@
               ],
               [
                 "list",
-                1
+                0
               ],
               [
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -233,13 +241,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -252,18 +260,14 @@
               [
                 "unknown",
                 0
-              ],
-              [
-                "unknown",
-                1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -281,13 +285,13 @@
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "unknown",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -299,15 +303,19 @@
               ],
               [
                 "unknown",
+                0
+              ],
+              [
+                "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -321,22 +329,38 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -344,52 +368,50 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": " are animals",
           "marker": "is",
-          "number": "many",
           "word": "are",
-          "two": {
-            "unknown": true,
-            "text": "animals",
-            "word": "animals",
-            "types": [
-              "unknown"
-            ],
-            "value": "animals",
-            "marker": "unknown",
-            "response": true,
-            "concept": true
-          },
           "one": {
             "number": "many",
             "marker": "list",
+            "value": [
+              {
+                "marker": "unknown",
+                "word": "birds",
+                "text": "birds",
+                "value": "birds",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "mammals",
+                "text": "mammals",
+                "value": "mammals",
+                "unknown": true
+              }
+            ],
             "types": [
               "list",
               "unknown"
             ],
-            "value": [
-              {
-                "text": "birds",
-                "word": "birds",
-                "value": "birds",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "mammals",
-                "word": "mammals",
-                "value": "mammals",
-                "unknown": true,
-                "marker": "unknown"
-              }
+            "response": null
+          },
+          "two": {
+            "marker": "unknown",
+            "word": "animals",
+            "text": "animals",
+            "value": "animals",
+            "unknown": true,
+            "types": [
+              "unknown"
             ],
-            "text": " are animals",
-            "response": true
+            "response": null,
+            "concept": true
           },
           "topLevel": true,
-          "calls": "Context#2: call2",
           "touchedBy": [
-            "call2"
+            "call3"
           ]
         }
       ],
@@ -446,7 +468,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "birds and mammals are animals",
       "key": {
         "query": "birds and mammals are animals"
@@ -580,7 +602,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -635,6 +665,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -665,6 +699,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -724,26 +770,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "have",
-                0
-              ],
-              [
-                "mammal",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "have",
+                0
+              ],
+              [
+                "mammal",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "mammal",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -757,13 +807,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "mammal",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -773,22 +823,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -796,47 +842,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "ears",
-            "word": "ears",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "ears",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "mammals have ears",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "mammals have ears",
             "number": "many",
+            "value": "mammal",
+            "text": "mammals",
+            "marker": "mammal",
             "word": "mammals",
             "types": [
               "mammal"
-            ],
-            "value": "mammal",
-            "marker": "mammal"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "mammals have ears",
+          "property": {
+            "marker": "property",
+            "word": "ears",
+            "text": "ears",
+            "value": "ears",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "mammals have ears",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#5: call16",
           "touchedBy": [
-            "call16"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "mammal's have"
+        "mammals's have"
       ],
       "paraphrases": [
         "mammals have ears"
@@ -894,7 +938,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "mammals have ears",
       "key": {
         "query": "mammals have ears"
@@ -1028,7 +1072,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -1083,6 +1135,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -1113,6 +1169,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -1172,26 +1240,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "have",
-                0
-              ],
-              [
-                "mammal",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "have",
+                0
+              ],
+              [
+                "mammal",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "mammal",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -1205,13 +1277,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "mammal",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -1221,22 +1293,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -1244,47 +1312,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "hair",
-            "word": "hair",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "hair",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "mammals have hair",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "mammals have hair",
             "number": "many",
+            "value": "mammal",
+            "text": "mammals",
+            "marker": "mammal",
             "word": "mammals",
             "types": [
               "mammal"
-            ],
-            "value": "mammal",
-            "marker": "mammal"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "mammals have hair",
+          "property": {
+            "marker": "property",
+            "word": "hair",
+            "text": "hair",
+            "value": "hair",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "mammals have hair",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#8: call25",
           "touchedBy": [
-            "call25"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "mammal's have"
+        "mammals's have"
       ],
       "paraphrases": [
         "mammals have hair"
@@ -1342,7 +1408,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "mammals have hair",
       "key": {
         "query": "mammals have hair"
@@ -1476,7 +1542,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -1531,6 +1605,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -1561,6 +1639,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -1620,30 +1710,34 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "doesnt",
-                0
-              ],
-              [
-                "have",
-                0
-              ],
-              [
-                "mammal",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "doesnt",
+                0
+              ],
+              [
+                "have",
+                0
+              ],
+              [
+                "mammal",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "mammal",
+              0
+            ],
             "ops": [
               [
                 "doesnt",
@@ -1661,13 +1755,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "mammal",
-              0
             ]
           },
           {
+            "op": [
+              "doesnt",
+              0
+            ],
             "ops": [
               [
                 "doesnt",
@@ -1681,13 +1775,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "doesnt",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -1697,22 +1791,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -1720,50 +1810,48 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "wings",
-            "word": "wings",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "wings",
-            "marker": "property"
-          },
-          "negation": true,
-          "dead": false,
           "doesable": true,
+          "number": "many",
+          "text": "mammals have wings",
+          "marker": "have",
+          "word": "have",
+          "is_compound": true,
+          "dead": false,
           "object": {
-            "text": "mammals have wings",
             "number": "many",
+            "value": "mammal",
+            "text": "mammals",
+            "marker": "mammal",
             "word": "mammals",
             "types": [
               "mammal"
-            ],
-            "value": "mammal",
-            "marker": "mammal"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "is_compound": true,
-          "text": "mammals have wings",
+          "property": {
+            "marker": "property",
+            "word": "wings",
+            "text": "wings",
+            "value": "wings",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "mammals have wings",
             "right": "property"
           },
+          "negation": true,
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#11: call34",
           "touchedBy": [
-            "call34"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "mammal's have"
+        "mammals's have"
       ],
       "paraphrases": [
         "mammals doesnt have wings"
@@ -1843,7 +1931,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "mammals dont have wings",
       "key": {
         "query": "mammals dont have wings"
@@ -1977,7 +2065,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -2032,6 +2128,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -2062,6 +2162,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -2121,26 +2233,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "animal",
-                0
-              ],
-              [
-                "have",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "animal",
+                0
+              ],
+              [
+                "have",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "animal",
+              0
+            ],
             "ops": [
               [
                 "animal",
@@ -2154,13 +2270,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "animal",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -2170,22 +2286,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -2193,47 +2305,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "skin",
-            "word": "skin",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "skin",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "animals have skin",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "animals have skin",
             "number": "many",
+            "value": "animal",
+            "text": "animals",
+            "marker": "animal",
             "word": "animals",
             "types": [
               "animal"
-            ],
-            "value": "animal",
-            "marker": "animal"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "animals have skin",
+          "property": {
+            "marker": "property",
+            "word": "skin",
+            "text": "skin",
+            "value": "skin",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "animals have skin",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#14: call43",
           "touchedBy": [
-            "call43"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "animal's have"
+        "animals's have"
       ],
       "paraphrases": [
         "animals have skin"
@@ -2291,7 +2401,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "animals have skin",
       "key": {
         "query": "animals have skin"
@@ -2425,7 +2535,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -2480,6 +2598,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -2510,6 +2632,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -2569,26 +2703,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "animal",
-                0
-              ],
-              [
-                "have",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "animal",
+                0
+              ],
+              [
+                "have",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "animal",
+              0
+            ],
             "ops": [
               [
                 "animal",
@@ -2602,13 +2740,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "animal",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -2618,22 +2756,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -2641,47 +2775,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "eyes",
-            "word": "eyes",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "eyes",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "animals have eyes",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "animals have eyes",
             "number": "many",
+            "value": "animal",
+            "text": "animals",
+            "marker": "animal",
             "word": "animals",
             "types": [
               "animal"
-            ],
-            "value": "animal",
-            "marker": "animal"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "animals have eyes",
+          "property": {
+            "marker": "property",
+            "word": "eyes",
+            "text": "eyes",
+            "value": "eyes",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "animals have eyes",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#17: call52",
           "touchedBy": [
-            "call52"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "animal's have"
+        "animals's have"
       ],
       "paraphrases": [
         "animals have eyes"
@@ -2739,7 +2871,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "animals have eyes",
       "key": {
         "query": "animals have eyes"
@@ -2873,7 +3005,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -2928,6 +3068,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -2958,6 +3102,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -3017,26 +3173,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "bird",
-                0
-              ],
-              [
-                "have",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "bird",
+                0
+              ],
+              [
+                "have",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "bird",
+              0
+            ],
             "ops": [
               [
                 "bird",
@@ -3050,13 +3210,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "bird",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -3066,22 +3226,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -3089,47 +3245,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "wings",
-            "word": "wings",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "wings",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "birds have wings",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "birds have wings",
             "number": "many",
+            "value": "bird",
+            "text": "birds",
+            "marker": "bird",
             "word": "birds",
             "types": [
               "bird"
-            ],
-            "value": "bird",
-            "marker": "bird"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "birds have wings",
+          "property": {
+            "marker": "property",
+            "word": "wings",
+            "text": "wings",
+            "value": "wings",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "birds have wings",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#20: call61",
           "touchedBy": [
-            "call61"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "bird's have"
+        "birds's have"
       ],
       "paraphrases": [
         "birds have wings"
@@ -3187,7 +3341,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "birds have wings",
       "key": {
         "query": "birds have wings"
@@ -3321,7 +3475,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -3376,6 +3538,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -3406,6 +3572,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -3465,26 +3643,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "bird",
-                0
-              ],
-              [
-                "have",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "bird",
+                0
+              ],
+              [
+                "have",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "bird",
+              0
+            ],
             "ops": [
               [
                 "bird",
@@ -3498,13 +3680,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "bird",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -3514,22 +3696,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -3537,47 +3715,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "beaks",
-            "word": "beaks",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "beaks",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "birds have beaks",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "birds have beaks",
             "number": "many",
+            "value": "bird",
+            "text": "birds",
+            "marker": "bird",
             "word": "birds",
             "types": [
               "bird"
-            ],
-            "value": "bird",
-            "marker": "bird"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "birds have beaks",
+          "property": {
+            "marker": "property",
+            "word": "beaks",
+            "text": "beaks",
+            "value": "beaks",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "birds have beaks",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#23: call70",
           "touchedBy": [
-            "call70"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "bird's have"
+        "birds's have"
       ],
       "paraphrases": [
         "birds have beaks"
@@ -3635,7 +3811,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "birds have beaks",
       "key": {
         "query": "birds have beaks"
@@ -3769,7 +3945,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -3824,6 +4008,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -3854,6 +4042,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -3909,9 +4109,9 @@
         "Undefined word 'bats'",
         "Undefined word 'felines'",
         "Undefined word 'canines'",
-        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 6. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 6. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
         "Op choices were: [(('list', 0), [('is', 0), ('list', 0), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 1)]), (('mammal', 0), [('is', 0), ('list', 1), ('mammal', 0), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['is', 0], ['list', 0], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator mammal/0 was [['is', 0], ['list', 1], ['mammal', 0], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): "
@@ -3919,30 +4119,10 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "is",
-                0
-              ],
-              [
-                "list",
-                0
-              ],
-              [
-                "mammal",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "list",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -3950,7 +4130,7 @@
               ],
               [
                 "list",
-                1
+                0
               ],
               [
                 "mammal",
@@ -3960,13 +4140,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -3984,13 +4164,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4008,13 +4188,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4032,13 +4212,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4054,15 +4234,15 @@
               ],
               [
                 "unknown",
-                1
+                0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4080,13 +4260,13 @@
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "mammal",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4097,16 +4277,20 @@
                 1
               ],
               [
+                "mammal",
+                0
+              ],
+              [
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4120,22 +4304,38 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -4143,71 +4343,69 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": " are mammals",
           "marker": "is",
-          "number": "many",
           "word": "are",
-          "two": {
-            "text": "mammals",
-            "number": "many",
-            "word": "mammals",
-            "types": [
-              "mammal"
-            ],
-            "value": "mammal",
-            "marker": "mammal",
-            "response": true,
-            "concept": true
-          },
           "one": {
             "number": "many",
             "marker": "list",
+            "value": [
+              {
+                "marker": "unknown",
+                "word": "humans",
+                "text": "humans",
+                "value": "humans",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "bats",
+                "text": "bats",
+                "value": "bats",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "felines",
+                "text": "felines",
+                "value": "felines",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "canines",
+                "text": "canines",
+                "value": "canines",
+                "unknown": true
+              }
+            ],
             "types": [
               "list",
               "unknown"
             ],
-            "value": [
-              {
-                "text": "humans",
-                "word": "humans",
-                "value": "humans",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "bats",
-                "word": "bats",
-                "value": "bats",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "felines",
-                "word": "felines",
-                "value": "felines",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "canines",
-                "word": "canines",
-                "value": "canines",
-                "unknown": true,
-                "marker": "unknown"
-              }
+            "response": null
+          },
+          "two": {
+            "value": "mammal",
+            "number": "many",
+            "text": "mammals",
+            "marker": "mammal",
+            "word": "mammals",
+            "types": [
+              "mammal"
             ],
-            "text": " are mammals",
-            "response": true
+            "response": null,
+            "concept": true
           },
           "topLevel": true,
-          "calls": "Context#26: call79",
           "touchedBy": [
-            "call79"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "humans, bats, felines and canines are mammal"
+        "humans, bats, felines and canines are mammals"
       ],
       "paraphrases": [
         "humans, bats, felines and canines are mammals"
@@ -4277,7 +4475,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "humans bats felines and canines are mammals",
       "key": {
         "query": "humans bats felines and canines are mammals"
@@ -4555,7 +4753,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -4610,6 +4816,10 @@
           "ifAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -4640,6 +4850,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -4695,40 +4917,21 @@
         "Undefined word 'eagles'",
         "Undefined word 'pidgeons'",
         "Undefined word 'parrots'",
-        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 6. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Op choices were: [(('list', 0), [('bird', 0), ('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('bird', 0), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['bird', 0], ['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 6. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 7. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Op choices were: [(('list', 0), [('bird', 0), ('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('bird', 0), [('bird', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1)]), (('is', 0), [('is', 0), ('list', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['bird', 0], ['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator bird/0 was [['bird', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): "
       ],
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "bird",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "list",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "list",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "bird",
@@ -4740,19 +4943,19 @@
               ],
               [
                 "list",
-                1
+                0
               ],
               [
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "bird",
@@ -4770,13 +4973,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "bird",
@@ -4794,13 +4997,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "bird",
@@ -4818,13 +5021,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "bird",
@@ -4840,15 +5043,15 @@
               ],
               [
                 "unknown",
-                1
+                0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "bird",
@@ -4866,14 +5069,18 @@
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "bird",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
+              [
+                "bird",
+                0
+              ],
               [
                 "is",
                 0
@@ -4886,13 +5093,13 @@
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -4906,22 +5113,70 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "list",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "list",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -4929,71 +5184,69 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": " are birds",
           "marker": "is",
-          "number": "many",
           "word": "are",
-          "two": {
-            "text": "birds",
-            "number": "many",
-            "word": "birds",
-            "types": [
-              "bird"
-            ],
-            "value": "bird",
-            "marker": "bird",
-            "response": true,
-            "concept": true
-          },
           "one": {
             "number": "many",
             "marker": "list",
+            "value": [
+              {
+                "marker": "unknown",
+                "word": "owls",
+                "text": "owls",
+                "value": "owls",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "eagles",
+                "text": "eagles",
+                "value": "eagles",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "pidgeons",
+                "text": "pidgeons",
+                "value": "pidgeons",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "parrots",
+                "text": "parrots",
+                "value": "parrots",
+                "unknown": true
+              }
+            ],
             "types": [
               "list",
               "unknown"
             ],
-            "value": [
-              {
-                "text": "owls",
-                "word": "owls",
-                "value": "owls",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "eagles",
-                "word": "eagles",
-                "value": "eagles",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "pidgeons",
-                "word": "pidgeons",
-                "value": "pidgeons",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "parrots",
-                "word": "parrots",
-                "value": "parrots",
-                "unknown": true,
-                "marker": "unknown"
-              }
+            "response": null
+          },
+          "two": {
+            "value": "bird",
+            "number": "many",
+            "text": "birds",
+            "marker": "bird",
+            "word": "birds",
+            "types": [
+              "bird"
             ],
-            "text": " are birds",
-            "response": true
+            "response": null,
+            "concept": true
           },
           "topLevel": true,
-          "calls": "Context#29: call97",
           "touchedBy": [
-            "call97"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "owls, eagles, pidgeons and parrots are bird"
+        "owls, eagles, pidgeons and parrots are birds"
       ],
       "paraphrases": [
         "owls, eagles, pidgeons and parrots are birds"
@@ -5063,7 +5316,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "owls eagles pidgeons and parrots are birds",
       "key": {
         "query": "owls eagles pidgeons and parrots are birds"
@@ -5377,7 +5630,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -5540,6 +5801,10 @@
           "theAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -5570,6 +5835,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -5622,33 +5899,37 @@
       ],
       "logs": [
         "Undefined word 'cats'",
-        "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Op choices were: [(('unknown', 0), [('feline', 0), ('is', 0), ('unknown', 0)]), (('feline', 0), [('feline', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['feline', 0], ['is', 0], ['unknown', 0]]\n  Context for choosing the operator feline/0 was [['feline', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): "
       ],
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "feline",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "feline",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "feline",
+              0
+            ],
             "ops": [
               [
                 "feline",
@@ -5662,13 +5943,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "feline",
-              0
             ]
           },
           {
+            "op": [
+              "unknown",
+              1
+            ],
             "ops": [
               [
                 "is",
@@ -5678,22 +5959,30 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -5701,43 +5990,42 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": "cats are felines",
           "marker": "is",
-          "number": "many",
           "word": "are",
-          "two": {
-            "text": "felines",
-            "number": "many",
-            "word": "felines",
-            "types": [
-              "feline"
-            ],
-            "value": "feline",
-            "marker": "feline",
-            "response": true,
-            "concept": true
-          },
           "one": {
-            "text": "cats are felines",
-            "marker": "unknown",
             "number": "many",
+            "marker": "unknown",
+            "word": "cats",
+            "text": "cats",
+            "value": "cats",
             "unknown": true,
             "types": [
               "unknown"
             ],
-            "value": "cats",
-            "word": "cats",
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "feline",
+            "number": "many",
+            "text": "felines",
+            "marker": "feline",
+            "word": "felines",
+            "types": [
+              "feline"
+            ],
+            "response": null,
+            "concept": true
           },
           "topLevel": true,
-          "calls": "Context#32: call115",
           "touchedBy": [
-            "call115"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "cats are feline"
+        "cats are felines"
       ],
       "paraphrases": [
         "cats are felines"
@@ -5785,7 +6073,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "cats are felines",
       "key": {
         "query": "cats are felines"
@@ -6135,7 +6423,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -6298,6 +6594,10 @@
           "theAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -6328,6 +6628,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -6381,10 +6693,10 @@
       "logs": [
         "Undefined word 'dogs'",
         "Undefined word 'wolves'",
-        "Counter == 2. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 3. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 2. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 3. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
         "Op choices were: [(('list', 0), [('canine', 0), ('is', 0), ('list', 0), ('unknown', 0)]), (('list', 1), [('canine', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('canine', 0), ('is', 0), ('list', 1), ('unknown', 0)]), (('list', 1), [('canine', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('canine', 0), [('canine', 0), ('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1)]), (('is', 0), [('is', 0), ('list', 1)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['canine', 0], ['is', 0], ['list', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['canine', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['canine', 0], ['is', 0], ['list', 1], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['canine', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator canine/0 was [['canine', 0], ['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
         "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): "
@@ -6392,30 +6704,10 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "canine",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "list",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "list",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "canine",
@@ -6427,19 +6719,19 @@
               ],
               [
                 "list",
-                1
+                0
               ],
               [
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "canine",
@@ -6457,13 +6749,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "canine",
@@ -6479,15 +6771,15 @@
               ],
               [
                 "unknown",
-                1
+                0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "canine",
@@ -6505,13 +6797,37 @@
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "canine",
               0
+            ],
+            "ops": [
+              [
+                "canine",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
+              ]
             ]
           },
           {
+            "op": [
+              "list",
+              1
+            ],
             "ops": [
               [
                 "is",
@@ -6525,13 +6841,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "list",
-              1
             ]
           },
           {
+            "op": [
+              "list",
+              1
+            ],
             "ops": [
               [
                 "is",
@@ -6545,13 +6861,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "list",
-              1
             ]
           },
           {
+            "op": [
+              "list",
+              1
+            ],
             "ops": [
               [
                 "is",
@@ -6561,38 +6877,34 @@
                 "list",
                 1
               ]
-            ],
-            "op": [
-              "list",
-              1
             ]
           },
           {
-            "ops": [
-              [
-                "is",
-                0
-              ],
-              [
-                "list",
-                1
-              ]
-            ],
             "op": [
               "is",
               0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ]
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -6600,57 +6912,55 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": " are canines",
           "marker": "is",
-          "number": "many",
           "word": "are",
-          "two": {
-            "text": "canines",
-            "number": "many",
-            "word": "canines",
-            "types": [
-              "canine"
-            ],
-            "value": "canine",
-            "marker": "canine",
-            "response": true,
-            "concept": true
-          },
           "one": {
             "number": "many",
             "marker": "list",
+            "value": [
+              {
+                "marker": "unknown",
+                "word": "dogs",
+                "text": "dogs",
+                "value": "dogs",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "wolves",
+                "text": "wolves",
+                "value": "wolves",
+                "unknown": true
+              }
+            ],
             "types": [
               "list",
               "unknown"
             ],
-            "value": [
-              {
-                "word": "dogs",
-                "text": "dogs",
-                "value": "dogs",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "word": "wolves",
-                "text": "wolves",
-                "value": "wolves",
-                "unknown": true,
-                "marker": "unknown"
-              }
+            "response": null
+          },
+          "two": {
+            "value": "canine",
+            "number": "many",
+            "text": "canines",
+            "marker": "canine",
+            "word": "canines",
+            "types": [
+              "canine"
             ],
-            "text": " are canines",
-            "response": true
+            "response": null,
+            "concept": true
           },
           "topLevel": true,
-          "calls": "Context#35: call125",
           "touchedBy": [
-            "call125"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "dogs and wolves are canine"
+        "dogs and wolves are canines"
       ],
       "paraphrases": [
         "dogs and wolves are canines"
@@ -6702,7 +7012,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "dogs and wolves are canines",
       "key": {
         "query": "dogs and wolves are canines"
@@ -7088,7 +7398,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "mammal",
@@ -7251,6 +7569,10 @@
           "theAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -7281,6 +7603,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -7376,26 +7710,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "bat",
-                0
-              ],
-              [
-                "have",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "bat",
+                0
+              ],
+              [
+                "have",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "bat",
+              0
+            ],
             "ops": [
               [
                 "bat",
@@ -7409,13 +7747,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "bat",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              0
+            ],
             "ops": [
               [
                 "have",
@@ -7425,22 +7763,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              0
             ]
           },
           {
+            "op": [
+              "have",
+              1
+            ],
             "ops": [
               [
                 "have",
                 1
               ]
-            ],
-            "op": [
-              "have",
-              1
             ]
           }
         ]
@@ -7448,47 +7782,45 @@
       "trace": "undefined",
       "contexts": [
         {
-          "property": {
-            "unknown": true,
-            "text": "wings",
-            "word": "wings",
-            "types": [
-              "property",
-              "unknown"
-            ],
-            "value": "wings",
-            "marker": "property"
-          },
           "doesable": true,
+          "number": "many",
+          "text": "bats have wings",
+          "marker": "have",
+          "word": "have",
           "object": {
-            "text": "bats have wings",
             "number": "many",
+            "value": "bat",
+            "text": "bats",
+            "marker": "bat",
             "word": "bats",
             "types": [
               "bat"
-            ],
-            "value": "bat",
-            "marker": "bat"
+            ]
           },
-          "number": "many",
-          "word": "have",
-          "marker": "have",
-          "text": "bats have wings",
+          "property": {
+            "marker": "property",
+            "word": "wings",
+            "text": "wings",
+            "value": "wings",
+            "unknown": true,
+            "types": [
+              "property",
+              "unknown"
+            ]
+          },
           "do": {
             "left": "object",
-            "text": "bats have wings",
             "right": "property"
           },
           "topLevel": true,
           "sameWasProcessed": true,
-          "calls": "Context#38: call139",
           "touchedBy": [
-            "call139"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "bat's have"
+        "bats's have"
       ],
       "paraphrases": [
         "bats have wings"
@@ -7546,7 +7878,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "bats have wings",
       "key": {
         "query": "bats have wings"

@@ -465,6 +465,7 @@ let config = {
             value: responses,
           }
           context.evalue = context.response
+          context.isResponse = true
         } else {
           const report = e(context.on)
           const id = report.value.value

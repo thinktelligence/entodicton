@@ -72,25 +72,6 @@ class API {
     this.mentioned({ marker: name }, value)
   }
 
-  // value is in response field
-  // TODO maybe generalize out query+evaluate along the lines of set value and set reference
-  // TODO Ugh this is duped in config.js
-  evaluate(value, context, log, s) {
-    value.evaluate = true;
-    // const instance = s(value, { debug: { apply: true } }) 
-    const instance = s(value)
-    if (!instance.evalue && !instance.verbatim) {
-      warningNotEvaluated(log, context, value);
-    }
-    if (!instance.evalue) {
-      instance.evalue = instance.value
-      instance.edefault = true
-    }
-    delete instance.evaluate
-    instance.instance = true;
-    return instance
-  }
-
   evaluateToWord(value, g) {
     return g({ ...value, evaluateToWord: true })
   }
@@ -100,7 +81,7 @@ class API {
     // const concept = s(value, { debug: { apply: true } }) 
     const concept = s(value)
     if (!concept.evalue && !concept.verbatim) {
-      warningNotEvaluated(log, context, value);
+      warningNotEvaluated(log, value);
       concept.evalue = concept.value
     }
     delete concept.evaluate
@@ -119,7 +100,7 @@ const warningIsANotImplemented = (log, context) => {
   log(indent(message, 4))
 }
 
-const warningNotEvaluated = (log, context, value) => {
+const warningNotEvaluated = (log, value) => {
   const description = 'WARNING from Dialogues KM: For semantics, implement an evaluations handler, set "value" property of the operator to the value.'
   const match = `({context}) => context.marker == '${value.marker}' && context.evaluate && <other conditions as you like>`
   const apply = `({context}) => <do stuff...>; context.value = <value>`
@@ -128,7 +109,7 @@ const warningNotEvaluated = (log, context, value) => {
   log(indent(message, 4))
 }
 
-const warningSameNotEvaluated = (log, context, one) => {
+const warningSameNotEvaluated = (log, one) => {
   const description = 'WARNING from Dialogues KM: For the "X is Y" type phrase implement a same handler.'
   const match = `({context}) => context.marker == '${one.marker}' && context.same && <other conditions as you like>`
   const apply = '({context}) => <do stuff... context.same is the other value>; context.sameWasProcessed = true'
@@ -512,8 +493,8 @@ let config = {
     },
     { 
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeQuestion') && context.paraphrase && context.topLevel && context.query,
-      apply: ({context, g}) => {
-        return `${g({...context, topLevel: undefined})}?` 
+      apply: ({context, gp}) => {
+        return `${gp({...context, topLevel: undefined})}?` 
       },
       priority: -1,
     },
@@ -620,14 +601,14 @@ let config = {
       notes: 'pull from context',
       // match: ({context}) => context.marker == 'it' && context.pullFromContext, // && context.value,
       match: ({context}) => context.pullFromContext && !context.same, // && context.value,
-      apply: ({context, s, api, log, retry}) => {
+      apply: ({context, s, api, e, log, retry}) => {
         context.value = api.mentions(context)
         if (!context.value) {
           // retry()
           context.value = { marker: 'answerNotKnown' }
           return
         }
-        const instance = api.evaluate(context.value, context, log, s)
+        const instance = e(context.value)
         if (instance.evalue && !instance.edefault) {
           context.value = instance.evalue
         }
@@ -642,7 +623,7 @@ let config = {
       */
 
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
-      apply: ({context, s, log, km, objects}) => {
+      apply: ({context, s, log, km, objects, e}) => {
         const one = context.one;
         const two = context.two;
         let concept, value;
@@ -656,13 +637,14 @@ let config = {
         // km('dialogues').api.mentioned(concept)
         // TODO wtf is the next line?
         value = JSON.parse(JSON.stringify(value))
-        let instance = km('dialogues').api.evaluate({ ...value, greg: 'greg44' }, context, log, s)
+        let instance = e(value)
         if (instance.evalue) {
           km('dialogues').api.mentioned(value)
         }
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
+          context.isResponse = true
           return
         }
         // instance.focusable = ['one', 'two']
@@ -683,6 +665,7 @@ let config = {
         }
         context.response = response
         context.evalue = response
+        context.isResponse = true
       }
     },
     { 
@@ -694,6 +677,7 @@ let config = {
           verbatim: "I don't know"
         }
         context.evalue = context.response
+        context.isResponse = true
       }
     },
 
@@ -709,11 +693,12 @@ let config = {
         two.response = null
         const onePrime = s(one)
         if (!onePrime.sameWasProcessed) {
-          warningSameNotEvaluated(log, context, one)
+          warningSameNotEvaluated(log, one)
         } else {
           if (onePrime.response) {
             context.response = onePrime.response
             context.evalue = onePrime.response
+            context.isResponse = true
           }
         }
         one.same = undefined
@@ -722,7 +707,7 @@ let config = {
           two.same = one
           twoPrime = s(two)
           if (!twoPrime.sameWasProcessed) {
-            warningSameNotEvaluated(log, context, two)
+            warningSameNotEvaluated(log, two)
           } else {
             if (twoPrime.response) {
               context.response = twoPrime.response
@@ -770,6 +755,7 @@ let config = {
         if (instance.evalue && !instance.edefault) {
           context.response = instance
           context.evalue = instance
+          context.isResponse = true
         }
       }
     },
@@ -781,7 +767,7 @@ config = new entodicton.Config(config, module)
 config.api = api
 config.add(meta)
 
-config.initializer( ({objects, config, isModule}) => {
+config.initializer( ({objects, config, api, isModule}) => {
   objects.mentioned = []
   objects.variables = {
   }
@@ -790,6 +776,7 @@ config.initializer( ({objects, config, isModule}) => {
     config.addWord("canbedoquestion", { id: "canBeDoQuestion", "initial": "{}" })
     config.addWord("doesable", { id: "doesAble", "initial": "{}" })
   }
+  config.addArgs((args) => ({ e: (context) => api.getEvaluator(args.s, args.log, context) }))
 })
 
 entodicton.knowledgeModule( { 

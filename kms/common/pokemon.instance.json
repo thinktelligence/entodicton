@@ -67,7 +67,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -96,6 +104,10 @@
         [
           "orAble",
           "ifAble"
+        ],
+        [
+          "pronoun",
+          "pronoun"
         ],
         [
           "property",
@@ -128,6 +140,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -187,26 +211,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "type",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "type",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -220,13 +248,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "modifies",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -236,10 +264,6 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "modifies",
-              0
             ]
           }
         ]
@@ -247,28 +271,27 @@
       "trace": "undefined",
       "contexts": [
         {
-          "text": "pokemon modifies type",
-          "concept": {
-            "default": true,
-            "text": "type",
-            "value": "type",
-            "word": "type",
-            "marker": "type"
-          },
-          "default": true,
-          "modifier": {
-            "word": "pokemon",
-            "unknown": true,
-            "value": "pokemon",
-            "text": "pokemon",
-            "marker": "unknown"
-          },
-          "word": "modifies",
           "marker": "modifies",
+          "default": true,
+          "text": "pokemon modifies type",
+          "word": "modifies",
+          "modifier": {
+            "marker": "unknown",
+            "word": "pokemon",
+            "text": "pokemon",
+            "value": "pokemon",
+            "unknown": true
+          },
+          "concept": {
+            "marker": "type",
+            "default": true,
+            "word": "type",
+            "text": "type",
+            "value": "type"
+          },
           "topLevel": true,
-          "calls": "Context#2: call2",
           "touchedBy": [
-            "call2"
+            "call3"
           ]
         }
       ],
@@ -321,7 +344,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "pokemon modifies type",
       "key": {
         "query": "pokemon modifies type"
@@ -387,7 +410,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -478,6 +509,10 @@
           "theAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -508,6 +543,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -589,11 +636,15 @@
       "logs": [
         "Op choices were: [(('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['pokemon_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('is', 0), ('a', 0))\n    0.5 - [['pokemon_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('isEd', 0))\n  Group 1\n    1.0 - [['pokemon_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('is', 0), ('a', 0))\n    0.5 - [['pokemon_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('isEd', 0))"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.5 - [['pokemon_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('isEd', 0))\n    1.0 - [['pokemon_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('is', 0), ('a', 0))\n  Group 1\n    0.5 - [['pokemon_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('isEd', 0))\n    1.0 - [['pokemon_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pokemon_type', 0), ('is', 0), ('a', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -611,13 +662,13 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -635,33 +686,33 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "pokemon",
-                0
-              ]
-            ],
             "op": [
               "pokemon",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "pokemon_type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -675,13 +726,13 @@
                 "pokemon_type",
                 0
               ]
-            ],
-            "op": [
-              "pokemon_type",
-              0
             ]
           },
           {
+            "op": [
+              "a",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -691,34 +742,30 @@
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "a",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -726,54 +773,53 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "pokemon type is a type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "number": "one",
-            "text": "a type",
-            "types": [
-              "type"
-            ],
-            "wantsValue": true,
-            "pullFromContext": false,
-            "concept": true,
-            "word": "type",
-            "determiner": "a",
-            "value": "type",
-            "marker": "type",
-            "modifiers": [
-              "determiner"
-            ],
-            "response": true
-          },
           "one": {
-            "text": "pokemon type is a type",
-            "pokemon": {
-              "word": "pokemon",
-              "value": "pokemon",
-              "text": "pokemon",
-              "marker": "pokemon"
-            },
+            "number": "one",
+            "value": "pokemon_type",
+            "text": "pokemon type",
+            "marker": "pokemon_type",
+            "word": "type",
             "types": [
               "pokemon_type",
               "type"
             ],
-            "number": "one",
-            "word": "type",
+            "pokemon": {
+              "value": "pokemon",
+              "text": "pokemon",
+              "marker": "pokemon",
+              "word": "pokemon"
+            },
             "atomic": true,
-            "value": "pokemon_type",
-            "marker": "pokemon_type",
             "modifiers": [
               "pokemon"
             ],
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "type",
+            "number": "one",
+            "text": "a type",
+            "marker": "type",
+            "word": "type",
+            "types": [
+              "type"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "modifiers": [
+              "determiner"
+            ],
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#5: call7",
           "touchedBy": [
-            "call7"
+            "call3"
           ]
         }
       ],
@@ -844,7 +890,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "pokemon type is a type",
       "key": {
         "query": "pokemon type is a type"
@@ -910,7 +956,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -1005,6 +1059,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -1035,6 +1093,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -1118,41 +1188,22 @@
         "Undefined word 'squirtle'",
         "Undefined word 'weedle'",
         "Undefined word 'pidgeot'",
-        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 4. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 5. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
         "Counter == 5. Applying Operator(pokemon/0, PASS, None, evaluator(Bridge('{ ...after, pokemon: operator, marker: operator(concat('pokemon_', after.value)), atomic: true, value: concat('pokemon_', after.value), modifiers: append(['pokemon'], after[0].modifiers)}')), variables({}) bridge(bridge)) failed due the matchers [Type('type')] not being present",
-        "Counter == 6. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'hierarchyAble', 'notAble', 'theAble', 'queryable', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
-        "Op choices were: [(('list', 0), [('is', 0), ('list', 0), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 1)]), (('pokemon', 0), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 0), [('is', 0), ('list', 1), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['is', 0], ['list', 0], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 1]]\n  Context for choosing the operator pokemon/0 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.5 - [['list', 0], ['unknown', 0], \">>>>2 ['isEd', 0] <<<<2\", ['pokemon', 0]]\n      (('list', 0), ('unknown', 0))\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    0.6000000000000001 - [['list', 0], ['unknown', 0], \">>>>2 ['is', 0] <<<<2\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n  Group 1\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n  Group 2\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n  Group 3\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n  Group 4\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 1), ('is', 0), ('pokemon', 0))"
+        "Counter == 6. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Counter == 7. Applying Operator(list/1, PASS, None, evaluator(Bridge('{ ...operator, value: append(before, operator.value) }')), variables({'type': ['object', 'theAble', 'queryable', 'hierarchyAble', 'notAble', 'unknown']}) bridge(bridge)) failed due the matchers [Type(variable: 'type')] not being present",
+        "Op choices were: [(('list', 0), [('is', 0), ('list', 0), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 0)]), (('list', 1), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 1)]), (('pokemon', 0), [('is', 0), ('list', 1), ('pokemon', 0), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1), ('unknown', 1)]), (('list', 1), [('is', 0), ('list', 1)]), (('is', 0), [('is', 0), ('list', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator list/0 was [['is', 0], ['list', 0], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 0]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 1]]\n  Context for choosing the operator pokemon/0 was [['is', 0], ['list', 1], ['pokemon', 0], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1], ['unknown', 1]]\n  Context for choosing the operator list/1 was [['is', 0], ['list', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['list', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.6000000000000001 - [['list', 0], ['unknown', 0], \">>>>2 ['is', 0] <<<<2\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n    0.5 - [['list', 0], ['unknown', 0], \">>>>2 ['isEd', 0] <<<<2\", ['pokemon', 0]]\n      (('list', 0), ('unknown', 0))\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n  Group 1\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n  Group 2\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n  Group 3\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 0), ('is', 0), ('pokemon', 0))\n  Group 4\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 1), ('is', 0), ('pokemon', 0))\n  Group 5\n    0.6666666666666666 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 1), ('isEd', 0))\n      (('isEd', 0), ('pokemon', 0))\n    1.0 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['pokemon', 0]]\n      (('unknown', 1), ('is', 0), ('pokemon', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "is",
-                0
-              ],
-              [
-                "list",
-                0
-              ],
-              [
-                "pokemon",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "list",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1160,7 +1211,7 @@
               ],
               [
                 "list",
-                1
+                0
               ],
               [
                 "pokemon",
@@ -1170,13 +1221,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1194,13 +1245,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1218,13 +1269,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1242,13 +1293,13 @@
                 "unknown",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1264,15 +1315,15 @@
               ],
               [
                 "unknown",
-                1
+                0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1290,13 +1341,13 @@
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "pokemon",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1307,16 +1358,20 @@
                 1
               ],
               [
+                "pokemon",
+                0
+              ],
+              [
                 "unknown",
                 1
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "list",
               1
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "is",
@@ -1330,22 +1385,70 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "list",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ],
+              [
+                "unknown",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "list",
+              1
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              0
+            ],
+            "ops": [
+              [
+                "is",
+                0
+              ],
+              [
+                "list",
+                1
+              ]
+            ]
+          },
+          {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -1353,66 +1456,64 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": " are pokemon",
           "marker": "is",
-          "number": "many",
           "word": "are",
-          "two": {
-            "text": "pokemon",
-            "dead": true,
-            "word": "pokemon",
-            "types": [
-              "pokemon"
-            ],
-            "value": "pokemon",
-            "marker": "pokemon",
-            "response": true,
-            "concept": true
-          },
           "one": {
             "number": "many",
             "marker": "list",
+            "value": [
+              {
+                "marker": "unknown",
+                "word": "pikachu",
+                "text": "pikachu",
+                "value": "pikachu",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "squirtle",
+                "text": "squirtle",
+                "value": "squirtle",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "weedle",
+                "text": "weedle",
+                "value": "weedle",
+                "unknown": true
+              },
+              {
+                "marker": "unknown",
+                "word": "pidgeot",
+                "text": "pidgeot",
+                "value": "pidgeot",
+                "unknown": true
+              }
+            ],
             "types": [
               "list",
               "unknown"
             ],
-            "value": [
-              {
-                "text": "pikachu",
-                "word": "pikachu",
-                "value": "pikachu",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "squirtle",
-                "word": "squirtle",
-                "value": "squirtle",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "weedle",
-                "word": "weedle",
-                "value": "weedle",
-                "unknown": true,
-                "marker": "unknown"
-              },
-              {
-                "text": "pidgeot",
-                "word": "pidgeot",
-                "value": "pidgeot",
-                "unknown": true,
-                "marker": "unknown"
-              }
+            "response": null
+          },
+          "two": {
+            "value": "pokemon",
+            "text": "pokemon",
+            "marker": "pokemon",
+            "word": "pokemon",
+            "dead": true,
+            "types": [
+              "pokemon"
             ],
-            "text": " are pokemon",
-            "response": true
+            "response": null,
+            "concept": true
           },
           "topLevel": true,
-          "calls": "Context#8: call19",
           "touchedBy": [
-            "call19"
+            "call3"
           ]
         }
       ],
@@ -1487,7 +1588,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "pikachu squirtle weedle and pidgeot are pokemon",
       "key": {
         "query": "pikachu squirtle weedle and pidgeot are pokemon"
@@ -1553,7 +1654,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -1720,6 +1829,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -1786,6 +1899,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -1909,26 +2034,10 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "type",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "modifies",
@@ -1940,15 +2049,35 @@
               ],
               [
                 "unknown",
-                1
+                0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "type",
               0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "type",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
             ]
           },
           {
+            "op": [
+              "unknown",
+              1
+            ],
             "ops": [
               [
                 "modifies",
@@ -1958,22 +2087,18 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "unknown",
-              1
             ]
           },
           {
+            "op": [
+              "modifies",
+              0
+            ],
             "ops": [
               [
                 "modifies",
                 0
               ]
-            ],
-            "op": [
-              "modifies",
-              0
             ]
           }
         ]
@@ -1981,28 +2106,27 @@
       "trace": "undefined",
       "contexts": [
         {
+          "marker": "modifies",
+          "default": true,
           "text": "fire modifies type",
+          "word": "modifies",
+          "modifier": {
+            "marker": "unknown",
+            "word": "fire",
+            "text": "fire",
+            "value": "fire",
+            "unknown": true
+          },
           "concept": {
+            "value": "type",
             "number": "one",
             "text": "type",
-            "value": "type",
-            "word": "type",
-            "marker": "type"
+            "marker": "type",
+            "word": "type"
           },
-          "default": true,
-          "modifier": {
-            "text": "fire",
-            "unknown": true,
-            "value": "fire",
-            "word": "fire",
-            "marker": "unknown"
-          },
-          "word": "modifies",
-          "marker": "modifies",
           "topLevel": true,
-          "calls": "Context#11: call37",
           "touchedBy": [
-            "call37"
+            "call3"
           ]
         }
       ],
@@ -2055,7 +2179,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "fire modifies type",
       "key": {
         "query": "fire modifies type"
@@ -2181,7 +2305,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -2348,6 +2480,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -2414,6 +2550,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -2537,26 +2685,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "type",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "type",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -2570,13 +2722,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "modifies",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -2586,10 +2738,6 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "modifies",
-              0
             ]
           }
         ]
@@ -2597,28 +2745,27 @@
       "trace": "undefined",
       "contexts": [
         {
+          "marker": "modifies",
+          "default": true,
           "text": "water modifies type",
+          "word": "modifies",
+          "modifier": {
+            "marker": "unknown",
+            "word": "water",
+            "text": "water",
+            "value": "water",
+            "unknown": true
+          },
           "concept": {
+            "value": "type",
             "number": "one",
             "text": "type",
-            "value": "type",
-            "word": "type",
-            "marker": "type"
+            "marker": "type",
+            "word": "type"
           },
-          "default": true,
-          "modifier": {
-            "word": "water",
-            "unknown": true,
-            "value": "water",
-            "text": "water",
-            "marker": "unknown"
-          },
-          "word": "modifies",
-          "marker": "modifies",
           "topLevel": true,
-          "calls": "Context#14: call42",
           "touchedBy": [
-            "call42"
+            "call3"
           ]
         }
       ],
@@ -2671,7 +2818,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "water modifies type",
       "key": {
         "query": "water modifies type"
@@ -2797,7 +2944,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -2964,6 +3119,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -3030,6 +3189,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -3206,33 +3377,17 @@
       ],
       "logs": [
         "Undefined word 'earth'",
-        "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('unknown', 1), [('modifies', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['modifies', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['modifies', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0]]",
+        "Op choices were: [(('unknown', 0), [('modifies', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('modifies', 0), ('type', 0), ('unknown', 1)]), (('modifies', 0), [('modifies', 0), ('unknown', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['modifies', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['modifies', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator modifies/0 was [['modifies', 0], ['unknown', 1]]",
         ""
       ],
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "type",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "modifies",
@@ -3244,15 +3399,35 @@
               ],
               [
                 "unknown",
-                1
+                0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "type",
               0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "type",
+                0
+              ],
+              [
+                "unknown",
+                1
+              ]
             ]
           },
           {
+            "op": [
+              "modifies",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -3262,22 +3437,6 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "unknown",
-              1
-            ]
-          },
-          {
-            "ops": [
-              [
-                "modifies",
-                0
-              ]
-            ],
-            "op": [
-              "modifies",
-              0
             ]
           }
         ]
@@ -3285,28 +3444,27 @@
       "trace": "undefined",
       "contexts": [
         {
+          "marker": "modifies",
+          "default": true,
           "text": "earth modifies type",
+          "word": "modifies",
+          "modifier": {
+            "marker": "unknown",
+            "word": "earth",
+            "text": "earth",
+            "value": "earth",
+            "unknown": true
+          },
           "concept": {
+            "value": "type",
             "number": "one",
             "text": "type",
-            "value": "type",
-            "word": "type",
-            "marker": "type"
+            "marker": "type",
+            "word": "type"
           },
-          "default": true,
-          "modifier": {
-            "text": "earth",
-            "unknown": true,
-            "value": "earth",
-            "word": "earth",
-            "marker": "unknown"
-          },
-          "word": "modifies",
-          "marker": "modifies",
           "topLevel": true,
-          "calls": "Context#17: call47",
           "touchedBy": [
-            "call47"
+            "call3"
           ]
         }
       ],
@@ -3359,7 +3517,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "earth modifies type",
       "key": {
         "query": "earth modifies type"
@@ -3545,7 +3703,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -3712,6 +3878,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -3778,6 +3948,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -3961,26 +4143,30 @@
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "modifies",
-                0
-              ],
-              [
-                "type",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "modifies",
+                0
+              ],
+              [
+                "type",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -3994,13 +4180,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "modifies",
+              0
+            ],
             "ops": [
               [
                 "modifies",
@@ -4010,10 +4196,6 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "modifies",
-              0
             ]
           }
         ]
@@ -4021,28 +4203,27 @@
       "trace": "undefined",
       "contexts": [
         {
+          "marker": "modifies",
+          "default": true,
           "text": "electric modifies type",
+          "word": "modifies",
+          "modifier": {
+            "marker": "unknown",
+            "word": "electric",
+            "text": "electric",
+            "value": "electric",
+            "unknown": true
+          },
           "concept": {
+            "value": "type",
             "number": "one",
             "text": "type",
-            "value": "type",
-            "word": "type",
-            "marker": "type"
+            "marker": "type",
+            "word": "type"
           },
-          "default": true,
-          "modifier": {
-            "word": "electric",
-            "unknown": true,
-            "value": "electric",
-            "text": "electric",
-            "marker": "unknown"
-          },
-          "word": "modifies",
-          "marker": "modifies",
           "topLevel": true,
-          "calls": "Context#20: call52",
           "touchedBy": [
-            "call52"
+            "call3"
           ]
         }
       ],
@@ -4095,7 +4276,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "electric modifies type",
       "key": {
         "query": "electric modifies type"
@@ -4341,7 +4522,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -4508,6 +4697,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -4574,6 +4767,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -4749,13 +4954,17 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('fire', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0)]), (('pokemon', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('pokemon_type', 0)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 3\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n  Group 4\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n  Group 5\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n  Group 6\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))"
+        "Op choices were: [(('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('fire', 0), [('a', 0), ('fire', 0), ('is', 0), ('pokemon', 0)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('pokemon', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 3\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n  Group 4\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n  Group 5\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))\n  Group 6\n    1.0 - [['fire_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['fire_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('fire_type', 0), ('isEd', 0), ('a', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -4777,13 +4986,13 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -4805,37 +5014,37 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "fire",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "pokemon",
-                0
-              ]
-            ],
             "op": [
               "fire",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "fire",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "fire_type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -4853,20 +5062,36 @@
                 "pokemon",
                 0
               ]
-            ],
-            "op": [
-              "pokemon",
-              0
             ]
           },
           {
+            "op": [
+              "pokemon",
+              0
+            ],
             "ops": [
               [
                 "a",
                 0
               ],
               [
-                "fire_type",
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
                 0
               ],
               [
@@ -4877,70 +5102,46 @@
                 "pokemon_type",
                 0
               ]
-            ],
-            "op": [
-              "pokemon_type",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "fire_type",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ],
-            "op": [
-              "fire_type",
-              0
-            ]
-          },
-          {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ],
             "op": [
               "a",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -4948,68 +5149,67 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "fire type is a pokemon type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "pokemon": {
-              "word": "pokemon",
-              "value": "pokemon",
-              "text": "pokemon",
-              "marker": "pokemon"
-            },
-            "modifiers": [
-              "determiner",
-              "pokemon"
-            ],
-            "number": "one",
-            "concept": true,
-            "word": "type",
-            "atomic": true,
-            "determiner": "a",
-            "marker": "pokemon_type",
-            "text": "a pokemon type",
-            "pullFromContext": false,
-            "types": [
-              "pokemon_type",
-              "type"
-            ],
-            "value": "pokemon_type",
-            "wantsValue": true,
-            "response": true
-          },
           "one": {
-            "text": "fire type is a pokemon type",
+            "number": "one",
+            "value": "fire_type",
+            "text": "fire type",
+            "marker": "fire_type",
+            "word": "type",
             "types": [
               "fire_type",
               "type"
             ],
             "fire": {
-              "word": "fire",
               "value": "fire",
               "text": "fire",
-              "marker": "fire"
+              "marker": "fire",
+              "word": "fire"
             },
-            "number": "one",
-            "word": "type",
             "atomic": true,
-            "value": "fire_type",
-            "marker": "fire_type",
             "modifiers": [
               "fire"
             ],
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "pokemon_type",
+            "number": "one",
+            "text": "a pokemon type",
+            "marker": "pokemon_type",
+            "word": "type",
+            "types": [
+              "pokemon_type",
+              "type"
+            ],
+            "pokemon": {
+              "value": "pokemon",
+              "text": "pokemon",
+              "marker": "pokemon",
+              "word": "pokemon"
+            },
+            "atomic": true,
+            "modifiers": [
+              "determiner",
+              "pokemon"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#23: call57",
           "touchedBy": [
-            "call57"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "fire type is pokemon_type"
+        "fire type is type"
       ],
       "paraphrases": [
         "fire type is a pokemon type"
@@ -5064,42 +5264,6 @@
             0
           ],
           [
-            "fire",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "pokemon",
-            0
-          ],
-          [
-            "type",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "fire_type",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
             "fire_type",
             0
           ],
@@ -5118,7 +5282,27 @@
             0
           ],
           [
-            "fire_type",
+            "is",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
             0
           ],
           [
@@ -5129,19 +5313,9 @@
             "pokemon_type",
             0
           ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "fire type is a pokemon type",
       "key": {
         "query": "fire type is a pokemon type"
@@ -5391,7 +5565,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -5558,6 +5740,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -5624,6 +5810,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -5799,13 +5997,17 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('water', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0), ('water', 0)]), (('water', 0), [('a', 0), ('is', 0), ('water', 0)]), (('water_type', 0), [('a', 0), ('is', 0), ('water_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['water', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0], ['water', 0]]\n  Context for choosing the operator water/0 was [['a', 0], ['is', 0], ['water', 0]]\n  Context for choosing the operator water_type/0 was [['a', 0], ['is', 0], ['water_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 3\n    1.0 - [['water_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['water_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('isEd', 0), ('a', 0))\n  Group 4\n    1.0 - [['water_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['water_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('isEd', 0), ('a', 0))"
+        "Op choices were: [(('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('type', 0), ('water', 0)]), (('water', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('water', 0)]), (('water_type', 0), [('a', 0), ('is', 0), ('pokemon', 0), ('water_type', 0)]), (('pokemon', 0), [('a', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['type', 0], ['water', 0]]\n  Context for choosing the operator water/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['water', 0]]\n  Context for choosing the operator water_type/0 was [['a', 0], ['is', 0], ['pokemon', 0], ['water_type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 3\n    1.0 - [['water_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['water_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('isEd', 0), ('a', 0))\n  Group 4\n    1.0 - [['water_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['water_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('isEd', 0), ('a', 0))\n  Group 5\n    1.0 - [['water_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['water_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('isEd', 0), ('a', 0))\n  Group 6\n    1.0 - [['water_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['water_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('water_type', 0), ('isEd', 0), ('a', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -5827,13 +6029,13 @@
                 "water",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -5855,13 +6057,13 @@
                 "water",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "water",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -5879,13 +6081,57 @@
                 "water",
                 0
               ]
+            ]
+          },
+          {
+            "op": [
+              "water_type",
+              0
             ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ],
+              [
+                "water_type",
+                0
+              ]
+            ]
+          },
+          {
             "op": [
               "pokemon",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "pokemon_type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -5898,95 +6144,47 @@
               [
                 "pokemon_type",
                 0
-              ],
-              [
-                "water",
-                0
               ]
-            ],
-            "op": [
-              "pokemon_type",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "water",
-                0
-              ]
-            ],
-            "op": [
-              "water",
-              0
-            ]
-          },
-          {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "water_type",
-                0
-              ]
-            ],
-            "op": [
-              "water_type",
-              0
-            ]
-          },
-          {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ],
             "op": [
               "a",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -5994,68 +6192,67 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "water type is a pokemon type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "pokemon": {
-              "word": "pokemon",
-              "value": "pokemon",
-              "text": "pokemon",
-              "marker": "pokemon"
-            },
-            "modifiers": [
-              "determiner",
-              "pokemon"
-            ],
-            "number": "one",
-            "concept": true,
-            "word": "type",
-            "atomic": true,
-            "determiner": "a",
-            "marker": "pokemon_type",
-            "text": "a pokemon type",
-            "pullFromContext": false,
-            "types": [
-              "pokemon_type",
-              "type"
-            ],
-            "value": "pokemon_type",
-            "wantsValue": true,
-            "response": true
-          },
           "one": {
-            "water": {
-              "word": "water",
-              "value": "water",
-              "text": "water",
-              "marker": "water"
-            },
+            "number": "one",
+            "value": "water_type",
+            "text": "water type",
+            "marker": "water_type",
+            "word": "type",
             "types": [
               "type",
               "water_type"
             ],
-            "text": "water type is a pokemon type",
-            "number": "one",
-            "word": "type",
+            "water": {
+              "value": "water",
+              "text": "water",
+              "marker": "water",
+              "word": "water"
+            },
             "atomic": true,
-            "value": "water_type",
-            "marker": "water_type",
             "modifiers": [
               "water"
             ],
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "pokemon_type",
+            "number": "one",
+            "text": "a pokemon type",
+            "marker": "pokemon_type",
+            "word": "type",
+            "types": [
+              "pokemon_type",
+              "type"
+            ],
+            "pokemon": {
+              "value": "pokemon",
+              "text": "pokemon",
+              "marker": "pokemon",
+              "word": "pokemon"
+            },
+            "atomic": true,
+            "modifiers": [
+              "determiner",
+              "pokemon"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#26: call70",
           "touchedBy": [
-            "call70"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "water type is pokemon_type"
+        "water type is type"
       ],
       "paraphrases": [
         "water type is a pokemon type"
@@ -6071,6 +6268,42 @@
           ],
           [
             "is",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ],
+          [
+            "type",
+            0
+          ],
+          [
+            "water",
             0
           ]
         ],
@@ -6124,44 +6357,30 @@
             0
           ],
           [
-            "pokemon_type",
-            0
-          ],
-          [
-            "water",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "water",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "is",
+            "pokemon",
             0
           ],
           [
             "water_type",
             0
           ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon_type",
+            0
+          ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "water type is a pokemon type",
       "key": {
         "query": "water type is a pokemon type"
@@ -6411,7 +6630,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -6578,6 +6805,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -6644,6 +6875,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -6823,13 +7066,17 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon_type', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 3\n    1.0 - [['electric_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['electric_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('is', 0), ('a', 0))\n  Group 4\n    1.0 - [['electric_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['electric_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('is', 0), ('a', 0))"
+        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0), ('pokemon', 0)]), (('pokemon', 0), [('a', 0), ('electric_type', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('electric_type', 0), ('is', 0), ('pokemon_type', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['electric_type', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['electric_type', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 3\n    1.0 - [['electric_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['electric_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('is', 0), ('a', 0))\n  Group 4\n    1.0 - [['electric_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['electric_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('is', 0), ('a', 0))\n  Group 5\n    1.0 - [['electric_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['electric_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('is', 0), ('a', 0))\n  Group 6\n    1.0 - [['electric_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['electric_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('electric_type', 0), ('is', 0), ('a', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -6851,13 +7098,13 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -6879,13 +7126,13 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "electric",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -6903,20 +7150,44 @@
                 "pokemon",
                 0
               ]
-            ],
+            ]
+          },
+          {
             "op": [
               "pokemon",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "a",
                 0
               ],
               [
-                "electric",
+                "electric_type",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "electric_type",
                 0
               ],
               [
@@ -6927,33 +7198,13 @@
                 "pokemon_type",
                 0
               ]
-            ],
-            "op": [
-              "pokemon_type",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "electric",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ],
             "op": [
-              "electric",
+              "electric_type",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "a",
@@ -6967,13 +7218,13 @@
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "electric_type",
-              0
             ]
           },
           {
+            "op": [
+              "a",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -6983,34 +7234,30 @@
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "a",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -7018,68 +7265,67 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "electric type is a pokemon type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "pokemon": {
-              "word": "pokemon",
-              "value": "pokemon",
-              "text": "pokemon",
-              "marker": "pokemon"
-            },
-            "modifiers": [
-              "determiner",
-              "pokemon"
-            ],
-            "number": "one",
-            "concept": true,
-            "word": "type",
-            "atomic": true,
-            "determiner": "a",
-            "marker": "pokemon_type",
-            "text": "a pokemon type",
-            "pullFromContext": false,
-            "types": [
-              "pokemon_type",
-              "type"
-            ],
-            "value": "pokemon_type",
-            "wantsValue": true,
-            "response": true
-          },
           "one": {
-            "text": "electric type is a pokemon type",
+            "number": "one",
+            "value": "electric_type",
+            "text": "electric type",
+            "marker": "electric_type",
+            "word": "type",
             "types": [
               "electric_type",
               "type"
             ],
-            "number": "one",
             "electric": {
-              "word": "electric",
               "value": "electric",
               "text": "electric",
-              "marker": "electric"
+              "marker": "electric",
+              "word": "electric"
             },
-            "word": "type",
             "atomic": true,
-            "value": "electric_type",
-            "marker": "electric_type",
             "modifiers": [
               "electric"
             ],
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "pokemon_type",
+            "number": "one",
+            "text": "a pokemon type",
+            "marker": "pokemon_type",
+            "word": "type",
+            "types": [
+              "pokemon_type",
+              "type"
+            ],
+            "pokemon": {
+              "value": "pokemon",
+              "text": "pokemon",
+              "marker": "pokemon",
+              "word": "pokemon"
+            },
+            "atomic": true,
+            "modifiers": [
+              "determiner",
+              "pokemon"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#29: call83",
           "touchedBy": [
-            "call83"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "electric type is pokemon_type"
+        "electric type is type"
       ],
       "paraphrases": [
         "electric type is a pokemon type"
@@ -7100,20 +7346,6 @@
           [
             "is",
             0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "electric",
-            0
-          ],
-          [
-            "is",
-            0
           ],
           [
             "pokemon",
@@ -7139,46 +7371,6 @@
           ],
           [
             "type",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "electric",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "pokemon",
-            0
-          ],
-          [
-            "type",
-            0
-          ]
-        ],
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "electric",
-            0
-          ],
-          [
-            "is",
-            0
-          ],
-          [
-            "pokemon_type",
             0
           ]
         ],
@@ -7202,12 +7394,48 @@
             0
           ],
           [
+            "electric_type",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "electric_type",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon_type",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
             "is",
             0
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "electric type is a pokemon type",
       "key": {
         "query": "electric type is a pokemon type"
@@ -7461,7 +7689,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -7628,6 +7864,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -7694,6 +7934,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -7873,13 +8125,17 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('pokemon', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0)]), (('pokemon_type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon_type', 0)]), (('earth', 0), [('a', 0), ('earth', 0), ('is', 0)]), (('earth_type', 0), [('a', 0), ('earth_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator earth/0 was [['a', 0], ['earth', 0], ['is', 0]]\n  Context for choosing the operator earth_type/0 was [['a', 0], ['earth_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n  Group 3\n    1.0 - [['earth_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['earth_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('isEd', 0), ('a', 0))\n  Group 4\n    1.0 - [['earth_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('is', 0), ('a', 0))\n    1.0 - [['earth_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('isEd', 0), ('a', 0))"
+        "Op choices were: [(('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('type', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0), ('type', 0)]), (('earth', 0), [('a', 0), ('earth', 0), ('is', 0), ('pokemon', 0)]), (('pokemon', 0), [('a', 0), ('earth_type', 0), ('is', 0), ('pokemon', 0)]), (('earth_type', 0), [('a', 0), ('earth_type', 0), ('is', 0), ('pokemon_type', 0)]), (('pokemon_type', 0), [('a', 0), ('is', 0), ('pokemon_type', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0], ['type', 0]]\n  Context for choosing the operator earth/0 was [['a', 0], ['earth', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator pokemon/0 was [['a', 0], ['earth_type', 0], ['is', 0], ['pokemon', 0]]\n  Context for choosing the operator earth_type/0 was [['a', 0], ['earth_type', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator pokemon_type/0 was [['a', 0], ['is', 0], ['pokemon_type', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 1\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 2\n    1.0 - [['type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('type', 0), ('is', 0), ('a', 0))\n  Group 3\n    1.0 - [['earth_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['earth_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('is', 0), ('a', 0))\n  Group 4\n    1.0 - [['earth_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['earth_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('is', 0), ('a', 0))\n  Group 5\n    1.0 - [['earth_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['earth_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('is', 0), ('a', 0))\n  Group 6\n    1.0 - [['earth_type', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['earth_type', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('earth_type', 0), ('is', 0), ('a', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -7901,13 +8157,13 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -7929,81 +8185,37 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "earth",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "pokemon",
-                0
-              ]
-            ],
-            "op": [
-              "pokemon",
-              0
-            ]
-          },
-          {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "earth",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "pokemon_type",
-                0
-              ]
-            ],
-            "op": [
-              "pokemon_type",
-              0
-            ]
-          },
-          {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "earth",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ],
             "op": [
               "earth",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "earth",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "pokemon",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -8016,14 +8228,62 @@
               [
                 "is",
                 0
+              ],
+              [
+                "pokemon",
+                0
               ]
-            ],
-            "op": [
-              "earth_type",
-              0
             ]
           },
           {
+            "op": [
+              "earth_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "earth_type",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon_type",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "pokemon_type",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pokemon_type",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "a",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -8033,34 +8293,30 @@
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "a",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -8068,68 +8324,67 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "earth type is a pokemon type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "pokemon": {
-              "word": "pokemon",
-              "value": "pokemon",
-              "text": "pokemon",
-              "marker": "pokemon"
-            },
-            "modifiers": [
-              "determiner",
-              "pokemon"
-            ],
-            "number": "one",
-            "concept": true,
-            "word": "type",
-            "atomic": true,
-            "determiner": "a",
-            "marker": "pokemon_type",
-            "text": "a pokemon type",
-            "pullFromContext": false,
-            "types": [
-              "pokemon_type",
-              "type"
-            ],
-            "value": "pokemon_type",
-            "wantsValue": true,
-            "response": true
-          },
           "one": {
-            "text": "earth type is a pokemon type",
+            "number": "one",
+            "value": "earth_type",
+            "text": "earth type",
+            "marker": "earth_type",
+            "word": "type",
             "types": [
               "earth_type",
               "type"
             ],
+            "earth": {
+              "value": "earth",
+              "text": "earth",
+              "marker": "earth",
+              "word": "earth"
+            },
+            "atomic": true,
             "modifiers": [
               "earth"
             ],
+            "response": null
+          },
+          "two": {
+            "value": "pokemon_type",
             "number": "one",
+            "text": "a pokemon type",
+            "marker": "pokemon_type",
             "word": "type",
-            "atomic": true,
-            "value": "earth_type",
-            "marker": "earth_type",
-            "earth": {
-              "word": "earth",
-              "value": "earth",
-              "text": "earth",
-              "marker": "earth"
+            "types": [
+              "pokemon_type",
+              "type"
+            ],
+            "pokemon": {
+              "value": "pokemon",
+              "text": "pokemon",
+              "marker": "pokemon",
+              "word": "pokemon"
             },
-            "response": true
+            "atomic": true,
+            "modifiers": [
+              "determiner",
+              "pokemon"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#32: call96",
           "touchedBy": [
-            "call96"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "earth type is pokemon_type"
+        "earth type is type"
       ],
       "paraphrases": [
         "earth type is a pokemon type"
@@ -8138,20 +8393,6 @@
         ""
       ],
       "associations": [
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "earth",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
         [
           [
             "a",
@@ -8198,7 +8439,25 @@
             0
           ],
           [
-            "earth",
+            "earth_type",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pokemon",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "earth_type",
             0
           ],
           [
@@ -8216,10 +8475,6 @@
             0
           ],
           [
-            "earth_type",
-            0
-          ],
-          [
             "is",
             0
           ]
@@ -8232,10 +8487,14 @@
           [
             "is",
             0
+          ],
+          [
+            "pokemon_type",
+            0
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "earth type is a pokemon type",
       "key": {
         "query": "earth type is a pokemon type"
@@ -8493,7 +8752,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -8660,6 +8927,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -8726,6 +8997,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -8905,13 +9188,17 @@
         ]
       ],
       "logs": [
-        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pikachu', 0), ('type', 0)]), (('pikachu', 0), [('a', 0), ('electric', 0), ('is', 0), ('pikachu', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pikachu', 0], ['type', 0]]\n  Context for choosing the operator pikachu/0 was [['a', 0], ['electric', 0], ['is', 0], ['pikachu', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n  Group 1\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n  Group 2\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n  Group 3\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n  Group 4\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))"
+        "Op choices were: [(('type', 0), [('a', 0), ('electric', 0), ('is', 0), ('pikachu', 0), ('type', 0)]), (('electric', 0), [('a', 0), ('electric', 0), ('is', 0), ('pikachu', 0)]), (('electric_type', 0), [('a', 0), ('electric_type', 0), ('is', 0), ('pikachu', 0)]), (('pikachu', 0), [('a', 0), ('is', 0), ('pikachu', 0)]), (('a', 0), [('a', 0), ('is', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator type/0 was [['a', 0], ['electric', 0], ['is', 0], ['pikachu', 0], ['type', 0]]\n  Context for choosing the operator electric/0 was [['a', 0], ['electric', 0], ['is', 0], ['pikachu', 0]]\n  Context for choosing the operator electric_type/0 was [['a', 0], ['electric_type', 0], ['is', 0], ['pikachu', 0]]\n  Context for choosing the operator pikachu/0 was [['a', 0], ['is', 0], ['pikachu', 0]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n  Group 1\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n  Group 2\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n  Group 3\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))\n  Group 4\n    1.0 - [['pikachu', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('isEd', 0), ('a', 0))\n    1.0 - [['pikachu', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('pikachu', 0), ('is', 0), ('a', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -8933,13 +9220,13 @@
                 "type",
                 0
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "electric",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -8957,33 +9244,13 @@
                 "pikachu",
                 0
               ]
-            ],
-            "op": [
-              "pikachu",
-              0
             ]
           },
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "electric",
-                0
-              ],
-              [
-                "is",
-                0
-              ]
-            ],
             "op": [
-              "electric",
+              "electric_type",
               0
-            ]
-          },
-          {
+            ],
             "ops": [
               [
                 "a",
@@ -8996,14 +9263,38 @@
               [
                 "is",
                 0
+              ],
+              [
+                "pikachu",
+                0
               ]
-            ],
-            "op": [
-              "electric_type",
-              0
             ]
           },
           {
+            "op": [
+              "pikachu",
+              0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "pikachu",
+                0
+              ]
+            ]
+          },
+          {
+            "op": [
+              "a",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -9013,34 +9304,30 @@
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "a",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -9048,57 +9335,56 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "pikachu is an electric type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "determiner": "a",
-            "modifiers": [
-              "determiner",
-              "electric"
-            ],
-            "number": "one",
-            "concept": true,
-            "word": "type",
-            "atomic": true,
-            "marker": "electric_type",
-            "text": "an electric type",
-            "pullFromContext": false,
-            "electric": {
-              "word": "electric",
-              "value": "electric",
-              "text": "electric",
-              "marker": "electric"
-            },
-            "types": [
-              "electric_type",
-              "type"
-            ],
-            "value": "electric_type",
-            "wantsValue": true,
-            "response": true
-          },
           "one": {
-            "text": "pikachu is an electric type",
             "number": "one",
+            "value": "pikachu",
+            "text": "pikachu",
+            "marker": "pikachu",
             "word": "pikachu",
             "types": [
               "pikachu"
             ],
-            "value": "pikachu",
-            "marker": "pikachu",
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "electric_type",
+            "number": "one",
+            "text": "an electric type",
+            "marker": "electric_type",
+            "word": "type",
+            "types": [
+              "electric_type",
+              "type"
+            ],
+            "electric": {
+              "value": "electric",
+              "text": "electric",
+              "marker": "electric",
+              "word": "electric"
+            },
+            "atomic": true,
+            "modifiers": [
+              "determiner",
+              "electric"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#35: call109",
           "touchedBy": [
-            "call109"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "pikachu is electric_type"
+        "pikachu is type"
       ],
       "paraphrases": [
         "pikachu is a electric type"
@@ -9107,20 +9393,6 @@
         ""
       ],
       "associations": [
-        [
-          [
-            "a",
-            0
-          ],
-          [
-            "electric",
-            0
-          ],
-          [
-            "is",
-            0
-          ]
-        ],
         [
           [
             "a",
@@ -9173,6 +9445,10 @@
           [
             "is",
             0
+          ],
+          [
+            "pikachu",
+            0
           ]
         ],
         [
@@ -9182,6 +9458,20 @@
           ],
           [
             "is",
+            0
+          ]
+        ],
+        [
+          [
+            "a",
+            0
+          ],
+          [
+            "is",
+            0
+          ],
+          [
+            "pikachu",
             0
           ]
         ],
@@ -9204,7 +9494,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "pikachu is an electric type",
       "key": {
         "query": "pikachu is an electric type"
@@ -9462,7 +9752,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "likes",
@@ -9633,6 +9931,10 @@
           "type"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -9699,6 +10001,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "type",
@@ -9881,39 +10195,43 @@
         "Undefined word 'charmander'",
         "Op choices were: [(('unknown', 0), [('a', 0), ('fire', 0), ('is', 0), ('type', 0), ('unknown', 0)]), (('type', 0), [('a', 0), ('fire', 0), ('is', 0), ('type', 0), ('unknown', 1)]), (('fire', 0), [('a', 0), ('fire', 0), ('is', 0), ('unknown', 1)]), (('fire_type', 0), [('a', 0), ('fire_type', 0), ('is', 0), ('unknown', 1)]), (('a', 0), [('a', 0), ('is', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['a', 0], ['fire', 0], ['is', 0], ['type', 0], ['unknown', 0]]\n  Context for choosing the operator type/0 was [['a', 0], ['fire', 0], ['is', 0], ['type', 0], ['unknown', 1]]\n  Context for choosing the operator fire/0 was [['a', 0], ['fire', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator fire_type/0 was [['a', 0], ['fire_type', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator a/0 was [['a', 0], ['is', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 0), ('isEd', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 0), ('is', 0))\n  Group 1\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 2\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 3\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n  Group 4\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 0), ('is', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 0), ('isEd', 0))\n  Group 1\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n  Group 2\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n  Group 3\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))\n  Group 4\n    0.5 - [['unknown', 0], \">>>>1 ['isEd', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('isEd', 0))\n    0.5 - [['unknown', 0], \">>>>1 ['is', 0] <<<<1\", ['a', 0]]\n      (('unknown', 1), ('is', 0))"
       ],
       "metadata": {
         "opChoices": [
           {
-            "ops": [
-              [
-                "a",
-                0
-              ],
-              [
-                "fire",
-                0
-              ],
-              [
-                "is",
-                0
-              ],
-              [
-                "type",
-                0
-              ],
-              [
-                "unknown",
-                0
-              ]
-            ],
             "op": [
               "unknown",
               0
+            ],
+            "ops": [
+              [
+                "a",
+                0
+              ],
+              [
+                "fire",
+                0
+              ],
+              [
+                "is",
+                0
+              ],
+              [
+                "type",
+                0
+              ],
+              [
+                "unknown",
+                0
+              ]
             ]
           },
           {
+            "op": [
+              "type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -9935,13 +10253,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "type",
-              0
             ]
           },
           {
+            "op": [
+              "fire",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -9959,13 +10277,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "fire",
-              0
             ]
           },
           {
+            "op": [
+              "fire_type",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -9983,13 +10301,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "fire_type",
-              0
             ]
           },
           {
+            "op": [
+              "a",
+              0
+            ],
             "ops": [
               [
                 "a",
@@ -10003,13 +10321,13 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "a",
-              0
             ]
           },
           {
+            "op": [
+              "unknown",
+              1
+            ],
             "ops": [
               [
                 "is",
@@ -10019,34 +10337,30 @@
                 "unknown",
                 1
               ]
-            ],
-            "op": [
-              "unknown",
-              1
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -10054,58 +10368,57 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "one",
           "text": "charmander is a fire type",
           "marker": "is",
-          "number": "one",
           "word": "is",
-          "two": {
-            "determiner": "a",
-            "modifiers": [
-              "determiner",
-              "fire"
-            ],
-            "number": "one",
-            "concept": true,
-            "word": "type",
-            "atomic": true,
-            "marker": "fire_type",
-            "text": "a fire type",
-            "fire": {
-              "word": "fire",
-              "value": "fire",
-              "text": "fire",
-              "marker": "fire"
-            },
-            "pullFromContext": false,
-            "types": [
-              "fire_type",
-              "type"
-            ],
-            "value": "fire_type",
-            "wantsValue": true,
-            "response": true
-          },
           "one": {
-            "text": "charmander is a fire type",
-            "marker": "unknown",
             "number": "one",
+            "marker": "unknown",
+            "word": "charmander",
+            "text": "charmander",
+            "value": "charmander",
             "unknown": true,
             "types": [
               "unknown"
             ],
-            "value": "charmander",
-            "word": "charmander",
-            "response": true
+            "response": null
+          },
+          "two": {
+            "value": "fire_type",
+            "number": "one",
+            "text": "a fire type",
+            "marker": "fire_type",
+            "word": "type",
+            "types": [
+              "fire_type",
+              "type"
+            ],
+            "fire": {
+              "value": "fire",
+              "text": "fire",
+              "marker": "fire",
+              "word": "fire"
+            },
+            "atomic": true,
+            "modifiers": [
+              "determiner",
+              "fire"
+            ],
+            "pullFromContext": false,
+            "concept": true,
+            "wantsValue": true,
+            "determiner": "a",
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#38: call120",
           "touchedBy": [
-            "call120"
+            "call3"
           ]
         }
       ],
       "generated": [
-        "charmander is fire_type"
+        "charmander is type"
       ],
       "paraphrases": [
         "charmander is a fire type"
@@ -10219,7 +10532,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "charmander is a fire type",
       "key": {
         "query": "charmander is a fire type"
@@ -10241,20 +10554,6 @@
       [
         "is",
         0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "earth",
-        0
-      ],
-      [
-        "is",
-        0
       ],
       [
         "pokemon",
@@ -10280,24 +10579,6 @@
       ],
       [
         "type",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "earth",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon_type",
         0
       ]
     ],
@@ -10313,19 +10594,9 @@
       [
         "is",
         0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
       ],
       [
-        "electric",
-        0
-      ],
-      [
-        "is",
+        "pokemon",
         0
       ]
     ],
@@ -10335,11 +10606,15 @@
         0
       ],
       [
-        "electric",
+        "earth_type",
         0
       ],
       [
         "is",
+        0
+      ],
+      [
+        "pokemon_type",
         0
       ]
     ],
@@ -10429,46 +10704,6 @@
         0
       ],
       [
-        "electric",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "electric",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon_type",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
         "electric_type",
         0
       ],
@@ -10489,6 +10724,10 @@
       [
         "is",
         0
+      ],
+      [
+        "pikachu",
+        0
       ]
     ],
     [
@@ -10497,7 +10736,7 @@
         0
       ],
       [
-        "fire",
+        "electric_type",
         0
       ],
       [
@@ -10515,145 +10754,7 @@
         0
       ],
       [
-        "fire",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon",
-        0
-      ],
-      [
-        "type",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "type",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire_type",
-        0
-      ],
-      [
-        "is",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire_type",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "fire_type",
+        "electric_type",
         0
       ],
       [
@@ -10671,6 +10772,126 @@
         0
       ],
       [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ],
+      [
+        "type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "type",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "unknown",
+        1
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "fire_type",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
         "fire_type",
         0
       ],
@@ -10753,6 +10974,48 @@
         0
       ],
       [
+        "pikachu",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
         "pokemon",
         0
       ]
@@ -10811,35 +11074,7 @@
         0
       ],
       [
-        "water",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon_type",
-        0
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
-        0
-      ],
-      [
-        "pokemon_type",
+        "type",
         0
       ],
       [
@@ -10857,17 +11092,7 @@
         0
       ],
       [
-        "unknown",
-        1
-      ]
-    ],
-    [
-      [
-        "a",
-        0
-      ],
-      [
-        "is",
+        "pokemon",
         0
       ],
       [
@@ -10882,11 +11107,85 @@
       ],
       [
         "is",
+        0
+      ],
+      [
+        "pokemon",
         0
       ],
       [
         "water_type",
         0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "pokemon_type",
+        0
+      ]
+    ],
+    [
+      [
+        "a",
+        0
+      ],
+      [
+        "is",
+        0
+      ],
+      [
+        "unknown",
+        1
       ]
     ],
     [

@@ -402,6 +402,26 @@
           "theAble"
         ],
         [
+          "emotion",
+          "unknown"
+        ],
+        [
+          "feel",
+          "canBeDoQuestion"
+        ],
+        [
+          "feel",
+          "canBeQuestion"
+        ],
+        [
+          "feel",
+          "ifAble"
+        ],
+        [
+          "feel",
+          "orAble"
+        ],
+        [
           "feline",
           "concept"
         ],
@@ -507,7 +527,15 @@
         ],
         [
           "it",
+          "pronoun"
+        ],
+        [
+          "it",
           "queryable"
+        ],
+        [
+          "it",
+          "toAble"
         ],
         [
           "kirk",
@@ -878,6 +906,10 @@
           "theAble"
         ],
         [
+          "pronoun",
+          "pronoun"
+        ],
+        [
           "property",
           "queryable"
         ],
@@ -904,6 +936,10 @@
         [
           "self",
           "queryable"
+        ],
+        [
+          "sentientBeing",
+          "unknown"
         ],
         [
           "spock",
@@ -952,6 +988,18 @@
         [
           "theAble",
           "theAble"
+        ],
+        [
+          "this",
+          "pronoun"
+        ],
+        [
+          "this",
+          "queryable"
+        ],
+        [
+          "toAble",
+          "toAble"
         ],
         [
           "torpedo",
@@ -1122,6 +1170,10 @@
       "metadata": {
         "opChoices": [
           {
+            "op": [
+              "kirk",
+              0
+            ],
             "ops": [
               [
                 "is",
@@ -1135,13 +1187,13 @@
                 "self",
                 0
               ]
-            ],
-            "op": [
-              "kirk",
-              0
             ]
           },
           {
+            "op": [
+              "self",
+              0
+            ],
             "ops": [
               [
                 "is",
@@ -1151,34 +1203,30 @@
                 "self",
                 0
               ]
-            ],
-            "op": [
-              "self",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              0
+            ],
             "ops": [
               [
                 "is",
                 0
               ]
-            ],
-            "op": [
-              "is",
-              0
             ]
           },
           {
+            "op": [
+              "is",
+              1
+            ],
             "ops": [
               [
                 "is",
                 1
               ]
-            ],
-            "op": [
-              "is",
-              1
             ]
           }
         ]
@@ -1186,37 +1234,36 @@
       "trace": "undefined",
       "contexts": [
         {
+          "number": "many",
           "text": "you are kirk",
           "marker": "is",
-          "number": "many",
           "word": "are",
+          "one": {
+            "number": "many",
+            "variable": true,
+            "value": "self",
+            "text": "you",
+            "marker": "self",
+            "word": "you",
+            "types": [
+              "self"
+            ],
+            "response": null
+          },
           "two": {
-            "text": "kirk",
+            "value": "kirk",
             "number": "one",
+            "text": "kirk",
+            "marker": "kirk",
             "word": "kirk",
             "types": [
               "kirk"
             ],
-            "value": "kirk",
-            "marker": "kirk",
-            "response": true
-          },
-          "one": {
-            "text": "you are kirk",
-            "types": [
-              "self"
-            ],
-            "number": "many",
-            "word": "you",
-            "variable": true,
-            "value": "self",
-            "marker": "self",
-            "response": true
+            "response": null
           },
           "topLevel": true,
-          "calls": "Context#491: call2071",
           "touchedBy": [
-            "call2071"
+            "call3"
           ]
         }
       ],
@@ -1255,7 +1302,7 @@
           ]
         ]
       ],
-      "version": "6.25.0-beta.5",
+      "version": "6.29.0-beta.3",
       "query": "you are kirk",
       "key": {
         "query": "you are kirk"

@@ -559,6 +559,7 @@ let config = {
               { marker: 'yesno', value: true, paraphrase: true },
             ]
             context.evalue = context.response
+            context.isResponse = true
             context.sameWasProcessed = true
           } else {
             const mappings = [
@@ -589,6 +590,7 @@ let config = {
             context.response = context.response.concat(fragment.instantiate(mappings))
             context.response.forEach( (r) => r.paraphrase = true )
             context.evalue = context.response
+            context.isResponse = true
             context.sameWasProcessed = true
           }
         }
@@ -653,26 +655,6 @@ let config = {
         context.focusable = ['object[0]']
         context.evalue = currentContext
         context.object = undefined;
-       
-        /* 
-        let object = km("dialogues").api.evaluate(context.object, context, log, s).response;
-        if (!object) {
-          object = context.object
-        }
-        object = km("dialogues").api.getVariable(object.value);
-        if (!api.knownObject(object)) {
-          context.verbatim = `There is no object named ${g({...context.object, paraphrase: true})}`
-          return
-        }
-        if (!api.knownProperty(object, context.value)) {
-          context.verbatim = `There is no property ${g(context.word)} of ${g({...context.object, paraphrase: true})}`
-          return
-        }
-        // context.value = api.getProperty(km("dialogues").api.getVariable(context.object.value), context.value, g)
-        context.value = api.getProperty(km("dialogues").api.getVariable(object), context.value, g)
-        context.evaluateWasProcessed = true;
-        context.object = undefined;
-        */
       }
     }
   ]
