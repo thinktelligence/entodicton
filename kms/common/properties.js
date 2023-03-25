@@ -504,17 +504,15 @@ let config = {
           return
         }
         if (!api.hasProperty(object, property)) {
-          context.response = {
+          context.evalue = {
             marker: 'yesno', 
             value: false,
           }
-          context.evalue = context.response
         } else {
-          context.response = {
+          context.evalue = {
             marker: 'yesno', 
             value: true,
           }
-          context.evalue = context.response
           return
         }
       }
@@ -555,10 +553,9 @@ let config = {
           const fragment = config.fragment("the property1 of object1 is value1")
           const value = api.getProperty(objectId, propertyId)
           if (value.value == context.same.value) {
-            context.response = [
+            context.evalue = [
               { marker: 'yesno', value: true, paraphrase: true },
             ]
-            context.evalue = context.response
             context.isResponse = true
             context.sameWasProcessed = true
           } else {
@@ -579,17 +576,11 @@ let config = {
               },
             ]
             // run the query 'the property of object' then copy that here and template it
-            /*
-            context.response = { 
-              verbatim: "no way hose" 
-            }
-            */
-            context.response = [
+            context.evalue = [
               { marker: 'yesno', value: false, paraphrase: true },
             ]
-            context.response = context.response.concat(fragment.instantiate(mappings))
-            context.response.forEach( (r) => r.paraphrase = true )
-            context.evalue = context.response
+            context.evalue = context.evalue.concat(fragment.instantiate(mappings))
+            context.evalue.forEach( (r) => r.paraphrase = true )
             context.isResponse = true
             context.sameWasProcessed = true
           }

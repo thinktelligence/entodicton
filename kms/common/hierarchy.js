@@ -83,7 +83,7 @@ let config = {
         concept.isQuery = undefined
 
         const many = isMany(concept) || isMany(instance)
-        const response = {
+        context.evalue = {
           "default": true,
           "marker": "is",
           "one": concept,
@@ -92,7 +92,6 @@ let config = {
           "word": many ? "are" : "is",
           "number": many ? "many" : undefined,
         }
-        context.evalue = response
         context.isResponse = true
       },
     },

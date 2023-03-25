@@ -193,13 +193,11 @@ class API {
         value.query = true
         let instance = e(value)
         if (instance.verbatim) {
-          context.response = { verbatim: instance.verbatim }
-          context.evalue = context.response
+          context.evalue = { verbatim: instance.verbatim }
           return
         }
         if (instance.evalue.marker == 'answerNotKnown') {
-          context.response = instance.response
-          context.evalue = instance.response
+          context.evalue = instance.evalue
           return
         }
         const selected = instance.evalue.value.map( (r) => r[property] )
@@ -450,19 +448,19 @@ class API {
       apply: ({context, g, km}) => {
         const brief = km("dialogues").api.getBrief()
 
-        const { response } = context 
+        const { evalue } = context 
         let yesno = ''
-        if (!context.do.query || response.truthValueOnly || brief) {
-          if (response.truthValue) {
+        if (!context.do.query || evalue.truthValueOnly || brief) {
+          if (evalue.truthValue) {
             yesno = 'yes'
-          } else if (response.truthValue === false) {
+          } else if (evalue.truthValue === false) {
             yesno = 'no'
           }
         }
-        if (response.truthValueOnly || brief) {
+        if (evalue.truthValueOnly || brief) {
           return `${yesno}`
         } else {
-          return `${yesno} ${g(Object.assign({}, response, { paraphrase: true }))}`
+          return `${yesno} ${g(Object.assign({}, evalue, { paraphrase: true }))}`
         }
       }
     })
@@ -500,16 +498,14 @@ class API {
               const response = _.clone(context)
               response.isResponse = true
               response.query = undefined
-              context.response = { marker: 'list', value: [response] }
-              context.evalue = context.response
+              context.evalue = { marker: 'list', value: [response] }
             } else {
-              context.response = { marker: 'list', value: unflatten(matches) }
-              context.evalue = context.response
-              context.response.isResponse = true
+              context.evalue = { marker: 'list', value: unflatten(matches) }
+              context.evalue.isResponse = true
             }
-            context.response.truthValue = matches.length > 0
-            context.response.truth = { marker: 'yesno', value: matches.length > 0, isResponse: true, focus: true }
-            context.response.focusable = ['truth']
+            context.evalue.truthValue = matches.length > 0
+            context.evalue.truth = { marker: 'yesno', value: matches.length > 0, isResponse: true, focus: true }
+            context.evalue.focusable = ['truth']
             if (!context.evalue.truthValue) {
               context.evalue.truthValueOnly = true
             }
@@ -523,11 +519,9 @@ class API {
             const matches = propertiesAPI.relation_get(context, ['ordering', ordering.object])
             if (matches.length == 0) {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
-              context.response = { marker: 'idontknow', query: _.clone(context), isResponse: true }
-              context.evalue = context.response
+              context.evalue = { marker: 'idontknow', query: _.clone(context), isResponse: true }
             } else {
-              context.response = { marker: 'list', value: matches, isResponse: true }
-              context.evalue = context.response
+              context.evalue = { marker: 'list', value: matches, isResponse: true }
             }
             context.isResponse = true
             context.evalue.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
@@ -556,12 +550,11 @@ class API {
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('properties').api
-          context.response = {
+          context.evalue = {
             marker: 'list',
             value: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
           }
-          context.evalue = context.response
-          context.response.isResponse = true
+          context.evalue.isResponse = true
           context.isResponse = true
           if (context.evalue.value.length == 0) {
             context.evalue.marker = 'answerNotKnown';
@@ -1056,7 +1049,7 @@ class API {
     }
 
     word = Object.assign({}, word)
-    delete word.response
+    delete word.evalue
     word.paraphrase = true
 
     if (this.objects.valueToWords[value].some( (entry) => deepEqual(entry, word) )) {

@@ -145,10 +145,9 @@ let config = {
     {
       match: ({context}) => ['e', 'f', 'g'].includes(context.marker),
       apply: ({context}) => {
-        context.response = {
+        context.evalue = {
           verbatim: `this is ${context.marker} response`
         }
-        context.evalue = context.response
         context.isResponse = true
       },
       development: true,
@@ -160,11 +159,10 @@ let config = {
         for (const value of context.value) {
           response.push(s(value))
         }
-        context.response = {
+        context.evalue = {
           marker: 'orList', 
           value: response
         }
-        context.evalue = context.response
         context.isResponse = true
       },
     },
@@ -222,14 +220,13 @@ let config = {
                   response = { marker: 'list', truthValue: valuesPrime.length > 0, value: unflatten(valuesPrime, context.flatten || []) }
                 } else {
                   const toPrime = toPrimes[0][0]
-                  response = toPrime.response
+                  response = toPrime.evalue
                 }
               } else {
                 const toPrime = toPrimes[0][0]
                 response = toPrime
               }
 
-              context.response = response
               context.evalue = response
               context.isResponse = true
             }
@@ -317,10 +314,8 @@ let config = {
             toPrime = s(TO)
             if (context.query) {
               if (toPrime.evalue) {
-                context.response = toPrime.response
-                context.evalue = toPrime.response
+                context.evalue = toPrime.evalue
               } else {
-                context.response = toPrime
                 context.evalue = toPrime
               }
             } else {

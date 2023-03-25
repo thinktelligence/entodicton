@@ -506,20 +506,6 @@ let config = {
           const api = apis[listing.api]
           context.listing = api.getAllProducts(listing)
           context.id = id
-          /*
-          ask([
-                {
-                  // matchq: ({objects}) => !objects.winningScore,
-                  applyq: ({gs, apis}) => `which product: ${gs(Object.keys(apis), ' ', ' and ')}?`,
-                  matchr: ({context, isA}) => isA(context, 'product'),
-                  applyr: ({context}) => {
-                            const api = apis[context.marker]
-                            responseContext.listing = config._api.apis[config._api.current].getAllProducts(api.listing)
-                            context.response = responseContext
-                          }
-                }
-             ])
-           */
         }
         context.isResponse = true
       },

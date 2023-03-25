@@ -685,7 +685,7 @@ let config = {
           warningSameNotEvaluated(log, one)
         } else {
           if (onePrime.evalue) {
-            context.evalue = onePrime.response
+            context.evalue = onePrime.evalue
             context.isResponse = true
           }
         }
@@ -698,7 +698,7 @@ let config = {
             warningSameNotEvaluated(log, two)
           } else {
             if (twoPrime.evalue) {
-              context.evalue = twoPrime.response
+              context.evalue = twoPrime.evalue
             }
           }
           two.same = undefined
