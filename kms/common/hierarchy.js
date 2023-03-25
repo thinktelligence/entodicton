@@ -70,7 +70,6 @@ let config = {
         }
         let instance = e(value)
         if (instance.verbatim) {
-          context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
           context.isResponse = true
           return
@@ -93,7 +92,6 @@ let config = {
           "word": many ? "are" : "is",
           "number": many ? "many" : undefined,
         }
-        context.response = response
         context.evalue = response
         context.isResponse = true
       },
@@ -109,7 +107,6 @@ let config = {
         const value = context.objects[1];
         let instance = e(value)
         if (instance.verbatim) {
-          context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
           return
         }
@@ -131,27 +128,24 @@ let config = {
         const two = context.two
         const oneId = pluralize.singular(one.value);
         if (!api.conceptExists(oneId)) {
-          context.response = {
+          context.evalue = {
             verbatim: `I don't know about ${g({ ...one, paraphrase: true})}` 
           }
-          context.evalue = context.response
           context.isResponse = true
           return
         }
         const twoId = pluralize.singular(two.value);
         if (!api.conceptExists(twoId)) {
-          context.response = {
+          context.evalue = {
             verbatim: `I don't know about ${g({ ...two, paraphrase: true})}` 
           }
-          context.evalue = context.response
           context.isResponse = true
           return
         }
-        context.response = {
+        context.evalue = {
           marker: 'yesno',
           value: api.isA(oneId, twoId)
         }
-        context.evalue = context.response
         context.isResponse = true
       }
     },

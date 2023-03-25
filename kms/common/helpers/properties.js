@@ -194,15 +194,15 @@ class API {
         let instance = e(value)
         if (instance.verbatim) {
           context.response = { verbatim: instance.verbatim }
-          context.evalue = { verbatim: instance.verbatim }
+          context.evalue = context.response
           return
         }
-        if (instance.response.marker == 'answerNotKnown') {
+        if (instance.evalue.marker == 'answerNotKnown') {
           context.response = instance.response
           context.evalue = instance.response
           return
         }
-        const selected = instance.response.value.map( (r) => r[property] )
+        const selected = instance.evalue.value.map( (r) => r[property] )
         context.constraints = undefined;
         context.evalue = { marker: 'list', value: selected }
       },
@@ -245,7 +245,7 @@ class API {
       match: ({context}) => context.marker == edAble.operator && context.isEd,
       apply: ({context, g}) => {
         const chosen = chooseNumber(context[after[0].tag], 'is', 'are')
-        if (context[before[0].tag].response && context[before[0].tag].response.marker == 'answerNotKnown') {
+        if (context[before[0].tag].evalue && context[before[0].tag].evalue.marker == 'answerNotKnown') {
           return g(context[before[0].tag])
         }
         return `${g(context[after[0].tag])} ${chosen} ${edAble.word} by ${g(context[before[0].tag])}`
@@ -446,8 +446,7 @@ class API {
 
     config.addGenerator({
       notes: 'ordering generator for response',
-      // match: ({context}) => context.marker == operator && context.response && !context.paraphrase,
-      match: ({context}) => context.marker == operator && context.response && context.isResponse,
+      match: ({context}) => context.marker == operator && context.evalue && context.isResponse,
       apply: ({context, g, km}) => {
         const brief = km("dialogues").api.getBrief()
 
@@ -498,31 +497,23 @@ class API {
           if (matches.length > 0 || (typeof context.query == 'boolean' && context.query)) {
             // does greg like bananas
             if (matches.length == 0) {
-              /*
-              context.response = _.clone(context)
-              context.response.isResponse = true
-              context.response.query = undefined
-              */
-
               const response = _.clone(context)
               response.isResponse = true
               response.query = undefined
               context.response = { marker: 'list', value: [response] }
-              context.evalue = { marker: 'list', value: [response] }
+              context.evalue = context.response
             } else {
               context.response = { marker: 'list', value: unflatten(matches) }
-              context.evalue = { marker: 'list', value: unflatten(matches) }
+              context.evalue = context.response
               context.response.isResponse = true
             }
             context.response.truthValue = matches.length > 0
             context.response.truth = { marker: 'yesno', value: matches.length > 0, isResponse: true, focus: true }
             context.response.focusable = ['truth']
-            if (!context.response.truthValue) {
-              context.response.truthValueOnly = true
+            if (!context.evalue.truthValue) {
+              context.evalue.truthValueOnly = true
             }
 
-            // context.response = context.response;
-            // const response = context.response
             // ADD this line back and remove it to check
             // context.response = { marker: 'list', value: [response], isResponse: true }
             // Object.assign(context, { marker: 'list', value: responses, focusable: ['value'], paraphrase: true, truthValue: matches.length > 0 })
@@ -533,13 +524,13 @@ class API {
             if (matches.length == 0) {
               // Object.assign(context, { marker: 'idontknow', query: _.clone(context) })
               context.response = { marker: 'idontknow', query: _.clone(context), isResponse: true }
-              context.evalue = { marker: 'idontknow', query: _.clone(context), isResponse: true }
+              context.evalue = context.response
             } else {
               context.response = { marker: 'list', value: matches, isResponse: true }
-              context.evalue = { marker: 'list', value: matches, isResponse: true }
+              context.evalue = context.response
             }
             context.isResponse = true
-            context.response.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
+            context.evalue.truthValue = matches.length > 0 && matches[0].marker == ordering.marker
           }
         }
       })
@@ -572,9 +563,9 @@ class API {
           context.evalue = context.response
           context.response.isResponse = true
           context.isResponse = true
-          if (context.response.value.length == 0) {
-            context.response.marker = 'answerNotKnown';
-            context.response.value = [];
+          if (context.evalue.value.length == 0) {
+            context.evalue.marker = 'answerNotKnown';
+            context.evalue.value = [];
             context.evalue.marker = 'answerNotKnown';
             context.evalue.value = [];
           }

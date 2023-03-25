@@ -33,7 +33,7 @@ let config = {
   generators: [
     [({context, config}) => context.marker == 'help' && context.paraphrase, () => `help`],
     [ 
-      ({context, config}) => context.marker == 'help' && context.response, ({context, config}) => {
+      ({context, config}) => context.marker == 'help' && context.evalue, ({context, config}) => {
         let help = `MAIN KNOWLEDGE MODULE\n\n`
         help += getHelp(config, 2)
 

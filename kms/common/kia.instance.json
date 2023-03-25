@@ -960,9 +960,9 @@
       ],
       "logs": [
         "Undefined word 'kia'",
-        "Op choices were: [(('unknown', 0), [('is', 0), ('self', 0), ('unknown', 0)]), (('self', 0), [('is', 0), ('self', 0), ('unknown', 1)]), (('unknown', 1), [('is', 0), ('unknown', 1)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
-        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['self', 0], ['unknown', 0]]\n  Context for choosing the operator self/0 was [['is', 0], ['self', 0], ['unknown', 1]]\n  Context for choosing the operator unknown/1 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.0 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 0))\n  Group 1\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 1))\n  Group 2\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 1))\n  Group 3\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 1))"
+        "Op choices were: [(('unknown', 0), [('is', 0), ('self', 0), ('unknown', 0)]), (('self', 0), [('is', 0), ('self', 0), ('unknown', 1)]), (('is', 0), [('is', 0), ('unknown', 1)]), (('is', 1), [('is', 1)])]",
+        "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator unknown/0 was [['is', 0], ['self', 0], ['unknown', 0]]\n  Context for choosing the operator self/0 was [['is', 0], ['self', 0], ['unknown', 1]]\n  Context for choosing the operator is/0 was [['is', 0], ['unknown', 1]]\n  Context for choosing the operator is/1 was [['is', 1]]",
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 0))\n    0.0 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n  Group 1\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 1))\n  Group 2\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['unknown', 0]]\n      (('isEd', 0), ('unknown', 1))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['unknown', 0]]\n      (('self', 0), ('is', 0), ('unknown', 1))"
       ],
       "metadata": {
         "opChoices": [
@@ -1008,8 +1008,8 @@
           },
           {
             "op": [
-              "unknown",
-              1
+              "is",
+              0
             ],
             "ops": [
               [
@@ -1019,18 +1019,6 @@
               [
                 "unknown",
                 1
-              ]
-            ]
-          },
-          {
-            "op": [
-              "is",
-              0
-            ],
-            "ops": [
-              [
-                "is",
-                0
               ]
             ]
           },
@@ -1064,8 +1052,7 @@
             "word": "you",
             "types": [
               "self"
-            ],
-            "response": null
+            ]
           },
           "two": {
             "marker": "unknown",
@@ -1075,8 +1062,7 @@
             "unknown": true,
             "types": [
               "unknown"
-            ],
-            "response": null
+            ]
           },
           "topLevel": true,
           "touchedBy": [

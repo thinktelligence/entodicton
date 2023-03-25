@@ -94,7 +94,7 @@ const api = new API()
 const warningIsANotImplemented = (log, context) => {
   const description = 'WARNING from Dialogues KM: For semantics in order to handle sentences of type "x is y?", set the response to what you like.'
   const match = `({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && <other conditions as you like>`
-  const apply = `({context}) => <do stuff...>; context.response = <value>`
+  const apply = `({context}) => <do stuff...>; context.evalue = <value>`
   const input = indent(JSON.stringify(context, null, 2), 2)
   const message = `${description}\nThe semantic would be\n  match: ${match}\n  apply: ${apply}\nThe input context would be:\n${input}\n`
   log(indent(message, 4))
@@ -355,8 +355,8 @@ let config = {
       // debug: 'call11',
     },
     {
-      match: ({context}) => !context.paraphrase && context.response && context.response.marker == 'yesno',
-      apply: ({context}) => context.response.value ? 'yes' : 'no',
+      match: ({context}) => !context.paraphrase && context.evalue && context.evalue.marker == 'yesno',
+      apply: ({context}) => context.evalue.value ? 'yes' : 'no',
       priority: -1,
     },
     /*
@@ -412,9 +412,9 @@ let config = {
 
     {
       notes: 'paraphrase a queryable response',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.response && !context.paraphrase,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.evalue && !context.paraphrase,
       apply: ({context, g}) => {
-        return g(context.response)
+        return g(context.evalue)
       }
     },
     {
@@ -422,9 +422,6 @@ let config = {
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.evalue,
       apply: ({context, g}) => {
         const oldValue = context.evalue.paraphrase
-        // greg33
-        // context.value.paraphrase = true
-        // context.value.response = null
         const result = g(context.evalue)
         context.evalue.paraphrase = oldValue
         return result
@@ -467,7 +464,7 @@ let config = {
       }
     ],
     [ 
-      ({context}) => context.marker == 'what' && (context.response || context.paraphrase), 
+      ({context}) => context.marker == 'what' && (context.evalue || context.paraphrase), 
       ({context}) => `what` 
     ],
     [ 
@@ -483,8 +480,8 @@ let config = {
       ({context}) => `${context.subject} ${context.word}` 
     ],
     {
-      match: ({context}) => context.response && context.response.verbatim && !context.paraphrase,
-      apply: ({context}) => context.response.verbatim,
+      match: ({context}) => context.evalue && context.evalue.verbatim && !context.paraphrase,
+      apply: ({context}) => context.evalue.verbatim,
     },
     {
       match: ({context}) => context.isResponse && context.verbatim && !context.paraphrase,
@@ -502,17 +499,14 @@ let config = {
       notes: "x is y",
       match: ({context, hierarchy}) => { return hierarchy.isA(context.marker, 'is') && context.paraphrase },
       apply: ({context, g, gp}) => {
-        // greg33
-        //context.one.response = true
-        //context.two.response = true
         return `${g({ ...context.one, paraphrase: true })} ${context.word} ${gp(context.two)}` 
       }
     },
     { 
       notes: 'is with a response defined',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.response,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.evalue,
       apply: ({context, g}) => {
-        const response = context.response;
+        const response = context.evalue;
         const concept = response.concept;
         if (concept) {
           concept.paraphrase = true
@@ -526,7 +520,7 @@ let config = {
     },
     { 
       notes: 'x is y (not a response)',
-      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.response,
+      match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.evalue,
       apply: ({context, g}) => {
         if ((context.two.evalue || {}).marker == 'answerNotKnown') {
           return g(context.two.evalue)
@@ -559,12 +553,12 @@ let config = {
     ],
 
     [
-      ({context}) => context.response,
-      ({context, g}) => g(context.response)
+      ({context}) => context.evalue,
+      ({context, g}) => g(context.evalue)
     ],
 
     [
-      ({context}) => context.response,
+      ({context}) => context.evalue,
       ({context}) => `the ${context.word}` 
     ],
 
@@ -642,7 +636,6 @@ let config = {
           km('dialogues').api.mentioned(value)
         }
         if (instance.verbatim) {
-          context.response = { verbatim: instance.verbatim }
           context.evalue = { verbatim: instance.verbatim }
           context.isResponse = true
           return
@@ -654,7 +647,7 @@ let config = {
         concept.isQuery = undefined
 
         const many = isMany(concept) || isMany(instance)
-        const response = {
+        const evalue = {
           "default": true,
           "marker": "is",
           "one": concept,
@@ -663,8 +656,7 @@ let config = {
           "word": many ? "are" : "is",
           "number": many ? "many" : undefined,
         }
-        context.response = response
-        context.evalue = response
+        context.evalue = evalue
         context.isResponse = true
       }
     },
@@ -673,10 +665,9 @@ let config = {
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
       apply: ({context, log}) => {
         warningIsANotImplemented(log, context)
-        context.response = {
+        context.evalue = {
           verbatim: "I don't know"
         }
-        context.evalue = context.response
         context.isResponse = true
       }
     },
@@ -689,14 +680,11 @@ let config = {
         const one = context.one;
         const two = context.two;
         one.same = two;
-        one.response = null
-        two.response = null
         const onePrime = s(one)
         if (!onePrime.sameWasProcessed) {
           warningSameNotEvaluated(log, one)
         } else {
-          if (onePrime.response) {
-            context.response = onePrime.response
+          if (onePrime.evalue) {
             context.evalue = onePrime.response
             context.isResponse = true
           }
@@ -709,8 +697,7 @@ let config = {
           if (!twoPrime.sameWasProcessed) {
             warningSameNotEvaluated(log, two)
           } else {
-            if (twoPrime.response) {
-              context.response = twoPrime.response
+            if (twoPrime.evalue) {
               context.evalue = twoPrime.response
             }
           }
@@ -747,13 +734,10 @@ let config = {
     {
       priority: 2,
       notes: 'evaluate top level not already done',
-      // match: ({context}) => context.topLevel && !context.value && !context.response,
-      // greg44
-      match: ({context}) => context.topLevel && !context.response,
+      match: ({context}) => context.topLevel && !context.evalue,
       apply: ({context, e}) => {
         const instance = e({ ...context, value: undefined, topLevel: undefined })
         if (instance.evalue && !instance.edefault) {
-          context.response = instance
           context.evalue = instance
           context.isResponse = true
         }

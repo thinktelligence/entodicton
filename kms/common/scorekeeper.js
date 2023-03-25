@@ -132,7 +132,7 @@ let config = {
     {
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.isResponse && context.two && context.two.marker == 'next',
       apply: ({context, g}) => {
-                const response = context.response;
+                const response = context.evalue;
                 const concept = response.two;
                 concept.paraphrase = true
                 concept.isSelf = true
@@ -187,72 +187,6 @@ let config = {
           context.verbatim = `New game the winning score is ${objects.winningScore}. The players are ${objects.players}`
           context.isResponse = true;
         } else {
-          /*
-          config.addMotivation({
-            match: ({context}) => context.marker == 'point',
-            apply: ({context, objects}) => { 
-              objects.winningScore = context.amount.value
-              context.verbatim = `The winning score is ${objects.winningScore}`
-              context.response = true;
-            }
-          })
-          config.addMotivation({
-            match: ({context}) => context.marker == 'list',
-            apply: ({context, gs, objects, config}) => { 
-              const players = context.value.map( (player) => player.value )
-              setPlayers(objects, config, players)
-              objects.allPlayersAreKnown = true;
-              context.verbatim = `The players are ${gs(objects.players, ' ', ' and ')}`
-              context.response = true;
-            }
-          })
-          config.addMotivation({
-              match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
-              apply: ({context, objects, config}) => {
-                if (!objects.winningScore) {
-                  // ask about points setup points motivation
-                  context.motivationKeep = true
-                  context.verbatim = 'what is the winning score?'
-                  context.response = true;
-                  delete context.controlRemove;
-                  context.controlKeepMotivation = true;
-                } else if (objects.players.length == 0) {
-                  // ask about players setup points motivation
-                  context.motivationKeep = true
-                  context.verbatim = 'who are the players?'
-                  context.response = true;
-                  delete context.controlRemove;
-                  context.controlKeepMotivation = true;
-                }
-              }
-          })
-          */
-
-          /*
-          const ask = (asks) => {
-            for (let ask of asks) {
-              config.addMotivation({
-                match: (args) => ask.matchr(args),
-                apply: (args) => ask.applyr(args)
-              })
-            }
-            config.addMotivation({
-                match: ({context}) => context.marker == 'controlEnd' || context.marker == 'controlBetween',
-                apply: (args) => {
-                  for (let ask of asks) {
-                    if (ask.matchq(args)) {
-                      args.context.motivationKeep = true
-                      args.context.verbatim = ask.applyq(args)
-                      args.context.response = true;
-                      delete args.context.controlRemove;
-                      args.context.controlKeepMotivation = true;
-                      break
-                    }
-                  }
-            })
-          }
-          */
-
           ask([
             {
               matchq: ({objects}) => !objects.winningScore,

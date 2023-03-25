@@ -459,12 +459,11 @@ let config = {
               isResponse: true,
             })
           }
-          context.response = {
+          context.evalue = {
             marker: 'list', 
             newLinesOnly: true,
             value: responses,
           }
-          context.evalue = context.response
           context.isResponse = true
         } else {
           const report = e(context.on)

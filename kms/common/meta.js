@@ -102,8 +102,8 @@ let config = {
       development: true,
     },
     {
-      match: ({context}) => context.response && !context.paraphrase,
-      apply: ({context}) => context.response.verbatim,
+      match: ({context}) => context.evalue && !context.paraphrase,
+      apply: ({context}) => context.evalue.verbatim,
       development: true,
     },
     {
@@ -195,9 +195,9 @@ let config = {
               let hasResponse = false
               let hasValue = false
               for (const [tp, _] of toPrimes) {
-                if (tp.response) {
+                if (tp.evalue) {
                   hasResponse = true
-                  if (tp.response.value) {
+                  if (tp.evalue.value) {
                     hasValue = true
                   }
                 }
@@ -208,10 +208,9 @@ let config = {
               if (hasResponse) {
                 if (hasValue) {
                   const valuesPrime = []
-                  toPrimes = toPrimes.filter( (toPrime) => (toPrime[0].response || {}).truthValue )
-                  // const valueAndMappings = toPrimes.filter((toPrime) => toPrime[0].response && toPrime[0].response.value).map((toPrime) => [toPrime[0].response.value, toPrime[1]])
+                  toPrimes = toPrimes.filter( (toPrime) => (toPrime[0].evalue || {}).truthValue )
                   for (const [relations, mappings] of toPrimes) {
-                    for (const relation of relations.response.value) {
+                    for (const relation of relations.evalue.value) {
                       valuePrime = _.cloneDeep(DERIVED)
                       for (let { from, to } of mappings) {
                         hashIndexesSet(valuePrime, to, hashIndexesGet(relation, from))
@@ -317,7 +316,7 @@ let config = {
             // toPrime = s(TO, { debug: { apply: true } })
             toPrime = s(TO)
             if (context.query) {
-              if (toPrime.response) {
+              if (toPrime.evalue) {
                 context.response = toPrime.response
                 context.evalue = toPrime.response
               } else {
