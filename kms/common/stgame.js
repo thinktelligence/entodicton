@@ -48,7 +48,6 @@ const config = new entodicton.Config({
     words: {"?": [{"id": "a", "initial": "{}" }]},
 }, module)
 config.api = api
-debugger;
 config.add(characters)
 
 entodicton.knowledgeModule( {
