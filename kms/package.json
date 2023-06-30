@@ -1,31 +1,6 @@
 {
-  "dependencies": {
-    "node-fetch": "^2.6.1",
-    "argparse": "^2.0.1",
-    "sort-json": "^2.0.1",
-    "deep-equal": "^2.0.5",
-    "uuid": "^9.0.0",
-    "underscore": "^1.12.0",
-    "object-path": "^0.11.8",
-    "lodash": "^4.17.21",
-    "entodicton": "6.29.0-beta.9",
-    "scriptjs": "^2.5.9",
-    "pluralize": "^8.0.0",
-    "base-64": "^1.0.0",
-    "table": "^6.7.1"
-  },
-  "version": "6.29.0-beta.9",
-  "main": "main.js",
-  "scripts": {
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "test:watch": "npm run test -- --watch",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test": "jest --config ./jest.config.json"
-  },
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
+  "license": "ISC",
+  "version": "6.29.0-beta.10",
   "keywords": [
     "NLP",
     "NLU",
@@ -35,8 +10,12 @@
     "natural language understanding",
     "chatbot"
   ],
-  "author": "dev@thinktelligence.com",
+  "main": "main.js",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "name": "ekms",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -107,6 +86,27 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "license": "ISC",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter"
+  "dependencies": {
+    "sort-json": "^2.0.1",
+    "pluralize": "^8.0.0",
+    "underscore": "^1.12.0",
+    "argparse": "^2.0.1",
+    "table": "^6.7.1",
+    "uuid": "^9.0.0",
+    "node-fetch": "^2.6.1",
+    "base-64": "^1.0.0",
+    "scriptjs": "^2.5.9",
+    "entodicton": "6.29.0-beta.10",
+    "lodash": "^4.17.21",
+    "object-path": "^0.11.8",
+    "deep-equal": "^2.0.5"
+  },
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:watch": "npm run test -- --watch",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json"
+  },
+  "author": "dev@thinktelligence.com"
 }
