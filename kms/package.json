@@ -1,26 +1,18 @@
 {
-  "dependencies": {
-    "table": "^6.7.1",
-    "node-fetch": "^2.6.1",
-    "entodicton": "6.29.0-beta.7",
-    "object-path": "^0.11.8",
-    "deep-equal": "^2.0.5",
-    "base-64": "^1.0.0",
-    "pluralize": "^8.0.0",
-    "lodash": "^4.17.21",
-    "uuid": "^9.0.0",
-    "underscore": "^1.12.0",
-    "argparse": "^2.0.1",
-    "sort-json": "^2.0.1",
-    "scriptjs": "^2.5.9"
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE"
   },
+  "name": "ekms",
+  "license": "ISC",
   "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "author": "dev@thinktelligence.com",
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "author": "dev@thinktelligence.com",
-  "license": "ISC",
-  "version": "6.29.0-beta.7",
   "keywords": [
     "NLP",
     "NLU",
@@ -30,15 +22,21 @@
     "natural language understanding",
     "chatbot"
   ],
-  "scripts": {
-    "test": "jest --config ./jest.config.json",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test:watch": "npm run test -- --watch",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "object-path": "^0.11.8",
+    "entodicton": "6.29.0-beta.8",
+    "lodash": "^4.17.21",
+    "uuid": "^9.0.0",
+    "scriptjs": "^2.5.9",
+    "sort-json": "^2.0.1",
+    "base-64": "^1.0.0",
+    "node-fetch": "^2.6.1",
+    "table": "^6.7.1",
+    "deep-equal": "^2.0.5",
+    "underscore": "^1.12.0",
+    "pluralize": "^8.0.0"
   },
-  "main": "main.js",
-  "name": "ekms",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -107,5 +105,7 @@
     "common/tell.test.json",
     "common/time.js",
     "common/time.test.json"
-  ]
+  ],
+  "version": "6.29.0-beta.8",
+  "main": "main.js"
 }
