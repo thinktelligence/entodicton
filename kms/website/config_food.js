@@ -9,29 +9,17 @@ module.exports =
     "(<aEnglish> ([food]))",
     "(([food]) [conj] ([food]))",
   ],
-  "flatten": [
-    "conj",
-  ],
-  "generators": [
-    [({context}) => context.marker == 'wantWhitespot', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
-    [({context}) => context.marker == 'wantMcDonalds', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
-    [({context}) => context.marker == 'food' && context.number > 0, ({g, context}) => `${g(context.number)} ${g(context.name)}`],
-    [({context}) => context.marker == 'food' && !('number' in context), ({g, context}) => `${g(context.name)}`],
-    [({context}) => context.marker == 'whitespot', ({g, context}) => 'Whitespot'],
-    [({context}) => context.marker == 'mcdonalds', ({g, context}) => 'McDonalds'],
-  ],
-  "floaters": [
-    "isQuery",
-  ],
   "bridges": [
-    {"level": 0, "id": "food", "bridge": "{ ...next(operator) }"},
-    {"level": 0, "id": "mcdonalds", "bridge": "{ ...next(operator) }"},
-    {"level": 0, "id": "whitespot", "bridge": "{ ...next(operator) }"},
-    {"level": 0, "id": "i", "bridge": "{ ...next(operator) }"},
-    {"level": 0, "id": "wantMcDonalds", "bridge": "{ ...next(operator), action: 'order', items: after[0], store: after[1].from }"},
-    {"level": 0, "id": "wantWhitespot", "bridge": "{ ...next(operator), action: 'order', items: after[0], store: after[1].from }"},
-    {"level": 0, "id": "fromM", "bridge": "{ ...next(operator), from: after[0] }"},
-    {"level": 0, "id": "fromW", "bridge": "{ ...next(operator), from: after[0] }"},
+    {"id": "food", "level": 0, "bridge": "{ ...next(operator) }"},
+    {"id": "mcdonalds", "level": 0, "bridge": "{ ...next(operator) }"},
+    {"id": "whitespot", "level": 0, "bridge": "{ ...next(operator) }"},
+    {"id": "i", "level": 0, "bridge": "{ ...next(operator) }"},
+    {"id": "wantMcDonalds", "level": 0, "bridge": "{ ...next(operator), action: 'order', items: after[0], store: after[1].from }"},
+    {"id": "wantWhitespot", "level": 0, "bridge": "{ ...next(operator), action: 'order', items: after[0], store: after[1].from }"},
+    {"id": "fromM", "level": 0, "bridge": "{ ...next(operator), from: after[0] }"},
+    {"id": "fromW", "level": 0, "bridge": "{ ...next(operator), from: after[0] }"},
+  ],
+  "hierarchy": [
   ],
   "priorities": [
     [["conj", 0], ["plus", 0]],
@@ -40,17 +28,19 @@ module.exports =
     "negative": [],
     "positive": [],
   },
+  "words": {
+    "cheeseburger": [{"id": "food", "initial": {"name": "cheeseburger"}}],
+    "cheeseburgers": [{"id": "food", "initial": {"name": "cheeseburger"}}],
+    "fries": [{"id": "food", "initial": {"name": "fries", "number": "many"}}],
+  },
+  "floaters": [
+    "isQuery",
+  ],
   "implicits": [
     "language",
   ],
-  "semantics": [
-  ],
-  "words": {
-    "fries": [{"id": "food", "initial": {"name": "fries", "number": "many"}}],
-    "cheeseburger": [{"id": "food", "initial": {"name": "cheeseburger"}}],
-    "cheeseburgers": [{"id": "food", "initial": {"name": "cheeseburger"}}],
-  },
-  "hierarchy": [
+  "flatten": [
+    "conj",
   ],
   "utterances": [
     "i want 2 fries and a cheeseburger from mcdonalds",
@@ -63,5 +53,15 @@ module.exports =
     "i want fries and a cheeseburger from mcdonalds",
     "i want fries from mcdonalds",
     "i want cheeseburger and fries from whitespot",
+  ],
+  "generators": [
+    [({context}) => context.marker == 'wantWhitespot', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
+    [({context}) => context.marker == 'wantMcDonalds', ({g, context}) => `order for ${g(context.items)} from ${g(context.store)}`],
+    [({context}) => context.marker == 'food' && context.number > 0, ({g, context}) => `${g(context.number)} ${g(context.name)}`],
+    [({context}) => context.marker == 'food' && !('number' in context), ({g, context}) => `${g(context.name)}`],
+    [({context}) => context.marker == 'whitespot', ({g, context}) => 'Whitespot'],
+    [({context}) => context.marker == 'mcdonalds', ({g, context}) => 'McDonalds'],
+  ],
+  "semantics": [
   ],
 };
