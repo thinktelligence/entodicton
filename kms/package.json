@@ -1,6 +1,18 @@
 {
   "name": "ekms",
+  "scripts": {
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:watch": "npm run test -- --watch"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
   "license": "ISC",
+  "main": "main.js",
+  "author": "dev@thinktelligence.com",
   "keywords": [
     "NLP",
     "NLU",
@@ -10,33 +22,20 @@
     "natural language understanding",
     "chatbot"
   ],
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "main": "main.js",
-  "version": "6.29.0-beta.11",
   "dependencies": {
-    "lodash": "^4.17.21",
-    "deep-equal": "^2.0.5",
-    "object-path": "^0.11.8",
-    "sort-json": "^2.0.1",
-    "pluralize": "^8.0.0",
-    "table": "^6.7.1",
-    "uuid": "^9.0.0",
-    "underscore": "^1.12.0",
     "base-64": "^1.0.0",
     "scriptjs": "^2.5.9",
-    "argparse": "^2.0.1",
+    "entodicton": "6.29.0-beta.12",
     "node-fetch": "^2.6.1",
-    "entodicton": "6.29.0-beta.11"
-  },
-  "scripts": {
-    "test:watch": "npm run test -- --watch",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test": "jest --config ./jest.config.json",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE"
+    "lodash": "^4.17.21",
+    "argparse": "^2.0.1",
+    "uuid": "^9.0.0",
+    "sort-json": "^2.0.1",
+    "underscore": "^1.12.0",
+    "deep-equal": "^2.0.5",
+    "object-path": "^0.11.8",
+    "pluralize": "^8.0.0",
+    "table": "^6.7.1"
   },
   "files": [
     "main.js",
@@ -108,5 +107,6 @@
     "common/time.js",
     "common/time.test.json"
   ],
-  "author": "dev@thinktelligence.com"
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "version": "6.29.0-beta.12"
 }
