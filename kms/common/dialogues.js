@@ -731,10 +731,11 @@ let config = {
         }
       }
     },
+    /*
     {
       priority: 2,
       notes: 'evaluate top level not already done',
-      match: ({context}) => context.topLevel && !context.evalue,
+      match: ({context}) => false && context.topLevel && !context.evalue,
       apply: ({context, e}) => {
         const instance = e({ ...context, value: undefined, topLevel: undefined })
         if (instance.evalue && !instance.edefault) {
@@ -743,6 +744,7 @@ let config = {
         }
       }
     },
+    */
   ],
 };
 
