@@ -1,10 +1,10 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
 const avatar = require('./avatar')
 const animals = require('./animals')
 const ordering = require('./ordering')
 const foods = require('./foods')
-entodicton.ensureTestFile(module, 'kid', 'test')
-entodicton.ensureTestFile(module, 'kid', 'instance')
+ensureTestFile(module, 'kid', 'test')
+ensureTestFile(module, 'kid', 'instance')
 const kid_tests = require('./kid.test.json')
 const kid_instance = require('./kid.instance.json')
 const pluralize = require('pluralize')
@@ -28,14 +28,14 @@ const template = {
   ]
 };
 
-const config = new entodicton.Config({ name: 'kid', }, module)
+const config = new Config({ name: 'kid', }, module)
 
 config.add(avatar)
 config.add(animals)
 config.add(foods)
 config.add(ordering)
 // config.load(template, kid_instance)
-entodicton.knowledgeModule({
+knowledgeModule({
   module,
   description: 'KM for my kids',
   config,

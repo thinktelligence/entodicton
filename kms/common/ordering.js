@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const hierarchy = require('./hierarchy')
 const ordering_tests = require('./ordering.test.json')
 const ordering_instance = require('./ordering.instance.json')
@@ -31,7 +31,7 @@ const api = new API();
 
   if a likes b then a wants b
 */
-const config = new entodicton.Config({ name: 'ordering' }, module)
+const config = new Config({ name: 'ordering' }, module)
 config.api = api
 config.add(hierarchy)
 // config.load(template, ordering_instance)
@@ -113,7 +113,7 @@ config.initializer(({config, km}) => {
   */
 })
 
-entodicton.knowledgeModule( {
+knowledgeModule( {
     module,
     description: 'ordering related concepts',
     config,

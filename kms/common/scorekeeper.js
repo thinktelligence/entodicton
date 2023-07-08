@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const numbers = require('./numbers')
 const pluralize = require('pluralize')
@@ -130,6 +130,7 @@ let config = {
 
   generators: [
     {
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.isResponse && context.two && context.two.marker == 'next',
       apply: ({context, g}) => {
                 const response = context.evalue;
@@ -141,16 +142,19 @@ let config = {
              }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'scored' && context.paraphrase,
       apply: ({context, g}) => `${g(context.player)} got ${g(context.points)}`
     },
     /*
     {
+      where: where(),
       match: ({context}) => context.marker == 'enumeration' && context.paraphrase,
       apply: ({context, g}) => `${g(context.concept)} are ${g(context.items)}`
     },
     */
     {
+      where: where(),
       match: ({context}) => context.marker == 'start' && context.paraphrase,
       apply: ({context, g}) => `start ${g(context.arg)}`
     },
@@ -159,6 +163,7 @@ let config = {
 
   semantics: [
     {
+      where: where(),
       match: ({context}) => context.marker == 'player' && context.same,
       apply: ({context, objects, config, km}) => {
         //objects.players = context.same.value.map( (props) => props.value )
@@ -174,6 +179,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'start' && context.topLevel, 
       apply: ({context, objects, km, config, ask}) => {
         objects.scores = {}
@@ -189,6 +195,7 @@ let config = {
         } else {
           ask([
             {
+              where: where(),
               matchq: ({objects}) => !objects.winningScore,
               applyq: () => 'what is the winning score?',
               matchr: ({context}) => context.marker == 'point',
@@ -199,6 +206,7 @@ let config = {
                       }
             },
             {
+              where: where(),
               matchq: ({objects}) => objects.players.length == 0,
               applyq: () => 'who are the players?',
               matchr: ({context}) => context.marker == 'list',
@@ -215,6 +223,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'turn' && context.evaluate && context.whose,
       apply: ({context, objects}) => {
         if (Number.isInteger(objects.nextPlayer)) {
@@ -225,6 +234,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'next' && context.evaluate,
       apply: ({context, objects}) => {
         if (Number.isInteger(objects.nextPlayer)) {
@@ -235,6 +245,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'player' && context.evaluate && context.pullFromContext,
       apply: ({context, objects}) => {
         const players = Object.keys(objects.scores)
@@ -247,6 +258,7 @@ let config = {
     },
       // same
     {
+      where: where(),
       match: ({context}) => context.marker == 'score' && context.same && context.winning,
       apply: ({context, objects}) => {
         // objects.winningScore = context.same.amount.value
@@ -254,6 +266,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'score' && context.evaluate && context.winning,
       apply: ({context, objects}) => {
         //context.value = { marker: 'point', value: objects.winningScore }
@@ -276,6 +289,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'score' && context.evaluate,
       apply: ({context, objects}) => {
         const players = Object.keys(objects.scores);
@@ -298,6 +312,7 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'scored',
       apply: ({context, objects, km}) => {
         const player = context.player.value;
@@ -340,7 +355,7 @@ let config = {
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(dialogues)
 config.add(numbers)
 config.add(properties)
@@ -368,7 +383,7 @@ startWithDefault20 = [
   "greg got 20 points",
 ]
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   beforeQuery: ({ query, objects }) => {
     if (startWithDefault20.includes(query)) {

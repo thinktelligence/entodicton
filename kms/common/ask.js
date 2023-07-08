@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const ask_tests = require('./ask.test.json')
 const { indent } = require('./helpers')
 
@@ -24,7 +24,7 @@ let config = {
   name: 'ask',
 };
 
-config = new entodicton.Config(config)
+config = new Config(config)
 config.api = api
 
 config.initializer( (args) => {
@@ -67,7 +67,7 @@ config.initializer( (args) => {
   }
 })
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'framework for character ask',
   config,

@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 
 let config = {
   operators: [
@@ -19,17 +19,22 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'number', ({context}) => `${context.value}` ],
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'number', 
+      apply: ({context}) => `${context.value}` 
+    },
   ],
 
   semantics: [
-    [
-      ({context}) => context.marker == 'assignment',
-      ({context, objects}) => {
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'assignment',
+      apply: ({context, objects}) => {
         console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', JSON.stringify(objects, null, 2))
         objects.variables[context.variable.marker] = context.value.marker
       }
-    ]
+    }
   ],
 };
 
@@ -37,9 +42,9 @@ url = "http://184.67.27.82"
 key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
 //url = "http://localhost:3000"
 //key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-config = new entodicton.Config(config)
+config = new Config(config)
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   url,
   key,
   name: 'punctuation',

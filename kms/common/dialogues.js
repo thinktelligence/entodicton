@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const meta = require('./meta.js')
 const _ = require('lodash')
 const { isMany } = require('./helpers')
@@ -313,6 +313,7 @@ let config = {
   generators: [
     {
       notes: "handle making responses brief",
+      where: where(),
       match: ({context, objects}) => (context.topLevel || context.isResponse) && objects.brief && !context.briefWasRun,
       apply: ({context, g}) => {
         const focussed = focus(context)
@@ -323,16 +324,19 @@ let config = {
     },
     {
       notes: "unknown ",
+      where: where(),
       match: ({context}) => context.marker == 'unknown' && context.implicit,
       apply: ({context}) => '',
     },
     {
       notes: "unknown answer default response",
+      where: where(),
       match: ({context}) => context.marker == 'answerNotKnown',
       apply: ({context}) => `that is not known`,
     },
     {
       notes: "be brief or wordy",
+      where: where(),
       match: ({context}) => context.marker == 'be',
       apply: ({context}) => `be ${context.type.word}`,
     },
@@ -340,21 +344,25 @@ let config = {
     {
        notes: 'paraphrase: plural/singular',
        priority: -1,
+      where: where(),
        match: ({context}) => context.paraphrase && context.word
        apply: ({context, g}) => { return { "self": "your", "other": "my" }[context.value] },
     },
     */
     {
+      where: where(),
       match: ({context}) => context.marker === 'idontknow',
       apply: ({context}) => "i don't know",
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'yesno',
       apply: ({context}) => context.value ? 'yes' : 'no',
       priority: -1,
       // debug: 'call11',
     },
     {
+      where: where(),
       match: ({context}) => !context.paraphrase && context.evalue && context.evalue.marker == 'yesno',
       apply: ({context}) => context.evalue.value ? 'yes' : 'no',
       priority: -1,
@@ -379,6 +387,7 @@ let config = {
       notes: 'handle lists with yes no',
       // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
+      where: where(),
       match: ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value && context.value.length > 0 && context.value[0].marker == 'yesno',
       apply: ({context, g, gs}) => {
         return `${g(context.value[0])} ${gs(context.value.slice(1), ', ', ' and ')}`
@@ -389,6 +398,7 @@ let config = {
       notes: 'handle lists',
       // ({context, hierarchy}) => context.marker == 'list' && context.paraphrase && context.value,
       // ({context, hierarchy}) => context.marker == 'list' && context.value,
+      where: where(),
       match: ({context, hierarchy}) => context.marker == 'list' && context.value,
       apply: ({context, gs}) => {
         if (context.newLinesOnly) {
@@ -401,6 +411,7 @@ let config = {
 
     {
       notes: 'paraphrase a negation',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'notAble') && context.negated, // && !context.isQuery && !context.paraphrase && context.value,
       apply: ({context, g}) => {
         context.negated = false
@@ -412,6 +423,7 @@ let config = {
 
     {
       notes: 'paraphrase a queryable response',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && context.evalue && !context.paraphrase,
       apply: ({context, g}) => {
         return g(context.evalue)
@@ -419,6 +431,7 @@ let config = {
     },
     {
       notes: 'paraphrase a queryable',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'queryable') && !context.isQuery && !context.paraphrase && context.evalue,
       apply: ({context, g}) => {
         const oldValue = context.evalue.paraphrase
@@ -480,15 +493,18 @@ let config = {
       ({context}) => `${context.subject} ${context.word}` 
     ],
     {
+      where: where(),
       match: ({context}) => context.evalue && context.evalue.verbatim && !context.paraphrase,
       apply: ({context}) => context.evalue.verbatim,
     },
     {
+      where: where(),
       match: ({context}) => context.isResponse && context.verbatim && !context.paraphrase,
       apply: ({context}) => context.verbatim,
       priority: -1,
     },
     { 
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeQuestion') && context.paraphrase && context.topLevel && context.query,
       apply: ({context, gp}) => {
         return `${gp({...context, topLevel: undefined})}?` 
@@ -497,6 +513,7 @@ let config = {
     },
     { 
       notes: "x is y",
+      where: where(),
       match: ({context, hierarchy}) => { return hierarchy.isA(context.marker, 'is') && context.paraphrase },
       apply: ({context, g, gp}) => {
         return `${g({ ...context.one, paraphrase: true })} ${context.word} ${gp(context.two)}` 
@@ -504,6 +521,7 @@ let config = {
     },
     { 
       notes: 'is with a response defined',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.evalue,
       apply: ({context, g}) => {
         const response = context.evalue;
@@ -520,6 +538,7 @@ let config = {
     },
     { 
       notes: 'x is y (not a response)',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && !context.evalue,
       apply: ({context, g}) => {
         if ((context.two.evalue || {}).marker == 'answerNotKnown') {
@@ -536,6 +555,7 @@ let config = {
 
     {
       priority: -3,
+      where: where(),
       match: ({context}) => context.evaluateToWord && context.word,
       apply: ({context}) => context.word,
     },
@@ -543,6 +563,7 @@ let config = {
     // defaults
     {
       notes: 'show the input word',
+      where: where(),
       match: ({context}) => context.paraphrase && context.word,
       apply: ({context}) => `${context.word}` 
     },
@@ -564,12 +585,14 @@ let config = {
 
     {
       notes: 'show word',
+      where: where(),
       match: ({context}) => context.word,
       apply: ({context}) => context.word,
     },
 
     {
       notes: 'show json',
+      where: where(),
       match: () => true,
       apply: ({context}) => JSON.stringify(sortJson(context, { depth: 5 }))
     }
@@ -578,6 +601,7 @@ let config = {
   semantics: [
     {
       todo: 'debug23',
+      where: where(),
       match: ({context}) => context.marker == 'debug23',
       apply: ({context, hierarchy}) => {
         debugger
@@ -586,6 +610,7 @@ let config = {
     },
     { 
       todo: 'be brief or wordy',
+      where: where(),
       match: ({context}) => context.marker == 'be',
       apply: ({context, api}) => {
         api.setBrief( context.type.value == 'brief' )
@@ -593,6 +618,7 @@ let config = {
     },
     { 
       notes: 'pull from context',
+      where: where(),
       // match: ({context}) => context.marker == 'it' && context.pullFromContext, // && context.value,
       match: ({context}) => context.pullFromContext && !context.same, // && context.value,
       apply: ({context, s, api, e, log, retry}) => {
@@ -610,6 +636,7 @@ let config = {
     },
     { 
       notes: 'what x is y?',
+      where: where(),
       /*
         what type is object (what type is pikachu)   (the type is typeValue)
         what property is object (what color are greg's eyes)
@@ -662,6 +689,7 @@ let config = {
     },
     { 
       notes: 'x is y?',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query,
       apply: ({context, log}) => {
         warningIsANotImplemented(log, context)
@@ -674,6 +702,7 @@ let config = {
 
     // statement
     { 
+      where: where(),
       notes: 'x is y',
       match: ({context}) => context.marker == 'is' && !context.query && context.one && context.two,
       apply: ({context, s, log, api}) => {
@@ -711,6 +740,7 @@ let config = {
     },
     {
       notes: 'default handle evaluate',
+      where: where(),
       match: ({context}) => context.evaluate,
       apply: ({context, api, e}) => {
         // greg101
@@ -749,7 +779,7 @@ let config = {
 };
 
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.api = api
 config.add(meta)
 
@@ -765,7 +795,7 @@ config.initializer( ({objects, config, api, isModule}) => {
   config.addArgs((args) => ({ e: (context) => api.getEvaluator(args.s, args.log, context) }))
 })
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'framework for dialogues',
   config,

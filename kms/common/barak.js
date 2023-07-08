@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const hierarchy = require('./hierarchy')
 const barak_tests = require('./barak.test.json')
 const barak_instance = require('./barak.instance.json')
@@ -30,10 +30,10 @@ const template ={
 
 // two bugs: hierarchy has barak_obama isA obama
 //           negative associations are missing
-const config = new entodicton.Config({ name: 'barak', }, module)
+const config = new Config({ name: 'barak', }, module)
 config.add(hierarchy)
 
-entodicton.knowledgeModule( {
+knowledgeModule( {
     module,
       description: 'barak related concepts',
       config,

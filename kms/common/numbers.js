@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const numbers_tests = require('./numbers.test.json')
 
 let config = {
@@ -32,14 +32,18 @@ let config = {
   ],
 
   generators: [
-    [ ({context}) => context.marker == 'number', ({context}) => `${context.value}` ],
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'number', 
+      apply: ({context}) => `${context.value}` 
+    },
   ],
 
   semantics: [
   ],
 };
-config = new entodicton.Config(config, module)
-entodicton.knowledgeModule( { 
+config = new Config(config, module)
+knowledgeModule( { 
   module,
   config,
   description: 'talking about numbers',

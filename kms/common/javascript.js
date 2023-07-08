@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const javascript_tests = require('./javascript.test.json')
 
@@ -30,32 +30,41 @@ let config = {
   ],
 
   generators: [
-    [ ({context}) => context.marker == 'assignment' && context.paraphrase, ({context, g}) => `let ${g(context.variable)} = ${g(context.value)}` ],
-    [ ({context}) => context.marker == 'assignment' && context.isResponse, ({context, g}) => {
-      const value = g(context.variable)
-      return `${g(context.variable)} == ${g(context.value)}` 
-    }],
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'assignment' && context.paraphrase, 
+      apply: ({context, g}) => `let ${g(context.variable)} = ${g(context.value)}` 
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'assignment' && context.isResponse, 
+      apply: ({context, g}) => {
+        const value = g(context.variable)
+        return `${g(context.variable)} == ${g(context.value)}` 
+      }
+    },
   ],
 
   semantics: [
-    [
-      ({context}) => context.marker == 'assignment',
-      ({context, objects}) => {
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'assignment',
+      apply: ({context, objects}) => {
         objects.variables[context.variable.value] = context.value.value
         context.isResponse = true
       }
-    ]
+    }
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(dialogues)
 
 config.initializer( ({objects, api, uuid}) => {
   objects.variables = {}
 })
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'javascript interpreter',
   config,

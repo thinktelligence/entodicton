@@ -1,4 +1,4 @@
-const { Config, knowledgeModule } = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const tell = require('./tell')
 const helpers = require('./helpers')
 const time_tests = require('./time.test.json')
@@ -87,39 +87,51 @@ let config = {
   },
 
   generators: [
-    [ 
-      ({context}) => context.marker == 'ampm' && context.paraphrase, 
-      ({g, context}) => `${context.hour.hour} ${context.ampm}` 
-    ],
-    [ ({context}) => context.marker == 'time' && context.evalue && context.format == 12, ({g, context}) => {
-      console.log('-------------------', context.evalue)
-          let hh = context.evalue.getHours();
-          let ampm = 'am'
-          if (hh > 12) {
-            hh -= 12;
-            ampm = 'pm'
-          }
-          let ss = context.evalue.getMinutes()
-          ss = pad(ss, 2)
-          return `${hh}:${ss} ${ampm}` 
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'ampm' && context.paraphrase, 
+      apply: ({g, context}) => `${context.hour.hour} ${context.ampm}` 
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'time' && context.evalue && context.format == 12, 
+      apply: ({g, context}) => {
+        console.log('-------------------', context.evalue)
+            let hh = context.evalue.getHours();
+            let ampm = 'am'
+            if (hh > 12) {
+              hh -= 12;
+              ampm = 'pm'
+            }
+            let ss = context.evalue.getMinutes()
+            ss = pad(ss, 2)
+            return `${hh}:${ss} ${ampm}` 
       }
-    ],
-    [ ({context}) => context.marker == 'time' && context.evalue && context.format == 24, ({g, context}) => {
-      const pad = (num, size) => {
-        num = num.toString();
-        while (num.length < size) num = "0" + num;
-        return num;
-      }
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'time' && context.evalue && context.format == 24, 
+      apply: ({g, context}) => {
+        const pad = (num, size) => {
+          num = num.toString();
+          while (num.length < size) num = "0" + num;
+          return num;
+        }
 
-        return `${context.evalue.getHours()}:${pad(context.evalue.getMinutes(), 2)}` 
+          return `${context.evalue.getHours()}:${pad(context.evalue.getMinutes(), 2)}` 
       }
-    ],
-    [ ({context}) => context.marker == 'response', ({g, context}) => context.text ],
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'response', 
+      apply: ({g, context}) => context.text 
+    },
   ],
 
   semantics: [
     {
       notes: 'evaluate time',
+      where: where(),
       match: ({objects, context, api}) => context.marker == 'time' && context.evaluate, 
       apply: ({objects, context, api}) => {
         context.evalue = api.newDate()
@@ -128,6 +140,7 @@ let config = {
     },
     {
       notes: 'use time format working case',
+      where: where(),
       match: ({objects, context}) => context.marker == 'use' && context.format && (context.format.count == 12 || context.format.count == 24), 
       apply: ({objects, context}) => {
         objects.format = context.format.count
@@ -135,6 +148,7 @@ let config = {
     },
     {
       notes: 'use time format error case',
+      where: where(),
       match: ({objects, context}) => context.marker == 'use' && context.format && (context.format.count != 12 && context.format.count != 24), 
       apply: ({objects, context}) => {
         context.marker = 'response'

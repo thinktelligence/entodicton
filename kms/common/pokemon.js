@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const hierarchy = require('./hierarchy')
 const pokemon_tests = require('./pokemon.test.json')
 const pokemon_instance = require('./pokemon.instance.json')
@@ -28,7 +28,7 @@ const template = {
 // 'ashe owns pikachu who owns pikachu'
 // TODO does ashe own pikachu / ash owns pikachu? / 'ashe likes pikachu does ashe like pikachu'
 
-const config = new entodicton.Config({ 
+const config = new Config({ 
   name: 'pokemon',
   hierarchy: [
     // ['pokemon', 'theAble'],
@@ -66,7 +66,7 @@ config.initializer( ({config, km}) => {
             })
 })
 // config.load(template, pokemon_instance)
-entodicton.knowledgeModule( {
+knowledgeModule( {
   module,
   description: 'Knowledge about the pokemon using a KM template',
   config,

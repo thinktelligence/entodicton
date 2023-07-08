@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
 const pluralize = require('pluralize')
@@ -56,6 +56,7 @@ let config = {
   semantics: [
     {
       notes: 'what type is pikachu',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'is') && context.query && !['what'].includes(context.one.marker) && !['what'].includes(context.two.marker) && (context.one.query || context.two.query),
       apply: ({context, hierarchy, km, log, e, s}) => {
         const one = context.one;
@@ -100,6 +101,7 @@ let config = {
       // name of pikachu        what is the name of pikachu -> properties
       // types of job           what are the types of animals -> next one
       notes: 'type of pikachu',  // the types of type is the next one
+      where: where(),
       match: ({context}) => context.marker == 'type' && context.evaluate && context.object && context.objects[context.objects.length-1].number == 'one' && pluralize.isSingular(context.objects[0].word),
       apply: ({context, objects, e, gs, km, log, s}) => {
         const concept = context.objects[0];
@@ -120,6 +122,7 @@ let config = {
     {
       notes: 'is x y',
       // debug: 'call2',
+      where: where(),
       match: ({context, hierarchy, args}) => hierarchy.isA(context.marker, 'is') && context.query && args( { types: ['hierarchyAble', 'hierarchyAble'], properties: ['one', 'two'] } ),
       apply: ({context, km, objects, g}) => {
         const api = km('properties').api
@@ -150,6 +153,7 @@ let config = {
     },
     {
       notes: 'c is a y',
+      where: where(),
       match: ({context, listable}) => listable(context.marker, 'hierarchyAble') && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
       apply: ({context, km, objects, asList}) => {
         const api = km('properties').api
@@ -168,6 +172,7 @@ let config = {
     },
     {
       notes: 'an x is a y',
+      where: where(),
       match: ({context, listable}) => listable(context.marker, 'hierarchyAble') && !context.pullFromContext && context.wantsValue && context.same,
       apply: ({context, km, objects, config, asList}) => {
         const api = km('properties').api
@@ -186,6 +191,7 @@ let config = {
     {
       notes: 'humans are mammels',
       // match: ({context, listable}) => listable(context, 'unknown') && context.same,
+      where: where(),
       match: ({context, listable, hierarchy}) => {
         /*
         if (context.marker == 'list') {
@@ -229,6 +235,7 @@ let config = {
       // type of pikachu
       // types of job
       notes: 'types of type', // what are the types of animals
+      where: where(),
       match: ({context}) => context.marker == 'type' && context.evaluate && context.object,
       apply: ({context, objects, gs, km}) => {
         const api = km('properties').api
@@ -247,10 +254,10 @@ let config = {
   ]
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(properties)
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'hierarchy of objects',
   config,

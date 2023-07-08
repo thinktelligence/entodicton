@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const currencyKM = require('./currency.js')
 const helpKM = require('./help.js')
 const timeKM = require('./time.js')
@@ -72,19 +72,23 @@ let config = {
   },
 
   generators: [
-    [
-      ({context}) => context.marker == 'character' && context.paraphrase,
-      ({context}) => context.value + ", " + context.utterance
-    ],
-    [
-      ({context}) => context.marker == 'character' && context.isResponse,
-      ({context}) => 'Asked ' + context.value + " '" + context.utterance + "'"
-    ],
-    [
-      ({context}) => context.marker == 'character',
-      ({context}) => context.value
-    ],
     {
+      where: where(),
+      match: ({context}) => context.marker == 'character' && context.paraphrase,
+      apply: ({context}) => context.value + ", " + context.utterance
+    },
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'character' && context.isResponse,
+      apply: ({context}) => 'Asked ' + context.value + " '" + context.utterance + "'"
+    },
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'character',
+      apply: ({context}) => context.value
+    },
+    {
+      where: where(),
       match: ({context, config}) => context.marker == 'help',
       apply: ({context, config}) => {
         let help = `MAIN KNOWLEDGE MODULE\n\n`
@@ -94,7 +98,7 @@ let config = {
           help += '\n\n'
           help += 'INCLUDED KNOWLEDGE MODULES\n'
           for (km of config.configs) {
-            if (km._config instanceof entodicton.Config) {
+            if (km._config instanceof Config) {
               help += '\n' + getHelp(km._config, 4)
             }
           }
@@ -106,10 +110,11 @@ let config = {
   ],
 
   semantics: [
-    [
-      ({context}) => context.marker == 'character',
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'character',
       // ({context, config, km}) => {
-      (args) => {
+      apply: (args) => {
         const {context, km, log} = args;
         const words = context.words.map( (context) => context.word )
         const utterance = words.join(' ')
@@ -125,7 +130,7 @@ let config = {
         context.utterance = utterance
         context.isResponse = true
       }
-    ]
+    }
   ]
 };
 
@@ -152,7 +157,7 @@ const initializeApi = (config, api) => {
   config.addWord(name, {"id": "character", "initial": "{ value: '" + name + `', api: '${name}'}` })
 }
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.multiApi = initializeApi
 config.initializer( ({isModule, config}) => {
   if (!isModule) {
@@ -162,7 +167,7 @@ config.initializer( ({isModule, config}) => {
 })
 
 // mode this to non-module init only
-entodicton.knowledgeModule({
+knowledgeModule({
   module,
   description: 'this module is for creating a team of characters that can respond to commands',
   demo: "https://youtu.be/eA25GZ0ZAHo",

@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const hierarchy = require('./hierarchy')
 const emotions = require('./emotions')
@@ -29,19 +29,22 @@ let config = {
 
   generators: [
     {
-      notes: "unknown answer default response for avatar",
-      match: ({context}) => context.marker == 'answerNotKnown',
-      apply: ({context}) => `I don't know`,
+       where: where(),
+       notes: "unknown answer default response for avatar",
+       match: ({context}) => context.marker == 'answerNotKnown',
+       apply: ({context}) => `I don't know`,
     },
     {
        notes: 'paraphrase: add possession ending for your/my',
        priority: -1,
+       where: where(),
        match: ({context}) => !context.isResponse && context.possessive && ['self', 'other'].includes(context.value),
        apply: ({context, g}) => { return { "self": "your", "other": "my" }[context.value] },
     },
     {
        notes: 'not paraphrase: add possession ending for your/my',
        priority: -1,
+       where: where(),
        match: ({context}) => context.isResponse && context.possessive && ['self', 'other'].includes(context.value),
        apply: ({context, g}) => { return { "self": "my", "other": "your" }[context.value] },
     },
@@ -50,6 +53,7 @@ let config = {
   semantics: [
     {
       notes: 'you are x',
+      where: where(),
       match: ({context, listable}) => context.marker == 'self',
       apply: ({context, km}) => {
         km("dialogues").api.setVariable('self', context.same.value)
@@ -60,11 +64,11 @@ let config = {
 
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(hierarchy)
 config.add(emotions)
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'avatar for dialogues',
   config,

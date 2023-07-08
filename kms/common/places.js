@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const hierarchy = require('./hierarchy')
 const animals_tests = require('./places.test.json')
 const animals_instance = require('./places.instance.json')
@@ -14,10 +14,10 @@ const template ={
   ],
 }
 
-const config = new entodicton.Config({ name: 'places' }, module)
+const config = new Config({ name: 'places' }, module)
 config.add(hierarchy)
 
-entodicton.knowledgeModule( {
+knowledgeModule( {
     module,
       description: 'places related concepts',
       config,

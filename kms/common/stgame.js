@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const characters = require('./characters')
 const stgame_tests = require('./stgame.test.json')
 const crew = require('./crew')
@@ -41,7 +41,7 @@ const spockAPI = {
 }
 characters.api = spockAPI;
 
-const config = new entodicton.Config({ 
+const config = new Config({ 
     name: 'stgame', 
     operators: [ "([a])" ],
     bridges: [ { id: 'a', level: 0, bridge: "{ ...next(operator) }" } ],
@@ -50,7 +50,7 @@ const config = new entodicton.Config({
 config.api = api
 config.add(characters)
 
-entodicton.knowledgeModule( {
+knowledgeModule( {
   module,
   description: 'Game simulator for trek-like characters',
   config,

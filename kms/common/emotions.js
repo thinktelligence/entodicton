@@ -1,7 +1,7 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
 const hierarchy = require('./hierarchy').copy()
-entodicton.ensureTestFile(module, 'emotions', 'test')
-entodicton.ensureTestFile(module, 'emotions', 'instance')
+ensureTestFile(module, 'emotions', 'test')
+ensureTestFile(module, 'emotions', 'instance')
 const emotions_tests = require('./emotions.test.json')
 const emotions_instance = require('./emotions.instance.json')
 
@@ -22,7 +22,7 @@ const template ={
   ],
 }
 
-const config = new entodicton.Config({ 
+const config = new Config({ 
   name: 'emotions',
   operators: [
     "([sentientBeing|])",
@@ -56,7 +56,7 @@ config.initializer( ({config, km}) => {
 })
 //config.load(template, emotions_instance)
 
-entodicton.knowledgeModule( {
+knowledgeModule( {
     module,
       description: 'emotions related concepts',
       config,

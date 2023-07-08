@@ -1,5 +1,4 @@
-const entodicton= require('entodicton')
-const Digraph = require('entodicton/src/digraph')
+const { Config, knowledgeModule, where, Digraph } = require('entodicton')
 const numbersKM = require('./numbers.js')
 const currency_tests = require('./currency.test.json')
 
@@ -59,32 +58,40 @@ let config = {
   },
 
   generators: [
-    [ ({context}) => context.marker == 'currency' && !context.isAbstract, ({context, g}) => {
-      word = Object.assign({}, context.amount)
-      word.isAbstract = true
-      word.marker = 'currency'
-      word.units = context.units
-      word.value = context.amount.value
-      // generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
-      return `${g(context.amount.value)} ${g(word)}`
-    } ],
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'currency' && !context.isAbstract, 
+      apply: ({context, g}) => {
+        word = Object.assign({}, context.amount)
+        word.isAbstract = true
+        word.marker = 'currency'
+        word.units = context.units
+        word.value = context.amount.value
+        // generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
+        return `${g(context.amount.value)} ${g(word)}`
+      } 
+    },
   ],
 
   semantics: [
-    [({objects, context}) => context.marker == 'in', async ({objects, api, context}) => {
-      const from = context.from
-      const to = context.to
-      const value = api.convertTo(from.amount.value, from.units, to.units)
-      context.marker = 'currency'
-      context.isAbstract = false
-      context.amount = { value }
-      context.units = to.units
-      context.isResponse = true
-    }],
+    {
+      match: ({objects, context}) => context.marker == 'in',
+      where: where(),
+      apply: ({objects, api, context}) => {
+        const from = context.from
+        const to = context.to
+        const value = api.convertTo(from.amount.value, from.units, to.units)
+        context.marker = 'currency'
+        context.isAbstract = false
+        context.amount = { value }
+        context.units = to.units
+        context.isResponse = true
+      }
+    }
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(numbersKM)
 config.api = api
 config.initializer( ({config, objects, api, uuid}) => {
@@ -112,7 +119,7 @@ config.initializer( ({config, objects, api, uuid}) => {
   }
 })
 
-entodicton.knowledgeModule({ 
+knowledgeModule({ 
   module,
   description: 'Ways of specifying currency amount',
   config,

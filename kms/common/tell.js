@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const tell_tests = require('./tell.test.json')
 
@@ -55,23 +55,27 @@ let config = {
     ['is', 'event'],
   ],
   generators: [
-    [
-      ({context}) => context.marker == 'tell',
-      ({context, g}) => `tell ${g(context.target)} ${g(context.info.info)} ${g(context.event)}`
-    ],
-    [
-      ({context}) => context.marker == 'info',
-      ({context, g}) => context.info
-    ],
-    [
-      ({context}) => context.marker == 'event' && context.paraphrase,
-      ({context, g}) => 'event'
-    ],
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'tell',
+      apply: ({context, g}) => `tell ${g(context.target)} ${g(context.info.info)} ${g(context.event)}`
+    },
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'info',
+      apply: ({context, g}) => context.info
+    },
+    {
+      where: where(),
+      match: ({context}) => context.marker == 'event' && context.paraphrase,
+      apply: ({context, g}) => 'event'
+    },
   ],
   semantics: [
-    [
-      ({context, hierarchy}) => !context.happening && hierarchy.isA(context.marker, 'tell'),
-      ({context, api, s, config}) => {
+    {
+      where: where(),
+      match: ({context, hierarchy}) => !context.happening && hierarchy.isA(context.marker, 'tell'),
+      apply: ({context, api, s, config}) => {
         const result = config.processContext({ ...context.event, happening: true })
         const event = result.context.event
         if (event) {
@@ -82,11 +86,11 @@ let config = {
           // say config is missing if debug other result
         }
       }
-    ],
+    },
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.api = api
 config.add(dialogues)
 config.initializer( ({config, isModule}) => {
@@ -100,7 +104,7 @@ config.initializer( ({config, isModule}) => {
     }
   })
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'telling entities things',
   config,

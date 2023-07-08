@@ -1,7 +1,7 @@
-const entodicton= require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const _ = require('lodash')
-entodicton.ensureTestFile(module, 'events', 'test')
+ensureTestFile(module, 'events', 'test')
 const events_tests = require('./events.test.json')
 const sortJson = require('sort-json')
 
@@ -47,6 +47,7 @@ let config = {
   generators: [
     {
       notes: 'paraphrase for events',
+      where: where(),
       match: ({context, isA}) => isA(context.marker, 'event') && context.event,
       apply: ({context}) => `event happened: ${JSON.stringify(sortJson(context, { depth: 5 }))}`
     },
@@ -55,6 +56,7 @@ let config = {
     {
       notes: 'event1',
       development: true,
+      where: where(),
       match: ({context}) => context.marker == 'event1' && !context.event,
       apply: ({context, kms}) => {
         kms.events.api.happens({ marker: 'event1' })
@@ -63,6 +65,7 @@ let config = {
     {
       notes: 'action1',
       development: true,
+      where: where(),
       match: ({context, isA}) => context.marker == 'action1',
       apply: ({context, kms}) => {
         context.verbatim = "Doing action1"
@@ -70,6 +73,7 @@ let config = {
     },
     {
       notes: 'after event action handler',
+      where: where(),
       match: ({context}) => context.marker == 'after',
       apply: ({context, motivation}) => {
           // add motivation that watches for event
@@ -80,6 +84,7 @@ let config = {
           const action = context.action
           motivation({
             repeat: true,
+            where: where(),
             match: ({context, kms}) => kms.events.api.happened(context, event),
             apply: ({context, insert}) => { 
               insert(action) 
@@ -90,11 +95,11 @@ let config = {
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.api = new API()
 config.add(dialogues)
 
-entodicton.knowledgeModule({ 
+knowledgeModule({ 
   module,
   name: 'events',
   description: 'do stuff after events',
