@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const numbers = require('./numbers')
 const math_tests = require('./math.test.json')
@@ -67,10 +67,10 @@ let config = {
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(numbers);
 config.add(dialogues);
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   config,
   description: 'talking about math',

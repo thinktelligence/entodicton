@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const currencyKM = require('./currency.js')
 const events = require('./events.js')
 const math = require('./math.js')
@@ -229,6 +229,7 @@ let config = {
             bridge: "{ ...next(operator) }",
             generators: [
               {
+                where: where(),
                 match: ({context}) => context.marker == 'report' && context.describe,
                 apply: ({context, apis, gp, gs, objects}) => {
                   const listings = objects.listings[context.value]
@@ -237,6 +238,7 @@ let config = {
                 }
               },
               {
+                where: where(),
                 match: ({context}) => context.marker == 'report' && context.evalue,
                 apply: ({context}) => context.evalue.value
               }
@@ -365,6 +367,7 @@ let config = {
   generators: [
     { 
       notes: 'paraphrase show',
+      where: where(),
       match: ({context, objects}) => context.marker == 'show' && context.paraphrase,
       apply: ({gs, gsp, gp, e, apis, objects, context}) => {
         if (context.report) {
@@ -377,12 +380,29 @@ let config = {
         }
       }
     },
-    [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.isResponse, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
-    [ ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.paraphrase, ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` ],
-    [ ({context}) => context.marker == 'product' && !context.isInstance, ({context}) => `the ${context.word}` ],
-    [ ({context}) => context.marker == 'listAction' && context.paraphrase, ({g, context}) => `list ${g(context.what)}` ],
+    { 
+      where: where(),
+      match: ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.isResponse, 
+      apply: ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` 
+    },
+    { 
+      where: where(),
+      match: ({context, isA}) => isA(context.marker, 'reportAction') && context.on && context.paraphrase, 
+      apply: ({context, g}) => `${g({...context, on: undefined})} on ${g(context.on)}` 
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'product' && !context.isInstance, 
+      apply: ({context}) => `the ${context.word}` 
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'listAction' && context.paraphrase, 
+      apply: ({g, context}) => `list ${g(context.what)}` 
+    },
     { 
       notes: 'show the results as a sentence',
+      where: where(),
       match: ({context, objects, apis}) => {
         if (!(context.marker == 'listAction' && context.isResponse)) {
           return false
@@ -398,6 +418,7 @@ let config = {
     },
     { 
       notes: 'show the results as a table',
+      where: where(),
       match: ({context, objects, apis}) => {
         if (!(context.marker == 'listAction' && context.isResponse && !context.paraphrase)) {
           return false
@@ -422,18 +443,21 @@ let config = {
         return report
       }
     },
-    [ 
-      ({context}) => context.marker == 'answer' && context.paraphrase, 
-      ({g, context}) => `answer with ${context.type}` 
-    ],
-    [ 
-      ({context}) => context.marker == 'answer' && !context.paraphrase, 
-      ({g, context}) => `answering with ${context.type}` 
-    ],
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'answer' && context.paraphrase, 
+      apply: ({g, context}) => `answer with ${context.type}` 
+    },
+    { 
+      where: where(),
+      match: ({context}) => context.marker == 'answer' && !context.paraphrase, 
+      apply: ({g, context}) => `answering with ${context.type}` 
+    },
   ],
 
   semantics: [
     { 
+      where: where(),
       notes: 'handle show semantic',
       match: ({context}) => context.marker == 'show',
       apply: ({context, e, km, kms, apis, config, objects}) => {
@@ -486,6 +510,7 @@ let config = {
     },
     {
       notes: 'get the report data',
+      where: where(),
       match: ({context}) => context.marker == 'listAction', 
       apply: ({context, e, objects, apis, km, config}) => {
         //const name = '***current***'
@@ -541,7 +566,7 @@ const initializeApi = (config, api, km) => {
   // config.addWord(type, {"id": "report", "initial": `${open} value: '${type}' ${close}` })
  }
 
-config = new entodicton.Config(config, module).add(currencyKM).add(helpKM).add(math).add(events)
+config = new Config(config, module).add(currencyKM).add(helpKM).add(math).add(events)
 config.multiApi = initializeApi
 // mode this to non-module init only
 config.addAPI(api1)
@@ -557,7 +582,7 @@ config.initializer(({config, objects, km, isModule, isAfterApi}) => {
     }
   }
 }, { initAfterApi: true })
-entodicton.knowledgeModule({
+knowledgeModule({
   module,
   description: 'this module is for getting info about a concept with properties',
   config,

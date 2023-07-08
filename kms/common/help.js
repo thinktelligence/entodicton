@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const help_tests = require('./help.test.json')
 
@@ -34,10 +34,15 @@ let config = {
   },
 
   generators: [
-    [({context, config}) => context.marker == 'help' && context.paraphrase, () => `help`],
-    [ 
-      ({context, config}) => context.marker == 'help' && context.isResponse, 
-      ({context, config}) => {
+    {
+      where: where(),
+      match: ({context, config}) => context.marker == 'help' && context.paraphrase, 
+      apply: () => `help`
+    },
+    { 
+      where: where(),
+      match: ({context, config}) => context.marker == 'help' && context.isResponse, 
+      apply: ({context, config}) => {
         let help = `MAIN KNOWLEDGE MODULE\n\n`
         help += getHelp(config, 2)
 
@@ -45,7 +50,7 @@ let config = {
           help += '\n\n'
           help += 'INCLUDED KNOWLEDGE MODULES\n'
           for (km of config.configs) {
-            if (km._config instanceof entodicton.Config) {
+            if (km._config instanceof Config) {
               help += '\n' + getHelp(km._config, 4)
             }
           }
@@ -53,13 +58,13 @@ let config = {
 
         return help
       }
-    ],
+    },
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(dialogues)
-entodicton.knowledgeModule({
+knowledgeModule({
   module,
   description: 'Help the user with the current knowledge modules',
   config,

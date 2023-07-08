@@ -1,6 +1,6 @@
-const entodicton = require('entodicton')
-entodicton.ensureTestFile(module, 'kia', 'test')
-entodicton.ensureTestFile(module, 'kia', 'instance')
+const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
+ensureTestFile(module, 'kia', 'test')
+ensureTestFile(module, 'kia', 'instance')
 
 const kid = require('./kid')
 const kia_tests = require('./kia.test.json')
@@ -12,10 +12,10 @@ const template = {
   ]
 };
 
-const config = new entodicton.Config({ name: 'kia', }, module)
+const config = new Config({ name: 'kia', }, module)
 config.add(kid)
 // config.load(template, kia_instance)
-entodicton.knowledgeModule( {
+knowledgeModule( {
   module,
   description: 'Kia Simulator using a KM template',
   config,

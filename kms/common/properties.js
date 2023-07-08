@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const dialogues = require('./dialogues')
 const meta = require('./meta')
 const properties_instance = require('./properties.instance.json')
@@ -194,6 +194,7 @@ let config = {
   generators: [
     {
       notes: 'expression with constraints',
+      where: where(),
       match: ({context}) => context.constraints && context.paraphrase,
       apply: ({context, g}) => {
         // TODO assume one constaints deal with more in the future
@@ -215,6 +216,7 @@ let config = {
       },
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'xfx',
       apply: ({context, g}) => `${context.word} between ${g(context.arguments)}`
     },
@@ -242,6 +244,7 @@ let config = {
           "paraphrase": true
         },
       */
+      where: where(),
       match: ({context}) => {
         // debugger;
         if (!context.paraphrase) {
@@ -282,6 +285,7 @@ let config = {
     {
       notes: 'add possession ending',
       priority: -1, 
+      where: where(),
       match: ({context}) => context.paraphrase && context.possessive,
       apply: ({context, g}) => {
         context.possessive = false
@@ -295,27 +299,33 @@ let config = {
       }
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'modifies' && context.paraphrase,
       apply: ({context}) => `${context.modifier.word} modifies ${context.concept.word}`,
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'objectPrefix' && context.value == 'other' && context.paraphrase,
       apply: ({context}) => `my`
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'objectPrefix' && context.value == 'other',
       apply: ({context}) => `your`
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'objectPrefix' && context.value == 'self' && context.paraphrase,
       apply: ({context}) => `your`
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'objectPrefix' && context.value == 'self',
       apply: ({context}) => `my`
     },
     {
       notes: 'negative do questions',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.negation,
       apply: ({context, g}) => {
         /*
@@ -331,6 +341,7 @@ let config = {
     {
       notes: 'do questions',
       // debug: 'call9',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'canBeDoQuestion') && context.paraphrase && context.query && context.do,
       apply: ({context, g}) => {
         const right = context['do'].right
@@ -352,6 +363,7 @@ let config = {
     ],
     {
       notes: 'the property of object',
+      where: where(),
       match: ({context}) => context.paraphrase && context.modifiers && context.object, 
       apply: ({context, g, gs}) => {
                const base = { ...context }
@@ -378,6 +390,7 @@ let config = {
     ],
     {
       notes: "object's property",
+      where: where(),
       // match: ({context}) => context.paraphrase && !context.modifiers && context.object, 
       match: ({context}) => !context.modifiers && context.object, 
       apply: ({context, g, gs}) => {
@@ -406,6 +419,7 @@ let config = {
   ],
   semantics: [
     {
+      where: where(),
       match: ({context}) => context.marker == 'concept' && context.same,
       apply: ({context, km, config}) => {
         const api = km('properties').api
@@ -416,6 +430,7 @@ let config = {
     {
       // TODO maybe use the dialogue management to get params
       notes: 'wants is xfx between wanter and wantee',
+      where: where(),
       match: ({context}) => context.same && context.same.marker == 'xfx',
       // debug: 'call3',
       apply: ({context, km, config}) => {
@@ -432,6 +447,7 @@ let config = {
       tests: [
         'chicken modifies strips',
       ],
+      where: where(),
       match: ({context}) => context.marker == 'modifies',
       apply: ({config, km, context}) => {
         km('properties').api.kindOfConcept({ config, modifier: context.modifier.value, object: context.concept.value || context.concept.marker })
@@ -439,6 +455,7 @@ let config = {
     },
     {
       notes: 'marking something as readonly',
+      where: where(),
       match: ({context}) => context.marker == 'readonly' && context.same,
       apply: ({context, km, objects}) => {
         km('properties').api.setReadOnly([context.same.value]) 
@@ -462,6 +479,7 @@ let config = {
     */
     {
       notes: 'crew members. evaluate a concepts to get instances',
+      where: where(),
       match: ({context, hierarchy, api}) => 
                           hierarchy.isA(context.marker, 'concept') && 
                           context.evaluate &&
@@ -482,6 +500,7 @@ let config = {
     },
     {
       notes: 'greg has eyes',
+      where: where(),
       match: ({context}) => context.marker == 'have' && !context.query,
       apply: ({context, objects, api}) => {
         if (context.negation) {
@@ -494,6 +513,7 @@ let config = {
     },
     {
       notes: 'greg has eyes?',
+      where: where(),
       match: ({context, hierarchy}) => hierarchy.isA(context.marker, 'have') && context.query,
       apply: ({context, g, api, objects}) => {
         const object = pluralize.singular(context.object.value);
@@ -519,6 +539,7 @@ let config = {
     },
     {
       notes: 'set the property of an object',
+      where: where(),
       // match: ({context}) => context.marker == 'property' && context.same && context.object,
       match: ({context, hierarchy, uuid}) => hierarchy.isA(context.marker, 'property') && context.same && context.objects && !context[`disable${uuid}`],
       apply: ({context, objects, km, api, log, s, uuid}) => {
@@ -561,16 +582,19 @@ let config = {
           } else {
             const mappings = [
               {
+                where: where(),
                 match: ({context}) => context.value == 'property1',
                 apply: ({context}) => Object.assign(context, { word: propertyContext.word, value: propertyContext.value, paraphrase: true }),
               },
               {
+                where: where(),
                 match: ({context}) => context.value == 'object1',
                 apply: ({context}) => {
                   Object.assign(context, { word: objectContext.word, value: objectContext.value, paraphrase: true })
                 },
               },
               {
+                where: where(),
                 match: ({context}) => context.value == 'value1',
                 apply: ({context}) => Object.assign(context, value),
               },
@@ -589,6 +613,7 @@ let config = {
     },
     {
       notes: 'get/evaluate a property',
+      where: where(),
       // match: ({context, hierarchy}) => context.marker == 'property' && context.evaluate && !context.evaluate.toConcept,
       match: ({context, hierarchy}) => 
                       hierarchy.isA(context.marker, 'property') && 
@@ -651,7 +676,7 @@ let config = {
   ]
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.api = api
 config.add(meta)
 config.add(dialogues)
@@ -662,7 +687,7 @@ config.initializer( ({config}) => {
 */
 // config.load(template, properties_instance)
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'properties of objects',
   config,

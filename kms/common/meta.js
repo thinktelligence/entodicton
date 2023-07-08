@@ -1,12 +1,11 @@
-const entodicton= require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where, unflatten, flattens } = require('entodicton')
 const _ = require('lodash')
-entodicton.ensureTestFile(module, 'meta', 'test')
-entodicton.ensureTestFile(module, 'meta', 'instance')
+ensureTestFile(module, 'meta', 'test')
+ensureTestFile(module, 'meta', 'instance')
 const meta_tests = require('./meta.test.json')
 const meta_instance = require('./meta.instance.json')
 const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings } = require('./helpers/meta.js')
 const { zip } = require('./helpers.js')
-const { unflatten, flattens } = require('entodicton')
 
 const template = {
     queries: [
@@ -92,21 +91,25 @@ let config = {
   },
   generators: [
     {
+      where: where(),
       match: ({context}) => context.marker == 'undefined',
       apply: ({context}) => 'undefined',
       development: true,
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'defined',
       apply: ({context}) => 'defined',
       development: true,
     },
     {
+      where: where(),
       match: ({context}) => context.evalue && !context.paraphrase,
       apply: ({context}) => context.evalue.verbatim,
       development: true,
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'orList' && context.paraphrase,
       apply: ({context, gs}) => {
         return gs(context.value, ', ', ' or ')
@@ -115,6 +118,7 @@ let config = {
     },
     {
       priority: -1,
+      where: where(),
       match: ({context}) => context.marker == 'means' && context.paraphrase,
       apply: ({context, g}) => {
         // const before = g({ ...context.from, paraphrase: true, debug: true})
@@ -123,16 +127,19 @@ let config = {
       }
     },
     { 
+      where: where(),
       match: ({context}) => context.marker === 'ifAble',
       apply: ({context}) => context.value,
       development: true,
     },
     { 
+      where: where(),
       match: ({context}) => ['x', 'g', 'f', 'e', 'ifAble'].includes(context.marker),
       apply: ({context}) => `${context.word}`,
       development: true,
     },
     {
+      where: where(),
       match: ({context}) => context.marker === 'if',
       apply: ({context, g}) => {
         return `if ${g(context.antecedant)} then ${g(context.consequence)}`
@@ -143,6 +150,7 @@ let config = {
 
   semantics: [
     {
+      where: where(),
       match: ({context}) => ['e', 'f', 'g'].includes(context.marker),
       apply: ({context}) => {
         context.evalue = {
@@ -153,6 +161,7 @@ let config = {
       development: true,
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'orList',
       apply: ({context, s}) => {
         const response = []
@@ -167,6 +176,7 @@ let config = {
       },
     },
     {
+      where: where(),
       match: ({context}) => context.marker == 'if',
       apply: ({config, context}) => {
         // setup the read semantic
@@ -240,6 +250,7 @@ let config = {
           const semantic = { 
             notes: "setup the read semantic (1)",
             // match: match(context), 
+            where: where(),
             match: match(context),
             apply: apply(antecedants, _.cloneDeep(context.consequence)) ,
           }
@@ -248,6 +259,7 @@ let config = {
     },
     {
       notes: 'from means to where from is unknown',
+      where: where(),
       match: ({context}) => context.marker == 'means' && context.from.marker == 'unknown',
       apply: ({config, context, kms, isTest}) => {
         if (isTest) {
@@ -264,6 +276,7 @@ let config = {
     },
     {
       notes: 'x means y where x and y have known markers',
+      where: where(),
       match: ({context}) => context.marker == 'means',
       apply: ({config, context, g}) => {
         // setup the write semantic
@@ -287,6 +300,7 @@ let config = {
           const semantic = { 
             notes: "setup the read semantic (2)",
             // match: match(context), 
+            where: where(),
             match: match,
             apply: apply(mappings, _.cloneDeep(context.to)),
           }
@@ -331,6 +345,7 @@ let config = {
           const semantic = { 
             notes: "setup the read semantic",
             // match: match(context), 
+            where: where(),
             match: match,
             apply: apply(mappings, _.cloneDeep(context.to)) ,
           }
@@ -342,12 +357,13 @@ let config = {
   ],
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 //config.load(template, meta_instance)
 // config.add(dialogue)
 config.initializer( ({config, isModule}) => {
   if (!isModule) {
     config.addGenerator({
+      where: where(),
       match: ({context}) => context.marker == 'unknown',
       apply: ({context}) => `${context.word}`
     })
@@ -372,7 +388,7 @@ config.afterTest = ({query, expected, actual, config}) => {
   */
 }
 
-entodicton.knowledgeModule({ 
+knowledgeModule({ 
   module,
   name: 'meta',
   description: 'Ways of defining new language elements',

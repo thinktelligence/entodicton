@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const hierarchy = require('./hierarchy')
 const people_tests = require('./people.test.json')
 const people_instance = require('./people.instance.json')
@@ -60,7 +60,7 @@ let config = {
   },
 };
 
-config = new entodicton.Config(config, module)
+config = new Config(config, module)
 config.add(hierarchy)
 config.initializer( ({config, context, km, isAfterApi, isModule}) => {
   const api = km('properties').api
@@ -229,7 +229,7 @@ config.initializer( ({config, context, km, isAfterApi, isModule}) => {
 
 })
 
-entodicton.knowledgeModule( { 
+knowledgeModule( { 
   module,
   description: 'about people',
   config,

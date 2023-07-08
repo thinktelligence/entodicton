@@ -1,7 +1,7 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
 const hierarchy = require('./hierarchy')
-entodicton.ensureTestFile(module, 'foods', 'test')
-entodicton.ensureTestFile(module, 'foods', 'instance')
+ensureTestFile(module, 'foods', 'test')
+ensureTestFile(module, 'foods', 'instance')
 
 const foods_tests = require('./foods.test.json')
 const foods_instance = require('./foods.instance.json')
@@ -17,11 +17,11 @@ const template ={
   ],
 }
 
-const config = new entodicton.Config({ name: 'foods' }, module)
+const config = new Config({ name: 'foods' }, module)
 config.add(hierarchy)
 // config.load(template, foods_instance)
 
-entodicton.knowledgeModule( {
+knowledgeModule( {
     module,
       description: 'foods related concepts',
       config,

@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const { Config, knowledgeModule, where } = require('entodicton')
 const avatar = require('./avatar')
 const animals = require('./animals')
 const crew_tests = require('./crew.test.json')
@@ -34,7 +34,7 @@ const template = {
   ],
 };
 
-const config = new entodicton.Config({ name: 'crew', }, module)
+const config = new Config({ name: 'crew', }, module)
 
 config.add(avatar)
 config.add(animals)
@@ -72,7 +72,7 @@ config.initializer( ({config, km}) => {
                 config }) 
 })
 // config.load(template, crew_instance)
-entodicton.knowledgeModule( {
+knowledgeModule( {
   module,
   description: 'Knowledge about the enterprise and crew using a KM template',
   config,
