@@ -580,16 +580,23 @@ class API {
   }
 
   setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
-    config.addHierarchy(id, 'theAble')
-    config.addHierarchy(id, 'queryable')
-    config.addHierarchy(id, 'hierarchyAble')
-    config.addHierarchy(id, 'object')
+    const types = [
+      'theAble',
+      'queryable',
+      'hierarchyAble',
+      'object',
+      'isEdee',
+      'isEder',
+      'property'
+    ];
+
     if (include_concept) {
-      config.addHierarchy(id, 'concept')
+      types.push('concept');
     }
-    config.addHierarchy(id, 'isEdee')
-    config.addHierarchy(id, 'isEder')
-    config.addHierarchy(id, 'property')
+  
+    for (let type of types) {
+      config.addHierarchy(id, type)
+    }
   }
 
   makeObject(args) {
@@ -635,11 +642,6 @@ class API {
       }
       this.addWord(word)
     }
-    // config.addHierarchy(objectId, 'theAble')
-    // config.addHierarchy(objectId, 'queryable')
-    // config.addHierarchy(objectId, 'property')
-    // config.addHierarchy(modifierObjectId, objectId)
-    // config.addHierarchy(objectId, 'concept')
     this.setupObjectHierarchy(config, objectId);
     this.setupObjectHierarchy(config, modifierId, { include_concept: false });
     this.setupObjectHierarchy(config, modifierObjectId);

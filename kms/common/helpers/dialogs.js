@@ -6,17 +6,10 @@ class API {
     actionPrefix({before, operator, words, after, semantic}) {
   */
 
-  setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
-    config.addHierarchy(id, 'theAble')
-    config.addHierarchy(id, 'queryable')
-    config.addHierarchy(id, 'hierarchyAble')
-    config.addHierarchy(id, 'object')
-    if (include_concept) {
-      config.addHierarchy(id, 'concept')
+  setupObjectHierarchy(config, id, { types } = {}) {
+    for (let type of types) {
+      config.addHierarchy(id, type)
     }
-    config.addHierarchy(id, 'isEdee')
-    config.addHierarchy(id, 'isEder')
-    config.addHierarchy(id, 'property')
   }
 
   // word is for one or many
@@ -31,7 +24,18 @@ class API {
 
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
-      this.setupObjectHierarchy(config, concept);
+
+			const types = [
+				'theAble',
+				'queryable',
+				'hierarchyAble',
+				'object',
+				'isEdee',
+				'isEder',
+				'property'
+			];
+
+      this.setupObjectHierarchy(config, concept, { types } );
     }
 
     if (pluralize.isSingular(word)) {
