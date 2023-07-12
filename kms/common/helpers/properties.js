@@ -481,6 +481,7 @@ class API {
             fcontext[ordering.object].paraphrase = true
             fcontext[ordering.category].paraphrase = true
           }
+          debugger;
           propertiesAPI.relation_add(fcontexts) 
         }
       })
@@ -578,6 +579,24 @@ class API {
     }
   }
 
+  setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
+    config.addHierarchy(id, 'theAble')
+    config.addHierarchy(id, 'queryable')
+    config.addHierarchy(id, 'hierarchyAble')
+    config.addHierarchy(id, 'object')
+    if (include_concept) {
+      config.addHierarchy(id, 'concept')
+    }
+    config.addHierarchy(id, 'isEdee')
+    config.addHierarchy(id, 'isEder')
+    config.addHierarchy(id, 'property')
+  }
+
+  makeObject(args) {
+    const { config } = args;
+    return this.config().km("dialogues").api.makeObject(args);
+  }
+
   // for example, "crew member" or "photon torpedo"
   // TODO account for modifier a complex phrase for example "hot (chicken strips)"
   kindOfConcept({ config, modifier, object }) {
@@ -631,6 +650,15 @@ class API {
 
     config.addPriorities([['articlePOS', 0], [modifierId, 0]])
     config.addPriorities([['articlePOS', 0], [objectId, 0]])
+  }
+
+  relation_add (relations) {
+    if (!Array.isArray(relations)) {
+      relations = [relations]
+    }
+    for (let relation of relations) {
+      this.objects.relations.push(relation)
+    }
   }
 
   relation_match (args, template, value) {

@@ -1,34 +1,34 @@
-# npm run test -g
+# npm run test
 # ./rt.sh
-node animals -tva -g
-node avatar -tva -g
-node characters -tva -g
-node currency -tva -g
-node dialogues -tva -g
-node emotions -tva -g
-node events -tva -g
-node foods -tva -g
-node help -tva -g
-node hierarchy -tva -g
-node javascript -tva -g
-node meta -tva -g
-node numbers -tva -g
-node math -tva -g
-node properties -tva -g
-node reports -tva -g
-node ordering -tva -g
-node people -tva -g
-node scorekeeper -tva -g
-node tell -tva -g
-node time -tva -g
-# -g
-node crew -tva -g
-node kirk -tva -g
-node spock -tva -g
-node stgame -tva -g
+node animals -tva
+node avatar -tva
+node characters -tva
+node currency -tva
+node dialogues -tva
+node emotions -tva
+node events -tva
+node foods -tva
+node help -tva
+node hierarchy -tva
+node javascript -tva
+node meta -tva
+node numbers -tva
+node math -tva
+node properties -tva
+node reports -tva
+node ordering -tva
+node people -tva
+node scorekeeper -tva
+node tell -tva
+node time -tva
 #
-node pokemon -tva -g
-# -g
-node kid -tva -g
-node kia -tva -g
-node hana -tva -g
+node crew -tva
+node kirk -tva
+node spock -tva
+node stgame -tva
+#
+node pokemon -tva
+#
+node kid -tva
+node kia -tva
+node hana -tva
