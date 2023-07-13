@@ -13,7 +13,7 @@ class API {
   }
 
   // word is for one or many
-  makeObject({config, context, doPluralize=true}) {
+  makeObject({config, context, types: [], doPluralize=true} = {}) {
     if (!context.unknown) {
       return context.value
     }
@@ -25,17 +25,19 @@ class API {
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
 
-			const types = [
+			const baseTypes = [
 				'theAble',
 				'queryable',
-				'hierarchyAble',
-				'object',
+				// 'hierarchyAble',
+				// 'object',
 				'isEdee',
 				'isEder',
-				'property'
+				// 'property'
 			];
 
-      this.setupObjectHierarchy(config, concept, { types } );
+      const allTypes = new Set(baseTypes.concat(types))
+
+      this.setupObjectHierarchy(config, concept, { allTypes } );
     }
 
     if (pluralize.isSingular(word)) {
