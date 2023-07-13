@@ -600,8 +600,9 @@ class API {
   }
 
   makeObject(args) {
+		const types = [ 'hierarchyAble', 'object', 'property' ];
     const { config } = args;
-    return this.config().km("dialogues").api.makeObject(args);
+    return this.config().km("dialogues").api.makeObject({ ...args, types });
   }
 
   // for example, "crew member" or "photon torpedo"
