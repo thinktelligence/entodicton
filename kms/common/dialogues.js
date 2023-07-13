@@ -88,21 +88,14 @@ class API {
     return concept
   }
 
-  setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
-    config.addHierarchy(id, 'theAble')
-    config.addHierarchy(id, 'queryable')
-    config.addHierarchy(id, 'hierarchyAble')
-    config.addHierarchy(id, 'object')
-    if (include_concept) {
-      config.addHierarchy(id, 'concept')
+  setupObjectHierarchy(config, id, { types } = {}) {
+    for (let type of types) {
+      config.addHierarchy(id, type)
     }
-    config.addHierarchy(id, 'isEdee')
-    config.addHierarchy(id, 'isEder')
-    config.addHierarchy(id, 'property')
   }
 
   // word is for one or many
-  makeObject({config, context, doPluralize=true}) {
+  makeObject({config, context, types=[], doPluralize=true} = {}) {
     if (!context.unknown) {
       return context.value
     }
@@ -110,10 +103,18 @@ class API {
     const concept = pluralize.singular(value)
     config.addOperator({ pattern: `([${concept}])`, allowDups: true })
     config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" , allowDups: true })
-
+		debugger;
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
-      this.setupObjectHierarchy(config, concept);
+      const baseTypes = [
+        'theAble',
+        'queryable',
+        'isEdee',
+        'isEder',
+      ];
+
+      const allTypes = new Set(baseTypes.concat(types))
+      this.setupObjectHierarchy(config, concept, {types: allTypes});
     }
 
     if (pluralize.isSingular(word)) {
