@@ -3,7 +3,7 @@ const currencyKM = require('./currency.js')
 const events = require('./events.js')
 const math = require('./math.js')
 const helpKM = require('./help.js')
-const { propertyToArray, wordNumber } = require('./helpers')
+const { propertyToArray, wordNumber, toEValue } = require('./helpers')
 const { table } = require('table')
 const _ = require('lodash')
 const reports_tests = require('./reports.test.json')
@@ -12,7 +12,7 @@ const { v4 : uuidv4, validate : validatev4 } = require('uuid');
 
 const template ={
   "queries": [
-      "worth means price times quantity",
+      "worth means price times quantity"
   ],
 }
 
@@ -61,7 +61,7 @@ const compareObject = (ordering) => (v1, v2) => {
 }
 
 const sort = ({ ordering, list }) => {
-  return list.sort(compareObject(ordering))
+  return [...list].sort(compareObject(ordering))
 }
 
 const testData = {
@@ -167,6 +167,8 @@ let config = {
     // move price to the far right
     // move column 2 to column 3
     // call it report1 move column 2 to column 3 show it
+    // show the price times quantity call it worth
+    // call the columns fred's amount
 
     // worth means quanity times price
     // show the price in euros
@@ -427,18 +429,30 @@ let config = {
           return true
         }
       }, 
-      apply: ({g, gs, objects, context, apis}) => {
+      apply: ({g, gs, objects, context, e, kms, apis}) => {
         let report = '';
         const products = context.listing
         const columns = objects.listings[context.id].columns
-        // api.listing.api = context.what.api
+        if (false) {
+          debugger;
+          kms.dialogues.api.setVariable('price', { marker: 'price', value: 23 })
+          kms.dialogues.api.setVariable('quantity', { marker: 'quantity', value: 3 })
+          const c1 = { marker: 'worth', value: 'worth' }
+          r1 = toEValue(e(c1));
+          r2 = e({ marker: 'supplier', value: 'supplier' })
+          // api.listing.api = context.what.api
+        }
         const data = products.map( (product) => {
-                const row = []
-                for (property of columns) {
-                  row.push(product[property])
-                }
-                return row
-               });
+          const row = []
+          for (let p of Object.keys(product)) {
+            kms.dialogues.api.setVariable(p, { marker: p, value: product[p] })
+          }
+          for (let property of columns) {
+            const value = toEValue(e({ marker: property, value: property }));
+            row.push(value)
+          }
+          return row
+        });
         report += table([columns].concat(data))
         return report
       }

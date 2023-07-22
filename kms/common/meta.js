@@ -261,14 +261,16 @@ let config = {
       notes: 'from means to where from is unknown',
       where: where(),
       match: ({context}) => context.marker == 'means' && context.from.marker == 'unknown',
-      apply: ({config, context, kms, isTest}) => {
-        if (isTest) {
+      apply: ({config, context, kms, e, isTest}) => {
+        if (false && isTest) {
           return
-        } else {
+        } else if (kms.dialogues) {
           if (context.to.value) {
             kms.dialogues.api.setVariable(context.from.value, context.to.value)
           } else {
             // config.addWord(context.from.word, 
+            kms.dialogues.api.makeObject({ context: context.from, types: context.to.types || [], config });
+            // const r = e(context.to)
             kms.dialogues.api.setVariable(context.from.value, context.to)
           }
         }
@@ -284,7 +286,6 @@ let config = {
           const matchByMarker = (defContext) => ({context}) => context.marker == defContext.from.marker && !context.query && !context.objects
           const matchByValue = (defContext) => ({context}) => context.evalue == defContext.from.value && !context.query && !context.objects
           const apply = (mappings, TO) => ({context, s}) => {
-            debugger
             TO = _.cloneDeep(TO)
             for (let { from, to } of mappings) {
               hashIndexesSet(TO, to, hashIndexesGet(context, from))

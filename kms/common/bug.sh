@@ -301,7 +301,6 @@
 # node reports -q 'x is 20 show the report' -g -d -s
 # node inspect dialogues -q 'x is 20 what is it' -g -d
 # node inspect reports -q 'call this report1 show it' -g -d
-# TODO node reports -q "worth means price times quantity show the worth show the report" -g -d
 # node math -q '4 times 5' -g -d -s 
 # node inspect reports -q 'call this report1 show it' -g -d
 # node inspect reports -q 'call it report1 show it' -g -d
@@ -327,8 +326,21 @@
 # node avatar -q 'your name' -g -d
 # node dialogues -q 'x is 3 what is x' -g -d
 # node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -g -d -s
+# node hierarchy -q 'cats are animals dogs are animals' -d
+# node hierarchy -q 'cats are animals dogs are animals what are the types of animals' -d
 # TODO node reports -q 'delete the columns means remove the column
 # TODO node math -q 'worth is price times quantity what does worth mean?' -g -d
 # TODO node math -q 'worth is price times quantity what is the meaning of worth?' -g -d
 # TODO node math -q '20 dollars times 10' -g -d
-node scorekeeper -q 'what is the winning score' -g -d
+# TODO node scorekeeper -q 'what is the winning score' -g -d
+# TODO node math -q 'worth is price times quantity price is 6 quantity is 4 what is the worth?' -d
+# node math -q 'worth is price times quantity' -d
+# TODO node reports -q "worth means price times quantity show the worth show the report" -d
+# node inspect reports -q "worthdebug means price times quantity" -d -g
+# node reports -q "show the worth list the models" -d -s
+# node reports -q "worthdebug is price times quantity\\nshow the worthdebug list the models" -d
+# TODO node math -q 'x is 3 y is 4 x*y'
+# node inspect math -q 'price is 6 quantity is 4 worth means price times quantity what is the worth?' -d
+node reports -q "worthtest is price times quantity\\nshow the worthtest list the models" -d -s
+# node reports -q "show the worthtest list the models" -d
+# node inspect reports -q "worthtest is price times quantity" -d

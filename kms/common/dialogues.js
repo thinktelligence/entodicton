@@ -101,9 +101,11 @@ class API {
     }
     const { word, value, number } = context;
     const concept = pluralize.singular(value)
+		if (config.exists(concept)) {
+			return concept
+		}
     config.addOperator({ pattern: `([${concept}])`, allowDups: true })
     config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" , allowDups: true })
-		debugger;
     const addConcept = (word, number) => {
       config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
       const baseTypes = [
@@ -752,7 +754,7 @@ let config = {
       where: where(),
       notes: 'x is y',
       match: ({context}) => context.marker == 'is' && !context.query && context.one && context.two,
-      apply: ({context, s, log, api}) => {
+      apply: ({context, s, log, api, config}) => {
         const one = context.one;
         const two = context.two;
         one.same = two;
@@ -780,8 +782,9 @@ let config = {
           two.same = undefined
         }
         if (!onePrime.sameWasProcessed && !twoPrime.sameWasProcessed) {
-            api.setVariable(one.value, two)
-            api.mentioned(one, two)
+					api.makeObject({ context: one, config, types: context.two.types || [] })
+					api.setVariable(one.value, two)
+					api.mentioned(one, two)
         }
       }
     },
