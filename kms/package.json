@@ -1,33 +1,9 @@
 {
-  "scripts": {
-    "to": "node node_modules/.bin/jest --runInBand -t ONE",
-    "test": "jest --config ./jest.config.json",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
-  },
+  "main": "main.js",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "dependencies": {
-    "base-64": "^1.0.0",
-    "uuid": "^9.0.0",
-    "pluralize": "^8.0.0",
-    "underscore": "^1.12.0",
-    "sort-json": "^2.0.1",
-    "node-fetch": "^2.6.1",
-    "entodicton": "6.29.0-beta.22",
-    "table": "^6.7.1",
-    "deep-equal": "^2.0.5",
-    "lodash": "^4.17.21",
-    "scriptjs": "^2.5.9",
-    "object-path": "^0.11.8",
-    "argparse": "^2.0.1"
-  },
-  "license": "ISC",
-  "name": "ekms",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "main": "main.js",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -98,8 +74,31 @@
     "common/time.js",
     "common/time.test.json"
   ],
+  "version": "6.29.0-beta.23",
+  "name": "ekms",
+  "scripts": {
+    "test:watch": "npm run test -- --watch",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE",
+    "test": "jest --config ./jest.config.json"
+  },
+  "dependencies": {
+    "pluralize": "^8.0.0",
+    "uuid": "^9.0.0",
+    "lodash": "^4.17.21",
+    "underscore": "^1.12.0",
+    "entodicton": "6.29.0-beta.23",
+    "base-64": "^1.0.0",
+    "sort-json": "^2.0.1",
+    "table": "^6.7.1",
+    "object-path": "^0.11.8",
+    "node-fetch": "^2.6.1",
+    "argparse": "^2.0.1",
+    "deep-equal": "^2.0.5",
+    "scriptjs": "^2.5.9"
+  },
   "author": "dev@thinktelligence.com",
-  "version": "6.29.0-beta.22",
   "keywords": [
     "NLP",
     "NLU",
@@ -108,5 +107,6 @@
     "natural language generation",
     "natural language understanding",
     "chatbot"
-  ]
+  ],
+  "license": "ISC"
 }
