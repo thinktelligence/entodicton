@@ -17176,5 +17176,2596 @@
       "",
       "╔════════╤══════════════╗\n║ name   │ supplier     ║\n╟────────┼──────────────╢\n║ pants1 │ x industries ║\n╟────────┼──────────────╢\n║ shirt1 │ y industries ║\n╚════════╧══════════════╝\n"
     ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "product",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "product",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "the",
+          0
+        ],
+        [
+          "worth",
+          0
+        ]
+      ],
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "worth",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "show",
+        "on": {
+          "marker": "report",
+          "pullFromContext": true,
+          "types": [
+            "report"
+          ]
+        },
+        "properties": {
+          "concept": true,
+          "determiner": "the",
+          "marker": "worth",
+          "modifiers": [
+            "determiner"
+          ],
+          "number": "one",
+          "pullFromContext": true,
+          "text": "the worth",
+          "types": [
+            "worth"
+          ],
+          "value": "worth",
+          "wantsValue": true,
+          "word": "worth"
+        },
+        "text": "show the worth",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "value": "show",
+        "word": "show"
+      },
+      {
+        "api": "models",
+        "default": true,
+        "id": "tempReport1",
+        "isResponse": true,
+        "listing": [
+          {
+            "id": 1,
+            "isInstance": true,
+            "marker": "models",
+            "name": "tiger",
+            "price": 9,
+            "quantity": 3,
+            "supplier": "tamiya",
+            "type": "tanks"
+          },
+          {
+            "id": 2,
+            "isInstance": true,
+            "marker": "models",
+            "name": "spitfire",
+            "price": 15,
+            "quantity": 7,
+            "supplier": "dragon",
+            "type": "planes"
+          }
+        ],
+        "marker": "listAction",
+        "text": "list the models",
+        "topLevel": true,
+        "touchedBy": [
+          "call10"
+        ],
+        "what": {
+          "api": "models",
+          "concept": true,
+          "determiner": "the",
+          "greg": true,
+          "marker": "product",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "text": "the models",
+          "types": [
+            "product"
+          ],
+          "value": "models",
+          "wantsValue": true,
+          "word": "models"
+        },
+        "word": "list"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "worth",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "worth",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "product",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "listAction",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "show",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "listings": {
+            "tempReport1": {
+              "api": "models",
+              "columns": [
+                "name",
+                "supplier",
+                "worth"
+              ],
+              "ordering": [
+                [
+                  "worth",
+                  null
+                ]
+              ],
+              "type": "tables"
+            }
+          },
+          "tempReportId": 1
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        },
+        "6": {
+          "mentioned": [
+            {
+              "marker": "quantity",
+              "value": {
+                "marker": "quantity",
+                "value": 7
+              }
+            },
+            {
+              "marker": "id",
+              "value": {
+                "marker": "id",
+                "value": 2
+              }
+            },
+            {
+              "marker": "price",
+              "value": {
+                "marker": "price",
+                "value": 15
+              }
+            },
+            {
+              "marker": "name",
+              "value": {
+                "marker": "name",
+                "value": "spitfire"
+              }
+            },
+            {
+              "marker": "type",
+              "value": {
+                "marker": "type",
+                "value": "planes"
+              }
+            },
+            {
+              "marker": "isInstance",
+              "value": {
+                "marker": "isInstance",
+                "value": true
+              }
+            },
+            {
+              "marker": "supplier",
+              "value": {
+                "marker": "supplier",
+                "value": "dragon"
+              }
+            },
+            {
+              "marker": "marker",
+              "value": {
+                "marker": "marker",
+                "value": "models"
+              }
+            },
+            {
+              "marker": "quantity",
+              "value": {
+                "marker": "quantity",
+                "value": 3
+              }
+            },
+            {
+              "marker": "id",
+              "value": {
+                "marker": "id",
+                "value": 1
+              }
+            },
+            {
+              "marker": "price",
+              "value": {
+                "marker": "price",
+                "value": 9
+              }
+            },
+            {
+              "marker": "name",
+              "value": {
+                "marker": "name",
+                "value": "tiger"
+              }
+            },
+            {
+              "marker": "type",
+              "value": {
+                "marker": "type",
+                "value": "tanks"
+              }
+            },
+            {
+              "marker": "isInstance",
+              "value": {
+                "marker": "isInstance",
+                "value": true
+              }
+            },
+            {
+              "marker": "supplier",
+              "value": {
+                "marker": "supplier",
+                "value": "tamiya"
+              }
+            },
+            {
+              "marker": "marker",
+              "value": {
+                "marker": "marker",
+                "value": "models"
+              }
+            },
+            {
+              "marker": "worth",
+              "value": {
+                "default": true,
+                "evaluate": true,
+                "isResponse": true,
+                "marker": "times",
+                "number": "one",
+                "text": "price times quantity",
+                "types": [
+                  "price",
+                  "quantity",
+                  "times"
+                ],
+                "value": null,
+                "word": "times",
+                "x": {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "types": [
+                    "price"
+                  ],
+                  "value": "price",
+                  "word": "price"
+                },
+                "y": {
+                  "default": true,
+                  "marker": "quantity",
+                  "text": "quantity",
+                  "types": [
+                    "quantity"
+                  ],
+                  "value": "quantity",
+                  "word": "quantity"
+                }
+              }
+            },
+            {
+              "marker": "report",
+              "text": "tempReport1",
+              "types": [
+                "report"
+              ],
+              "value": "tempReport1",
+              "word": "tempReport1"
+            }
+          ],
+          "variables": {
+          }
+        },
+        "7": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "api": "models",
+            "default": true,
+            "id": "tempReport1",
+            "isResponse": true,
+            "listing": [
+              {
+                "id": 1,
+                "isInstance": true,
+                "marker": "models",
+                "name": "tiger",
+                "price": 9,
+                "quantity": 3,
+                "supplier": "tamiya",
+                "type": "tanks"
+              },
+              {
+                "id": 2,
+                "isInstance": true,
+                "marker": "models",
+                "name": "spitfire",
+                "price": 15,
+                "quantity": 7,
+                "supplier": "dragon",
+                "type": "planes"
+              }
+            ],
+            "marker": "listAction",
+            "text": "list the models",
+            "topLevel": true,
+            "touchedBy": [
+              "call10"
+            ],
+            "what": {
+              "api": "models",
+              "concept": true,
+              "determiner": "the",
+              "greg": true,
+              "marker": "product",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the models",
+              "types": [
+                "product"
+              ],
+              "value": "models",
+              "wantsValue": true,
+              "word": "models"
+            },
+            "word": "list"
+          },
+          "paraphrases": "list the models",
+          "responses": [
+            "",
+            "╔══════════╤══════════╤═══════╗\n║ name     │ supplier │ worth ║\n╟──────────┼──────────┼───────╢\n║ tiger    │ tamiya   │ 27    ║\n╟──────────┼──────────┼───────╢\n║ spitfire │ dragon   │ 105   ║\n╚══════════╧══════════╧═══════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "on": {
+              "marker": "report",
+              "pullFromContext": true,
+              "types": [
+                "report"
+              ]
+            },
+            "properties": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "worth",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": true,
+              "text": "the worth",
+              "types": [
+                "worth"
+              ],
+              "value": "worth",
+              "wantsValue": true,
+              "word": "worth"
+            },
+            "text": "show the worth",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "show",
+            "word": "show"
+          },
+          "paraphrases": "the properties being shown are name, supplier and worth",
+          "responses": [
+            "",
+            "╔══════════╤══════════╤═══════╗\n║ name     │ supplier │ worth ║\n╟──────────┼──────────┼───────╢\n║ tiger    │ tamiya   │ 27    ║\n╟──────────┼──────────┼───────╢\n║ spitfire │ dragon   │ 105   ║\n╚══════════╧══════════╧═══════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "text": "worth",
+              "unknown": true,
+              "value": "worth",
+              "word": "worth"
+            },
+            "marker": "means",
+            "text": "worth means price times quantity",
+            "to": {
+              "default": true,
+              "evaluate": true,
+              "isResponse": true,
+              "marker": "times",
+              "number": "one",
+              "text": "price times quantity",
+              "types": [
+                "price",
+                "quantity",
+                "times"
+              ],
+              "value": null,
+              "word": "times",
+              "x": {
+                "default": true,
+                "marker": "price",
+                "text": "price",
+                "types": [
+                  "price"
+                ],
+                "value": "price",
+                "word": "price"
+              },
+              "y": {
+                "default": true,
+                "marker": "quantity",
+                "text": "quantity",
+                "types": [
+                  "quantity"
+                ],
+                "value": "quantity",
+                "word": "quantity"
+              }
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "means",
+            "word": "means"
+          },
+          "paraphrases": "worth means price times quantity",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "the properties being shown are name, supplier and worth",
+      "list the models"
+    ],
+    "query": "show the worth list the models",
+    "responses": [
+      "",
+      "╔══════════╤══════════╤═══════╗\n║ name     │ supplier │ worth ║\n╟──────────┼──────────┼───────╢\n║ tiger    │ tamiya   │ 27    ║\n╟──────────┼──────────┼───────╢\n║ spitfire │ dragon   │ 105   ║\n╚══════════╧══════════╧═══════╝\n"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "product",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "product",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "from": {
+          "marker": "unknown",
+          "text": "worthtest",
+          "unknown": true,
+          "value": "worthtest",
+          "word": "worthtest"
+        },
+        "marker": "means",
+        "text": "worthtest means price times quantity",
+        "to": {
+          "default": true,
+          "evaluate": true,
+          "isResponse": true,
+          "marker": "times",
+          "number": "one",
+          "text": "price times quantity",
+          "types": [
+            "price",
+            "quantity",
+            "times"
+          ],
+          "value": null,
+          "word": "times",
+          "x": {
+            "default": true,
+            "marker": "price",
+            "text": "price",
+            "types": [
+              "price"
+            ],
+            "value": "price",
+            "word": "price"
+          },
+          "y": {
+            "default": true,
+            "marker": "quantity",
+            "text": "quantity",
+            "types": [
+              "quantity"
+            ],
+            "value": "quantity",
+            "word": "quantity"
+          }
+        },
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "value": "means",
+        "word": "means"
+      },
+      {
+        "default": true,
+        "marker": "show",
+        "on": {
+          "marker": "report",
+          "pullFromContext": true,
+          "types": [
+            "report"
+          ]
+        },
+        "properties": {
+          "concept": true,
+          "determiner": "the",
+          "marker": "worthtest",
+          "modifiers": [
+            "determiner"
+          ],
+          "number": "one",
+          "pullFromContext": true,
+          "text": "the worthtest",
+          "types": [
+            "worthtest"
+          ],
+          "value": "worthtest",
+          "wantsValue": true,
+          "word": "worthtest"
+        },
+        "text": "show the worthtest",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "value": "show",
+        "word": "show"
+      },
+      {
+        "api": "models",
+        "default": true,
+        "id": "tempReport1",
+        "isResponse": true,
+        "listing": [
+          {
+            "id": 1,
+            "isInstance": true,
+            "marker": "models",
+            "name": "tiger",
+            "price": 9,
+            "quantity": 3,
+            "supplier": "tamiya",
+            "type": "tanks"
+          },
+          {
+            "id": 2,
+            "isInstance": true,
+            "marker": "models",
+            "name": "spitfire",
+            "price": 15,
+            "quantity": 7,
+            "supplier": "dragon",
+            "type": "planes"
+          }
+        ],
+        "marker": "listAction",
+        "text": "list the models",
+        "topLevel": true,
+        "touchedBy": [
+          "call10"
+        ],
+        "what": {
+          "api": "models",
+          "concept": true,
+          "determiner": "the",
+          "greg": true,
+          "marker": "product",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "text": "the models",
+          "types": [
+            "product"
+          ],
+          "value": "models",
+          "wantsValue": true,
+          "word": "models"
+        },
+        "word": "list"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "quantity",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "quantity",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "quantity",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "price",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "times",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "means",
+            0
+          ],
+          "ops": [
+            [
+              "means",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "product",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "worthtest",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "worthtest",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "worthtest",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "listAction",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "listings": {
+            "tempReport1": {
+              "api": "models",
+              "columns": [
+                "name",
+                "supplier",
+                "worthtest"
+              ],
+              "ordering": [
+                [
+                  "worthtest",
+                  null
+                ]
+              ],
+              "type": "tables"
+            }
+          },
+          "tempReportId": 1
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        },
+        "6": {
+          "mentioned": [
+            {
+              "marker": "quantity",
+              "value": {
+                "marker": "quantity",
+                "value": 7
+              }
+            },
+            {
+              "marker": "id",
+              "value": {
+                "marker": "id",
+                "value": 2
+              }
+            },
+            {
+              "marker": "price",
+              "value": {
+                "marker": "price",
+                "value": 15
+              }
+            },
+            {
+              "marker": "name",
+              "value": {
+                "marker": "name",
+                "value": "spitfire"
+              }
+            },
+            {
+              "marker": "type",
+              "value": {
+                "marker": "type",
+                "value": "planes"
+              }
+            },
+            {
+              "marker": "isInstance",
+              "value": {
+                "marker": "isInstance",
+                "value": true
+              }
+            },
+            {
+              "marker": "supplier",
+              "value": {
+                "marker": "supplier",
+                "value": "dragon"
+              }
+            },
+            {
+              "marker": "marker",
+              "value": {
+                "marker": "marker",
+                "value": "models"
+              }
+            },
+            {
+              "marker": "quantity",
+              "value": {
+                "marker": "quantity",
+                "value": 3
+              }
+            },
+            {
+              "marker": "id",
+              "value": {
+                "marker": "id",
+                "value": 1
+              }
+            },
+            {
+              "marker": "price",
+              "value": {
+                "marker": "price",
+                "value": 9
+              }
+            },
+            {
+              "marker": "name",
+              "value": {
+                "marker": "name",
+                "value": "tiger"
+              }
+            },
+            {
+              "marker": "type",
+              "value": {
+                "marker": "type",
+                "value": "tanks"
+              }
+            },
+            {
+              "marker": "isInstance",
+              "value": {
+                "marker": "isInstance",
+                "value": true
+              }
+            },
+            {
+              "marker": "supplier",
+              "value": {
+                "marker": "supplier",
+                "value": "tamiya"
+              }
+            },
+            {
+              "marker": "marker",
+              "value": {
+                "marker": "marker",
+                "value": "models"
+              }
+            },
+            {
+              "marker": "worthtest",
+              "value": {
+                "default": true,
+                "evaluate": true,
+                "isResponse": true,
+                "marker": "times",
+                "number": "one",
+                "text": "price times quantity",
+                "types": [
+                  "price",
+                  "quantity",
+                  "times"
+                ],
+                "value": null,
+                "word": "times",
+                "x": {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "types": [
+                    "price"
+                  ],
+                  "value": "price",
+                  "word": "price"
+                },
+                "y": {
+                  "default": true,
+                  "marker": "quantity",
+                  "text": "quantity",
+                  "types": [
+                    "quantity"
+                  ],
+                  "value": "quantity",
+                  "word": "quantity"
+                }
+              }
+            },
+            {
+              "marker": "worth",
+              "value": {
+                "default": true,
+                "evaluate": true,
+                "isResponse": true,
+                "marker": "times",
+                "number": "one",
+                "text": "price times quantity",
+                "types": [
+                  "price",
+                  "quantity",
+                  "times"
+                ],
+                "value": null,
+                "word": "times",
+                "x": {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "types": [
+                    "price"
+                  ],
+                  "value": "price",
+                  "word": "price"
+                },
+                "y": {
+                  "default": true,
+                  "marker": "quantity",
+                  "text": "quantity",
+                  "types": [
+                    "quantity"
+                  ],
+                  "value": "quantity",
+                  "word": "quantity"
+                }
+              }
+            },
+            {
+              "marker": "report",
+              "text": "tempReport1",
+              "types": [
+                "report"
+              ],
+              "value": "tempReport1",
+              "word": "tempReport1"
+            }
+          ],
+          "variables": {
+          }
+        },
+        "7": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "api": "models",
+            "default": true,
+            "id": "tempReport1",
+            "isResponse": true,
+            "listing": [
+              {
+                "id": 1,
+                "isInstance": true,
+                "marker": "models",
+                "name": "tiger",
+                "price": 9,
+                "quantity": 3,
+                "supplier": "tamiya",
+                "type": "tanks"
+              },
+              {
+                "id": 2,
+                "isInstance": true,
+                "marker": "models",
+                "name": "spitfire",
+                "price": 15,
+                "quantity": 7,
+                "supplier": "dragon",
+                "type": "planes"
+              }
+            ],
+            "marker": "listAction",
+            "text": "list the models",
+            "topLevel": true,
+            "touchedBy": [
+              "call10"
+            ],
+            "what": {
+              "api": "models",
+              "concept": true,
+              "determiner": "the",
+              "greg": true,
+              "marker": "product",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the models",
+              "types": [
+                "product"
+              ],
+              "value": "models",
+              "wantsValue": true,
+              "word": "models"
+            },
+            "word": "list"
+          },
+          "paraphrases": "list the models",
+          "responses": [
+            "",
+            "╔══════════╤══════════╤═══════════╗\n║ name     │ supplier │ worthtest ║\n╟──────────┼──────────┼───────────╢\n║ tiger    │ tamiya   │ 27        ║\n╟──────────┼──────────┼───────────╢\n║ spitfire │ dragon   │ 105       ║\n╚══════════╧══════════╧═══════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "on": {
+              "marker": "report",
+              "pullFromContext": true,
+              "types": [
+                "report"
+              ]
+            },
+            "properties": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "worthtest",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": true,
+              "text": "the worthtest",
+              "types": [
+                "worthtest"
+              ],
+              "value": "worthtest",
+              "wantsValue": true,
+              "word": "worthtest"
+            },
+            "text": "show the worthtest",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "show",
+            "word": "show"
+          },
+          "paraphrases": "the properties being shown are name, supplier and worthtest",
+          "responses": [
+            "",
+            "╔══════════╤══════════╤═══════════╗\n║ name     │ supplier │ worthtest ║\n╟──────────┼──────────┼───────────╢\n║ tiger    │ tamiya   │ 27        ║\n╟──────────┼──────────┼───────────╢\n║ spitfire │ dragon   │ 105       ║\n╚══════════╧══════════╧═══════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "text": "worthtest",
+              "unknown": true,
+              "value": "worthtest",
+              "word": "worthtest"
+            },
+            "marker": "means",
+            "text": "worthtest means price times quantity",
+            "to": {
+              "default": true,
+              "evaluate": true,
+              "isResponse": true,
+              "marker": "times",
+              "number": "one",
+              "text": "price times quantity",
+              "types": [
+                "price",
+                "quantity",
+                "times"
+              ],
+              "value": null,
+              "word": "times",
+              "x": {
+                "default": true,
+                "marker": "price",
+                "text": "price",
+                "types": [
+                  "price"
+                ],
+                "value": "price",
+                "word": "price"
+              },
+              "y": {
+                "default": true,
+                "marker": "quantity",
+                "text": "quantity",
+                "types": [
+                  "quantity"
+                ],
+                "value": "quantity",
+                "word": "quantity"
+              }
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "means",
+            "word": "means"
+          },
+          "paraphrases": "worthtest means price times quantity",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "text": "worth",
+              "unknown": true,
+              "value": "worth",
+              "word": "worth"
+            },
+            "marker": "means",
+            "text": "worth means price times quantity",
+            "to": {
+              "default": true,
+              "evaluate": true,
+              "isResponse": true,
+              "marker": "times",
+              "number": "one",
+              "text": "price times quantity",
+              "types": [
+                "price",
+                "quantity",
+                "times"
+              ],
+              "value": null,
+              "word": "times",
+              "x": {
+                "default": true,
+                "marker": "price",
+                "text": "price",
+                "types": [
+                  "price"
+                ],
+                "value": "price",
+                "word": "price"
+              },
+              "y": {
+                "default": true,
+                "marker": "quantity",
+                "text": "quantity",
+                "types": [
+                  "quantity"
+                ],
+                "value": "quantity",
+                "word": "quantity"
+              }
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "means",
+            "word": "means"
+          },
+          "paraphrases": "worth means price times quantity",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "worthtest means price times quantity",
+      "the properties being shown are name, supplier and worthtest",
+      "list the models"
+    ],
+    "query": "worthtest means price times quantity\\nshow the worthtest list the models",
+    "responses": [
+      "",
+      "",
+      "╔══════════╤══════════╤═══════════╗\n║ name     │ supplier │ worthtest ║\n╟──────────┼──────────┼───────────╢\n║ tiger    │ tamiya   │ 27        ║\n╟──────────┼──────────┼───────────╢\n║ spitfire │ dragon   │ 105       ║\n╚══════════╧══════════╧═══════════╝\n"
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "list",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "product",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "product",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "listAction",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "marker": "is",
+        "number": "one",
+        "one": {
+          "marker": "unknown",
+          "number": "one",
+          "text": "worthtest",
+          "types": [
+            "unknown"
+          ],
+          "unknown": true,
+          "value": "worthtest",
+          "word": "worthtest"
+        },
+        "text": "worthtest is price times quantity",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "two": {
+          "default": true,
+          "evaluate": true,
+          "isResponse": true,
+          "marker": "times",
+          "number": "one",
+          "text": "price times quantity",
+          "types": [
+            "price",
+            "quantity",
+            "times"
+          ],
+          "value": null,
+          "word": "times",
+          "x": {
+            "default": true,
+            "marker": "price",
+            "text": "price",
+            "types": [
+              "price"
+            ],
+            "value": "price",
+            "word": "price"
+          },
+          "y": {
+            "default": true,
+            "marker": "quantity",
+            "text": "quantity",
+            "types": [
+              "quantity"
+            ],
+            "value": "quantity",
+            "word": "quantity"
+          }
+        },
+        "word": "is"
+      },
+      {
+        "default": true,
+        "marker": "show",
+        "on": {
+          "marker": "report",
+          "pullFromContext": true,
+          "types": [
+            "report"
+          ]
+        },
+        "properties": {
+          "concept": true,
+          "determiner": "the",
+          "marker": "worthtest",
+          "modifiers": [
+            "determiner"
+          ],
+          "number": "one",
+          "pullFromContext": true,
+          "text": "the worthtest",
+          "types": [
+            "worthtest"
+          ],
+          "value": "worthtest",
+          "wantsValue": true,
+          "word": "worthtest"
+        },
+        "text": "show the worthtest",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "value": "show",
+        "word": "show"
+      },
+      {
+        "api": "models",
+        "default": true,
+        "id": "tempReport1",
+        "isResponse": true,
+        "listing": [
+          {
+            "id": 1,
+            "isInstance": true,
+            "marker": "models",
+            "name": "tiger",
+            "price": 9,
+            "quantity": 3,
+            "supplier": "tamiya",
+            "type": "tanks"
+          },
+          {
+            "id": 2,
+            "isInstance": true,
+            "marker": "models",
+            "name": "spitfire",
+            "price": 15,
+            "quantity": 7,
+            "supplier": "dragon",
+            "type": "planes"
+          }
+        ],
+        "marker": "listAction",
+        "text": "list the models",
+        "topLevel": true,
+        "touchedBy": [
+          "call10"
+        ],
+        "what": {
+          "api": "models",
+          "concept": true,
+          "determiner": "the",
+          "greg": true,
+          "marker": "product",
+          "modifiers": [
+            "determiner"
+          ],
+          "pullFromContext": true,
+          "text": "the models",
+          "types": [
+            "product"
+          ],
+          "value": "models",
+          "wantsValue": true,
+          "word": "models"
+        },
+        "word": "list"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "unknown",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "quantity",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "price",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "price",
+              0
+            ],
+            [
+              "quantity",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "quantity",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "quantity",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "times",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "times",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "unknown",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ],
+            [
+              "unknown",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            0
+          ],
+          "ops": [
+            [
+              "is",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "is",
+            1
+          ],
+          "ops": [
+            [
+              "is",
+              1
+            ]
+          ]
+        },
+        {
+          "op": [
+            "worthtest",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "worthtest",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "product",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "product",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "show",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ],
+            [
+              "show",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "listAction",
+            0
+          ],
+          "ops": [
+            [
+              "listAction",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "listings": {
+            "tempReport1": {
+              "api": "models",
+              "columns": [
+                "name",
+                "supplier",
+                "worthtest"
+              ],
+              "ordering": [
+                [
+                  "worthtest",
+                  null
+                ]
+              ],
+              "type": "tables"
+            }
+          },
+          "tempReportId": 1
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+        },
+        "5": {
+        },
+        "6": {
+          "mentioned": [
+            {
+              "marker": "quantity",
+              "value": {
+                "marker": "quantity",
+                "value": 7
+              }
+            },
+            {
+              "marker": "id",
+              "value": {
+                "marker": "id",
+                "value": 2
+              }
+            },
+            {
+              "marker": "price",
+              "value": {
+                "marker": "price",
+                "value": 15
+              }
+            },
+            {
+              "marker": "name",
+              "value": {
+                "marker": "name",
+                "value": "spitfire"
+              }
+            },
+            {
+              "marker": "type",
+              "value": {
+                "marker": "type",
+                "value": "planes"
+              }
+            },
+            {
+              "marker": "isInstance",
+              "value": {
+                "marker": "isInstance",
+                "value": true
+              }
+            },
+            {
+              "marker": "supplier",
+              "value": {
+                "marker": "supplier",
+                "value": "dragon"
+              }
+            },
+            {
+              "marker": "marker",
+              "value": {
+                "marker": "marker",
+                "value": "models"
+              }
+            },
+            {
+              "marker": "quantity",
+              "value": {
+                "marker": "quantity",
+                "value": 3
+              }
+            },
+            {
+              "marker": "id",
+              "value": {
+                "marker": "id",
+                "value": 1
+              }
+            },
+            {
+              "marker": "price",
+              "value": {
+                "marker": "price",
+                "value": 9
+              }
+            },
+            {
+              "marker": "name",
+              "value": {
+                "marker": "name",
+                "value": "tiger"
+              }
+            },
+            {
+              "marker": "type",
+              "value": {
+                "marker": "type",
+                "value": "tanks"
+              }
+            },
+            {
+              "marker": "isInstance",
+              "value": {
+                "marker": "isInstance",
+                "value": true
+              }
+            },
+            {
+              "marker": "supplier",
+              "value": {
+                "marker": "supplier",
+                "value": "tamiya"
+              }
+            },
+            {
+              "marker": "marker",
+              "value": {
+                "marker": "marker",
+                "value": "models"
+              }
+            },
+            {
+              "marker": "worthtest",
+              "number": "one",
+              "text": "worthtest",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": {
+                "default": true,
+                "evaluate": true,
+                "isResponse": true,
+                "marker": "times",
+                "number": "one",
+                "text": "price times quantity",
+                "types": [
+                  "price",
+                  "quantity",
+                  "times"
+                ],
+                "value": null,
+                "word": "times",
+                "x": {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "types": [
+                    "price"
+                  ],
+                  "value": "price",
+                  "word": "price"
+                },
+                "y": {
+                  "default": true,
+                  "marker": "quantity",
+                  "text": "quantity",
+                  "types": [
+                    "quantity"
+                  ],
+                  "value": "quantity",
+                  "word": "quantity"
+                }
+              },
+              "word": "worthtest"
+            },
+            {
+              "marker": "worthtest",
+              "value": {
+                "default": true,
+                "evaluate": true,
+                "isResponse": true,
+                "marker": "times",
+                "number": "one",
+                "text": "price times quantity",
+                "types": [
+                  "price",
+                  "quantity",
+                  "times"
+                ],
+                "value": null,
+                "word": "times",
+                "x": {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "types": [
+                    "price"
+                  ],
+                  "value": "price",
+                  "word": "price"
+                },
+                "y": {
+                  "default": true,
+                  "marker": "quantity",
+                  "text": "quantity",
+                  "types": [
+                    "quantity"
+                  ],
+                  "value": "quantity",
+                  "word": "quantity"
+                }
+              }
+            },
+            {
+              "marker": "worth",
+              "value": {
+                "default": true,
+                "evaluate": true,
+                "isResponse": true,
+                "marker": "times",
+                "number": "one",
+                "text": "price times quantity",
+                "types": [
+                  "price",
+                  "quantity",
+                  "times"
+                ],
+                "value": null,
+                "word": "times",
+                "x": {
+                  "default": true,
+                  "marker": "price",
+                  "text": "price",
+                  "types": [
+                    "price"
+                  ],
+                  "value": "price",
+                  "word": "price"
+                },
+                "y": {
+                  "default": true,
+                  "marker": "quantity",
+                  "text": "quantity",
+                  "types": [
+                    "quantity"
+                  ],
+                  "value": "quantity",
+                  "word": "quantity"
+                }
+              }
+            },
+            {
+              "marker": "report",
+              "text": "tempReport1",
+              "types": [
+                "report"
+              ],
+              "value": "tempReport1",
+              "word": "tempReport1"
+            }
+          ],
+          "variables": {
+          }
+        },
+        "7": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "api": "models",
+            "default": true,
+            "id": "tempReport1",
+            "isResponse": true,
+            "listing": [
+              {
+                "id": 1,
+                "isInstance": true,
+                "marker": "models",
+                "name": "tiger",
+                "price": 9,
+                "quantity": 3,
+                "supplier": "tamiya",
+                "type": "tanks"
+              },
+              {
+                "id": 2,
+                "isInstance": true,
+                "marker": "models",
+                "name": "spitfire",
+                "price": 15,
+                "quantity": 7,
+                "supplier": "dragon",
+                "type": "planes"
+              }
+            ],
+            "marker": "listAction",
+            "text": "list the models",
+            "topLevel": true,
+            "touchedBy": [
+              "call10"
+            ],
+            "what": {
+              "api": "models",
+              "concept": true,
+              "determiner": "the",
+              "greg": true,
+              "marker": "product",
+              "modifiers": [
+                "determiner"
+              ],
+              "pullFromContext": true,
+              "text": "the models",
+              "types": [
+                "product"
+              ],
+              "value": "models",
+              "wantsValue": true,
+              "word": "models"
+            },
+            "word": "list"
+          },
+          "paraphrases": "list the models",
+          "responses": [
+            "",
+            "╔══════════╤══════════╤═══════════╗\n║ name     │ supplier │ worthtest ║\n╟──────────┼──────────┼───────────╢\n║ tiger    │ tamiya   │ 27        ║\n╟──────────┼──────────┼───────────╢\n║ spitfire │ dragon   │ 105       ║\n╚══════════╧══════════╧═══════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "marker": "show",
+            "on": {
+              "marker": "report",
+              "pullFromContext": true,
+              "types": [
+                "report"
+              ]
+            },
+            "properties": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "worthtest",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": true,
+              "text": "the worthtest",
+              "types": [
+                "worthtest"
+              ],
+              "value": "worthtest",
+              "wantsValue": true,
+              "word": "worthtest"
+            },
+            "text": "show the worthtest",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "show",
+            "word": "show"
+          },
+          "paraphrases": "the properties being shown are name, supplier and worthtest",
+          "responses": [
+            "",
+            "╔══════════╤══════════╤═══════════╗\n║ name     │ supplier │ worthtest ║\n╟──────────┼──────────┼───────────╢\n║ tiger    │ tamiya   │ 27        ║\n╟──────────┼──────────┼───────────╢\n║ spitfire │ dragon   │ 105       ║\n╚══════════╧══════════╧═══════════╝\n"
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "marker": "unknown",
+              "number": "one",
+              "text": "worthtest",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "worthtest",
+              "word": "worthtest"
+            },
+            "text": "worthtest is price times quantity",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "default": true,
+              "evaluate": true,
+              "isResponse": true,
+              "marker": "times",
+              "number": "one",
+              "text": "price times quantity",
+              "types": [
+                "price",
+                "quantity",
+                "times"
+              ],
+              "value": null,
+              "word": "times",
+              "x": {
+                "default": true,
+                "marker": "price",
+                "text": "price",
+                "types": [
+                  "price"
+                ],
+                "value": "price",
+                "word": "price"
+              },
+              "y": {
+                "default": true,
+                "marker": "quantity",
+                "text": "quantity",
+                "types": [
+                  "quantity"
+                ],
+                "value": "quantity",
+                "word": "quantity"
+              }
+            },
+            "word": "is"
+          },
+          "paraphrases": "worthtest is price times quantity",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "default": true,
+            "from": {
+              "marker": "unknown",
+              "text": "worth",
+              "unknown": true,
+              "value": "worth",
+              "word": "worth"
+            },
+            "marker": "means",
+            "text": "worth means price times quantity",
+            "to": {
+              "default": true,
+              "evaluate": true,
+              "isResponse": true,
+              "marker": "times",
+              "number": "one",
+              "text": "price times quantity",
+              "types": [
+                "price",
+                "quantity",
+                "times"
+              ],
+              "value": null,
+              "word": "times",
+              "x": {
+                "default": true,
+                "marker": "price",
+                "text": "price",
+                "types": [
+                  "price"
+                ],
+                "value": "price",
+                "word": "price"
+              },
+              "y": {
+                "default": true,
+                "marker": "quantity",
+                "text": "quantity",
+                "types": [
+                  "quantity"
+                ],
+                "value": "quantity",
+                "word": "quantity"
+              }
+            },
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "means",
+            "word": "means"
+          },
+          "paraphrases": "worth means price times quantity",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "worthtest is price times quantity",
+      "the properties being shown are name, supplier and worthtest",
+      "list the models"
+    ],
+    "query": "worthtest is price times quantity\\nshow the worthtest list the models",
+    "responses": [
+      "",
+      "",
+      "╔══════════╤══════════╤═══════════╗\n║ name     │ supplier │ worthtest ║\n╟──────────┼──────────┼───────────╢\n║ tiger    │ tamiya   │ 27        ║\n╟──────────┼──────────┼───────────╢\n║ spitfire │ dragon   │ 105       ║\n╚══════════╧══════════╧═══════════╝\n"
+    ]
   }
 ]

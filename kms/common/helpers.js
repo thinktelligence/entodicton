@@ -98,7 +98,15 @@ wordNumber = (word, toPlural) => {
   }
 }
 
+const toEValue = (context) => {
+  while( context.evalue ) {
+    context = context.evalue
+  }
+	return context;
+}
+
 module.exports = {
+	toEValue,
   millisecondsUntilHourOfDay,
   indent,
   isMany,

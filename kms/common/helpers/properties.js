@@ -481,6 +481,7 @@ class API {
             fcontext[ordering.object].paraphrase = true
             fcontext[ordering.category].paraphrase = true
           }
+          debugger;
           propertiesAPI.relation_add(fcontexts) 
         }
       })
@@ -578,6 +579,32 @@ class API {
     }
   }
 
+  setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
+    const types = [
+      'theAble',
+      'queryable',
+      'hierarchyAble',
+      'object',
+      'isEdee',
+      'isEder',
+      'property'
+    ];
+
+    if (include_concept) {
+      types.push('concept');
+    }
+  
+    for (let type of types) {
+      config.addHierarchy(id, type)
+    }
+  }
+
+  makeObject(args) {
+		const types = [ 'hierarchyAble', 'object', 'property' ];
+    const { config } = args;
+    return this.config().km("dialogues").api.makeObject({ ...args, types });
+  }
+
   // for example, "crew member" or "photon torpedo"
   // TODO account for modifier a complex phrase for example "hot (chicken strips)"
   kindOfConcept({ config, modifier, object }) {
@@ -616,11 +643,6 @@ class API {
       }
       this.addWord(word)
     }
-    // config.addHierarchy(objectId, 'theAble')
-    // config.addHierarchy(objectId, 'queryable')
-    // config.addHierarchy(objectId, 'property')
-    // config.addHierarchy(modifierObjectId, objectId)
-    // config.addHierarchy(objectId, 'concept')
     this.setupObjectHierarchy(config, objectId);
     this.setupObjectHierarchy(config, modifierId, { include_concept: false });
     this.setupObjectHierarchy(config, modifierObjectId);
@@ -631,75 +653,6 @@ class API {
 
     config.addPriorities([['articlePOS', 0], [modifierId, 0]])
     config.addPriorities([['articlePOS', 0], [objectId, 0]])
-  }
-
-  /*
-  // for example, "I bought a car" => { before: 'person'], operator: 'buy', words: ['bought'], after: ['car']) }
-  actionPrefix({before, operator, words, after, semantic}) {
-
-  }
-  */
-
-  setupObjectHierarchy(config, id, { include_concept=true  } = {}) {
-    config.addHierarchy(id, 'theAble')
-    config.addHierarchy(id, 'queryable')
-    config.addHierarchy(id, 'hierarchyAble')
-    config.addHierarchy(id, 'object')
-    if (include_concept) {
-      config.addHierarchy(id, 'concept')
-    }
-    config.addHierarchy(id, 'isEdee')
-    config.addHierarchy(id, 'isEder')
-    config.addHierarchy(id, 'property')
-  }
-
-  // word is for one or many
-  makeObject({config, context, doPluralize=true}) {
-    if (!context.unknown) {
-      return context.value
-    }
-    const { word, value, number } = context;
-    const concept = pluralize.singular(value)
-    config.addOperator({ pattern: `([${concept}])`, allowDups: true })
-    config.addBridge({ id: concept, level: 0, bridge: "{ ...next(operator) }" , allowDups: true })
-
-    const addConcept = (word, number) => {
-      config.addWord(word, { id: concept, initial: `{ value: "${concept}", number: "${number}" }` } )
-      /*
-      config.addHierarchy(concept, 'theAble')
-      config.addHierarchy(concept, 'queryable')
-      config.addHierarchy(concept, 'hierarchyAble')
-      config.addHierarchy(concept, 'object')
-      config.addHierarchy(concept, 'isEdee')
-      config.addHierarchy(concept, 'isEder')
-      config.addHierarchy(concept, 'property')
-      */
-      this.setupObjectHierarchy(config, concept);
-      /*
-      config.addGenerator({
-          notes: 'generator for added concept',
-          match: ({context}) => context.value == concept && context.number == number && context.paraphrase,
-          apply: () => word
-      })
-      */
-    }
-
-    if (pluralize.isSingular(word)) {
-      addConcept(word, 'one')
-      doPluralize && addConcept(pluralize.plural(word), 'many')
-    } else {
-      doPluralize && addConcept(pluralize.singular(word), 'one')
-      addConcept(word, 'many')
-    }
-
-    // mark g2reg as an instance?
-    // add a generator for the other one what will ask what is the plural or singluar of known
-    /*
-    if (number == 'many') {
-    } else if (number == 'one') {
-    }
-    */
-    return concept;
   }
 
   relation_add (relations) {
