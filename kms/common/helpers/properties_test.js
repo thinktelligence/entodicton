@@ -46,8 +46,15 @@ describe('helpersProperties', () => {
 
         api.addWordToValue('greg', context)
         api.addWordToValue('greg', context)
+        api.config = () => {
+          return { 
+            config: {
+              bridges: [],
+              hierarchy: []
+            }
+          }
+        }
         expected = { ...context, paraphrase: true }
-        delete expected.response
         expect(api.objects.valueToWords).toStrictEqual({ 'greg': [expected] })
       })
 
@@ -159,6 +166,14 @@ describe('helpersProperties', () => {
             property: {},
             parents: {},
             children: {},
+          }
+          api.config = () => {
+            return { 
+              config: {
+                bridges: [],
+                hierarchy: []
+              }
+            }
           }
           api.setProperty('object1', 'property1', 'value1', 'has1')
           console.log(JSON.stringify(api.objects))
@@ -298,6 +313,14 @@ describe('helpersProperties', () => {
     it('mark object read only object', async () => {
       const api = new API()
       api.objects = {}
+      api.config = () => {
+        return { 
+          config: {
+            bridges: [],
+            hierarchy: []
+          }
+        }
+      }
       api.setProperty('object1', 'property1', 'value1', 'has1')
       api.setReadOnly(['object1'])
       expect(api.getProperty('object1', 'property1')).toEqual('value1')
@@ -307,6 +330,14 @@ describe('helpersProperties', () => {
     it('mark object read only property', async () => {
       const api = new API()
       api.objects = {}
+      api.config = () => {
+        return { 
+          config: {
+            bridges: [],
+            hierarchy: []
+          }
+        }
+      }
       api.setProperty('object1', 'property1', 'value1', 'has1')
       api.setReadOnly(['object1', 'property1'])
       expect(api.getProperty('object1', 'property1')).toEqual('value1')
@@ -318,6 +349,14 @@ describe('helpersProperties', () => {
     it('mark share object', async () => {
       const api1 = new API()
       api1.objects = {}
+      api1.config = () => {
+        return { 
+          config: {
+            bridges: [],
+            hierarchy: []
+          }
+        }
+      }
       const share = api1.setShared(['object1'])
 
       const api2 = new API()

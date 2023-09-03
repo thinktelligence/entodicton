@@ -126,11 +126,12 @@ class API {
   */
 
   setupEdAble(args) {
-    const { operator, word, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
+    const { operator, word, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble, localHierarchy } = args;
     config.addOperator(`(([${after[0].tag}])^ <${edAble.operator}|${edAble.word}> ([by] ([${before[0].tag}])?))`)
     config.addBridge({
              id: edAble.operator,
              level: 0,
+             localHierarchy,
              bridge: `{ 
                ...before, 
                constraints: [ 
@@ -175,8 +176,9 @@ class API {
     config.addHierarchy(after[0].id, 'isEdee')
     config.addSemantic({
       notes: 'semantic for setting value with constraint',
-      match: ({context}) => context.marker == after[0].tag && context.evaluate,
-      apply: ({km, context, e, log, s}) => {
+      match: ({context, isA}) => isA(context.marker, after[0].tag) && context.evaluate && context.constraints,
+      // match: ({context, isA}) => context.marker == after[0].tag && context.evaluate,
+      apply: ({km, context, e, log, isA, s}) => {
         const constraint = context.constraints[0];
         const value = constraint.constraint;
         let property = constraint.property;
@@ -323,7 +325,7 @@ class API {
   // relation -> the semantics will be implements using relations
   // edable: "y is owned by x" edable = { operator: 'owned' }
   createActionPrefix(args, semanticApply) {
-    const { operator, before=[], after=[], create=[], config, relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
+    const { operator, before=[], after=[], create=[], config, localHierarchy=[], relation, ordering, doAble, words = [], unflatten:unflattenArgs = [], focusable = [], edAble } = args;
     // const before = [...]
     // const after = [{tag: 'weapon', id: 'weapon'}]
     // const create = ['arm', 'weapon']
@@ -361,6 +363,7 @@ class API {
       if (create.includes(argument.id)) {
         // config.addHierarchy('unknown', argument.id)
         // config.addHierarchy('what', argument.id)
+        // greg23 <<<<<<<<<<<< doing this
         config.addHierarchy(argument.id, 'unknown')
         config.addHierarchy(argument.id, 'what')
       }
@@ -386,7 +389,7 @@ class API {
 
         const unflattenArgs = [ ...before.map( (arg) => arg.tag ), ...after.map( (arg) => arg.tag ) ] 
         const focusable = [ ...before.map( (arg) => arg.tag ), ...after.map( (arg) => arg.tag ) ] 
-        config.addBridge({ id: operator, level: 0, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)}, focusable: ${JSON.stringify(focusable)} }`, allowDups: true })
+        config.addBridge({ id: operator, level: 0, localHierarchy, bridge: `{ ... next(operator) ${doParams} ${beforeArgs} ${afterArgs}, unflatten: ${JSON.stringify(unflattenArgs)}, focusable: ${JSON.stringify(focusable)} }`, allowDups: true })
         if (words.length > 0) {
           for (const word of words) {
             config.addWord(word, { id: operator, initial: `{ value: "${operator}" }` })
@@ -481,7 +484,6 @@ class API {
             fcontext[ordering.object].paraphrase = true
             fcontext[ordering.category].paraphrase = true
           }
-          debugger;
           propertiesAPI.relation_add(fcontexts) 
         }
       })
@@ -541,8 +543,26 @@ class API {
       config.addSemantic({
         notes: `setter for ${operator}`,
         match: ({context}) => context.marker == operator,
-        apply: ({context, km}) => {
+        apply: ({context, km, hierarchy, config}) => {
           const api = km('properties').api
+          // add types for arguments
+          for (let argument of context.focusable || []) {
+            const value = api.toValue(context[argument])
+            if (value) {
+              /*
+              if (value == 'cleo') {
+                debugger;
+                hierarchy.isA()
+              }
+              */
+              const minimas = hierarchy.minima(context[argument].types)
+              for (let type of minimas) {
+                if (config.exists(value)) {
+                  config.addHierarchy(value, type);
+                }
+              }
+            }
+          }
           api.relation_add(context)
         }
       })
@@ -551,6 +571,7 @@ class API {
         match: ({context}) => context.marker == operator && context.query,
         apply: ({context, km}) => {
           const api = km('properties').api
+
           context.evalue = {
             marker: 'list',
             value: unflatten(api.relation_get(context, before.concat(after).map( (arg) => arg.tag ) ))
@@ -768,6 +789,9 @@ class API {
   toValue(context) {
     if (typeof context == 'string') {
       return context
+    }
+    if (!context) {
+      return;
     }
     return this.config().km("dialogues").api.getVariable(context.value);
     // return context.value

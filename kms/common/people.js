@@ -18,6 +18,9 @@ const template = {
       "given modifies name",
       "given name means first name",
       "ownee is owned by owner means owner owns ownee",
+//      "ownee23 is owned by owner23",
+//      "cleo is a cat",
+//      "kia owns cleo",
     ],
 }
 let config = {
@@ -72,10 +75,13 @@ config.initializer( ({config, context, km, isAfterApi, isModule}) => {
             before: [{tag: 'owner', id: 'owner'}],
             after: [{tag: 'ownee', id: 'ownee'}],
             relation: true,
+            localHierarchy: [['unknown', 'owner'], ['object', 'owner'], ['unknown', 'ownee'], ['object', 'ownee']],
             doAble: true,
             edAble: { operator: 'owned', word: 'owned' },
             config
           })
+  // config.addHierarchy('object', 'ownee')
+  // config.addHierarchy('ownee', 'object')
   // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
 
   // node people -q 'cleo is owned by kia who is cleo owned by' -d -g
