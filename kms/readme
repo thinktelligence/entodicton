@@ -1,10 +1,10 @@
 # Entodicton Knowledge Modules
 
-This is a library of entodicton knowledge modules that can be reused. A description of the contents can be found <a href='https://thinktelligence.com/kms'>here</a>
+This is a library of entodicton knowledge modules that can be reused. A description of the contents can be found <a href='http://thinktelligence.com/kms'>here</a>
 
 ## Knowledge Modules
 
-The list of knowledge modules can be found <a href='https://thinktelligence.com/kms'>here</a>
+The list of knowledge modules can be found <a href='http://thinktelligence.com/kms'>here</a>
 
 ## Usage
 
@@ -12,25 +12,21 @@ The basic usage is redefine the api functions to point to your data. Then all of
 
 The first step is to include the client and the knowledge module project called EKMS
 ```
-const { store } = require('ekms')
+const { reports } = require('ekms')
 ```
 
-`store` is the knowledge module that describe how to interpret utterances about the store domain. By default the km will work with test data. You can run it the same as any other Entodicton config. For example, this works against the shared server
+`reports` is the knowledge module for making repots off data. By default the km will work with test data. You can run it the same as any other Entodicton config. For example, this works against the shared server
 
 ```
-url = "http://184.67.27.82"
-key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-store.server(url, key)
-store.process('list the products').then( (response) => {
-    //console.log(JSON.stringify(response, null, 2))
-      console.log(response.generated[0])
+reports.process('list the products').then( (response) => {
+  console.log(response.generated[0])
 })
 ```
 
 The result of running this would be
 
 ```
-dev@devlaptop:~/code/thinktelligence/kms$ node use_store.js
+dev@devlaptop:~/code/thinktelligence/kms$ node use_reports.js
 [ 'the products are pants1 and shirt1' ]
 
 ```
@@ -61,13 +57,9 @@ const api = {
   productGenerator: [({context}) => context.marker == 'product' && context.isInstance, ({g, context}) => `${context.name}`]
 };
 
-store.api = api
+reports.api = api
 
-url = "http://184.67.27.82"
-key = "6804954f-e56d-471f-bbb8-08e3c54d9321"
-store.server(url, key)
-store.process('list the products').then( (response) => {
-  //console.log(JSON.stringify(response, null, 2))
+reports.process('list the products').then( (response) => {
   console.log(response.generated[0])
 })
 
@@ -81,5 +73,5 @@ dev@devlaptop:~/code/thinktelligence/kms$ node use_store.js
 ```
 
 Sample code that runs this example can be found 
-<a href='https://github.com/thinktelligence/entodicton/blob/main/kms/use_store.js'>here</a>
+<a href='https://github.com/thinktelligence/entodicton/blob/main/kms/use_reports.js'>here</a>
 
