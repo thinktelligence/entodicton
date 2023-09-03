@@ -123,7 +123,15 @@ let config = {
       notes: 'is x y',
       // debug: 'call2',
       where: where(),
-      match: ({context, hierarchy, args}) => hierarchy.isA(context.marker, 'is') && context.query && args( { types: ['hierarchyAble', 'hierarchyAble'], properties: ['one', 'two'] } ),
+      match: ({context, hierarchy, args}) => {
+        if (context.one?.constraints || context.two?.constraints) {
+          return false
+        }
+        if (context.query && context.query.includes && !context.query.includes(context.marker)) {
+          return false
+        }
+        return hierarchy.isA(context.marker, 'is') && context.query && args( { types: ['hierarchyAble', 'hierarchyAble'], properties: ['one', 'two'] } )
+      },
       apply: ({context, km, objects, g}) => {
         const api = km('properties').api
         const one = context.one

@@ -329,6 +329,7 @@ let config = {
     [['means', 0], ['isEd', 0]],
     [['is', 0], ['by', 0]],
     [['by', 0], ['articlePOS', 0]],
+    [['by', 0], ['what', 0]],
     [['isEdAble', 0], ['articlePOS', 0]],
     [['is', 0], ['isEdAble', 0]],
     [['is', 1], ['isEdAble', 0]],

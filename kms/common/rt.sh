@@ -1,15 +1,15 @@
-node animals -rt -g
-node emotions -rt -g
-node foods -rt -g
-node hana -rt -g
-node kia -rt -g
-node kid -rt -g
-node meta -rt -g
-node ordering -rt -g
-node people -rt -g
-node pokemon -rt -g
-node properties -rt -g
-node crew -rt -g
-node spock -rt -g
-node kirk -rt -g
-node stgame -rt -g
+node animals -rt
+node emotions -rt
+node foods -rt
+node hana -rt
+node kia -rt
+node kid -rt
+node meta -rt
+node ordering -rt
+node people -rt
+node pokemon -rt
+node properties -rt
+node crew -rt
+node spock -rt
+node kirk -rt
+node stgame -rt

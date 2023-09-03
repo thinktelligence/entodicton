@@ -333,7 +333,6 @@
 # TODO node math -q 'worth is price times quantity what is the meaning of worth?' -g -d
 # TODO node math -q '20 dollars times 10' -g -d
 # TODO node scorekeeper -q 'what is the winning score' -g -d
-# TODO node math -q 'worth is price times quantity price is 6 quantity is 4 what is the worth?' -d
 # node math -q 'worth is price times quantity' -d
 # TODO node reports -q "worth means price times quantity show the worth show the report" -d
 # node inspect reports -q "worthdebug means price times quantity" -d -g
@@ -341,6 +340,40 @@
 # node reports -q "worthdebug is price times quantity\\nshow the worthdebug list the models" -d
 # TODO node math -q 'x is 3 y is 4 x*y'
 # node inspect math -q 'price is 6 quantity is 4 worth means price times quantity what is the worth?' -d
-node reports -q "worthtest is price times quantity\\nshow the worthtest list the models" -d -s
+# node reports -q "worthtest is price times quantity\\nshow the worthtest list the models" -d -s
 # node reports -q "show the worthtest list the models" -d
 # node inspect reports -q "worthtest is price times quantity" -d
+# node math -q 'worth is price times quantity price is 6 quantity is 4 what is the worth ?' -d
+# BAD - this could be fixed by doing left most complete and then redoing the remaining
+#       the problem is worth is not defined since the def happens on the client side
+# node math -q 'price is 6 worth is price times quantity quantity is 4\nwhat is the worth' -d
+# node math -q 'price is 6 worth is price times quantity quantity is 4 what is the worth' -d -g
+# GOOD
+# node math -q 'price is 6 quantity is 4 worth is price times quantity what is the worth' -d
+# node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -d
+# node reports -q 'answer with sentences list the models' -d
+# node inspect people -q 'kia owns cleo kia owns mary what does kia own' -d -g
+# node people -q 'kia owns cleo kia owns mary what does kia own' -d
+# node people -q "cleo is a cat\nkia owns cleo" -g -d
+# node people -q "kia owns cleo" -d -g
+# TODO saying the same things twice or saying the opposite
+# node people -q "cleo is a cat kia owns cleo\nwho is the cat owned by kia" -g -d
+# node people -q 'kia owns cleo' -d -g
+# node people -q "who is the cat owned by kia" -g -d
+# node inspect people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -r
+# // helpers/properties : 178
+# people : 81
+# call32
+# hierarchy:125
+# node people -q "given name means first name the first name of greg is greg23 what is the given name of greg" -d
+# people : 81
+# node people -q 'ownee23 is owned by owner23\nwho is ownee23 owned by' -d
+# GOAL-0 node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -g
+# GOAL-1 node people -q "who is the cat owned by kia" -g -d
+# GOAL-2 node people -q "cleo is a cat\nkia owns cleo\nwho is the cat owned by kia" -g
+# helpers/properties 367
+# people 78
+# node people -q 'the cat owned by kia' -g -d 
+# node people -q 'who is ownee23 owned by' -g -d
+# node people -q 'ownee23 is owned by owner23' -d -g
+node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
