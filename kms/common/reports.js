@@ -583,9 +583,11 @@ const initializeApi = (config, api, km) => {
 config = new Config(config, module).add(currencyKM).add(helpKM).add(math).add(events)
 config.multiApi = initializeApi
 // mode this to non-module init only
-config.addAPI(api1)
-config.addAPI(api2)
 config.initializer(({config, objects, km, isModule, isAfterApi}) => {
+  if (!isModule) {
+    config.addAPI(api1)
+    config.addAPI(api2)
+  }
   if (isAfterApi) {
     objects.tempReportId = 0
     objects.listings = {
@@ -596,6 +598,7 @@ config.initializer(({config, objects, km, isModule, isAfterApi}) => {
     }
   }
 }, { initAfterApi: true })
+
 knowledgeModule({
   module,
   description: 'this module is for getting info about a concept with properties',
