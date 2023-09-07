@@ -1,11 +1,44 @@
 {
-  "scripts": {
-    "test:watch": "npm run test -- --watch",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE23",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE23",
-    "test": "jest --config ./jest.config.json"
+  "name": "tpmkms",
+  "main": "main.js",
+  "devDependencies": {
+    "jest": "^26.6.3"
   },
+  "scripts": {
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE23",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE23",
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "argparse": "^2.0.1",
+    "uuid": "^9.0.0",
+    "scriptjs": "^2.5.9",
+    "object-path": "^0.11.8",
+    "entodicton": "7.1.4-beta.1",
+    "table": "^6.7.1",
+    "node-fetch": "^2.6.1",
+    "pluralize": "^8.0.0",
+    "deep-equal": "^2.0.5",
+    "sort-json": "^2.0.1",
+    "underscore": "^1.12.0",
+    "lodash": "^4.17.21"
+  },
+  "author": "dev@thinktelligence.com",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "version": "7.1.4-beta.1",
+  "license": "ISC",
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -75,38 +108,5 @@
     "common/tell.test.json",
     "common/time.js",
     "common/time.test.json"
-  ],
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
-  "version": "7.1.4-beta.0",
-  "name": "tpmkms",
-  "dependencies": {
-    "sort-json": "^2.0.1",
-    "pluralize": "^8.0.0",
-    "base-64": "^1.0.0",
-    "underscore": "^1.12.0",
-    "deep-equal": "^2.0.5",
-    "table": "^6.7.1",
-    "argparse": "^2.0.1",
-    "scriptjs": "^2.5.9",
-    "lodash": "^4.17.21",
-    "uuid": "^9.0.0",
-    "object-path": "^0.11.8",
-    "entodicton": "7.1.4-beta.0",
-    "node-fetch": "^2.6.1"
-  },
-  "main": "main.js",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
-  "author": "dev@thinktelligence.com",
-  "license": "ISC"
+  ]
 }
