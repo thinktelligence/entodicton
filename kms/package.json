@@ -1,15 +1,4 @@
 {
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
-  "name": "tpmkms",
-  "keywords": [
-    "NLP",
-    "NLU",
-    "NLC",
-    "natural language processing",
-    "natural language generation",
-    "natural language understanding",
-    "chatbot"
-  ],
   "files": [
     "main.js",
     "common/helpers/properties.js",
@@ -80,33 +69,44 @@
     "common/time.js",
     "common/time.test.json"
   ],
+  "author": "dev@thinktelligence.com",
+  "keywords": [
+    "NLP",
+    "NLU",
+    "NLC",
+    "natural language processing",
+    "natural language generation",
+    "natural language understanding",
+    "chatbot"
+  ],
+  "name": "tpmkms",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter",
+  "license": "ISC",
+  "scripts": {
+    "test": "jest --config ./jest.config.json",
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE23",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE23",
+    "test:watch": "npm run test -- --watch"
+  },
+  "main": "main.js",
+  "dependencies": {
+    "pluralize": "^8.0.0",
+    "uuid": "^9.0.0",
+    "theprogrammablemind": "7.2.3-beta.0",
+    "node-fetch": "^2.6.1",
+    "argparse": "^2.0.1",
+    "base-64": "^1.0.0",
+    "table": "^6.7.1",
+    "lodash": "^4.17.21",
+    "sort-json": "^2.0.1",
+    "scriptjs": "^2.5.9",
+    "object-path": "^0.11.8",
+    "deep-equal": "^2.0.5",
+    "underscore": "^1.12.0"
+  },
   "devDependencies": {
     "jest": "^26.6.3"
   },
-  "dependencies": {
-    "theprogrammablemind": "7.2.3",
-    "deep-equal": "^2.0.5",
-    "underscore": "^1.12.0",
-    "node-fetch": "^2.6.1",
-    "argparse": "^2.0.1",
-    "scriptjs": "^2.5.9",
-    "object-path": "^0.11.8",
-    "pluralize": "^8.0.0",
-    "base-64": "^1.0.0",
-    "lodash": "^4.17.21",
-    "sort-json": "^2.0.1",
-    "table": "^6.7.1",
-    "uuid": "^9.0.0"
-  },
-  "version": "7.2.3",
-  "scripts": {
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE23",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE23",
-    "test": "jest --config ./jest.config.json",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch"
-  },
-  "license": "ISC",
-  "author": "dev@thinktelligence.com",
-  "main": "main.js"
+  "version": "7.2.3-beta.0"
 }
