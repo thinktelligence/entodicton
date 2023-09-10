@@ -1,0 +1,56 @@
+# The Programmable Mind Knowledge Modules
+
+This is a library of the Programmable Mind knowledge modules that can be reused.
+
+## Knowledge Modules
+
+The list of knowledge modules can be found <a href='http://thinktelligence.com/kms'>here</a>
+
+## Usage
+
+The basic usage is redefine the api functions to point to your data. Then all of the queries that are supported can be performed against your data. Here is an example of how to do that
+
+The first step is to include the client and the knowledge module project called EKMS
+```
+const { reports } = require('ekms')
+```
+
+`reports` is the knowledge module for making repots off data. By default the km will work with test data. You can run it the same as any other Entodicton config. For example, this works against the shared server
+
+```
+reports.process('list the models').then( (response) => {
+  console.log(response.generated[0])
+})
+```
+
+The result of running this would be
+
+```
+dev@devlaptop:~/code/thinktelligence/kms$ node use_reports.js
+╔══════════╤══════════╗
+║ name     │ supplier ║
+╟──────────┼──────────╢
+║ tiger    │ tamiya   ║
+╟──────────┼──────────╢
+║ spitfire │ dragon   ║
+╚══════════╧══════════╝
+```
+
+In order to customize the output to your domain you would need to redefine the api to access your data
+
+```
+const apiTemplate = (marker, testData) => {
+  return {
+    getName: ...
+    getTypes: ...
+    getAllProducts: ...
+    getByTypeAndCost: ...
+    productGenerator: ...
+  }
+}
+```
+
+Sample code that runs this example can be found 
+*** fix this link ***
+<a href='https://github.com/thinktelligence/entodicton/blob/main/kms/use_reports.js'>here</a>
+
