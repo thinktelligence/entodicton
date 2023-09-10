@@ -1,4 +1,4 @@
-const client = require('entodicton/client')
+const client = require('theprogrammablemind/client')
 const config = require('./store')
 
 const testData = {

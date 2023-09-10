@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('theprogrammablemind')
 ensureTestFile(module, 'kia', 'test')
 ensureTestFile(module, 'kia', 'instance')
 

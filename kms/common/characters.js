@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, where } = require('entodicton')
+const { Config, knowledgeModule, where } = require('theprogrammablemind')
 const currencyKM = require('./currency.js')
 const helpKM = require('./help.js')
 const timeKM = require('./time.js')

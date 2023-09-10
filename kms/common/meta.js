@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where, unflatten, flattens } = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where, unflatten, flattens } = require('theprogrammablemind')
 const _ = require('lodash')
 ensureTestFile(module, 'meta', 'test')
 ensureTestFile(module, 'meta', 'instance')

@@ -1,4 +1,4 @@
-const Digraph = require('entodicton/src/digraph')
+const Digraph = require('theprogrammablemind/src/digraph')
 
 class API {
 

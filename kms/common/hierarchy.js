@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, where } = require('entodicton')
+const { Config, knowledgeModule, where } = require('theprogrammablemind')
 const properties = require('./properties')
 const hierarchy_tests = require('./hierarchy.test.json')
 const pluralize = require('pluralize')

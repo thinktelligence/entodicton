@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, where } = require('entodicton')
+const { Config, knowledgeModule, where } = require('theprogrammablemind')
 const dialogues = require('./dialogues')
 const javascript_tests = require('./javascript.test.json')
 

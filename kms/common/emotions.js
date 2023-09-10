@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('theprogrammablemind')
 const hierarchy = require('./hierarchy').copy()
 ensureTestFile(module, 'emotions', 'test')
 ensureTestFile(module, 'emotions', 'instance')

@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('theprogrammablemind')
 const dialogues = require('./dialogues')
 const _ = require('lodash')
 ensureTestFile(module, 'events', 'test')

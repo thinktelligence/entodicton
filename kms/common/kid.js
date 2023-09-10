@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where } = require('entodicton')
+const { Config, knowledgeModule, ensureTestFile, where } = require('theprogrammablemind')
 const avatar = require('./avatar')
 const animals = require('./animals')
 const ordering = require('./ordering')
