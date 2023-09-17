@@ -143,6 +143,11 @@ let config = {
     },
     {
       where: where(),
+      match: ({context}) => context.marker == 'point' && context.isResponse && context.amount,
+      apply: ({context, g}) => `${g(context.amount)} points` 
+    },
+    {
+      where: where(),
       match: ({context}) => context.marker == 'scored' && context.paraphrase,
       apply: ({context, g}) => `${g(context.player)} got ${g(context.points)}`
     },
