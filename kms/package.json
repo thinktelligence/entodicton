@@ -1,24 +1,24 @@
 {
-  "version": "7.3.5-beta.0",
   "main": "main.js",
-  "description": "Reusable libraries for Entodicton, a natural language to json converter",
   "name": "tpmkms",
-  "author": "dev@thinktelligence.com",
-  "license": "ISC",
+  "version": "7.3.5-beta.1",
   "dependencies": {
-    "object-path": "^0.11.8",
-    "sort-json": "^2.0.1",
-    "base-64": "^1.0.0",
-    "deep-equal": "^2.0.5",
-    "theprogrammablemind": "7.3.5-beta.0",
     "table": "^6.7.1",
-    "uuid": "^9.0.0",
+    "deep-equal": "^2.0.5",
+    "object-path": "^0.11.8",
     "underscore": "^1.12.0",
-    "node-fetch": "^2.6.1",
-    "lodash": "^4.17.21",
-    "argparse": "^2.0.1",
+    "sort-json": "^2.0.1",
+    "uuid": "^9.0.0",
     "scriptjs": "^2.5.9",
-    "pluralize": "^8.0.0"
+    "argparse": "^2.0.1",
+    "base-64": "^1.0.0",
+    "pluralize": "^8.0.0",
+    "lodash": "^4.17.21",
+    "theprogrammablemind": "7.3.5-beta.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   },
   "files": [
     "main.js",
@@ -90,6 +90,14 @@
     "common/time.js",
     "common/time.test.json"
   ],
+  "author": "dev@thinktelligence.com",
+  "scripts": {
+    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch",
+    "test": "jest --config ./jest.config.json",
+    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE23",
+    "to": "node node_modules/.bin/jest --runInBand -t ONE23"
+  },
   "keywords": [
     "NLP",
     "NLU",
@@ -99,14 +107,6 @@
     "natural language understanding",
     "chatbot"
   ],
-  "devDependencies": {
-    "jest": "^26.6.3"
-  },
-  "scripts": {
-    "test": "jest --config ./jest.config.json",
-    "tod": "node inspect node_modules/.bin/jest --runInBand -t ONE23",
-    "test:debug": "node inspect node_modules/.bin/jest --runInBand --config ./jest.config.json",
-    "test:watch": "npm run test -- --watch",
-    "to": "node node_modules/.bin/jest --runInBand -t ONE23"
-  }
+  "license": "ISC",
+  "description": "Reusable libraries for Entodicton, a natural language to json converter"
 }
