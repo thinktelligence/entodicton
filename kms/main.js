@@ -1,4 +1,4 @@
-const entodicton = require('entodicton')
+const tpm = require('theprogrammablemind')
 const animals = require('./common/animals');
 const avatar = require('./common/avatar');
 const characters = require('./common/characters');
@@ -22,7 +22,7 @@ const tell = require('./common/tell');
 const time = require('./common/time');
 
 module.exports = { 
-  Config: entodicton.Config,
+  Config: tpm.Config,
   animals,
   avatar,
   characters,
