@@ -124,7 +124,7 @@ let config = {
       // debug: 'call2',
       where: where(),
       match: ({context, hierarchy, args}) => {
-        if (context.one?.constraints || context.two?.constraints) {
+        if ((context.one && context.one.constraints) || (context.two && context.two.constraints)) {
           return false
         }
         if (context.query && context.query.includes && !context.query.includes(context.marker)) {
