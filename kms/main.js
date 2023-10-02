@@ -1,4 +1,4 @@
-const tpm = require('theprogrammablemind')
+const tpm = require('./common/runtime').theprogrammablemind
 const animals = require('./common/animals');
 const avatar = require('./common/avatar');
 const characters = require('./common/characters');
