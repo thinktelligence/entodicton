@@ -5,7 +5,6 @@ const { isMany } = require('./helpers')
 const dialogues_tests = require('./dialogues.test.json')
 const { indent, focus } = require('./helpers')
 const pluralize = require('pluralize')
-const sortJson = require('sort-json')
 
 class API {
   //
@@ -644,7 +643,7 @@ let config = {
       notes: 'show json',
       where: where(),
       match: () => true,
-      apply: ({context}) => JSON.stringify(sortJson(context, { depth: 5 }))
+      apply: ({context}) => JSON.stringify(context)
     }
   ],
 

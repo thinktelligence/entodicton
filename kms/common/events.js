@@ -3,7 +3,6 @@ const dialogues = require('./dialogues')
 const _ = require('lodash')
 ensureTestFile(module, 'events', 'test')
 const events_tests = require('./events.test.json')
-const sortJson = require('sort-json')
 
 class API {
   happens (context) {
@@ -49,7 +48,7 @@ let config = {
       notes: 'paraphrase for events',
       where: where(),
       match: ({context, isA}) => isA(context.marker, 'event') && context.event,
-      apply: ({context}) => `event happened: ${JSON.stringify(sortJson(context, { depth: 5 }))}`
+      apply: ({context}) => `event happened: ${JSON.stringify(context)}`
     },
   ],
   semantics: [
