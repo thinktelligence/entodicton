@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where, unflatten, flattens } = require('theprogrammablemind')
+const { Config, knowledgeModule, ensureTestFile, where, unflatten, flattens } = require('./runtime').theprogrammablemind
 const _ = require('lodash')
 ensureTestFile(module, 'meta', 'test')
 ensureTestFile(module, 'meta', 'instance')

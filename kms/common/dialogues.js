@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, where } = require('theprogrammablemind')
+const { Config, knowledgeModule, where } = require('./runtime').theprogrammablemind
 const meta = require('./meta.js')
 const _ = require('lodash')
 const { isMany } = require('./helpers')

@@ -1,4 +1,4 @@
-const Digraph = require('theprogrammablemind/src/digraph')
+const Digraph = require('../runtime').theprogrammablemind.Digraph
 
 class API {
 

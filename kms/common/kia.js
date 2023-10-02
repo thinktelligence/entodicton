@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where } = require('theprogrammablemind')
+const { Config, knowledgeModule, ensureTestFile, where } = require('./runtime').theprogrammablemind
 ensureTestFile(module, 'kia', 'test')
 ensureTestFile(module, 'kia', 'instance')
 

@@ -1,5 +1,5 @@
 const pluralize = require('pluralize')
-const { unflatten, flattens, Digraph } = require('theprogrammablemind')
+const { unflatten, flattens, Digraph } = require('../runtime').theprogrammablemind
 const _ = require('lodash')
 const deepEqual = require('deep-equal')
 const { chooseNumber } = require('../helpers.js')

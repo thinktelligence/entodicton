@@ -1,4 +1,4 @@
-const client = require('theprogrammablemind/client')
+const client = require('./runtime').theprogrammablemind.client
 const config = require('./store')
 
 const testData = {

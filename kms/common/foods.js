@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, ensureTestFile, where } = require('theprogrammablemind')
+const { Config, knowledgeModule, ensureTestFile, where } = require('./runtime').theprogrammablemind
 const hierarchy = require('./hierarchy')
 ensureTestFile(module, 'foods', 'test')
 ensureTestFile(module, 'foods', 'instance')

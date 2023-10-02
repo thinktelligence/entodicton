@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, where } = require('theprogrammablemind')
+const { Config, knowledgeModule, where } = require('./runtime').theprogrammablemind
 const characters = require('./characters')
 const stgame_tests = require('./stgame.test.json')
 const crew = require('./crew')

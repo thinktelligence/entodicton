@@ -1,4 +1,4 @@
-const { Config, knowledgeModule, where, Digraph } = require('theprogrammablemind')
+const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
 const numbersKM = require('./numbers.js')
 const currency_tests = require('./currency.test.json')
 
