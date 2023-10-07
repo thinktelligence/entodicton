@@ -21,6 +21,7 @@ api = {
 
 const template = {
   queries: [
+    // "start a new game\ngreg and jeff",
     // { query: "start a new game", development: true },
     // { query: "the winning score is 20", development: true },
   ],
@@ -252,12 +253,12 @@ let config = {
     {
       where: where(),
       match: ({context}) => context.marker == 'player' && context.evaluate && context.pullFromContext,
-      apply: ({context, objects}) => {
-        const players = Object.keys(objects.scores)
+      apply: ({context, objects, gs}) => {
+        const players = objects.players
         if (players.length == 0) {
           context.evalue = 'no one'
         } else {
-          context.evalue = players.join(' ')
+          context.evalue = gs(players, ' ', ' and ')
         }
       }
     },
