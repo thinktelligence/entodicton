@@ -1053,7 +1053,7 @@
       "logs": [
         "Op choices were: [(('kirk', 0), [('is', 0), ('kirk', 0), ('self', 0)]), (('self', 0), [('is', 0), ('self', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator kirk/0 was [['is', 0], ['kirk', 0], ['self', 0]]\n  Context for choosing the operator self/0 was [['is', 0], ['self', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['kirk', 0]]\n      (('self', 0), ('is', 0), ('kirk', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['kirk', 0]]\n      (('isEd', 0), ('kirk', 0))\n  Group 1\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['kirk', 0]]\n      (('self', 0), ('is', 0), ('kirk', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['kirk', 0]]\n      (('isEd', 0), ('kirk', 0))\n  Group 2\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['kirk', 0]]\n      (('self', 0), ('is', 0), ('kirk', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['kirk', 0]]\n      (('isEd', 0), ('kirk', 0))"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['kirk', 0]]\n      (('isEd', 0), ('kirk', 0))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['kirk', 0]]\n      (('self', 0), ('is', 0), ('kirk', 0))\n  Group 1\n    0.5 - [['self', 0], ['isEd', 0], \">>>>2 ['kirk', 0] <<<<2\"]\n      (('isEd', 0), ('kirk', 0))\n    1.0 - [['self', 0], ['is', 0], \">>>>2 ['kirk', 0] <<<<2\"]\n      (('self', 0), ('is', 0), ('kirk', 0))\n  Group 2\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['kirk', 0]]\n      (('isEd', 0), ('kirk', 0))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['kirk', 0]]\n      (('self', 0), ('is', 0), ('kirk', 0))\n  Group 3\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['kirk', 0]]\n      (('isEd', 0), ('kirk', 0))\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['kirk', 0]]\n      (('self', 0), ('is', 0), ('kirk', 0))"
       ],
       "metadata": {
         "opChoices": [
@@ -1122,43 +1122,43 @@
       "trace": "undefined",
       "contexts": [
         {
-          "marker": "is",
           "number": "many",
+          "text": "you are kirk",
+          "marker": "is",
+          "word": "are",
+          "range": {
+            "start": 0,
+            "end": 11
+          },
           "one": {
-            "marker": "self",
             "number": "many",
-            "range": {
-              "end": 11,
-              "start": 0
-            },
+            "variable": true,
+            "value": "self",
             "text": "you",
+            "marker": "self",
+            "word": "you",
+            "range": {
+              "start": 0,
+              "end": 11
+            },
             "types": [
               "self"
-            ],
-            "value": "self",
-            "variable": true,
-            "word": "you"
+            ]
           },
-          "range": {
-            "end": 11,
-            "start": 0
-          },
-          "text": "you are kirk",
           "two": {
             "marker": "kirk",
-            "number": "one",
-            "range": {
-              "end": 11,
-              "start": 8
-            },
+            "value": "kirk",
+            "default": true,
             "text": "kirk",
+            "word": "kirk",
+            "range": {
+              "start": 8,
+              "end": 11
+            },
             "types": [
               "kirk"
-            ],
-            "value": "kirk",
-            "word": "kirk"
+            ]
           },
-          "word": "are",
           "topLevel": true,
           "touchedBy": [
             "call2"
@@ -1200,7 +1200,7 @@
           ]
         ]
       ],
-      "version": "7.3.1",
+      "version": "7.3.9-beta.14",
       "query": "you are kirk",
       "key": {
         "query": "you are kirk"

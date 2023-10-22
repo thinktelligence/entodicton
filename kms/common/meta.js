@@ -80,7 +80,7 @@ let config = {
   ],
   version: '3',
   words: {
-  //  'testWord2': [{"id": "testWord2", "initial": "{ value: 'testWord2Value' }" }],
+    //  'testWord2': [{"id": "testWord2", "initial": "{ value: 'testWord2Value' }" }],
     // TODO make this development and select out for module
     // 'x': [{id: "x", initial: "{ value: 'x' }", development: true }],
     // 'f': [{id: "ifAble", initial: "{ word: 'f' }", development: true }],

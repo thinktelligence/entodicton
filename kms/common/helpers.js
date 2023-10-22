@@ -82,8 +82,11 @@ const focus = (context) => {
 }
 
 // if property is a list make array of elements of the list, if not return an array with the property value
+// fromList
 const propertyToArray = (value) => {
-  if (value.marker == 'list') {
+  if (Array.isArray(value)) {
+    return value
+  } else if (value.marker == 'list') {
     return value.value
   } else {
     return [value]
