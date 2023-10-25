@@ -80,14 +80,14 @@ let config = {
 config = new Config(config, module)
 config.add(dialogues)
 
-config.initializer( ({ isAfterApi, config }) => {
+config.initializer( ({ isAfterApi, baseConfig, config, addWord }) => {
   if (isAfterApi) {
     const names = new Set()
-    for (let c of config.configs) {
+    for (let c of baseConfig.configs) {
       names.add(c.name);
     }
     for (let name of names) {
-      config.addWord(name, {id: "km", initial: `{ value: '${name}', word: '${name}' }`})
+      addWord(name, {id: "km", initial: `{ value: '${name}', word: '${name}' }`})
     }
   }
 }, { initAfterApi: true })
