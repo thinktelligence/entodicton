@@ -80,10 +80,10 @@ let config = {
 config = new Config(config, module)
 config.add(dialogues)
 
-config.initializer( ({ isAfterApi, baseConfig, config, addWord }) => {
+config.initializer( ({ isAfterApi, config, addWord }) => {
   if (isAfterApi) {
     const names = new Set()
-    for (let c of baseConfig.configs) {
+    for (let c of config.configs) {
       names.add(c.name);
     }
     for (let name of names) {

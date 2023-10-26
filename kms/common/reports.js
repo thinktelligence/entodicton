@@ -564,7 +564,7 @@ let config = {
 
 const initializeApi = (config, api, km) => {
   const type = api.getName();
-  config.addWord(type, {"id": "product", "initial": "{ greg: true, value: '" + type + `', api: '${type}'}` })
+  config.addWord(type, {"id": "product", "initial": "{ value: '" + type + `', api: '${type}'}` })
   /*
   api.listing = { 
     api: type,
@@ -596,6 +596,15 @@ config.initializer(({config, objects, km, isModule, isAfterApi}) => {
     if (!isModule) {
       objects.listings[id].api = 'clothes'
     }
+    /*
+    if (isModule) {
+      objects.initDefaults = () => {
+        config.addAPI(api1)
+        config.addAPI(api2)
+        objects.listings[id].api = 'clothes'
+      }
+    }
+    */
   }
 }, { initAfterApi: true })
 
