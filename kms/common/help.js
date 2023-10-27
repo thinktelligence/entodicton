@@ -80,11 +80,11 @@ let config = {
 config = new Config(config, module)
 config.add(dialogues)
 
-config.initializer( ({ isAfterApi, config, addWord }) => {
+config.initializer( ({ isAfterApi, config, addWord, kms }) => {
   if (isAfterApi) {
     const names = new Set()
-    for (let c of config.configs) {
-      names.add(c.name);
+    for (let name in kms) {
+      names.add(name);
     }
     for (let name of names) {
       addWord(name, {id: "km", initial: `{ value: '${name}', word: '${name}' }`})
