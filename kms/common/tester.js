@@ -16,7 +16,6 @@ for (let module of args.modules.split(',')) {
   config.add(require(`./${module}`))
 }
 
-debugger
 knowledgeModule({
   module,
   description: 'Testing modules loaded together',
