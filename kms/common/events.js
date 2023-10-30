@@ -77,9 +77,6 @@ let config = {
       apply: ({context, motivation}) => {
           // add motivation that watches for event
           const event = context.event
-          if (!event) {
-            debugger;
-          }
           const action = context.action
           motivation({
             repeat: true,

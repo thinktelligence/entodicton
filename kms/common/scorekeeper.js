@@ -391,13 +391,6 @@ startWithDefault20 = [
 
 knowledgeModule( { 
   module,
-  beforeQuery: ({ query, objects }) => {
-    if (startWithDefault20.includes(query)) {
-      objects.winningScore = 20
-    } else {
-      objects.winningScore = null
-    }
-  },
   description: 'scorekeeper for card or dice games',
   config,
   test: {

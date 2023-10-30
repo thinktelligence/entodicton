@@ -12,8 +12,14 @@ const [args, unknown] = parser.parse_known_args()
 process.argv = [process.argv[0], process.argv[1], ...unknown]
 
 config = new Config({ name: 'tester' })
+global.theprogrammablemind = {
+  loadForTesting: {}
+}
 for (let module of args.modules.split(',')) {
-  config.add(require(`./${module}`))
+  global.theprogrammablemind.loadForTesting[module] = true
+  const km = require(`./${module}`)
+  // km.rebuild({ isModule: false }) // load the usually defaults
+  config.add(km)
 }
 
 knowledgeModule({

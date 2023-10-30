@@ -377,17 +377,6 @@ config.initializer( ({config, isModule}) => {
     */
   }
 })
-config.afterTest = ({query, expected, actual, config}) => {
-  /*
-  if (query == 'testword means testword2') {
-    expected = { id: "testword2", initial: "{ value: 'testWord2Value' }" }
-    expect(config.get('words'))['testword'].toContainEqual(expected)
-    return false;
-  } else {
-    return true;
-  }
-  */
-}
 
 knowledgeModule({ 
   module,

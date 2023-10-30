@@ -41,22 +41,20 @@ let config = {
         let kms = helpers.propertyToArray(context.kms).map( (value) => value.value )
         const isAll = kms.length == 0
         let help = '';
-        if (isAll) {
-          help = `MAIN KNOWLEDGE MODULE\n\n`
-        }
+        let separator = ''
         if (isAll || kms.includes(config.name)) {
-          help += getHelp(config, 2)
+          if (config.name !== 'tester') {
+            help += getHelp(config)
+            separator = '\n'
+          }
         }
         
         if (config.configs.length > 1) {
-          if (isAll) {
-            help += '\n\n'
-            help += 'INCLUDED KNOWLEDGE MODULES\n'
-          }
           for (km of config.configs) {
             if (km._config instanceof Config) {
               if (isAll || kms.includes(km._config.name)) {
-                help += '\n' + getHelp(km._config, isAll ? 4 : 2)
+                help += separator + getHelp(km._config)
+                separator = '\n'
               }
             }
           }
