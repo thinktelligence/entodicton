@@ -344,8 +344,6 @@ let config = {
     ['remove', 'reportAction'],
   //  ['report', 'product'],
   ],
-  associations: {
-  },
   floaters: ["api", "isQuery"],
   debug: true,
   "version": '3',

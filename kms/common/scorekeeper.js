@@ -101,16 +101,6 @@ let config = {
     "ten": [{"id": "number", "initial": "{ value: 10 }" }],
     */
   },
-  /*
-  associations: {
-    negative: [
-    ],
-    positive: [
-      [['score', 0], ['is', 0], ['point', 0]],
-      [['score', 0], ['is', 0], ['number', 0], ['point', 0]],
-    ]
-  },
-  */
   priorities: [
     [['is', 0], ['the', 0], ['winning', 0]],
   ],

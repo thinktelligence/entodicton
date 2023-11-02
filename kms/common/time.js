@@ -63,16 +63,6 @@ let config = {
     ['ampm', 'queryable'],
     ['time', 'theAble'],
   ],
-  /*
-  associations: {
-    negative: [
-      [['time', 0], ['is', 0], ['count', 0], ['ampm', 0]],
-    ],
-    positive: [
-      [['time', 0], ['is', 0], ['hourUnits', 0], ['ampm', 0]],
-    ]
-  },
-  */
 
   "words": {
     " ([0-9]+)": [{"id": "count", "initial": "{ value: int(group[0]) }" }],

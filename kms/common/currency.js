@@ -45,14 +45,8 @@ let config = {
     // { "id": "currency", "level": 1, "bridge": "{ ...next(operator) }" },
     { "id": "in", "level": 0, "bridge": "{ ...next(operator), from: before[0], to: after[0] }" },
   ],
-  hierarchy: [
-  ],
-  associations: {
-  },
   floaters: ['isQuery'],
   debug: true,
-  priorities: [
-  ],
   "version": '3',
   "words": {
   },

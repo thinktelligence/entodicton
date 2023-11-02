@@ -36,11 +36,6 @@ const config = new Config({
     // ['pokemon', 'queryable'],
     // ['pokemon', 'whatAble'],
   ],
-  /*
-  associations: {
-   positive: [[['what', 0], ['type', 0], ['is', 0], ['pokemon', 0]]]
-  },
-  */
 })
 config.add(hierarchy)
 config.initializer( ({config, km}) => {
