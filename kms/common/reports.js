@@ -209,12 +209,13 @@ let config = {
     { id: "remove", level: 0, 
         bridge: "{ ...next(operator), on: { marker: 'report', pullFromContext: true }, removee: after[0] }",
         generatorp: ({context, gp}) => `remove ${gp(context.removee)}`,
-        semantic: ({context, e, objects}) => {
+        semantic: ({context, e, kms, objects}) => {
           const report = e(context.on)
           const id = report.value.value
           const listing = objects.listings[id]
           const column = context.removee.index.value
           listing.columns.splice(column-1, 1)
+          kms.events.api.happens({ marker: "changes", changeable: report })
         }
     },
     { id: "column", level: 0, 
@@ -517,6 +518,7 @@ let config = {
             listing.ordering.push([value.marker, value.ordering])
             listing.columns = _.uniq(listing.columns)
           }
+          kms.events.api.happens({ marker: "changes", changeable: report })
         }
       }
     },
