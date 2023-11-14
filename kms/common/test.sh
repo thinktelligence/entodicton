@@ -30,5 +30,5 @@ node stgame -tva
 node pokemon -tva
 #
 node kid -tva
-node kia -tva
-node hana -tva
+node wendy -tva
+node alice -tva
