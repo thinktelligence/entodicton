@@ -7,7 +7,7 @@ const { hashIndexesGet, hashIndexesSet, translationMapping, translationMappings,
 
 // TODO first name 
 // TODO last name
-// hana is a first name vs hana is a person
+// alive is a first name vs alive is a person
 // TODO who is the person that owns cleo
 
 const template = {
@@ -20,7 +20,7 @@ const template = {
       "ownee is owned by owner means owner owns ownee",
 //      "ownee23 is owned by owner23",
 //      "cleo is a cat",
-//      "kia owns cleo",
+//      "wendy owns cleo",
     ],
 }
 let config = {
@@ -64,9 +64,9 @@ config.initializer( ({config, context, km, isAfterApi, isModule}) => {
   // config.addHierarchy('ownee', 'object')
   // config.addFragments(["ownerVar is owneeVar owned by", "owneeVar is owned by ownerVar"])
 
-  // node people -q 'cleo is owned by kia who is cleo owned by' -d -g
+  // node people -q 'cleo is owned by wendy who is cleo owned by' -d -g
   //  who is cleo owned by
-  //    cleo is owned by kia
+  //    cleo is owned by wendy
   //    the owner that owns ownee
   //    owner owns ownee is owner
 

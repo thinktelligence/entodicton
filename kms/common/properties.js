@@ -7,7 +7,7 @@ const { API } = require('./helpers/properties')
 const { chooseNumber } = require('./helpers.js')
 const pluralize = require('pluralize')
 
-// TODO what is kia's cat's name
+// TODO what is wendy's cat's name
 // TODO blue is a colour my eyes are blue what color are my eyes
 // TODO for my have a way to set context with current my and its changable
 // TODO crew member is a type of person

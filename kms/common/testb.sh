@@ -30,5 +30,5 @@ node tester -m stgame -tva -tfn stgame
 node tester -m pokemon -tva -tfn pokemon
 #
 node tester -m kid -tva -tfn kid
-node tester -m kia -tva -tfn kia
-node tester -m hana -tva -tfn hana
+node tester -m wendy -tva -tfn wendy
+node tester -m alice -tva -tfn alice

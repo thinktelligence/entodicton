@@ -1,8 +1,8 @@
 node animals -rt
 node emotions -rt
 node foods -rt
-node hana -rt
-node kia -rt
+node alive -rt
+node wendy -rt
 node kid -rt
 node meta -rt
 node ordering -rt

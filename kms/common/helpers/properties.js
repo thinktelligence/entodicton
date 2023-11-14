@@ -212,10 +212,10 @@ class API {
       match: ({context}) => context.marker == edAble.operator && context.paraphrase && context.constrained,
       apply: ({context, g}) => {
         if (context[before[0].tag].marker == 'by') {
-          // the cat kia owned
+          // the cat wendy owned
           return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} ${g({...context[before[0].tag], paraphrase: true})}`
         } else {
-          // the cat owned by kia
+          // the cat owned by wendy
           return `${g({...context[after[0].tag], paraphrase: true})} ${edAble.word} ${['by', g({...context[before[0].tag], paraphrase: true})].filter((t) => t).join(' ')}`
         }
       },

@@ -71,7 +71,7 @@ let config = {
   "the players are x y and x'
   "the winning score is 10000'
   'greg got 10
-  'kia got 20 points'
+  'wendy got 20 points'
   'who is winning'
   'what are the scores'
   */
@@ -365,8 +365,8 @@ config.initializer( ({objects, km, isModule}) => {
 })
 
 startWithDefault20 = [
-  "greg got 1 point hana got 2 points greg got 1 point start a new game who is next",
-  "greg got 1 point hana got 2 points greg got 1 point start a new game",
+  "greg got 1 point alice got 2 points greg got 1 point start a new game who is next",
+  "greg got 1 point alice got 2 points greg got 1 point start a new game",
   "start a new game greg got 10 points start a new game greg got 10 points what are the scores",
   "greg got 100 points start a new game what are the scores",
   "greg got 10 points sara got 3 points greg got 2 points whose turn is it",

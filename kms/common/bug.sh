@@ -6,19 +6,19 @@
 # apply like/0 counter == 6
 # node ordering -q 'greg likes bananas and grapes what does greg like' -d -g
 # node ordering -q 'the name of greg is greg greg is readonly the name of greg is fred' -d -g -s
-# node inspect kia -q "what is your name"
+# node inspect wendy -q "what is your name"
 # node inspect hierarchy -q 'cats are mammels what are the types of mammels'
 # node foods -q 'strips are food' -d
 # node foods -q 's2trips are food' -d
-# node inspect kid -q 'what does kia like'
+# node inspect kid -q 'what does wendy like'
 # node inspect emotions -q 'greg feels angry what does greg feel' -d
 # node emotions -q 'what is the emotion of greg' -d
 # node inspect emotions -q 'what does greg feel' -d
 # node inspect emotions -q 'what does greg feel' -d
 # node inspect foods -q 'what are the type of food' -d
-# node inspect kid -q 'what does kia like' -d
-# node inspect kid -q 'does kia like bananas' -d
-# node kid  -q "hana likes grapes\nhanna means hana\nwhat is hanna's name" -d
+# node inspect kid -q 'what does wendy like' -d
+# node inspect kid -q 'does wendy like bananas' -d
+# node kid  -q "alice likes grapes\nhanna means alice\nwhat is hanna's name" -d
 # node inspect kid -q "what is hanna's name" -d -g
 # node inspect ordering -q "x like y x want y?" -d
 # node inspect ordering -q "x like y x want y?" -d
@@ -51,10 +51,10 @@
 # find out why cat is unknown
 # node properties -q "sentientBeing1 feels emotion1 means the emotion of sentientBeing1 is emotion1" -g -d
 # node inspect stgame -q 'kirk what is your name' -d -g
-# stacked node properties -q "hana's sister is kia kia's cat is cleo\nwho is the cat of the sister of hana" -g -d
+# stacked node properties -q "alice's sister is wendy wendy's cat is cleo\nwho is the cat of the sister of alice" -g -d
 # stacked node properties -q "the age of greg is 23 what is greg's age" -g -d
-# node inspect properties -q "hana's sister is kia kia's cat is cleo\nwho is hana's sister's cat" -g -d
-# node properties -q "hana's sister is kia" -g -d
+# node inspect properties -q "alice's sister is wendy wendy's cat is cleo\nwho is alice's sister's cat" -g -d
+# node properties -q "alice's sister is wendy" -g -d
 # node inspect avatar -q "your name is greg what is your name" -d -g
 # node avatar -tva -g
 # node emotions -q 'greg feels angry what is the emotion of greg' -d -g
@@ -73,24 +73,24 @@
 # node crew -q 'you are kirk what is your name' -d -g
 # node crew -q 'you are kirk what is your name' -d -g
 # node inspect kid -q "what is hanna's name" -d -g
-# node kid -q "greg23 means hana\nwhat is greg23's name" -d -g
-# node kid -q "greg23 means hana" -d -g
+# node kid -q "greg23 means alice\nwhat is greg23's name" -d -g
+# node kid -q "greg23 means alice" -d -g
 # node inspect properties -q "the age of greg is 23 what are the properties of greg" -d -g
 # node meta -q 'if f then g gq' -d -g
-# node ordering -q "kia loves bananas what does kia like" -d -g
+# node ordering -q "wendy loves bananas what does wendy like" -d -g
 # node ordering -tva -g
-# node inspect kia -q 'what is your name' -d -g
-# node kid -q "be brief what is kia's name" -g -d -s
+# node inspect wendy -q 'what is your name' -d -g
+# node kid -q "be brief what is wendy's name" -g -d -s
 # node ordering -q 'be brief x1 likes x2 does x1 like x2' -g -d -s
 # node inspect ordering -q 'be brief x1 likes x2 and x3 what does x1 like' -g -d
 # node ordering -q 'if x likes y then x wants y x likes y\nwhat does x want' -g -d
 # node ordering -q 'if x likes y or x loves y then x wants y x loves y\nwhat does x want' -g -d
-# node ordering -q 'kia loves bananas what does kia like' -g -d
+# node ordering -q 'wendy loves bananas what does wendy like' -g -d
 # node inspect ordering -q 'if x likes y then x wants y x likes y\nwhat does x want' -g -d
 # node meta -tva -g
 # node inspect meta -q 'if f then g gq' -d -g
 # move the yesno in ordering 
-# node inspect ordering -q "kia loves bananas what does kia like" -d -g -r
+# node inspect ordering -q "wendy loves bananas what does wendy like" -d -g -r
 # node ordering -q "be brief x1 likes x2 what does x1 like" -d -g
 # node properties -q 'what is the property of object' -d -g
 # node properties -q 'the age of greg is 23\nwhat is the age of greg' -d -g
@@ -101,7 +101,7 @@
 # node scorekeeper -tva -g
 # node avatar -q 'greg has eyes greg has eyes?' -g -d
 # node avatar -q 'greg has eyes?' -g -d -r
-# node ordering -q 'kia loves bananas what does kia like' -g -d
+# node ordering -q 'wendy loves bananas what does wendy like' -g -d
 # node ordering -q "be brief x1 likes x2 does x1 like x2" -d -g
 # node people -g -q 'given name means first name' -d
 #node inspect people -g -q 'the name of greg is 23' -d
@@ -118,7 +118,7 @@
 # node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d -g -s
 # node inspect avatar -q 'my name is greg what is my name' -d -g
 # node inspect foods -q "what are the types of food" -d -g
-# node ordering -q 'kia loves bananas what does kia like' -d -g
+# node ordering -q 'wendy loves bananas what does wendy like' -d -g
 # PUSH node people -q 'the given name of greg is greg23 what is the given name of greg' -d -g
 # PUSH node people -q 'the first name of greg is greg23 what is the given name of greg' -d -g
 # node inspect people -q 'the given name of greg is greg23' -d -g -s
@@ -145,26 +145,26 @@
 # node inspect ordering -q 'wants is xfx between wanter and wantee' -d -g
 # node inspect people -q 'owns is xfx relation between owner and ownee' -g -d
 # node people -g -q 'who owns cleo' -d
-# node people -g -d -q 'kia owns cleo what does kia own' -s
-# node people -g -d -q 'kia owns cleo kia owns mary what does kia own' -s
-# node people -g -d -q 'kia owns cleo who is cleo owned by' -s
+# node people -g -d -q 'wendy owns cleo what does wendy own' -s
+# node people -g -d -q 'wendy owns cleo wendy owns mary what does wendy own' -s
+# node people -g -d -q 'wendy owns cleo who is cleo owned by' -s
 # cleo is owned by who
 # [subject] owned [by] -> [owner]
-# kia owned cleo
+# wendy owned cleo
 # no arg 'by' converts to postfix -> arged by works like normal
 # ((subject) (owned) [by]) -> owner
-# cleo is owned by kia means kia owns cleo
-# (cleo) [is] (owned by kia) where (owned by kia) == ownee
+# cleo is owned by wendy means wendy owns cleo
+# (cleo) [is] (owned by wendy) where (owned by wendy) == ownee
 # version of is the unify cleo and ownee
-# ([owned] ([by] ([kia]))) -> [ownee] look at that
-# node people -g -d -q 'cleo is owned by kia' -s
+# ([owned] ([by] ([wendy]))) -> [ownee] look at that
+# node people -g -d -q 'cleo is owned by wendy' -s
 # node people -g -d -q 'cleo is owned by who' -s
 # node people -g -d -q who is cleo owned by' -s
-# node people -g -d -q 'kia owns cleo'
+# node people -g -d -q 'wendy owns cleo'
 # node inspect crew -q 'who are the crew members' -g -d
 # node dialogues -g -d -q 'what is it'
-# node people -g -d -q 'who is owned by kia'
-# node people -g -d -q 'kia owns cleo who is owned by kia'
+# node people -g -d -q 'who is owned by wendy'
+# node people -g -d -q 'wendy owns cleo who is owned by wendy'
 # node animals -q 'cats are animals are cats animals?' -g -d
 # DONE no associations with -rt
 # incremenatl update of assocaition while generating
@@ -178,15 +178,15 @@
 # node people -q "ownee is owned by owner means owner owns ownee" -g -d -s
 # node people -q "ownee is owned by owner means owner owns ownee" -g -d -s
 # node crew -tva -g -r 
-# node people -g -d -q 'kia owns cleo'
+# node people -g -d -q 'wendy owns cleo'
 # node inspect people -q "ownee is owned by owner means owner owns ownee" -g -d
 # node meta -q "undefined means defined" -g -d -s
 # sort association and hierarchy
 # node inspect people -q "ownee is owned by owner means owner owns ownee" -g -d
-# node people -q "cleo is owned by kia who owns cleo" -g -d -s
-# node people -q "kia owns cleo who owns cleo" -g -d
-# node people -q "kia owns cleo what does kia own" -g -d
-# node inspect people -q "cleo is owned by kia who owns cleo" -g -d
+# node people -q "cleo is owned by wendy who owns cleo" -g -d -s
+# node people -q "wendy owns cleo who owns cleo" -g -d
+# node people -q "wendy owns cleo what does wendy own" -g -d
+# node inspect people -q "cleo is owned by wendy who owns cleo" -g -d
 # node people -q "who owns cleo" -g -d
 # node properties -q 'greg has toes' -g -d
 # node animals -q "do mammals have wings" -g -d
@@ -195,23 +195,23 @@
 # node properties -q 'greg doesnt have wings' -g -d
 # node properties -q 'greg doesnt have wings does greg have wings' -g -d
 # node people -tva -g 
-# node people -q 'the cat owned by kia' -d
-# node people -q 'cleo is owned by kia who owns cleo' -g -d
+# node people -q 'the cat owned by wendy' -d
+# node people -q 'cleo is owned by wendy who owns cleo' -g -d
 # TODO who is the person that owns cleo
-# TODO setup focus for this one: node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d -s
-# node people -q 'kia owns cleo who is the cat owned by kia' -d
+# TODO setup focus for this one: node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d -s
+# node people -q 'wendy owns cleo who is the cat owned by wendy' -d
 # maybe cat is a class or type
-#node people -q 'fred is a cat kia owns cleo who is the cat owned by kia' -d
+#node people -q 'fred is a cat wendy owns cleo who is the cat owned by wendy' -d
 # node people -q 'ownee is owned by owner who is ownee owned by' -d
 
 # two people named jeff talk about one have context resolve it
-# node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d
-# node people -q 'kia owns cleo\nwho is cleo owned by' -d
-# node people -q 'cleo is owned by kia who owns cleo' -d -g
+# node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d
+# node people -q 'wendy owns cleo\nwho is cleo owned by' -d
+# node people -q 'cleo is owned by wendy who owns cleo' -d -g
 # node hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -d -g
 # CONFLICT
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
-# node people -q 'fred is a cat kia owns cleo who is the cat owned by kia' -d -g
+# node people -q 'fred is a cat wendy owns cleo who is the cat owned by wendy' -d -g
 # TODO node people -q 'ownee is owned by owner who is ownee owned by' -d -g -r
 # TODO focusable -> make an evaluate for getting focus
 # TODO fix words for disarm the phasers
@@ -222,14 +222,14 @@
 # PARAPHRASE WRONG
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
 # node people -q 'who is ownee23 owned by' -d -g
-# node people -q 'fred is a cat kia owns cleo who is the cat owned by kia' -d -g
-# node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d -g
+# node people -q 'fred is a cat wendy owns cleo who is the cat owned by wendy' -d -g
+# node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d -g
 # "ownee23 is owned by owner23" instead of "ownee23 owned by ownee23 is owner23"
-# node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -d -g 
-# node people -q "cleo is owned by kia who owns cleo" -d -g
-# node inspect people -q "cleo is owned by kia" -d -g
+# node people -q "cleo is a cat wendy owns cleo who is the cat owned by wendy" -d -g 
+# node people -q "cleo is owned by wendy who owns cleo" -d -g
+# node inspect people -q "cleo is owned by wendy" -d -g
 # node hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -d 
-# node people -q 'cleo is a cat kia owns cleo who is the cat owned by kia' -d 
+# node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d 
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g -r
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -s -g
 # node properties -q 'greg has toes greg has eyes?' -g -d
@@ -248,8 +248,8 @@
 # node people -q 'who is ownee23 owned by' -g -d
 # node dialogues -q 'x is y?' -d -g
 # node pokemon -q 'pikachu squirtle weedle and pidgeot are pokemon' -d -g
-# node kid -q "kia's cat is cleo" -d -g
-# node kid -q "who is kia's cat" -g -d -s
+# node kid -q "wendy's cat is cleo" -d -g
+# node kid -q "who is wendy's cat" -g -d -s
 # node crew -q 'kirk is a crew member' -g -d -daa
 # node pokemon -q 'what type is pikachu' -d -g
 # node dialogues.js -q 'x is y?' -d -g
@@ -322,7 +322,7 @@
 # node properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d
 # node properties -q 'what is the property of object' -g -d
 # node properties -q 'property of object' -g -d
-# node properties -q 'the cat of the sister of hana' -g -d
+# node properties -q 'the cat of the sister of alice' -g -d
 # node avatar -q 'your name' -g -d
 # node dialogues -q 'x is 3 what is x' -g -d
 # node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -g -d -s
@@ -352,15 +352,15 @@
 # node math -q 'price is 6 quantity is 4 worth is price times quantity what is the worth' -d
 # node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -d
 # node reports -q 'answer with sentences list the models' -d
-# node inspect people -q 'kia owns cleo kia owns mary what does kia own' -d -g
-# node people -q 'kia owns cleo kia owns mary what does kia own' -d
-# node people -q "cleo is a cat\nkia owns cleo" -g -d
-# node people -q "kia owns cleo" -d -g
+# node inspect people -q 'wendy owns cleo wendy owns mary what does wendy own' -d -g
+# node people -q 'wendy owns cleo wendy owns mary what does wendy own' -d
+# node people -q "cleo is a cat\nwendy owns cleo" -g -d
+# node people -q "wendy owns cleo" -d -g
 # TODO saying the same things twice or saying the opposite
-# node people -q "cleo is a cat kia owns cleo\nwho is the cat owned by kia" -g -d
-# node people -q 'kia owns cleo' -d -g
-# node people -q "who is the cat owned by kia" -g -d
-# node inspect people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -r
+# node people -q "cleo is a cat wendy owns cleo\nwho is the cat owned by wendy" -g -d
+# node people -q 'wendy owns cleo' -d -g
+# node people -q "who is the cat owned by wendy" -g -d
+# node inspect people -q "cleo is a cat wendy owns cleo who is the cat owned by wendy" -r
 # // helpers/properties : 178
 # people : 81
 # call32
@@ -368,12 +368,12 @@
 # node people -q "given name means first name the first name of greg is greg23 what is the given name of greg" -d
 # people : 81
 # node people -q 'ownee23 is owned by owner23\nwho is ownee23 owned by' -d
-# GOAL-0 node people -q "cleo is a cat kia owns cleo who is the cat owned by kia" -g
-# GOAL-1 node people -q "who is the cat owned by kia" -g -d
-# GOAL-2 node people -q "cleo is a cat\nkia owns cleo\nwho is the cat owned by kia" -g
+# GOAL-0 node people -q "cleo is a cat wendy owns cleo who is the cat owned by wendy" -g
+# GOAL-1 node people -q "who is the cat owned by wendy" -g -d
+# GOAL-2 node people -q "cleo is a cat\nwendy owns cleo\nwho is the cat owned by wendy" -g
 # helpers/properties 367
 # people 78
-# node people -q 'the cat owned by kia' -g -d 
+# node people -q 'the cat owned by wendy' -g -d 
 # node people -q 'who is ownee23 owned by' -g -d
 # node people -q 'ownee23 is owned by owner23' -d -g
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
