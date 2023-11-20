@@ -14,6 +14,7 @@ const numbers = require('./common/numbers');
 const people = require('./common/people');
 const ordering = require('./common/ordering');
 const properties = require('./common/properties');
+const pipboy = require('./common/pipboy');
 const reports = require('./common/reports');
 const scorekeeper = require('./common/scorekeeper');
 const spock = require('./common/spock');
@@ -37,6 +38,7 @@ module.exports = {
   numbers,
   ordering,
   properties,
+  pipboy,
   reports,
   people,
   scorekeeper,
