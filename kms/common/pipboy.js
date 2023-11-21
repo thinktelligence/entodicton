@@ -51,7 +51,7 @@ let config = {
        level: 0, 
        isA: ['showable'],
        bridge: "{ ...next(operator) }" ,
-       words: [['stat', 'stats'], ['stats', 'stats'], ['statistics', 'stats'], ['inventory', 'inv'], ['data', 'data'], ['map', 'map'], ['radio', 'radio']].map(
+       words: [['stat', 'stat'], ['stats', 'stat'], ['statistics', 'stat'], ['inventory', 'inv'], ['data', 'data'], ['map', 'map'], ['radio', 'radio']].map(
             ([word, value]) => { return { word, value } })
     },
   ],
