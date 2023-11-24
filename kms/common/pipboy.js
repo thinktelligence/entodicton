@@ -4,6 +4,8 @@ const pipboy_tests = require('./pipboy.test.json')
 
 class API {
   // id in stats, inv, data, map, radio
+  //      under stats: status, special, perks
+  //      under inventory: weapons, armour, aid
   setDisplay(id) {
     this.objects.display = id
   }
@@ -13,6 +15,11 @@ class API {
 
   getWeapons() {
   }
+
+  // { item: 'stimpack', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
+  apply(item) {
+    this.objects.apply = item
+  }
 }
 const api = new API()
 
@@ -21,8 +28,20 @@ let config = {
   operators: [
     "([show] ([showable|]))",
     "(([content]) [tab])",
+    "([apply] ([stimpack]))",
   ],
   bridges: [
+    { 
+       id: "apply", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `apply ${g(context.item)}`,
+       semantic: ({api, context}) => {
+          // { item: 'stimpack', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
+         api.apply({ item: 'stimpack', quantity: 1 })
+       }
+    },
     { 
        id: "show", 
        isA: ['verby'],
@@ -30,9 +49,14 @@ let config = {
        bridge: "{ ...next(operator), showable: after[0] }",
        generatorp: ({context, g}) => `show ${g(context.showable)}`,
        semantic: ({api, context}) => {
-         debugger;
          api.setDisplay(context.showable.value)
        }
+    },
+    { 
+       id: "stimpack", 
+       level: 0, 
+       isA: ['theAble'],
+       bridge: "{ ...next(operator) }" 
     },
     { 
        id: "tab", 
@@ -51,7 +75,21 @@ let config = {
        level: 0, 
        isA: ['showable'],
        bridge: "{ ...next(operator) }" ,
-       words: [['stat', 'stat'], ['stats', 'stat'], ['statistics', 'stat'], ['inventory', 'inv'], ['data', 'data'], ['map', 'map'], ['radio', 'radio']].map(
+       words: [
+                ['stat', 'stat'], 
+                ['stats', 'stat'], 
+                ['statistics', 'stat'], 
+                ['inventory', 'inv'], 
+                ['data', 'data'], 
+                ['map', 'map'], 
+                ['radio', 'radio'],
+                ['status', 'status'],
+                ['special', 'special'],
+                ['perks', 'perks'],
+                ['weapons', 'weapons'],
+                ['armour', 'armour'],
+                ['aid', 'aid'],
+              ].map(
             ([word, value]) => { return { word, value } })
     },
   ],
