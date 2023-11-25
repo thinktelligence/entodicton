@@ -28,6 +28,7 @@ node spock -tva
 node stgame -tva
 #
 node pokemon -tva
+node pipboy -tva
 #
 node kid -tva
 node wendy -tva

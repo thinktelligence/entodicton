@@ -5,7 +5,7 @@ const pipboy_tests = require('./pipboy.test.json')
 class API {
   // id in stats, inv, data, map, radio
   //      under stats: status, special, perks
-  //      under inventory: weapons, armour, aid
+  //      under inventory: weapons, armor, aid
   setDisplay(id) {
     this.objects.display = id
   }
@@ -20,17 +20,56 @@ class API {
   apply(item) {
     this.objects.apply = item
   }
+
+  // 'weapon', 'armor'
+  // TODO to: x (the pistol/a pistol/<specific pistol by id?>
+  change(item) {
+    this.objects.change = item
+  }
 }
 const api = new API()
 
 let config = {
   name: 'pipboy',
+  // TODO mark default as local scope
   operators: [
-    "([show] ([showable|]))",
+    "([show] ([showable]))",
     "(([content]) [tab])",
     "([apply] ([stimpack]))",
+    "([go] ([to2|to] ([showable|])))",
+    "([change] ([changeable]))",
+    "([weapon])",
+    "([armor])",
   ],
   bridges: [
+    { 
+       id: "change", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `change ${g(context.item)}`,
+       semantic: ({api, context}) => {
+         api.change(context.item.marker)
+       }
+    },
+    { 
+       id: "changeable", 
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "armor", 
+       level: 0, 
+       words: ['armour'],
+       isA: ['changeable'],
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "weapon", 
+       level: 0, 
+       isA: ['changeable'],
+       bridge: "{ ...next(operator) }" 
+    },
     { 
        id: "apply", 
        isA: ['verby'],
@@ -41,6 +80,23 @@ let config = {
           // { item: 'stimpack', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
          api.apply({ item: 'stimpack', quantity: 1 })
        }
+    },
+    { 
+       id: "go", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), showable: after[0].showable }",
+       generatorp: ({context, g}) => `go to ${g(context.showable)}`,
+       semantic: ({api, context}) => {
+         api.setDisplay(context.showable.value)
+       }
+    },
+    {
+       id: "to2", 
+       isA: ['preposition'],
+       level: 0, 
+       bridge: "{ ...next(operator), showable: after[0] }",
+       generatorp: ({context, g}) => `to ${g(context.showable)}`,
     },
     { 
        id: "show", 
@@ -87,7 +143,8 @@ let config = {
                 ['special', 'special'],
                 ['perks', 'perks'],
                 ['weapons', 'weapons'],
-                ['armour', 'armour'],
+                ['armour', 'armor'],
+                ['armor', 'armor'],
                 ['aid', 'aid'],
               ].map(
             ([word, value]) => { return { word, value } })
