@@ -67,6 +67,7 @@ let config = {
     { 
        id: "weapon", 
        level: 0, 
+       words: ['weapons'],
        isA: ['changeable'],
        bridge: "{ ...next(operator) }" 
     },
