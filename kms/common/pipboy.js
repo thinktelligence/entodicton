@@ -5,7 +5,7 @@ const pipboy_tests = require('./pipboy.test.json')
 class API {
   // id in stats, inv, data, map, radio
   //      under stats: status, special, perks
-  //      under inventory: weapons, armor, aid
+  //      under inventory: weapons, apparel, aid
   setDisplay(id) {
     this.objects.display = id
   }
@@ -21,10 +21,14 @@ class API {
     this.objects.apply = item
   }
 
-  // 'weapon', 'armor'
+  // 'weapon', 'apparel'
   // TODO to: x (the pistol/a pistol/<specific pistol by id?>
   change(item) {
     this.objects.change = item
+  }
+
+  move(direction) {
+    this.objects.move = direction
   }
 }
 const api = new API()
@@ -39,7 +43,10 @@ let config = {
     "([go] ([to2|to] ([showable|])))",
     "([change] ([changeable]))",
     "([weapon])",
-    "([armor])",
+    "([apparel])",
+    "([move] ([direction]))",
+    "([down])",
+    "([up])",
   ],
   bridges: [
     { 
@@ -58,9 +65,35 @@ let config = {
        bridge: "{ ...next(operator) }" 
     },
     { 
-       id: "armor", 
+       id: "move", 
+       isA: ['verby'],
        level: 0, 
-       words: ['armour'],
+       bridge: "{ ...next(operator), direction: after[0] }",
+       generatorp: ({context, g}) => `move ${g(context.direction)}`,
+       semantic: ({api, context}) => {
+         api.move(context.direction)
+       }
+    },
+    { 
+       id: "direction", 
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "up", 
+       level: 0, 
+       isA: ['direction'],
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "down", 
+       level: 0, 
+       isA: ['direction'],
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "apparel", 
+       level: 0, 
        isA: ['changeable'],
        bridge: "{ ...next(operator) }" 
     },
@@ -144,8 +177,7 @@ let config = {
                 ['special', 'special'],
                 ['perks', 'perks'],
                 ['weapons', 'weapons'],
-                ['armour', 'armor'],
-                ['armor', 'armor'],
+                ['apparel', 'apparel'],
                 ['aid', 'aid'],
               ].map(
             ([word, value]) => { return { word, value } })
