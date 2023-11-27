@@ -1,5 +1,5 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
-const hierarchy = require('./hierarchy.js')
+const dialogues = require('./dialogues')
 const pipboy_tests = require('./pipboy.test.json')
 
 class API {
@@ -26,10 +26,6 @@ class API {
   change(item) {
     this.objects.change = item
   }
-
-  move(direction) {
-    this.objects.move = direction
-  }
 }
 const api = new API()
 
@@ -44,9 +40,6 @@ let config = {
     "([change] ([changeable]))",
     "([weapon])",
     "([apparel])",
-    "([move] ([direction]))",
-    "([down])",
-    "([up])",
   ],
   bridges: [
     { 
@@ -62,33 +55,6 @@ let config = {
     { 
        id: "changeable", 
        level: 0, 
-       bridge: "{ ...next(operator) }" 
-    },
-    { 
-       id: "move", 
-       isA: ['verby'],
-       level: 0, 
-       bridge: "{ ...next(operator), direction: after[0] }",
-       generatorp: ({context, g}) => `move ${g(context.direction)}`,
-       semantic: ({api, context}) => {
-         api.move(context.direction)
-       }
-    },
-    { 
-       id: "direction", 
-       level: 0, 
-       bridge: "{ ...next(operator) }" 
-    },
-    { 
-       id: "up", 
-       level: 0, 
-       isA: ['direction'],
-       bridge: "{ ...next(operator) }" 
-    },
-    { 
-       id: "down", 
-       level: 0, 
-       isA: ['direction'],
        bridge: "{ ...next(operator) }" 
     },
     { 
@@ -183,70 +149,11 @@ let config = {
             ([word, value]) => { return { word, value } })
     },
   ],
-
-  generators: [
-    { 
-      where: where(),
-      match: ({context}) => context.marker == 'currency' && !context.isAbstract, 
-      apply: ({context, g}) => {
-        word = Object.assign({}, context.amount)
-        word.isAbstract = true
-        word.marker = 'currency'
-        word.units = context.units
-        word.value = context.amount.value
-        // generator = [({context}) => context.marker == 'currency' && context.units == words.units && context.value > 1 && context.isAbstract, ({context, g}) => words.many ]
-        return `${g(context.amount.value)} ${g(word)}`
-      } 
-    },
-  ],
-
-  semantics: [
-    {
-      match: ({objects, context}) => context.marker == 'in',
-      where: where(),
-      apply: ({objects, api, context}) => {
-        const from = context.from
-        const to = context.to
-        const value = api.convertTo(from.amount.value, from.units, to.units)
-        context.marker = 'currency'
-        context.isAbstract = false
-        context.amount = { value }
-        context.units = to.units
-        context.isResponse = true
-      }
-    }
-  ],
 };
 
 config = new Config(config, module)
-config.add(hierarchy)
+config.add(dialogues)
 config.api = api
-config.initializer( ({config, objects, api, uuid}) => {
-  /*
-  units = api.getUnits()
-  for (word in units) {
-    words = config.get('words')
-    def = {"id": "currency", "initial": { units: units[word] }, uuid}
-    if (words[word]) {
-      words[word].push(def)
-    } else {
-      words[word] = [def]
-    }
-  }
-
-  unitWords = api.getUnitWords();
-  for (let words of unitWords) {
-      config.addGenerator(
-        ({context}) => context.marker == 'currency' && context.units == words.units && context.value == 1 && context.isAbstract, 
-        ({context, g}) => words.one, uuid
-      );
-      config.addGenerator(
-        ({context}) => context.marker == 'currency' && context.units == words.units && !isNaN(context.value) && (context.value != 1) && context.isAbstract, 
-        ({context, g}) => words.many, uuid
-      )
-  }
-  */
-})
 
 knowledgeModule({ 
   module,
