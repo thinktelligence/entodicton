@@ -21,6 +21,7 @@ const spock = require('./common/spock');
 const stgame = require('./common/stgame');
 const tell = require('./common/tell');
 const time = require('./common/time');
+const ui = require('./common/ui');
 
 module.exports = { 
   Config: tpm.Config,
@@ -46,4 +47,5 @@ module.exports = {
   stgame,
   tell,
   time,
+  ui,
 }
