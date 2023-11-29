@@ -6,12 +6,22 @@ class API {
   move(direction) {
     this.objects.move = direction
   }
+
+  select(direction) {
+    this.objects.select = true
+  }
+
+  cancel(direction) {
+    this.objects.cancel = true
+  }
 }
 const api = new API()
 
 let config = {
   name: 'ui',
   operators: [
+    "([select])",
+    "([cancel])",
     "([move] ([direction]))",
     "([down])",
     "([up])",
@@ -19,6 +29,25 @@ let config = {
     "([right])",
   ],
   bridges: [
+    { 
+       id: "select", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator) }",
+       semantic: ({api, context}) => {
+         api.select()
+       }
+    },
+    { 
+       id: "cancel", 
+       isA: ['verby'],
+       level: 0, 
+       words: ['close'],
+       bridge: "{ ...next(operator) }",
+       semantic: ({api, context}) => {
+         api.cancel()
+       }
+    },
     { 
        id: "move", 
        isA: ['verby'],
