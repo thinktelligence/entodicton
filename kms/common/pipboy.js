@@ -1,8 +1,10 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
-const dialogues = require('./dialogues')
+const base_km = require('./hierarchy')
 const pipboy_tests = require('./pipboy.test.json')
 
 class API {
+  initialize() {
+  }
   // id in stats, inv, data, map, radio
   //      under stats: status, special, perks
   //      under inventory: weapons, apparel, aid
@@ -21,8 +23,27 @@ class API {
     this.objects.apply = item
   }
 
+  equip(item) {
+    this.objects.equip = item
+  }
+  // wear/arm with default that
   // 'weapon', 'apparel'
   // TODO to: x (the pistol/a pistol/<specific pistol by id?>
+  // add to favorite
+  // equip/arm
+  //   equip a pistol
+  //   equip the 44 pistol
+  // eat/use
+  //   eat some food
+  // show the highest damage guns
+  // show the guns with the highest value
+  // select a rifle
+  // select a rifle with the most damage
+  // wear a suit
+  // apply a stimpack
+  // call this the town outfit
+  // call this the battle outfit
+  // 
   change(item) {
     this.objects.change = item
   }
@@ -38,8 +59,13 @@ let config = {
     "([apply] ([stimpack]))",
     "([go] ([to2|to] ([showable|])))",
     "([change] ([changeable]))",
+    "([equip] ([equipable]))",
     "([weapon])",
+    "([pistol])",
+    "([44_pistol|])",
     "([apparel])",
+
+    { pattern: "([testsetup1] ([equipable]))", development: true },
   ],
   bridges: [
     { 
@@ -53,8 +79,38 @@ let config = {
        }
     },
     { 
+       id: "equip", 
+       isA: ['verby'],
+       level: 0, 
+       localHierarchy: [ ['weapon', 'equipable'], ['thisitthat', 'equipable'] ],
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `equip ${g(context.item)}`,
+       semantic: ({api, context, e}) => {
+         const value = e(context.item)
+         api.equip(value.value)
+       }
+    },
+    { 
+       id: "equipable", 
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
        id: "changeable", 
        level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "pistol", 
+       level: 0, 
+       isA: ['weapon', 'theAble'],
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "44_pistol", 
+       level: 0, 
+       words: [' 44 pistol'],
+       isA: ['pistol'],
        bridge: "{ ...next(operator) }" 
     },
     { 
@@ -67,7 +123,7 @@ let config = {
        id: "weapon", 
        level: 0, 
        words: ['weapons'],
-       isA: ['changeable'],
+       isA: ['changeable', 'equipable'],
        bridge: "{ ...next(operator) }" 
     },
     { 
@@ -127,6 +183,19 @@ let config = {
        bridge: "{ ...next(operator) }" ,
     },
     { 
+       id: "testsetup1", 
+       level: 0, 
+       bridge: "{ ...next(operator), type: after[0] }" ,
+       generatorp: ({context, g}) => `${context.marker} ${g(context.type)}`,
+       isA: ['verby'],
+       semantic: ({context, kms}) => {
+         kms.dialogues.api.mentioned({
+           marker: context.type.marker,
+           value: context.type.marker
+         })
+       }
+    },
+    { 
        id: "content", 
        level: 0, 
        isA: ['showable'],
@@ -152,7 +221,7 @@ let config = {
 };
 
 config = new Config(config, module)
-config.add(dialogues)
+config.add(base_km)
 config.api = api
 
 knowledgeModule({ 
@@ -161,6 +230,9 @@ knowledgeModule({
   config,
   test: {
     name: './pipboy.test.json',
-    contents: pipboy_tests
+    contents: pipboy_tests,
+    check: [
+      'apply', 'equip', 'change'
+    ]
   },
 })

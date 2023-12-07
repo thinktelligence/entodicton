@@ -7,6 +7,12 @@ const { indent, focus } = require('./helpers')
 const pluralize = require('pluralize')
 
 class API {
+  initialize() {
+    this.isAs = [
+      (child, parent) => child == parent
+    ]
+  }
+
   //
   // duck typing: for operators you want to use here
   //
@@ -27,6 +33,22 @@ class API {
     return this.objects.brief
   }
 
+  addIsA(isA) {
+    debugger
+    if (!this.isAs.find( (f) => f == isA )) {
+      this.isAs.push(isA)
+    }
+  }
+
+  isA(child, parent) {
+    for (let isA of this.isAs) {
+      if (isA(child, parent)) {
+        return true
+      }
+    }
+    return false
+  }
+
   mentioned(concept, value = undefined) {
     if (value) {
       concept = { ...concept }
@@ -42,16 +64,23 @@ class API {
 
   mentions(context) {
     for (let m of this.objects.mentioned) {
-      if (m.marker == context.marker) {
+      if (this.isA(m.marker, context.marker)) {
         return m
       }
-      if (context.types && context.types.includes(m.marker)) {
-        return m
+      // if (context.types && context.types.includes(m.marker)) {
+      if (context.types) {
+        for (let parent of context.types) {
+          if (this.isA(m.marker, parent)) {
+            return m
+          }
+        }
       }
     }
-    for (let m of this.objects.mentioned) {
-      if (context.unknown) {
-        return m
+    if (context.types && context.types.length == 1) {
+      for (let m of this.objects.mentioned) {
+        if (context.unknown) {
+          return m
+        }
       }
     }
   }
@@ -174,7 +203,12 @@ let config = {
     "([is:queryBridge|] ([queryable]) ([queryable]))",
     // "(([queryable]) [is:isEdBridge|is,are] ([isEdAble|]))",
     "(([queryable]) [(<isEd|> ([isEdAble|]))])",
+
+    "([thisitthat|])",
     "([it])",
+    "([this])",
+    "([that])",
+
     "(<what> ([whatAble|]))",
     "([what:optional])",
     "(<the|> ([theAble|]))",
@@ -205,7 +239,6 @@ let config = {
     "([isEder|])",
     { pattern: "([debug23])" },
 
-    "([this])",
     "([verby])",
     "([pronoun])",
     "([to] ([toAble|]))",
@@ -251,7 +284,6 @@ let config = {
     },
     { id: "toAble", level: 0, bridge: "{ ...next(operator) }" },
 
-    { id: "this", level: 0, bridge: "{ ...next(operator), unknown: true, pullFromContext: true }" },
     { id: "be", level: 0, bridge: "{ ...next(operator), type: after[0] }" },
     { id: "briefOrWordy", level: 0, bridge: "{ ...next(operator) }" },
 
@@ -299,7 +331,31 @@ let config = {
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 
     // TODO make this hierarchy thing work
-    { id: "it", level: 0, hierarchy: ['queryable'], bridge: "{ ...next(operator), pullFromContext: true, unknown: true, determined: true }" },
+    { 
+      id: "thisitthat", 
+      level: 0, 
+      isA: ['queryable'], 
+      before: ['verby'],
+      bridge: "{ ...next(operator) }" 
+    },
+    { 
+      id: "it", 
+      level: 0, 
+      isA: ['thisitthat'], 
+      bridge: "{ ...next(operator), pullFromContext: true, unknown: true, determined: true }" 
+    },
+    { 
+      id: "this", 
+      level: 0, 
+      isA: ['thisitthat'], 
+      bridge: "{ ...next(operator), unknown: true, pullFromContext: true }" 
+    },
+    { 
+      id: "that", 
+      level: 0, 
+      isA: ['thisitthat'], 
+      bridge: "{ ...next(operator), unknown: true, pullFromContext: true }" 
+    },
   ],
   words: {
     "?": [{"id": "questionMark", "initial": "{}" }],

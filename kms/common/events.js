@@ -12,6 +12,9 @@ class API {
   happened(context, event) {
     return context.event && context.marker == event.marker
   }
+
+  initialize() {
+  }
 }
 
 let config = {

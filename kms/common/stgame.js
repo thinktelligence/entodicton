@@ -5,41 +5,55 @@ const crew = require('./crew')
 const kirk = require('./kirk')
 const spock = require('./spock')
 
-const api = new Object({
-  response: ({context, result}) => {
+class API {
+  response({context, result}) {
     console.log('----------------------------------------')
     console.log(`${context.value} says: `, result.paraphrases)
     console.log('----------------------------------------')
-  },
-})
+  }
 
-const kirkAPI = {
-  getName: () => "kirk",
+  initialize() {
+  }
+}
+const api = new API()
 
-  process: (config, utterance) => {
+class KirkAPI {
+  initialize() {
+  }
+
+  getName() {
+    return "kirk"
+  }
+
+  process(config, utterance) {
     kirk.server(config.getServer(), config.getAPIKey())
     return kirk.process(utterance, { credentials: this.credentials })
-  },
+  }
   
-  response: ({km, context, result}) => {
+  response({km, context, result}) {
     km('stgame').api.response({context, result})
-  },
+  }
 }
-characters.api = kirkAPI;
+characters.api = new KirkAPI();
 
-const spockAPI = {
-  getName: () => "spock",
+class SpockAPI {
+  initialize() {
+  }
 
-  process: (config, utterance) => {
+  getName() {
+    return "spock"
+  }
+
+  process(config, utterance) {
     spock.server(config.getServer(), config.getAPIKey())
     return spock.process(utterance, { credentials: this.credentials })
-  },
+  }
   
-  response: ({km, context, result}) => {
+  response({km, context, result}) {
     km('stgame').api.response({context, result})
-  },
+  }
 }
-characters.api = spockAPI;
+characters.api = new SpockAPI();
 
 const config = new Config({ 
     name: 'stgame', 

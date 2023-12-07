@@ -25,14 +25,19 @@ const tell_tests = require('./tell.test.json')
     args({ types: ['time', 'ampm'], properties: ['one', 'two']}) returns ['two', one']
 */
 
-api = { 
+class API { 
   // tell the requested user
-  tell: (config, user, what) => {
+  tell(config, user, what) {
     what.happened = true
     what = config.processContext(what).paraphrases
     console.log(`Tell the user ${JSON.stringify(user)} that ${what}`)
-  },
+  }
+
+  initialize() {
+  }
 }
+
+const api = new API()
 
 let config = {
   name: 'tell',

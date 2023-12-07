@@ -2,9 +2,13 @@ const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprog
 const numbersKM = require('./numbers.js')
 const currency_tests = require('./currency.test.json')
 
-const api = {
+class API {
+
+  initialize() {
+  }
+
   // map currency word to the unit that will be put in the context
-  getUnits: () => {
+  getUnits() {
     return {
       'dollars': 'dollar', 
       'dollar': 'dollar',
@@ -13,17 +17,17 @@ const api = {
       'euros': 'euro', 
       'euro': 'euro',
     } 
-  },
+  }
 
-  getUnitWords: () => {
+  getUnitWords() {
     return [
       { units: 'dollar', one: 'dollar', many: 'dollars' },
       { units: 'pound', one: 'pound', many: 'pounds' },
       { units: 'euro', one: 'euro', many: 'euros' },
     ]
-  },
+  }
 
-  convertTo: (amount, fromUnits, toUnits) => {
+  convertTo(amount, fromUnits, toUnits) {
     const conversion = {
     "dollar": { "euro": 0.82, "pound": 0.71, },
     "euro": { "dollar": 1.22, "pound": 0.82, },
@@ -32,6 +36,8 @@ const api = {
     return conversion[fromUnits][toUnits] * amount
   }
 }
+
+const api = new API()
 
 let config = {
   name: 'currency',

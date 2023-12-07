@@ -39,6 +39,9 @@ class Sally {
     console.log(`${context.value} says: `, result.generated)
     console.log('----------------------------------------')
   }
+
+  initialize() {
+  }
 }
 const api = new Sally()
 
@@ -148,6 +151,9 @@ class Bob {
     console.log('----------------------------------------')
     console.log(`${context.value} says: `, result.generated)
     console.log('----------------------------------------')
+  }
+
+  initialize() {
   }
 }
 const api2 = new Bob()

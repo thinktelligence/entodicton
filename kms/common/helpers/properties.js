@@ -90,6 +90,10 @@ class API {
     this.digraph = new Digraph()
   }
 
+  initialize() {
+    this.digraph = new Digraph()
+  }
+
   createBinaryRelation (config, operator, words, before, after) {
     this.createActionPrefix({
                 operator: operator,

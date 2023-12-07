@@ -9,10 +9,9 @@ const pad = (v, l) => {
   return "0".repeat(n) + s
 }
 
-const api = {
+class API {
   // gets the contexts for doing the happening
-  semantics: 
-      ({context, isModule, args, api}) => {
+  semantics({context, isModule, args, api}) {
         const values = args({ types: ['ampm', 'time'], properties: ['one', 'two']  })
         const ampm = context[values[0]]
         let hour = ampm.hour.hour
@@ -24,10 +23,16 @@ const api = {
           setTimeout( () => resolve(context), ms);
         }).then( () => context )
         context.event = promise
-      },
+      }
 
-  newDate: () => new Date()
+  newDate() {
+    return new Date()
+  }
+
+  initialize() {
+  }
 }
+const api = new API()
 
 let config = {
   name: 'time',

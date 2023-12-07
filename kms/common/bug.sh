@@ -378,4 +378,5 @@
 # node people -q 'ownee23 is owned by owner23' -d -g
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g
 # node scorekeeper -q 'start a new game\ngreg and jeff\nwho are the players' -d
-node pokemon -q 'what is the type of pikachu' -g -d
+# node pokemon -q 'what is the type of pikachu' -g -d
+node inspect pipboy -q 'testsetup1 weapon equip that' -d
