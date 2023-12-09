@@ -34,7 +34,6 @@ class API {
   }
 
   addIsA(isA) {
-    debugger
     if (!this.isAs.find( (f) => f == isA )) {
       this.isAs.push(isA)
     }
