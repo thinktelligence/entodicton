@@ -3,6 +3,7 @@
 node animals -tva
 node avatar -tva
 node characters -tva
+node countable -tva
 node currency -tva
 node dialogues -tva
 node emotions -tva

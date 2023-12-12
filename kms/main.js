@@ -14,6 +14,7 @@ const numbers = require('./common/numbers');
 const people = require('./common/people');
 const ordering = require('./common/ordering');
 const properties = require('./common/properties');
+const countable = require('./common/countable');
 const pipboy = require('./common/pipboy');
 const reports = require('./common/reports');
 const scorekeeper = require('./common/scorekeeper');
@@ -28,6 +29,7 @@ module.exports = {
   animals,
   avatar,
   characters,
+  countable,
   crew,
   currency,
   dialogues,
