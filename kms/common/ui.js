@@ -14,6 +14,9 @@ class API {
   cancel(direction) {
     this.objects.cancel = true
   }
+
+  initialize() {
+  }
 }
 const api = new API()
 
