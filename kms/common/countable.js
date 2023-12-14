@@ -11,8 +11,18 @@ let config = {
     "(([number]) [counting] ([countable]))",
   ],
   bridges: [
-    { id: "counting", level: 0, implicit: true, bridge: "{ ...after, quantity: before[0] }" },
-    { id: "countable", level: 0, bridge: "{ ...next(operator) }" },
+    { 
+      id: "counting", 
+      level: 0, 
+      implicit: true, 
+      before: ['verby'],
+      bridge: "{ ...after, quantity: before[0] }" 
+    },
+    { 
+      id: "countable", 
+      level: 0, 
+      bridge: "{ ...next(operator) }" 
+    },
   ],
 
   generators: [

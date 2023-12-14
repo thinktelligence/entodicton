@@ -1,5 +1,6 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
 const base_km = require('./hierarchy')
+const countable = require('./countable')
 const pipboy_tests = require('./pipboy.test.json')
 
 class API {
@@ -23,6 +24,13 @@ class API {
     this.objects.apply = item
   }
 
+  setName(item, name) {
+    this.objects.setName = { item, name }
+  }
+
+  wear(item) {
+    this.objects.wear = item
+  }
   equip(item) {
     this.objects.equip = item
   }
@@ -41,8 +49,11 @@ class API {
   // select a rifle with the most damage
   // wear a suit
   // apply a stimpack
+  //
   // call this the town outfit
   // call this the battle outfit
+  // wear the town outfit
+  // select an outfit
   // 
   change(item) {
     this.objects.change = item
@@ -61,9 +72,18 @@ let config = {
     "([change] ([changeable]))",
     "([equip] ([equipable]))",
     "([weapon])",
-    "([pistol])",
     "([44_pistol|])",
     "([apparel])",
+    "((!articlePOS/0 && !verby/0) [outfit|outfit])",
+    "([wear] ([outfit]))",
+    "([call] ([this]) ([outfit]))",
+    // "([call] ([outfit]) ([outfitName]))",
+    // wear the city outfit / wear a suit / wear a suit and hat / wear that
+    // call this the town outfit
+    // call this the battle outfit
+    // wear/show the town outfit
+    // select an outfit
+    // show the outfits
 
     { pattern: "([testsetup1] ([equipable]))", development: true },
   ],
@@ -79,6 +99,26 @@ let config = {
        }
     },
     { 
+       id: "call", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0], name: after[1] }",
+       generatorp: ({context, g}) => `call ${g(context.item)} ${g(context.name)}`,
+       semantic: ({api, context}) => {
+         api.setName(context.item, context.name)
+       }
+    },
+    { 
+       id: "wear", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `wear ${g(context.item)}`,
+       semantic: ({api, context}) => {
+         api.wear(context.item)
+       }
+    },
+    { 
        id: "equip", 
        isA: ['verby'],
        level: 0, 
@@ -90,6 +130,26 @@ let config = {
          api.equip(value.value)
        }
     },
+    /*
+    { 
+       id: "call", 
+       isA: ['theAble'],
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "outfit", 
+       isA: ['theAble'],
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    */
+    { 
+       id: "outfit", 
+       isA: ['theAble'],
+       level: 0, 
+       bridge: "{ ...next(operator), name: before[0], modifiers: ['name'] }" 
+    },
     { 
        id: "equipable", 
        level: 0, 
@@ -98,12 +158,6 @@ let config = {
     { 
        id: "changeable", 
        level: 0, 
-       bridge: "{ ...next(operator) }" 
-    },
-    { 
-       id: "pistol", 
-       level: 0, 
-       isA: ['weapon', 'theAble'],
        bridge: "{ ...next(operator) }" 
     },
     { 
@@ -167,7 +221,8 @@ let config = {
     { 
        id: "stimpack", 
        level: 0, 
-       isA: ['theAble'],
+       words: ['stimpacks'],
+       isA: ['theAble', 'countable'],
        bridge: "{ ...next(operator) }" 
     },
     { 
@@ -220,8 +275,20 @@ let config = {
   ],
 };
 
+const addWeapon = (id) => {
+  config.operators.push(`([${id}])`)
+  config.bridges.push({ 
+       id,
+       level: 0, 
+       isA: ['weapon', 'theAble'],
+       bridge: "{ ...next(operator) }" 
+  })
+}
+addWeapon('pistol')
+addWeapon('rifle')
+
 config = new Config(config, module)
-config.add(base_km)
+config.add(base_km).add(countable)
 config.api = api
 
 knowledgeModule({ 
@@ -232,7 +299,7 @@ knowledgeModule({
     name: './pipboy.test.json',
     contents: pipboy_tests,
     check: [
-      'apply', 'equip', 'change'
+      'apply', 'equip', 'change', 'wear'
     ]
   },
 })
