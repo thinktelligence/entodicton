@@ -239,6 +239,7 @@ let config = {
     },
     { 
        id: "testsetup1", 
+       development: true,
        level: 0, 
        bridge: "{ ...next(operator), type: after[0] }" ,
        generatorp: ({context, g}) => `${context.marker} ${g(context.type)}`,

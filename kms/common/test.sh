@@ -31,6 +31,7 @@ node stgame -tva -g
 #
 node pokemon -tva -g
 node pipboy -tva -g
+node tester -m pipboy -tfn pipboy -tva
 #
 node kid -tva -g
 node wendy -tva -g
