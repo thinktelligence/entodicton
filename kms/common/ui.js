@@ -8,8 +8,8 @@ class API {
     this.objects.move = { direction, steps }
   }
 
-  select(direction) {
-    this.objects.select = true
+  select(item) {
+    this.objects.select = { item }
   }
 
   cancel(direction) {
@@ -67,7 +67,6 @@ let config = {
        bridge: "{ ...next(operator), direction: after[0] }",
        generatorp: ({context, g}) => `move ${g(context.direction)}`,
        semantic: ({api, context}) => {
-         debugger
          api.move(context.direction.value, context.direction.steps ? context.direction.steps.value : 1)
        }
     },
