@@ -67,7 +67,7 @@ let config = {
        bridge: "{ ...next(operator), direction: after[0] }",
        generatorp: ({context, g}) => `move ${g(context.direction)}`,
        semantic: ({api, context}) => {
-         api.move(context.direction.value, context.steps?.value || 1)
+         api.move(context.direction.value, context.direction.steps?.value || 1)
        }
     },
     { 
