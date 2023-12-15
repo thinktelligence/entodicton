@@ -1,10 +1,11 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
 const dialogues = require('./dialogues')
+const math = require('./math')
 const ui_tests = require('./ui.test.json')
 
 class API {
-  move(direction) {
-    this.objects.move = direction
+  move(direction, steps = 1) {
+    this.objects.move = { direction, steps }
   }
 
   select(direction) {
@@ -30,6 +31,7 @@ let config = {
     "([up])",
     "([left])",
     "([right])",
+    "(([direction]) [moveAmount|] ([number]))"
   ],
   bridges: [
     { 
@@ -40,6 +42,13 @@ let config = {
        semantic: ({api, context}) => {
          api.select()
        }
+    },
+    { 
+       id: "moveAmount", 
+       isA: ['preposition'],
+       implicit: true,
+       level: 0, 
+       bridge: "{ ...before[0], postModifiers: ['steps'], steps: after[0] }",
     },
     { 
        id: "cancel", 
@@ -58,7 +67,7 @@ let config = {
        bridge: "{ ...next(operator), direction: after[0] }",
        generatorp: ({context, g}) => `move ${g(context.direction)}`,
        semantic: ({api, context}) => {
-         api.move(context.direction)
+         api.move(context.direction.value, context.steps?.value || 1)
        }
     },
     { 
@@ -94,7 +103,7 @@ let config = {
 };
 
 config = new Config(config, module)
-config.add(dialogues)
+config.add(dialogues).add(math)
 config.api = api
 
 knowledgeModule({ 
@@ -103,6 +112,7 @@ knowledgeModule({
   config,
   test: {
     name: './ui.test.json',
-    contents: ui_tests
+    contents: ui_tests,
+    check: ['select', 'move', 'cancel'],
   },
 })

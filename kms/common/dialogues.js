@@ -480,13 +480,16 @@ let config = {
      */
     [
       //({context}) => context.paraphrase && context.modifiers,
-      ({context}) => context.paraphrase && context.modifiers,
+      ({context}) => context.paraphrase && (context.modifiers || context.postModifiers),
       ({context, g}) => {
         const text = []
-        for (modifier of context.modifiers) {
+        for (modifier of (context.modifiers || [])) {
           text.push(g(context[modifier]))
         }
         text.push(context.word)
+        for (modifier of (context.postModifiers || [])) {
+          text.push(g(context[modifier]))
+        }
         return text.join(' ')
       }
     ],

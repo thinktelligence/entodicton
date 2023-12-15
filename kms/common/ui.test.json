@@ -82,27 +82,21 @@
       "namespaced": {
         "0": {
           "move": {
-            "default": true,
-            "marker": "up",
-            "range": {
-              "end": 6,
-              "start": 5
-            },
-            "text": "up",
-            "types": [
-              "up"
-            ],
-            "value": "up",
-            "word": "up"
+            "direction": "up",
+            "steps": 1
           }
         },
         "1": {
+        },
+        "2": {
+        },
+        "3": {
           "mentioned": [
           ],
           "variables": {
           }
         },
-        "2": {
+        "4": {
         }
       },
       "processed": [
@@ -234,27 +228,21 @@
       "namespaced": {
         "0": {
           "move": {
-            "default": true,
-            "marker": "left",
-            "range": {
-              "end": 8,
-              "start": 5
-            },
-            "text": "left",
-            "types": [
-              "left"
-            ],
-            "value": "left",
-            "word": "left"
+            "direction": "left",
+            "steps": 1
           }
         },
         "1": {
+        },
+        "2": {
+        },
+        "3": {
           "mentioned": [
           ],
           "variables": {
           }
         },
-        "2": {
+        "4": {
         }
       },
       "processed": [
@@ -386,27 +374,21 @@
       "namespaced": {
         "0": {
           "move": {
-            "default": true,
-            "marker": "down",
-            "range": {
-              "end": 8,
-              "start": 5
-            },
-            "text": "down",
-            "types": [
-              "down"
-            ],
-            "value": "down",
-            "word": "down"
+            "direction": "down",
+            "steps": 1
           }
         },
         "1": {
+        },
+        "2": {
+        },
+        "3": {
           "mentioned": [
           ],
           "variables": {
           }
         },
-        "2": {
+        "4": {
         }
       },
       "processed": [
@@ -538,27 +520,21 @@
       "namespaced": {
         "0": {
           "move": {
-            "default": true,
-            "marker": "right",
-            "range": {
-              "end": 9,
-              "start": 5
-            },
-            "text": "right",
-            "types": [
-              "right"
-            ],
-            "value": "right",
-            "word": "right"
+            "direction": "right",
+            "steps": 1
           }
         },
         "1": {
+        },
+        "2": {
+        },
+        "3": {
           "mentioned": [
           ],
           "variables": {
           }
         },
-        "2": {
+        "4": {
         }
       },
       "processed": [
@@ -773,6 +749,244 @@
       "cancel"
     ],
     "query": "cancel",
+    "responses": [
+      ""
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "down",
+          0
+        ],
+        [
+          "move",
+          0
+        ]
+      ],
+      [
+        [
+          "down",
+          0
+        ],
+        [
+          "move",
+          0
+        ],
+        [
+          "number",
+          0
+        ]
+      ],
+      [
+        [
+          "move",
+          0
+        ],
+        [
+          "number",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "direction": {
+          "default": true,
+          "marker": "down",
+          "postModifiers": [
+            "steps"
+          ],
+          "range": {
+            "end": 10,
+            "start": 5
+          },
+          "steps": {
+            "marker": "number",
+            "range": {
+              "end": 10,
+              "start": 10
+            },
+            "text": "2",
+            "types": [
+              "number"
+            ],
+            "value": 2,
+            "word": "2"
+          },
+          "text": "down 2",
+          "types": [
+            "down"
+          ],
+          "value": "down",
+          "word": "down"
+        },
+        "marker": "move",
+        "range": {
+          "end": 10,
+          "start": 0
+        },
+        "text": "move down 2",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "value": "move",
+        "word": "move"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "down",
+            0
+          ],
+          "ops": [
+            [
+              "down",
+              0
+            ],
+            [
+              "move",
+              0
+            ],
+            [
+              "number",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "number",
+            0
+          ],
+          "ops": [
+            [
+              "move",
+              0
+            ],
+            [
+              "number",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "moveAmount",
+            0
+          ],
+          "ops": [
+            [
+              "move",
+              0
+            ],
+            [
+              "moveAmount",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "move",
+            0
+          ],
+          "ops": [
+            [
+              "move",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "move": {
+            "direction": "down",
+            "steps": 1
+          }
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "4": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "direction": {
+              "default": true,
+              "marker": "down",
+              "postModifiers": [
+                "steps"
+              ],
+              "range": {
+                "end": 10,
+                "start": 5
+              },
+              "steps": {
+                "marker": "number",
+                "range": {
+                  "end": 10,
+                  "start": 10
+                },
+                "text": "2",
+                "types": [
+                  "number"
+                ],
+                "value": 2,
+                "word": "2"
+              },
+              "text": "down 2",
+              "types": [
+                "down"
+              ],
+              "value": "down",
+              "word": "down"
+            },
+            "marker": "move",
+            "range": {
+              "end": 10,
+              "start": 0
+            },
+            "text": "move down 2",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "value": "move",
+            "word": "move"
+          },
+          "paraphrases": "move down 2",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "move down 2"
+    ],
+    "query": "move down 2",
     "responses": [
       ""
     ]
