@@ -6,7 +6,10 @@ const { indent } = require('./helpers')
 // if condition then action -> condition may be true, this is a semantic
 
 class API {
-  
+
+  initialize() {
+  }
+
   listen(listener) {
   }
 

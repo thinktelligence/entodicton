@@ -2,6 +2,7 @@ const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprog
 const dialogues = require('./dialogues')
 const math = require('./math')
 const ui_tests = require('./ui.test.json')
+const ui_instance = require('./ui.instance.json')
 
 class API {
   move(direction, steps = 1) {
@@ -21,6 +22,13 @@ class API {
 }
 const api = new API()
 
+/*
+  TODO
+
+  select 2
+  select twice
+  again
+*/
 let config = {
   name: 'ui',
   operators: [
@@ -102,9 +110,34 @@ let config = {
   ],
 };
 
+const template = {
+  fragments: [
+    "move direction",
+  ],
+}
+
 config = new Config(config, module)
 config.add(dialogues).add(math)
 config.api = api
+config.initializer( ({config}) => {
+  config.addMotivation({
+    repeat: true,
+    where: where(),
+    match: ({context, isA}) => isA(context, 'direction'),
+    apply: ({context, insert, s}) => {
+      const direction = context
+      const fragment = config.fragment("move direction")
+      const mappings = [{
+        where: where(),
+        match: ({context}) => context.value == 'direction',
+        apply: ({context}) => Object.assign(context, direction),
+      }]
+      const instantiation = fragment.instantiate(mappings)
+      s(instantiation)
+    }
+  })
+
+})
 
 knowledgeModule({ 
   module,
@@ -115,4 +148,8 @@ knowledgeModule({
     contents: ui_tests,
     check: ['select', 'move', 'cancel'],
   },
+  template: {
+    template,
+    instance: ui_instance
+  }
 })
