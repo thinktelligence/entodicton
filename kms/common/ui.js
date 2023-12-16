@@ -119,8 +119,9 @@ const template = {
 config = new Config(config, module)
 config.add(dialogues).add(math)
 config.api = api
-config.initializer( ({config}) => {
-  config.addMotivation({
+config.initializer( ({config, baseConfig}) => {
+  // TODO fix this config/baseConfig thing
+  baseConfig.addMotivation({
     repeat: true,
     where: where(),
     match: ({context, isA}) => isA(context, 'direction'),
@@ -136,7 +137,6 @@ config.initializer( ({config}) => {
       s(instantiation)
     }
   })
-
 })
 
 knowledgeModule({ 

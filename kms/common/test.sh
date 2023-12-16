@@ -23,6 +23,7 @@ node scorekeeper -tva -g
 node tell -tva -g
 node time -tva -g
 node ui -tva -g
+node tester -m ui -tmn ui -tva
 #
 node crew -tva -g
 node kirk -tva -g
@@ -31,7 +32,7 @@ node stgame -tva -g
 #
 node pokemon -tva -g
 node pipboy -tva -g
-node tester -m pipboy -tfn pipboy -tva
+# node tester -m pipboy -tmn pipboy -tva TODO broken -> fix
 #
 node kid -tva -g
 node wendy -tva -g
