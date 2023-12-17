@@ -222,7 +222,7 @@ let config = {
     { 
        id: "stimpak", 
        level: 0, 
-       words: ['stimpaks'],
+       words: ['stimpaks', 'stimpack', 'stimpacks'],
        isA: ['theAble', 'countable'],
        bridge: "{ ...next(operator) }" 
     },
