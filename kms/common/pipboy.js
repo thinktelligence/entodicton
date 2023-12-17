@@ -19,7 +19,7 @@ class API {
   getWeapons() {
   }
 
-  // { item: 'stimpack', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
+  // { item: 'stimpak', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
   apply(item) {
     this.objects.apply = item
   }
@@ -48,7 +48,7 @@ class API {
   // select a rifle
   // select a rifle with the most damage
   // wear a suit
-  // apply a stimpack
+  // apply a stimpak
   //
   // call this the town outfit
   // call this the battle outfit
@@ -67,7 +67,7 @@ let config = {
   operators: [
     "([show] ([showable]))",
     "(([content]) [tab])",
-    "([apply] ([stimpack]))",
+    "([apply] ([stimpak]))",
     "([go] ([to2|to] ([showable|])))",
     "([change] ([changeable]))",
     "([equip] ([equipable]))",
@@ -186,9 +186,10 @@ let config = {
        level: 0, 
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `apply ${g(context.item)}`,
-       semantic: ({api, context}) => {
-          // { item: 'stimpack', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
-         api.apply({ item: 'stimpack', quantity: 1 })
+       semantic: ({api, context, e}) => {
+          // { item: 'stimpak', quantity: <number>, to?: [ { part: ['arm', 'leg', 'torso', head'], side?: ['left', 'right'] } ] }
+         const quantity = context.item.quantity ? e(context.item.quantity).value : 1
+         api.apply({ item: 'stimpak', quantity })
        }
     },
     { 
@@ -219,9 +220,9 @@ let config = {
        }
     },
     { 
-       id: "stimpack", 
+       id: "stimpak", 
        level: 0, 
-       words: ['stimpacks'],
+       words: ['stimpaks'],
        isA: ['theAble', 'countable'],
        bridge: "{ ...next(operator) }" 
     },
