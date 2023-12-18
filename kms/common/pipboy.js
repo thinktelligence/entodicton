@@ -87,9 +87,12 @@ let config = {
     "([44_pistol|])",
     "([apparel])",
     "((!articlePOS/0 && !verby/0) [outfit|outfit])",
+    // this doesnt work because the speech recognizer hears 'where'
     "([wear] ([outfit]))",
     "([strip])",
     "([disarm])",
+    "([putOn|] ([outfit]))",
+    "(([put]) <on>)",
     "([call] ([nameable]) ([outfit]))",
     // "([call] ([outfit]) ([outfitName]))",
     // wear the city outfit / wear a suit / wear a suit and hat / wear that
@@ -102,6 +105,23 @@ let config = {
     { pattern: "([testsetup1] ([equipable]))", development: true },
   ],
   bridges: [
+    {
+       id: "put", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator) }",
+       generatorp: ({context, g}) => `put on`,
+    },
+    { 
+       id: "on", 
+       isA: ['preposition'],
+       level: 0, 
+       bridge: "{ ...before, marker: operator('putOn', 0) }",
+       generatorp: ({context, g}) => `put on ${g(context.item)}`,
+       semantic: ({api, context}) => {
+         api.change(context.item.marker)
+       }
+    },
     { 
        id: "change", 
        isA: ['verby'],
@@ -143,9 +163,19 @@ let config = {
        }
     },
     { 
+       id: "putOn", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `put on ${g(context.item)}`,
+       semantic: ({api, context}) => {
+         api.wear(context.item.name.value)
+       }
+    },
+    { 
        id: "wear", 
        isA: ['verby'],
-       words: ['where'], // speech recognizer is funky that is why
+       words: ['where'], // the speech recognizer hears 'where' not 'wear'
        level: 0, 
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `wear ${g(context.item)}`,
