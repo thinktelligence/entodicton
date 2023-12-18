@@ -25,7 +25,6 @@ class API {
   }
 
   setName(item, name) {
-    name = name.name.value
     this.objects.setName = { item, name }
   }
 
@@ -109,7 +108,7 @@ let config = {
        bridge: "{ ...next(operator), item: after[0], name: after[1] }",
        generatorp: ({context, g}) => `call ${g(context.item)} ${g(context.name)}`,
        semantic: ({api, context}) => {
-         api.setName(context.item, context.name)
+         api.setName(context.item, context.name.name.value)
        }
     },
     { 
