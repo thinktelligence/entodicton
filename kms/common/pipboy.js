@@ -145,6 +145,7 @@ let config = {
     { 
        id: "wear", 
        isA: ['verby'],
+       words: ['where'], // speech recognizer is funky that is why
        level: 0, 
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `wear ${g(context.item)}`,
