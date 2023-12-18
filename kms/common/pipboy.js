@@ -28,9 +28,18 @@ class API {
     this.objects.setName = { item, name }
   }
 
+  strip() {
+    this.objects.strip = true
+  }
+
+  disarm() {
+    this.objects.disarm= true
+  }
+
   wear(item) {
     this.objects.wear = item
   }
+
   equip(item) {
     this.objects.equip = item
   }
@@ -79,6 +88,8 @@ let config = {
     "([apparel])",
     "((!articlePOS/0 && !verby/0) [outfit|outfit])",
     "([wear] ([outfit]))",
+    "([strip])",
+    "([disarm])",
     "([call] ([nameable]) ([outfit]))",
     // "([call] ([outfit]) ([outfitName]))",
     // wear the city outfit / wear a suit / wear a suit and hat / wear that
@@ -102,6 +113,26 @@ let config = {
        }
     },
     { 
+       id: "disarm", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator) }",
+       generatorp: ({context, g}) => `disarm`,
+       semantic: ({api, context}) => {
+         api.disarm()
+       }
+    },
+    { 
+       id: "strip", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator) }",
+       generatorp: ({context, g}) => `strip`,
+       semantic: ({api, context}) => {
+         api.strip()
+       }
+    },
+    { 
        id: "call", 
        isA: ['verby'],
        level: 0, 
@@ -118,7 +149,7 @@ let config = {
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `wear ${g(context.item)}`,
        semantic: ({api, context}) => {
-         api.wear(context.item)
+         api.wear(context.item.name.value)
        }
     },
     { 
