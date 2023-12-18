@@ -25,6 +25,7 @@ class API {
   }
 
   setName(item, name) {
+    name = name.name.value
     this.objects.setName = { item, name }
   }
 
@@ -43,6 +44,7 @@ class API {
   //   equip the 44 pistol
   // eat/use
   //   eat some food
+  // apply all the stimpaks
   // show the highest damage guns
   // show the guns with the highest value
   // select a rifle
@@ -50,7 +52,9 @@ class API {
   // wear a suit
   // apply a stimpak
   //
-  // call this the town outfit
+  // call this outfit the town outfit
+  // call this outfit snappy dresser
+  // call this gun blastey
   // call this the battle outfit
   // wear the town outfit
   // select an outfit
@@ -76,7 +80,7 @@ let config = {
     "([apparel])",
     "((!articlePOS/0 && !verby/0) [outfit|outfit])",
     "([wear] ([outfit]))",
-    "([call] ([this]) ([outfit]))",
+    "([call] ([nameable]) ([outfit]))",
     // "([call] ([outfit]) ([outfitName]))",
     // wear the city outfit / wear a suit / wear a suit and hat / wear that
     // call this the town outfit
@@ -145,8 +149,15 @@ let config = {
     },
     */
     { 
-       id: "outfit", 
+       id: "nameable", 
        isA: ['theAble'],
+       children: ['thisitthat'],
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "outfit", 
+       isA: ['nameable'],
        level: 0, 
        bridge: "{ ...next(operator), name: before[0], modifiers: ['name'] }" 
     },
@@ -301,7 +312,7 @@ knowledgeModule({
     name: './pipboy.test.json',
     contents: pipboy_tests,
     check: [
-      'apply', 'equip', 'change', 'wear'
+      'apply', 'equip', 'change', 'wear', 'setName'
     ]
   },
 })
