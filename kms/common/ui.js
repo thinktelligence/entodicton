@@ -13,6 +13,10 @@ class API {
     this.objects.select = { item }
   }
 
+  unselect(item) {
+    this.objects.unselect = { item }
+  }
+
   cancel(direction) {
     this.objects.cancel = true
   }
@@ -33,6 +37,7 @@ let config = {
   name: 'ui',
   operators: [
     "([select])",
+    "([unselect])",
     "([cancel])",
     "([move] ([direction]))",
     "([down])",
@@ -49,6 +54,15 @@ let config = {
        bridge: "{ ...next(operator) }",
        semantic: ({api, context}) => {
          api.select()
+       }
+    },
+    { 
+       id: "unselect", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator) }",
+       semantic: ({api, context}) => {
+         api.unselect()
        }
     },
     { 
