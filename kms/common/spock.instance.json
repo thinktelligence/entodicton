@@ -491,6 +491,10 @@
         ],
         [
           "it",
+          "thisitthat"
+        ],
+        [
+          "it",
           "toAble"
         ],
         [
@@ -906,6 +910,10 @@
           "theAble"
         ],
         [
+          "that",
+          "thisitthat"
+        ],
+        [
           "the",
           "articlePOS"
         ],
@@ -919,6 +927,14 @@
         ],
         [
           "this",
+          "queryable"
+        ],
+        [
+          "this",
+          "thisitthat"
+        ],
+        [
+          "thisitthat",
           "queryable"
         ],
         [
@@ -1053,7 +1069,7 @@
       "logs": [
         "Op choices were: [(('self', 0), [('is', 0), ('self', 0), ('spock', 0)]), (('spock', 0), [('is', 0), ('spock', 0)]), (('is', 0), [('is', 0)]), (('is', 1), [('is', 1)])]",
         "Contexts used for choosing operators (if the wrong choices were made update the priories array. Put the expected choice at the end of the list): \n  Context for choosing the operator self/0 was [['is', 0], ['self', 0], ['spock', 0]]\n  Context for choosing the operator spock/0 was [['is', 0], ['spock', 0]]\n  Context for choosing the operator is/0 was [['is', 0]]\n  Context for choosing the operator is/1 was [['is', 1]]",
-        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['spock', 0]]\n      (('self', 0), ('is', 0), ('spock', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['spock', 0]]\n      (('isEd', 0), ('spock', 0))\n  Group 1\n    0.5 - [['self', 0], ['isEd', 0], \">>>>2 ['spock', 0] <<<<2\"]\n      (('isEd', 0), ('spock', 0))\n    1.0 - [['self', 0], ['is', 0], \">>>>2 ['spock', 0] <<<<2\"]\n      (('self', 0), ('is', 0), ('spock', 0))\n  Group 2\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['spock', 0]]\n      (('self', 0), ('is', 0), ('spock', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['spock', 0]]\n      (('isEd', 0), ('spock', 0))\n  Group 3\n    0.5 - [['self', 0], ['isEd', 0], \">>>>2 ['spock', 0] <<<<2\"]\n      (('isEd', 0), ('spock', 0))\n    1.0 - [['self', 0], ['is', 0], \">>>>2 ['spock', 0] <<<<2\"]\n      (('self', 0), ('is', 0), ('spock', 0))\n  Group 4\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['spock', 0]]\n      (('self', 0), ('is', 0), ('spock', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['spock', 0]]\n      (('isEd', 0), ('spock', 0))"
+        "Associations made with probabilities (each group is a choice point. if the wrong choices were made update the associations list): \n  Group 0\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['spock', 0]]\n      (('self', 0), ('is', 0), ('spock', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['spock', 0]]\n      (('isEd', 0), ('spock', 0))\n  Group 1\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['spock', 0]]\n      (('self', 0), ('is', 0), ('spock', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['spock', 0]]\n      (('isEd', 0), ('spock', 0))\n  Group 2\n    1.0 - [['self', 0], \">>>>1 ['is', 0] <<<<1\", ['spock', 0]]\n      (('self', 0), ('is', 0), ('spock', 0))\n    0.5 - [['self', 0], \">>>>1 ['isEd', 0] <<<<1\", ['spock', 0]]\n      (('isEd', 0), ('spock', 0))"
       ],
       "metadata": {
         "opChoices": [
@@ -1146,10 +1162,10 @@
             ]
           },
           "two": {
-            "marker": "spock",
             "value": "spock",
-            "default": true,
+            "number": "one",
             "text": "spock",
+            "marker": "spock",
             "word": "spock",
             "range": {
               "start": 8,
@@ -1200,7 +1216,7 @@
           ]
         ]
       ],
-      "version": "7.3.9-beta.14",
+      "version": "7.5.0-beta.5",
       "query": "you are spock",
       "key": {
         "query": "you are spock"

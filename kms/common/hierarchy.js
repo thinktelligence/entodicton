@@ -163,7 +163,7 @@ let config = {
       notes: 'c is a y',
       where: where(),
       match: ({context, listable}) => listable(context.marker, 'hierarchyAble') && !context.pullFromContext && !context.wantsValue && context.same && !context.same.pullFromContext && context.same.wantsValue,
-      apply: ({context, km, objects, asList}) => {
+      apply: ({context, km, objects, asList, baseConfig : config}) => {
         const api = km('properties').api
         // mark c as an instance?
         const oneConcepts = asList(context);
@@ -182,7 +182,7 @@ let config = {
       notes: 'an x is a y',
       where: where(),
       match: ({context, listable}) => listable(context.marker, 'hierarchyAble') && !context.pullFromContext && context.wantsValue && context.same,
-      apply: ({context, km, objects, config, asList}) => {
+      apply: ({context, km, objects, baseConfig : config, asList}) => {
         const api = km('properties').api
         const oneConcepts = asList(context);
         const twoConcepts = asList(context.same);

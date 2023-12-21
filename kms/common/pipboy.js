@@ -1,5 +1,5 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
-const base_km = require('./hierarchy')
+const base_km = require('./pipboyTemplate')
 const countable = require('./countable')
 const pipboy_tests = require('./pipboy.test.json')
 
@@ -60,6 +60,7 @@ class API {
   // wear a suit
   // apply a stimpak
   //
+  // show the shotguns / show all the weapons / show all weapons
   // call this outfit the town outfit
   // call this outfit snappy dresser
   // call this gun blastey
@@ -83,8 +84,8 @@ let config = {
     "([go] ([to2|to] ([showable|])))",
     "([change] ([changeable]))",
     "([equip] ([equipable]))",
-    "([weapon])",
-    "([44_pistol|])",
+    // "([weapon])",
+    // "([44_pistol|])",
     "([apparel])",
     "((!articlePOS/0 && !verby/0) [outfit|outfit])",
     // this doesnt work because the speech recognizer hears 'where'
@@ -103,6 +104,9 @@ let config = {
     // show the outfits
 
     { pattern: "([testsetup1] ([equipable]))", development: true },
+  ],
+  hierarchy: [
+    ['weapon', 'equipable']
   ],
   bridges: [
     {
@@ -127,6 +131,7 @@ let config = {
        isA: ['verby'],
        level: 0, 
        bridge: "{ ...next(operator), item: after[0] }",
+       localHierarchy: [ ['weapon', 'changeable'] ],
        generatorp: ({context, g}) => `change ${g(context.item)}`,
        semantic: ({api, context}) => {
          api.change(context.item.marker)
@@ -232,6 +237,7 @@ let config = {
        level: 0, 
        bridge: "{ ...next(operator) }" 
     },
+    /*
     { 
        id: "44_pistol", 
        level: 0, 
@@ -239,12 +245,14 @@ let config = {
        isA: ['pistol'],
        bridge: "{ ...next(operator) }" 
     },
+    */
     { 
        id: "apparel", 
        level: 0, 
        isA: ['changeable'],
        bridge: "{ ...next(operator) }" 
     },
+    /*
     { 
        id: "weapon", 
        level: 0, 
@@ -252,6 +260,7 @@ let config = {
        isA: ['changeable', 'equipable'],
        bridge: "{ ...next(operator) }" 
     },
+    */
     { 
        id: "apply", 
        isA: ['verby'],
@@ -315,6 +324,7 @@ let config = {
        development: true,
        level: 0, 
        bridge: "{ ...next(operator), type: after[0] }" ,
+       localHierarchy: [ ['weapon', 'equipable'] ],
        generatorp: ({context, g}) => `${context.marker} ${g(context.type)}`,
        isA: ['verby'],
        semantic: ({context, kms}) => {
@@ -349,6 +359,7 @@ let config = {
   ],
 };
 
+/*
 const addWeapon = (id) => {
   config.operators.push(`([${id}])`)
   config.bridges.push({ 
@@ -360,9 +371,13 @@ const addWeapon = (id) => {
 }
 addWeapon('pistol')
 addWeapon('rifle')
+*/
 
 config = new Config(config, module)
+//console.log('base_km.config.hierarchy', JSON.stringify(base_km.config.hierarchy, null, 2))
 config.add(base_km).add(countable)
+// console.log('config.config.hierarchy', JSON.stringify(config.config.hierarchy, null, 2))
+// console.log('config.hierarchy', config.hierarchy)
 config.api = api
 
 knowledgeModule({ 

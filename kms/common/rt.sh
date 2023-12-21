@@ -1,7 +1,7 @@
 node animals -rt
 node emotions -rt
 node foods -rt
-node alive -rt
+# node alive -rt
 node wendy -rt
 node kid -rt
 node meta -rt
