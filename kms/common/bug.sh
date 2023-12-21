@@ -387,4 +387,6 @@
 # node foods -q 'food' -d
 # node pipboy -q 'testsetup1 weapon equip that' -d
 # node pipboy -q 'the work outfit' -d -g -s
-node inspect pipboy -q 'testsetup1 weapon equip that' -g -d 
+# node inspect pipboy -q 'testsetup1 weapon equip that' -g -d 
+# node pipboy -q 'all the weapons' -g -d 
+node pipboy -q 'show all the weapons' -g -d -s

@@ -106,7 +106,8 @@ let config = {
     { pattern: "([testsetup1] ([equipable]))", development: true },
   ],
   hierarchy: [
-  //  ['weapon', 'equipable']
+    ['weapon', 'countable'],
+    ['weapon', 'showable'],
   ],
   bridges: [
     {
@@ -350,7 +351,7 @@ let config = {
                 ['status', 'status'],
                 ['special', 'special'],
                 ['perks', 'perks'],
-                ['weapons', 'weapons'],
+                // ['weapons', 'weapons'],
                 ['apparel', 'apparel'],
                 ['aid', 'aid'],
               ].map(

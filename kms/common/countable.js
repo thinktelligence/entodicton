@@ -8,7 +8,8 @@ const countable_tests = require('./countable.test.json')
 let config = {
   name: 'countable',
   operators: [
-    "(([number]) [counting] ([countable]))",
+    "(([quantifier|]) [counting] ([countable]))",
+    "([all])",
   ],
   bridges: [
     { 
@@ -19,7 +20,18 @@ let config = {
       bridge: "{ ...after, quantity: before[0] }" 
     },
     { 
+      id: "quantifier", 
+      children: ['number', 'all'],
+      level: 0, 
+      bridge: "{ ...next(operator) }" 
+    },
+    { 
       id: "countable", 
+      level: 0, 
+      bridge: "{ ...next(operator) }" 
+    },
+    { 
+      id: "all", 
       level: 0, 
       bridge: "{ ...next(operator) }" 
     },
