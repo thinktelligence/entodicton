@@ -386,4 +386,5 @@
 # node foods -q 'sushi is food\nwhat are the types of food' -d
 # node foods -q 'food' -d
 # node pipboy -q 'testsetup1 weapon equip that' -d
-node pipboy -q 'the work outfit' -d -g -s
+# node pipboy -q 'the work outfit' -d -g -s
+node inspect pipboy -q 'testsetup1 weapon equip that' -g -d 

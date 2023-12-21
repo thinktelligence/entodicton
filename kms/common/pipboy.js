@@ -106,7 +106,7 @@ let config = {
     { pattern: "([testsetup1] ([equipable]))", development: true },
   ],
   hierarchy: [
-    ['weapon', 'equipable']
+  //  ['weapon', 'equipable']
   ],
   bridges: [
     {
