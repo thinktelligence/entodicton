@@ -10,6 +10,7 @@ let config = {
   operators: [
     "(([quantifier|]) [counting] ([countable]))",
     "([all])",
+    // everything
   ],
   bridges: [
     { 

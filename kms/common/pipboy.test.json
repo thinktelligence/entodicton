@@ -8325,16 +8325,6 @@
         [
           "show",
           0
-        ]
-      ],
-      [
-        [
-          "all",
-          0
-        ],
-        [
-          "show",
-          0
         ],
         [
           "the",
@@ -8347,7 +8337,13 @@
           0
         ],
         [
-          "show",
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "all",
           0
         ],
         [
@@ -8361,7 +8357,7 @@
       ],
       [
         [
-          "show",
+          "showWeapons",
           0
         ],
         [
@@ -8375,7 +8371,7 @@
     "contexts": [
       {
         "default": true,
-        "marker": "show",
+        "marker": "showWeapons",
         "range": {
           "end": 19,
           "start": 0
@@ -8420,7 +8416,6 @@
         "touchedBy": [
           "call2"
         ],
-        "value": "show",
         "word": "show"
       }
     ],
@@ -8505,12 +8500,12 @@
         },
         {
           "op": [
-            "show",
+            "showWeapons",
             0
           ],
           "ops": [
             [
-              "show",
+              "showWeapons",
               0
             ]
           ]
@@ -8520,7 +8515,7 @@
     "objects": {
       "namespaced": {
         "0": {
-          "display": "weapon"
+          "showWeapons": "all"
         },
         "1": {
         },
@@ -8658,7 +8653,7 @@
         {
           "context": {
             "default": true,
-            "marker": "show",
+            "marker": "showWeapons",
             "range": {
               "end": 19,
               "start": 0
@@ -8703,7 +8698,6 @@
             "touchedBy": [
               "call2"
             ],
-            "value": "show",
             "word": "show"
           },
           "paraphrases": "show all the weapons",
@@ -8877,6 +8871,954 @@
       "show all the weapons"
     ],
     "query": "show all the weapons",
+    "responses": [
+      ""
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "pistol",
+          0
+        ],
+        [
+          "showWeapons",
+          0
+        ]
+      ],
+      [
+        [
+          "pistol",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "showWeapons",
+        "range": {
+          "end": 15,
+          "start": 0
+        },
+        "showable": {
+          "concept": true,
+          "determiner": "the",
+          "marker": "pistol",
+          "modifiers": [
+            "determiner"
+          ],
+          "number": "many",
+          "pullFromContext": true,
+          "range": {
+            "end": 15,
+            "start": 5
+          },
+          "text": "the pistols",
+          "types": [
+            "pistol"
+          ],
+          "value": "pistol",
+          "wantsValue": true,
+          "word": "pistols"
+        },
+        "text": "show the pistols",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "show"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "pistol",
+            0
+          ],
+          "ops": [
+            [
+              "pistol",
+              0
+            ],
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "showWeapons",
+            0
+          ],
+          "ops": [
+            [
+              "showWeapons",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "showWeapons": "pistol"
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+          "children": {
+            "changeable": [
+              "apparel"
+            ],
+            "equipable": [
+              "weapon"
+            ],
+            "nameable": [
+              "outfit"
+            ],
+            "showable": [
+              "tab",
+              "content"
+            ],
+            "weapon": [
+              "pistol",
+              "rifle",
+              "grenade",
+              "mine",
+              "shotgun"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "outfit",
+            "nameable",
+            "apparel",
+            "changeable",
+            "tab",
+            "showable",
+            "content",
+            "pistol",
+            "weapon",
+            "rifle",
+            "grenade",
+            "mine",
+            "shotgun",
+            "equipable"
+          ],
+          "parents": {
+            "apparel": [
+              "changeable"
+            ],
+            "content": [
+              "showable"
+            ],
+            "grenade": [
+              "weapon"
+            ],
+            "mine": [
+              "weapon"
+            ],
+            "outfit": [
+              "nameable"
+            ],
+            "pistol": [
+              "weapon"
+            ],
+            "rifle": [
+              "weapon"
+            ],
+            "shotgun": [
+              "weapon"
+            ],
+            "tab": [
+              "showable"
+            ],
+            "weapon": [
+              "equipable"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "apparel": {
+              },
+              "changeable": {
+              },
+              "content": {
+              },
+              "equipable": {
+              },
+              "grenade": {
+              },
+              "mine": {
+              },
+              "nameable": {
+              },
+              "outfit": {
+              },
+              "pistol": {
+              },
+              "rifle": {
+              },
+              "shotgun": {
+              },
+              "showable": {
+              },
+              "tab": {
+              },
+              "weapon": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "5": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "6": {
+        },
+        "7": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "showWeapons",
+            "range": {
+              "end": 15,
+              "start": 0
+            },
+            "showable": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "pistol",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "many",
+              "pullFromContext": true,
+              "range": {
+                "end": 15,
+                "start": 5
+              },
+              "text": "the pistols",
+              "types": [
+                "pistol"
+              ],
+              "value": "pistol",
+              "wantsValue": true,
+              "word": "pistols"
+            },
+            "text": "show the pistols",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "show"
+          },
+          "paraphrases": "show the pistols",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "concept": true,
+              "determiner": "a",
+              "marker": "weapon",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": false,
+              "range": {
+                "end": 20,
+                "start": 0
+              },
+              "text": "a weapon",
+              "types": [
+                "weapon"
+              ],
+              "value": "weapon",
+              "wantsValue": true,
+              "word": "weapon"
+            },
+            "range": {
+              "end": 20,
+              "start": 0
+            },
+            "text": "a weapon is equipable",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "range": {
+                "end": 20,
+                "start": 12
+              },
+              "text": "equipable",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "equipable",
+              "word": "equipable"
+            },
+            "word": "is"
+          },
+          "paraphrases": "a weapon is equipable",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "many",
+            "one": {
+              "marker": "list",
+              "number": "many",
+              "range": {
+                "end": 53,
+                "start": 0
+              },
+              "types": [
+                "list",
+                "unknown"
+              ],
+              "value": [
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 6,
+                    "start": 0
+                  },
+                  "text": "pistols",
+                  "unknown": true,
+                  "value": "pistols",
+                  "word": "pistols"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 13,
+                    "start": 8
+                  },
+                  "text": "rifles",
+                  "unknown": true,
+                  "value": "rifles",
+                  "word": "rifles"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 22,
+                    "start": 15
+                  },
+                  "text": "grenades",
+                  "unknown": true,
+                  "value": "grenades",
+                  "word": "grenades"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 28,
+                    "start": 24
+                  },
+                  "text": "mines",
+                  "unknown": true,
+                  "value": "mines",
+                  "word": "mines"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 41,
+                    "start": 34
+                  },
+                  "text": "shotguns",
+                  "unknown": true,
+                  "value": "shotguns",
+                  "word": "shotguns"
+                }
+              ]
+            },
+            "range": {
+              "end": 53,
+              "start": 0
+            },
+            "text": " are weapons",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "range": {
+                "end": 53,
+                "start": 47
+              },
+              "text": "weapons",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "weapons",
+              "word": "weapons"
+            },
+            "word": "are"
+          },
+          "paraphrases": "pistols, rifles, grenades, mines and shotguns are weapons",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "show the pistols"
+    ],
+    "query": "show the pistols",
+    "responses": [
+      ""
+    ]
+  },
+  {
+    "associations": [
+      [
+        [
+          "show",
+          0
+        ],
+        [
+          "the",
+          0
+        ]
+      ],
+      [
+        [
+          "showWeapons",
+          0
+        ],
+        [
+          "weapon",
+          0
+        ]
+      ],
+      [
+        [
+          "the",
+          0
+        ],
+        [
+          "weapon",
+          0
+        ]
+      ]
+    ],
+    "config": {
+    },
+    "contexts": [
+      {
+        "default": true,
+        "marker": "showWeapons",
+        "range": {
+          "end": 15,
+          "start": 0
+        },
+        "showable": {
+          "concept": true,
+          "determiner": "the",
+          "marker": "weapon",
+          "modifiers": [
+            "determiner"
+          ],
+          "number": "many",
+          "pullFromContext": true,
+          "range": {
+            "end": 15,
+            "start": 5
+          },
+          "text": "the weapons",
+          "types": [
+            "weapon"
+          ],
+          "value": "weapon",
+          "wantsValue": true,
+          "word": "weapons"
+        },
+        "text": "show the weapons",
+        "topLevel": true,
+        "touchedBy": [
+          "call2"
+        ],
+        "word": "show"
+      }
+    ],
+    "developerTest": false,
+    "metadata": {
+      "opChoices": [
+        {
+          "op": [
+            "weapon",
+            0
+          ],
+          "ops": [
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ],
+            [
+              "weapon",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "the",
+            0
+          ],
+          "ops": [
+            [
+              "show",
+              0
+            ],
+            [
+              "the",
+              0
+            ]
+          ]
+        },
+        {
+          "op": [
+            "showWeapons",
+            0
+          ],
+          "ops": [
+            [
+              "showWeapons",
+              0
+            ]
+          ]
+        }
+      ]
+    },
+    "objects": {
+      "namespaced": {
+        "0": {
+          "showWeapons": "weapon"
+        },
+        "1": {
+        },
+        "2": {
+        },
+        "3": {
+        },
+        "4": {
+          "children": {
+            "changeable": [
+              "apparel"
+            ],
+            "equipable": [
+              "weapon"
+            ],
+            "nameable": [
+              "outfit"
+            ],
+            "showable": [
+              "tab",
+              "content"
+            ],
+            "weapon": [
+              "pistol",
+              "rifle",
+              "grenade",
+              "mine",
+              "shotgun"
+            ]
+          },
+          "concepts": [
+            "properties",
+            "outfit",
+            "nameable",
+            "apparel",
+            "changeable",
+            "tab",
+            "showable",
+            "content",
+            "pistol",
+            "weapon",
+            "rifle",
+            "grenade",
+            "mine",
+            "shotgun",
+            "equipable"
+          ],
+          "parents": {
+            "apparel": [
+              "changeable"
+            ],
+            "content": [
+              "showable"
+            ],
+            "grenade": [
+              "weapon"
+            ],
+            "mine": [
+              "weapon"
+            ],
+            "outfit": [
+              "nameable"
+            ],
+            "pistol": [
+              "weapon"
+            ],
+            "rifle": [
+              "weapon"
+            ],
+            "shotgun": [
+              "weapon"
+            ],
+            "tab": [
+              "showable"
+            ],
+            "weapon": [
+              "equipable"
+            ]
+          },
+          "properties": {
+            "handlers": {
+            },
+            "initHandlers": [
+            ],
+            "root": {
+              "apparel": {
+              },
+              "changeable": {
+              },
+              "content": {
+              },
+              "equipable": {
+              },
+              "grenade": {
+              },
+              "mine": {
+              },
+              "nameable": {
+              },
+              "outfit": {
+              },
+              "pistol": {
+              },
+              "rifle": {
+              },
+              "shotgun": {
+              },
+              "showable": {
+              },
+              "tab": {
+              },
+              "weapon": {
+              }
+            }
+          },
+          "property": {
+          },
+          "relations": [
+          ],
+          "valueToWords": {
+          }
+        },
+        "5": {
+          "mentioned": [
+          ],
+          "variables": {
+          }
+        },
+        "6": {
+        },
+        "7": {
+        }
+      },
+      "processed": [
+        {
+          "context": {
+            "default": true,
+            "marker": "showWeapons",
+            "range": {
+              "end": 15,
+              "start": 0
+            },
+            "showable": {
+              "concept": true,
+              "determiner": "the",
+              "marker": "weapon",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "many",
+              "pullFromContext": true,
+              "range": {
+                "end": 15,
+                "start": 5
+              },
+              "text": "the weapons",
+              "types": [
+                "weapon"
+              ],
+              "value": "weapon",
+              "wantsValue": true,
+              "word": "weapons"
+            },
+            "text": "show the weapons",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "word": "show"
+          },
+          "paraphrases": "show the weapons",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "one",
+            "one": {
+              "concept": true,
+              "determiner": "a",
+              "marker": "weapon",
+              "modifiers": [
+                "determiner"
+              ],
+              "number": "one",
+              "pullFromContext": false,
+              "range": {
+                "end": 20,
+                "start": 0
+              },
+              "text": "a weapon",
+              "types": [
+                "weapon"
+              ],
+              "value": "weapon",
+              "wantsValue": true,
+              "word": "weapon"
+            },
+            "range": {
+              "end": 20,
+              "start": 0
+            },
+            "text": "a weapon is equipable",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "range": {
+                "end": 20,
+                "start": 12
+              },
+              "text": "equipable",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "equipable",
+              "word": "equipable"
+            },
+            "word": "is"
+          },
+          "paraphrases": "a weapon is equipable",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "many",
+            "one": {
+              "marker": "list",
+              "number": "many",
+              "range": {
+                "end": 53,
+                "start": 0
+              },
+              "types": [
+                "list",
+                "unknown"
+              ],
+              "value": [
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 6,
+                    "start": 0
+                  },
+                  "text": "pistols",
+                  "unknown": true,
+                  "value": "pistols",
+                  "word": "pistols"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 13,
+                    "start": 8
+                  },
+                  "text": "rifles",
+                  "unknown": true,
+                  "value": "rifles",
+                  "word": "rifles"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 22,
+                    "start": 15
+                  },
+                  "text": "grenades",
+                  "unknown": true,
+                  "value": "grenades",
+                  "word": "grenades"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 28,
+                    "start": 24
+                  },
+                  "text": "mines",
+                  "unknown": true,
+                  "value": "mines",
+                  "word": "mines"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 41,
+                    "start": 34
+                  },
+                  "text": "shotguns",
+                  "unknown": true,
+                  "value": "shotguns",
+                  "word": "shotguns"
+                }
+              ]
+            },
+            "range": {
+              "end": 53,
+              "start": 0
+            },
+            "text": " are weapons",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "range": {
+                "end": 53,
+                "start": 47
+              },
+              "text": "weapons",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "weapons",
+              "word": "weapons"
+            },
+            "word": "are"
+          },
+          "paraphrases": "pistols, rifles, grenades, mines and shotguns are weapons",
+          "responses": [
+            ""
+          ]
+        }
+      ]
+    },
+    "paraphrases": [
+      "show the weapons"
+    ],
+    "query": "show the weapons",
     "responses": [
       ""
     ]

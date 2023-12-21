@@ -13,6 +13,10 @@ class API {
     this.objects.display = id
   }
 
+  showWeapons(id) {
+    this.objects.showWeapons = id
+  }
+
   setWeapon(id) {
   }
 
@@ -79,6 +83,7 @@ let config = {
   // TODO mark default as local scope
   operators: [
     "([show] ([showable]))",
+    "([showWeapons|show] ([weapon]))",
     "(([content]) [tab])",
     "([apply] ([stimpak]))",
     "([go] ([to2|to] ([showable|])))",
@@ -107,7 +112,7 @@ let config = {
   ],
   hierarchy: [
     ['weapon', 'countable'],
-    ['weapon', 'showable'],
+    // ['weapon', 'showable'],
   ],
   bridges: [
     {
@@ -292,6 +297,20 @@ let config = {
        generatorp: ({context, g}) => `to ${g(context.showable)}`,
     },
     { 
+       id: "showWeapons", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), showable: after[0] }",
+       generatorp: ({context, g}) => `show ${g(context.showable)}`,
+       semantic: ({api, context}) => {
+         if (context.showable.quantity && context.showable.quantity.value == 'all') {
+           api.showWeapons('all')
+         } else {
+           api.showWeapons(context.showable.value)
+         }
+       }
+    },
+    { 
        id: "show", 
        isA: ['verby'],
        level: 0, 
@@ -389,7 +408,7 @@ knowledgeModule({
     name: './pipboy.test.json',
     contents: pipboy_tests,
     check: [
-      'apply', 'equip', 'change', 'wear', 'setName'
+      'apply', 'equip', 'change', 'wear', 'setName', 'showWeapons', 'display'
     ]
   },
 })
