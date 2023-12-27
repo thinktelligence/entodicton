@@ -32,6 +32,7 @@ const api = new API()
   select 2
   select twice
   again
+  stop/start listening
 */
 let config = {
   name: 'ui',

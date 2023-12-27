@@ -7,9 +7,15 @@ const pipboyTemplate_instance = require('./pipboyTemplate.instance.json')
 const template = {
   queries: [
     "pistols rifles grenades mines and shotguns are weapons",
+    "mines and grenades are explosives",
+    "explosives are weapons",
+    "pistols rifles and shotguns are firearms",
+    "firearms are weapons",
+    "hats and suits are clothes",
     // "a rifle is a weapon",
     //"a weapon is equipable and changeable"
     "a weapon is equipable",
+    "clothes are wearable",
     // "weapons are countable",  TODO fix this
   ] 
 }

@@ -94,10 +94,10 @@ let config = {
     "([apparel])",
     "((!articlePOS/0 && !verby/0) [outfit|outfit])",
     // this doesnt work because the speech recognizer hears 'where'
-    "([wear] ([outfit]))",
+    "([wear] ([wearable]))",
     "([strip])",
     "([disarm])",
-    "([putOn|] ([outfit]))",
+    "([putOn|] ([wearable]))",
     "(([put]) <on>)",
     "([call] ([nameable]) ([outfit]))",
     // "([call] ([outfit]) ([outfitName]))",
@@ -191,7 +191,11 @@ let config = {
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `wear ${g(context.item)}`,
        semantic: ({api, context}) => {
-         api.wear(context.item.name.value)
+         if (context.item.name) {
+           api.wear({ name: context.item.name.value, type: 'outfit' })
+         } else {
+           api.wear({ type: context.item.value })
+         }
        }
     },
     { 
@@ -206,20 +210,6 @@ let config = {
          api.equip(value.value)
        }
     },
-    /*
-    { 
-       id: "call", 
-       isA: ['theAble'],
-       level: 0, 
-       bridge: "{ ...next(operator) }" 
-    },
-    { 
-       id: "outfit", 
-       isA: ['theAble'],
-       level: 0, 
-       bridge: "{ ...next(operator) }" 
-    },
-    */
     { 
        id: "nameable", 
        isA: ['theAble'],
@@ -229,7 +219,7 @@ let config = {
     },
     { 
        id: "outfit", 
-       isA: ['nameable'],
+       isA: ['nameable', 'wearable'],
        level: 0, 
        bridge: "{ ...next(operator), name: before[0], modifiers: ['name'] }" 
     },
