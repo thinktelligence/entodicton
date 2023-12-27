@@ -180,7 +180,11 @@ let config = {
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `put on ${g(context.item)}`,
        semantic: ({api, context}) => {
-         api.wear(context.item.name.value)
+         if (context.item.name) {
+           api.wear({ name: context.item.name.value, type: 'outfit' })
+         } else {
+           api.wear({ type: context.item.value })
+         }
        }
     },
     { 
