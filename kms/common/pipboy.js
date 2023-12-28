@@ -37,7 +37,19 @@ class API {
   }
 
   disarm() {
-    this.objects.disarm= true
+    this.objects.disarm = true
+  }
+
+  drink(item) {
+    this.objects.drink = item
+  }
+
+  eat(item) {
+    this.objects.eat = item
+  }
+
+  take(item) {
+    this.objects.take = item
   }
 
   wear(item) {
@@ -89,6 +101,9 @@ let config = {
     "([go] ([to2|to] ([showable|])))",
     "([change] ([changeable]))",
     "([equip] ([equipable]))",
+    "([drink] ([drinkable]))",
+    "([eat] ([edible]))",
+    "([take] ([takeable]))",
     // "([weapon])",
     // "([44_pistol|])",
     "([apparel])",
@@ -215,6 +230,39 @@ let config = {
        }
     },
     { 
+       id: "drink", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `drink ${g(context.item)}`,
+       semantic: ({api, context, e}) => {
+         const value = e(context.item)
+         api.drink(value.value)
+       }
+    },
+    { 
+       id: "eat", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `eat ${g(context.item)}`,
+       semantic: ({api, context, e}) => {
+         const value = e(context.item)
+         api.eat(value.value)
+       }
+    },
+    { 
+       id: "take", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), item: after[0] }",
+       generatorp: ({context, g}) => `take ${g(context.item)}`,
+       semantic: ({api, context, e}) => {
+         const value = e(context.item)
+         api.take(value.value)
+       }
+    },
+    { 
        id: "nameable", 
        isA: ['theAble'],
        children: ['thisitthat'],
@@ -229,6 +277,21 @@ let config = {
     },
     { 
        id: "equipable", 
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "drinkable", 
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "edible", 
+       level: 0, 
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "takeable", 
        level: 0, 
        bridge: "{ ...next(operator) }" 
     },

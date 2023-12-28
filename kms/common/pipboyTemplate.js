@@ -17,6 +17,12 @@ const template = {
     "a weapon is equipable",
     "clothes are wearable",
     // "weapons are countable",  TODO fix this
+    "food is edible",
+    "drinks are drinkable",
+    "meat is food",
+    "vegetables and fruit are food",
+    "cola and pop are drinks",
+    "medicine and stimpaks are takeable",
   ] 
 }
 
