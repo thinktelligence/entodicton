@@ -5,7 +5,7 @@
 
 # apply like/0 counter == 6
 # node ordering -q 'greg likes bananas and grapes what does greg like' -d -g
-# node ordering -q 'the name of greg is greg greg is readonly the name of greg is fred' -d -g -s
+# node ordering -q 'the name of greg is greg greg is readonly the name of greg is fred' -d -g
 # node inspect wendy -q "what is your name"
 # node inspect hierarchy -q 'cats are mammels what are the types of mammels'
 # node foods -q 'strips are food' -d
@@ -31,13 +31,13 @@
 # node inspect meta -q "if e or f then g gq" -d -g
 # node inspect meta -q "if f then g gq" -d -g
 
-# node ordering -q "if x likes y or x loves y then x wants y x likes y\ndoes x want y" -g -s
-# node ordering -q "if x likes y or x loves y then x wants y" -g -d -s
+# node ordering -q "if x likes y or x loves y then x wants y x likes y\ndoes x want y" -g
+# node ordering -q "if x likes y or x loves y then x wants y" -g -d
 
 # node meta -q "if e or f then g" -d -g
-# node ordering -q "if x likes y or x loves y then x wants y x loves y\ndoes x want y" -g -s
+# node ordering -q "if x likes y or x loves y then x wants y x loves y\ndoes x want y" -g
 
-# node ordering -q "if x likes y or x loves y then x wants y x loves y\nwhat does x want" -g -s
+# node ordering -q "if x likes y or x loves y then x wants y x loves y\nwhat does x want" -g
 # node ordering -q "if x likes y or x loves y then x wants y x likes z x loves y\nwhat does x want" -g -d
 # node ordering -q "if x likes y or x loves y then x wants y x likes z x loves y\ndoes x want z" -g -d
 # node ordering -q "if x likes y or x loves y then x wants y x likes z\ndoes x want z" -g -d
@@ -45,7 +45,7 @@
 # node ordering -q "if x likes y or x loves y then x wants y x loves y\nwhat does x want" -g
 
 # node ordering -q "if x likes y or x loves y then x wants y x loves y x likes z\nwhat does x want" -g
-# node ordering -q "if x likes y or x loves y then x wants y x loves y x likes y\nwhat does x want" -g -s
+# node ordering -q "if x likes y or x loves y then x wants y x loves y x likes y\nwhat does x want" -g
 
 # add text proerty to context 
 # find out why cat is unknown
@@ -80,8 +80,8 @@
 # node ordering -q "wendy loves bananas what does wendy like" -d -g
 # node ordering -tva -g
 # node inspect wendy -q 'what is your name' -d -g
-# node kid -q "be brief what is wendy's name" -g -d -s
-# node ordering -q 'be brief x1 likes x2 does x1 like x2' -g -d -s
+# node kid -q "be brief what is wendy's name" -g -d
+# node ordering -q 'be brief x1 likes x2 does x1 like x2' -g -d
 # node inspect ordering -q 'be brief x1 likes x2 and x3 what does x1 like' -g -d
 # node ordering -q 'if x likes y then x wants y x likes y\nwhat does x want' -g -d
 # node ordering -q 'if x likes y or x loves y then x wants y x loves y\nwhat does x want' -g -d
@@ -109,19 +109,19 @@
 # node people -g -q 'the given name of greg is greg what is the given name of greg' -d
 # node people -g -q 'the name of greg is greg23 what is the name of greg' -d
 # node inspect people -g -q 'given name means first name the given name of greg is greg23 what is the given name of greg' -d
-# TODO node people -g -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d -s
+# TODO node people -g -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d
 # STACK node inspect hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -g -d
 # node inspect hierarchy -q 'a human is a mammel debug23' -g -d
 # node inspect hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -d -g
 # node inspect foods -q 'what are the types of food' -d -g
 # node currency -q '20 dollars in euros' -g
-# node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d -g -s
+# node people -q 'given name means first name the first name of greg is greg23 what is the given name of greg' -d -g
 # node inspect avatar -q 'my name is greg what is my name' -d -g
 # node inspect foods -q "what are the types of food" -d -g
 # node ordering -q 'wendy loves bananas what does wendy like' -d -g
 # PUSH node people -q 'the given name of greg is greg23 what is the given name of greg' -d -g
 # PUSH node people -q 'the first name of greg is greg23 what is the given name of greg' -d -g
-# node inspect people -q 'the given name of greg is greg23' -d -g -s
+# node inspect people -q 'the given name of greg is greg23' -d -g
 # node people -q 'the first name of greg is greg23' -d -g
 # node emotion -tva -g
 # node inspect people -q 'the first name of greg is greg23' -d -g
@@ -135,9 +135,9 @@
 # node pokemon -q 'what is pikachu' -g -d
 # node inspect hierarchy -q "mccoy's rank is doctor is mccoy a doctor" -g
 # node inspect hierarchy -q "mccoy is a man\nmccoy is a doctor\nis mccoy a man" -g -d
-# node pokemon -q 'what type is pikachu' -g -d -s
-# node pokemon -q 'who is electric type' -g -d -s
-# node inspect pokemon -q 'what is the type of pikachu' -g -d -s
+# node pokemon -q 'what type is pikachu' -g -d
+# node pokemon -q 'who is electric type' -g -d
+# node inspect pokemon -q 'what is the type of pikachu' -g -d
 # node inspect foods -q 'what are the types of food' -g -d
 # node pokemon -q 'what type of pokemon is pikachu' -g
 # node ordering -q "if a likes or loves b then a wants b" -d -g
@@ -145,9 +145,9 @@
 # node inspect ordering -q 'wants is xfx between wanter and wantee' -d -g
 # node inspect people -q 'owns is xfx relation between owner and ownee' -g -d
 # node people -g -q 'who owns cleo' -d
-# node people -g -d -q 'wendy owns cleo what does wendy own' -s
-# node people -g -d -q 'wendy owns cleo wendy owns mary what does wendy own' -s
-# node people -g -d -q 'wendy owns cleo who is cleo owned by' -s
+# node people -g -d -q 'wendy owns cleo what does wendy own'
+# node people -g -d -q 'wendy owns cleo wendy owns mary what does wendy own'
+# node people -g -d -q 'wendy owns cleo who is cleo owned by'
 # cleo is owned by who
 # [subject] owned [by] -> [owner]
 # wendy owned cleo
@@ -157,9 +157,9 @@
 # (cleo) [is] (owned by wendy) where (owned by wendy) == ownee
 # version of is the unify cleo and ownee
 # ([owned] ([by] ([wendy]))) -> [ownee] look at that
-# node people -g -d -q 'cleo is owned by wendy' -s
-# node people -g -d -q 'cleo is owned by who' -s
-# node people -g -d -q who is cleo owned by' -s
+# node people -g -d -q 'cleo is owned by wendy'
+# node people -g -d -q 'cleo is owned by who'
+# node people -g -d -q who is cleo owned by'
 # node people -g -d -q 'wendy owns cleo'
 # node inspect crew -q 'who are the crew members' -g -d
 # node dialogues -g -d -q 'what is it'
@@ -171,19 +171,19 @@
 # using the test sentences to generate associations as well
 # dont save the developement ones
 # node animals -rt -g
-# node inspect hierarchy -g -s
+# node inspect hierarchy -g
 # node inspect animals -rt -g
 # node hierarchy -q "a human is a mammel greg is a human is greg a mammel" -g -d
 # greg is part of the tests associations and should not be there
-# node people -q "ownee is owned by owner means owner owns ownee" -g -d -s
-# node people -q "ownee is owned by owner means owner owns ownee" -g -d -s
+# node people -q "ownee is owned by owner means owner owns ownee" -g -d
+# node people -q "ownee is owned by owner means owner owns ownee" -g -d
 # node crew -tva -g -r 
 # node people -g -d -q 'wendy owns cleo'
 # node inspect people -q "ownee is owned by owner means owner owns ownee" -g -d
-# node meta -q "undefined means defined" -g -d -s
+# node meta -q "undefined means defined" -g -d
 # sort association and hierarchy
 # node inspect people -q "ownee is owned by owner means owner owns ownee" -g -d
-# node people -q "cleo is owned by wendy who owns cleo" -g -d -s
+# node people -q "cleo is owned by wendy who owns cleo" -g -d
 # node people -q "wendy owns cleo who owns cleo" -g -d
 # node people -q "wendy owns cleo what does wendy own" -g -d
 # node inspect people -q "cleo is owned by wendy who owns cleo" -g -d
@@ -198,7 +198,7 @@
 # node people -q 'the cat owned by wendy' -d
 # node people -q 'cleo is owned by wendy who owns cleo' -g -d
 # TODO who is the person that owns cleo
-# TODO setup focus for this one: node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d -s
+# TODO setup focus for this one: node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d
 # node people -q 'wendy owns cleo who is the cat owned by wendy' -d
 # maybe cat is a class or type
 #node people -q 'fred is a cat wendy owns cleo who is the cat owned by wendy' -d
@@ -231,10 +231,10 @@
 # node hierarchy -q 'a human is a mammel greg is a human is greg a mammel' -d 
 # node people -q 'cleo is a cat wendy owns cleo who is the cat owned by wendy' -d 
 # node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -d -g -r
-# node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -s -g
+# node people -q 'ownee23 is owned by owner23 who is ownee23 owned by' -g
 # node properties -q 'greg has toes greg has eyes?' -g -d
 # node properties -q 'greg has toes' -g -d
-# node hierarchy -q 'cats and dogs are animals what are the types of animals' -g -d -s
+# node hierarchy -q 'cats and dogs are animals what are the types of animals' -g -d
 # node inspect hierarchy -q 'what are the types of animals' -g -d
 # node hierarchy -q 'cats and dogs are animals' -g -d
 # node properties -q 'xfx between a1 and a2' -g -d
@@ -249,7 +249,7 @@
 # node dialogues -q 'x is y?' -d -g
 # node pokemon -q 'pikachu squirtle weedle and pidgeot are pokemon' -d -g
 # node kid -q "wendy's cat is cleo" -d -g
-# node kid -q "who is wendy's cat" -g -d -s
+# node kid -q "who is wendy's cat" -g -d
 # node crew -q 'kirk is a crew member' -g -d -daa
 # node pokemon -q 'what type is pikachu' -d -g
 # node dialogues.js -q 'x is y?' -d -g
@@ -257,13 +257,13 @@
 # node crew -q 'who are the crew members' -g -d
 # node crew -q 'the status of the photon torpedoes is armed\nwhat is the status of the photon torpedoes' -g -d
 # node reports -q 'show the quantity descending and the price ascending' -g -d
-# node reports -q 'call this report1\nshow report1' -g -d -s
+# node reports -q 'call this report1\nshow report1' -g -d
 # node inspect reports -q 'call this report1' -g -d
 # node inspect reports -q 'call this report1\ndescribe report1' -g -d
 # node inspect reports -q 'call this report1\nlist the models\ncall this report2\ndescribe the reports' -g -d
-# node reports -g -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -s
+# node reports -g -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2'
 # node reports -q 'worth means price times quantity the price is 10 the quantity is 5 what is the worth' -g -d
-# node inspect dialogues -q 'x is 3 what is x' -d -g -s
+# node inspect dialogues -q 'x is 3 what is x' -d -g
 # node dialogues -q 'be brief x is 3 what is x what is it' -d -g
 #  node dialogues -q 'what is it' -d -g
 # node scorekeeper -q 'whose turn is it' -d -g
@@ -271,18 +271,18 @@
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report2' -g -d
 # node inspect reports -q 'call this report1\ndescribe the reports' -g -d
-# node reports -q 'list the models\ncall this report1\nshow report1' -g -d -s
+# node reports -q 'list the models\ncall this report1\nshow report1' -g -d
 # node inspect reports -q 'show price and supplier' -g -d
 # node emotions -q 'greg feels angry what is the emotion of greg' -g -d
 # node inspect properties -q 'the name of greg is greg greg is readonly the name of greg is fred' -g -d
-# node reports -q 'call this report1\ndescribe report1' -g -d -s
+# node reports -q 'call this report1\ndescribe report1' -g -d
 # node reports -q 'list the models\ncall this report1\nshow report1' -g -d
 # node reports -q 'call this report1\ndescribe the reports' -g -d
 # node inspect reports -q 'show the quantity descending and the price ascending list the products' -g -d
 # node reports -q 'list the products' -g -d
 # node inspect reports -q 'call this report1 show report1' -g -d
 # node scorekeeper -q 'start a new game\ngreg and jah 20 points' -g -d
-# node reports -q 'call this report1\ndescribe report1' -g -s
+# node reports -q 'call this report1\ndescribe report1' -g
 # node reports -q 'answer with sentences list the models' -g
 # node reports -q 'list the models\ncall this report1\nshow report1' -g
 # node inspect reports -q 'list the models' -g
@@ -291,23 +291,23 @@
 # node reports -q 'call this report1\nshow report1' -g
 # node reports -q 'call this report1\nlist the models\ncall this report2\nshow report1 and report2' -g -d
 # node inspect reports -q 'call this report1\ndescribe the reports' -g -d
-# node events -q 'after event1 action1 event1 event1' -g -d -s
+# node events -q 'after event1 action1 event1 event1' -g -d
 # node reports -q 'after the report changes show the report\nmove column 2 to column 1' -g -d
 # node reports -q 'move column 2 to column 1' -g -d
 # node reports -q 'call this report1\ndescribe report1' -g -r
 # node inspect reports -q 'after the report changes show the report\nanswer with sentences' -g -d -r
 # node reports -q 'after the report changes show the report' -g -d -r
 # node math -q 'x times y' -g -d
-# node reports -q 'x is 20 show the report' -g -d -s
+# node reports -q 'x is 20 show the report' -g -d
 # node inspect dialogues -q 'x is 20 what is it' -g -d
 # node inspect reports -q 'call this report1 show it' -g -d
-# node math -q '4 times 5' -g -d -s 
+# node math -q '4 times 5' -g -d 
 # node inspect reports -q 'call this report1 show it' -g -d
 # node inspect reports -q 'call it report1 show it' -g -d
 # node inspect reports -q 'list the models\ncall this report1' -g -d 
 # node reports -q 'call this report1 show it' -g -d
 # node reports -q 'show the quantity descending and the price ascending' -g -d
-# node math -q 'x is 3 y is 4 what is x' -g -d -s
+# node math -q 'x is 3 y is 4 what is x' -g -d
 # node inspect math -q 'what is 10 plus 2' -g -d
 # node dialogues -q 'x is 3 what is x' -g -d
 # node math -q 'x is 3 what is x' -g -d
@@ -325,7 +325,7 @@
 # node properties -q 'the cat of the sister of alice' -g -d
 # node avatar -q 'your name' -g -d
 # node dialogues -q 'x is 3 what is x' -g -d
-# node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -g -d -s
+# node math -q 'price is 20 quantity is 30 worth is price times quantity what is the worth' -g -d
 # node hierarchy -q 'cats are animals dogs are animals' -d
 # node hierarchy -q 'cats are animals dogs are animals what are the types of animals' -d
 # TODO node reports -q 'delete the columns means remove the column
@@ -336,11 +336,11 @@
 # node math -q 'worth is price times quantity' -d
 # TODO node reports -q "worth means price times quantity show the worth show the report" -d
 # node inspect reports -q "worthdebug means price times quantity" -d -g
-# node reports -q "show the worth list the models" -d -s
+# node reports -q "show the worth list the models" -d
 # node reports -q "worthdebug is price times quantity\\nshow the worthdebug list the models" -d
 # TODO node math -q 'x is 3 y is 4 x*y'
 # node inspect math -q 'price is 6 quantity is 4 worth means price times quantity what is the worth?' -d
-# node reports -q "worthtest is price times quantity\\nshow the worthtest list the models" -d -s
+# node reports -q "worthtest is price times quantity\\nshow the worthtest list the models" -d
 # node reports -q "show the worthtest list the models" -d
 # node inspect reports -q "worthtest is price times quantity" -d
 # node math -q 'worth is price times quantity price is 6 quantity is 4 what is the worth ?' -d
@@ -386,7 +386,11 @@
 # node foods -q 'sushi is food\nwhat are the types of food' -d
 # node foods -q 'food' -d
 # node pipboy -q 'testsetup1 weapon equip that' -d
-# node pipboy -q 'the work outfit' -d -g -s
+# node pipboy -q 'the work outfit' -d -g
 # node inspect pipboy -q 'testsetup1 weapon equip that' -g -d 
 # node pipboy -q 'all the weapons' -g -d 
-node pipboy -q 'show all the weapons' -g -d -s
+# node pipboy -q 'show all the weapons' -g -d
+# node comparable -q 'lowest comparable' -g -d
+# node pipboy -q 'highest damage pistol' -g -d
+node pipboy -q 'equip the highest damage pistol' -g -d -s
+# node pipboyTemplate -q "damage luck hp rads value ap charisma range accuracy are properties" -g -d

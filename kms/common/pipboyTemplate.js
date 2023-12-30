@@ -1,6 +1,7 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
 const base_km = require('./hierarchy')
 const countable = require('./countable')
+const comparable = require('./comparable')
 const pipboyTemplate_tests = require('./pipboyTemplate.test.json')
 const pipboyTemplate_instance = require('./pipboyTemplate.instance.json')
 
@@ -23,6 +24,7 @@ const template = {
     "vegetables and fruit are food",
     "cola and pop are drinks",
     "medicine and stimpaks are takeable",
+    "damage luck hp rads value ap charisma range and accuracy are properties"
   ] 
 }
 
@@ -31,7 +33,7 @@ let config = {
 };
 
 config = new Config(config, module)
-config.add(base_km).add(countable)
+config.add(base_km).add(countable).add(comparable)
 
 knowledgeModule({ 
   module,

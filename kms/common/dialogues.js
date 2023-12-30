@@ -240,6 +240,7 @@ let config = {
 
     "([verby])",
     "([pronoun])",
+    "([adjective])",
     "([to] ([toAble|]))",
   ],
   associations: {
@@ -262,6 +263,7 @@ let config = {
   },
   bridges: [
     { id: "preposition", level: 0, bridge: "{ ...next(operator) }" },
+    { id: "adjective", level: 0, bridge: "{ ...next(operator) }" },
     { id: "by", level: 0, bridge: "{ ...next(operator), object: after[0] }", optional: { 'isEder': "{ marker: 'unknown', implicit: true, concept: true }", }, },
 
     { id: "pronoun", level: 0, bridge: "{ ...next(operator) }" },
@@ -392,6 +394,7 @@ let config = {
     [['is', 1], ['isEdAble', 0]],
     [['verby', 0], ['pronoun', 0]],
     [['verby', 0], ['preposition', 0]],
+    [['verby', 0], ['adjective', 0]],
     [['verby', 0], ['articlePOS', 0]],
   ],
   hierarchy: [

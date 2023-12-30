@@ -43,7 +43,7 @@ let config = {
       where: where(),
       match: ({context}) => context.quantity,
       apply: ({context, g}) => {
-        const countable = g({ ...context, quantity: undefined, number: context.quanity == 1 ? 'one' : 'many' })
+        const countable = g({ ...context, quantity: undefined, number: context.quantity == 1 ? 'one' : 'many' })
         return `${g(context.quantity)} ${countable}`
       }
     },

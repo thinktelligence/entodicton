@@ -4,6 +4,7 @@ node animals -tva -g
 node avatar -tva -g
 node characters -tva -g
 node countable -tva -g
+node comparable -tva -g
 node currency -tva -g
 node dialogues -tva -g
 node emotions -tva -g
@@ -23,7 +24,7 @@ node scorekeeper -tva -g
 node tell -tva -g
 node time -tva -g
 node ui -tva -g
-node tester -m ui -tmn ui -tva
+node tester -m ui -tmn ui -tva -g
 #
 node crew -tva -g
 node kirk -tva -g

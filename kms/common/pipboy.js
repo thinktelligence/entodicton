@@ -1,6 +1,7 @@
 const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprogrammablemind
 const base_km = require('./pipboyTemplate')
 const countable = require('./countable')
+const comparable = require('./comparable')
 const pipboy_tests = require('./pipboy.test.json')
 
 class API {
@@ -115,6 +116,7 @@ let config = {
     "([putOn|] ([wearable]))",
     "(([put]) <on>)",
     "([call] ([nameable]) ([outfit]))",
+    "((condition/1,2) <propertyCondition|> (weapon/1))",
     // "([call] ([outfit]) ([outfitName]))",
     // wear the city outfit / wear a suit / wear a suit and hat / wear that
     // call this the town outfit
@@ -123,10 +125,12 @@ let config = {
     // select an outfit
     // show the outfits
 
-    { pattern: "([testsetup1] ([equipable]))", development: true },
+    // TODO for future
+    // { pattern: "([testsetup1] ([equipable]))", development: true },
   ],
   hierarchy: [
     ['weapon', 'countable'],
+    ['property', 'comparable'],
     // ['weapon', 'showable'],
   ],
   bridges: [
@@ -136,6 +140,13 @@ let config = {
        level: 0, 
        bridge: "{ ...next(operator) }",
        generatorp: ({context, g}) => `put on`,
+    },
+    { 
+       id: "propertyCondition", 
+       isA: ['adjective'],
+       implicit: true,
+       level: 0, 
+       bridge: "{ ...next(after[0]), condition: before[0], modifiers: ['condition'] }",
     },
     { 
        id: "on", 
@@ -225,8 +236,12 @@ let config = {
        bridge: "{ ...next(operator), item: after[0] }",
        generatorp: ({context, g}) => `equip ${g(context.item)}`,
        semantic: ({api, context, e}) => {
-         const value = e(context.item)
-         api.equip(value.value)
+         // const value = e(context.item)
+         let condition
+         if (context.item.condition) {
+           condition = { selector: context.item.condition.marker, property: context.item.condition.property[0].marker }
+         }
+         api.equip({ type: context.item.marker, condition })
        }
     },
     { 
@@ -396,6 +411,7 @@ let config = {
        isA: ['theAble'],
        bridge: "{ ...next(operator) }" ,
     },
+    /*
     { 
        id: "testsetup1", 
        development: true,
@@ -411,6 +427,7 @@ let config = {
          })
        }
     },
+    */
     { 
        id: "content", 
        level: 0, 
@@ -452,7 +469,7 @@ addWeapon('rifle')
 
 config = new Config(config, module)
 //console.log('base_km.config.hierarchy', JSON.stringify(base_km.config.hierarchy, null, 2))
-config.add(base_km).add(countable)
+config.add(base_km).add(countable).add(comparable)
 // console.log('config.config.hierarchy', JSON.stringify(config.config.hierarchy, null, 2))
 // console.log('config.hierarchy', config.hierarchy)
 config.api = api

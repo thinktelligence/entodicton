@@ -3,6 +3,7 @@ const animals = require('./common/animals');
 const avatar = require('./common/avatar');
 const characters = require('./common/characters');
 const crew = require('./common/crew');
+const comparable = require('./common/comparable');
 const currency = require('./common/currency');
 const dialogues = require('./common/dialogues');
 const help = require('./common/help');
@@ -32,6 +33,7 @@ module.exports = {
   characters,
   countable,
   crew,
+  comparable,
   currency,
   dialogues,
   help,

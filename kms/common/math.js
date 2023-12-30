@@ -36,6 +36,7 @@ let config = {
         // bridge: "{ ...next(operator), types: append(type(before[0]), type(after[0])), x: before[0], y: after[0], number: 'one' }" ,
         bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one', isResponse: true, evaluate: true }" ,
         isA: ['queryable', 'number'],
+        localHierarchy: [ ['unknown', 'number'] ],
         words: ['+'],
         generatorp: ({gp, context}) => `${gp(context.x)} plus ${gp(context.y)}`,
         evaluator: ({e, context}) => {
@@ -46,6 +47,7 @@ let config = {
         id: "minus", level: 0, 
         bridge: "{ ...next(operator), x: before[0], y: after[0], number: 'one', isResponse: true, evaluate: true }" ,
         isA: ['queryable', 'number'],
+        localHierarchy: [ ['unknown', 'number'] ],
         words: ['-'],
         generatorp: ({gp, context}) => `${gp(context.x)} minus ${gp(context.y)}`,
         evaluator: ({e, context}) => {
@@ -58,6 +60,7 @@ let config = {
         bridge: "{ ...next(operator), types: append(operator.types, before[0].types, after[0].types), x: before[0], y: after[0], value: null, number: 'one', isResponse: true, evaluate: true }" ,
         isA: ['queryable', 'number'],
         before: [['plus', 0], ['minus', 0]],
+        localHierarchy: [ ['unknown', 'number'] ],
         words: ['*'],
         generatorp: ({gp, context}) => `${gp(context.x)} times ${gp(context.y)}`,
         evaluator: ({e, context}) => {
