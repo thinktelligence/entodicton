@@ -241,7 +241,7 @@ let config = {
          if (context.item.condition) {
            condition = { selector: context.item.condition.marker, property: context.item.condition.property[0].marker }
          }
-         api.equip({ type: context.item.marker, condition })
+         api.equip({ type: context.item.value, condition })
        }
     },
     { 
