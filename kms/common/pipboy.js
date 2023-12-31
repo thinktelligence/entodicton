@@ -133,6 +133,9 @@ let config = {
     ['property', 'comparable'],
     // ['weapon', 'showable'],
   ],
+  priorities: [
+    [['to2', 0], ['articlePOS', 0]],
+  ],
   bridges: [
     {
        id: "put", 
