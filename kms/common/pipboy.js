@@ -4,6 +4,7 @@ const countable = require('./countable')
 const comparable = require('./comparable')
 const pipboy_tests = require('./pipboy.test.json')
 
+// start/stop listening + responses + highest etc + something else?!?!?
 class API {
   initialize() {
   }
