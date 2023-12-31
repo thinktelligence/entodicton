@@ -21,6 +21,10 @@ class API {
     this.objects.cancel = true
   }
 
+  stop(action) {
+    this.objects.stop = action
+  }
+
   initialize() {
   }
 }
@@ -45,6 +49,8 @@ let config = {
     "([up])",
     "([left])",
     "([right])",
+    "([stop] ([action]))",
+    "([listening])",
     "(([direction]) [moveAmount|] ([number]))"
   ],
   bridges: [
@@ -81,6 +87,17 @@ let config = {
        bridge: "{ ...next(operator) }",
        semantic: ({api, context}) => {
          api.cancel()
+       }
+    },
+    { 
+       id: "stop", 
+       isA: ['verby'],
+       level: 0, 
+       bridge: "{ ...next(operator), action: after[0] }",
+       generatorp: ({context, g}) => `stop ${g(context.action)}`,
+       semantic: ({api, context}) => {
+         debugger
+         api.stop(context.action.value)
        }
     },
     { 
@@ -122,6 +139,18 @@ let config = {
        isA: ['direction'],
        bridge: "{ ...next(operator) }" 
     },
+    { 
+       id: "action", 
+       level: 0, 
+       isA: ['action'],
+       bridge: "{ ...next(operator) }" 
+    },
+    { 
+       id: "listening", 
+       level: 0, 
+       isA: ['action'],
+       bridge: "{ ...next(operator) }" 
+    },
   ],
 };
 
@@ -161,7 +190,7 @@ knowledgeModule({
   test: {
     name: './ui.test.json',
     contents: ui_tests,
-    check: ['select', 'move', 'cancel'],
+    check: ['move', 'select', 'unselect', 'cancel', 'stop'],
   },
   template: {
     template,
