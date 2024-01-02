@@ -21429,7 +21429,21 @@
           0
         ],
         [
-          "drink",
+          "cola",
+          0
+        ],
+        [
+          "toDrink",
+          0
+        ]
+      ],
+      [
+        [
+          "a",
+          0
+        ],
+        [
+          "toDrink",
           0
         ]
       ],
@@ -21439,7 +21453,7 @@
           0
         ],
         [
-          "drink",
+          "toDrink",
           0
         ]
       ]
@@ -21448,6 +21462,7 @@
     },
     "contexts": [
       {
+        "default": true,
         "item": {
           "concept": true,
           "determiner": "a",
@@ -21469,8 +21484,7 @@
           "wantsValue": true,
           "word": "cola"
         },
-        "marker": "drink",
-        "number": "one",
+        "marker": "toDrink",
         "range": {
           "end": 11,
           "start": 0
@@ -21480,7 +21494,6 @@
         "touchedBy": [
           "call2"
         ],
-        "value": "drink",
         "word": "drink"
       }
     ],
@@ -21488,6 +21501,7 @@
     "metadata": {
       "opChoices": [
         {
+          "counter": 1,
           "op": [
             "cola",
             0
@@ -21502,12 +21516,13 @@
               0
             ],
             [
-              "drink",
+              "toDrink",
               0
             ]
           ]
         },
         {
+          "counter": 2,
           "op": [
             "a",
             0
@@ -21518,19 +21533,20 @@
               0
             ],
             [
-              "drink",
+              "toDrink",
               0
             ]
           ]
         },
         {
+          "counter": 3,
           "op": [
-            "drink",
+            "toDrink",
             0
           ],
           "ops": [
             [
-              "drink",
+              "toDrink",
               0
             ]
           ]
@@ -21549,6 +21565,8 @@
         "3": {
         },
         "4": {
+        },
+        "5": {
           "children": {
             "changeable": [
               "apparel"
@@ -21586,6 +21604,17 @@
             ],
             "nameable": [
               "outfit"
+            ],
+            "property": [
+              "damage",
+              "luck",
+              "hp",
+              "rad",
+              "value",
+              "ap",
+              "charisma",
+              "range",
+              "accuracy"
             ],
             "showable": [
               "tab",
@@ -21641,11 +21670,30 @@
             "pop",
             "medicine",
             "takeable",
-            "stimpak"
+            "stimpak",
+            "damage",
+            "property",
+            "luck",
+            "hp",
+            "rad",
+            "value",
+            "ap",
+            "charisma",
+            "range",
+            "accuracy"
           ],
           "parents": {
+            "accuracy": [
+              "property"
+            ],
+            "ap": [
+              "property"
+            ],
             "apparel": [
               "changeable"
+            ],
+            "charisma": [
+              "property"
             ],
             "clothe": [
               "wearable"
@@ -21655,6 +21703,9 @@
             ],
             "content": [
               "showable"
+            ],
+            "damage": [
+              "property"
             ],
             "drink": [
               "drinkable"
@@ -21678,6 +21729,12 @@
             "hat": [
               "clothe"
             ],
+            "hp": [
+              "property"
+            ],
+            "luck": [
+              "property"
+            ],
             "meat": [
               "food"
             ],
@@ -21698,6 +21755,12 @@
             "pop": [
               "drink"
             ],
+            "rad": [
+              "property"
+            ],
+            "range": [
+              "property"
+            ],
             "rifle": [
               "weapon",
               "firearm"
@@ -21715,6 +21778,9 @@
             "tab": [
               "showable"
             ],
+            "value": [
+              "property"
+            ],
             "vegetable": [
               "food"
             ],
@@ -21728,15 +21794,23 @@
             "initHandlers": [
             ],
             "root": {
+              "accuracy": {
+              },
+              "ap": {
+              },
               "apparel": {
               },
               "changeable": {
+              },
+              "charisma": {
               },
               "clothe": {
               },
               "cola": {
               },
               "content": {
+              },
+              "damage": {
               },
               "drink": {
               },
@@ -21758,6 +21832,10 @@
               },
               "hat": {
               },
+              "hp": {
+              },
+              "luck": {
+              },
               "meat": {
               },
               "medicine": {
@@ -21772,6 +21850,12 @@
               },
               "pop": {
               },
+              "property": {
+              },
+              "rad": {
+              },
+              "range": {
+              },
               "rifle": {
               },
               "shotgun": {
@@ -21785,6 +21869,8 @@
               "tab": {
               },
               "takeable": {
+              },
+              "value": {
               },
               "vegetable": {
               },
@@ -21801,20 +21887,21 @@
           "valueToWords": {
           }
         },
-        "5": {
+        "6": {
           "mentioned": [
           ],
           "variables": {
           }
         },
-        "6": {
-        },
         "7": {
+        },
+        "8": {
         }
       },
       "processed": [
         {
           "context": {
+            "default": true,
             "item": {
               "concept": true,
               "determiner": "a",
@@ -21836,8 +21923,7 @@
               "wantsValue": true,
               "word": "cola"
             },
-            "marker": "drink",
-            "number": "one",
+            "marker": "toDrink",
             "range": {
               "end": 11,
               "start": 0
@@ -21847,10 +21933,157 @@
             "touchedBy": [
               "call2"
             ],
-            "value": "drink",
             "word": "drink"
           },
           "paraphrases": "drink a cola",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "many",
+            "one": {
+              "marker": "list",
+              "number": "many",
+              "range": {
+                "end": 70,
+                "start": 0
+              },
+              "types": [
+                "list",
+                "unknown"
+              ],
+              "value": [
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 5,
+                    "start": 0
+                  },
+                  "text": "damage",
+                  "unknown": true,
+                  "value": "damage",
+                  "word": "damage"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 10,
+                    "start": 7
+                  },
+                  "text": "luck",
+                  "unknown": true,
+                  "value": "luck",
+                  "word": "luck"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 13,
+                    "start": 12
+                  },
+                  "text": "hp",
+                  "unknown": true,
+                  "value": "hp",
+                  "word": "hp"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 18,
+                    "start": 15
+                  },
+                  "text": "rads",
+                  "unknown": true,
+                  "value": "rads",
+                  "word": "rads"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 24,
+                    "start": 20
+                  },
+                  "text": "value",
+                  "unknown": true,
+                  "value": "value",
+                  "word": "value"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 27,
+                    "start": 26
+                  },
+                  "text": "ap",
+                  "unknown": true,
+                  "value": "ap",
+                  "word": "ap"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 36,
+                    "start": 29
+                  },
+                  "text": "charisma",
+                  "unknown": true,
+                  "value": "charisma",
+                  "word": "charisma"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 42,
+                    "start": 38
+                  },
+                  "text": "range",
+                  "unknown": true,
+                  "value": "range",
+                  "word": "range"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 55,
+                    "start": 48
+                  },
+                  "text": "accuracy",
+                  "unknown": true,
+                  "value": "accuracy",
+                  "word": "accuracy"
+                }
+              ]
+            },
+            "range": {
+              "end": 70,
+              "start": 0
+            },
+            "text": " are properties",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "range": {
+                "end": 70,
+                "start": 61
+              },
+              "text": "properties",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "properties",
+              "word": "properties"
+            },
+            "word": "are"
+          },
+          "paraphrases": "damage, luck, hp, rads, value, ap, charisma, range and accuracy are properties",
           "responses": [
             ""
           ]
@@ -22114,56 +22347,6 @@
             "word": "is"
           },
           "paraphrases": "meat is food",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "marker": "is",
-            "number": "many",
-            "one": {
-              "marker": "unknown",
-              "number": "many",
-              "range": {
-                "end": 19,
-                "start": 0
-              },
-              "text": "drinks",
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "drinks",
-              "word": "drinks"
-            },
-            "range": {
-              "end": 19,
-              "start": 0
-            },
-            "text": "drinks are drinkable",
-            "topLevel": true,
-            "touchedBy": [
-              "call2"
-            ],
-            "two": {
-              "concept": true,
-              "marker": "unknown",
-              "range": {
-                "end": 19,
-                "start": 11
-              },
-              "text": "drinkable",
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "drinkable",
-              "word": "drinkable"
-            },
-            "word": "are"
-          },
-          "paraphrases": "drinks are drinkable",
           "responses": [
             ""
           ]
@@ -24826,6 +25009,7 @@
     "metadata": {
       "opChoices": [
         {
+          "counter": 1,
           "op": [
             "damage",
             0
@@ -24854,6 +25038,7 @@
           ]
         },
         {
+          "counter": 2,
           "op": [
             "highest",
             0
@@ -24878,11 +25063,16 @@
           ]
         },
         {
+          "counter": 3,
           "op": [
             "pistol",
             0
           ],
           "ops": [
+            [
+              "compare",
+              0
+            ],
             [
               "equip",
               0
@@ -24898,6 +25088,7 @@
           ]
         },
         {
+          "counter": 4,
           "op": [
             "compare",
             0
@@ -24918,6 +25109,7 @@
           ]
         },
         {
+          "counter": 5,
           "op": [
             "propertyCondition",
             0
@@ -24938,6 +25130,7 @@
           ]
         },
         {
+          "counter": 6,
           "op": [
             "the",
             0
@@ -24954,6 +25147,7 @@
           ]
         },
         {
+          "counter": 7,
           "op": [
             "equip",
             0

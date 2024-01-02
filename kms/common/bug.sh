@@ -392,5 +392,6 @@
 # node pipboy -q 'show all the weapons' -g -d
 # node comparable -q 'lowest comparable' -g -d
 # node pipboy -q 'highest damage pistol' -g -d
-node pipboy -q 'equip the highest damage pistol' -g -d -s
+# node pipboy -q 'equip the highest damage pistol' -g -d -s
+node pipboy -q 'drink a cola' -g -d -s
 # node pipboyTemplate -q "damage luck hp rads value ap charisma range accuracy are properties" -g -d

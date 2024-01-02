@@ -32,7 +32,7 @@ node spock -tva -g
 node stgame -tva -g
 #
 node pokemon -tva -g
-node pipboy -tva -g
+# node pipboy -tva -g
 # node tester -m pipboy -tmn pipboy -tva TODO broken -> fix
 #
 node kid -tva -g

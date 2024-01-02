@@ -16,7 +16,7 @@ let config = {
       id: "compare", 
       level: 0, 
       implicit: true, 
-      before: ['verby'],
+      before: ['verby', 'articlePOS'],
       // bridge: "{ ...after, comparison: append(before[0], after[0].comparison), modifiers: append([before[0].marker], after[0].modifiers), [before[0].marker]: before[0] }" 
       // bridge: "{ ...after, comparison: append([], before[0].marker, after[0].comparison) }" 
       bridge: "{ ...next(before[0]), property: after, postModifiers: append([after[0].marker], before[0].modifiers), [after[0].marker.id]: after[0] }" 

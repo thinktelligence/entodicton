@@ -326,8 +326,11 @@ let config = {
     { id: "does", level: 0, bridge: "{ query: true, what: operator.marker, ...context, number: operator.number, object.number: operator.number }*" },
 
     // { id: "the", level: 0, bridge: "{ ...after[0], pullFromContext: true }" },
-    { id: 'the', level: 0, bridge: '{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' },
-
+    { 
+      id: 'the', 
+      level: 0, 
+      bridge: '{ ...after[0], pullFromContext: true, concept: true, wantsValue: true, determiner: "the", modifiers: append(["determiner"], after[0].modifiers)}' 
+    },
     { id: "a", level: 0, bridge: "{ ...after[0], pullFromContext: false, concept: true, number: 'one', wantsValue: true, determiner: 'a', modifiers: append(['determiner'], after[0].modifiers) }" },
     { id: "theAble", level: 0, bridge: "{ ...next(operator) }" },
 

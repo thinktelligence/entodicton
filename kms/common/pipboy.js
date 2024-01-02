@@ -103,7 +103,7 @@ let config = {
     "([go] ([to2|to] ([showable|])))",
     "([change] ([changeable]))",
     "([equip] ([equipable]))",
-    "([drink] ([drinkable]))",
+    "([toDrink|drink] ([drinkable]))",
     "([eat] ([edible]))",
     "([take] ([takeable]))",
     // "([weapon])",
@@ -147,7 +147,7 @@ let config = {
     },
     { 
        id: "propertyCondition", 
-       isA: ['adjective'],
+       before: ['adjective', 'articlePOS', 'the'],
        implicit: true,
        level: 0, 
        bridge: "{ ...next(after[0]), condition: before[0], modifiers: ['condition'] }",
@@ -249,7 +249,7 @@ let config = {
        }
     },
     { 
-       id: "drink", 
+       id: "toDrink", 
        isA: ['verby'],
        level: 0, 
        bridge: "{ ...next(operator), item: after[0] }",
