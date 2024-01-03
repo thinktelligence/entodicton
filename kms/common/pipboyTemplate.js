@@ -24,7 +24,8 @@ const template = {
     "vegetables and fruit are food",
     "cola and pop are drinks",
     "medicine and stimpaks are takeable",
-    "damage luck hp rads value ap charisma range and accuracy are properties"
+    "item modifies properties",
+    "damage luck hp rads value ap charisma range and accuracy are item properties"
   ] 
 }
 
