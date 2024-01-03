@@ -2,6 +2,7 @@ const { Config, knowledgeModule, where, Digraph } = require('./runtime').theprog
 const base_km = require('./pipboyTemplate')
 const countable = require('./countable')
 const comparable = require('./comparable')
+const help = require('./help')
 const pipboy_tests = require('./pipboy.test.json')
 
 // start/stop listening
@@ -444,6 +445,10 @@ let config = {
                 ['inventory', 'inv'], 
                 ['data', 'data'], 
                 ['map', 'map'], 
+                ['maps', 'map'], 
+                ['quests', 'quest'],
+                ['stats', 'stats'],
+                ['workshops', 'workshops'],
                 ['radio', 'radio'],
                 ['status', 'status'],
                 ['special', 'special'],
@@ -473,7 +478,7 @@ addWeapon('rifle')
 
 config = new Config(config, module)
 //console.log('base_km.config.hierarchy', JSON.stringify(base_km.config.hierarchy, null, 2))
-config.add(base_km).add(countable).add(comparable)
+config.add(base_km).add(countable).add(comparable).add(help)
 // console.log('config.config.hierarchy', JSON.stringify(config.config.hierarchy, null, 2))
 // console.log('config.hierarchy', config.hierarchy)
 config.api = api
