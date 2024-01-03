@@ -4658,7 +4658,7 @@
           "types": [
             "content"
           ],
-          "value": "stat",
+          "value": "stats",
           "word": "stats"
         },
         "text": "show stats",
@@ -4670,9 +4670,11 @@
         "word": "show"
       }
     ],
+    "developerTest": false,
     "metadata": {
       "opChoices": [
         {
+          "counter": 1,
           "op": [
             "content",
             0
@@ -4689,6 +4691,7 @@
           ]
         },
         {
+          "counter": 2,
           "op": [
             "show",
             0
@@ -4705,7 +4708,7 @@
     "objects": {
       "namespaced": {
         "0": {
-          "display": "stat"
+          "display": "stats"
         },
         "1": {
         },
@@ -4714,6 +4717,10 @@
         "3": {
         },
         "4": {
+        },
+        "5": {
+        },
+        "6": {
           "children": {
             "changeable": [
               "apparel"
@@ -4721,6 +4728,16 @@
             "clothe": [
               "hat",
               "suit"
+            ],
+            "drink": [
+              "cola",
+              "pop"
+            ],
+            "drinkable": [
+              "drink"
+            ],
+            "edible": [
+              "food"
             ],
             "equipable": [
               "weapon"
@@ -4734,12 +4751,32 @@
               "rifle",
               "shotgun"
             ],
+            "food": [
+              "meat",
+              "vegetable",
+              "fruit"
+            ],
+            "item_property": [
+              "damage",
+              "luck",
+              "hp",
+              "rad",
+              "value",
+              "ap",
+              "charisma",
+              "range",
+              "accuracy"
+            ],
             "nameable": [
               "outfit"
             ],
             "showable": [
               "tab",
               "content"
+            ],
+            "takeable": [
+              "medicine",
+              "stimpak"
             ],
             "weapon": [
               "pistol",
@@ -4775,17 +4812,57 @@
             "clothe",
             "suit",
             "equipable",
-            "wearable"
+            "wearable",
+            "food",
+            "edible",
+            "drink",
+            "drinkable",
+            "meat",
+            "vegetable",
+            "fruit",
+            "cola",
+            "pop",
+            "medicine",
+            "takeable",
+            "stimpak",
+            "damage",
+            "item_property",
+            "luck",
+            "hp",
+            "rad",
+            "value",
+            "ap",
+            "charisma",
+            "range",
+            "accuracy"
           ],
           "parents": {
+            "accuracy": [
+              "item_property"
+            ],
+            "ap": [
+              "item_property"
+            ],
             "apparel": [
               "changeable"
+            ],
+            "charisma": [
+              "item_property"
             ],
             "clothe": [
               "wearable"
             ],
+            "cola": [
+              "drink"
+            ],
             "content": [
               "showable"
+            ],
+            "damage": [
+              "item_property"
+            ],
+            "drink": [
+              "drinkable"
             ],
             "explosive": [
               "weapon"
@@ -4793,12 +4870,30 @@
             "firearm": [
               "weapon"
             ],
+            "food": [
+              "edible"
+            ],
+            "fruit": [
+              "food"
+            ],
             "grenade": [
               "weapon",
               "explosive"
             ],
             "hat": [
               "clothe"
+            ],
+            "hp": [
+              "item_property"
+            ],
+            "luck": [
+              "item_property"
+            ],
+            "meat": [
+              "food"
+            ],
+            "medicine": [
+              "takeable"
             ],
             "mine": [
               "weapon",
@@ -4811,6 +4906,15 @@
               "weapon",
               "firearm"
             ],
+            "pop": [
+              "drink"
+            ],
+            "rad": [
+              "item_property"
+            ],
+            "range": [
+              "item_property"
+            ],
             "rifle": [
               "weapon",
               "firearm"
@@ -4819,11 +4923,20 @@
               "weapon",
               "firearm"
             ],
+            "stimpak": [
+              "takeable"
+            ],
             "suit": [
               "clothe"
             ],
             "tab": [
               "showable"
+            ],
+            "value": [
+              "item_property"
+            ],
+            "vegetable": [
+              "food"
             ],
             "weapon": [
               "equipable"
@@ -4835,13 +4948,29 @@
             "initHandlers": [
             ],
             "root": {
+              "accuracy": {
+              },
+              "ap": {
+              },
               "apparel": {
               },
               "changeable": {
               },
+              "charisma": {
+              },
               "clothe": {
               },
+              "cola": {
+              },
               "content": {
+              },
+              "damage": {
+              },
+              "drink": {
+              },
+              "drinkable": {
+              },
+              "edible": {
               },
               "equipable": {
               },
@@ -4849,9 +4978,23 @@
               },
               "firearm": {
               },
+              "food": {
+              },
+              "fruit": {
+              },
               "grenade": {
               },
               "hat": {
+              },
+              "hp": {
+              },
+              "item_property": {
+              },
+              "luck": {
+              },
+              "meat": {
+              },
+              "medicine": {
               },
               "mine": {
               },
@@ -4861,15 +5004,29 @@
               },
               "pistol": {
               },
+              "pop": {
+              },
+              "rad": {
+              },
+              "range": {
+              },
               "rifle": {
               },
               "shotgun": {
               },
               "showable": {
               },
+              "stimpak": {
+              },
               "suit": {
               },
               "tab": {
+              },
+              "takeable": {
+              },
+              "value": {
+              },
+              "vegetable": {
               },
               "weapon": {
               },
@@ -4882,17 +5039,36 @@
           "relations": [
           ],
           "valueToWords": {
+            "item_property": [
+              {
+                "item": {
+                  "marker": "item",
+                  "value": "item",
+                  "word": "item"
+                },
+                "marker": "item_property",
+                "modifiers": [
+                  "item"
+                ],
+                "paraphrase": true,
+                "types": [
+                  "item_property"
+                ],
+                "value": "item_property",
+                "word": "property"
+              }
+            ]
           }
         },
-        "5": {
+        "7": {
           "mentioned": [
           ],
           "variables": {
           }
         },
-        "6": {
+        "8": {
         },
-        "7": {
+        "9": {
         }
       },
       "processed": [
@@ -4914,7 +5090,7 @@
               "types": [
                 "content"
               ],
-              "value": "stat",
+              "value": "stats",
               "word": "stats"
             },
             "text": "show stats",
@@ -4935,102 +5111,203 @@
             "marker": "is",
             "number": "many",
             "one": {
-              "marker": "clothe",
+              "marker": "list",
               "number": "many",
               "range": {
-                "end": 19,
+                "end": 75,
                 "start": 0
               },
-              "text": "clothes",
               "types": [
-                "clothe"
+                "list",
+                "unknown"
               ],
-              "value": "clothe",
-              "word": "clothes"
+              "value": [
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 5,
+                    "start": 0
+                  },
+                  "text": "damage",
+                  "unknown": true,
+                  "value": "damage",
+                  "word": "damage"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 10,
+                    "start": 7
+                  },
+                  "text": "luck",
+                  "unknown": true,
+                  "value": "luck",
+                  "word": "luck"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 13,
+                    "start": 12
+                  },
+                  "text": "hp",
+                  "unknown": true,
+                  "value": "hp",
+                  "word": "hp"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 18,
+                    "start": 15
+                  },
+                  "text": "rads",
+                  "unknown": true,
+                  "value": "rads",
+                  "word": "rads"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 24,
+                    "start": 20
+                  },
+                  "text": "value",
+                  "unknown": true,
+                  "value": "value",
+                  "word": "value"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 27,
+                    "start": 26
+                  },
+                  "text": "ap",
+                  "unknown": true,
+                  "value": "ap",
+                  "word": "ap"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 36,
+                    "start": 29
+                  },
+                  "text": "charisma",
+                  "unknown": true,
+                  "value": "charisma",
+                  "word": "charisma"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 42,
+                    "start": 38
+                  },
+                  "text": "range",
+                  "unknown": true,
+                  "value": "range",
+                  "word": "range"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 55,
+                    "start": 48
+                  },
+                  "text": "accuracy",
+                  "unknown": true,
+                  "value": "accuracy",
+                  "word": "accuracy"
+                }
+              ]
             },
             "range": {
-              "end": 19,
+              "end": 75,
               "start": 0
             },
-            "text": "clothes are wearable",
+            "text": " are item properties",
             "topLevel": true,
             "touchedBy": [
               "call2"
             ],
             "two": {
+              "atomic": true,
               "concept": true,
-              "marker": "unknown",
-              "range": {
-                "end": 19,
-                "start": 12
+              "item": {
+                "marker": "item",
+                "range": {
+                  "end": 64,
+                  "start": 61
+                },
+                "text": "item",
+                "value": "item",
+                "word": "item"
               },
-              "text": "wearable",
-              "types": [
-                "unknown"
+              "marker": "item_property",
+              "modifiers": [
+                "item"
               ],
-              "unknown": true,
-              "value": "wearable",
-              "word": "wearable"
+              "number": "many",
+              "range": {
+                "end": 75,
+                "start": 61
+              },
+              "text": "item properties",
+              "types": [
+                "item_property",
+                "property"
+              ],
+              "value": "item_property",
+              "word": "properties"
             },
             "word": "are"
           },
-          "paraphrases": "clothes are wearable",
+          "paraphrases": "damage, luck, hp, rads, value, ap, charisma, range and accuracy are item properties",
           "responses": [
             ""
           ]
         },
         {
           "context": {
-            "marker": "is",
-            "number": "one",
-            "one": {
-              "concept": true,
-              "determiner": "a",
-              "marker": "weapon",
-              "modifiers": [
-                "determiner"
-              ],
-              "number": "one",
-              "pullFromContext": false,
+            "concept": {
+              "marker": "unknown",
               "range": {
-                "end": 20,
+                "end": 23,
+                "start": 14
+              },
+              "text": "properties",
+              "unknown": true,
+              "value": "properties",
+              "word": "properties"
+            },
+            "default": true,
+            "marker": "modifies",
+            "modifier": {
+              "marker": "unknown",
+              "range": {
+                "end": 3,
                 "start": 0
               },
-              "text": "a weapon",
-              "types": [
-                "weapon"
-              ],
-              "value": "weapon",
-              "wantsValue": true,
-              "word": "weapon"
+              "text": "item",
+              "unknown": true,
+              "value": "item",
+              "word": "item"
             },
             "range": {
-              "end": 20,
+              "end": 23,
               "start": 0
             },
-            "text": "a weapon is equipable",
+            "text": "item modifies properties",
             "topLevel": true,
             "touchedBy": [
               "call2"
             ],
-            "two": {
-              "concept": true,
-              "marker": "unknown",
-              "range": {
-                "end": 20,
-                "start": 12
-              },
-              "text": "equipable",
-              "types": [
-                "unknown"
-              ],
-              "unknown": true,
-              "value": "equipable",
-              "word": "equipable"
-            },
-            "word": "is"
+            "value": "modifies",
+            "word": "modifies"
           },
-          "paraphrases": "a weapon is equipable",
+          "paraphrases": "item modifies properties",
           "responses": [
             ""
           ]
@@ -5043,7 +5320,78 @@
               "marker": "list",
               "number": "many",
               "range": {
-                "end": 25,
+                "end": 33,
+                "start": 0
+              },
+              "types": [
+                "list",
+                "unknown"
+              ],
+              "value": [
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 7,
+                    "start": 0
+                  },
+                  "text": "medicine",
+                  "unknown": true,
+                  "value": "medicine",
+                  "word": "medicine"
+                },
+                {
+                  "marker": "unknown",
+                  "range": {
+                    "end": 20,
+                    "start": 13
+                  },
+                  "text": "stimpaks",
+                  "unknown": true,
+                  "value": "stimpaks",
+                  "word": "stimpaks"
+                }
+              ]
+            },
+            "range": {
+              "end": 33,
+              "start": 0
+            },
+            "text": " are takeable",
+            "topLevel": true,
+            "touchedBy": [
+              "call2"
+            ],
+            "two": {
+              "concept": true,
+              "marker": "unknown",
+              "range": {
+                "end": 33,
+                "start": 26
+              },
+              "text": "takeable",
+              "types": [
+                "unknown"
+              ],
+              "unknown": true,
+              "value": "takeable",
+              "word": "takeable"
+            },
+            "word": "are"
+          },
+          "paraphrases": "medicine and stimpaks are takeable",
+          "responses": [
+            ""
+          ]
+        },
+        {
+          "context": {
+            "marker": "is",
+            "number": "many",
+            "one": {
+              "marker": "list",
+              "number": "many",
+              "range": {
+                "end": 22,
                 "start": 0
               },
               "types": [
@@ -5057,100 +5405,51 @@
                     "end": 3,
                     "start": 0
                   },
-                  "text": "hats",
+                  "text": "cola",
                   "unknown": true,
-                  "value": "hats",
-                  "word": "hats"
+                  "value": "cola",
+                  "word": "cola"
                 },
                 {
                   "marker": "unknown",
                   "range": {
-                    "end": 13,
+                    "end": 11,
                     "start": 9
                   },
-                  "text": "suits",
+                  "text": "pop",
                   "unknown": true,
-                  "value": "suits",
-                  "word": "suits"
+                  "value": "pop",
+                  "word": "pop"
                 }
               ]
             },
             "range": {
-              "end": 25,
+              "end": 22,
               "start": 0
             },
-            "text": " are clothes",
+            "text": " are drinks",
             "topLevel": true,
             "touchedBy": [
               "call2"
             ],
             "two": {
               "concept": true,
-              "marker": "unknown",
+              "marker": "drink",
+              "number": "many",
               "range": {
-                "end": 25,
-                "start": 19
+                "end": 22,
+                "start": 17
               },
-              "text": "clothes",
+              "text": "drinks",
               "types": [
-                "unknown"
+                "drink"
               ],
-              "unknown": true,
-              "value": "clothes",
-              "word": "clothes"
+              "value": "drink",
+              "word": "drinks"
             },
             "word": "are"
           },
-          "paraphrases": "hats and suits are clothes",
-          "responses": [
-            ""
-          ]
-        },
-        {
-          "context": {
-            "marker": "is",
-            "number": "many",
-            "one": {
-              "marker": "firearm",
-              "number": "many",
-              "range": {
-                "end": 19,
-                "start": 0
-              },
-              "text": "firearms",
-              "types": [
-                "firearm"
-              ],
-              "value": "firearm",
-              "word": "firearms"
-            },
-            "range": {
-              "end": 19,
-              "start": 0
-            },
-            "text": "firearms are weapons",
-            "topLevel": true,
-            "touchedBy": [
-              "call2"
-            ],
-            "two": {
-              "concept": true,
-              "marker": "weapon",
-              "number": "many",
-              "range": {
-                "end": 19,
-                "start": 13
-              },
-              "text": "weapons",
-              "types": [
-                "weapon"
-              ],
-              "value": "weapon",
-              "word": "weapons"
-            },
-            "word": "are"
-          },
-          "paraphrases": "firearms are weapons",
+          "paraphrases": "cola and pop are drinks",
           "responses": [
             ""
           ]
@@ -5163,76 +5462,65 @@
               "marker": "list",
               "number": "many",
               "range": {
-                "end": 39,
+                "end": 28,
                 "start": 0
               },
               "types": [
                 "list",
-                "pistol"
+                "unknown"
               ],
               "value": [
                 {
-                  "marker": "pistol",
-                  "number": "many",
+                  "marker": "unknown",
                   "range": {
-                    "end": 6,
+                    "end": 9,
                     "start": 0
                   },
-                  "text": "pistols",
-                  "value": "pistol",
-                  "word": "pistols"
+                  "text": "vegetables",
+                  "unknown": true,
+                  "value": "vegetables",
+                  "word": "vegetables"
                 },
                 {
-                  "marker": "rifle",
-                  "number": "many",
+                  "marker": "unknown",
                   "range": {
-                    "end": 13,
-                    "start": 8
+                    "end": 19,
+                    "start": 15
                   },
-                  "text": "rifles",
-                  "value": "rifle",
-                  "word": "rifles"
-                },
-                {
-                  "marker": "shotgun",
-                  "number": "many",
-                  "range": {
-                    "end": 26,
-                    "start": 19
-                  },
-                  "text": "shotguns",
-                  "value": "shotgun",
-                  "word": "shotguns"
+                  "text": "fruit",
+                  "unknown": true,
+                  "value": "fruit",
+                  "word": "fruit"
                 }
               ]
             },
             "range": {
-              "end": 39,
+              "end": 28,
               "start": 0
             },
-            "text": " are firearms",
+            "text": " are food",
             "topLevel": true,
             "touchedBy": [
               "call2"
             ],
             "two": {
               "concept": true,
-              "marker": "unknown",
+              "marker": "food",
+              "number": "one",
               "range": {
-                "end": 39,
-                "start": 32
+                "end": 28,
+                "start": 25
               },
-              "text": "firearms",
+              "text": "food",
               "types": [
-                "unknown"
+                "food"
               ],
-              "unknown": true,
-              "value": "firearms",
-              "word": "firearms"
+              "value": "food",
+              "word": "food"
             },
             "word": "are"
           },
-          "paraphrases": "pistols, rifles and shotguns are firearms",
+          "paraphrases": "vegetables and fruit are food",
           "responses": [
             ""
           ]

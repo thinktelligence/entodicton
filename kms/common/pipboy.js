@@ -446,6 +446,7 @@ let config = {
                 ['data', 'data'], 
                 ['map', 'map'], 
                 ['maps', 'map'], 
+                ['quest', 'quest'],
                 ['quests', 'quest'],
                 ['stats', 'stats'],
                 ['workshops', 'workshops'],
