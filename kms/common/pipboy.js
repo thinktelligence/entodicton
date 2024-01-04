@@ -86,6 +86,9 @@ class API {
   // call this the battle outfit
   // wear the town outfit
   // select an outfit
+  // remove the hat
+  // strip
+  // disarm
   // 
   change(item) {
     this.objects.change = item

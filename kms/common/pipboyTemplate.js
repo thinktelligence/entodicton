@@ -12,7 +12,7 @@ const template = {
     "explosives are weapons",
     "pistols rifles and shotguns are firearms",
     "firearms are weapons",
-    "hats and suits are clothes",
+    "hats armor and suits are clothes",
     // "a rifle is a weapon",
     //"a weapon is equipable and changeable"
     "a weapon is equipable",
